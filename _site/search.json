@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Reluctant Criminologists",
+    "section": "",
+    "text": "My job is to introduce a little tension into an otherwise harmonious system.\n— Charles Tittle in “The Arrogance of Public Sociology”"
+  },
+  {
+    "objectID": "about.html#about-the-reluctant-criminologists",
+    "href": "about.html#about-the-reluctant-criminologists",
+    "title": "Reluctant Criminologists",
+    "section": "About the Reluctant Criminologists",
+    "text": "About the Reluctant Criminologists\nNeed to say something about ourselves, why we created the site, and note the inspiration from Charles. We also probably want a caveat, similar to the preface of his book (he notes that the people he thanks are not responsible for the book’s faults), that while inspired by him he in no way endorsed the project (and likely would have thought it was a waste of time)."
+  },
+  {
+    "objectID": "blog-posts/welcome-blog/welcome-blog.html",
+    "href": "blog-posts/welcome-blog/welcome-blog.html",
+    "title": "Welcome to the Reluctant Criminologists",
+    "section": "",
+    "text": "We need to write an introduction to our blog. Things to consider: - Why are we doing this? - How we were inspired by Charles. - Goals - Other bullshit?"
+  },
+  {
+    "objectID": "blog-posts.html",
+    "href": "blog-posts.html",
+    "title": "Reluctant Criminologists Blog",
+    "section": "",
+    "text": "Welcome to the Reluctant Criminologists\n\n\n\n\n\n\n\n\n\n\n\n\nMar 10, 2023\n\n\nJon Brauer and Jake Day\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "course-materials/ugrad_stats/index.html",
+    "href": "course-materials/ugrad_stats/index.html",
+    "title": "Undergraduate Criminology Statistics Assignments",
+    "section": "",
+    "text": "The following assignments were created for Jon’s undergraduate statistics course (COURSE NUMBER) with the help of Tyeisha Fordham, a PhD student at Indiana University. Here is the full syllabus for the course. Most of the assignments are based on various assignments in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed..\n\n\n\n\n\n\n\nAssignment 1: Getting Started in R\nThe purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio.\n\n\n\n\nAssignment 2: B&P Chapter 1\nThe purpose of this second assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 1 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 3: Describing Data Distributions\nThe purpose of this third assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapters 2 and 3 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 4\nThe purpose of this fourth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 4 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 5\nThe purpose of this fifth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 5 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 6\nThe purpose of this sixth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 6 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 7\nThe purpose of this seventh assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 7 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 8\nThe purpose of this eighth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 8 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 9\nThe purpose of this ninth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 9 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.\n\n\nAssignment 10\nThe purpose of this tenth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 10 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed."
+  },
+  {
+    "objectID": "course-materials.html",
+    "href": "course-materials.html",
+    "title": "Course Material",
+    "section": "",
+    "text": "We wanted a centralized location to place the various courses we have developed. The main purpose is to have a centralized location to where we can point people if they ask for our materials.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nUndergraduate Criminology Statistics Assignments\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reluctant Criminologists",
+    "section": "",
+    "text": "general\n\n\n\n\n\n\n\n\n\n\n\nMar 10, 2023\n\n\nJon Brauer and Jake Day\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#course-materials",
+    "href": "index.html#course-materials",
+    "title": "Reluctant Criminologists",
+    "section": "Course Materials",
+    "text": "Course Materials\n\n\n\n\n  \n\n\n\n\nUndergraduate Criminology Statistics Assignments\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  }
+]

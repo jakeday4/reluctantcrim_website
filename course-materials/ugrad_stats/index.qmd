@@ -1,0 +1,68 @@
+---
+title: "Undergraduate Criminology Statistics Assignments"
+# listing:
+#   contents:
+#     - title: "Assignment 1: Getting Started in R"
+#       href: ![](ugrad-stats_Rassign/Assignment_1_JRB.html"
+#       description: "The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio."
+#     - ugrad-stats_Rassign/Assignment_1_JRB.html
+#     - ugrad-stats_Rassign/Assignment_2_JRB.html
+#     - ugrad-stats_Rassign/Assignment_3_JRB.html
+#     - ugrad-stats_Rassign/Assignment_4_JRB.html
+#     - ugrad-stats_Rassign/Assignment_5_JRB.html
+#     - ugrad-stats_Rassign/Assignment_6_JRB.html
+#     - ugrad-stats_Rassign/Assignment_7_JRB.html
+#     - ugrad-stats_Rassign/Assignment_8_JRB.html
+#     - ugrad-stats_Rassign/Assignment_9_JRB.html
+#     - ugrad-stats_Rassign/Assignment_10_JRB.html
+#   #sort: "title asc"
+#   #categories: true
+#   #sort-ui: false
+#   filter-ui: false
+# page-layout: full
+# title-block-banner: true
+---
+
+The following assignments were created for Jon's undergraduate statistics course (COURSE NUMBER) with the help of Tyeisha Fordham, a PhD student at Indiana University. Here is the full [syllabus](FILE-LINK) for the course. Most of the assignments are based on various assignments in [Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.](https://edge.sagepub.com/bachmansccj5e). 
+
+:::: columns
+
+::: {.column width="35%"}
+![](ugrad-stats_Rassign/Images/Assign1_SS2_New_RMD2.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 1: Getting Started in R](ugrad-stats_Rassign/Assignment_1_JRB.html)
+The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio.
+:::
+::::
+
+### [Assignment 2: B&P Chapter 1](ugrad-stats_Rassign/Assignment_2_JRB.html)
+The purpose of this second assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 1 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 3: Describing Data Distributions](ugrad-stats_Rassign/Assignment_3_JRB.html)
+The purpose of this third assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapters 2 and 3 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 4](ugrad-stats_Rassign/Assignment_4_JRB.html)
+The purpose of this fourth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 4 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 5](ugrad-stats_Rassign/Assignment_5_JRB.html)
+The purpose of this fifth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 5 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 6](ugrad-stats_Rassign/Assignment_6_JRB.html)
+The purpose of this sixth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 6 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 7](ugrad-stats_Rassign/Assignment_7_JRB.html)
+The purpose of this seventh assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 7 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 8](ugrad-stats_Rassign/Assignment_8_JRB.html)
+The purpose of this eighth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 8 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 9](ugrad-stats_Rassign/Assignment_9_JRB.html)
+The purpose of this ninth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 9 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.
+
+### [Assignment 10](ugrad-stats_Rassign/Assignment_10_JRB.html)
+The purpose of this tenth assignment is to help you use R to complete some of the SPSS Exercises from the end of Chapter 10 in Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.

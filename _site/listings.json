@@ -1,0 +1,21 @@
+[
+  {
+    "listing": "/blog-posts.html",
+    "items": [
+      "/blog-posts/welcome-blog/welcome-blog.html"
+    ]
+  },
+  {
+    "listing": "/course-materials.html",
+    "items": [
+      "/course-materials/ugrad_stats/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/blog-posts/welcome-blog/welcome-blog.html",
+      "/course-materials/ugrad_stats/index.html"
+    ]
+  }
+]

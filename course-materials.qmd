@@ -1,0 +1,7 @@
+---
+title: "Course Material"
+listing:
+  contents: course-materials
+---
+
+We wanted a centralized location to place the various courses we have developed. The main purpose is to have a centralized location to where we can point people if they ask for our materials. 

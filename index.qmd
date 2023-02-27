@@ -1,14 +1,30 @@
 ---
-title: "reluctantcrim_website"
+title: "Reluctant Criminologists"
 listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+  - id: posts
+    contents: blog-posts
+    sort: "date desc"
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
+  - id: courses
+    contents: course-materials
+    sort: "date desc"
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
 page-layout: full
-title-block-banner: true
+title-block-banner: false
 ---
 
+## Blog Posts
 
+:::{#posts}
+:::
+
+## Course Materials
+
+:::{#courses}
+:::

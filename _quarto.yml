@@ -5,14 +5,19 @@ website:
   title: "Reluctant Criminologists"
   navbar:
     left:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - text: "About"
+        href: about.qmd
+      - text: "Blog Posts"
+        href: blog-posts.qmd
+      - text: "Course Material"
+        href: course-materials.qmd
+      # - icon: github
+      #   href: https://github.com/
+      # - icon: twitter
+      #   href: https://twitter.com
 format:
   html:
-    theme: cosmo
+    theme: simplex
     css: styles.css
 
 
