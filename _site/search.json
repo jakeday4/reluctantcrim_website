@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "Reluctant Criminologists",
     "section": "",
-    "text": "My job is to introduce a little tension into an otherwise harmonious system.\n— Charles Tittle in “The Arrogance of Public Sociology”\nWelcome to our site! We are Jon Brauer and Jake Day, aka the “Reluctant Criminologists.”\nThe chapter then proceeds to introduce several lessons that Charles learned throughout his illustrious career, which he later summarized as follows (pp.40-41):\nOur site’s mission is to help answer his call by contributing modestly to the advancement of scientific criminology. In our own academic careers and scholarly pursuits, we have spent much time and effort on trying to understand philosophies of science, substantive theories of crime and deviance, and scientific methods and quantitative analytic techniques used to test social scientific theories. Our hope is that we will be able to effectively draw from these experiences to stimulate and enrich conversations in our field about how we might collectively strengthen our science through concerted efforts to improve our scientific explanations and the methods we use to generate knowledge about them.\nNeed to say something about ourselves, why we created the site, and note the inspiration from Charles. We also probably want a caveat, similar to the preface of his book (he notes that the people he thanks are not responsible for the book’s faults), that while inspired by him he in no way endorsed the project (and likely would have thought it was a waste of time)."
+    "text": "My job is to introduce a little tension into an otherwise harmonious system.\n— Charles Tittle in “The Arrogance of Public Sociology”\nWelcome to our site! We are Jon Brauer and Jake Day, aka the “Reluctant Criminologists.”\nWe created this site to publicly share course materials and musings about scientific theory and methods. We benefit immensely from the contributions in blogs and bookdown projects that so many others freely share for the collective good. Likewise, we envision this site as a public repository of sorts in our field of criminology and criminal justice dedicated to freely sharing resources that help us collectively strengthen our science.\nIn particular, we provide course materials containing crime-relevant examples to help interested scholars in our field learn to use R and to improve the reproducibility of their workflows. Additionally, we will post occassional blog entries about topics in our areas of interest, including philosophies of science, criminology theory, and statistical techniques (e.g., ordinal modeling; Bayesian estimation; data visualization). We are also open to the idea of collaborating with or posting others’ course materials and topical blog posts, so feel free to contact us with your ideas.\nIn sharing this content, we are committing to the practice of coding in public. Likewise, we expect to learn more than we teach through readers’ constructive feedback on our innumerable coding inefficiencies and inevitable errors. So, please do reach out with suggestions or corrections.\nThe chapter then proceeds to introduce several lessons that Charles learned throughout his illustrious career, which he later summarized as follows (pp.40-41):\nOur site’s mission is to help answer Charles’ call by contributing modestly to the advancement of scientific criminology. In our own academic careers and scholarly pursuits, we have devoted much effort to understanding philosophies of science, substantive theories of crime and deviance, and quantitative methods used to test social scientific theories. Our hope is that we will be able to effectively draw from these experiences to enrich conversations in our field about how we might collectively strengthen our science through concerted efforts to improve our scientific theories and the methods we use to generate knowledge about them.\nIf you are interested in learning more about some of Charles Tittle’s intellectual contributions, visit our blog post containing comments delivered in a memorial panel for Charles at the November 2021 American Society of Criminology annual meetings. To be clear, while inspired by him, Charles in no way endorsed the project (and he likely would have thought it was a waste of time).\nFinally, if we contribute anything of value on this site, undoubtedly someone else - one or more of our many countless scientific heroes that tirelessly publish through traditional scientific outlets or share via their own blogs, bookdowns, and videos - deserve the lion’s share of credit for it. Yet, to borrow again from Charles (preface to his Control Balance), none of these people contributed to the errors or other shortcomings found in any materials that we post on this site."
   },
   {
     "objectID": "about.html#about-the-reluctant-criminologists",
@@ -28,6 +28,27 @@
     "text": "Welcome to the Reluctant Criminologists\n\n\n\n\n\n\n\n\n\n\n\n\nMar 10, 2023\n\n\nJon Brauer and Jake Day\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "course-materials/grad_RnR/index.html",
+    "href": "course-materials/grad_RnR/index.html",
+    "title": "Replication & Reproducibility in Social Science (Graduate-level)",
+    "section": "",
+    "text": "In the fall of 2021, Jon was on the schedule to teach a new course titled “Replication & Reproducibility in Social Science” as a substitute for IU Criminal Justice Department’s typical graduate “Methods” degree requirement. The same semester, Jake was scheduled to teach the “Social Research Methods” course to first-year MA students in UNCW’s Department of Sociology and Criminology. He decided to join Jon in revising the class to focus on replication and reproducibility. The result was a jointly designed course focusing on replication and reproducibility issues broadly across the social sciences, but with specific examples from sociology and criminology. You can take a look at both Jon’s syllabus and Jake’s syllabus for the course. They are basically identical, but Jon’s syllabus includes a complete reference list for the assigned and recommended readings. Also, because of a weird scheduling quirk, Jake had to combine two weeks into one (Hype and Perverse Incentives).\nIn addition to teaching them about replication and reproducibility issues more generally, we also wanted to help them learn some practical skills to help them produce more reliable and transparent research. To do this, we had them complete two sets of assignments: 1) R Assignments intended to provide a basic introduction to conducting reproducible research using the R Statistical Computing Environment and RStudio and 2) a Reproducibility Project where they had the reproduce the (descriptive) results of a published article on a topic of interest to them. The “R Assignments” ended up being a basic introduction to data wrangling, data visualization and reporting, and reproducible workflow with a primary emphasis on the Tidyverse suite of packages. The “Reproducibility Project” was an opportunity for students to apply these new skills to a topic that interested them, get their hands dirty with real-world data, and develop an appreciated of the difficulties involved in computationally reproducing published work when you do not have access to the code used to clean, wrangle and analyze the data.\nWe have included these assignments as they were assigned in Jon’s class with light editing, where necessary, for student privacy reasons. In a forthcoming blog post we will discuss what we learned from designing this course and note what we would change going forward (and what Jake did change when revising the course for senior-level undergraduate criminology majors)."
+  },
+  {
+    "objectID": "course-materials/grad_RnR/index.html#r-assignments",
+    "href": "course-materials/grad_RnR/index.html#r-assignments",
+    "title": "Replication & Reproducibility in Social Science (Graduate-level)",
+    "section": "R Assignments",
+    "text": "R Assignments\n\n\n\n\n\n\n\nAssignment 1: Getting Started in R\nThe purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio. Additionally, you will learn how to create, edit, and knit an R Markdown file."
+  },
+  {
+    "objectID": "course-materials/grad_RnR/index.html#reproducibility-project",
+    "href": "course-materials/grad_RnR/index.html#reproducibility-project",
+    "title": "Replication & Reproducibility in Social Science (Graduate-level)",
+    "section": "Reproducibility Project",
+    "text": "Reproducibility Project\n\n\n\n\n\n\n\nAssignment 2: Navigating Data\nIn this assignment, you will create an R Markdown file in which to save and present your work for this class. Additionally, following the goals of BPW’s chapter 1, you will use R/RStudio to view variables in a data file and find information about variables, including variable names, labels, and values. This assignment should help you navigate R/RStudio and become comfortable finding basic information within data files."
+  },
+  {
     "objectID": "course-materials/ugrad_stats/index.html",
     "href": "course-materials/ugrad_stats/index.html",
     "title": "Introduction to Statistics in R for Criminologists",
@@ -39,7 +60,7 @@
     "href": "course-materials.html",
     "title": "Course Material",
     "section": "",
-    "text": "We wanted a centralized location to place the various courses we have developed. The main purpose is to have a centralized location to where we can point people if they ask for our materials.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Statistics in R for Criminologists\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "We wanted a centralized location to place the various courses we have developed. The main purpose is to have a centralized location to where we can point people if they ask for our materials.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Statistics in R for Criminologists\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nReplication & Reproducibility in Social Science (Graduate-level)\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -53,7 +74,7 @@
     "href": "index.html#course-materials",
     "title": "Reluctant Criminologists",
     "section": "Course Materials",
-    "text": "Course Materials\n\n\n\n\n  \n\n\n\n\nIntroduction to Statistics in R for Criminologists\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Course Materials\n\n\n\n\n  \n\n\n\n\nReplication & Reproducibility in Social Science (Graduate-level)\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nIntroduction to Statistics in R for Criminologists\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",

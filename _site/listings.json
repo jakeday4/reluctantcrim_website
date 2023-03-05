@@ -8,13 +8,15 @@
   {
     "listing": "/course-materials.html",
     "items": [
-      "/course-materials/ugrad_stats/index.html"
+      "/course-materials/ugrad_stats/index.html",
+      "/course-materials/grad_RnR/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
       "/blog-posts/welcome-blog/welcome-blog.html",
+      "/course-materials/grad_RnR/index.html",
       "/course-materials/ugrad_stats/index.html"
     ]
   }
