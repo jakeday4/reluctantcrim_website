@@ -1,0 +1,43 @@
+---
+title: "Replication & Reproducibility in Social Science (Graduate-level)"
+---
+
+In the fall of 2021, Jon was on the schedule to teach a new course titled "Replication & Reproducibility in Social Science" as a substitute for IU Criminal Justice Department's typical graduate "Methods" degree requirement. The same semester, Jake was scheduled to teach the "Social Research Methods" course to first-year MA students in UNCW's Department of Sociology and Criminology. He decided to join Jon in revising the class to focus on replication and reproducibility. The result was a jointly designed course focusing on replication and reproducibility issues broadly across the social sciences, but with specific examples from sociology and criminology. You can take a look at both [Jon's syllabus]() and [Jake's syllabus]() for the course. They are basically identical, but Jon's syllabus includes a complete reference list for the assigned and recommended readings. Also, because of a weird scheduling quirk, Jake had to combine two weeks into one (Hype and Perverse Incentives).  
+
+In addition to teaching them about replication and reproducibility issues more generally, we also wanted to help them learn some practical skills to help them produce more reliable and transparent research. To do this, we had them complete two sets of assignments: 1) R Assignments intended to provide a basic introduction to conducting reproducible research using the [R Statistical Computing Environment]() and [RStudio]() and 2) a Reproducibility Project where they had the reproduce the (descriptive) results of a published article on a topic of interest to them. The "R Assignments" ended up being a basic introduction to data wrangling, data visualization and reporting, and reproducible workflow with a primary emphasis on the [Tidyverse]() suite of packages. The "Reproducibility Project" was an opportunity for students to apply these new skills to a topic that interested them, get their hands dirty with real-world data, and develop an appreciated of the difficulties involved in computationally reproducing published work when you do not have access to the code used to clean, wrangle and analyze the data. 
+
+We have included these assignments as they were assigned in Jon's class with light editing, where necessary, for student privacy reasons. In a forthcoming [blog post]() we will discuss what we learned from designing this course and note what we would change going forward (and what Jake did change when [revising the course]() for senior-level undergraduate criminology majors). 
+
+## R Assignments
+:::: columns
+
+::: {.column width="35%"}
+![](ugrad-stats_Rassign/Images/Assign1_SS2_New_RMD2.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 1: Getting Started in R](ugrad-stats_Rassign/Assignment_1_JRB.html)
+The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio. Additionally, you will learn how to create, edit, and knit an R Markdown file.  
+:::
+::::
+
+
+## Reproducibility Project
+:::: columns
+
+::: {.column width="35%"}
+![](ugrad-stats_Rassign/Images/Assign2_SS2_viewdf.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 2: Navigating Data](ugrad-stats_Rassign/Assignment_2_JRB.html)
+In this assignment, you will create an R Markdown file in which to save and present your work for this class. Additionally, following the goals of BPW's chapter 1, you will use R/RStudio to view variables in a data file and find information about variables, including variable names, labels, and values. This assignment should help you navigate R/RStudio and become comfortable finding basic information within data files.
+:::
+::::
+
