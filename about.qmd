@@ -30,58 +30,10 @@ Welcome to our site! We are [Jon Brauer](https://www.jonbrauer.com) and [Jake Da
 
 We created this site to publicly share course materials and musings about scientific theory and methods. We benefit immensely from the contributions in blogs and bookdown projects that so many others freely share for the collective good. Likewise, we envision this site as a public repository of sorts in our field of criminology and criminal justice dedicated to freely sharing resources that help us collectively strengthen our science. 
 
-In particular, we provide course materials containing crime-relevant examples to help interested scholars in our field learn to use R and to improve the reproducibility of their workflows. Additionally, we will post occassional blog entries about topics in our areas of interest, including philosophies of science, criminology theory, and statistical techniques (e.g., ordinal modeling; Bayesian estimation; data visualization). We are also open to the idea of collaborating with or posting others' course materials and topical blog posts, so feel free to contact us with your ideas.
+In particular, we provide course materials containing crime-relevant examples to help interested scholars in our field learn to use R and to improve the reproducibility of their workflows. Additionally, we will post occassional blog entries about topics in our areas of interest, including philosophy of science, criminology theory, and statistical techniques (e.g., ordinal modeling; Bayesian estimation; data visualization). We are also open to the idea of collaborating with or posting others' course materials and topical blog posts, so feel free to contact us with your ideas.
 
-In sharing this content, we are committing to the practice of [coding in public](https://twitter.com/SolomonKurz/status/1487921572509851649). Likewise, we expect to learn more than we teach through readers' constructive feedback on our innumerable coding inefficiencies and inevitable errors. So, please do reach out with suggestions or corrections. 
+With respect to philosophy of science and criminology theory, we were both heavily influenced by the late [Dr. Charles R. Tittle](https://soc.wsu.edu/socnews/remembering-charles-tittle-1938-2021/). You can read more about how he directly inspired our site's name ("Reluctant Criminologists") in our [welcome blog](blog-posts/[1]/welcome-blog.html). If you are curious about Charles' philosophy of science, check out our blog on [his contributions to criminology](blog-posts/[2]/charles-memorial.html) and, specifically, my section on Charles as an *Advocate for Theoretical Science in Criminology*. However, we wish to make it clear that although we were inspired him, Charles in no way endorsed the project, and he likely would have thought it was a waste of time better spent contributing (in more traditional ways) to scientific theory development and testing. 
+"
+In sharing course content and posts containing R code, we are committing to the practice of [coding in public](https://twitter.com/SolomonKurz/status/1487921572509851649). Likewise, we expect to learn more than we teach through readers' constructive feedback on our innumerable coding inefficiencies and inevitable errors. So, please do reach out with suggestions or corrections. 
 
-:::: columns
-
-::: {.column width="60%"}
-The name of our site pays homage to our late mentor and friend, Dr. Charles R. Tittle. Specifically, it is a reference to his  chapter entitled "Reflections of a Reluctant but Committed Criminologist" in Gilbert Geis and Mary Dodge's [*Lessons of Criminology*](https://www.taylorfrancis.com/books/edit/10.4324/9781315721507/lessons-criminology-gilbert-geis-mary-dodge) (pp.23-45). 
-
-This is one of our favorite pieces written by Charles. Our perspectives on the field of criminology and criminal justice are quite comparable to the views he presents in that chapter, and our site's mission is, in essence, an answer to the call he lays out for our field. With that said, here is how that chapter starts (p.23):  
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="35%"}
-![](images/reluctant-criminologists.jpg)
-:::
-::::
-
-```{=html}
-<style>
-div.magma { background-color:#fddc9e80; border-radius: 5px; padding: 20px;}
-</style>
-```
-
-:::magma
-
-"I didn't intend to become a criminologist. Rather, happenstance led me to investigate certain sociological problems that resulted in my being labeled a criminologist (Tittle, 1991). After a while the reactions of others had the effects that symbolic interactionist theory would predict - I began to think of myself as a criminologist, although one with a larger allegiance. In fact, one of the first conclusions I drew as a criminologist is that criminology ought not be thought of as a discipline. Disciplines have unifying perspectives; criminology does not. Criminology is an umbrella term encompassing diverse studies of crime and crime-relevant phenomena undertaken from many disciplinary points of view. It makes sense to speak of an economic perspective, a political perspective, a historical perspective, or a sociological perspective. It makes no sense to speak of a criminological, a criminal justice, or a criminal perspective (at least not in an academic context). In my mind, the best criminology is done by those with a firm grounding in some discipline, or by those with an appreciation of several different disciplines, the insights of which are then brought to bear on criminological issues." 
-
-:::
-<br>
-
-The chapter then proceeds to introduce several lessons that Charles learned throughout his illustrious career, which he later summarized as follows (pp.40-41): 
-
-:::magma
-
-1. Criminology is not a discipline but a topical area dependent on a variety of disciplines and that criminological knowledge is best pursued and dispensed within the context of a liberal arts education 
-2. Our methods of identifying and recruiting new scholars must be improved
-3. Evidence concerning most important issues having to do with crime and crime-relevant phenomena is weak; success requires that we commit ourselves to a long-range mission of improving that situation
-4. Things are more complicated than our extant theories show, calling for improved theories specifying contingent and interactive effects
-5. The most effective criminology demands that we be aware of and committed to the goal of developing general explanatory schemes refined through test and feedback
-6. Science is the best model to follow in developing criminological knowledge
-7. Weak science, which is likely to continue to characterize criminology for some time, is hardly a basis for policy
-8. The barriers to, and distractions from, good scientific criminology, especially the widespread practice of ad hoc work and the intrusion of personal biases and larger ideologies, must be countered
-9. Civility within the scholarly community is necessary for maximum collective effort
-
-:::
-<br>
-
-Our site's mission is to help answer Charles' call by contributing modestly to the advancement of scientific criminology. In our own academic careers and scholarly pursuits, we have devoted much effort to understanding philosophies of science, substantive theories of crime and deviance, and quantitative methods used to test social scientific theories. Our hope is that we will be able to effectively draw from these experiences to enrich conversations in our field about how we might collectively strengthen our science through concerted efforts to improve our scientific theories and the methods we use to generate knowledge about them. 
-
-If you are interested in learning more about some of Charles Tittle's intellectual contributions, [visit our blog post](ADD_SITE_LINK) containing comments delivered in a memorial panel for Charles at the November 2021 American Society of Criminology annual meetings. To be clear, while inspired by him, Charles in no way endorsed the project (and he likely would have thought it was a waste of time). 
-
-Finally, if we contribute anything of value on this site, undoubtedly someone else -  one or more of our many countless scientific heroes that tirelessly publish through traditional scientific outlets or share via their own blogs, bookdowns, and videos - deserve the lion's share of credit for it. Yet, to borrow again from Charles (preface to his *Control Balance*), none of these people contributed to the errors or other shortcomings found in any materials that we post on this site. 
+Finally, if we contribute anything of value on this site, undoubtedly someone else -  one or more of our many countless scientific heroes that tirelessly publish through traditional scientific outlets or share via their own blogs, bookdowns, and videos - deserve the lion's share of credit for it. To borrow from Charles Tittle (and specifically his preface to [*Control Balance*](https://www.routledge.com/Control-Balance-Toward-A-General-Theory-Of-Deviance/Tittle/p/book/9780813326320)), none of these people contributed to the errors or other shortcomings found in any materials that we post on this site. 
