@@ -17,6 +17,7 @@ listing:
     filter-ui: false
 page-layout: full
 title-block-banner: false
+#https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html
 ---
 
 ## Blog Posts
