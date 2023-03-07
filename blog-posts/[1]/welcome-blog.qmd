@@ -14,6 +14,12 @@ We need to write an introduction to our blog. Things to consider:
   
 ## Why are we doing this? 
 
+On a basic level, the purpose of this site is to have a central repository for our course material and preliminary ideas that we can easily share with interested students and colleagues. If it simply allows us to point students and colleagues to a website rather than attaching html files to an email or sending a dropbox link, we'll be happy. Perhaps more cynically, the site may be an attempt to alleviate our guilt and/or justify our lack of productivity in conventional academic measures over the past few years. We've been trying to re-tool our approach to doing science and perhaps this site will serve as evidence for how much we've progressed (and how much more we need to learn). 
+
+On a broader level, this site likely reflects a combined early-mid-career crisis brought on by innumerable combination of post-tenure malaise, growing awareness and concern about the replication crisis in general and in our specific fields of Sociology and Criminology, our own experience attempting to reproduce [high-profile work](https://journals.sagepub.com/doi/10.1177/0049124119826158), and the reflection about what we are doing with our limited time that many of us with relatively comfortable jobs and life situations experienced during the global Covid-19 pandemic.  In fact, the initial idea for the blog came during the height of the pandemic in a long email thread between Jon and Jake where, in typical fashion, Jake was asking Jon to explain a relatively complex statistical topic (e.g., latent variable modeling in SEM vs. multilevel modeling) and Jon was sharing resources and summarizing and explaining topics that have been debated/reviewed in disparate literatures. Jake thought treating these as a blog would help Jon write these reviews or tutorials down as he seemed reluctant to put such redundant but enlightening material in a traditional academic article (the reviews and debates are out there, you just need to go read it).   
+
+On a perhaps more grandiose level, this site is our attempt to help, if just a little, to improve what are perhaps systematic shortcomings in our respective fields. Rather than bothering seemingly uninterested authors about these issues in reviews we write for journals (we both now sign our reviews but the editors often take our names off), we thought we thought we might as well put our thoughts out in public and subject them to criticism. We recognize the most likely outcome is our thoughts, like in many of the reviews we write, will simply be (justifiably) ignored. But we expect our own thinking on these matters will be strengthened by forcing ourselves to write them down. 
+
 See about page. Also mention perceived need in our field. See McElreath tweet about cultural anthro.    
 
 ## How we were inspired by Charles   
@@ -21,7 +27,7 @@ See about page. Also mention perceived need in our field. See McElreath tweet ab
 :::: columns
 
 ::: {.column width="60%"}
-The name of our site pays homage to our late mentor and friend, Dr. Charles R. Tittle. Specifically, it is a reference to his  chapter entitled "Reflections of a Reluctant but Committed Criminologist" in Gilbert Geis and Mary Dodge's [*Lessons of Criminology*](https://www.taylorfrancis.com/books/edit/10.4324/9781315721507/lessons-criminology-gilbert-geis-mary-dodge) (pp.23-45). 
+The name of our site pays homage to our late mentor and friend, Dr. Charles R. Tittle. Specifically, it is meant to be a cheeky reference to his  chapter entitled "Reflections of a Reluctant but Committed Criminologist" in Gilbert Geis and Mary Dodge's [*Lessons of Criminology*](https://www.taylorfrancis.com/books/edit/10.4324/9781315721507/lessons-criminology-gilbert-geis-mary-dodge) (pp.23-45). 
 
 This is one of our favorite pieces written by Charles. Our perspectives on the field of criminology and criminal justice are quite comparable to the views he presents in that chapter, and our site's mission is, in essence, an answer to the call he lays out for our field. With that said, here is how that chapter starts (p.23):  
 :::
@@ -30,7 +36,8 @@ This is one of our favorite pieces written by Charles. Our perspectives on the f
 :::
 
 ::: {.column width="35%"}
-![](reluctant-criminologists.jpg)
+![](DALLE_drawing-of-reluctant-criminologists.jpg)
+This image was created with the assistance of [DALL·E 2](https://openai.com/product/dall-e-2)
 :::
 ::::
 
@@ -64,7 +71,7 @@ The chapter then proceeds to introduce several lessons that Charles learned thro
 :::
 <br>
 
-(Note: If you are interested in learning more about some of Charles Tittle's intellectual contributions, check out [our blog post on the topic](/../blog-posts/[2]/charles-memorial.html), which containing comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our [*About* page](/about.html), we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing.)
+If you are interested in learning more about some of Charles Tittle's intellectual contributions, check out [our blog post on the topic](/../blog-posts/[2]/charles-memorial.html), which containing comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our [*About* page](/about.html), we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing. We think it's safe to say that we are both more "reluctant" and less "committed" criminologists than Charles was. 
 
 ### Goals
 
