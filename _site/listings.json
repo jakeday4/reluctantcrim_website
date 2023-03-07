@@ -16,8 +16,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/blog-posts/[1]/welcome-blog.html",
       "/blog-posts/[2]/charles-memorial.html",
+      "/blog-posts/[1]/welcome-blog.html",
       "/course-materials/grad_RnR/index.html",
       "/course-materials/ugrad_stats/index.html"
     ]

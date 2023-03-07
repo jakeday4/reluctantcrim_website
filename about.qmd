@@ -1,5 +1,5 @@
 ---
-#image: profile.jpg
+image: images/about_pic.jpg
 about:
   id: quote
   template: jolla

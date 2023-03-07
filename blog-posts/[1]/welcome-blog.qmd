@@ -2,6 +2,7 @@
 title: "Welcome to the Reluctant Criminologists"
 author: "Jon Brauer and Jake Day"
 date: "2023-03-10"
+image: about_pic.jpg
 categories: [general]
 ---
 
@@ -29,7 +30,7 @@ This is one of our favorite pieces written by Charles. Our perspectives on the f
 :::
 
 ::: {.column width="35%"}
-![](images/reluctant-criminologists.jpg)
+![](reluctant-criminologists.jpg)
 :::
 ::::
 
@@ -63,7 +64,7 @@ The chapter then proceeds to introduce several lessons that Charles learned thro
 :::
 <br>
 
-(Note: If you are interested in learning more about some of Charles Tittle's intellectual contributions, check out [our blog post on the topic](blog-posts/[2]/charles-memorial.html), which containing comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our [*About* page](/about.html), we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing.)
+(Note: If you are interested in learning more about some of Charles Tittle's intellectual contributions, check out [our blog post on the topic](/../blog-posts/[2]/charles-memorial.html), which containing comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our [*About* page](/about.html), we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing.)
 
 ### Goals
 
