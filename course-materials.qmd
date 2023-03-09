@@ -1,7 +1,8 @@
 ---
-title: "Course Material"
+title: "course materials"
+subtitle: "looking for good course materials? you found ours instead." 
 listing:
   contents: course-materials
 ---
 
-We wanted a centralized location to place the various courses we have developed. The main purpose is to have a centralized location to where we can point people if they ask for our materials. 
+This is a centralized location for uploading materials from various courses we have developed or our collaborators have shared. The main purpose is to have a place where we can point people if they mistakenly ask for our materials. 

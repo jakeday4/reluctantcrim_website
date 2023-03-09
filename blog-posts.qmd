@@ -1,5 +1,5 @@
 ---
-title: "Reluctant Criminologists Blog"
+title: "a blog for criminologists, reluctant or otherwise"
 listing:
   contents: blog-posts
 ---
