@@ -6,68 +6,50 @@ image: about_pic.jpg
 categories: [general]
 ---
 
-We need to write an introduction to our blog. Things to consider:
-  - Why are we doing this? 
-  - How we were inspired by Charles.
-  - Goals
-  - Other bullshit? 
-  
-## Why are we doing this? 
+<!-- We need to write an introduction to our blog. Things to consider: - Why are we doing this? - How we were inspired by Charles. - Goals - Other bullshit? -->
 
-See about page. Also mention perceived need in our field. See McElreath tweet about cultural anthro.    
+## Why are we doing this?
 
-## How we were inspired by Charles   
-  
-:::: columns
+On a basic level, the purpose of this site is to have a central repository for our course material and preliminary ideas that we can easily share with interested students and colleagues. If it simply allows us to point students and colleagues to a website rather than attaching html files to an email or sending a dropbox link, we'll be happy. Perhaps more cynically, the site may be an attempt to alleviate our guilt and/or justify our lack of productivity in conventional academic measures over the past few years. We've been trying to re-tool our approach to doing science and perhaps this site will serve as evidence for how much we've progressed (and how much more we have to learn).
 
-::: {.column width="60%"}
-The name of our site pays homage to our late mentor and friend, Dr. Charles R. Tittle. Specifically, it is a reference to his  chapter entitled "Reflections of a Reluctant but Committed Criminologist" in Gilbert Geis and Mary Dodge's [*Lessons of Criminology*](https://www.taylorfrancis.com/books/edit/10.4324/9781315721507/lessons-criminology-gilbert-geis-mary-dodge) (pp.23-45). 
+<!-- The following paragraph needs work -->
+On a broader level, this site likely reflects a combined early-mid-career crisis brought on by an innumerable combination of post-tenure malaise, growing awareness and concern about the replication crisis in general and in our specific fields of Sociology and Criminology, our own experience attempting to reproduce [high-profile work](https://journals.sagepub.com/doi/10.1177/0049124119826158), and the reflection about what we are doing with our limited time that many of us with relatively comfortable jobs and life situations experienced during the global Covid-19 pandemic. In fact, the initial idea for the blog came during the height of the pandemic in a long email thread between Jon and Jake where, in typical fashion, Jake was asking Jon to explain a relatively complex statistical topic (e.g., latent variable modeling in SEM vs. multilevel modeling). Jon was sharing resources and summarizing and explaining topics that have been debated/reviewed in disparate literatures for some time. Jake thought treating these discussions as a blog would help Jon write these reviews or tutorials down as he seemed reluctant to put such redundant but enlightening material in a traditional academic article (the reviews and debates are out there, you just need to go read it). Jon thought Jake should write more.
 
-This is one of our favorite pieces written by Charles. Our perspectives on the field of criminology and criminal justice are quite comparable to the views he presents in that chapter, and our site's mission is, in essence, an answer to the call he lays out for our field. With that said, here is how that chapter starts (p.23):  
-:::
+<!-- See about page. Also mention perceived need in our field. See McElreath tweet about cultural anthro. -->
 
-::: {.column width="5%"}
-:::
+## How we were inspired by Charles
+The name of our site pays homage to our late mentor and friend, Dr. Charles R. Tittle. It is meant to be a cheeky reference to his chapter entitled "Reflections of a Reluctant but Committed Criminologist" in Gilbert Geis and Mary Dodge's [*Lessons of Criminology*](https://www.taylorfrancis.com/books/edit/10.4324/9781315721507/lessons-criminology-gilbert-geis-mary-dodge) (pp.23-45).
 
-::: {.column width="35%"}
-![](reluctant-criminologists.jpg)
-:::
-::::
+This is one of our favorite pieces written by Charles. Our perspectives on the field of criminology and criminal justice were heavily shaped by Charles and are thus quite comparable to the views he presents in that chapter. Here is how that chapter starts (p.23):
+
+<!-- Why not just use block quote? -->
 
 ```{=html}
 <style>
 div.magma { background-color:#fddc9e80; border-radius: 5px; padding: 20px;}
 </style>
 ```
+> I didn't intend to become a criminologist. Rather, happenstance led me to investigate certain sociological problems that resulted in my being labeled a criminologist (Tittle, 1991). After a while the reactions of others had the effects that symbolic interactionist theory would predict - I began to think of myself as a criminologist, although one with a larger allegiance. In fact, one of the first conclusions I drew as a criminologist is that criminology ought not be thought of as a discipline. Disciplines have unifying perspectives; criminology does not. Criminology is an umbrella term encompassing diverse studies of crime and crime-relevant phenomena undertaken from many disciplinary points of view. It makes sense to speak of an economic perspective, a political perspective, a historical perspective, or a sociological perspective. It makes no sense to speak of a criminological, a criminal justice, or a criminal perspective (at least not in an academic context). In my mind, the best criminology is done by those with a firm grounding in some discipline, or by those with an appreciation of several different disciplines, the insights of which are then brought to bear on criminological issues."
 
-:::magma
+The chapter then proceeds to introduce several lessons that Charles learned throughout his illustrious career, which he later summarized as follows (pp.40-41):
 
-"I didn't intend to become a criminologist. Rather, happenstance led me to investigate certain sociological problems that resulted in my being labeled a criminologist (Tittle, 1991). After a while the reactions of others had the effects that symbolic interactionist theory would predict - I began to think of myself as a criminologist, although one with a larger allegiance. In fact, one of the first conclusions I drew as a criminologist is that criminology ought not be thought of as a discipline. Disciplines have unifying perspectives; criminology does not. Criminology is an umbrella term encompassing diverse studies of crime and crime-relevant phenomena undertaken from many disciplinary points of view. It makes sense to speak of an economic perspective, a political perspective, a historical perspective, or a sociological perspective. It makes no sense to speak of a criminological, a criminal justice, or a criminal perspective (at least not in an academic context). In my mind, the best criminology is done by those with a firm grounding in some discipline, or by those with an appreciation of several different disciplines, the insights of which are then brought to bear on criminological issues." 
+>1.  Criminology is not a discipline but a topical area dependent on a variety of disciplines and that criminological knowledge is best pursued and dispensed within the context of a liberal arts education
+>2.  Our methods of identifying and recruiting new scholars must be improved
+>3.  Evidence concerning most important issues having to do with crime and crime-relevant phenomena is weak; success requires that we commit ourselves to a long-range mission of improving that situation
+>4.  Things are more complicated than our extant theories show, calling for improved theories specifying contingent and interactive effects
+>5.  The most effective criminology demands that we be aware of and committed to the goal of developing general explanatory schemes refined through test and feedback
+>6.  Science is the best model to follow in developing criminological knowledge
+>7.  Weak science, which is likely to continue to characterize criminology for some time, is hardly a basis for policy
+>8.  The barriers to, and distractions from, good scientific criminology, especially the widespread practice of ad hoc work and the intrusion of personal biases and larger ideologies, must be countered
+>9.  Civility within the scholarly community is necessary for maximum collective effort
 
-:::
-<br>
+If you are interested in learning more about some of Charles Tittle's intellectual contributions, check out [our blog post on the topic](/../blog-posts/%5B2%5D/charles-memorial.html), which contains comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our [*About* page](/about.html), we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing. We think it's safe to say that we are both more "reluctant" and less "committed" criminologists than Charles was.
 
-The chapter then proceeds to introduce several lessons that Charles learned throughout his illustrious career, which he later summarized as follows (pp.40-41): 
+## But really, why are we doing this?
 
-:::magma
+The more grandiose goal of our site is to help answer the call expressed in Charles' lessons above to contribute modestly to the advancement of scientific criminology. In other words, this site is our attempt to help, if just a little, to improve what are perhaps systematic shortcomings in our respective fields. We benefit immensely from the contributions in blogs and bookdown projects that so many others freely share for the collective good. Our hope is that we will be able to similarly enrich conversations in our field about how we might collectively strengthen our science through concerted efforts to improve our scientific theories and the methods we use to generate knowledge about them. 
 
-1. Criminology is not a discipline but a topical area dependent on a variety of disciplines and that criminological knowledge is best pursued and dispensed within the context of a liberal arts education 
-2. Our methods of identifying and recruiting new scholars must be improved
-3. Evidence concerning most important issues having to do with crime and crime-relevant phenomena is weak; success requires that we commit ourselves to a long-range mission of improving that situation
-4. Things are more complicated than our extant theories show, calling for improved theories specifying contingent and interactive effects
-5. The most effective criminology demands that we be aware of and committed to the goal of developing general explanatory schemes refined through test and feedback
-6. Science is the best model to follow in developing criminological knowledge
-7. Weak science, which is likely to continue to characterize criminology for some time, is hardly a basis for policy
-8. The barriers to, and distractions from, good scientific criminology, especially the widespread practice of ad hoc work and the intrusion of personal biases and larger ideologies, must be countered
-9. Civility within the scholarly community is necessary for maximum collective effort
+In our own academic careers and scholarly pursuits, we have continually tried to improve our understanding of philosophies of science, substantive theories of crime and deviance, and quantitative methods used to test social scientific theories. Rather than bothering seemingly uninterested authors about these issues in the reviews we write for journals (we both now sign our reviews but the editors often take our names off), we thought we might as well put our thoughts out in public and subject them to criticism. Of course, we recognize the most likely outcome is that our thoughts, like in many of the reviews we write, will simply be (justifiably?) ignored. But we expect our own thinking on these matters will be strengthened by forcing ourselves to write them down. 
 
-:::
-<br>
-
-(Note: If you are interested in learning more about some of Charles Tittle's intellectual contributions, check out [our blog post on the topic](/../blog-posts/[2]/charles-memorial.html), which containing comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our [*About* page](/about.html), we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing.)
-
-### Goals
-
-One goal of our site's mission is to help answer the call expressed in Charles' lessons above to contribute modestly to the advancement of scientific criminology. In our own academic careers and scholarly pursuits, we have devoted much effort to understanding philosophies of science, substantive theories of crime and deviance, and quantitative methods used to test social scientific theories. Our hope is that we will be able to effectively draw from these experiences to enrich conversations in our field about how we might collectively strengthen our science through concerted efforts to improve our scientific theories and the methods we use to generate knowledge about them. 
-
+So welcome to our blog, we'll try to keep the navel gazing to a minimum from here on out. 
 
