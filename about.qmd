@@ -1,5 +1,5 @@
 ---
-image: images/about_pic.jpg
+image: images/RC_logo3.jpg
 about:
   id: quote
   template: jolla
@@ -23,10 +23,10 @@ about:
 :::
 
 :::{align=left}
-## About the Reluctant Criminologists
+## about the reluctant criminologists
 :::
 
-Welcome to our site! We are [Jon Brauer](https://www.jonbrauer.com) and [Jake Day](https://www.jacobcday.com/), aka the "Reluctant Criminologists." 
+Welcome to our site! We are [Jon Brauer](https://www.jonbrauer.com) and [Jake Day](https://www.jacobcday.com/), aka the "reluctant criminologists." 
 
 We created this site to publicly share course materials and musings about scientific theory and methods. In particular, we provide course materials containing crime-relevant examples to help interested scholars in our field learn to use R and to improve the reproducibility of their workflows. Additionally, we will post occasional blog entries about topics in our areas of interest, including philosophy of science, criminology theory, and statistical techniques (e.g., ordinal modeling; Bayesian estimation; data visualization). We are also open to the idea of collaborating with or posting others' course materials and topical blog posts, so feel free to contact us with your ideas.
 

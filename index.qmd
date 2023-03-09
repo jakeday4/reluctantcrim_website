@@ -1,5 +1,6 @@
 ---
-title: "Reluctant Criminologists"
+title-block-banner: "#776E65"
+title: "reluctant criminologists"
 listing:
   - id: posts
     contents: blog-posts
@@ -16,16 +17,17 @@ listing:
     sort-ui: false
     filter-ui: false
 page-layout: full
-title-block-banner: false
+css: styles.css
+# title-block-banner: false
 #https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html
 ---
 
-## Blog Posts
+## blog posts
 
 :::{#posts}
 :::
 
-## Course Materials
+## course materials
 
 :::{#courses}
 :::

@@ -2,14 +2,15 @@ project:
   type: website
 
 website:
-  title: "Reluctant Criminologists"
+  title: "reluctant criminologists"
   navbar:
+    logo: "images/RC_logo1.jpg"
     left:
       - text: "About"
         href: about.qmd
-      - text: "Blog Posts"
+      - text: "blog posts"
         href: blog-posts.qmd
-      - text: "Course Material"
+      - text: "course materials"
         href: course-materials.qmd
       # - icon: github
       #   href: https://github.com/
@@ -17,7 +18,7 @@ website:
       #   href: https://twitter.com
 format:
   html:
-    theme: simplex
+    theme: sandstone
     css: styles.css
 
 
