@@ -1,0 +1,38 @@
+---
+title: "Check out some of our favorite sites"
+author: "Jon Brauer and Jake Day"
+date: "2023-03-12"
+image: RC_logo_white.jpg
+categories: [general]
+---
+
+So many influences... this is not an exhaustive list... some of our favorites... many of which we find ourselves regularly recommending... put thme all in one place
+
+## statistics
+
+Andrew Gelman
+
+Danielle Navarro 
+
+Richard McElreath 
+
+Solomon Kurz 
+
+
+## data science & learning R
+
+[Allison Hill's blog](https://www.apreshill.com/blog/)
+
+Andrew Heiss
+
+PsyTeachR
+
+Data Colada 
+
+Daniel Lakens
+
+Quantitude podcast & blog
+
+## creating a website
+
+If you want to learn to create your own website or blog, we found Andrew Rapp's [ultimate guide to creating a Quarto blog](https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html), Beatriz Mills' guide to [creating a blog with Quarto in 10 steps](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/), and Ezekiel Ekunola's instructions for [setting up a personalized domain address for your site](https://www.codementor.io/@ekunolaeasybuoy/setting-up-domain-with-namecheap-netlify-12yiksvig6).
