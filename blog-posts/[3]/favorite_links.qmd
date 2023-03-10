@@ -2,7 +2,7 @@
 title: "Check out some of our favorite sites"
 author: "Jon Brauer and Jake Day"
 date: "2023-03-12"
-image: RC_logo_white.jpg
+image: DALL-E_heart_from_statistics.png
 categories: [general]
 ---
 
@@ -10,13 +10,13 @@ So many influences... this is not an exhaustive list... some of our favorites...
 
 ## statistics
 
-Andrew Gelman
+[Andrew Gelman's blog](https://statmodeling.stat.columbia.edu/)
 
-Danielle Navarro 
+Danielle Navarro's blog
 
-Richard McElreath 
+Richard McElreath's lectures
 
-Solomon Kurz 
+Solomon Kurz's bookdowns
 
 
 ## data science & learning R

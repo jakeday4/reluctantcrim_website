@@ -2,6 +2,7 @@
   {
     "listing": "/blog-posts.html",
     "items": [
+      "/blog-posts/[3]/favorite_links.html",
       "/blog-posts/[2]/charles-memorial.html",
       "/blog-posts/[1]/welcome-blog.html"
     ]
@@ -16,6 +17,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/blog-posts/[3]/favorite_links.html",
       "/blog-posts/[2]/charles-memorial.html",
       "/blog-posts/[1]/welcome-blog.html",
       "/course-materials/grad_RnR/index.html",
