@@ -4,7 +4,7 @@ project:
 website:
   title: "reluctant criminologists"
   navbar:
-    logo: "images/RC_logo1.jpg"
+    logo: "images/RC_banner.jpg"
     left:
       - text: "About"
         href: about.qmd
