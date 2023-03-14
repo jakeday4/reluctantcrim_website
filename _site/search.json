@@ -67,28 +67,28 @@
     "href": "blog-posts/[3]/favorite_links.html",
     "title": "Check out some of our favorite sites",
     "section": "",
-    "text": "So many influences… this is not an exhaustive list… some of our favorites… many of which we find ourselves regularly recommending… put thme all in one place"
+    "text": "Melting heart of statistics in Salvadore Dali’s surrealist style, by DALL-E\nWe have learned so much from blogs, bookdowns, and videos openly shared by others. Below, we compiled a list of some of our favorite resources. This list is far from exhaustive; there are too many influential sources to recall and credit as deserved. Nonetheless, we felt it would be helpful to pull together some of those that we routinely find ourselves revisiting and recommending to others."
   },
   {
     "objectID": "blog-posts/[3]/favorite_links.html#statistics",
     "href": "blog-posts/[3]/favorite_links.html#statistics",
     "title": "Check out some of our favorite sites",
     "section": "statistics",
-    "text": "statistics\nAndrew Gelman’s blog\nDanielle Navarro’s blog\nRichard McElreath’s lectures\nSolomon Kurz’s bookdowns"
+    "text": "statistics\nAndrew Gelman’s blog is perhaps our favorite place to go for musings on all things statistics, especially Bayesian inference, frequentist evaluation, causal inference, multilevel modeling, uncertainty, and reproducibility. We also appreciate the frequent attention paid to philosophy of science issues throughout many posts. Bonus: if you browse long enough, you might even stumble upon an answer to the question that perennially motivates a career crisis for us: The social sciences are useless, so why do we even study them?.\nDanielle Navarro’s blog is as delightful as it is informative. The blog is a model for reproducible R programming and showcases Danielle’s inspiring art throughout the site (see more of Danielle’s computational art here). The newest version of the blog often focuses on technical posts addressing issues beyond our range of program expertise. However, we love various topical essays from earlier blog renditions, like this one on preregistration, and we strongly recommend Danielle’s Data Science with R course and associated video tutorials.\nRichard McElreath’s lectures\nSolomon Kurz’s bookdowns"
   },
   {
     "objectID": "blog-posts/[3]/favorite_links.html#data-science-learning-r",
     "href": "blog-posts/[3]/favorite_links.html#data-science-learning-r",
     "title": "Check out some of our favorite sites",
     "section": "data science & learning R",
-    "text": "data science & learning R\nAllison Hill’s blog\nAndrew Heiss\nPsyTeachR\nData Colada\nDaniel Lakens\nQuantitude podcast & blog"
+    "text": "data science & learning R\nThe 100% CI is a newer favorite. We are especially fond of Julia Rohrer’s (one of the site’s authors) various writing related to causal inference, like these on directed acyclic graphs, collider bias, and what can go wrong with nonrepresentative samples.\nAllison Hill’s blog\nAndrew Heiss\nPsyTeachR\nData Colada\nDaniel Lakens\nQuantitude podcast & blog"
   },
   {
     "objectID": "blog-posts/[3]/favorite_links.html#creating-a-website",
     "href": "blog-posts/[3]/favorite_links.html#creating-a-website",
     "title": "Check out some of our favorite sites",
     "section": "creating a website",
-    "text": "creating a website\nIf you want to learn to create your own website or blog, we found Andrew Rapp’s ultimate guide to creating a Quarto blog, Beatriz Mills’ guide to creating a blog with Quarto in 10 steps, and Ezekiel Ekunola’s instructions for setting up a personalized domain address for your site."
+    "text": "creating a website\nIf you want to learn to create your own website or blog using R, we recommend checking out Andrew Rapp’s ultimate guide to creating a Quarto blog, Beatriz Mills’ guide to creating a blog with Quarto in 10 steps, Samantha Csik’s tutorial on adding a blog to your existing Quarto website, and Ezekiel Ekunola’s instructions for setting up a personalized domain address for your site."
   },
   {
     "objectID": "blog-posts.html",

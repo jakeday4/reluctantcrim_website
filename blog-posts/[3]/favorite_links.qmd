@@ -2,17 +2,19 @@
 title: "Check out some of our favorite sites"
 author: "Jon Brauer and Jake Day"
 date: "2023-03-12"
-image: DALL-E_heart_from_statistics.png
+image: DALL-E-melting_heart_of_statistics_in_Dali_style.png
 categories: [general]
 ---
 
-So many influences... this is not an exhaustive list... some of our favorites... many of which we find ourselves regularly recommending... put thme all in one place
+![Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E](DALL-E-melting_heart_of_statistics_in_Dali_style.png)
+
+We have learned so much from blogs, bookdowns, and videos openly shared by others. Below, we compiled a list of some of our favorite resources. This list is far from exhaustive; there are too many influential sources to recall and credit as deserved. Nonetheless, we felt it would be helpful to pull together some of those that we routinely find ourselves revisiting and recommending to others. 
 
 ## statistics
 
-[Andrew Gelman's blog](https://statmodeling.stat.columbia.edu/)
+**Andrew Gelman's** [blog](https://statmodeling.stat.columbia.edu/) is perhaps our favorite place to go for musings on all things statistics, especially [Bayesian inference](https://statmodeling.stat.columbia.edu/2022/08/10/bayesian-inference-continues-to-completely-solve-the-multiple-comparisons-problem/), [frequentist evaluation](https://statmodeling.stat.columbia.edu/2022/12/02/not-frequentist-enough-2/), [causal inference](https://statmodeling.stat.columbia.edu/2021/03/11/regression-discontinuity-analysis-is-often-a-disaster-so-what-should-you-do-instead-do-we-just-give-up-on-the-whole-natural-experiment-idea-heres-my-recommendation/), [multilevel modeling](https://statmodeling.stat.columbia.edu/2023/03/09/the-butterfly-and-the-piranha-understanding-the-generalizability-and-reproducibility-crisis-from-statistical-and-political-perspectives-my-talk-at-the-university-of-minnesota-political-science/), [uncertainty](https://statmodeling.stat.columbia.edu/2022/04/05/confidence-intervals-compatability-intervals-uncertainty-intervals/), and [reproducibility](https://statmodeling.stat.columbia.edu/2018/12/04/bayes-statistics-reproducibility-many-serious-problems-statistics-practice-arise-bayesian-inference-not-bayesian-enough-frequentist-evaluation-not-frequentist/). We also appreciate the frequent attention paid to [philosophy of science issues](https://statmodeling.stat.columbia.edu/2019/09/11/exchange-with-deborah-mayo-on-abandoning-statistical-significance/) throughout many posts. Bonus: if you browse long enough, you might even stumble upon an answer to the question that perennially motivates a career crisis for us: [The social sciences are useless, so why do we even study them?](https://statmodeling.stat.columbia.edu/2021/03/12/the-social-sciences-are-useless-so-why-do-we-study-them-heres-a-good-reason/).
 
-Danielle Navarro's blog
+**Danielle Navarro's** [blog](https://blog.djnavarro.net/) is as delightful as it is informative. The blog is a model for reproducible R programming and showcases Danielle's inspiring art throughout the site (see more of Danielle's [computational art here](https://art.djnavarro.net/)). The newest version of the blog often focuses on technical posts addressing issues beyond our range of program expertise. However, we love various topical essays from earlier blog renditions, [like this one on preregistration](https://psyarxiv.com/wxn58/), and we strongly recommend Danielle's [Data Science with R](https://robust-tools.djnavarro.net/) course and associated video tutorials.   
 
 Richard McElreath's lectures
 
@@ -20,6 +22,10 @@ Solomon Kurz's bookdowns
 
 
 ## data science & learning R
+
+[**The 100% CI**](https://www.the100.ci/) is a newer favorite. We are especially fond of Julia Rohrer's (one of the site's authors) various writing related to causal inference, like these on directed acyclic graphs, collider bias, and what can go wrong with [nonrepresentative samples](https://www.the100.ci/2023/03/07/non-representative-samples-what-could-possibly-go-wrong/).
+
+
 
 [Allison Hill's blog](https://www.apreshill.com/blog/)
 
@@ -35,4 +41,4 @@ Quantitude podcast & blog
 
 ## creating a website
 
-If you want to learn to create your own website or blog, we found Andrew Rapp's [ultimate guide to creating a Quarto blog](https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html), Beatriz Mills' guide to [creating a blog with Quarto in 10 steps](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/), and Ezekiel Ekunola's instructions for [setting up a personalized domain address for your site](https://www.codementor.io/@ekunolaeasybuoy/setting-up-domain-with-namecheap-netlify-12yiksvig6).
+If you want to learn to create your own website or blog using R, we recommend checking out Andrew Rapp's [ultimate guide to creating a Quarto blog](https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html), Beatriz Mills' guide to [creating a blog with Quarto in 10 steps](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/), Samantha Csik's tutorial on [adding a blog to your existing Quarto website](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/), and Ezekiel Ekunola's instructions for [setting up a personalized domain address for your site](https://www.codementor.io/@ekunolaeasybuoy/setting-up-domain-with-namecheap-netlify-12yiksvig6).
