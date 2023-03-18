@@ -110,7 +110,7 @@ Unlike previous assignments, this assignment was not organized into various numb
 :::: columns
 
 ::: {.column width="35%"}
-![First draft: You've learned the basics. Draw two ovals to start drawing the owl. [Credit: Richard McElreath's clever application of the "draw the owl" analogy to learning coding and statistics.](https://twitter.com/rlmcelreath/status/1092368239869546496?s=20)](images/draw-owl-draft.jpg)  
+![First draft: You've learned the basics. Draw two ovals to start drawing the owl. Credit: Richard McElreath's clever application of [the "draw the owl" analogy to learning coding and statistics.](https://twitter.com/rlmcelreath/status/1092368239869546496?s=20)](images/draw-owl-draft.jpg)  
 
 :::
 
@@ -126,7 +126,7 @@ Students are asked to create a first draft of their reproduction project which w
 :::: columns
 
 ::: {.column width="35%"}
-![Final draft: Now, use what you've learned and learn what you need to draw the owl! [Credit: Richard McElreath's clever application of the "draw the owl" analogy to learning coding and statistics.](https://twitter.com/rlmcelreath/status/1092368239869546496?s=20)](images/draw-owl-final.jpg)  
+![Final draft: Now, use what you've learned - and learn what you need - to draw the rest of the owl! Credit: Richard McElreath's clever application of [the "draw the owl" analogy to learning coding and statistics.](https://twitter.com/rlmcelreath/status/1092368239869546496?s=20)](images/draw-owl-final.jpg)  
 
 :::
 
