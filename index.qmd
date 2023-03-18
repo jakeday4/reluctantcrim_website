@@ -4,14 +4,14 @@ title: "reluctant criminologists"
 listing:
   - id: posts
     contents: blog-posts
-    sort: "date desc"
+    sort: "date asc"
     type: default
     categories: true
     sort-ui: false
     filter-ui: false
   - id: courses
     contents: course-materials
-    sort: "date desc"
+    sort: "date asc"
     type: default
     categories: true
     sort-ui: false

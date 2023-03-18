@@ -1,0 +1,141 @@
+---
+title: "Replication & reproducibility in social science (Graduate-level)"
+description-meta: "Two sets of assignments for our graduate level replication and reproducibility course. First, are 'R Assignments' intended to provide a basic introduction to conducting reproducible research using the R Statistical Computing Environment and RStudio. Second, is a 'Reproducibility' Project' where students reproduce some descriptive results reported in a published article on a topic of interest to them."
+image: problems_horst.png
+---
+
+![Workflow, not just code, often hinders reproducibility. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](problems_horst.png)
+
+In the fall of 2021, Jon was on the schedule to teach a new course titled "Replication & Reproducibility in Social Science" as a substitute for IU Criminal Justice Department's typical graduate "Methods" degree requirement. The same semester, Jake was scheduled to teach the "Social Research Methods" course to first-year MA students in UNCW's Department of Sociology and Criminology. He decided to join Jon in revising the class to focus on replication and reproducibility. The result was a jointly designed course focusing on replication and reproducibility issues broadly across the social sciences, but with specific examples from sociology and criminology. You can take a look at both [Jon's syllabus]() and [Jake's syllabus]() for the course. They are basically identical, but Jon's syllabus includes a complete reference list for the assigned and recommended readings. Also, because of a weird scheduling quirk, Jake had to combine two weeks into one (Hype and Perverse Incentives).  
+
+In addition to teaching our students about replication and reproducibility issues more generally, we also wanted to help them learn some practical skills to help them produce more reliable and transparent research. To do this, we had students complete two sets of assignments: 1) R Assignments intended to provide a basic introduction to conducting reproducible research using the [R Statistical Computing Environment](https://www.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/) and 2) a Reproducibility Project where they had the reproduce the (descriptive) results of a published article on a topic of interest to them. The "R Assignments" ended up being a basic introduction to data wrangling, data visualization and reporting, and reproducible workflow with a primary emphasis on the [Tidyverse](https://www.tidyverse.org/) suite of packages. The "Reproducibility Project" was an opportunity for students to apply these new skills to a topic that interested them, get their hands dirty with real-world data, and develop an appreciation for the challenges involved in computationally reproducing published work when you do not have access to the code used to clean, wrangle and analyze the data. 
+
+We have included these assignments as they were assigned in Jon's class with light editing, where necessary, for student privacy reasons. In a forthcoming [blog post]() we will discuss what we learned from designing this course and note what we would change going forward (and what Jake did change when [revising the course]() for senior-level undergraduate criminology majors). 
+
+## R Assignments
+:::: columns
+
+::: {.column width="35%"}
+![Learning a new language like R can be frustrating. We all need breaks to breathe and vent. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](images/needmin_horst.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 1: Getting Started in R](r-assignments/R_Assign1_RRStudio_Brauer_Public.html)
+The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio.
+:::
+::::
+
+:::: columns
+::: {.column width="35%"}
+![Computers crash. Files get corrupted or deleted. Plan on it in your workflow with cloud-based backups. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](images/planonit_horst.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 2: Introduction to R Markdown](r-assignments/R_Assign2_RMarkdown_Brauer.html)
+The purpose of this second assignment is to help you begin to explore your data in R and to do so within an RMarkdown document. The specific activities were inspired by the SPSS Exercises from the end of Chapter 1 in Bachman and Paternoster’s [Statistics for Criminology & Criminal Justice, 4th Ed](https://edge.sagepub.com/bachmansccj4e).
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![Start with a blank canvas and build a masterpiece using `ggplot2()`. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](images/ggplot2b_horst.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 3: Direct Reproduction](r-assignments/R_Assign3_ICPSR_ReprodFig_Brauer.html)
+The purpose of this assignment is to reproduce findings from a published study in R, particularly one where the data are housed on ICPSR. In order to accomplish this we will need to do and learn the following:
+  - Identify the data being used in the now classic study by Mark Warr published in Criminology titled: “Age, Peers, and Delinquency” (Warr, 1993)
+  - Download it from ICPSR
+  - Identify and wrangle the specific variables/items used in the study using the dplyr package that is a part of the Tidyverse.
+  - Combine multiple data sets into one.
+  - Reproduce the first part of Figure 1 from Warr’s (1993) study (as displayed on pg. 22 in his article) by introducing you to the powerful data visualization package ggplot2, which is also a part of the Tidyverse.
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![You've learned so much! This is just the beginning of a challenging but worthwhile journey. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](images/knownothing_horst.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 4: Conceptual Replication](r-assignments/R_Assgin4_ConceptRep_Brauer_Public.html)
+The purpose of this assignment is to perform a conceptual replication of some observations in [Orcutt’s (1987)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.1987.tb00801.x) paper in *Criminology* titled: “Differential Association and Marijuana Use: A Closer Look at Sutherland (with a Little Help from Becker).” Since Orcutt’s (1987) original data are unavailable, we will assess whether some of his findings can be repeated with and generalize to a similar sample in the NYS data. 
+:::
+::::
+## Reproducibility Project
+:::: columns
+
+::: {.column width="35%"}
+![Finding open crime data is challenging. Working with it can be even more challenging. [Artwork from the Openscapes blog "Tidy Data for reproducibility, efficiency, and collaboration" by Julia Lowndes and Allison Horst"](https://allisonhorst.com/other-r-fun)](images/tidydata_horst_wickham.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 1: Find Article with Data to Replicate](rep-project/Project_Assign_1_Find_Article_Brauer_Public.html)
+The primary purpose of this first project assignment is to find an article on a topic of interest to you that has data available online via ICSPR (or another repository); eventually, you will be required to use these data in an attempt to reproduce a basic descriptive finding reported in a table or figure from the article. A secondary purpose of this assignment is to develop a sense of how (un)common it is to find research articles in the top journals of your field for which the authors have openly shared their data and code for reproducibility purposes.
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![Yes, there is always more to learn, which means we can continue to grow and improve! [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](images/behold_horst.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 2: Describe Reproduction, Share Image, Summarize Data](rep-project/Project_Assign_2_Describe_Summarize_Brauer_Public.html)
+Unlike previous assignments, this assignment was not organized into various numbered "parts" for students to follow and complete. Rather, it showed students some basics about publishing with R Markdown (e.g., inserting an image, editing the YAML header, etc.) and asked students to summarize the raw versions of the variables needed for their reproduction.   
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![First draft: You've learned the basics. Draw two ovals to start drawing the owl. [Credit: Richard McElreath's clever application of the "draw the owl" analogy to learning coding and statistics.](https://twitter.com/rlmcelreath/status/1092368239869546496?s=20)](images/draw-owl-draft.jpg)  
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 3: First Draft of Reproduction](rep-project/Project_Assign_3_First-Draft-of-Reproduction.html)
+Students are asked to create a first draft of their reproduction project which was ultimately peer-reviewed by one of their classmates. The directions are similar to [Project Assignment 2](rep-project/Project_Assign_2_Describe_Summarize_Brauer_Public.html) except students were expected to recode all variables and produce relatively clean and publication-ready versions of their tables and figures.
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![Final draft: Now, use what you've learned and learn what you need to draw the owl! [Credit: Richard McElreath's clever application of the "draw the owl" analogy to learning coding and statistics.](https://twitter.com/rlmcelreath/status/1092368239869546496?s=20)](images/draw-owl-final.jpg)  
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 4: Final Draft of Reproduction](rep-project/Project_Assign_4_Final-Draft-of-Reproduction.html)
+Students are asked to finalize their reproduction project and provide a reproducible file structure. Essentially, they were asked to apply the skills they had learned throughout the course to produce an article or blog reproducing some (descriptive) results of a published study. 
+:::
+::::
+

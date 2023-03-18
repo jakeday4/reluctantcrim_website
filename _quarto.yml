@@ -14,6 +14,10 @@ website:
         href: blog-posts.qmd
       - text: "course materials"
         href: course-materials.qmd
+      - text: "links we love"
+        href: blog-posts/[3]/favorite_links.qmd
+      - icon: envelope
+        href: mailto:reluctantcrim@gmail.com
       # - icon: github
       #   href: https://github.com/
       # - icon: twitter

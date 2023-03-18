@@ -1,0 +1,138 @@
+---
+title: "Criminology in crisis? Replication & reproducibility in criminology & the social sciences (Undergraduate-level)"
+description-meta: "Two sets of assignments for a senior-level replication and reproducibility that was revised from our graduate-level course. First, are 'R Assignments' intended to provide a basic introduction to conducting reproducible research using the R Statistical Computing Environment and RStudio. Second, is a 'Reproducibility' Project' where students reproduce or conceptually replicate results reported in a published article using at least one of the first seven waves of the the National Youth Survey data"
+---
+
+In the Spring of 2022, the semester after teaching our graduate-level "Replication and Reproducibility" course, Jake was asked to teach a Senior Seminar (UNCW's capstone course for criminology majors). He decided it would be a good opportunity to see if he could revise the course for senior-level criminology majors. Take a look at the [syllabus](CRM495_Spring2022_Syllabus_2022-1-13.pdf) to see how he changed the reading schedule for undergraduates. In terms of the assignments, there are two primary changes. First, he split the assignments into seven smaller chunks, including a specific assignment on creating a reproducible file structure (for which he borrowed heavily from Danielle Navarro's "[Project Structure](https://www.youtube.com/watch?v=u6MiDFvAs9w&list=PLRPB0ZzEYegPiBteC2dRn95TX9YefYFyy)" videos). Second, for "Replication and Reproducibility" project, he required everyone to reproduce or conceptually replicate an article using the at least one of the first seven waves of the [National Youth Survey (NYS)](https://www.icpsr.umich.edu/web/ICPSR/series/88) data available on [ICPSR](https://www.icpsr.umich.edu/web/pages/).    
+
+We have included these assignments as they were assigned in Jake's class with light editing, where necessary, for student privacy reasons. In a forthcoming blog post we will discuss what we learned from designing this course and note what we would change going forward. Jake is scheduled to teach the course again in the Fall 2023 semester, so he will have the opportunity to implement these changes.  
+
+## R Assignments
+:::: columns
+
+::: {.column width="35%"}
+![](images/Assign1_SS_Rstudio_Global_Options.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 1: Getting Started in R](r-assignments/R_Assign1_RRStudio_Brauer_Public.html)
+The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio.
+:::
+::::
+
+:::: columns
+::: {.column width="35%"}
+![](images/Assign2_SS7_Rstudio2.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 2: Introduction to R Markdown](r-assignments/R_Assign2_RMarkdown_Brauer.html)
+The purpose of this second assignment is to help you begin to explore your data in R and to do so within an RMarkdown document. The specific activities were inspired by the SPSS Exercises from the end of Chapter 1 in Bachman and Paternoster’s [Statistics for Criminology & Criminal Justice, 4th Ed](https://edge.sagepub.com/bachmansccj4e).
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![](images/Assign3_SS10_Warr_Fig1p22.jpg)
+Reproduced from Figure 1 on pg. 22 in [Warr (1993)](https://doi.org/10.1111/j.1745-9125.1993.tb01120.x).
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 3: Direct Reproduction](r-assignments/R_Assign3_ICPSR_ReprodFig_Brauer.html)
+The purpose of this assignment is to reproduce findings from a published study in R, particularly one where the data are housed on ICPSR. In order to accomplish this we will need to do and learn the following:
+  - Identify the data being used in the now classic study by Mark Warr published in Criminology titled: “Age, Peers, and Delinquency” (Warr, 1993)
+  - Download it from ICPSR
+  - Identify and wrangle the specific variables/items used in the study using the dplyr package that is a part of the Tidyverse.
+  - Combine multiple data sets into one.
+  - Reproduce the first part of Figure 1 from Warr’s (1993) study (as displayed on pg. 22 in his article) by introducing you to the powerful data visualization package ggplot2, which is also a part of the Tidyverse.
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![](images/Assign4_SS2_Orcutt_Table1.jpg)
+Reproduced from Table 1 on pg. 348 in [Orcutt, 1987](https://doi.org/10.1111/j.1745-9125.1987.tb00801.x)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Assignment 4: Conceptual Replication](r-assignments/R_Assgin4_ConceptRep_Brauer_Public.html)
+The purpose of this assignment is to perform a conceptual replication of some observations in [Orcutt’s (1987)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.1987.tb00801.x) paper in *Criminology* titled: “Differential Association and Marijuana Use: A Closer Look at Sutherland (with a Little Help from Becker).” Since Orcutt’s (1987) original data are unavailable, we will assess whether some of his findings can be repeated with and generalize to a similar sample in the NYS data. 
+:::
+::::
+## Reproducibility Project
+:::: columns
+
+::: {.column width="35%"}
+![](images/nys-wv1-icpsr-datadoc.jpg)   
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 1: Find Article with Data to Replicate](rep-project/Project_Assign_1_Find_Article_Brauer_Public.html)
+The primary purpose of this first project assignment is to find an article on a topic of interest to you that has data available online via ICSPR (or another repository); eventually, you will be required to use these data in an attempt to reproduce a basic descriptive finding reported in a table or figure from the article. A secondary purpose of this assignment is to develop a sense of how (un)common it is to find research articles in the top journals of your field for which the authors have openly shared their data and code for reproducibility purposes.
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![](images/ProjAssign2_SS_YAML_toc.jpg)   
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 2: Describe Reproduction, Share Image, Summarize Data](rep-project/Project_Assign_2_Describe_Summarize_Brauer_Public.html)
+Unlike previous assignments, this assignment was not organized into various numbered "parts" for students to follow and complete. Rather, it showed students some basics about publishing with R Markdown (e.g., inserting an image, editing the YAML header, etc.) and asked students to summarize the raw versions of the variables needed for their reproduction.   
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![](images/draw-owl-draft.jpg)  
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 3: First Draft of Reproduction](rep-project/Project_Assign_3_First-Draft-of-Reproduction.html)
+Students are asked to create a first draft of their reproduction project which was ultimately peer-reviewed by one of their classmates. The directions are similar to [Project Assignment 2](rep-project/Project_Assign_2_Describe_Summarize_Brauer_Public.html) except students were expected to recode all variables and produce relatively clean and publication-ready versions of their tables and figures.
+:::
+::::
+
+:::: columns
+
+::: {.column width="35%"}
+![](images/draw-owl-final.jpg)  
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Project Assignment 4: Final Draft of Reproduction](rep-project/Project_Assign_4_Final-Draft-of-Reproduction.html)
+Students are asked to finalize their reproduction project and provide a reproducible file structure. Essentially, they were asked to apply the skills they had learned throughout the course to produce an article or blog reproducing some (descriptive) results of a published study. 
+:::
+::::
+

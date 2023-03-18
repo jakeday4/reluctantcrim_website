@@ -2,26 +2,28 @@
   {
     "listing": "/blog-posts.html",
     "items": [
-      "/blog-posts/[3]/favorite_links.html",
+      "/blog-posts/[1]/welcome-blog.html",
       "/blog-posts/[2]/charles-memorial.html",
-      "/blog-posts/[1]/welcome-blog.html"
+      "/blog-posts/[3]/favorite_links.html"
     ]
   },
   {
     "listing": "/course-materials.html",
     "items": [
-      "/course-materials/ugrad_stats/index.html",
-      "/course-materials/grad_RnR/index.html"
+      "/course-materials/1_ugrad_stats/index.html",
+      "/course-materials/2_grad_RnR/index.html",
+      "/course-materials/3_ugrad_RnR/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
-      "/blog-posts/[3]/favorite_links.html",
-      "/blog-posts/[2]/charles-memorial.html",
       "/blog-posts/[1]/welcome-blog.html",
-      "/course-materials/grad_RnR/index.html",
-      "/course-materials/ugrad_stats/index.html"
+      "/blog-posts/[2]/charles-memorial.html",
+      "/blog-posts/[3]/favorite_links.html",
+      "/course-materials/1_ugrad_stats/index.html",
+      "/course-materials/2_grad_RnR/index.html",
+      "/course-materials/3_ugrad_RnR/index.html"
     ]
   }
 ]
