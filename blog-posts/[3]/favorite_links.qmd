@@ -2,40 +2,37 @@
 title: "Check out some of our favorite sites"
 author: "Jon Brauer and Jake Day"
 date: "2023-03-12"
-image: DALL-E-melting_heart_of_statistics_in_Dali_style.png
+image: DALL-E-melting_heart_of_statistics_in_Dali_style_80.png
 categories: [general]
 ---
 
-![Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E](DALL-E-melting_heart_of_statistics_in_Dali_style.png)
+![Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E](DALL-E-melting_heart_of_statistics_in_Dali_style_80.png)
 
 We have learned so much from blogs, bookdowns, and videos openly shared by others. Below, we compiled a list of some of our favorite resources. This list is far from exhaustive; there are too many influential sources to recall and credit as deserved. Nonetheless, we felt it would be helpful to pull together some of those that we routinely find ourselves revisiting and recommending to others. 
 
-## statistics and more
+## statistics, especially Bayesian approaches, and more 
 
 **Andrew Gelman's** [blog](https://statmodeling.stat.columbia.edu/) is perhaps our favorite place to go for musings on all things statistics, especially [Bayesian inference](https://statmodeling.stat.columbia.edu/2022/08/10/bayesian-inference-continues-to-completely-solve-the-multiple-comparisons-problem/), [frequentist evaluation](https://statmodeling.stat.columbia.edu/2022/12/02/not-frequentist-enough-2/), [causal inference](https://statmodeling.stat.columbia.edu/2021/03/11/regression-discontinuity-analysis-is-often-a-disaster-so-what-should-you-do-instead-do-we-just-give-up-on-the-whole-natural-experiment-idea-heres-my-recommendation/), [multilevel modeling](https://statmodeling.stat.columbia.edu/2023/03/09/the-butterfly-and-the-piranha-understanding-the-generalizability-and-reproducibility-crisis-from-statistical-and-political-perspectives-my-talk-at-the-university-of-minnesota-political-science/), [uncertainty](https://statmodeling.stat.columbia.edu/2022/04/05/confidence-intervals-compatability-intervals-uncertainty-intervals/), and [reproducibility](https://statmodeling.stat.columbia.edu/2018/12/04/bayes-statistics-reproducibility-many-serious-problems-statistics-practice-arise-bayesian-inference-not-bayesian-enough-frequentist-evaluation-not-frequentist/). We also appreciate the frequent attention paid to [philosophy of science issues](https://statmodeling.stat.columbia.edu/2019/09/11/exchange-with-deborah-mayo-on-abandoning-statistical-significance/) throughout many posts. Bonus: if you browse long enough, you might even stumble upon an answer to the question that perennially motivates a career crisis for us: [The social sciences are useless, so why do we even study them?](https://statmodeling.stat.columbia.edu/2021/03/12/the-social-sciences-are-useless-so-why-do-we-study-them-heres-a-good-reason/).
 
-Richard McElreath's lectures
+Speaking of Andrew Gelman - do you want to [learn regression](https://avehtari.github.io/ROS-Examples/) or [Bayesian modeling](http://www.stat.columbia.edu/~gelman/book/)? Gelman and colleagues' books and accompanying websites are excellent resources on these topics. However, our go-to resource for learning statistics from a Bayesian framework is **Richard McElreath's** [*Rethinking Statistics (2nd Ed.)*](https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919). All code from the book and a corresponding R package (`rethinking`) are [openly shared online](https://xcelab.net/rm/statistical-rethinking/), and McElreath's brilliant [video lectures on YouTube](https://www.youtube.com/playlist?list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN), which he routinely updates, simply are without equal. Seriously - stop reading our site now and go work your way through those lectures and associated code. 
 
-Solomon Kurz's bookdowns
+As much as we love McElreath's book and lectures for learning a Bayesian approach to data analysis, we usually rely on **Paul B&uuml;rkner's** "Bayesian regression models using Stan," or `brms()`, [R package](https://paul-buerkner.github.io/brms/) for everyday Bayesian modeling tasks. In addition to the `brms()` package, we recommend checking out B&uuml;rkner's [research projects](https://paul-buerkner.github.io/projects/) and [publications](https://paul-buerkner.github.io/publications/). In particular, we especially appreciate his work on modeling and visualizing [uncertainty in (Bayesian) model comparison](https://paul-buerkner.github.io/projects/#mu-bmb) and his efforts to incorporate cumulative link functions for modeling [monotonic effects of ordinal predictors in Bayesian regression models](https://psyarxiv.com/9qkhj/). 
 
-Andrew Heiss
+So, what if you want to learn Bayesian analysis from McElreath's book and lectures, yet you also want to follow along with his examples using the `brms()` package? Enter [**Solomon Kurz**](https://solomonkurz.netlify.app/), the data science hero we need but do not deserve. Kurz has dedicated an unfathomable amount of energy to developing Bayesian translations of some of our favorite statistics books into R language and the `brms()` package specifically, then sharing these heroic efforts in [open-access bookdown projects](https://solomonkurz.netlify.app/book/). Here are Kurz's translations of the [first edition](https://bookdown.org/content/3890) and [second edition](https://bookdown.org/content/4857) of McElreath's book. Additionally, we initially learned longitudinal data analysis in the SAS program using [Singer and Willett's (2003) book](https://academic.oup.com/book/41753); Kurz offers a free [tidyverse and brms translation](https://bookdown.org/content/4253/) of this now classic book as well. Likewise, he has similarly translated two other favorites of ours: [Kruschke's *Doing Bayesian Data Analysis*](https://bookdown.org/content/3686/) and Hayes' [*Introduction to Mediation, Moderation, and Conditional Process Analysis*](https://bookdown.org/content/b472c7b3-ede5-40f0-9677-75c3704c7e5c/). If you make it through all that free content, then check out his informative [blog on data analysis in R](https://solomonkurz.netlify.app/blog/).
 
-Matthew Kay
+There are so many others worth mentioning in this space but, in respect of your time, here are just a few more listed as quick hits: 
 
-[**The 100% CI**](https://www.the100.ci/) is a newer favorite. We are especially fond of Julia Rohrer's (one of the site's authors) various writing related to causal inference, like these on directed acyclic graphs, collider bias, and what can go wrong with [nonrepresentative samples](https://www.the100.ci/2023/03/07/non-representative-samples-what-could-possibly-go-wrong/).
-
-Data Colada 
-
-Daniel Lakens
-
-Quantitude podcast & blog
-
-Of course, we also love creating data visualizations with `ggplot2` in R, so we owe a huge shout out to **Hadley Wickham** for all his R programming efforts and clear tutorials, which you can learn more about and freely access via his [website](https://hadley.nz/).
-
-Easy stats... 
+  - **Matthew Kay's** [site](https://www.mjskay.com/) for inspiration on communicating and visualizing uncertainty with `tidybayes` and `ggdist`
+  - **Andrew Heiss's** [blog](), especially entries on [different types of posterior predictions](https://www.andrewheiss.com/blog/2022/09/26/guide-visualizing-types-posteriors/), [marginal effects terminology](https://www.andrewheiss.com/blog/2022/05/20/marginalia/), and [conditional and marginal effects in multilevel models](https://www.andrewheiss.com/blog/2022/11/29/conditional-marginal-marginaleffects/)
+  - **Aki Vehtari's** [work](https://users.aalto.fi/~ave/) on model checking and cross-validation along with his courses and video tutorials on Bayesian workflow
+  - **Michael Betancourt's** [writing](https://betanalpha.github.io/writing/) and [videos](https://betanalpha.github.io/speaking/) on probabilistic modeling in Stan, and especially those on adopting a [principled Bayesian workflow](https://betanalpha.github.io/assets/case_studies/principled_bayesian_workflow.html). 
+- [**The 100% CI**](https://www.the100.ci/) is a newer favorite. We are especially fond of Julia Rohrer's (one of the site's authors) various writing related to causal inference, like these on [directed acyclic graphs](ADD), [collider bias](ADD), and what can go wrong with [nonrepresentative samples](https://www.the100.ci/2023/03/07/non-representative-samples-what-could-possibly-go-wrong/).
+- Data Colada 
+- **Daniel Lakens**, especially posts on [smallest effect size of interest](ADD) and on considering [whether you are really ready to test a hypothesis](ADD)  
+- Quantitude podcast & blog
 
 
-## data science & learning R
+## learning data science with R
 
 **Danielle Navarro's** [blog](https://blog.djnavarro.net/) is as delightful as it is informative. The blog is a model for reproducible R programming and showcases Danielle's inspiring art throughout the site (see more of Danielle's [computational art here](https://art.djnavarro.net/)). The newest version of the blog often focuses on technical posts addressing issues beyond our range of program expertise. However, we love various topical essays from earlier blog renditions, [like this one on preregistration](https://psyarxiv.com/wxn58/), and we strongly recommend Danielle's [Data Science with R](https://robust-tools.djnavarro.net/) course and associated video tutorials for R beginners or those interested in leveling up their R skills.   
 
@@ -43,6 +40,9 @@ Easy stats...
 
 PsyTeachR
 
+Easy stats... 
+
+Of course, we also love creating data visualizations with `ggplot2` in R, so we owe a huge shout out to **Hadley Wickham** for all his R programming efforts and clear tutorials, which you can learn more about and freely access via his [website](https://hadley.nz/).
 
 ## creating a website
 
