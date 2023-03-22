@@ -2,13 +2,18 @@
 title: "Check out some of our favorite sites"
 author: "Jon Brauer and Jake Day"
 date: "2023-03-12"
-image: DALL-E-melting_heart_of_statistics_in_Dali_style_80.png
+image: "./DALL-E-melting_heart_of_statistics_in_Dali_style_80.png"
+image-alt: "Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E"
 categories: [general]
 ---
 
 ![Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E](DALL-E-melting_heart_of_statistics_in_Dali_style_80.png)
 
-We have learned so much from blogs, bookdowns, and videos openly shared by others. Below, we compiled a list of some of our favorite resources. This list is far from exhaustive; there are too many influential sources to recall and credit as deserved. Nonetheless, we felt it would be helpful to pull together some of those that we routinely find ourselves revisiting and recommending to others. 
+We have learned so much from blogs, bookdowns, and videos openly shared by others. Here, we compiled a list of some of our favorite resources. 
+
+<!--more-->
+
+This list is far from exhaustive; there are too many influential sources to recall and credit as deserved. Nonetheless, we felt it would be helpful to pull together some of those that we routinely find ourselves revisiting and recommending to others. 
 
 ## statistics, especially Bayesian approaches, and more 
 

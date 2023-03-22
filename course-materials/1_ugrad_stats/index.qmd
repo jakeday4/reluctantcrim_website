@@ -1,6 +1,8 @@
 ---
 title: "Introduction to statistics in R for criminologists"
+description: "Assignments for an introductory course on frequentist statistics using R Studio & R Markdown. Designed for undergraduates, graduate students, and researchers with little to no prior experience with R."
 image: hateclass_horst.png
+image-alt: Artwork by @allison_horst
 ---
 
 ![You can do this! [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](hateclass_horst.png)

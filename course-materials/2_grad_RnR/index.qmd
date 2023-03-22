@@ -1,7 +1,8 @@
 ---
 title: "Replication & reproducibility in social science (Graduate-level)"
-description-meta: "Two sets of assignments for our graduate level replication and reproducibility course. First, are 'R Assignments' intended to provide a basic introduction to conducting reproducible research using the R Statistical Computing Environment and RStudio. Second, is a 'Reproducibility' Project' where students reproduce some descriptive results reported in a published article on a topic of interest to them."
+description: "Assignments for graduate level *replication and reproducibility* course. Includes a crash course for conducting reproducible research using R (#1-#4) and a 'reproducibility project' (#5-#8) where students reproduce or conceptually replicate results from a published article in their area of interest."
 image: problems_horst.png
+image-alt: Artwork by @allison_horst
 ---
 
 ![Workflow, not just code, often hinders reproducibility. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](problems_horst.png)

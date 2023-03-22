@@ -3,11 +3,15 @@ title: "Dr. Charles R. Tittle's intellectual contributions"
 author: "Jon Brauer, with Katya Botchkovar and Carter Hay"
 date: "2023-03-11"
 image: charles_smiling.jpg
+image-alt: "Dr. Charles R. Tittle"
+description: "This post is dedicated to the intellectual contributions of our late mentor, Dr. Charles R. Tittle."
 # citation: 
 #   url: https://reluctantcriminologists.com/blog-posts/[2]/charles-memorial.html
 categories: [general]
 # https://community.rstudio.com/t/quarto-how-to-cross-reference-unnumbered-book-chapter/136279/2
 ---
+
+![Dr. Charles R. Tittle](charles_smiling.jpg)
 
 The comments below were delivered in one of two [tribute panels](https://tinyurl.com/yf3uexwu) dedicated to Dr. Charles R. Tittle's intellectual and interpersonal contributions to criminology at the [2021 American Society of Criminology annual meeting](https://asc41.com/events/2021-asc-annual-meeting/) in Chicago. While others contributed additional comments on the spot, the following include only those formally scheduled comments delivered about Charles' intellectual contributions to the field. Click on a panel topic below to expand and view its contents:
  
@@ -284,3 +288,5 @@ This student also reflected on how Charles’ legacy of mentorship was indirectl
 I could not have said that better myself. Thank you, Charles. 
 
 </details>
+
+For additional reflections about Charles from a few of his former students and colleagues, see Washington State University's wonderful [*Remembering Charles Tittle*](https://soc.wsu.edu/socnews/remembering-charles-tittle-1938-2021/) memorial tribute. 

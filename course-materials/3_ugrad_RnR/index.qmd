@@ -1,7 +1,11 @@
 ---
 title: "Criminology in crisis? Replication & reproducibility in criminology & the social sciences (Undergraduate-level)"
-description-meta: "Two sets of assignments for a senior-level replication and reproducibility that was revised from our graduate-level course. First, are 'R Assignments' intended to provide a basic introduction to conducting reproducible research using the R Statistical Computing Environment and RStudio. Second, is a 'Reproducibility' Project' where students reproduce or conceptually replicate results reported in a published article using at least one of the first seven waves of the the National Youth Survey data"
+description: "Assignments for *replication and reproducibility* course, modified for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#4) and a 'reproducibility project' (#5-#7) where students reproduce or conceptually replicate results from a published article using data from the National Youth Survey."
+image: debugging_horst.png
+image-alt: Artwork by @allison_horst
 ---
+
+![The struggle is real. We get it. We really do. [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](debugging_horst.png)
 
 In the Spring of 2022, the semester after teaching our graduate-level "Replication and Reproducibility" course, Jake was asked to teach a Senior Seminar (UNCW's capstone course for criminology majors). He decided it would be a good opportunity to see if he could revise the course for senior-level criminology majors. Take a look at the [syllabus](CRM495_Spring2022_Syllabus_2022-1-13.pdf) to see how he changed the reading schedule for undergraduates. In terms of the assignments, there are two primary changes. First, he split the assignments into seven smaller chunks, including a specific assignment on creating a reproducible file structure (for which he borrowed heavily from Danielle Navarro's "[Project Structure](https://www.youtube.com/watch?v=u6MiDFvAs9w&list=PLRPB0ZzEYegPiBteC2dRn95TX9YefYFyy)" videos). Second, for "Replication and Reproducibility" project, he required everyone to reproduce or conceptually replicate an article using the at least one of the first seven waves of the [National Youth Survey (NYS)](https://www.icpsr.umich.edu/web/ICPSR/series/88) data available on [ICPSR](https://www.icpsr.umich.edu/web/pages/).    
 

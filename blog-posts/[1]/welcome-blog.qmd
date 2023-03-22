@@ -3,10 +3,12 @@ title: "Welcome to the reluctant criminologists"
 author: "Jon Brauer and Jake Day"
 date: "2023-03-10"
 image: RC_logo_white.jpg
+image-alt: "Reluctant criminologists logo"
+description: "You found our repository for sharing course material and ideas. Congrats! Or condolences. Anyway, in this first post, we discuss our motives and aims for this site."
 categories: [general]
 ---
 
-<!-- We need to write an introduction to our blog. Things to consider: - Why are we doing this? - How we were inspired by Charles. - Goals - Other bullshit? -->
+![Reluctant criminologists logo](RC_logo_white.jpg)
 
 ## Why are we doing this?
 

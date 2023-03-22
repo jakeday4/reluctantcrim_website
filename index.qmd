@@ -9,6 +9,7 @@ listing:
     categories: true
     sort-ui: false
     filter-ui: false
+    fields: [date, title, reading-time, description, image, categories]
   - id: courses
     contents: course-materials
     sort: "date asc"
@@ -16,6 +17,7 @@ listing:
     categories: true
     sort-ui: false
     filter-ui: false
+    fields: [date, title, reading-time, description, image, categories]
 page-layout: full
 css: styles.css
 # title-block-banner: false
