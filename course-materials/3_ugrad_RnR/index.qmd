@@ -1,6 +1,6 @@
 ---
 title: "Criminology in crisis? Replication & reproducibility in criminology & the social sciences (Undergraduate-level)"
-description: "Assignments for *replication and reproducibility* course, modified for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#4) and a 'reproducibility project' (#5-#7) where students reproduce or conceptually replicate results from a published article using data from the National Youth Survey."
+description: "Assignments for *replication and reproducibility* course, modified for undergraduate seniors. Includes a crash course for conducting minimally reproducible research using R (#1-#4) and a 'reproducibility project' (#5-#7) where students reproduce or conceptually replicate results from a published article using data from the National Youth Survey."
 image: debugging_horst.png
 image-alt: Artwork by @allison_horst
 ---
