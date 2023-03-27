@@ -10,9 +10,10 @@
 <atom:link href="https://www.reluctantcriminologists.com/course-materials.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
 <generator>quarto-1.2.269</generator>
-<lastBuildDate>Mon, 27 Mar 2023 17:06:55 GMT</lastBuildDate>
+<lastBuildDate>Mon, 27 Mar 2023 18:03:02 GMT</lastBuildDate>
 <item>
   <title>Introduction to statistics in R for criminologists</title>
+  <dc:creator>Jon Brauer and Tyeisha Fordham</dc:creator>
   <link>https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/index.html</link>
   <description><![CDATA[ 
 
@@ -216,22 +217,23 @@
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{untitled,
-  author = {},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauerandtyeishafordham,
+  author = {Jon Brauer and Tyeisha Fordham},
   title = {Introduction to Statistics in {R} for Criminologists},
   url = {https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-untitled" class="csl-entry quarto-appendix-citeas">
-<span>“Introduction to Statistics in R for Criminologists.”</span> n.d.
-<a href="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats">https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandtyeishafordham" class="csl-entry quarto-appendix-citeas">
+Jon Brauer and Tyeisha Fordham. n.d. <span>“Introduction to Statistics
+in R for Criminologists.”</span> <a href="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats">https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/index.html</guid>
-  <pubDate>Mon, 27 Mar 2023 17:06:55 GMT</pubDate>
+  <pubDate>Mon, 27 Mar 2023 18:03:02 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/hateclass_horst.png" medium="image" type="image/png" height="87" width="144"/>
 </item>
 <item>
   <title>Replication &amp; reproducibility in social science (Graduate-level)</title>
+  <dc:creator>Jon Brauer and Jake Day</dc:creator>
   <link>https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/index.html</link>
   <description><![CDATA[ 
 
@@ -391,23 +393,24 @@
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{untitled,
-  author = {},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauerandjakeday,
+  author = {Jon Brauer and Jake Day},
   title = {Replication \&amp; Reproducibility in Social Science
     {(Graduate-level)}},
   url = {https://www.reluctantcriminologists.com/course-materials/2_grad_RnR},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-untitled" class="csl-entry quarto-appendix-citeas">
-<span>“Replication &amp; Reproducibility in Social Science
-(Graduate-Level).”</span> n.d. <a href="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR">https://www.reluctantcriminologists.com/course-materials/2_grad_RnR</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday" class="csl-entry quarto-appendix-citeas">
+Jon Brauer and Jake Day. n.d. <span>“Replication &amp; Reproducibility
+in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR">https://www.reluctantcriminologists.com/course-materials/2_grad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/index.html</guid>
-  <pubDate>Mon, 27 Mar 2023 17:06:55 GMT</pubDate>
+  <pubDate>Mon, 27 Mar 2023 18:03:02 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/problems_horst.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
   <title>Criminology in crisis? Replication &amp; reproducibility in criminology &amp; the social sciences (Undergraduate-level)</title>
+  <dc:creator>Jake Day and Jon Brauer</dc:creator>
   <link>https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/index.html</link>
   <description><![CDATA[ 
 
@@ -658,20 +661,20 @@
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{untitled,
-  author = {},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dayandjonbrauer,
+  author = {Jake Day and Jon Brauer},
   title = {Criminology in Crisis? {Replication} \&amp; Reproducibility in
     Criminology \&amp; the Social Sciences {(Undergraduate-level)}},
   url = {https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-untitled" class="csl-entry quarto-appendix-citeas">
-<span>“Criminology in Crisis? Replication &amp; Reproducibility in
-Criminology &amp; the Social Sciences (Undergraduate-Level).”</span>
-n.d. <a href="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR">https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dayandjonbrauer" class="csl-entry quarto-appendix-citeas">
+Jake Day and Jon Brauer. n.d. <span>“Criminology in Crisis? Replication
+&amp; Reproducibility in Criminology &amp; the Social Sciences
+(Undergraduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR">https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/index.html</guid>
-  <pubDate>Mon, 27 Mar 2023 17:06:55 GMT</pubDate>
+  <pubDate>Mon, 27 Mar 2023 18:03:02 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/debugging_horst.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 </channel>

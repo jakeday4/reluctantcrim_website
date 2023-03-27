@@ -4,6 +4,10 @@
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
+# Table of content settings
+toc: true
+toc-depth: 3
+
 # Generate citation for each post:
 citation: true
 
@@ -11,3 +15,6 @@ citation: true
 comments: 
   utterances: 
     repo: jakeday4/reluctantcrim_comments
+    
+# License Information
+license: "CC BY"
