@@ -6,6 +6,7 @@ listing:
   sort:
     - "date asc"  
   fields: [date, title, reading-time, description, image, categories]
+  feed: true
 ---
 
 This is a centralized location for uploading materials from various courses we have developed or our collaborators have shared. The main purpose is to have a place where we can point people if they mistakenly ask for our materials. 

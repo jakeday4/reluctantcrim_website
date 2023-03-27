@@ -1,190 +1,96 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Jon Brauer, with Katya Botchkovar and Carter Hay">
-<meta name="dcterms.date" content="2023-03-11">
-<meta name="description" content="This post is dedicated to the intellectual contributions of our late mentor, Dr.&nbsp;Charles R. Tittle.">
-
-<title>reluctant criminologists - Dr.&nbsp;Charles R. Tittle’s intellectual contributions</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
-  vertical-align: middle;
-}
-</style>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>reluctant criminologists</title>
+<link>https://www.reluctantcriminologists.com/blog-posts.html</link>
+<atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
+<description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
+<generator>quarto-1.2.269</generator>
+<lastBuildDate>Sun, 12 Mar 2023 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Check out some of our favorite sites</title>
+  <dc:creator>Jon Brauer and Jake Day</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[3]/favorite_links.html</link>
+  <description><![CDATA[ 
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 20,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
-  }
-}</script>
-
-
-<link rel="stylesheet" href="../../styles.css">
-</head>
-
-<body class="nav-fixed">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo">
-    </a>
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">reluctant criminologists</span>
-    </a>
-  </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
- <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts.html">
- <span class="menu-text">blog posts</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials.html">
- <span class="menu-text">course materials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts/[3]/favorite_links.html">
- <span class="menu-text">links we love</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"><i class="bi bi-envelope" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-</ul>
-              <div id="quarto-search" class="" title="Search"></div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#sec-charles_international" id="toc-sec-charles_international" class="nav-link active" data-scroll-target="#sec-charles_international">Contributions to International Criminology</a></li>
-  <li><a href="#sec-charles_measurement" id="toc-sec-charles_measurement" class="nav-link" data-scroll-target="#sec-charles_measurement">Contributions to Measurement and Theory Testing</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#deterrence" id="toc-deterrence" class="nav-link" data-scroll-target="#deterrence">Deterrence</a></li>
-  <li><a href="#self-control-theorymany-innovations-here" id="toc-self-control-theorymany-innovations-here" class="nav-link" data-scroll-target="#self-control-theorymany-innovations-here">Self-control theory—many innovations here</a></li>
-  </ul></li>
-  <li><a href="#sec-charles_science" id="toc-sec-charles_science" class="nav-link" data-scroll-target="#sec-charles_science">Advocate for Theoretical Science in Criminology</a>
-  <ul class="collapse">
-  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
-  <li><a href="#charles-philosophy-the-mansion-of-science" id="toc-charles-philosophy-the-mansion-of-science" class="nav-link" data-scroll-target="#charles-philosophy-the-mansion-of-science">Charles’ Philosophy &amp; The Mansion of Science</a></li>
-  <li><a href="#lessons-of-a-reluctant-but-committed-criminologist" id="toc-lessons-of-a-reluctant-but-committed-criminologist" class="nav-link" data-scroll-target="#lessons-of-a-reluctant-but-committed-criminologist">Lessons of a Reluctant but Committed Criminologist</a></li>
-  <li><a href="#culmination-in-his-magnum-opus-control-balance" id="toc-culmination-in-his-magnum-opus-control-balance" class="nav-link" data-scroll-target="#culmination-in-his-magnum-opus-control-balance">Culmination in His Magnum Opus, <em>Control Balance</em></a></li>
-  <li><a href="#back-to-the-mansion" id="toc-back-to-the-mansion" class="nav-link" data-scroll-target="#back-to-the-mansion">Back to the Mansion</a></li>
-  <li><a href="#community-building-by-example" id="toc-community-building-by-example" class="nav-link" data-scroll-target="#community-building-by-example">Community Building by Example</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Dr.&nbsp;Charles R. Tittle’s intellectual contributions</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">general</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    This post is dedicated to the intellectual contributions of our late mentor, Dr.&nbsp;Charles R. Tittle.
-  </div>
-</div>
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jon Brauer, with Katya Botchkovar and Carter Hay </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 11, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="charles_smiling.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[3]/DALL-E-melting_heart_of_statistics_in_Dali_style_80.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Melting heart of statistics in Salvadore Dali’s surrealist style, by DALL-E</figcaption><p></p>
+</figure>
+</div>
+<p>We have learned so much from blogs, bookdowns, and videos openly shared by others. Here, we compiled a list of some of our favorite resources.</p>
+<!--more-->
+<p>This list is far from exhaustive; there are too many influential sources to recall and credit as deserved. Nonetheless, we felt it would be helpful to pull together some of those that we routinely find ourselves revisiting and recommending to others.</p>
+<section id="statistics-especially-bayesian-approaches-and-more" class="level2">
+<h2 class="anchored" data-anchor-id="statistics-especially-bayesian-approaches-and-more">statistics, especially Bayesian approaches, and more</h2>
+<p><strong>Andrew Gelman’s</strong> <a href="https://statmodeling.stat.columbia.edu/">blog</a> is perhaps our favorite place to go for musings on all things statistics, especially <a href="https://statmodeling.stat.columbia.edu/2022/08/10/bayesian-inference-continues-to-completely-solve-the-multiple-comparisons-problem/">Bayesian inference</a>, <a href="https://statmodeling.stat.columbia.edu/2022/12/02/not-frequentist-enough-2/">frequentist evaluation</a>, <a href="https://statmodeling.stat.columbia.edu/2021/03/11/regression-discontinuity-analysis-is-often-a-disaster-so-what-should-you-do-instead-do-we-just-give-up-on-the-whole-natural-experiment-idea-heres-my-recommendation/">causal inference</a>, <a href="https://statmodeling.stat.columbia.edu/2023/03/09/the-butterfly-and-the-piranha-understanding-the-generalizability-and-reproducibility-crisis-from-statistical-and-political-perspectives-my-talk-at-the-university-of-minnesota-political-science/">multilevel modeling</a>, <a href="https://statmodeling.stat.columbia.edu/2022/04/05/confidence-intervals-compatability-intervals-uncertainty-intervals/">uncertainty</a>, and <a href="https://statmodeling.stat.columbia.edu/2018/12/04/bayes-statistics-reproducibility-many-serious-problems-statistics-practice-arise-bayesian-inference-not-bayesian-enough-frequentist-evaluation-not-frequentist/">reproducibility</a>. We also appreciate the frequent attention paid to <a href="https://statmodeling.stat.columbia.edu/2019/09/11/exchange-with-deborah-mayo-on-abandoning-statistical-significance/">philosophy of science issues</a> throughout many posts. Bonus: if you browse long enough, you might even stumble upon an answer to the question that perennially motivates a career crisis for us: <a href="https://statmodeling.stat.columbia.edu/2021/03/12/the-social-sciences-are-useless-so-why-do-we-study-them-heres-a-good-reason/">The social sciences are useless, so why do we even study them?</a>.</p>
+<p>Speaking of Andrew Gelman - do you want to <a href="https://avehtari.github.io/ROS-Examples/">learn regression</a> or <a href="http://www.stat.columbia.edu/~gelman/book/">Bayesian modeling</a>? Gelman and colleagues’ books and accompanying websites are excellent resources on these topics. However, our go-to resource for learning statistics from a Bayesian framework is <strong>Richard McElreath’s</strong> <a href="https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919"><em>Rethinking Statistics (2nd Ed.)</em></a>. All code from the book and a corresponding R package (<code>rethinking</code>) are <a href="https://xcelab.net/rm/statistical-rethinking/">openly shared online</a>, and McElreath’s brilliant <a href="https://www.youtube.com/playlist?list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN">video lectures on YouTube</a>, which he routinely updates, simply are without equal. Seriously - stop reading our site now and go work your way through those lectures and associated code.</p>
+<p>As much as we love McElreath’s book and lectures for learning a Bayesian approach to data analysis, we usually rely on <strong>Paul Bürkner’s</strong> “Bayesian regression models using Stan,” or <code>brms()</code>, <a href="https://paul-buerkner.github.io/brms/">R package</a> for everyday Bayesian modeling tasks. In addition to the <code>brms()</code> package, we recommend checking out Bürkner’s <a href="https://paul-buerkner.github.io/projects/">research projects</a> and <a href="https://paul-buerkner.github.io/publications/">publications</a>. In particular, we especially appreciate his work on modeling and visualizing <a href="https://paul-buerkner.github.io/projects/#mu-bmb">uncertainty in (Bayesian) model comparison</a> and his efforts to incorporate cumulative link functions for modeling <a href="https://psyarxiv.com/9qkhj/">monotonic effects of ordinal predictors in Bayesian regression models</a>. Meanwhile, we are particularly fond of Bürkner’s <a href="https://paul-buerkner.github.io/brms/articles/index.html"><code>brms</code> vignettes</a>, especially those on <a href="https://paul-buerkner.github.io/brms/articles/brms_multivariate.html">multivariate (i.e., multiple response variables) models</a> and <a href="https://paul-buerkner.github.io/brms/articles/brms_monotonic.html">monotonic effects</a>. You can also watch <a href="https://www.youtube.com/watch?v=1qeXD4NQ4To">his talk on multilevel modeling in <code>brms</code></a> for free courtesy of <a href="https://www.youtube.com/@generableHQ/about"><span class="citation" data-cites="GenerableHQ">@GenerableHQ</span></a>.</p>
+<p>So, what if you want to learn Bayesian analysis from McElreath’s book and lectures, yet you also want to follow along with his examples using the <code>brms()</code> package? Enter <a href="https://solomonkurz.netlify.app/"><strong>Solomon Kurz</strong></a>, the data science hero we need but do not deserve. Kurz has dedicated an unfathomable amount of energy to developing Bayesian translations of some of our favorite statistics books into R language and the <code>brms()</code> package, then sharing these valliant efforts in <a href="https://solomonkurz.netlify.app/book/">open-access bookdown projects</a>. Specifically, here are Kurz’s translations of the <a href="https://bookdown.org/content/3890">first edition</a> and <a href="https://bookdown.org/content/4857">second edition</a> of McElreath’s book. Additionally, many years agom Jake and I initially learned longitudinal data analysis in the SAS program using <a href="https://academic.oup.com/book/41753">Singer and Willett’s (2003) now-classic book</a>; Kurz actually offers a free <a href="https://bookdown.org/content/4253/">tidyverse and brms translation</a> of their book as well! Likewise, he has similarly translated two other favorites of ours: <a href="https://bookdown.org/content/3686/">Kruschke’s <em>Doing Bayesian Data Analysis</em></a> and Hayes’ <a href="https://bookdown.org/content/b472c7b3-ede5-40f0-9677-75c3704c7e5c/"><em>Introduction to Mediation, Moderation, and Conditional Process Analysis</em></a>. If you make it through all that free content, then we suggest heading over to his informative <a href="https://solomonkurz.netlify.app/blog/">blog on data analysis in R</a> for more useful content.</p>
+<p>There are so many others worth mentioning in this section but, in respect of your time, we will simply list a few more:</p>
+<ul>
+<li><strong>Matthew Kay’s</strong> <a href="https://www.mjskay.com/">site</a> for inspiration on communicating and visualizing uncertainty with <code>tidybayes</code> and <code>ggdist</code>. In particular, we recommend Kay’s various package vignettes, such as this one on <a href="https://cran.r-project.org/web/packages/tidybayes/vignettes/tidybayes.html">using tidy data with Bayesian models</a> and this one on <a href="https://mjskay.github.io/ggdist/articles/slabinterval.html">slab + interval stats and geoms with ggdist</a>. Also, you can watch <a href="https://www.youtube.com/watch?v=PqCaljvE89k">Kay’s talk on visualizing uncertainty</a> courtesy of <a href="https://www.youtube.com/@generableHQ/about"><span class="citation" data-cites="GenerableHQ">@GenerableHQ</span></a>.<br>
+</li>
+<li><strong>Andrew Heiss’s</strong> <a href="https://www.andrewheiss.com/blog/">blog</a>, especially entries on <a href="https://www.andrewheiss.com/blog/2022/09/26/guide-visualizing-types-posteriors/">different types of posterior predictions</a>, <a href="https://www.andrewheiss.com/blog/2022/05/20/marginalia/">marginal effects terminology</a>, and <a href="https://www.andrewheiss.com/blog/2022/11/29/conditional-marginal-marginaleffects/">conditional and marginal effects in multilevel models</a></li>
+<li><strong>Aki Vehtari’s</strong> <a href="https://users.aalto.fi/~ave/">work</a>, especially that on <a href="https://avehtari.github.io/modelselection/">model selection</a>, <a href="https://arxiv.org/abs/1507.04544">model checking and cross-validation</a>, and <a href="https://arxiv.org/abs/2006.12335">posterior stacking</a>. Also, be sure to check out his various <a href="https://www.youtube.com/channel/UCcFy4yl5IyWeqJ5z2g1U8yg">videos</a>, like this one on <a href="https://www.youtube.com/watch?v=lKRRyrPxxeU">Bayesian workflow</a> or his open access course videos on <a href="https://www.youtube.com/playlist?list=PLBqnAso5Dy7O0IVoVn2b-WtetXQk5CDk6">Bayesian data analysis</a>.</li>
+<li><strong>Michael Betancourt’s</strong> <a href="https://betanalpha.github.io/writing/">writing</a> and <a href="https://betanalpha.github.io/speaking/">videos</a> on probabilistic modeling in Stan, and especially those on adopting a <a href="https://betanalpha.github.io/assets/case_studies/principled_bayesian_workflow.html">principled Bayesian workflow</a>.</li>
+<li><a href="https://www.the100.ci/"><strong>The 100% CI</strong></a> is a newer favorite. We are especially fond of Julia Rohrer’s (one of the site’s authors) various writing related to causal inference, like these on <a href="ADD">directed acyclic graphs</a>, <a href="ADD">collider bias</a>, and what can go wrong with <a href="https://www.the100.ci/2023/03/07/non-representative-samples-what-could-possibly-go-wrong/">nonrepresentative samples</a>.</li>
+<li>Data Colada</li>
+<li><strong>Daniel Lakens</strong>, especially posts on <a href="ADD">smallest effect size of interest</a> and on considering <a href="ADD">whether you are really ready to test a hypothesis</a><br>
+</li>
+<li>Quantitude podcast &amp; blog</li>
+</ul>
+</section>
+<section id="learning-data-science-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="learning-data-science-with-r">learning data science with R</h2>
+<p><strong>Danielle Navarro’s</strong> <a href="https://blog.djnavarro.net/">blog</a> is as delightful as it is informative. The blog is a model for reproducible R programming and showcases Danielle’s inspiring art throughout the site (see more of Danielle’s <a href="https://art.djnavarro.net/">computational art here</a>). The newest version of the blog often focuses on technical posts addressing issues beyond our range of program expertise. However, we love various topical essays from earlier blog renditions, <a href="https://psyarxiv.com/wxn58/">like this one on preregistration</a>, and we strongly recommend Danielle’s <a href="https://robust-tools.djnavarro.net/">Data Science with R</a> course and associated video tutorials for R beginners or those interested in leveling up their R skills.</p>
+<p><a href="https://www.apreshill.com/blog/">Allison Hill’s blog</a></p>
+<p>PsyTeachR</p>
+<p>Easy stats…</p>
+<p>Of course, we also love creating data visualizations with <code>ggplot2</code> in R, so we owe a huge shout out to <strong>Hadley Wickham</strong> for all his R programming efforts and clear tutorials, which you can learn more about and freely access via his <a href="https://hadley.nz/">website</a>.</p>
+</section>
+<section id="creating-a-website" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-website">creating a website</h2>
+<p>If you want to learn to create your own website or blog using R, we recommend checking out Andrew Rapp’s <a href="https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html">ultimate guide to creating a Quarto blog</a>, Beatriz Mills’ guide to <a href="https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/">creating a blog with Quarto in 10 steps</a>, Samantha Csik’s tutorial on <a href="https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/">adding a blog to your existing Quarto website</a>, and Ezekiel Ekunola’s instructions for <a href="https://www.codementor.io/@ekunolaeasybuoy/setting-up-domain-with-namecheap-netlify-12yiksvig6">setting up a personalized domain address for your site</a>.</p>
+<p>In addition to R-based visualizations, we relied heavily upon <strong>Allison Horst’s</strong> <a href="https://allisonhorst.com/allison-horst">website</a>, where she freely shares amazing data science, statistics, and R themed artwork, to help improve our site’s aesthetics. We also had fun generating custom images and art using the artificial intelligence system <a href="https://openai.com/product/dall-e-2">DALL-E</a>.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauerandjakeday2023,
+  author = {Jon Brauer and Jake Day},
+  title = {Check Out Some of Our Favorite Sites},
+  date = {2023-03-12},
+  url = {https://www.reluctantcriminologists.com/favorite_links.html},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday2023" class="csl-entry quarto-appendix-citeas">
+Jon Brauer and Jake Day. 2023. <span>“Check Out Some of Our Favorite
+Sites.”</span> March 12, 2023. <a href="https://www.reluctantcriminologists.com/favorite_links.html">https://www.reluctantcriminologists.com/favorite_links.html</a>.
+</div></div></section></div> ]]></description>
+  <category>general</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[3]/favorite_links.html</guid>
+  <pubDate>Sun, 12 Mar 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[3]/DALL-E-melting_heart_of_statistics_in_Dali_style_80.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Dr. Charles R. Tittle’s intellectual contributions</title>
+  <dc:creator>Jon Brauer, with Katya Botchkovar and Carter Hay</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[2]/charles-memorial.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[2]/charles_smiling.jpg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Dr.&nbsp;Charles R. Tittle</figcaption><p></p>
 </figure>
 </div>
@@ -435,148 +341,88 @@ Advocate for Theoretical Science in Criminology (Jon Brauer)
   url = {https://www.reluctantcriminologists.com/charles-memorial.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer,withkatyabotchkovarandcarterhay2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer,withkatyabotchkovarandcarterhay2023" class="csl-entry quarto-appendix-citeas">
 Jon Brauer, with Katya Botchkovar and Carter Hay. 2023. <span>“Dr.
 Charles R. Tittle’s Intellectual Contributions.”</span> March 11, 2023.
 <a href="https://www.reluctantcriminologists.com/charles-memorial.html">https://www.reluctantcriminologists.com/charles-memorial.html</a>.
-</div></div></section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
-      });
-    }
-  }
-});
-</script>
-<script src="https://utteranc.es/client.js" repo="jakeday4/reluctantcrim_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script>
-</div> <!-- /content -->
+</div></div></section></div> ]]></description>
+  <category>general</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[2]/charles-memorial.html</guid>
+  <pubDate>Sat, 11 Mar 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[2]/charles_smiling.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Welcome to the reluctant criminologists</title>
+  <dc:creator>Jon Brauer and Jake Day</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</link>
+  <description><![CDATA[ 
 
 
 
-</body></html>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[1]/RC_logo_white.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Reluctant criminologists logo</figcaption><p></p>
+</figure>
+</div>
+<section id="why-are-we-doing-this" class="level2">
+<h2 class="anchored" data-anchor-id="why-are-we-doing-this">Why are we doing this?</h2>
+<p>First, this site is intended primarily as a central repository for conveniently sharing our course material and preliminary ideas with students and colleagues. It allows us to simply point people to a website rather than sending large html files via email or proliferating dropbox links. If it serves only this purpose effectively, we will be happy.</p>
+<p>Second, this site is a direct consequence of our recent efforts to re-tool our approaches to doing science. We think this site will serve as evidence for how much we have learned - and likely as even stronger evidence of how much more we have yet to learn.</p>
+<p>Of course, this begs the question: Why have we been re-tooling our approaches to science? Well, answering that question requires a longer conversation with multiple threads, and we anticipate weaving some of those threads into our future blog posts. For now, it may be clear from our posted materials that we are motivated to act in response to increasing concerns about replication failures across multiple scientific disciplines and awareness of subsequent reforms. We are also motivated by the perception that our academic disciplines of sociology and criminology, with some exceptions, may be lagging behind other fields <a href="https://statmodeling.stat.columbia.edu/2016/09/22/why-is-the-scientific-replication-crisis-centered-on-psychology/">like psychology</a> in self-reflection on these important issues and widespread adoption of <a href="https://www.economicscience.org/downloads/ReplicationWhitePaper.pdf">potentially effective reforms</a>. Likewise, we are moved by own experiences with reproducing <a href="https://journals.sagepub.com/doi/10.1177/0049124119826158">high-profile work</a> and attempting to raise awareness through the traditional academic peer-review publication process about concerns regarding underpowered null hypothesis significance tests and and common misinterpretations of null findings from such tests.</p>
+<p>It is also fair to say that this site is indicative of early-mid-career crises of sorts brought on by other factors such as post-tenure malaise and serious reflections about what we are doing with our limited time in the aftermath of the global COVID-19 pandemic.</p>
+<p>In fact, the initial idea for the blog emerged during the height of the pandemic in a long email thread between Jon and Jake. In a somewhat typical exchange, Jake was asking Jon to explain a relatively complex statistical topic (e.g., latent variable modeling in SEM vs.&nbsp;multilevel modeling). Jon was sharing resources, summarizing debates, and explaining issues that have been published on the topic across disparate statistical literatures over the years. Jake thought putting these types of discussions into a blog might be beneficial for multiple reasons. First, rather than burying this writing in emails, others might also appreciate such reviews or tutorials if they were available in a free, public-facing blog. Second, Jon seemed reluctant to write traditional academic articles on such topics since, from his perspective, they would be redundant - the reviews and debates are already out there, you just need to go read them (often in other fields). Meanwhile, Jon was receptive to the idea of a blog; he thought Jake should write more, and a blog might be a good way for both of them to spill ink and “try out” ideas under a critical public eye while perhaps even helping some students and colleagues along the way. So, here we are.</p>
+<!-- See about page. Also mention perceived need in our field. See McElreath tweet about cultural anthro. -->
+</section>
+<section id="how-we-were-inspired-by-charles" class="level2">
+<h2 class="anchored" data-anchor-id="how-we-were-inspired-by-charles">How we were inspired by Charles</h2>
+<p>The name of our site pays homage to our late mentor and friend, Dr.&nbsp;Charles R. Tittle. It is meant to be a cheeky reference to his chapter entitled “Reflections of a Reluctant but Committed Criminologist” in Gilbert Geis and Mary Dodge’s <a href="https://www.taylorfrancis.com/books/edit/10.4324/9781315721507/lessons-criminology-gilbert-geis-mary-dodge"><em>Lessons of Criminology</em></a> (pp.23-45).</p>
+<p>This is one of our favorite pieces written by Charles. Our perspectives on the field of criminology and criminal justice were heavily shaped by Charles and are thus quite comparable to the views he presents in that chapter. Here is how that chapter starts (p.23):</p>
+<!-- Why not just use block quote? -->
+<blockquote class="blockquote">
+<p>“I didn’t intend to become a criminologist. Rather, happenstance led me to investigate certain sociological problems that resulted in my being labeled a criminologist (Tittle, 1991). After a while the reactions of others had the effects that symbolic interactionist theory would predict - I began to think of myself as a criminologist, although one with a larger allegiance. In fact, one of the first conclusions I drew as a criminologist is that criminology ought not be thought of as a discipline. Disciplines have unifying perspectives; criminology does not. Criminology is an umbrella term encompassing diverse studies of crime and crime-relevant phenomena undertaken from many disciplinary points of view. It makes sense to speak of an economic perspective, a political perspective, a historical perspective, or a sociological perspective. It makes no sense to speak of a criminological, a criminal justice, or a criminal perspective (at least not in an academic context). In my mind, the best criminology is done by those with a firm grounding in some discipline, or by those with an appreciation of several different disciplines, the insights of which are then brought to bear on criminological issues.”</p>
+</blockquote>
+<p>The chapter then proceeds to introduce several lessons that Charles learned throughout his illustrious career, which he later summarized as follows (pp.40-41):</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Criminology is not a discipline but a topical area dependent on a variety of disciplines and that criminological knowledge is best pursued and dispensed within the context of a liberal arts education</li>
+<li>Our methods of identifying and recruiting new scholars must be improved</li>
+<li>Evidence concerning most important issues having to do with crime and crime-relevant phenomena is weak; success requires that we commit ourselves to a long-range mission of improving that situation</li>
+<li>Things are more complicated than our extant theories show, calling for improved theories specifying contingent and interactive effects</li>
+<li>The most effective criminology demands that we be aware of and committed to the goal of developing general explanatory schemes refined through test and feedback</li>
+<li>Science is the best model to follow in developing criminological knowledge</li>
+<li>Weak science, which is likely to continue to characterize criminology for some time, is hardly a basis for policy</li>
+<li>The barriers to, and distractions from, good scientific criminology, especially the widespread practice of ad hoc work and the intrusion of personal biases and larger ideologies, must be countered</li>
+<li>Civility within the scholarly community is necessary for maximum collective effort</li>
+</ol>
+</blockquote>
+<p>If you are interested in learning more about some of Charles Tittle’s intellectual contributions, check out <a href="../../../blog-posts/[2]/charles-memorial.html">our blog post on the topic</a>, which contains comments delivered in a tribute panel for Charles at the 2021 American Society of Criminology annual meetings. To be clear, as we also note on our <a href="../../about.html"><em>About</em> page</a>, we were inspired by Charles but he did not endorse this project in any way; in fact, he likely would have thought it was a waste of time better spent contributing in more traditional ways to scientific theory development and testing. We think it’s safe to say that we are both more “reluctant” and less “committed” criminologists than Charles was.</p>
+</section>
+<section id="but-really-why-are-we-doing-this" class="level2">
+<h2 class="anchored" data-anchor-id="but-really-why-are-we-doing-this">But really, why are we doing this?</h2>
+<p>If we have a loftier aim for our site, it is to answer the call expressed in Charles’ lessons above by contributing modestly to the advancement of scientific criminology. In other words, this site is an attempt to help improve upon, even if just a little, what we perceive are systematic shortcomings in our respective fields.</p>
+<p>Of course, we are not alone - scholars raise similar concerns in other social scientific disciplines, including <a href="https://journals.sagepub.com/doi/10.2466/pr0.1990.66.1.195">psychology</a>, <a href="https://openmkt.org/blog/2022/replications-in-marketing-myth-and-reality/">marketing</a>, and <a href="https://elevanth.org/blog/2022/09/19/the-problem-with-cultural-evolution/">evolutionary anthropology</a> to name a few. Likewise, we benefit immensely from the contributions in blogs and bookdown projects shared freely for the collective good by so many people from various disciplinary perspectives working within and outside academia. We encourage you to check out our <a href="ADD_LINK">favorite links</a> post for some excellent examples. Our hope is that this site might offer a comparable (derivative, bargain-basement) version that enriches conversations in our fields about how we can collectively strengthen our science through concerted efforts to improve our theories and the methods we use to generate knowledge about them.</p>
+<p>In our own academic careers and scholarly pursuits, we continually try to improve our understanding of philosophies of science, substantive theories of crime and deviance, and quantitative methods used to test social scientific theories. Rather than solely bothering seemingly uninterested authors about these issues in the reviews we write for journals (we both now sign our reviews but the editors often take our names off), we thought we might as well put our thoughts out in public and subject them to criticism. Of course, we recognize the most likely outcome is that our thoughts, like in many of the reviews we write, will simply be (justifiably?) ignored. But we expect our own thinking on these matters will be strengthened by forcing ourselves to write them down and, ideally, by then accounting for your feedback.</p>
+<p>So welcome to our blog! We’ll try to keep the navel gazing to a minimum from here on out.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauerandjakeday2023,
+  author = {Jon Brauer and Jake Day},
+  title = {Welcome to the Reluctant Criminologists},
+  date = {2023-03-10},
+  url = {https://www.reluctantcriminologists.com/welcome-blog.html},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday2023" class="csl-entry quarto-appendix-citeas">
+Jon Brauer and Jake Day. 2023. <span>“Welcome to the Reluctant
+Criminologists.”</span> March 10, 2023. <a href="https://www.reluctantcriminologists.com/welcome-blog.html">https://www.reluctantcriminologists.com/welcome-blog.html</a>.
+</div></div></section></div> ]]></description>
+  <category>general</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</guid>
+  <pubDate>Fri, 10 Mar 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[1]/RC_logo_white.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

@@ -5,4 +5,5 @@ listing:
   sort:
     - "date asc"  
   fields: [date, title, reading-time, description, image, categories]
+  feed: true
 ---

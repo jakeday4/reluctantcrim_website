@@ -4,5 +4,10 @@
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
-# Enable banner style title blocks
-title-block-banner: true
+# Generate citation for each post:
+citation: true
+
+# Allow comments on each course page:
+comments: 
+  utterances: 
+    repo: jakeday4/reluctantcrim_comments
