@@ -10,7 +10,7 @@
 <atom:link href="https://www.reluctantcriminologists.com/course-materials.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
 <generator>quarto-1.2.269</generator>
-<lastBuildDate>Tue, 28 Mar 2023 18:09:24 GMT</lastBuildDate>
+<lastBuildDate>Tue, 28 Mar 2023 19:33:24 GMT</lastBuildDate>
 <item>
   <title>Introduction to statistics in R for criminologists</title>
   <dc:creator>Jon Brauer and Tyeisha Fordham</dc:creator>
@@ -228,7 +228,7 @@ Jon Brauer and Tyeisha Fordham. n.d. <span>“Introduction to Statistics
 in R for Criminologists.”</span> <a href="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats">https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/index.html</guid>
-  <pubDate>Tue, 28 Mar 2023 18:09:24 GMT</pubDate>
+  <pubDate>Tue, 28 Mar 2023 19:33:24 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/hateclass_horst.png" medium="image" type="image/png" height="87" width="144"/>
 </item>
 <item>
@@ -405,7 +405,7 @@ Jon Brauer and Jake Day. n.d. <span>“Replication &amp; Reproducibility
 in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR">https://www.reluctantcriminologists.com/course-materials/2_grad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/index.html</guid>
-  <pubDate>Tue, 28 Mar 2023 18:09:24 GMT</pubDate>
+  <pubDate>Tue, 28 Mar 2023 19:33:24 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/problems_horst.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
@@ -438,7 +438,7 @@ in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcrim
 
 </div><div class="column" style="width:60%;">
 <section id="r-assignment-1-getting-started-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="r-assignment-1-getting-started-in-r"><a href="r-assignm/CRM495_R_Assign1_RRStudio_Plain.html">R Assignment 1: Getting Started in R</a></h3>
+<h3 class="anchored" data-anchor-id="r-assignment-1-getting-started-in-r"><a href="r-assignments/CRM495_R_Assign1_RRStudio_Plain.html">R Assignment 1: Getting Started in R</a></h3>
 <p>The purpose of this first assignment is to demonstrate that you have downloaded the “R” statistical program and the “RStudio” Integrated Development Environment (IDE).</p>
 </section>
 </div>
@@ -567,7 +567,7 @@ in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcrim
 
 </div><div class="column" style="width:60%;">
 <section id="project-phase-2-identify-published-research-on-topicquestion" class="level3">
-<h3 class="anchored" data-anchor-id="project-phase-2-identify-published-research-on-topicquestion"><a href="rep-project/Project_Phase2_Published_ResearchDay.html">Project Phase 2: Identify Published Research on Topic/Question</a></h3>
+<h3 class="anchored" data-anchor-id="project-phase-2-identify-published-research-on-topicquestion"><a href="rep-project/Project_Phase2_Published_Research_Day.html">Project Phase 2: Identify Published Research on Topic/Question</a></h3>
 <p>The primary purpose of Phase 2 of the Replication and Reproducibility Project are to expose you to the academic literature surrounding your research topic and/or question. A secondary purpose of this assignment is for you to develop a sense of how (un)common it is to find research articles in the top journals in the field of Criminology for which the authors have openly shared their data and code for reproducibility purposes.</p>
 </section>
 </div>
@@ -584,7 +584,7 @@ in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcrim
 
 </div><div class="column" style="width:60%;">
 <section id="project-phase-3-describe-justify-reproduction-or-conceptual-replication" class="level3">
-<h3 class="anchored" data-anchor-id="project-phase-3-describe-justify-reproduction-or-conceptual-replication"><a href="rep-proProject_Phase3_Describe-and-Justify_Day.html">Project Phase 3: Describe &amp; Justify Reproduction or Conceptual Replication</a></h3>
+<h3 class="anchored" data-anchor-id="project-phase-3-describe-justify-reproduction-or-conceptual-replication"><a href="rep-project/Project_Phase3_Describe-and-Justify_Day.html">Project Phase 3: Describe &amp; Justify Reproduction or Conceptual Replication</a></h3>
 <p>Unlike your previous assignments, this assignment will not be as explicitly directed or organized as previous assignments. While I will provide you with basic guidelines and things to include, this is your chance to demonstrate your own creativity and show what you have learned by crafting your own RMD file as you see fit. The final knitted file should contain the following parts: 1) Describe Article and Specific Findigs; 2) Insert Image and Description of Key Table(s) and/or Figure(s); and 3) Write Conclusion and Submit Knitted File and File Structure.</p>
 </section>
 </div>
@@ -674,7 +674,7 @@ Jake Day and Jon Brauer. n.d. <span>“Criminology in Crisis? Replication
 (Undergraduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR">https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/index.html</guid>
-  <pubDate>Tue, 28 Mar 2023 18:09:24 GMT</pubDate>
+  <pubDate>Tue, 28 Mar 2023 19:33:24 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/debugging_horst.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 </channel>
