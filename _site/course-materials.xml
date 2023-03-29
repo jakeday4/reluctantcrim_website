@@ -9,8 +9,8 @@
 <link>https://www.reluctantcriminologists.com/course-materials.html</link>
 <atom:link href="https://www.reluctantcriminologists.com/course-materials.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
-<generator>quarto-1.2.335</generator>
-<lastBuildDate>Tue, 28 Mar 2023 23:45:27 GMT</lastBuildDate>
+<generator>quarto-1.2.269</generator>
+<lastBuildDate>Wed, 29 Mar 2023 14:56:11 GMT</lastBuildDate>
 <item>
   <title>Introduction to statistics in R for criminologists</title>
   <dc:creator>Jon Brauer and Tyeisha Fordham</dc:creator>
@@ -228,7 +228,7 @@ Jon Brauer and Tyeisha Fordham. n.d. <span>“Introduction to Statistics
 in R for Criminologists.”</span> <a href="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats">https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/index.html</guid>
-  <pubDate>Tue, 28 Mar 2023 23:45:27 GMT</pubDate>
+  <pubDate>Wed, 29 Mar 2023 14:56:11 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/hateclass_horst.png" medium="image" type="image/png" height="87" width="144"/>
 </item>
 <item>
@@ -245,9 +245,9 @@ in R for Criminologists.”</span> <a href="https://www.reluctantcriminologists.
 <p></p><figcaption class="figure-caption">Workflow, not just code, often hinders reproducibility. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption><p></p>
 </figure>
 </div>
-<p>In the fall of 2021, Jon was on the schedule to teach a new course titled “Replication &amp; Reproducibility in Social Science” as a substitute for IU Criminal Justice Department’s typical graduate “Methods” degree requirement. The same semester, Jake was scheduled to teach the “Social Research Methods” course to first-year MA students in UNCW’s Department of Sociology and Criminology. He decided to join Jon in revising the class to focus on replication and reproducibility. The result was a jointly designed course focusing on replication and reproducibility issues broadly across the social sciences, but with specific examples from sociology and criminology. You can take a look at both <a href="">Jon’s syllabus</a> and <a href="">Jake’s syllabus</a> for the course. They are basically identical, but Jon’s syllabus includes a complete reference list for the assigned and recommended readings. Also, because of a weird scheduling quirk, Jake had to combine two weeks into one (Hype and Perverse Incentives).</p>
+<p>In the fall of 2021, Jon was on the schedule to teach a new course titled “Replication &amp; Reproducibility in Social Science” as a substitute for IU Criminal Justice Department’s typical graduate “Methods” degree requirement. The same semester, Jake was scheduled to teach the “Social Research Methods” course to first-year MA students in UNCW’s Department of Sociology and Criminology. He decided to join Jon in revising the class to focus on replication and reproducibility. The result was a jointly designed course focusing on replication and reproducibility issues broadly across the social sciences, but with specific examples from sociology and criminology. You can take a look at both <a href="CJUS-P680_Fall-21-22.pdf">Jon’s syllabus</a> and <a href="CRM-SOC-500_Fall-2021.pdf">Jake’s syllabus</a> for the course. They are basically identical, but Jon’s syllabus includes a complete reference list for the assigned and recommended readings. Also, because of a weird scheduling quirk, Jake had to combine two weeks into one (Hype and Perverse Incentives).</p>
 <p>In addition to teaching our students about replication and reproducibility issues more generally, we also wanted to help them learn some practical skills to help them produce more reliable and transparent research. To do this, we had students complete two sets of assignments: 1) R Assignments intended to provide a basic introduction to conducting reproducible research using the <a href="https://www.r-project.org/">R Statistical Computing Environment</a> and <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and 2) a Reproducibility Project where they had the reproduce the (descriptive) results of a published article on a topic of interest to them. The “R Assignments” ended up being a basic introduction to data wrangling, data visualization and reporting, and reproducible workflow with a primary emphasis on the <a href="https://www.tidyverse.org/">Tidyverse</a> suite of packages. The “Reproducibility Project” was an opportunity for students to apply these new skills to a topic that interested them, get their hands dirty with real-world data, and develop an appreciation for the challenges involved in computationally reproducing published work when you do not have access to the code used to clean, wrangle and analyze the data.</p>
-<p>We have included these assignments as they were assigned in Jon’s class with light editing, where necessary, for student privacy reasons. In a forthcoming <a href="">blog post</a> we will discuss what we learned from designing this course and note what we would change going forward (and what Jake did change when <a href="">revising the course</a> for senior-level undergraduate criminology majors).</p>
+<p>We have included these assignments as they were assigned in Jon’s class with light editing, where necessary, for student privacy reasons. In a forthcoming blog post we will discuss what we learned from designing this course and note what we would change going forward (and what Jake did change when <a href="https://reluctantcriminologists.com/course-materials/3_ugrad_rnr/">revising the course</a> for senior-level undergraduate criminology majors).</p>
 <section id="r-assignments" class="level2">
 <h2 class="anchored" data-anchor-id="r-assignments">R Assignments</h2>
 <div class="columns">
@@ -313,7 +313,7 @@ in R for Criminologists.”</span> <a href="https://www.reluctantcriminologists.
 
 </div><div class="column" style="width:60%;">
 <section id="assignment-4-conceptual-replication" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-4-conceptual-replication"><a href="r-assignments/R_Assgin4_ConceptRep_Brauer_Public.html">Assignment 4: Conceptual Replication</a></h3>
+<h3 class="anchored" data-anchor-id="assignment-4-conceptual-replication"><a href="r-assignments/R_Assign4_ConceptRep_Brauer_Public.html">Assignment 4: Conceptual Replication</a></h3>
 <p>The purpose of this assignment is to perform a conceptual replication of some observations in <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.1987.tb00801.x">Orcutt’s (1987)</a> paper in <em>Criminology</em> titled: “Differential Association and Marijuana Use: A Closer Look at Sutherland (with a Little Help from Becker).” Since Orcutt’s (1987) original data are unavailable, we will assess whether some of his findings can be repeated with and generalize to a similar sample in the NYS data.</p>
 </section>
 </div>
@@ -405,7 +405,7 @@ Jon Brauer and Jake Day. n.d. <span>“Replication &amp; Reproducibility
 in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR">https://www.reluctantcriminologists.com/course-materials/2_grad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/index.html</guid>
-  <pubDate>Tue, 28 Mar 2023 23:45:27 GMT</pubDate>
+  <pubDate>Wed, 29 Mar 2023 14:56:11 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/problems_horst.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
@@ -674,7 +674,7 @@ Jake Day and Jon Brauer. n.d. <span>“Criminology in Crisis? Replication
 (Undergraduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR">https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/index.html</guid>
-  <pubDate>Tue, 28 Mar 2023 23:45:27 GMT</pubDate>
+  <pubDate>Wed, 29 Mar 2023 14:56:11 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/debugging_horst.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 </channel>
