@@ -1,12 +1,12 @@
 ---
 title: "Dr. Charles R. Tittle's intellectual contributions"
 author: "Jon Brauer, with Katya Botchkovar and Carter Hay"
-date: "2023-03-11"
+date: "2023-03-12"
 image: charles_smiling.jpg
 image-alt: "Dr. Charles R. Tittle"
 description: "This post is dedicated to the intellectual contributions of our late mentor, Dr. Charles R. Tittle."
 # citation: 
-#   url: https://reluctantcriminologists.com/blog-posts/[2]/charles-memorial.html
+#   url: https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html
 categories: [general]
 # https://community.rstudio.com/t/quarto-how-to-cross-reference-unnumbered-book-chapter/136279/2
 ---

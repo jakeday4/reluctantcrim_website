@@ -1,7 +1,7 @@
 ---
-title: "Criminology in crisis? Replication & reproducibility in criminology & the social sciences (Undergraduate-level)"
+title: "Criminology in crisis? Replication & reproducibility in criminology (Undergraduate-level)"
 author: "Jake Day and Jon Brauer"
-description: "Assignments for *replication and reproducibility* course, modified for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a 'reproducibility project' (#8-#14) where students reproduce or conceptually replicate results from a published article using data from the National Youth Survey."
+description: "Assignments for *replication and reproducibility* course for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a 'reproducibility project' (#8-#14) where students reproduce or conceptually replicate results from a published article using NYS data."
 image: debugging_horst.png
 image-alt: Artwork by @allison_horst
 ---

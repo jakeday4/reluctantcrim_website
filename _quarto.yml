@@ -15,7 +15,7 @@ website:
       - text: "course materials"
         href: course-materials.qmd
       - text: "links we love"
-        href: blog-posts/[3]/favorite_links.qmd
+        href: blog-posts/[2]/favorite_links.qmd
     right:
       - icon: envelope
         href: mailto:reluctantcrim@gmail.com
