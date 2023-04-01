@@ -4,6 +4,7 @@ project:
 website:
   title: "reluctant criminologists"
   site-url: https://www.reluctantcriminologists.com
+  google-analytics: "G-F0XQR72SS3"
   description: "Jon Brauer and Jake Day's blog and course materials."
   navbar:
     logo: "images/RC_banner.jpg"
