@@ -10,7 +10,7 @@
 <atom:link href="https://www.reluctantcriminologists.com/course-materials.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Wed, 05 Apr 2023 19:17:03 GMT</lastBuildDate>
+<lastBuildDate>Wed, 05 Apr 2023 19:26:03 GMT</lastBuildDate>
 <item>
   <title>Introduction to statistics in R for criminologists</title>
   <dc:creator>Jon Brauer and Tyeisha Fordham</dc:creator>
@@ -228,7 +228,7 @@ Jon Brauer and Tyeisha Fordham. n.d. <span>“Introduction to Statistics
 in R for Criminologists.”</span> <a href="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats">https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/index.html</guid>
-  <pubDate>Wed, 05 Apr 2023 19:17:03 GMT</pubDate>
+  <pubDate>Wed, 05 Apr 2023 19:26:03 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/hateclass_horst.png" medium="image" type="image/png" height="87" width="144"/>
 </item>
 <item>
@@ -405,7 +405,7 @@ Jon Brauer and Jake Day. n.d. <span>“Replication &amp; Reproducibility
 in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR">https://www.reluctantcriminologists.com/course-materials/2_grad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/index.html</guid>
-  <pubDate>Wed, 05 Apr 2023 19:17:03 GMT</pubDate>
+  <pubDate>Wed, 05 Apr 2023 19:26:03 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/problems_horst.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
@@ -673,7 +673,7 @@ Jake Day and Jon Brauer. n.d. <span>“Criminology in Crisis? Replication
 &amp; Reproducibility in Criminology (Undergraduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR">https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR</a>.
 </div></div></section></div> ]]></description>
   <guid>https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/index.html</guid>
-  <pubDate>Wed, 05 Apr 2023 19:17:03 GMT</pubDate>
+  <pubDate>Wed, 05 Apr 2023 19:26:03 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/debugging_horst.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 </channel>
