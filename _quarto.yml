@@ -18,16 +18,30 @@ website:
       - text: "links we love"
         href: blog-posts/[2]/favorite_links.qmd
     right:
-      - icon: envelope
+      - icon: envelope-fill
         href: mailto:reluctantcrim@gmail.com
-      # - icon: github
-      #   href: https://github.com/
-      # - icon: twitter
-      #   href: https://twitter.com
+      - icon: github
+        href: https://github.com/jakeday4/reluctantcrim_website
+      - icon: twitter
+        href: https://twitter.com/reluctantcrim
+  page-footer: 
+    background: dark
+    left:
+        - icon: house-fill
+          href: https://reluctantcriminologists.com/
+      # - text: "Copyright CC-BY 4.0 unless otherwise noted."
+      #   href: https://creativecommons.org/licenses/by/4.0/
+    right: 
+      - icon: envelope-fill
+        href: mailto:reluctantcrim@gmail.com
+      - icon: github
+        href: https://github.com/jakeday4/reluctantcrim_website
+      - icon: twitter 
+        href: https://twitter.com/reluctantcrim 
 format:
   html:
     theme: sandstone
     css: styles.css
-
+    include-after-body: ./footer.html
 
 
