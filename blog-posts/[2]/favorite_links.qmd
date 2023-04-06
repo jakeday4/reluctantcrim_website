@@ -4,7 +4,7 @@ author: "Jon Brauer and Jake Day"
 date: "2023-03-11"
 image: "./DALL-E-melting_heart_of_statistics_in_Dali_style_80.png"
 image-alt: "Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E"
-categories: [general]
+categories: [general, rstats, causality, bayesian]
 ---
 
 ![Melting heart of statistics in Salvadore Dali's surrealist style, by DALL-E](DALL-E-melting_heart_of_statistics_in_Dali_style_80.png)
