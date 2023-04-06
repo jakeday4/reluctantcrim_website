@@ -1,10 +1,10 @@
 ---
 title: "Causation without Correlation?"
-author: "Jon Brauer & Jake Day"
+author: "Jon Brauer"
 date: "2023-04-10"
 image: DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png
 image-alt: "Pop art portrait of someone very confused, by DALL-E"
-description: "This post is dedicated to the intellectual contributions of our late mentor, Dr. Charles R. Tittle."
+description: "You've heard the phrase 'correlation does not imply causation.' But does causation imply correlation?"
 # citation: 
 #   url: https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html
 categories: [general, rstats, causality]
@@ -14,17 +14,213 @@ draft: true
 
 ![Pop art portrait of someone very confused, by DALL-E](DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png)
 
-** Introduction** 
+**Introduction** 
 
-Begin text post introduction... 
+I have taught a version of my  undergraduate introductory course on theories of crime and deviance (CJUS-P 200 at Indiana University) nearly every semester, across three different universities, for at least 15 years. In every one of those courses, my second lecture has been devoted to teaching *principles of causality*. 
+
+I start that segment by asking all the students what it means to say that "something causes something else." Perhaps I am imagining it, but it seems to me as if students now are quicker to move beyond correlational (e.g., "X causes Y" means that "when X changes, Y changes") or "rung one" explanations on [Pearl's ladder of causation](https://medium.com/from-the-diaries-of-john-henry/the-ladder-of-whys-b169b1c927d4)). Additionally, it seems as if some students now are more likely to intuit what essentially are counterfactual (e.g., "X causes Y" means that "if X had not changed, then Y would not have changed") or "rung three" explanations of causality without too much prompting. Maybe the [causal revolution](https://bigthink.com/surprising-science/judea-pearls-the-book-of-why-brings-news-of-a-new-science-of-causes/) really is a revolution? One can hope. 
+
+From there, I begin by discussing the basic principles of causality found in most sociology & criminology textbooks (correlation; nonspuriousness; temporal order). Students typically understand these basics. Most have heard that "correlation does not imply causation" before reaching my course, so this segment serves to reinforce and add some new substance to an old adage. I also briefly introduce more advanced yet critical ideas, such as  simple versus complex causality, causal chains, mechanisms and mediation, contingencies and moderation, and counterfactual causality. 
+
+In this segment, I often warn students that, while they might know that correlation does not necessarily imply causation, they may be surprised to learn that causation may exist even in the absence of observed correlation. To say they are surprised is probably an understatement - many seem confused or altogether lost by that claim. Anticipating this, I provide an example. Yet, I find that astute students are still often confused. 
+
+I was surprised to find very few accessible examples online to which I could point students for a more detailed illustration of the type of situation I was describing to them. So, after learning a bit about R, I did what any nerd would do - I simulated data to help my students better visualize the example. Then, I figured others beyond my class might be also be uninformed or confused about this, so here we are.  
+
+Before transforming the simulated example into a blog entry, I asked [ChatGPT](https://openai.com/blog/chatgpt): "Is it possible to have causation without correlation?" To be clear, there are a number of reasons that two variables, X & Y, can be causally related despite the lack of an observed bivariate or conditional (partial) correlation between them. Many reasons include typical methodological pitfalls like poor measurement or insufficient statistical power of a test to detect an effect, or improper modeling of [nonlinear (e.g., parabolic) functional relationships](https://qr.ae/pvj4pD),  or [sample selection bias](https://www.christopherspenn.com/2018/08/can-causation-exist-without-correlation/), and even in situations where there is nearly perfect functional causality ([see advanced example at end here](https://theincidentaleconomist.com/wordpress/causation-without-correlation-is-possible/)). ChatGPT indeed recognized the possibility of causation without correlation, yet it continued to provide examples where causation exists and correlation exists but, for reasons such as event rarity, shoddy measurement, or insufficiently powered tests, researchers were unable to detect an actually existing (i.e., nonzero) correlation. What I wanted was an example like mine where causality exists yet we would *a priori* expect to detect no correlation (e.g., *r*=0). My full conversation with ChatGPT is accessible below. 
 
 <details> <summary> Conversation with ChatGPT </summary>
 
-Include expanding clickable link to file here
+Include conversation, using magma & other html shading to highlight speakers 
 
 {{< file ChatGPT_cause_nocorr.pdf >}}
 
 </details>
 
+PICK UP HERE
 
-Pick back up here 
+In all these cases, causation involves **statistical dependence** between X and Y despite a lack of observed linear correlation. However, without the proper causal model guiding our statistical modeling decisions and interpretations of data, we may fail to observe such dependence and incorrectly infer a lack of causality from the absence of correlation. To avoid this trap, what we need is to understand theoretically how and why X is related to Y - e.g., by creating a *causal diagram* that accurately depicts the causal relationship(s) between these variables. Once we identify the correct causal model generating the data, then we can model the data in a way that permits us to observe statistical dependence and identify the causal effect(s) of X on Y. In short, we really need to understand theory - aka, logical statements of the causal relations between concepts - to properly model and interpret our data.  
+
+Let's use an example from criminology to illustrate. Specifically, we will draw inspiration from Bradley Wright and colleagues' (1999) [paper in Criminology](https://onlinelibrary-wiley-com.proxyiub.uits.iu.edu/doi/pdfdirect/10.1111/j.1745-9125.1999.tb00483.x) entitled "Reconsidering the relationship between SES and delinquency: Causation but not correlation." Seems fitting, eh? 
+
+The basic idea is this: There is a long history of debates over the SES-delinquency relationship. Some theories specifically posit a negative causal relationship (i.e., low SES -> high delinquency), yet observational research has documented inconsistent patterns (e.g., weak negative, nonexistent, or even positive relationships). Wright and colleagues argue that this state of affairs may be due to SES simultaneously having positive and negative causal effects on crime through countervailing mechanisms. Together, the positive and negative effects of these mechanisms may generally offset each other in many survey datasets, which might result in observing a lack of any bivariate correlation between SES and delinquency  (i.e., "total effect" estimate = 0) and/or inconsistent partial correlations (i.e., variable conditional direct effect etimates) depending on which mechanisms are included or excluded from researchers' statistical models.  
+
+We will illustrate how something like this might happen using simulated data. Specifically, we will simulate data for *parental SES*, *child delinquency*, and two potential countervailing mechanisms - *financial strain* and *perceived risk of detection* of delinquent behaviors. In our simulated example, we will assume parental SES does not directly cause child delinquency and that it indirectly causes child delinquency through both mediating mechanisms. Additionally, we will assume that the causal effects of Parental SES on financial strain and perceived risk of detection are equal in magnitude and that the causal effect of financial strain on delinquency is equal in magnitude yet opposite in direction, such that both indirect or mediated effects offset one another. Below is a directed acyclic graph, or DAG, of this simple causal structure.   
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(patchwork)
+library(psych)
+# library(devtools)
+# install_github("jtextor/dagitty/r")
+library(dagitty)
+
+SESdag <- dagitty("dag{
+  SES -> Strain -> Delinquency
+  SES -> Risk -> Delinquency
+   }") 
+coordinates(SESdag) <- list(
+  x=c(SES=1, Strain=2, Risk=2, Delinquency=3),
+  y=c(SES=2, Strain=1, Risk=3, Delinquency=2) )
+
+plot(SESdag)
+
+```
+
+Now let's simulate some data. In doing so, note we round data drawn from continuous (i.e., normal & Poisson) distributions to integers; this adds a bit of noise to the data yet also makes our variables more comparable to the types of ordinal, Likert-type measures we see in our field. 
+
+```{r}
+
+# X = Parental SES
+# Y = Child delinquent behavior
+# F = Mediatior through which high Parent SES might decrease delinquency - e.g., less financial (S)train
+# P = Mediators through which high Parent SES increase delinquency - e.g., lower perceived (R)isk of detection
+
+# Strain -> Delinquency <- Risk 
+# Strain <- SES -> Risk
+
+set.seed(1138)
+n <- 1000
+
+# McElreath method (p.153)
+# SES <- rnorm(n)
+# Strain <- rnorm(n,SES)
+# Risk <- rnorm(n,SES)
+# Delinquency <- rnorm(n,Strain-Risk)
+# 
+
+# https://www.tandfonline.com/doi/pdf/10.1080/10691898.2020.1752859
+set.seed(1138)
+n <- 1000
+SES <- round(rnorm(n),digits=0)
+Strain <- round(-.5*SES + rnorm(n),digits=0)
+Risk <- round(-.5*SES + rnorm(n),digits=0)
+Delinquency <- round(.5*Strain + -.5*Risk + 0*SES + rpois(n,1),digits=0)
+
+simdata <- tibble(SES, Strain, Risk, Delinquency)
+simdata <- simdata %>% mutate(
+  Delinquency = ifelse(Delinquency < 0, Delinquency == 0, Delinquency)
+)
+
+simdata
+
+SESplot <- simdata %>% ggplot() +
+  geom_histogram(aes(x=SES, y=..density..),
+                 color="#1fa187", fill="#4ac16d", alpha=.7,
+                 position="identity", 
+                 breaks = seq(-4, 4, by = 1)) + 
+  theme_minimal() + 
+  theme(axis.text.y=element_blank(),  
+        axis.ticks.y=element_blank()
+        ) +
+  labs(x="Parental SES", y=NULL)
+
+Strainplot <- simdata %>% ggplot() +
+  geom_histogram(aes(x=Strain, y=..density..),
+                 color="#1fa187", fill="#4ac16d", alpha=.7,
+                 position="identity", 
+                 breaks = seq(-4, 4, by = 1)) + 
+  theme_minimal() + 
+  theme(axis.text.y=element_blank(),  
+        axis.ticks.y=element_blank()
+        ) +
+  labs(x="Financial strain", y=NULL)
+
+Riskplot <- simdata %>% ggplot() +
+  geom_histogram(aes(x=Risk, y=..density..),
+                 color="#1fa187", fill="#4ac16d", alpha=.7,
+                 position="identity", 
+                 breaks = seq(-4, 4, by = 1)) + 
+  theme_minimal() + 
+  theme(axis.text.y=element_blank(),  
+        axis.ticks.y=element_blank()
+        ) +
+  labs(x="Perceived risk of detection", y=NULL)
+
+Delqplot <- simdata %>% ggplot() +
+  geom_histogram(aes(x=Delinquency, y=..density..),
+                 color="#1fa187", fill="#4ac16d", alpha=.7,
+                 position="identity") + 
+  theme_minimal() + 
+  theme(axis.text.y=element_blank(),  
+        axis.ticks.y=element_blank()
+        ) +
+  labs(x="Child delinquency", y=NULL)
+
+
+SESplot + Strainplot + Riskplot + Delqplot
+
+
+```
+
+Let's examine the bivariate correlations between our simulated variables.    
+
+```{r}
+
+# https://r-coder.com/correlation-plot-r/  
+
+pairs.panels(simdata,
+             smooth = FALSE,      # If TRUE, draws loess smooths
+             scale = FALSE,      # If TRUE, scales the correlation text font
+             density = TRUE,     # If TRUE, adds density plots and histograms
+             ellipses = FALSE,    # If TRUE, draws ellipses
+             method = "pearson", # Correlation method (also "spearman" or "kendall")
+             pch = 21,           # pch symbol
+             lm = TRUE,         # If TRUE, plots linear fit rather than the LOESS (smoothed) fit
+             cor = TRUE,         # If TRUE, reports correlations
+             jiggle = FALSE,     # If TRUE, data points are jittered
+             factor = 2,         # Jittering factor
+             hist.col = 3,       # Histograms color
+             stars = TRUE,       # If TRUE, adds significance level with stars
+             ci = TRUE)          # If TRUE, adds confidence intervals
+
+
+```
+
+As the pairs plot shows, there is virtually no correlation between SES and delinquency (*r* = -0.01). However, SES is negatively correlated with both mediators - financial strain (*r* = -0.43) and perceived risk (*r* = -0.40). Additionally, the mediator-delinquency correlations are similar in magnitude but opposite in direction (*r* = 0.30 for financial strain; *r* = -0.35 for perceived risk). 
+
+Given this, if we estimate a linear model regressing delinquency on SES without the mediators, we should see another near-zero association between SES and delinquency because this model essentially reproduces the bivariate correlation (with a partially standardized beta coefficient). This means the **total effect** of SES - its direct effect plus all indirect effects through other mechanimsms like financial strain and perceived risk, all combined - is estimated to be virtually zero (*b* = -0.01, se = 0.04). Thus, either SES has no direct or indirect causal effects on delinquency, or SES has direct and/or indirect causal effects on delinquency but we have failed to adequately identify it with our statistical model (and with the assumed causal model underlying it). For instance, perhaps the causal effect is non-linear, with positive and negative effects on delinquency at different levels of SES that average out to a null total effect. Or, perhaps SES has countervailing indirect effets through different mediating mechanisms and, together, the mediators offset each other to result in no total causal effect. Of course, we know this last explanation is the true data generating process here because we simulated the data accordingly! However, in real-world data analysis, if you were to observe no correlation between two variables, you now know that it is unwise to immediately assume that there is no causal relationship between them. 
+
+```{r}
+lm1a <- lm(Delinquency ~ SES, data=simdata)
+summary(lm1a)$coefficients[,1:2]
+plot(simdata$SES, simdata$Delinquency)
+abline(lm1a)
+```
+
+Now, let's estimate a linear model regressing delinquency on SES and include *both mediators* as predictors in the model as well. Once again, we should see a near-zero association between SES and delinquency, but for very different reasons this time. In this model, we are estimating what is commonly referred to as the **direct effect** of SES after stratifying on (aka, adjusting for) any potential indirect effects through financial strain and perceived risk mechanisms. Of course, we simulated our data in such a way that there would be no direct causal effect of SES on delinquency in our simulated data and, after including both mechanisms in the model, we accurately estimate virtually no direct effect of SES on delinquency (*b* = -0.03, se = 0.04).    
+
+```{r}
+lm1b <- lm(Delinquency ~ SES + Strain + Risk, data=simdata)
+summary(lm1b)$coefficients[,1:4]
+plot(simdata$SES, simdata$Delinquency)
+abline(lm1b)
+```
+
+Our model above also estimates a positive effect of financial strain (*b* = 0.39, se = 0.03) and a negative effect of perceived risk (*b* = -0.44, se = 0.03) on delinquency. So, we might conclude that these theoretical mechanisms are related to delinquency as expected. But how would we know SES has indirect causal effects on delinquency through these mechanisms - i.e., that these variables *mediate* the SES-delinquency relationship? Well, we could estimate additional models regressing each mediator on SES; if SES predicts each mediator (which we know it does in our simulated data) and if each mediator predicts delinquency then, with certain strong assumptions in place (e.g., no exposure-mediator interaction and no unmeasured confounding of any paths; see [here](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation), [here](https://datacolada.org/103), and [here](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/)), we can infer indirect causal effects of SES on delinquency. We can also extend this logic to test for and estimate the magnitude of such indirect effects through each specific mediator.  
+
+But without jumping ahead to mediation tests, what would have happened if we had included *only one mediator* in the model with SES predicting delinquency? Let's add financial strain to the model and exclude perceived risk from the model, then see what happens.
+
+```{r}
+lm1c <- lm(Delinquency ~ SES + Strain, data=simdata)
+summary(lm1c)$coefficients[,1:3]
+plot(simdata$SES, simdata$Delinquency)
+abline(lm1c)
+```
+
+Uh oh. Suddenly, our model estimates a *positive* effect of SES on delinquency! Why?! Well, since we stratified on (adjusted for) financial strain, we essentially removed SES's indirect effect on delinquency that operates through financial strain from our causal estimate. However, since we simulated these data, we know that SES also has an indirect effect on delinquency through perceived risk that is excluded from our model. So, the positive causal estimate of SES on delinquency in this model (*b* = 0.18, se = 0.04) reflects any direct effects of SES on delinquency (which we set to equal "0" in our simulation) and any indirect effects of SES on delinquency through unmeasured mediators - in this case, through perceived risk. We know that, in our simulated example, SES increases delinquency by reducing perceived risk of detection among this with high SES - that is, SES has *a positive indirect causal effect* on delinquency through perceived risk. Likewise, if we stratify on financial strain, thereby adjusting our estimate for this other known mediator, we are left with a positive estimate of the causal effect of SES on delinquency (which we know is through perceived risk). 
+
+This should help illustrate an important point about so-called **direct effect** estimates - they are not really estimating "direct" effects at all. Rather, like bivariate correlation and regression coefficients, they are simply descriptive statistics that summarize the **total** effect of a predictor (SES) on an outcome (delinquency) through any and all unmeasured mechanisms. This is an essential point. Imagine we were analyzing real nonsimulated data and, after including measures of known mediating mechanisms (e.g., financial strain; perceived risk) in our model, we observed no association or "direct effect" of SES on delinquency (like in our second model `lm1b` above). In that situation, it is possible that there are no other mediating mechanisms through which SES might cause delinquency. However, it is also possible that there are additional unmeasured mechanisms that, combined, offset each other to result in a near-zero total remaining causal effect! Moreover, bivariate correlations and partial regression coefficients also may be biased by effects of other unmeasures sources of confounding as well; in our simulation, we made a strong simplifying assumption that there were no such unmeasured sources of confounding and that we had identified all relevant mechanisms. However, with real data, such assumptions often are highly implausible. Hence, if one cares about causal effects of a variable (SES) on an outcome (delinquency) - total, indirect, or otherwise - then it is essential to identify the appropriate causal model and then to include (or exclude) variables as appropriate to accurately estimate the causal effect of interest. One cannot simply let the data speak.  
+
+Finally, let's conduct a simple test of the indirect effect of SES on delinquency using `mediate()` from the psych package.  
+
+```{r}
+mediate(Delinquency ~ SES + (Strain) + (Risk), data = simdata, n.iter = 10000) %>% print(short = TRUE)
+```
+
+As before, these models estimate a near-zero total effect (*c* = -0.01) and so-call "direct effect" (*c'* = -0.03) of SES on delinquency. However, SES is negatively associated with both mediators, and each mediator has a comparably sized yet opposite effect on delinquency. The text results also indicate that the total indirect effect of SES on delinquency through both mediators is nearly zero as well (Mean bootstrapped indirect effect [*ab*] of  SES  on  Delinquency  through  Strain and Risk =  0.02; standard error =  0.03; 95% CI = [-0.04, 0.08]). This should be unsurprising since we simulated the data so that the two indirect effects would equally offset one other, resulting in a total indirect effect of zero. 
+
+We could reestimate the model, specifying each mechanism separately as a posited mediator, to calculate an estimate of the specific indirect effect through each mediator. Or, we could multiply the SES->Mediator path coefficient and the Mediator->Delinquency path coefficient together to get basic estimates of these specific indirect effects. For instance, using this "product of *ab* coefficients" approach, we would estimate a negative indirect effect of SES on delinquency through financial strain (-0.48 * 0.39) approximately equal to -0.19 and a positive indirect effect through perceived risk (-0.47 * -0.44) approximately equal to 0.21. As expected, these countervailing indirect effects nearly perfectly offset one another!  
+
+So, this was a long-winded illustration of just one way that two variables might be causally related even in the absence of observing a (bivariate; total; direct) correlation between them! 
+
