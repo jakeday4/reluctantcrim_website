@@ -1,0 +1,30 @@
+---
+title: "Causation without Correlation?"
+author: "Jon Brauer & Jake Day"
+date: "2023-04-10"
+image: DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png
+image-alt: "Pop art portrait of someone very confused, by DALL-E"
+description: "This post is dedicated to the intellectual contributions of our late mentor, Dr. Charles R. Tittle."
+# citation: 
+#   url: https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html
+categories: [general, rstats, causality]
+# https://community.rstudio.com/t/quarto-how-to-cross-reference-unnumbered-book-chapter/136279/2
+draft: true
+---
+
+![Pop art portrait of someone very confused, by DALL-E](DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png)
+
+** Introduction** 
+
+Begin text post introduction... 
+
+<details> <summary> Conversation with ChatGPT </summary>
+
+Include expanding clickable link to file here
+
+{{< file ChatGPT_cause_nocorr.pdf >}}
+
+</details>
+
+
+Pick back up here 
