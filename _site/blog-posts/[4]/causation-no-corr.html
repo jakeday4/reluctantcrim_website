@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jon Brauer">
-<meta name="dcterms.date" content="2023-04-12">
+<meta name="dcterms.date" content="2023-04-10">
 <meta name="description" content="You’ve heard the phrase ‘correlation does not imply causation.’ But does causation imply correlation?">
 
 <title>reluctant criminologists - Causation without Correlation?</title>
@@ -252,7 +252,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 12, 2023</p>
+      <p class="date">April 10, 2023</p>
     </div>
   </div>
   
@@ -264,8 +264,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Pop art portrait of someone very confused, by DALL-E</figcaption><p></p>
+<p><img src="empty-egg-dag3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Empty Easter egg, or countervailing causation?</figcaption><p></p>
 </figure>
 </div>
 <section id="sec-ladder" class="level2">
@@ -277,6 +277,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </section>
 <section id="sec-reasons" class="level2">
 <h2 class="anchored" data-anchor-id="sec-reasons">Causation without correlation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DALL-E_pop_art_style_portrait_painting_of_someone_very_confused3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Pop art portrait of someone very confused, by DALL-E</figcaption><p></p>
+</figure>
+</div>
 <p>To say students are surprised by this claim is an understatement - many seem confused or downright skeptical when I state it. After all, didn’t we just discuss how a basic criteria for establishing that X causes Y is <em>observing a correlation</em> between X and Y? Anticipating this confusion, I provide an example involving multiple mediation.</p>
 <p>In fact, there are a number of reasons why two variables, X &amp; Y, can be causally related despite the lack of an observed bivariate or conditional (partial) correlation between them that have nothing to do with multiple mediation. Many of these reasons involve a <em>failure to detect</em> a correlation where one is expected to exist due to an existing causal relationship (notice the counterfactual reasoning again?). Examples include poor measurement and insufficient statistical power of a test to detect an effect, or improper modeling of <a href="https://qr.ae/pvj4pD">nonlinear (e.g., parabolic) functional relationships</a>, or <a href="https://www.christopherspenn.com/2018/08/can-causation-exist-without-correlation/">sample selection bias</a>. Interestingly, it is possible to fail to observe a correlation between two variables even when in situations where there is nearly perfect functional causality (<a href="https://theincidentaleconomist.com/wordpress/causation-without-correlation-is-possible/">see advanced example at end here</a>).</p>
 <p>While it is certainly important to understand how and why we might sometimes fail to statistically detect a correlation between X &amp; Y where one might be causally expected, the example I use draws from a different situation in which one <em>would not even expect the existence of a statistical correlation</em> between X &amp; Y even with precise measurement, sufficient power, careful sampling, and so on, and despite a reasonable belief in the existence of causal processes or mechanisms connecting X &amp; Y. Examples of this situation might include counteracting direct and indirect effects or multiple countervailing mediators.</p>
@@ -405,7 +411,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p><img src="causation-no-corr_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>In this hypothetical example, imagine that increasing or “dialing up the knob” on X causes a decrease in both M1 and M2. Imagine also that increasing or dialing up M1 causes an <em>increase</em> in Y, whereas an increase in M2 causes a <em>decrease</em> in Y of comparable magnitude in the opposite direction (i.e., countervailing indirect effects). So, when we dial up X, we also causally dial up M1 and M2, which in turn equivalently dials Y up and down - meaning Y does not change when X changes despite changes in mediators.</p>
+<p>In this hypothetical example, imagine that increasing or “dialing up the knob” on X causes an increase in both M1 and M2. Imagine also that increasing or dialing up M1 causes an <em>increase</em> in Y, whereas an increase in M2 causes a <em>decrease</em> in Y of comparable magnitude in the opposite direction (i.e., countervailing indirect effects). So, when we dial up X, we also causally up M1 and M2, which in turn equivalently dials Y up (through M1) and down (through M2) - meaning Y does not change when X changes despite changes in mediators.</p>
 <p>So, you might still be wondering whether it is reasonable to describe this situation as one in which X <em>causes</em> Y, or whether this is an example of <strong>causation</strong> without (XY) correlation. Again, I say YES! To understand why, let’s use counterfactual reasoning. I want you to further imagine that we identify a way to intervene on the X -&gt; M1 -&gt; Y pathway. For instance, perhaps we design an intervention to mitigate or disrupt the X -&gt; M1 causal effect so that, when we dial up X, M1 no longer subsequently increases or it increases to a much lesser degree; that is, our intervention allows us to hold constant the level of M1 following a change in X, thereby negating the positive indirect effect of X on Y through M1. Now in this counterfactual situation, when we dial up X, what would happen to Y? It would change in a causally predictable way: If X increases, Y would decrease due to the negative indirect effect of X on Y through M2!</p>
 <p>I hope this abstract example helps illustrate why, without the proper causal model guiding our statistical modeling decisions and interpretations of data, it is easy to fail to observe statistical dependence where it exists (and vice versa) and then to incorrectly infer a lack of causality (or its presence) from the absence (or presence) of observed correlation. To avoid such traps, what we need is to understand theoretically how and why X is related to Y - e.g., by creating a <em>causal diagram</em> that accurately depicts the causal relationship(s) between these variables and by using counterfactual reasoning. Once we identify the correct causal model generating the data, then we can model the data in a way that permits us to observe statistical dependence and identify the causal effect(s) of X on Y. In short, we really need to understand <strong>theory</strong>, or logical statements of the causal relations between concepts, to properly model and interpret our data.</p>
 <p>With all that said, it can be difficult to grasp abstract examples, and it may be tempting to wonder whether such situations really exist in our world. So, let’s draw inspiration from a real study in criminology to add meat to the abstract bones of our example.</p>
@@ -758,13 +764,13 @@ R = 0.5 R2 = 0.25   F = 112.47 on 3 and 996 DF   p-value:  3.83e-79
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
   author = {Jon Brauer},
   title = {Causation Without {Correlation?}},
-  date = {2023-04-12},
+  date = {2023-04-10},
   url = {https://www.reluctantcriminologists.com/causation-no-corr.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Jon Brauer. 2023. <span>“Causation Without Correlation?”</span> April
-12, 2023. <a href="https://www.reluctantcriminologists.com/causation-no-corr.html">https://www.reluctantcriminologists.com/causation-no-corr.html</a>.
+10, 2023. <a href="https://www.reluctantcriminologists.com/causation-no-corr.html">https://www.reluctantcriminologists.com/causation-no-corr.html</a>.
 </div></div></section></div></main> <!-- /main -->
 
 <div>

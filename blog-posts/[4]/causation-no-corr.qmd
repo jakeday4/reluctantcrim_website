@@ -1,9 +1,9 @@
 ---
 title: "Causation without Correlation?"
 author: "Jon Brauer"
-date: "2023-04-12"
-image: DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png
-image-alt: "Pop art portrait of someone very confused, by DALL-E"
+date: "2023-04-10"
+image: empty-egg-dag3.png
+image-alt: "Empty Easter egg, or countervailing causation?"
 description: "You've heard the phrase 'correlation does not imply causation.' But does causation imply correlation?"
 # citation: 
 #   url: https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html
@@ -18,7 +18,7 @@ execute:
 draft: true
 ---
 
-![Pop art portrait of someone very confused, by DALL-E](DALL-E_pop_art_style_portrait_painting_of_someone_very_confused2.png)
+![Empty Easter egg, or countervailing causation?](empty-egg-dag3.png)
 
 ## Thinking up the ladder of causation {#sec-ladder}
 
@@ -31,6 +31,8 @@ At first glance, this may be a bit unexpected. We seem to engage in counterfactu
 Yet, counterfactuals also [are weird and can be difficult to comprehend](https://www.inference.vc/causal-inference-3-counterfactuals/), particularly when using formal statistical notation. So, I still start with a discussion of the three basic criteria for establishing causal claims found in most sociology and criminology textbooks (correlation; nonspuriousness; temporal order). From there, I very briefly introduce students to some more advanced ideas, such as  simple versus complex causality, causal chains, causal mechanisms and mediation, effect heterogeneity and moderation, and, of course, counterfactual causality. In doing so, I often tell students that, while they might know that correlation does not necessarily imply causation, they may be surprised to learn that **causation may exist even in the absence of observed correlation**. 
 
 ## Causation without correlation {#sec-reasons}
+
+![Pop art portrait of someone very confused, by DALL-E](DALL-E_pop_art_style_portrait_painting_of_someone_very_confused3.png)
 
 To say students are surprised by this claim is an understatement - many seem confused or downright skeptical when I state it. After all, didn't we just discuss how a basic criteria for establishing that X causes Y is *observing a correlation* between X and Y? Anticipating this confusion, I provide an example involving multiple mediation.  
 
@@ -205,9 +207,9 @@ coordinates(XYdag) <- list(
 plot(XYdag)
 
 ```
-In this hypothetical example, imagine that increasing or "dialing up the knob" on X causes a decrease in both M1 and M2. Imagine also that increasing or dialing up M1 causes an *increase* in Y, whereas an increase in M2 causes a *decrease* in Y of comparable magnitude in the opposite direction (i.e., countervailing indirect effects). So, when we dial up X, we also causally dial up M1 and M2, which in turn equivalently dials Y up and down - meaning Y does not change when X changes despite changes in mediators. 
+In this hypothetical example, imagine that increasing or "dialing up the knob" on X causes an increase in both M1 and M2. Imagine also that increasing or dialing up M1 causes an *increase* in Y, whereas an increase in M2 causes a *decrease* in Y of comparable magnitude in the opposite direction (i.e., countervailing indirect effects). So, when we dial up X, we also causally up M1 and M2, which in turn equivalently dials Y up (through M1) and down (through M2) - meaning Y does not change when X changes despite changes in mediators. 
 
-So, you might still be wondering whether it is reasonable to describe this situation as one in which X *causes* Y, or whether this is an example of **causation** without (XY) correlation. Again, I say YES! To understand why, let's use counterfactual reasoning. I want you to further imagine that we identify a way to intervene on the X -> M1 -> Y pathway. For instance, perhaps we design an intervention to mitigate or disrupt the X -> M1 causal effect so that, when we dial up X, M1 no longer subsequently increases or it increases to a much lesser degree; that is, our intervention allows us to hold constant the level of M1 following a change in X, thereby negating the positive indirect effect of X on Y through M1. Now in this counterfactual situation, when we dial up X, what would happen to Y? It would change in a causally predictable way: If X increases, Y would decrease due to the negative indirect effect of X on Y through M2! 
+So, you might still be wondering whether it is reasonable to describe this situation as one in which X *causes* Y, or whether this is an example of **causation** without (XY) correlation. Again, I say YES! To understand why, let's use counterfactual reasoning. I want you to further imagine that we identify a way to intervene on the X -> M1 -> Y pathway. For instance, perhaps we design an intervention to mitigate or disrupt the X -> M1 causal effect so that, when we dial up X, M1 no longer subsequently increases or it increases to a much lesser degree; that is, our intervention allows us to hold constant the level of M1 following a change in X, thereby negating the positive indirect effect of X on Y through M1. Now in this counterfactual situation, when we dial up X, what would happen to Y? It would change in a causally predictable way: If X increases, Y would decrease due to the negative indirect effect of X on Y through M2!
 
 I hope this abstract example helps illustrate why, without the proper causal model guiding our statistical modeling decisions and interpretations of data, it is easy to fail to observe statistical dependence where it exists (and vice versa) and then to incorrectly infer a lack of causality (or its presence) from the absence (or presence) of observed correlation. To avoid such traps, what we need is to understand theoretically how and why X is related to Y - e.g., by creating a *causal diagram* that accurately depicts the causal relationship(s) between these variables and by using counterfactual reasoning. Once we identify the correct causal model generating the data, then we can model the data in a way that permits us to observe statistical dependence and identify the causal effect(s) of X on Y. In short, we really need to understand **theory**, or logical statements of the causal relations between concepts, to properly model and interpret our data.  
 
