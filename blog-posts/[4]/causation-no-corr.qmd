@@ -15,7 +15,7 @@ format:
     code-summary: "Show code"
 execute: 
   warning: false
-draft: true
+draft: false
 ---
 
 ![Empty Easter egg, or countervailing causation?](empty-egg-dag3.png)

@@ -4,7 +4,8 @@
     "items": [
       "/blog-posts/[1]/welcome-blog.html",
       "/blog-posts/[2]/favorite_links.html",
-      "/blog-posts/[3]/charles-memorial.html"
+      "/blog-posts/[3]/charles-memorial.html",
+      "/blog-posts/[4]/causation-no-corr.html"
     ]
   },
   {
@@ -21,6 +22,7 @@
       "/blog-posts/[1]/welcome-blog.html",
       "/blog-posts/[2]/favorite_links.html",
       "/blog-posts/[3]/charles-memorial.html",
+      "/blog-posts/[4]/causation-no-corr.html",
       "/course-materials/1_ugrad_stats/index.html",
       "/course-materials/2_grad_RnR/index.html",
       "/course-materials/3_ugrad_RnR/index.html"

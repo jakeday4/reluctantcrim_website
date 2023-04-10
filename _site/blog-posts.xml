@@ -10,7 +10,532 @@
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Sun, 12 Mar 2023 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 10 Apr 2023 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Causation without Correlation?</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/empty-egg-dag3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Empty Easter egg, or countervailing causation?</figcaption><p></p>
+</figure>
+</div>
+<section id="sec-ladder" class="level2">
+<h2 class="anchored" data-anchor-id="sec-ladder">Thinking up the ladder of causation</h2>
+<p>I have taught a version of my undergraduate introductory course on theories of crime and deviance (CJUS-P 200 at <a href="https://criminaljustice.indiana.edu/index.html">Indiana University</a>) nearly every semester for the past 15 years and across three different universities. In each of those courses, my second lecture has always been devoted to teaching <em>principles of causality</em>.</p>
+<p>I start that segment with a thought question and class discussion about what it means to say that something “causes” something else. Most of the time, students start with correlational descriptions of causality, such as “X causes Y means that when X changes, Y tends to change.” Such answers are what <a href="http://bayes.cs.ucla.edu/WHY/">Pearl &amp; Mackenzie</a> refer to as a “rung one” observation on the <a href="https://blogs.kcl.ac.uk/behaviouralinsights/2020/07/07/why-you-should-read-the-book-of-why/">ladder of causation</a>. In contrast, it is much rarer for students to intuit with minimal prompting a <a href="https://engineeringideas.substack.com/i/47016069/counterfactuals">counterfactual</a> or “rung three” description of causality, such as “if X caused Y, then Y might not have changed if X had not changed.”</p>
+<p>At first glance, this may be a bit unexpected. We seem to engage in counterfactual thinking naturally, as it appears central to <a href="https://plato.stanford.edu/entries/counterfactuals/">imagination and rational agency</a>. Pearl and Mackenzie go so far as to claim that the ability to use counterfactual thinking to make “explanation-seeking inferences reliably and repeatably” is what “most distinguishes human from animal intelligence, as well as from model-blind versions of AI and machine learning” (<a href="https://www.basicbooks.com/titles/judea-pearl/the-book-of-why/9780465097616/">2018</a>, p.33). Moreover, the belief that randomization in controlled experiments offers a valid mechanism for making causal inferences relies upon counterfactual reasoning about potential outcomes; these counterfactual justifications underlying classical statistics were proposed by pioneers Jersey Neyman and Sir Ronald Fisher <a href="https://www.cambridge.org/core/books/abs/causal-inference-for-statistics-social-and-biomedical-sciences/brief-history-of-the-potential-outcomes-approach-to-causal-inference/B8CEDDC08F0E0D6C577847F0CBE4E6A3">a century ago</a>! Meanwhile, principled counterfactual frameworks using potential outcomes to make causal inferences with observational data have been in use <a href="https://en.wikipedia.org/wiki/Rubin_causal_model">since the 1970s</a> and represent arguably <a href="https://jech.bmj.com/content/76/11/960">the best approach to causal identification with observational data today</a>.</p>
+<p>Yet, counterfactuals also <a href="https://www.inference.vc/causal-inference-3-counterfactuals/">are weird and can be difficult to comprehend</a>, particularly when using formal statistical notation. So, I still start with a discussion of the three basic criteria for establishing causal claims found in most sociology and criminology textbooks (correlation; nonspuriousness; temporal order). From there, I very briefly introduce students to some more advanced ideas, such as simple versus complex causality, causal chains, causal mechanisms and mediation, effect heterogeneity and moderation, and, of course, counterfactual causality. In doing so, I often tell students that, while they might know that correlation does not necessarily imply causation, they may be surprised to learn that <strong>causation may exist even in the absence of observed correlation</strong>.</p>
+</section>
+<section id="sec-reasons" class="level2">
+<h2 class="anchored" data-anchor-id="sec-reasons">Causation without correlation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/DALL-E_pop_art_style_portrait_painting_of_someone_very_confused3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Pop art portrait of someone very confused, by DALL-E</figcaption><p></p>
+</figure>
+</div>
+<p>To say students are surprised by this claim is an understatement - many seem confused or downright skeptical when I state it. After all, didn’t we just discuss how a basic criteria for establishing that X causes Y is <em>observing a correlation</em> between X and Y? Anticipating this confusion, I provide an example involving multiple mediation.</p>
+<p>In fact, there are a number of reasons why two variables, X &amp; Y, can be causally related despite the lack of an observed bivariate or conditional (partial) correlation between them that have nothing to do with multiple mediation. Many of these reasons involve a <em>failure to detect</em> a correlation where one is expected to exist due to an existing causal relationship (notice the counterfactual reasoning again?). Examples include poor measurement and insufficient statistical power of a test to detect an effect, or improper modeling of <a href="https://qr.ae/pvj4pD">nonlinear (e.g., parabolic) functional relationships</a>, or <a href="https://www.christopherspenn.com/2018/08/can-causation-exist-without-correlation/">sample selection bias</a>. Interestingly, it is possible to fail to observe a correlation between two variables even when in situations where there is nearly perfect functional causality (<a href="https://theincidentaleconomist.com/wordpress/causation-without-correlation-is-possible/">see advanced example at end here</a>).</p>
+<p>While it is certainly important to understand how and why we might sometimes fail to statistically detect a correlation between X &amp; Y where one might be causally expected, the example I use draws from a different situation in which one <em>would not even expect the existence of a statistical correlation</em> between X &amp; Y even with precise measurement, sufficient power, careful sampling, and so on, and despite a reasonable belief in the existence of causal processes or mechanisms connecting X &amp; Y. Examples of this situation might include counteracting direct and indirect effects or multiple countervailing mediators.</p>
+<p>The statistical literature on mediation was particularly formative for my thinking on this topic. For example, consider the following excerpt from <a href="https://www.ln.edu.hk/mkt/staff/gcui/Hayes2009.pdf">Andrew Hayes’ (2009, p.413)</a> article, <em>Beyond Baron &amp; Kenny: Statistical Mediation Analysis in the New Millennium</em>, which was published around the time I first started teaching my theories of crime course and in the same year that I published <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.2009.00164.x">my very first article</a>, which included a “test” of a mediation hypothesis using the old school <a href="https://davidakenny.net/cm/mediate.htm#BK">Baron &amp; Kenny method</a>:</p>
+<blockquote class="blockquote">
+<p>Can Effects that Don’t Exist be ‘Mediated’?<br>
+<br> If a mediator is a variable, M, that is causally between X and Y and that <em>accounts at least in part for the association between X and Y</em>, then by definition X and Y must be associated in order for M to be a mediator of that effect. According to this logic, if there is no evidence that X affects Y, then how can X’s effect on Y be mediated and so what is the point of estimating indirect and direct effects? But it is possible for M to be causally between X and Y even if X and Y aren’t associated. In this case, some prefer to avoid the term <em>mediator</em> when describing M and instead refer simply to X’s indirect effect on Y through M…<br>
+<br> The distinction between mediation and indirect effect is not always made by users of the Baron and Kenny method, who may prematurely end the hunt for evidence of indirect effects if there is no evidence that X and Y are associated. If the size of <em>c</em> [path coefficients] constrained the size of <em>a</em> and <em>b</em> and therefore their product, this logic would make sense. Unfortunately, no such constraints exist, and it is easy to show that the claim that X can’t affect Y indirectly in the absence of a detectable total effect is false.</p>
+</blockquote>
+<p>In this excerpt, Hayes first expresses the common sentiment that X &amp; Y must be correlated if they are causally connected through a mediator, then proceeds to inform us that this view has been debunked as a myth. Yet, despite this being a well-established fact in the mediation/indirect effect literature for many years, I was surprised to find very few accessible examples online to which I could point students and colleagues for a more detailed illustration of the type of situation I regularly describe to them. So, I did what any nerd who recently learned R would do - I simulated some data to help my students better visualize an example. Then, I thought that others also might be uninformed or confused about the issue, and here we are.</p>
+</section>
+<section id="sec-ai" class="level2">
+<h2 class="anchored" data-anchor-id="sec-ai">AI to the rescue?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/DALL-E_person_climbing_mountain_to_seek_wisdom_from_computer_cartoon3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Cartoon person seeking wisdom from a computer oracle, by DALL-E</figcaption><p></p>
+</figure>
+</div>
+<p>Before transforming my simulation example for students into a blog entry, I sought the wisdom of the artificial intelligence oracle <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, thinking it might lead me to existing examples that I was missing. I realize that, at present, ChatGPT is not particularly <a href="https://medium.com/@vanillaxiangshuyang/let-us-talk-about-chatgpt-b4be68dd0da">well-suited for causal reasoning</a>, as <a href="https://twitter.com/yudapearl/status/1642780699953627137?s=20">Pearl himself has documented</a> and the AI oracle itself <a href="https://twitter.com/yudapearl/status/1641386266595033088?s=20">has humbly admitted</a>, though it also notes some ability to <a href="https://twitter.com/DrJimFan/status/1641111697971884034?s=20">extract, mimic, or make guesses from data containing information about causal relations</a>. Nonetheless, I asked the oracle: “Is it possible to have causation without correlation?”</p>
+<p>For those interested in such things, I have included the full conversation with ChatGPT in the expandable link below.</p>
+<details>
+<summary>
+Conversation with ChatGPT (4/5/2023, 12:20am)
+</summary>
+<style>
+div.magma { background-color:#fddc9e80; border-radius: 5px; padding: 20px;}
+</style>
+<style>
+div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
+</style>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> Is it possible to have causation without correlation?</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> Yes, it is possible to have causation without correlation. While causation and correlation are often related, they are not the same thing.</p>
+<p>Correlation refers to a statistical relationship between two variables, where a change in one variable tends to be associated with a change in the other variable. However, correlation does not necessarily imply causation, because there could be other factors at play that influence both variables. For example, there is a correlation between the number of ice cream cones sold and the number of drownings each year, but this does not mean that ice cream causes drownings.</p>
+<p>Causation, on the other hand, refers to a relationship where one event (the cause) brings about another event (the effect). A causal relationship can exist even if there is no correlation between the two variables, because the relationship is not dependent on a statistical pattern. For example, smoking causes lung cancer, but not everyone who smokes gets lung cancer, and not everyone with lung cancer smokes.</p>
+<p>In summary, while correlation and causation are often linked, they are not the same thing, and it is possible to have causation without correlation.</p>
+</div>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> In your smoking example, if smoking causes lung cancer, wouldn’t there also be a statistical relationship (i.e., a correlation) between smoking and lung cancer? The statement that “not everyone who smokes gets lung cancer, and not everyone with lung cancer smokes” does not rule out the possibility (or the likelihood) of a statistical relationship - it only rules out the possibility of a perfect correlation.</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> You are correct that in the case of smoking causing lung cancer, there is typically a statistical relationship (i.e., a correlation) between smoking and lung cancer. In fact, smoking is one of the strongest risk factors for developing lung cancer, and studies have consistently shown a strong correlation between smoking and lung cancer.</p>
+<p>My previous statement about not everyone who smokes getting lung cancer and not everyone with lung cancer smoking was intended to highlight the fact that while there is a strong correlation between smoking and lung cancer, it is not a perfect correlation. In other words, there are some people who smoke and do not develop lung cancer, and there are some people who develop lung cancer even though they have never smoked.</p>
+<p>So while a correlation between smoking and lung cancer does exist, it is not a one-to-one relationship, and it is possible for some smokers to avoid lung cancer and for some non-smokers to develop lung cancer. However, this does not negate the fact that smoking is a significant risk factor for developing lung cancer, and the statistical relationship between the two remains strong.</p>
+</div>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> Yes, but the question was whether it is possible to have causation without correlation. You gave an example of causation with correlation.</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> You are correct, my apologies for any confusion. The smoking example I gave was indeed an example of causation with correlation.</p>
+<p>To provide an example of causation without correlation, imagine a scenario where a scientist discovers that a specific gene mutation causes a rare disease that affects only a small portion of the population. In this case, there may not be a statistical relationship or correlation between the gene mutation and the disease in the general population, because the disease is so rare and the gene mutation is only found in a small portion of the population. However, there is a clear causal relationship between the gene mutation and the disease.</p>
+<p>So, to answer the original question more accurately, it is possible to have causation without a statistically significant correlation between the two variables in the general population, as in the rare disease example described above.</p>
+</div>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> In that example, again, there is a correlation between the gene mutation and the disease. I did not ask about whether there could be causation without a statistically significant correlation - statistical significance depends on power of the test. So, in this causal example, if you had a sufficiently large sample, the correlation would also be detected, making it another example of causation with correlation.</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> You are correct, and I apologize for the confusion. In the scenario I described, there is indeed a correlation between the gene mutation and the rare disease, even though it may not be statistically significant in the general population due to the low prevalence of the disease.</p>
+<p>It is true that statistical significance depends on the power of the test and the sample size, and it is possible that a correlation between two variables could become statistically significant with a larger sample size. Therefore, in this case, with a larger sample size, the correlation between the gene mutation and the rare disease would likely be detected, and it would be an example of causation with correlation.</p>
+<p>Thank you for pointing out this mistake in my previous responses, and I hope this clarification is helpful.</p>
+</div>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> So, can you think of another example of causation without correlation that does not involve an insufficiently powered test for detecting correlation?</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> Yes, I can provide another example of causation without correlation that does not involve an insufficiently powered test for detecting correlation.</p>
+<p>Consider the example of a person who takes a medication that causes a significant reduction in their symptoms of a medical condition. In this case, there is a clear causal relationship between taking the medication and the improvement in symptoms, but there may not be a statistical correlation between the two variables in the general population.</p>
+<p>This lack of correlation could be due to a number of factors, such as individual differences in the severity or type of the medical condition, or differences in the dosage or timing of the medication. Additionally, the relationship between the medication and the symptoms could be confounded by other factors, such as the person’s diet, exercise habits, or stress levels.</p>
+<p>So, in this scenario, while there may not be a statistically significant correlation between taking the medication and the improvement in symptoms in the general population, there is a clear causal relationship between the two variables in the individual person who experienced the improvement in symptoms. :::limey <strong><em>Jon Brauer</em></strong> <br> This example again leverages a lack of statistical significance, which I am unmoved by such arguments. For instance, here, there is causation and likely correlation - but the correlation is not detectable due to improper modeling due to issues like heterogeneity in the strength of the effect, confounding, poor measurement, or inadequately specifying dosage and time. Can you think of any other examples that are different from these?</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> Thank you for the feedback and clarification. I will provide another example of causation without correlation that is different from the previous examples.</p>
+<p>Consider the example of a person who develops a fear of flying after experiencing a traumatic event on a plane, such as severe turbulence or an emergency landing. In this case, the traumatic event on the plane is the direct cause of the person’s fear of flying.</p>
+<p>However, there may not be a statistical correlation between traumatic events on planes and the development of a fear of flying in the general population. This is because not everyone who experiences a traumatic event on a plane will develop a fear of flying, and some people may develop a fear of flying for other reasons unrelated to traumatic events.</p>
+<p>Therefore, in this scenario, there is a clear causal relationship between the traumatic event on the plane and the person’s fear of flying, but there may not be a statistically significant correlation between the two variables in the general population.</p>
+</div>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> Interesting. If it was a singular event, then would there not be a perfect correlation between flight exposure and fear of flying since there are two data points (pre-exposure level of fear &amp; post-exposure levels of fear)? If it is not a singular event and there is some proportion of the population that develops fear of flying after exposure to flying, then again we are back to the rare genetic cause of disease example - with sufficient data, we would be able to detect this causally driven correlation in the population. Any other ideas?</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> You make a good point, and I apologize for any confusion. The example I provided may not be a good example of causation without correlation.</p>
+<p>Another example of causation without correlation could be the case of a person who develops an allergic reaction to a specific food after consuming it for the first time. In this case, the food is the direct cause of the allergic reaction, but there may not be a statistically significant correlation between consuming the food and developing an allergic reaction in the general population.</p>
+<p>This lack of correlation could be due to individual differences in genetics or immune system function, or differences in the amount or preparation of the food consumed. Additionally, the relationship between the food and the allergic reaction could be confounded by other factors, such as the person’s age or other underlying health conditions.</p>
+<p>Therefore, in this scenario, while there may not be a statistically significant correlation between consuming the food and developing an allergic reaction in the general population, there is a clear causal relationship between the two variables in the individual person who experienced the allergic reaction.</p>
+</div>
+<div class="limey">
+<p><strong><em>Jon Brauer</em></strong> <br> Again, this example seems to have a very similar logical structure and empirical implications of your previous examples. I am going to write a blog entry on causation without correlation that covers a different type of example. I will share the idea with you in case it helps you answer questions like this. Another reason there might be causation without correlation is that an exposure affects multiple mechanisms that have countervailing effects on an outcome. For instance, the exposure might be causally related to the mediators and correlated with the mediators, but and the mediators are causally related to the outcome and correlated with the outcome but in opposite directions, thereby resulting in a null (negated or cancelled out) correlation in the population. There would still be causation, though, since one could imagine intervening on one mediating pathway to hold it constant, then the exposure would cause change the outcome - and be correlated with the outcome - through the other mediating pathway. Have you encountered any examples like this before?</p>
+</div>
+<div class="magma">
+<p><strong><em>ChatGPT</em></strong> <br> Thank you for sharing your idea. That is a very interesting perspective on causation without correlation, and it makes sense that an exposure affecting multiple mechanisms could result in countervailing effects on an outcome, leading to a null correlation in the population.</p>
+<p>I have not encountered this specific example before, but I can see how it could arise in situations where there are complex and interrelated causal pathways between an exposure and an outcome. For example, in a study investigating the effects of a particular medication on a disease outcome, the medication may affect multiple biological pathways that have opposing effects on the disease outcome. As a result, the overall correlation between medication use and disease outcome may be null or weak, even though the medication is causing changes in the underlying biological pathways and ultimately influencing the disease outcome.</p>
+<p>I hope this example helps to provide a different perspective on causation without correlation, and thank you for bringing up this interesting topic.</p>
+</div>
+</details>
+<p>To its credit, ChatGPT recognized the possibility of causation without correlation. However, it primarily provided examples where causation exists and correlation would be expected to exist but, for reasons such as event rarity, shoddy measurement, or insufficiently powered tests, researchers are unable to detect an actually existing (i.e., nonzero) correlation. Again, what I wanted was an example where causality exists, yet where we would <em>not</em> expect to detect a correlation (e.g., we might expect <em>r</em>=0).</p>
+</section>
+<section id="sec-dependence" class="level2">
+<h2 class="anchored" data-anchor-id="sec-dependence">Causation <em>does</em> require statistical dependence</h2>
+<p>One final point of clarification before getting to an example. The basic criteria are not really wrong. Causation involves <strong>statistical dependence</strong> between X and (mechanisms of) Y, and statistical dependence may exist despite a lack of observed linear correlation. I think it may be easier for some people to understand how this might happen for methodological reasons (e.g., imprecise measures; insufficient data; mispecified model) than it is to understand how this might happen for theoretical reasons. Counterfactual reasoning can help; so can <a href="https://onlinelibrary.wiley.com/doi/10.1111/1745-9133.12027">causal models</a> or <a href="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html">directed acyclic graphs (DAGs)</a>.</p>
+<p>For instance, you might be wondering if it is really useful or accurate to say that X causes Y if there is no (total) statistical dependence between X &amp; Y - that is, if (in some populations or samples comprised of units with particular levels of key variables) Y does not reliably change after X changes. Yes, I think so! To understand why, it is helpful to consider an example, to rely on causal models, and to engage in counterfactual thinking. There are many possible examples; for simplicity, let’s imagine only four variables - X, M1, M2, and Y - that are causally related like so:</p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(ggplot2)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;">library</span>(patchwork)</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;">library</span>(psych)</span>
+<span id="cb1-5"><span class="co" style="color: #5E5E5E;"># library(devtools)</span></span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;"># install_github("jtextor/dagitty/r")</span></span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;">library</span>(dagitty)</span>
+<span id="cb1-8"></span>
+<span id="cb1-9">XYdag <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">dagitty</span>(<span class="st" style="color: #20794D;">"dag{</span></span>
+<span id="cb1-10"><span class="st" style="color: #20794D;">  X -&gt; M1 -&gt; Y</span></span>
+<span id="cb1-11"><span class="st" style="color: #20794D;">  X -&gt; M2 -&gt; Y</span></span>
+<span id="cb1-12"><span class="st" style="color: #20794D;">   }"</span>) </span>
+<span id="cb1-13"><span class="fu" style="color: #4758AB;">coordinates</span>(XYdag) <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">list</span>(</span>
+<span id="cb1-14">  <span class="at" style="color: #657422;">x=</span><span class="fu" style="color: #4758AB;">c</span>(<span class="at" style="color: #657422;">X=</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">M1=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">M2=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">Y=</span><span class="dv" style="color: #AD0000;">3</span>),</span>
+<span id="cb1-15">  <span class="at" style="color: #657422;">y=</span><span class="fu" style="color: #4758AB;">c</span>(<span class="at" style="color: #657422;">X=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">M1=</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">M2=</span><span class="dv" style="color: #AD0000;">3</span>, <span class="at" style="color: #657422;">Y=</span><span class="dv" style="color: #AD0000;">2</span>) )</span>
+<span id="cb1-16"></span>
+<span id="cb1-17"><span class="fu" style="color: #4758AB;">plot</span>(XYdag)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>In this hypothetical example, imagine that increasing or “dialing up the knob” on X causes an increase in both M1 and M2. Imagine also that increasing or dialing up M1 causes an <em>increase</em> in Y, whereas an increase in M2 causes a <em>decrease</em> in Y of comparable magnitude in the opposite direction (i.e., countervailing indirect effects). So, when we dial up X, we also causally up M1 and M2, which in turn equivalently dials Y up (through M1) and down (through M2) - meaning Y does not change when X changes despite changes in mediators.</p>
+<p>So, you might still be wondering whether it is reasonable to describe this situation as one in which X <em>causes</em> Y, or whether this is an example of <strong>causation</strong> without (XY) correlation. Again, I say YES! To understand why, let’s use counterfactual reasoning. I want you to further imagine that we identify a way to intervene on the X -&gt; M1 -&gt; Y pathway. For instance, perhaps we design an intervention to mitigate or disrupt the X -&gt; M1 causal effect so that, when we dial up X, M1 no longer subsequently increases or it increases to a much lesser degree; that is, our intervention allows us to hold constant the level of M1 following a change in X, thereby negating the positive indirect effect of X on Y through M1. Now in this counterfactual situation, when we dial up X, what would happen to Y? It would change in a causally predictable way: If X increases, Y would decrease due to the negative indirect effect of X on Y through M2!</p>
+<p>I hope this abstract example helps illustrate why, without the proper causal model guiding our statistical modeling decisions and interpretations of data, it is easy to fail to observe statistical dependence where it exists (and vice versa) and then to incorrectly infer a lack of causality (or its presence) from the absence (or presence) of observed correlation. To avoid such traps, what we need is to understand theoretically how and why X is related to Y - e.g., by creating a <em>causal diagram</em> that accurately depicts the causal relationship(s) between these variables and by using counterfactual reasoning. Once we identify the correct causal model generating the data, then we can model the data in a way that permits us to observe statistical dependence and identify the causal effect(s) of X on Y. In short, we really need to understand <strong>theory</strong>, or logical statements of the causal relations between concepts, to properly model and interpret our data.</p>
+<p>With all that said, it can be difficult to grasp abstract examples, and it may be tempting to wonder whether such situations really exist in our world. So, let’s draw inspiration from a real study in criminology to add meat to the abstract bones of our example.</p>
+</section>
+<section id="sec-sescrim" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sescrim">Example from criminology</h2>
+<p>Specifically, we will draw inspiration from Bradley Wright and colleagues’ (1999) <a href="https://onlinelibrary-wiley-com.proxyiub.uits.iu.edu/doi/pdfdirect/10.1111/j.1745-9125.1999.tb00483.x">paper in Criminology</a> entitled “Reconsidering the relationship between SES and delinquency: Causation but not correlation.” Seems fitting, eh?</p>
+<p>The basic idea is this: There is a long history of debates over the SES-delinquency relationship. Some theories specifically posit a negative causal relationship (i.e., low SES -&gt; high delinquency), yet observational research has documented inconsistent patterns (e.g., weak negative, nonexistent, or even positive relationships). Wright and colleagues argue that this state of affairs may be due to SES simultaneously having positive and negative causal effects on crime through countervailing mechanisms. Together, the positive and negative effects of these mechanisms may generally offset each other in many survey datasets, which might result in observing a lack of any bivariate correlation between SES and delinquency (i.e., “total effect” estimate = 0) and/or inconsistent partial correlations (i.e., variable conditional direct effect etimates) depending on which mechanisms are included or excluded from researchers’ statistical models.</p>
+<p>We will illustrate how something like this might happen using simulated data. Specifically, we will simulate data for <em>parental SES</em>, <em>child delinquency</em>, and two potential countervailing mechanisms - <em>financial strain</em> and <em>perceived risk of detection</em> of delinquent behaviors. In our simulated example, we will assume parental SES does not directly cause child delinquency and that it indirectly causes child delinquency through both mediating mechanisms. Additionally, we will assume that the causal effects of Parental SES on financial strain and perceived risk of detection are equal in magnitude and that the causal effect of financial strain on delinquency is equal in magnitude yet opposite in direction, such that both indirect or mediated effects offset one another. Below is a directed acyclic graph, or DAG, of this simple causal structure.</p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">SESdag <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">dagitty</span>(<span class="st" style="color: #20794D;">"dag{</span></span>
+<span id="cb2-2"><span class="st" style="color: #20794D;">  SES -&gt; Strain -&gt; Delinquency</span></span>
+<span id="cb2-3"><span class="st" style="color: #20794D;">  SES -&gt; Risk -&gt; Delinquency</span></span>
+<span id="cb2-4"><span class="st" style="color: #20794D;">   }"</span>) </span>
+<span id="cb2-5"><span class="fu" style="color: #4758AB;">coordinates</span>(SESdag) <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">list</span>(</span>
+<span id="cb2-6">  <span class="at" style="color: #657422;">x=</span><span class="fu" style="color: #4758AB;">c</span>(<span class="at" style="color: #657422;">SES=</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">Strain=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">Risk=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">Delinquency=</span><span class="dv" style="color: #AD0000;">3</span>),</span>
+<span id="cb2-7">  <span class="at" style="color: #657422;">y=</span><span class="fu" style="color: #4758AB;">c</span>(<span class="at" style="color: #657422;">SES=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">Strain=</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">Risk=</span><span class="dv" style="color: #AD0000;">3</span>, <span class="at" style="color: #657422;">Delinquency=</span><span class="dv" style="color: #AD0000;">2</span>) )</span>
+<span id="cb2-8"></span>
+<span id="cb2-9"><span class="fu" style="color: #4758AB;">plot</span>(SESdag)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Now let’s simulate some data. In doing so, note we round data drawn from continuous (i.e., normal &amp; Poisson) distributions to integers; this adds a bit of noise to the data yet also makes our variables more comparable to the types of ordinal, Likert-type measures we see in our field.</p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;"># X = Parental SES</span></span>
+<span id="cb3-2"><span class="co" style="color: #5E5E5E;"># Y = Child delinquent behavior</span></span>
+<span id="cb3-3"><span class="co" style="color: #5E5E5E;"># F = Mediatior through which high Parent SES might decrease delinquency - e.g., less financial (S)train</span></span>
+<span id="cb3-4"><span class="co" style="color: #5E5E5E;"># P = Mediators through which high Parent SES increase delinquency - e.g., lower perceived (R)isk of detection</span></span>
+<span id="cb3-5"></span>
+<span id="cb3-6"><span class="co" style="color: #5E5E5E;"># Strain -&gt; Delinquency &lt;- Risk </span></span>
+<span id="cb3-7"><span class="co" style="color: #5E5E5E;"># Strain &lt;- SES -&gt; Risk</span></span>
+<span id="cb3-8"></span>
+<span id="cb3-9"><span class="fu" style="color: #4758AB;">set.seed</span>(<span class="dv" style="color: #AD0000;">1138</span>)</span>
+<span id="cb3-10">n <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="dv" style="color: #AD0000;">1000</span></span>
+<span id="cb3-11"></span>
+<span id="cb3-12"><span class="co" style="color: #5E5E5E;"># McElreath method (p.153)</span></span>
+<span id="cb3-13"><span class="co" style="color: #5E5E5E;"># SES &lt;- rnorm(n)</span></span>
+<span id="cb3-14"><span class="co" style="color: #5E5E5E;"># Strain &lt;- rnorm(n,SES)</span></span>
+<span id="cb3-15"><span class="co" style="color: #5E5E5E;"># Risk &lt;- rnorm(n,SES)</span></span>
+<span id="cb3-16"><span class="co" style="color: #5E5E5E;"># Delinquency &lt;- rnorm(n,Strain-Risk)</span></span>
+<span id="cb3-17"><span class="co" style="color: #5E5E5E;"># </span></span>
+<span id="cb3-18"></span>
+<span id="cb3-19"><span class="co" style="color: #5E5E5E;"># https://www.tandfonline.com/doi/pdf/10.1080/10691898.2020.1752859</span></span>
+<span id="cb3-20"><span class="fu" style="color: #4758AB;">set.seed</span>(<span class="dv" style="color: #AD0000;">1138</span>)</span>
+<span id="cb3-21">n <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="dv" style="color: #AD0000;">1000</span></span>
+<span id="cb3-22">SES <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">round</span>(<span class="fu" style="color: #4758AB;">rnorm</span>(n),<span class="at" style="color: #657422;">digits=</span><span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb3-23">Strain <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">round</span>(<span class="sc" style="color: #5E5E5E;">-</span>.<span class="dv" style="color: #AD0000;">5</span><span class="sc" style="color: #5E5E5E;">*</span>SES <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">rnorm</span>(n),<span class="at" style="color: #657422;">digits=</span><span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb3-24">Risk <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">round</span>(<span class="sc" style="color: #5E5E5E;">-</span>.<span class="dv" style="color: #AD0000;">5</span><span class="sc" style="color: #5E5E5E;">*</span>SES <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">rnorm</span>(n),<span class="at" style="color: #657422;">digits=</span><span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb3-25">Delinquency <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">round</span>(.<span class="dv" style="color: #AD0000;">5</span><span class="sc" style="color: #5E5E5E;">*</span>Strain <span class="sc" style="color: #5E5E5E;">+</span> <span class="sc" style="color: #5E5E5E;">-</span>.<span class="dv" style="color: #AD0000;">5</span><span class="sc" style="color: #5E5E5E;">*</span>Risk <span class="sc" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">0</span><span class="sc" style="color: #5E5E5E;">*</span>SES <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">rpois</span>(n,<span class="dv" style="color: #AD0000;">1</span>),<span class="at" style="color: #657422;">digits=</span><span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb3-26"></span>
+<span id="cb3-27">simdata <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">tibble</span>(SES, Strain, Risk, Delinquency)</span>
+<span id="cb3-28">simdata <span class="ot" style="color: #003B4F;">&lt;-</span> simdata <span class="sc" style="color: #5E5E5E;">%&gt;%</span> <span class="fu" style="color: #4758AB;">mutate</span>(</span>
+<span id="cb3-29">  <span class="at" style="color: #657422;">Delinquency =</span> <span class="fu" style="color: #4758AB;">ifelse</span>(Delinquency <span class="sc" style="color: #5E5E5E;">&lt;</span> <span class="dv" style="color: #AD0000;">0</span>, Delinquency <span class="sc" style="color: #5E5E5E;">==</span> <span class="dv" style="color: #AD0000;">0</span>, Delinquency)</span>
+<span id="cb3-30">)</span>
+<span id="cb3-31"></span>
+<span id="cb3-32">simdata</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 4
+     SES Strain  Risk Delinquency
+   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
+ 1    -1      1     0           2
+ 2    -1     -1     0           0
+ 3     0      1     1           2
+ 4     0     -1     0           0
+ 5    -1      0     1           0
+ 6    -1      1     0           2
+ 7     2     -1    -1           1
+ 8    -1      0    -1           4
+ 9     0      0    -2           2
+10     1      0    -1           4
+# … with 990 more rows</code></pre>
+</div>
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">SESplot <span class="ot" style="color: #003B4F;">&lt;-</span> simdata <span class="sc" style="color: #5E5E5E;">%&gt;%</span> <span class="fu" style="color: #4758AB;">ggplot</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-2">  <span class="fu" style="color: #4758AB;">geom_histogram</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x=</span>SES, <span class="at" style="color: #657422;">y=</span>..density..),</span>
+<span id="cb5-3">                 <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#1fa187"</span>, <span class="at" style="color: #657422;">fill=</span><span class="st" style="color: #20794D;">"#4ac16d"</span>, <span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">7</span>,</span>
+<span id="cb5-4">                 <span class="at" style="color: #657422;">position=</span><span class="st" style="color: #20794D;">"identity"</span>, </span>
+<span id="cb5-5">                 <span class="at" style="color: #657422;">breaks =</span> <span class="fu" style="color: #4758AB;">seq</span>(<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">4</span>, <span class="dv" style="color: #AD0000;">4</span>, <span class="at" style="color: #657422;">by =</span> <span class="dv" style="color: #AD0000;">1</span>)) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-6">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-7">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb5-8">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb5-9">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-10">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"Parental SES"</span>, <span class="at" style="color: #657422;">y=</span><span class="cn" style="color: #8f5902;">NULL</span>)</span>
+<span id="cb5-11"></span>
+<span id="cb5-12">Strainplot <span class="ot" style="color: #003B4F;">&lt;-</span> simdata <span class="sc" style="color: #5E5E5E;">%&gt;%</span> <span class="fu" style="color: #4758AB;">ggplot</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-13">  <span class="fu" style="color: #4758AB;">geom_histogram</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x=</span>Strain, <span class="at" style="color: #657422;">y=</span>..density..),</span>
+<span id="cb5-14">                 <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#1fa187"</span>, <span class="at" style="color: #657422;">fill=</span><span class="st" style="color: #20794D;">"#4ac16d"</span>, <span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">7</span>,</span>
+<span id="cb5-15">                 <span class="at" style="color: #657422;">position=</span><span class="st" style="color: #20794D;">"identity"</span>, </span>
+<span id="cb5-16">                 <span class="at" style="color: #657422;">breaks =</span> <span class="fu" style="color: #4758AB;">seq</span>(<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">4</span>, <span class="dv" style="color: #AD0000;">4</span>, <span class="at" style="color: #657422;">by =</span> <span class="dv" style="color: #AD0000;">1</span>)) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-17">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-18">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb5-19">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb5-20">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-21">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"Financial strain"</span>, <span class="at" style="color: #657422;">y=</span><span class="cn" style="color: #8f5902;">NULL</span>)</span>
+<span id="cb5-22"></span>
+<span id="cb5-23">Riskplot <span class="ot" style="color: #003B4F;">&lt;-</span> simdata <span class="sc" style="color: #5E5E5E;">%&gt;%</span> <span class="fu" style="color: #4758AB;">ggplot</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-24">  <span class="fu" style="color: #4758AB;">geom_histogram</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x=</span>Risk, <span class="at" style="color: #657422;">y=</span>..density..),</span>
+<span id="cb5-25">                 <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#1fa187"</span>, <span class="at" style="color: #657422;">fill=</span><span class="st" style="color: #20794D;">"#4ac16d"</span>, <span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">7</span>,</span>
+<span id="cb5-26">                 <span class="at" style="color: #657422;">position=</span><span class="st" style="color: #20794D;">"identity"</span>, </span>
+<span id="cb5-27">                 <span class="at" style="color: #657422;">breaks =</span> <span class="fu" style="color: #4758AB;">seq</span>(<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">4</span>, <span class="dv" style="color: #AD0000;">4</span>, <span class="at" style="color: #657422;">by =</span> <span class="dv" style="color: #AD0000;">1</span>)) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-28">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-29">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb5-30">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb5-31">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-32">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"Perceived risk of detection"</span>, <span class="at" style="color: #657422;">y=</span><span class="cn" style="color: #8f5902;">NULL</span>)</span>
+<span id="cb5-33"></span>
+<span id="cb5-34">Delqplot <span class="ot" style="color: #003B4F;">&lt;-</span> simdata <span class="sc" style="color: #5E5E5E;">%&gt;%</span> <span class="fu" style="color: #4758AB;">ggplot</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-35">  <span class="fu" style="color: #4758AB;">geom_histogram</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x=</span>Delinquency, <span class="at" style="color: #657422;">y=</span>..density..),</span>
+<span id="cb5-36">                 <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#1fa187"</span>, <span class="at" style="color: #657422;">fill=</span><span class="st" style="color: #20794D;">"#4ac16d"</span>, <span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">7</span>,</span>
+<span id="cb5-37">                 <span class="at" style="color: #657422;">position=</span><span class="st" style="color: #20794D;">"identity"</span>) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-38">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb5-39">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb5-40">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb5-41">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb5-42">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"Child delinquency"</span>, <span class="at" style="color: #657422;">y=</span><span class="cn" style="color: #8f5902;">NULL</span>)</span>
+<span id="cb5-43"></span>
+<span id="cb5-44"></span>
+<span id="cb5-45">SESplot <span class="sc" style="color: #5E5E5E;">+</span> Strainplot <span class="sc" style="color: #5E5E5E;">+</span> Riskplot <span class="sc" style="color: #5E5E5E;">+</span> Delqplot</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="sec-bivar" class="level3">
+<h3 class="anchored" data-anchor-id="sec-bivar">Bivariate correlation</h3>
+<p>Let’s examine the bivariate correlations between our simulated variables.</p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="co" style="color: #5E5E5E;"># https://r-coder.com/correlation-plot-r/  </span></span>
+<span id="cb6-2"></span>
+<span id="cb6-3"><span class="fu" style="color: #4758AB;">pairs.panels</span>(simdata,</span>
+<span id="cb6-4">             <span class="at" style="color: #657422;">smooth =</span> <span class="cn" style="color: #8f5902;">FALSE</span>,      <span class="co" style="color: #5E5E5E;"># If TRUE, draws loess smooths</span></span>
+<span id="cb6-5">             <span class="at" style="color: #657422;">scale =</span> <span class="cn" style="color: #8f5902;">FALSE</span>,      <span class="co" style="color: #5E5E5E;"># If TRUE, scales the correlation text font</span></span>
+<span id="cb6-6">             <span class="at" style="color: #657422;">density =</span> <span class="cn" style="color: #8f5902;">TRUE</span>,     <span class="co" style="color: #5E5E5E;"># If TRUE, adds density plots and histograms</span></span>
+<span id="cb6-7">             <span class="at" style="color: #657422;">ellipses =</span> <span class="cn" style="color: #8f5902;">FALSE</span>,    <span class="co" style="color: #5E5E5E;"># If TRUE, draws ellipses</span></span>
+<span id="cb6-8">             <span class="at" style="color: #657422;">method =</span> <span class="st" style="color: #20794D;">"pearson"</span>, <span class="co" style="color: #5E5E5E;"># Correlation method (also "spearman" or "kendall")</span></span>
+<span id="cb6-9">             <span class="at" style="color: #657422;">pch =</span> <span class="dv" style="color: #AD0000;">21</span>,           <span class="co" style="color: #5E5E5E;"># pch symbol</span></span>
+<span id="cb6-10">             <span class="at" style="color: #657422;">lm =</span> <span class="cn" style="color: #8f5902;">TRUE</span>,         <span class="co" style="color: #5E5E5E;"># If TRUE, plots linear fit rather than the LOESS (smoothed) fit</span></span>
+<span id="cb6-11">             <span class="at" style="color: #657422;">cor =</span> <span class="cn" style="color: #8f5902;">TRUE</span>,         <span class="co" style="color: #5E5E5E;"># If TRUE, reports correlations</span></span>
+<span id="cb6-12">             <span class="at" style="color: #657422;">jiggle =</span> <span class="cn" style="color: #8f5902;">FALSE</span>,     <span class="co" style="color: #5E5E5E;"># If TRUE, data points are jittered</span></span>
+<span id="cb6-13">             <span class="at" style="color: #657422;">factor =</span> <span class="dv" style="color: #AD0000;">2</span>,         <span class="co" style="color: #5E5E5E;"># Jittering factor</span></span>
+<span id="cb6-14">             <span class="at" style="color: #657422;">hist.col =</span> <span class="dv" style="color: #AD0000;">3</span>,       <span class="co" style="color: #5E5E5E;"># Histograms color</span></span>
+<span id="cb6-15">             <span class="at" style="color: #657422;">stars =</span> <span class="cn" style="color: #8f5902;">TRUE</span>,       <span class="co" style="color: #5E5E5E;"># If TRUE, adds significance level with stars</span></span>
+<span id="cb6-16">             <span class="at" style="color: #657422;">ci =</span> <span class="cn" style="color: #8f5902;">TRUE</span>)          <span class="co" style="color: #5E5E5E;"># If TRUE, adds confidence intervals</span></span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>As the pairs plot shows, there is virtually no correlation between SES and delinquency (<em>r</em> = -0.01). However, SES is negatively correlated with both mediators - financial strain (<em>r</em> = -0.43) and perceived risk (<em>r</em> = -0.40). Additionally, the mediator-delinquency correlations are similar in magnitude but opposite in direction (<em>r</em> = 0.30 for financial strain; <em>r</em> = -0.35 for perceived risk).</p>
+<p>Given this, if we estimate a linear model<sup>1</sup> regressing delinquency on SES without the mediators, we should see another near-zero association between SES and delinquency because this model essentially reproduces the bivariate correlation (with a partially standardized beta coefficient). This means the <strong>total effect</strong> of SES - its direct effect plus all indirect effects through other mechanisms like financial strain and perceived risk, all combined - is estimated to be virtually zero (<em>b</em> = -0.01, se = 0.04). Thus, either SES has no direct or indirect causal effects on delinquency, or SES has direct and/or indirect causal effects on delinquency but we have failed to adequately identify it with our statistical model (and with the assumed causal model underlying it). For instance, perhaps the causal effect is non-linear, with positive and negative effects on delinquency at different levels of SES that average out to a null total effect. Or, perhaps SES has countervailing indirect effets through different mediating mechanisms and, together, the mediators offset each other to result in no total causal effect.</p>
+<p>Of course, we know this last explanation is the true data generating process here because we simulated the data accordingly! However, in real-world data analysis, if you were to observe no correlation between two variables, you now know that it is unwise to immediately assume that there is no causal relationship between them.</p>
+</section>
+<section id="sec-lm" class="level3">
+<h3 class="anchored" data-anchor-id="sec-lm">Linear regressions</h3>
+<p>The scatterplot and regression line from our bivariate linear regression model again illustrates the lack of total association between our simulated SES and delinqueny variables.<sup>2</sup></p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">lm1a <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">lm</span>(Delinquency <span class="sc" style="color: #5E5E5E;">~</span> SES, <span class="at" style="color: #657422;">data=</span>simdata)</span>
+<span id="cb7-2"><span class="co" style="color: #5E5E5E;"># summary(lm1a)</span></span>
+<span id="cb7-3"><span class="fu" style="color: #4758AB;">summary</span>(lm1a)<span class="sc" style="color: #5E5E5E;">$</span>coefficients[,<span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="dv" style="color: #AD0000;">2</span>]</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate Std. Error
+(Intercept)  1.09914632 0.03855249
+SES         -0.01125514 0.03849479</code></pre>
+</div>
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="co" style="color: #5E5E5E;"># plot(simdata$SES, simdata$Delinquency)</span></span>
+<span id="cb9-2"><span class="co" style="color: #5E5E5E;"># abline(lm1a)</span></span>
+<span id="cb9-3"></span>
+<span id="cb9-4"><span class="co" style="color: #5E5E5E;">#equation for delinquency regression line  </span></span>
+<span id="cb9-5">eqY1a<span class="ot" style="color: #003B4F;">=</span><span class="cf" style="color: #003B4F;">function</span>(x){</span>
+<span id="cb9-6">  <span class="fu" style="color: #4758AB;">coef</span>(lm1a)[<span class="dv" style="color: #AD0000;">2</span>]<span class="sc" style="color: #5E5E5E;">*</span>x <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">coef</span>(lm1a)[<span class="dv" style="color: #AD0000;">1</span>]</span>
+<span id="cb9-7">  }</span>
+<span id="cb9-8"></span>
+<span id="cb9-9">lmYplot <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">ggplot</span>(simdata,<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">y=</span>Delinquency,<span class="at" style="color: #657422;">x=</span>SES)) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb9-10">  <span class="fu" style="color: #4758AB;">geom_jitter</span>(<span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">4</span>, <span class="at" style="color: #657422;">shape=</span><span class="dv" style="color: #AD0000;">21</span>, <span class="at" style="color: #657422;">size=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">width=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">height=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#009E73"</span>) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb9-11">  <span class="fu" style="color: #4758AB;">stat_function</span>(<span class="at" style="color: #657422;">fun=</span>eqY1a, <span class="at" style="color: #657422;">geom=</span><span class="st" style="color: #20794D;">"line"</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#009E73"</span>, <span class="at" style="color: #657422;">size=</span><span class="fl" style="color: #AD0000;">1.5</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb9-12">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb9-13">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb9-14">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb9-15">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb9-16">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"SES"</span>, <span class="at" style="color: #657422;">y=</span><span class="st" style="color: #20794D;">"Delinquency"</span>)</span>
+<span id="cb9-17">lmYplot</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Now, let’s estimate a linear model regressing delinquency on SES and include <em>both mediators</em> as predictors in the model as well and then plot the regression line (with mediators set at their mean values). Once again, we should see a near-zero association between SES and delinquency, but for very different reasons this time. In this model, we are estimating what is commonly referred to as the <strong>direct effect</strong> of SES after stratifying on (aka, adjusting for) any potential indirect effects through financial strain and perceived risk mechanisms. Of course, we simulated our data in such a way that there would be no direct causal effect of SES on delinquency in our simulated data and, after including both mechanisms in the model, we accurately estimate virtually no direct effect of SES on delinquency (<em>b</em> = -0.03, se = 0.04). Hence, this plot looks comparable to the bivariate one above.</p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">lm1b <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">lm</span>(Delinquency <span class="sc" style="color: #5E5E5E;">~</span> SES <span class="sc" style="color: #5E5E5E;">+</span> Strain <span class="sc" style="color: #5E5E5E;">+</span> Risk, <span class="at" style="color: #657422;">data=</span>simdata)</span>
+<span id="cb10-2"><span class="co" style="color: #5E5E5E;"># summary(lm1b)</span></span>
+<span id="cb10-3"><span class="fu" style="color: #4758AB;">summary</span>(lm1b)<span class="sc" style="color: #5E5E5E;">$</span>coefficients[,<span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="dv" style="color: #AD0000;">4</span>]</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate Std. Error     t value      Pr(&gt;|t|)
+(Intercept)  1.07938412 0.03338240  32.3339287 2.126993e-157
+SES         -0.02905861 0.03980686  -0.7299899  4.655680e-01
+Strain       0.38859596 0.03290744  11.8087577  3.274331e-30
+Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
+</div>
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="co" style="color: #5E5E5E;"># plot(simdata$SES, simdata$Delinquency)</span></span>
+<span id="cb12-2"><span class="co" style="color: #5E5E5E;"># abline(lm1b)</span></span>
+<span id="cb12-3"></span>
+<span id="cb12-4"><span class="co" style="color: #5E5E5E;">#equation for delinquency regression line in model with both mediators at means  </span></span>
+<span id="cb12-5">eqY1b<span class="ot" style="color: #003B4F;">=</span><span class="cf" style="color: #003B4F;">function</span>(x){</span>
+<span id="cb12-6">  <span class="fu" style="color: #4758AB;">coef</span>(lm1b)[<span class="dv" style="color: #AD0000;">2</span>]<span class="sc" style="color: #5E5E5E;">*</span>x <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">coef</span>(lm1b)[<span class="dv" style="color: #AD0000;">1</span>] <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb12-7">    <span class="fu" style="color: #4758AB;">coef</span>(lm1b)[<span class="dv" style="color: #AD0000;">3</span>]<span class="sc" style="color: #5E5E5E;">*</span><span class="fu" style="color: #4758AB;">mean</span>(simdata<span class="sc" style="color: #5E5E5E;">$</span>Strain) <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">coef</span>(lm1b)[<span class="dv" style="color: #AD0000;">4</span>]<span class="sc" style="color: #5E5E5E;">*</span><span class="fu" style="color: #4758AB;">mean</span>(simdata<span class="sc" style="color: #5E5E5E;">$</span>Risk)</span>
+<span id="cb12-8">  }</span>
+<span id="cb12-9"></span>
+<span id="cb12-10">lmYplot2 <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">ggplot</span>(simdata,<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">y=</span>Delinquency,<span class="at" style="color: #657422;">x=</span>SES)) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb12-11">  <span class="fu" style="color: #4758AB;">geom_jitter</span>(<span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">4</span>, <span class="at" style="color: #657422;">shape=</span><span class="dv" style="color: #AD0000;">21</span>, <span class="at" style="color: #657422;">size=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">width=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">height=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#009E73"</span>) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb12-12">  <span class="fu" style="color: #4758AB;">stat_function</span>(<span class="at" style="color: #657422;">fun=</span>eqY1b, <span class="at" style="color: #657422;">geom=</span><span class="st" style="color: #20794D;">"line"</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#009E73"</span>, <span class="at" style="color: #657422;">size=</span><span class="fl" style="color: #AD0000;">1.5</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb12-13">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb12-14">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb12-15">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb12-16">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb12-17">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"SES"</span>, <span class="at" style="color: #657422;">y=</span><span class="st" style="color: #20794D;">"Delinquency"</span>)</span>
+<span id="cb12-18">lmYplot2</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Note that this model above also estimates a positive effect of financial strain (<em>b</em> = 0.39, se = 0.03) and a negative effect of perceived risk (<em>b</em> = -0.44, se = 0.03) on delinquency. So, we might conclude that these theoretical mechanisms are related to delinquency as expected. But how would we know SES has indirect causal effects on delinquency through these mechanisms - i.e., that these variables <em>mediate</em> the SES-delinquency relationship? Well, we could estimate additional models regressing each mediator on SES; if SES predicts each mediator (which we know it does in our simulated data) and if each mediator predicts delinquency then, with certain strong assumptions in place (e.g., no exposure-mediator interaction and no unmeasured confounding of any paths; see <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">here</a>, <a href="https://datacolada.org/103">here</a>, and <a href="https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/">here</a>), we can infer indirect causal effects of SES on delinquency. This is essentially the logic behind the classic <a href="https://davidakenny.net/cm/mediate.htm#BK">Baron &amp; Kenny method</a>. We can also extend this logic to test for and estimate the magnitude and confidence intervals around such indirect effects through each specific mediator.<sup>3</sup></p>
+</section>
+<section id="sec-trap" class="level3">
+<h3 class="anchored" data-anchor-id="sec-trap">Springing the causal trap</h3>
+<p>But without jumping ahead to mediation tests, what would have happened if we had failed to specify the appropriate causal model ahead of time and, as a result, we mistakenly included <em>only one mediator</em> in the model with SES predicting delinquency? Let’s add financial strain to the model and exclude perceived risk from the model, then see what happens.</p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">lm1c <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">lm</span>(Delinquency <span class="sc" style="color: #5E5E5E;">~</span> SES <span class="sc" style="color: #5E5E5E;">+</span> Strain, <span class="at" style="color: #657422;">data=</span>simdata)</span>
+<span id="cb13-2"><span class="co" style="color: #5E5E5E;"># summary(lm1c)</span></span>
+<span id="cb13-3"><span class="fu" style="color: #4758AB;">summary</span>(lm1c)<span class="sc" style="color: #5E5E5E;">$</span>coefficients[,<span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="dv" style="color: #AD0000;">3</span>]</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Estimate Std. Error   t value
+(Intercept) 1.0982531 0.03642628 30.150019
+SES         0.1790345 0.04027868  4.444895
+Strain      0.3951323 0.03593409 10.996029</code></pre>
+</div>
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="co" style="color: #5E5E5E;"># plot(simdata$SES, simdata$Delinquency)</span></span>
+<span id="cb15-2"><span class="co" style="color: #5E5E5E;"># abline(lm1c)</span></span>
+<span id="cb15-3"></span>
+<span id="cb15-4"><span class="co" style="color: #5E5E5E;">#equation for delinquency regression line in model with one mediator (at its mean)  </span></span>
+<span id="cb15-5">eqY1c<span class="ot" style="color: #003B4F;">=</span><span class="cf" style="color: #003B4F;">function</span>(x){</span>
+<span id="cb15-6">  <span class="fu" style="color: #4758AB;">coef</span>(lm1c)[<span class="dv" style="color: #AD0000;">2</span>]<span class="sc" style="color: #5E5E5E;">*</span>x <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">coef</span>(lm1c)[<span class="dv" style="color: #AD0000;">1</span>] <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb15-7">    <span class="fu" style="color: #4758AB;">coef</span>(lm1c)[<span class="dv" style="color: #AD0000;">3</span>]<span class="sc" style="color: #5E5E5E;">*</span><span class="fu" style="color: #4758AB;">mean</span>(simdata<span class="sc" style="color: #5E5E5E;">$</span>Strain) </span>
+<span id="cb15-8">  }</span>
+<span id="cb15-9"></span>
+<span id="cb15-10">lmYplot3 <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">ggplot</span>(simdata,<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">y=</span>Delinquency,<span class="at" style="color: #657422;">x=</span>SES)) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb15-11">  <span class="fu" style="color: #4758AB;">geom_jitter</span>(<span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">4</span>, <span class="at" style="color: #657422;">shape=</span><span class="dv" style="color: #AD0000;">21</span>, <span class="at" style="color: #657422;">size=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">width=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">height=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#009E73"</span>) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb15-12">  <span class="fu" style="color: #4758AB;">stat_function</span>(<span class="at" style="color: #657422;">fun=</span>eqY1c, <span class="at" style="color: #657422;">geom=</span><span class="st" style="color: #20794D;">"line"</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"#009E73"</span>, <span class="at" style="color: #657422;">size=</span><span class="fl" style="color: #AD0000;">1.5</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb15-13">  <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb15-14">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.text.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>(),  </span>
+<span id="cb15-15">        <span class="at" style="color: #657422;">axis.ticks.y=</span><span class="fu" style="color: #4758AB;">element_blank</span>()</span>
+<span id="cb15-16">        ) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb15-17">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"SES"</span>, <span class="at" style="color: #657422;">y=</span><span class="st" style="color: #20794D;">"Delinquency"</span>)</span>
+<span id="cb15-18">lmYplot3</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Uh oh. Suddenly, our model estimates a <em>positive</em> effect of SES on delinquency! Why?! Well, since we stratified on (adjusted for) financial strain, we essentially removed SES’s indirect effect on delinquency that operates through financial strain from our causal estimate. However, since we simulated these data, we know that SES also has an indirect effect on delinquency through perceived risk that is excluded from our model. So, the positive causal estimate of SES on delinquency in this model (<em>b</em> = 0.18, se = 0.04) reflects any direct effects of SES on delinquency (which we set to equal “0” in our simulation) and any indirect effects of SES on delinquency through unmeasured mediators - in this case, through perceived risk. We know that, in our simulated example, SES increases delinquency by reducing perceived risk of detection among those with high SES - that is, SES has <em>a positive indirect causal effect</em> on delinquency through perceived risk. Likewise, if we stratify on financial strain, thereby adjusting our estimate for this other known mediator, we are left with a positive estimate of the net causal effect of SES on delinquency (which we know is through perceived risk).</p>
+<p>This should help illustrate an important point about so-called <strong>direct effect</strong> estimates - they are not really estimating “direct” effects at all. Rather, like bivariate correlation and regression coefficients, they are simply descriptive statistics that summarize the <strong>total</strong> effect of a predictor (SES) on an outcome (delinquency) through any and all unmeasured mechanisms.</p>
+<p>This is an essential point. Imagine we were analyzing real non-simulated observational data and, after including measures of known mediating mechanisms (e.g., financial strain; perceived risk) in our model, we observed no association or “direct effect” of SES on delinquency (like in our second model <code>lm1b</code> above). In that situation, it is possible that there are no other mediating mechanisms through which SES might cause delinquency. However, it is also possible that there are additional unmeasured mechanisms that, combined, offset each other to result in a near-zero total remaining causal effect!</p>
+<p>Moreover, bivariate correlations and partial regression coefficients also may be biased by effects of other unmeasures sources of confounding as well. In our simulation, we made a strong simplifying assumption that there were no such unmeasured sources of confounding and that we had identified all relevant mechanisms. However, with real data, such assumptions often are highly implausible. Hence, if one cares about causal effects of a variable (SES) on an outcome (delinquency) - total, indirect, or otherwise - then it is essential to identify the appropriate causal model and then to include (or exclude) variables as appropriate to accurately estimate the causal effect of interest. One cannot simply let the data speak.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/datacantspeak2.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Data cannot speak meme</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-mediate" class="level3">
+<h3 class="anchored" data-anchor-id="sec-mediate">Simple mediation tests</h3>
+<p>Finally, let’s illustrate a simple test of the indirect effect of SES on delinquency using <code>mediate()</code> from the psych package.<sup>4</sup></p>
+<div class="cell">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;">mediate</span>(Delinquency <span class="sc" style="color: #5E5E5E;">~</span> SES <span class="sc" style="color: #5E5E5E;">+</span> (Strain) <span class="sc" style="color: #5E5E5E;">+</span> (Risk), <span class="at" style="color: #657422;">data =</span> simdata, <span class="at" style="color: #657422;">n.iter =</span> <span class="dv" style="color: #AD0000;">10000</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> <span class="fu" style="color: #4758AB;">print</span>(<span class="at" style="color: #657422;">short =</span> <span class="cn" style="color: #8f5902;">TRUE</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Mediation/Moderation Analysis 
+Call: mediate(y = Delinquency ~ SES + (Strain) + (Risk), data = simdata, 
+    n.iter = 10000)
+
+The DV (Y) was  Delinquency . The IV (X) was  SES . The mediating variable(s) =  Strain Risk .
+
+Total effect(c) of  SES  on  Delinquency  =  -0.01   S.E. =  0.04  t  =  -0.29  df=  998   with p =  0.77
+Direct effect (c') of  SES  on  Delinquency  removing  Strain Risk  =  -0.03   S.E. =  0.04  t  =  -0.73  df=  996   with p =  0.47
+Indirect effect (ab) of  SES  on  Delinquency  through  Strain Risk   =  0.02 
+Mean bootstrapped indirect effect =  0.02  with standard error =  0.03  Lower CI =  -0.04    Upper CI =  0.08
+R = 0.5 R2 = 0.25   F = 112.47 on 3 and 996 DF   p-value:  3.83e-79 
+
+ To see the longer output, specify short = FALSE in the print statement or ask for the summary</code></pre>
+</div>
+</div>
+<p>As before, these models estimate a near-zero total effect (<em>c</em> = -0.01) and so-call “direct effect” (<em>c’</em> = -0.03) of SES on delinquency. However, SES is negatively associated with both mediators, and each mediator has a comparably sized yet opposite effect on delinquency. The text results also indicate that the total indirect effect of SES on delinquency through both mediators is nearly zero as well (Mean bootstrapped indirect effect [<em>ab</em>] of SES on Delinquency through Strain and Risk = 0.02; standard error = 0.03; 95% CI = [-0.04, 0.08]). This should be unsurprising since we simulated the data so that the two indirect effects would equally offset one other, resulting in a total indirect effect of zero.</p>
+<p>We could re-estimate the model, specifying each mechanism separately as a posited mediator, to calculate an estimate of the specific indirect effect through each mediator. Or, we could multiply the SES-&gt;Mediator path coefficient and the Mediator-&gt;Delinquency path coefficient together to get basic estimates of these specific indirect effects. For instance, using this “product of <em>ab</em> coefficients” approach, we would estimate a negative indirect effect of SES on delinquency through financial strain (-0.48 * 0.39) approximately equal to -0.19 and a positive indirect effect through perceived risk (-0.47 * -0.44) approximately equal to 0.21.<sup>5</sup> As expected, these countervailing indirect effects nearly perfectly offset one another!</p>
+<p>So, this was a long-winded illustration of just one way that two variables might be <strong>causally related even in the absence of observing a (bivariate; total; direct) correlation</strong> between them!</p>
+</section>
+</section>
+<section id="sec-caution" class="level2">
+<h2 class="anchored" data-anchor-id="sec-caution">Concluding cautions</h2>
+<p>Finally, remember that although this example was inspired by a published study, ours is also a contrived example using simulated data designed to help you think more deeply about causation and (non)correlation. With simulated data, we create the rules and can ensure strong mediation assumptions are met. Yet, in the real world of messy observational data, there are often countless plausible causal models that could have generated the patterns of correlations in one’s data. For an excellent example, check out Julia Rohrer’s blog entry about <a href="https://www.the100.ci/2019/10/03/indirect-effect-ex-machina/">hunting for indirect effects</a> in the absence of a total effect (e.g., correlation) between X &amp; Y. She warns:</p>
+<blockquote class="blockquote">
+<p>Third, be wary of mediation in the absence of a total effect. There may be scenarios in which it makes sense, but confounding may be the more plausible alternative explanation in other scenarios.</p>
+</blockquote>
+<p>Her example beautifully, or frighteningly, illustrates how a collider can produce an erroneous inference about an indirect effect. You might be wondering to yourself: <em>what the heck is a collider</em>? Great question. To us, it is the scary monster in our statistical modeling closet that keeps us up at night; neither of us have ever really seen the monster, but we’ve read enough stories about it to be convinced that it is there. We’ll try tackling that one another time…</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Yes, I realize that I simulated the outcome variable, <em>Delinquency</em>, from a Poisson distribution - you got me. I should be specifying a generalized linear regression model (e.g., Poisson distribution with a log link) instead to avoid generating biasing estimates and accurately recover simulated parameters. But, then I would need to get into more <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r363.pdf">advanced issues related to estimating indirect effects in nonlinear models</a>, which would distract from the key point here. Let’s get this straight: I adopted a simple modeling approach that is a poor match to the more complex (simulated) data I am analyzing for the sake of easing interpretation for the reader. Sound familiar? Now, it seems I have painted myself into a corner. Don’t worry - I have a mantra to get us out of this mess, courtesy of my dad: Do as I say and not as I do! If you are considering estimating indirect effects with real-world data, please check out <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4287269/">counterfactual causal mediation</a> approaches; various packages in R, like <a href="https://bs1125.github.io/CMAverse/">CMAverse</a> or <a href="https://bs1125.github.io/CMAverse/">medflex</a>, might do the trick. Moreover, in the course of conducting <em>real</em> science, don’t paint yourself into a corner. You’ll just be stuck in place for a long time and the job won’t be finished, or you’ll get paint on your shoes and make a huge mess that someone has to clean up.↩︎</p></li>
+<li id="fn2"><p>We used <code>geom_jitter()</code> to slightly offset or spread out observations that fall at the exact same place on the plot, which can be helpful in a scatterplot displaying a limited (e.g., ordinal) variable. With this method, observations cluster around their actual values rather than directly on the same crowded points, which permits you to see where data are plentiful or sparse along the observed distributions.↩︎</p></li>
+<li id="fn3"><p>It remains common for researchers to use the <a href="https://web.pdx.edu/~newsomj/semclass/ho_mediation.pdf">Sobel product of coefficients approach</a> for mediation tests and to estimate <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2022.810258/full">bias corrected bootstrapped confidence intervals</a>. However, for most observational data applications, I typically recommend using a <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">causal mediation approach</a> that relies on counterfactual reasoning using a potential outcomes framework to estimate controlled and natural direct and indirect effects, along with <a href="https://journals.sagepub.com/doi/full/10.1177/25152459221095827">careful consideration</a> and <a href="https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-016-2163-7">transparent reporting</a> of the <a href="https://www.annualreviews.org/doi/10.1146/annurev-publhealth-032315-021402#_i12">strong assumptions</a> required to interpret mediation results as causal effects.↩︎</p></li>
+<li id="fn4"><p>This is a very <a href="https://r-workshop.mindsci.net/mediation">basic mediation function</a> that applies the Sobel product of <em>ab</em> coefficients approach mentioned earlier. Remember, do as I say and not as I do! As noted above, I would not recommend this approach for most applications to observational data. However, in this case, the data were simulated from random distributions and a simple causal mediation structure without confounding or exposure-mediator interactions, so we know the <a href="https://www.annualreviews.org/doi/10.1146/annurev-publhealth-032315-021402#_i12">strong causal mediation assumptions</a> hold. As such, this simple approach is sufficient for our purposes. That is, assuming you did us a solid by ignoring our Poisson-distributed outcome variable - and all the paint on our shoes.↩︎</p></li>
+<li id="fn5"><p>Using the population parameters we specified to generate our simulated sample, the population <em>ab</em> indirect effect magnitudes equal (-0.5 * 0.5) = -0.25 and (-0.5 * -0.5) = 0.25, respectively.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
+  author = {Jon Brauer},
+  title = {Causation Without {Correlation?}},
+  date = {2023-04-10},
+  url = {https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2023" class="csl-entry quarto-appendix-citeas">
+Jon Brauer. 2023. <span>“Causation Without Correlation?”</span> April
+10, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html">https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</a>.
+</div></div></section></div> ]]></description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</guid>
+  <pubDate>Mon, 10 Apr 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[4]/empty-egg-dag3.png" medium="image" type="image/png" height="135" width="144"/>
+</item>
 <item>
   <title>Dr. Charles R. Tittle’s intellectual contributions</title>
   <dc:creator>Jon Brauer, with Katya Botchkovar and Carter Hay</dc:creator>
