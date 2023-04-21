@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,35 +58,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F0XQR72SS3"></script>
 
 <script type="text/javascript">
@@ -99,10 +68,9 @@ gtag('js', new Date());
 gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="reluctant criminologists" href="course-materials.xml"></head>
+</head>
 
 <body class="nav-fixed fullcontent">
 
@@ -189,92 +157,45 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </header>
 
 <p>This is a centralized location for uploading materials from various courses we have developed or our collaborators have shared. The main purpose is to have a place where we can point people if they mistakenly ask for our materials.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<section id="introduction-to-statistics-in-r-for-criminologists" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-statistics-in-r-for-criminologists"><a href="course-materials/intro-stats.html">Introduction to statistics in R for criminologists</a></h3>
+<div id="fig-hate-class" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="course-materials/intro-stats.html"><img src="course-materials/1_ugrad_stats/hateclass_horst.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p></p><figcaption class="figure-caption">Course&nbsp;1: <a href="course-materials/intro-stats.html">Introduction to statistics in R for criminologists</a></figcaption><p></p>
+</figure>
+</div>
+<p>Materials for an introductory course on frequentist statistics using R Studio &amp; R Markdown. Course versions designed for undergraduates, graduate students, and researchers with little to no prior experience with R.</p>
+</section>
+</div><div class="column" style="width:10%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:45%;">
+<section id="replication-reproducibility-in-social-science" class="level3">
+<h3 class="anchored" data-anchor-id="replication-reproducibility-in-social-science"><a href="course-materials/rnr.html">Replication &amp; reproducibility in social science</a></h3>
+<div id="fig-problems" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="course-materials/rnr.html"><img src="course-materials/2_grad_RnR/problems_horst.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p></p><figcaption class="figure-caption">Course&nbsp;2: <a href="course-materials/rnr.html">Replication &amp; reproducibility in social science</a></figcaption><p></p>
+</figure>
+</div>
+<p>Materials for <em>replication and reproducibility</em> course. Includes assignments that provide a crash course for conducting minimally reproducible research using R Markdown and a ‘reproducibility project’ where students reproduce or conceptually replicate results from a published article. Course versions designed for graduate and advanced undergraduate (senior seminar) students.</p>
+</section>
+</div>
+</div>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1679956032327" data-listing-reading-time-sort="5.975">
-<div class="thumbnail">
-<p><a href="./course-materials/1_ugrad_stats/index.html"> <img src="./course-materials/1_ugrad_stats/hateclass_horst.png" class="thumnail-image" alt="Artwork by @allison_horst"> </a></p>
-</div>
-<div class="body">
-<a href="./course-materials/1_ugrad_stats/index.html">
-<h3 class="no-anchor listing-title">
-Introduction to statistics in R for criminologists
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Assignments for an introductory course on frequentist statistics using R Studio &amp; R Markdown. Designed for undergraduates, graduate students, and researchers with little to no prior experience with R.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./course-materials/1_ugrad_stats/index.html">
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1680288275855" data-listing-reading-time-sort="6.065">
-<div class="thumbnail">
-<p><a href="./course-materials/2_grad_RnR/index.html"> <img src="./course-materials/2_grad_RnR/problems_horst.png" class="thumnail-image" alt="Artwork by @allison_horst"> </a></p>
-</div>
-<div class="body">
-<a href="./course-materials/2_grad_RnR/index.html">
-<h3 class="no-anchor listing-title">
-Replication &amp; reproducibility in social science (Graduate-level)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Assignments for graduate level <em>replication and reproducibility</em> course. Includes a crash course for conducting minimally reproducible research using R (#1-#4) and a ‘reproducibility project’ (#5-#8) where students reproduce or conceptually replicate results from a published article of their choice.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./course-materials/2_grad_RnR/index.html">
-<div class="listing-reading-time">
-6 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1680286287355" data-listing-reading-time-sort="5.83">
-<div class="thumbnail">
-<p><a href="./course-materials/3_ugrad_RnR/index.html"> <img src="./course-materials/3_ugrad_RnR/debugging_horst.png" class="thumnail-image" alt="Artwork by @allison_horst"> </a></p>
-</div>
-<div class="body">
-<a href="./course-materials/3_ugrad_RnR/index.html">
-<h3 class="no-anchor listing-title">
-Criminology in crisis? Replication &amp; reproducibility in criminology (Undergraduate-level)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Assignments for <em>replication and reproducibility</em> course for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a ‘reproducibility project’ (#8-#14) where students reproduce or conceptually replicate results from a published article using NYS data.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./course-materials/3_ugrad_RnR/index.html">
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 
 <div>
 <hr>

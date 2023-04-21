@@ -1,5 +1,6 @@
 ---
 title: "Introduction to statistics in R for criminologists"
+subtitle: "Undergraduate techniques of data analysis (Brauer; IUB CJUS-K300)"
 author: "Jon Brauer and Tyeisha Fordham"
 description: "Assignments for an introductory course on frequentist statistics using R Studio & R Markdown. Designed for undergraduates, graduate students, and researchers with little to no prior experience with R."
 image: hateclass_horst.png

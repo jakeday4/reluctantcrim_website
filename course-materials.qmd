@@ -1,12 +1,41 @@
 ---
 title: "course materials"
 subtitle: "looking for good course materials? you found ours instead." 
-listing:
-  contents: course-materials
-  sort:
-    - "date asc"  
-  fields: [date, title, reading-time, description, image, categories]
-  feed: true
+crossref:
+  fig-title: Course
 ---
 
 This is a centralized location for uploading materials from various courses we have developed or our collaborators have shared. The main purpose is to have a place where we can point people if they mistakenly ask for our materials. 
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+### [Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
+
+::: {#fig-hate-class}
+[![](course-materials/1_ugrad_stats/hateclass_horst.png)](course-materials/intro-stats.html)
+
+[Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
+:::
+Materials for an introductory course on frequentist statistics using R Studio & R Markdown. Course versions designed for undergraduates, graduate students, and researchers with little to no prior experience with R.
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+
+### [Replication & reproducibility in social science](course-materials/rnr.html)
+
+::: {#fig-problems}
+[![](course-materials/2_grad_RnR/problems_horst.png)](course-materials/rnr.html)
+
+[Replication & reproducibility in social science](course-materials/rnr.html)
+:::
+Materials for *replication and reproducibility* course. Includes assignments that provide a crash course for conducting minimally reproducible research using R Markdown and a 'reproducibility project' where students reproduce or conceptually replicate results from a published article. Course versions designed for graduate and advanced undergraduate (senior seminar) students. 
+:::
+
+::::

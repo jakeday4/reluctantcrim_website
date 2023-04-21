@@ -10,14 +10,8 @@ listing:
     sort-ui: false
     filter-ui: false
     fields: [date, title, reading-time, description, image, categories]
-  - id: courses
-    contents: course-materials
-    sort: "date asc"
-    type: default
-    categories: true
-    sort-ui: false
-    filter-ui: false
-    fields: [date, title, reading-time, description, image, categories]
+crossref:
+  fig-title: Course
 page-layout: full
 css: styles.css
 # title-block-banner: false
@@ -31,5 +25,33 @@ css: styles.css
 
 ## course materials
 
-:::{#courses}
+:::: {.columns}
+
+::: {.column width="45%"}
+
+### [Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
+
+::: {#fig-hate-class}
+[![](course-materials/1_ugrad_stats/hateclass_horst.png)](course-materials/intro-stats.html)
+
+[Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
 :::
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+
+### [Replication & reproducibility in social science](course-materials/rnr.html)
+
+::: {#fig-problems}
+[![](course-materials/error_horst.png)](course-materials/rnr.html)
+
+[Replication & reproducibility in social science](course-materials/rnr.html)
+:::
+:::
+
+::::
+

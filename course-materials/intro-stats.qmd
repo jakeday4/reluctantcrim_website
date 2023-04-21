@@ -1,0 +1,51 @@
+---
+title: "Introduction to statistics in R for criminologists"
+subtitle: "Come on, try a little R with us. You know you want to." 
+crossref:
+  fig-title: Version
+image: hateclass_horst.png
+image-alt: Artwork by @allison_horst
+---
+
+Materials for an introductory course on frequentist statistics using R Studio & R Markdown. Course versions designed for undergraduates, graduate students, and researchers with little to no prior experience with R.
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+### [Undergraduate techniques of data analysis (Brauer; IUB CJUS-K300)](1_ugrad_stats/index.html)
+
+::: {#fig-Brauer-confused}
+[![](Brauer-confused.jpg)](1_ugrad_stats/index.html)
+
+[archetypal lunacy (Brauer)](1_ugrad_stats/index.html)
+:::
+[Recent syllabus](1_ugrad_stats/CJUS-K300-Summer23-syllabus.pdf) 
+
+This is the original version created by Jon Brauer. Jon had taught previous versions of this course for many years, first by relying solely on hand-calculated statistics (at Nebraska) and then by combining hand calculations with SPSS assignments (at Indiana). For this current version, Jon continues to assign "by hand" calculations (found in Canvas assignments) but adapted the earlier SPSS assignments to R/RStudio assignments instead. 
+
+Certain features of the course (e.g,. book selection; certain R package choices) were designed with the goal in mind of easing the transition to R for students and faculty with some prior experience using SPSS. Special shout-out to [Tyeisha Fordham](https://criminaljustice.indiana.edu/about/graduate-students/fordham_tyeisha.html) for helping draft the initial assignment transitions from SPSS to R.
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+
+### [Master's introductory data analysis (Ducate; TAMUSA CRIM-5305)](4_grad_stats_Ducate/index.html)
+
+::: {#fig-Caitlin-grad}
+[![](Brauer-Caitlin2.jpg)](4_grad_stats_Ducate/index.html)
+
+[student becomes teacher (Ducate)](4_grad_stats_Ducate/index.html)
+:::
+[Recent syllabus](https://apps.tamusa.edu/info/syllabi/Spring2023/Data-Analysis-CRIM-5305-600.pdf)
+
+Prior to becoming a superhero professor, part of [Dr. Caitlin Ducate's](https://www.csducate.com/) origin story involved working with Jon Brauer as a graduate assistant for his statistics course at Indiana. Now, the student has become the teacher. Caitlin recently taught a modified version of Jon's course to her Master's students at her university and has graciously agreed to share her materials. 
+
+Changes from original version mostly involve simplifying or adding images for clearer instructions. One notable change in this version is that [Brauer's original Assignment #3](./1_ugrad_stats/ugrad-stats_Rassign/Assignment_3_JRB.html) has been split into two separate assignments (Assignments #3 and #4).
+:::
+
+::::

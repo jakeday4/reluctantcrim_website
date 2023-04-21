@@ -1,0 +1,46 @@
+---
+title: "Replication and reproducibility"
+subtitle: "Do reproducible workflows. Or do not. There is no try." 
+crossref:
+  fig-title: Version
+image: error_horst.png
+image-alt: Artwork by @allison_horst
+---
+
+Materials for *replication and reproducibility* course. Includes assignments that provide a crash course for conducting minimally reproducible research using R Markdown and a 'reproducibility project' where students reproduce or conceptually replicate results from a published article. Course versions designed for graduate and advanced undergraduate (senior seminar) students. 
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+### [Replication & Reproducibility in the Social Sciences (Brauer; IUB CJUS-P680)](2_grad_RnR/index.html)
+
+::: {#fig-problems}
+[![](2_grad_RnR/problems_horst.png)](2_grad_RnR/index.html)
+
+[tracing ovals (Brauer)](2_grad_Rnr/index.html)
+:::
+[Recent syllabus](2_grad_RnR/CJUS-P680_Fall-21-22.pdf) 
+
+Assignments for graduate level replication and reproducibility course. Includes a crash course for conducting minimally reproducible research using R (#1-#4) and a ‘reproducibility project’ (#5-#8) where students reproduce or conceptually replicate results from a published article of their choice. Designed for accelerated Master's ("4+1") and PhD students.
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+
+### [Criminology in Crisis: Replication & Reproducibility (Day; UNCW CRM-495)](3_ugrad_RnR/index.html)
+
+::: {#fig-debugging}
+[![](3_ugrad_RnR/debugging_horst.png)](3_ugrad_RnR/index.html)
+
+[drawing owls (Day)](3_ugrad_RnR/index.html)
+:::
+[Recent syllabus](3_ugrad_RnR/CRM495_Spring2022_Syllabus_2022-1-13.pdf)
+
+Assignments for replication and reproducibility course for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a ‘reproducibility project’ (#8-#14) where students reproduce or conceptually replicate results from a published article using NYS data. Designed for advanced undergraduate (senior seminar) students. 
+:::
+
+::::
