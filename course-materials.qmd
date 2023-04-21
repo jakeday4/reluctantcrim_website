@@ -12,8 +12,6 @@ This is a centralized location for uploading materials from various courses we h
 
 ::: {.column width="45%"}
 
-### [Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
-
 ::: {#fig-hate-class}
 [![](course-materials/1_ugrad_stats/hateclass_horst.png)](course-materials/intro-stats.html)
 
@@ -28,12 +26,11 @@ Materials for an introductory course on frequentist statistics using R Studio & 
 
 ::: {.column width="45%"}
 
-### [Replication & reproducibility in social science](course-materials/rnr.html)
-
 ::: {#fig-problems}
 [![](course-materials/2_grad_RnR/problems_horst.png)](course-materials/rnr.html)
 
 [Replication & reproducibility in social science](course-materials/rnr.html)
+
 :::
 Materials for *replication and reproducibility* course. Includes assignments that provide a crash course for conducting minimally reproducible research using R Markdown and a 'reproducibility project' where students reproduce or conceptually replicate results from a published article. Course versions designed for graduate and advanced undergraduate (senior seminar) students. 
 :::

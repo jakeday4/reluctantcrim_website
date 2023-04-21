@@ -7,19 +7,21 @@ image: error_horst.png
 image-alt: Artwork by @allison_horst
 ---
 
-Materials for *replication and reproducibility* course. Includes assignments that provide a crash course for conducting minimally reproducible research using R Markdown and a 'reproducibility project' where students reproduce or conceptually replicate results from a published article. Course versions designed for graduate and advanced undergraduate (senior seminar) students. 
+Materials for course dedicated to teaching students about *replication and reproducibility* issues in social science. Substantive readings in course also cover several core philosophies of science, with the aim of helping students understand logic of scientific inquiry and how/why replication and reproducibility are central to scientific knowledge construction. The first set of assignments in each course provide students a foundation for conducting minimally reproducible research using R Markdown. The second set of assignments guide students through the reproduction and/or conceptual replication of results from a published article. Course versions were designed for graduate and advanced undergraduate (senior seminar) students. 
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-
-### [Replication & Reproducibility in the Social Sciences (Brauer; IUB CJUS-P680)](2_grad_RnR/index.html)
 
 ::: {#fig-problems}
 [![](2_grad_RnR/problems_horst.png)](2_grad_RnR/index.html)
 
 [tracing ovals (Brauer)](2_grad_Rnr/index.html)
 :::
+
+#### [Replication & Reproducibility in the Social Sciences](2_grad_RnR/index.html)
+[(Brauer; IUB CJUS-P680; Graduate)](2_grad_RnR/index.html)
+
 [Recent syllabus](2_grad_RnR/CJUS-P680_Fall-21-22.pdf) 
 
 Assignments for graduate level replication and reproducibility course. Includes a crash course for conducting minimally reproducible research using R (#1-#4) and a ‘reproducibility project’ (#5-#8) where students reproduce or conceptually replicate results from a published article of their choice. Designed for accelerated Master's ("4+1") and PhD students.
@@ -31,13 +33,16 @@ Assignments for graduate level replication and reproducibility course. Includes 
 
 ::: {.column width="45%"}
 
-### [Criminology in Crisis: Replication & Reproducibility (Day; UNCW CRM-495)](3_ugrad_RnR/index.html)
-
 ::: {#fig-debugging}
 [![](3_ugrad_RnR/debugging_horst.png)](3_ugrad_RnR/index.html)
 
 [drawing owls (Day)](3_ugrad_RnR/index.html)
 :::
+
+#### [Criminology in Crisis: Replication & Reproducibility](3_ugrad_RnR/index.html)
+
+[(Day; UNCW CRM-495; Undergraduate)](3_ugrad_RnR/index.html)
+
 [Recent syllabus](3_ugrad_RnR/CRM495_Spring2022_Syllabus_2022-1-13.pdf)
 
 Assignments for replication and reproducibility course for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a ‘reproducibility project’ (#8-#14) where students reproduce or conceptually replicate results from a published article using NYS data. Designed for advanced undergraduate (senior seminar) students. 

@@ -29,8 +29,6 @@ css: styles.css
 
 ::: {.column width="45%"}
 
-### [Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
-
 ::: {#fig-hate-class}
 [![](course-materials/1_ugrad_stats/hateclass_horst.png)](course-materials/intro-stats.html)
 
@@ -44,13 +42,12 @@ css: styles.css
 
 ::: {.column width="45%"}
 
-### [Replication & reproducibility in social science](course-materials/rnr.html)
-
 ::: {#fig-problems}
 [![](course-materials/error_horst.png)](course-materials/rnr.html)
 
 [Replication & reproducibility in social science](course-materials/rnr.html)
 :::
+
 :::
 
 ::::
