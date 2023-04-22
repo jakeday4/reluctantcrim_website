@@ -16,6 +16,26 @@ Like the original version, the R assignments for this course are designed to pro
 :::: columns
 
 ::: {.column width="35%"}
+![Believe you can do this. We do! [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](believe_horst.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### Introduction: Tips, troubleshooting, and why R?
+Before you begin the assignments below, we recommend watching this brief introductory video. In it, Dr. Caitlin Ducate explains why it is worth your time to learn data analysis skills in R/RStudio, describes basic features of the R language, highlights things you can do in R, and gives advice for troubleshooting with R.
+
+<details> <summary> Introductory video (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/Ojok9iQDGhk >}}
+</details>
+:::
+::::
+
+
+:::: columns
+
+::: {.column width="35%"}
 ![Artful depiction of `here()` package [by @allison_horst](https://allisonhorst.com/allison-horst)](../1_ugrad_stats/ugrad-stats_Rassign/Images/here_horst.png)
 :::
 
@@ -25,6 +45,10 @@ Like the original version, the R assignments for this course are designed to pro
 ::: {.column width="60%"}
 ### [Assignment 1: Getting Started in R](grad-stats_Rassign/CRIM5305_Assignment_01.html)
 The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio. Additionally, you will learn how to create, edit, and knit an R Markdown file.  
+
+<details> <summary> Video walkthrough for Assignment 1 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/Pfe7PCLc1mg >}}
+</details>
 :::
 ::::
 
@@ -41,6 +65,10 @@ The purpose of this first assignment is to demonstrate that you have downloaded 
 ::: {.column width="60%"}
 ### [Assignment 2: Navigating Data](grad-stats_Rassign/CRIM5305_Assignment_02.html)
 In this assignment, you will create an R Markdown file in which to save and present your work for this class. Additionally, following the goals of BPW's chapter 1, you will use R/RStudio to view variables in a data file and find information about variables, including variable names, labels, and values. This assignment should help you navigate R/RStudio and become comfortable finding basic information within data files.
+
+<details> <summary> Video walkthrough for Assignment 2 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/uIER6eoE0Uc >}}
+</details>
 :::
 ::::
 
@@ -57,6 +85,10 @@ In this assignment, you will create an R Markdown file in which to save and pres
 ::: {.column width="60%"}
 ### [Assignment 3: Describing Data Distributions](grad-stats_Rassign/CRIM5305_Assignment_03.html)
 Chapter 2 of B&P's book focused on data distributions. In this assignment, you will learn how to generate frequency tables in R.
+
+<details> <summary> Video walkthrough for Assignment 3 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/d-IGxo_AoXA >}}
+</details>
 :::
 ::::
 
@@ -71,7 +103,11 @@ Chapter 2 of B&P's book focused on data distributions. In this assignment, you w
 
 ::: {.column width="60%"}
 ### [Assignment 4: Recode & Visualize Variables](grad-stats_Rassign/CRIM5305_Assignment_04.html)
-Chapter 2 of B&P's book focused on data distributions. In this assignment, you will learn how to recode variables and create a simple graph in R.
+Chapter 3 of B&P's book focused on visualizing data. In this assignment, you will learn how to recode variables and create a simple graph in R.
+
+<details> <summary> Video walkthrough for Assignment 4 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/q_ZwZHiEnzA >}}
+</details>
 :::
 ::::
 
@@ -87,6 +123,10 @@ Chapter 2 of B&P's book focused on data distributions. In this assignment, you w
 ::: {.column width="60%"}
 ### [Assignment 5: Central Tendency](grad-stats_Rassign/CRIM5305_Assignment_05.html)
 BPW's chapter 4 focused on measures of central tendency (e.g., mean, median, and mode,) and their advantages and disadvantages as single statistical descriptions of a data distribution. Likewise, in this assignment, you will learn how to use R to calculate measures of central tendency and other statistics (e.g., skewness; kurtosis) that us help standardize and efficiently describe the shape of a data distribution. You will also get additional practice with creating frequency tables and simple graphs in R. 
+
+<details> <summary> Video walkthrough for Assignment 5 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/adHYpq2vG0I >}}
+</details>
 :::
 ::::
 
@@ -102,6 +142,10 @@ BPW's chapter 4 focused on measures of central tendency (e.g., mean, median, and
 ::: {.column width="60%"}
 ### [Assignment 6: Dispersion](grad-stats_Rassign/CRIM5305_Assignment_06.html)
 BPW's chapter 5 covered measures of dispersion, including variation ratio, range, interquartile range, variance, and standard deviation. We use measures of dispersion to summarize the “spread” (rather than central tendency) of a data distribution. Likewise, in this assignment, you will learn how to use R to calculate measures of dispersion and create boxplots that help us standardize and efficiently describe the spread of a data distribution. You will also get additional practice with creating frequency tables and simple graphs in R, and you will learn how to modify some elements (e.g., color) of a ggplot object. 
+
+<details> <summary> Video walkthrough for Assignment 6 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/Qdg7FGP7Hog >}}
+</details>
 :::
 ::::
 
@@ -117,6 +161,10 @@ BPW's chapter 5 covered measures of dispersion, including variation ratio, range
 ::: {.column width="60%"}
 ### [Assignment 7: Probability & Cross-tabulations](grad-stats_Rassign/CRIM5305_Assignment_07.html)
 BPW's chapter 6 provided an introduction to probability, including foundational rules of probability and probability distributions. In the current assignment, you will gain a better understanding of frequentist probability by learning to create and interpret cross-tabulations or joint frequency contingency tables and by calculating z-scores. 
+
+<details> <summary> Video walkthrough for Assignment 7 (by Caitlin Ducate) </summary>
+{{< video https://youtu.be/Ec7D82M5wI8 >}}
+</details>
 :::
 ::::
 
