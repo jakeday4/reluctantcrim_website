@@ -9,14 +9,16 @@ image-alt: Artwork by @allison_horst
 
 ![You can do this! [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](hateclass_horst.png)
 
-The following assignments were created for Jon's undergraduate statistics course (CJUS K300) with the help of Tyeisha Fordham, a PhD student at Indiana University. Here is an abridged [syllabus](ugrad-stats_Rassign/Syllabus/CJUS-K300_syllabus_abridged.pdf) for the course. Most of the assignments are based on exercises found in [Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.](https://edge.sagepub.com/bachmansccj5e), which we refer to throughout as "BPW" book.
+The following assignments are designed to provide a (relatively) gentle introduction to elementary foundations of frequentist statistics using R via R Studio & R Markdown. They were created for Jon's undergraduate statistics course (CJUS K300) and, in collaboration with [Tyeisha Fordham](https://criminaljustice.indiana.edu/about/graduate-students/fordham_tyeisha.html), were adapted from earlier SPSS versions. 
 
-These assignments are designed to provide a (relatively) gentle introduction to elementary foundations of frequentist statistics using R via R Studio & R Markdown. Though initially designed for undergraduate students, the course is comparable to many introductory statistics courses that graduate students take in pursuit of Masters or PhD degrees in criminology/criminal justice. Hence, the R assignments may also provide a helpful bridge for graduate students prior to taking more advanced statistics courses that use R and, likewise, may be useful for criminologists at any educational or career stages interested in learning to use R for the first time. 
+Here is an abridged [syllabus](ugrad-stats_Rassign/Syllabus/CJUS-K300_syllabus_abridged.pdf) for the course. Most of the assignments are based on exercises found in [Bachman, Paternoster, & Wilson’s Statistics for Criminology & Criminal Justice, 5th Ed.](https://edge.sagepub.com/bachmansccj5e), which we refer to throughout as "BPW" book. When teaching the course, Jon pairs each R Assignment with a weekly Canvas assignment assessing comprehension of formulas and "by hand" statistical calculations.  
+
+Though initially designed for undergraduate students, the course is comparable to many introductory statistics courses that graduate students take in pursuit of Masters or PhD degrees in criminology/criminal justice. Certain features of the course (e.g,. book selection; certain R package choices) were designed with the goal in mind of easing the transition to R for students and faculty with prior experience using SPSS. Hence, these R Assignments may also provide a helpful bridge for graduate students prior to taking more advanced statistics courses that use R and, likewise, may be useful for criminologists at any educational or career stages interested in learning to use R for the first time.
 
 :::: columns
 
 ::: {.column width="35%"}
-![Believe you can do this. We do! [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](believe_horst.png)
+![Believe you can do this. We do! [Artwork by @allison_horst](https://allisonhorst.com/allison-horst)](../4_grad_stats_Ducate/believe_horst.png)
 :::
 
 ::: {.column width="5%"}
