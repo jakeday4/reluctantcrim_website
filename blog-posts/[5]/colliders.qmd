@@ -223,7 +223,7 @@ Hopefully, it is clear by now that conditioning on a collider (and other issues)
 
 We will present examples of biases caused by conditioning on a collider with both methods (over-control & selection) using simulated and real-world data. The first two examples will use simulated data that were generated in a way that resembles some key features of real-world criminological data. The third example will rely on comparisons of real-world data collected from a college student sample and from a similarly-aged online sample. 
 
-## Causal Model (DAG) for Simulated Data {#sec-SATdag}
+## Causal model (DAG) for simulated data {#sec-SATdag}
 
 Many existing examples of collider bias are in different fields & use toy examples with only a few variables and, at least for us, do not always clearly represent the types of problems we face in criminology. Thus, if you're like us, upon learning about collider bias, you may develop a fear of the problem, but you have difficulty imagining how such issues might affect analyses in criminology. So, a key goal in the examples below is realism. We want to present a scenario that many of us have or will encounter in the criminological wild. 
 
@@ -408,7 +408,7 @@ Now let's simulate some data.
 
 ![Because, you know, addressing collider bias in messy real data is "just like the simulations."](simulations.png)
 
-## Simulating Data for Examples 1 & 2 {#sec-simdata}
+## Simulating data for examples 1 & 2 {#sec-simdata}
 
 For simplicity, we will assume random normal distributions for socioeconomic status (SES), employment status/quality, and self-control. We will assume Poisson distributed morality and delinquency scales. Morality's continuous Poisson distribution is rounded down to nearest integer and truncated so negative values are recoded as zero. Delinquency's continuous Poisson distribution is rounded to the nearest integers. These rounding procedures add a bit more noise to the data and also make these variable more comparable to the types of highly skewed, ordinal, Likert-type measures we see in our field.
 
@@ -630,7 +630,7 @@ psych::pairs.panels(trimsamp,
 
 Even a brief examination of the bivariate correlation matrices foreshadows some of the problems we face when our research design invokes selection on a collider into the sample. For instance, imagine one group of researchers estimates gender gaps in self-control (*r*=-0.09), weak moral beliefs (*r*=0.17), and delinquency (*r*=0.18) using the general sample and then another group replicates their analysis using the felony sample (*r*=-0.01, 0.05, and 0.05, respectively). How might conclusions differ across these two studies?  
 
-## Example 1: Estimating Causal Effect of Self-control on Delinquency {#sec-ex1}
+## Example 1: Estimating causal effect of self-control on delinquency {#sec-ex1}
 
 Let's not get ahead of ourselves. Instead, let's illustrate in detail with our first example. We begin by estimating a generalized linear model predicting delinquency in the simulated general sample and in the restricted sample that is selected on felony convictions. In both models, we specify a Poisson distribution with a log link for our delinquency outcome. Though we should also account for ordinal nature of predictors (e.g., model monotonic effects with cumulative logit link function), we will save that for a future blog entry. 
 
@@ -805,11 +805,11 @@ coefplot + plot_glm1cd
 
 This may be surprising to some of you. After all, it is quite common for researchers to incorrectly defend against charges of selection bias by claiming that, with truncated distributions, the documented associations are likely attenuated and hence conservative estimates. In fact, we have made such claims ourselves,[^5] before we learned about collider bias and came to realize that predicting the nature, extent, or direction of bias is not always as simple as it may seem.
 
-[^5]: For example, Jake is guilty of this type of claim in his published work on race inequality in the college football coaching profession (see [Day, 2015](https://doi.org/10.1177/0730888415580651)). To offer what is in hindsight an embarrassing quote: "...given that Black coaches are more likely to leave the profession, by examining predictors of racial differences in promotions to executive positions *(in retrospective data)*, the present study offers a conservative test of the relationship between job-level, task-based,segregation and racial disparities in career outcomes (pg. 435)." To again paraphrase [Richard Mcelreath](https://twitter.com/rlmcelreath/status/1330092043553681412?s=20)], upon learning about DAGs, collider bias, and a host of other issues, I have often found myself experiencing "a profound sense of regret for (my) previous analyses."  
+[^5]: For example, Jake is guilty of this type of claim in his published work on race inequality in the college football coaching profession (see [Day, 2015](https://doi.org/10.1177/0730888415580651)). To offer what is in hindsight an embarrassing quote: "...given that Black coaches are more likely to leave the profession, by examining predictors of racial differences in promotions to executive positions *(in retrospective data)*, the present study offers a conservative test of the relationship between job-level, task-based,segregation and racial disparities in career outcomes (pg. 435)." To again paraphrase [Richard McElreath](https://twitter.com/rlmcelreath/status/1330092043553681412?s=20)], upon learning about DAGs, collider bias, and a host of other issues, I have often found myself experiencing "a profound sense of regret for (my) previous analyses."  
 
 ![Don't use Jedi mind tricks. State causal assumptions (in a DAG), then identify your estimand and adjustment set.](looking_for.jpg)
 
-## Example 2: Estimating Noncausal Effect of SES on Delinquency {#sec-ex2}
+## Example 2: Estimating noncausal effect of SES on delinquency {#sec-ex2}
 
 Let's move onto our second example, where we illustrate how improperly "controlling for" (i.e., conditioning on) a collider can bias causal estimation using our simulated general population and felony sample data. Here, we are estimating the noncausal effect of SES on delinquency. Of course, since our DAG and simulations specified no such causal effect, we should expect a near-zero estimate for the coefficient. 
 
@@ -916,7 +916,7 @@ Though this collider business may be new to many of us, we all learned in early 
 
 One of the cool things about the DAG framework is that it follows systematic and logically coherent rules that, though perhaps daunting at first, can be learned and applied formulaically. In fact, given you commit to a particular model of the world and specify it in a DAG, you do not have to rely on being clever when deciding what to adjust for in your statistical models.[^6]
 
-[^6]: "Avoid being clever" is another McElreath motto. You're probbably picking up on a pattern with all of our McElreath references. Seriously, do yourself a favor and read his book and watch his lectures. 
+[^6]: "Avoid being clever" is another McElreath motto. You're probably picking up on a pattern with all of our McElreath references. Seriously, do yourself a favor and read his book and watch his lectures. 
 
 Specifically, for any theoretical estimand you want to empirically estimate from the data, you can start by designing your DAG with a program like "DAGitty" and identifying the exposure (cause) and outcome. Then, you can have the program automatically identify the various adjustment sets that would give you the unbiased estimate based on your theoretical model as specified in the DAG. The [DAGitty User's Manual](http://www.dagitty.net/manual-3.x.pdf) explains a sufficient adjustment set as: 
 
@@ -967,7 +967,7 @@ regsum(glm2f) %>%
 
 As you can see, these adjustment sets removed the collider bias from our causal estimates! We have more to say about alternative models, variable selection, and [Table 2 fallacy](https://academic.oup.com/aje/article/177/4/292/147738), but it will have to wait for a later entry. For now, let's move on to one last example of collider bias caused by sample selection in real data. 
 
-## Example 3: Conditioning on a Collider through Selection in Real Data {#sec-ex3}
+## Example 3: Conditioning on a collider through selection in real data {#sec-ex3}
 
 For our final example, we present results of an analysis of pilot survey data collected to explore the relationship between volunteering, moral behaviors, and moral attitudes in two samples: a university student sample (*n*=152 valid responses), and a similarly aged sample of respondents recruited online through Amazon Mechanical Turk (*n*=164 valid responses). Data collection was conducted by [Miriam Northcutt Bohmert](https://criminaljustice.indiana.edu/about/faculty/northcutt-bohmert-miriam.html) (Principal Investigator) in collaboration with [Theresa Ochoa](https://education.indiana.edu/about/directory/profiles/ochoa-theresa-a.html) and Jon Brauer. We owe a special thanks to Miriam Northcutt Bohmert for granting us permission to use the data for this post, as well as to Indiana University's [Social Science Research Funding Program](https://research.iu.edu/funding-proposals/funding/opportunities/social-sciences/index.html) for financially supporting the data collection.
 
