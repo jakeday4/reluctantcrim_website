@@ -9,7 +9,7 @@
 <link>https://www.reluctantcriminologists.com/blog-posts.html</link>
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
-<generator>quarto-1.2.335</generator>
+<generator>quarto-1.2.475</generator>
 <lastBuildDate>Mon, 10 Apr 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Causation without Correlation?</title>
@@ -871,12 +871,12 @@ Charles R. Tittle’s Intellectual Contributions.”</span> March 12, 2023.
   author = {Jon Brauer and Jake Day},
   title = {Check Out Some of Our Favorite Sites},
   date = {2023-03-11},
-  url = {https://www.reluctantcriminologists.com/favorite_links.html},
+  url = {https://www.reluctantcriminologists.com/blog-posts/[5]/Collider/favorite_links.html},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday2023" class="csl-entry quarto-appendix-citeas">
 Jon Brauer and Jake Day. 2023. <span>“Check Out Some of Our Favorite
-Sites.”</span> March 11, 2023. <a href="https://www.reluctantcriminologists.com/favorite_links.html">https://www.reluctantcriminologists.com/favorite_links.html</a>.
+Sites.”</span> March 11, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/Collider/favorite_links.html">https://www.reluctantcriminologists.com/blog-posts/[5]/Collider/favorite_links.html</a>.
 </div></div></section></div> ]]></description>
   <category>general</category>
   <category>rstats</category>

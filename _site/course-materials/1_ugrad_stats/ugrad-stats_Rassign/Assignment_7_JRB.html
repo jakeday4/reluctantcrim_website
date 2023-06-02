@@ -1462,23 +1462,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -2047,13 +2041,23 @@ output.</li>
 </ol>
 <pre class="r"><code>StatesData &lt;- read_spss(here(&quot;Datasets&quot;, &quot;2012StatesData.sav&quot;))
 StatesData %&gt;% head() %&gt;% gt()</code></pre>
-<div id="sjejowfvph" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="ylyevbjyhp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ylyevbjyhp table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
-#sjejowfvph .gt_table {
+#ylyevbjyhp thead, #ylyevbjyhp tbody, #ylyevbjyhp tfoot, #ylyevbjyhp tr, #ylyevbjyhp td, #ylyevbjyhp th {
+border-style: none;
+}
+#ylyevbjyhp p {
+margin: 0;
+padding: 0;
+}
+#ylyevbjyhp .gt_table {
 display: table;
 border-collapse: collapse;
+line-height: normal;
 margin-left: auto;
 margin-right: auto;
 color: #333333;
@@ -2075,18 +2079,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#sjejowfvph .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
+#ylyevbjyhp .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
 }
-#sjejowfvph .gt_title {
+#ylyevbjyhp .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -2097,23 +2094,34 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#sjejowfvph .gt_subtitle {
+#ylyevbjyhp .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
-padding-top: 0;
-padding-bottom: 6px;
+padding-top: 3px;
+padding-bottom: 5px;
 padding-left: 5px;
 padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#sjejowfvph .gt_bottom_border {
+#ylyevbjyhp .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#ylyevbjyhp .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#sjejowfvph .gt_col_headings {
+#ylyevbjyhp .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -2127,7 +2135,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#sjejowfvph .gt_col_heading {
+#ylyevbjyhp .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -2146,7 +2154,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#sjejowfvph .gt_column_spanner_outer {
+#ylyevbjyhp .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -2157,13 +2165,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#sjejowfvph .gt_column_spanner_outer:first-child {
+#ylyevbjyhp .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#sjejowfvph .gt_column_spanner_outer:last-child {
+#ylyevbjyhp .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#sjejowfvph .gt_column_spanner {
+#ylyevbjyhp .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -2174,7 +2182,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#sjejowfvph .gt_group_heading {
+#ylyevbjyhp .gt_spanner_row {
+border-bottom-style: hidden;
+}
+#ylyevbjyhp .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -2197,8 +2208,9 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
+text-align: left;
 }
-#sjejowfvph .gt_empty_group_heading {
+#ylyevbjyhp .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -2212,13 +2224,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#sjejowfvph .gt_from_md > :first-child {
+#ylyevbjyhp .gt_from_md > :first-child {
 margin-top: 0;
 }
-#sjejowfvph .gt_from_md > :last-child {
+#ylyevbjyhp .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#sjejowfvph .gt_row {
+#ylyevbjyhp .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -2236,7 +2248,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#sjejowfvph .gt_stub {
+#ylyevbjyhp .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -2248,7 +2260,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sjejowfvph .gt_stub_row_group {
+#ylyevbjyhp .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -2261,10 +2273,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#sjejowfvph .gt_row_group_first td {
+#ylyevbjyhp .gt_row_group_first td {
 border-top-width: 2px;
 }
-#sjejowfvph .gt_summary_row {
+#ylyevbjyhp .gt_row_group_first th {
+border-top-width: 2px;
+}
+#ylyevbjyhp .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -2273,14 +2288,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sjejowfvph .gt_first_summary_row {
+#ylyevbjyhp .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#sjejowfvph .gt_first_summary_row.thick {
+#ylyevbjyhp .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#sjejowfvph .gt_last_summary_row {
+#ylyevbjyhp .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -2289,7 +2304,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#sjejowfvph .gt_grand_summary_row {
+#ylyevbjyhp .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -2298,7 +2313,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sjejowfvph .gt_first_grand_summary_row {
+#ylyevbjyhp .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -2307,10 +2322,19 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#sjejowfvph .gt_striped {
+#ylyevbjyhp .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
+#ylyevbjyhp .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#sjejowfvph .gt_table_body {
+#ylyevbjyhp .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -2318,7 +2342,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#sjejowfvph .gt_footnotes {
+#ylyevbjyhp .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -2331,299 +2355,298 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#sjejowfvph .gt_footnote {
+#ylyevbjyhp .gt_footnote {
 margin: 0px;
-font-size: 90%;
-padding-left: 4px;
-padding-right: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#sjejowfvph .gt_sourcenotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#sjejowfvph .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sjejowfvph .gt_left {
+#ylyevbjyhp .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#ylyevbjyhp .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#ylyevbjyhp .gt_left {
 text-align: left;
 }
-#sjejowfvph .gt_center {
+#ylyevbjyhp .gt_center {
 text-align: center;
 }
-#sjejowfvph .gt_right {
+#ylyevbjyhp .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#sjejowfvph .gt_font_normal {
+#ylyevbjyhp .gt_font_normal {
 font-weight: normal;
 }
-#sjejowfvph .gt_font_bold {
+#ylyevbjyhp .gt_font_bold {
 font-weight: bold;
 }
-#sjejowfvph .gt_font_italic {
+#ylyevbjyhp .gt_font_italic {
 font-style: italic;
 }
-#sjejowfvph .gt_super {
+#ylyevbjyhp .gt_super {
 font-size: 65%;
 }
-#sjejowfvph .gt_footnote_marks {
-font-style: italic;
-font-weight: normal;
+#ylyevbjyhp .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
+position: initial;
 }
-#sjejowfvph .gt_asterisk {
+#ylyevbjyhp .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#sjejowfvph .gt_indent_1 {
+#ylyevbjyhp .gt_indent_1 {
 text-indent: 5px;
 }
-#sjejowfvph .gt_indent_2 {
+#ylyevbjyhp .gt_indent_2 {
 text-indent: 10px;
 }
-#sjejowfvph .gt_indent_3 {
+#ylyevbjyhp .gt_indent_3 {
 text-indent: 15px;
 }
-#sjejowfvph .gt_indent_4 {
+#ylyevbjyhp .gt_indent_4 {
 text-indent: 20px;
 }
-#sjejowfvph .gt_indent_5 {
+#ylyevbjyhp .gt_indent_5 {
 text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">State</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Number1824</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">NumberRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">South</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Region</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Permoved</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">cigtax</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">smokefreelaws</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">tobaccodeathrt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Persmoke</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">totalpop</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">DivorceRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perfampoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perindpoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MedianIncome</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Pernoinsurance</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MurderRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">RobberyRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">AssaultRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">BurglaryRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MVTheftRT</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">InfantMort</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">HeartDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">CancerDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PerBachelorD</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PercentRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Percent18to24</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Assault_bin</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Murdercat</th>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="State">State</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Number1824">Number1824</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="NumberRural">NumberRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="State in South">State in South</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Four regional categories">Four regional categories</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent in different house in 2008">Percent in different house in 2008</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cigarette Tax in pennies">Cigarette Tax in pennies</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Smoke Free workplace laws Implemented">Smoke Free workplace laws Implemented</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Tobacco related death rate per 100K">Tobacco related death rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Adults who smoke">Percent of Adults who smoke</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="total population in Thousands">total population in Thousands</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Divorces per 1K population">Divorces per 1K population</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Families below poverty">Percent of Families below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent Individuals below poverty">Percent Individuals below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Median Income for Households">Median Income for Households</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Population without health insurance">Percent of Population without health insurance</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Murder Rate per 100K">Murder Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Robbery Rate per 100K">Robbery Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Assault Rate per 100K">Assault Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Burglary Rate per 100K">Burglary Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Motor Vehicle Rate per 100K">Motor Vehicle Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Infant Mortality Rat per 1,000 Live Births">Infant Mortality Rat per 1,000 Live Births</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cardiovascular Death Rate per 100K">Cardiovascular Death Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cancer Death Rate Per 100K">Cancer Death Rate Per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Pop With Bachelor&#39;s degree or  more">Percent of Pop With Bachelor&#39;s degree or  more</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="PercentRural">PercentRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent18to24">Percent18to24</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k">Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Murder rate categorical">Murder rate categorical</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Alabama</td>
-<td class="gt_row gt_right">335</td>
-<td class="gt_row gt_right">1981</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_right">15.1</td>
-<td class="gt_row gt_right">0.425</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">317.5</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">4780</td>
-<td class="gt_row gt_right">4.4</td>
-<td class="gt_row gt_right">13.4</td>
-<td class="gt_row gt_right">17.5</td>
-<td class="gt_row gt_right">40489</td>
-<td class="gt_row gt_right">16.9</td>
-<td class="gt_row gt_right">7.1</td>
-<td class="gt_row gt_right">142.5</td>
-<td class="gt_row gt_right">277.5</td>
-<td class="gt_row gt_right">1058.9</td>
-<td class="gt_row gt_right">244.8</td>
-<td class="gt_row gt_right">9.9</td>
-<td class="gt_row gt_right">235.5</td>
-<td class="gt_row gt_right">197.3</td>
-<td class="gt_row gt_right">22.0</td>
-<td class="gt_row gt_right">41.443515</td>
-<td class="gt_row gt_right">7.008368</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">2</td></tr>
-    <tr><td class="gt_row gt_left">Alaska</td>
-<td class="gt_row gt_right">54</td>
-<td class="gt_row gt_right">216</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">21.5</td>
-<td class="gt_row gt_right">2.000</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">270.4</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">710</td>
-<td class="gt_row gt_right">4.4</td>
-<td class="gt_row gt_right">6.2</td>
-<td class="gt_row gt_right">9.0</td>
-<td class="gt_row gt_right">66953</td>
-<td class="gt_row gt_right">17.7</td>
-<td class="gt_row gt_right">3.2</td>
-<td class="gt_row gt_right">94.0</td>
-<td class="gt_row gt_right">462.0</td>
-<td class="gt_row gt_right">514.2</td>
-<td class="gt_row gt_right">241.5</td>
-<td class="gt_row gt_right">6.5</td>
-<td class="gt_row gt_right">147.9</td>
-<td class="gt_row gt_right">179.9</td>
-<td class="gt_row gt_right">26.6</td>
-<td class="gt_row gt_right">30.422535</td>
-<td class="gt_row gt_right">7.605634</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Arizona</td>
-<td class="gt_row gt_right">443</td>
-<td class="gt_row gt_right">607</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">19.7</td>
-<td class="gt_row gt_right">2.000</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">247.4</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">6392</td>
-<td class="gt_row gt_right">3.5</td>
-<td class="gt_row gt_right">11.6</td>
-<td class="gt_row gt_right">16.5</td>
-<td class="gt_row gt_right">48745</td>
-<td class="gt_row gt_right">19.6</td>
-<td class="gt_row gt_right">5.5</td>
-<td class="gt_row gt_right">123.9</td>
-<td class="gt_row gt_right">261.1</td>
-<td class="gt_row gt_right">817.3</td>
-<td class="gt_row gt_right">397.1</td>
-<td class="gt_row gt_right">6.8</td>
-<td class="gt_row gt_right">152.5</td>
-<td class="gt_row gt_right">152.8</td>
-<td class="gt_row gt_right">25.6</td>
-<td class="gt_row gt_right">9.496245</td>
-<td class="gt_row gt_right">6.930538</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Arkansas</td>
-<td class="gt_row gt_right">200</td>
-<td class="gt_row gt_right">1269</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_right">17.6</td>
-<td class="gt_row gt_right">1.150</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">323.7</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">2916</td>
-<td class="gt_row gt_right">5.7</td>
-<td class="gt_row gt_right">14.8</td>
-<td class="gt_row gt_right">18.8</td>
-<td class="gt_row gt_right">37823</td>
-<td class="gt_row gt_right">19.2</td>
-<td class="gt_row gt_right">6.3</td>
-<td class="gt_row gt_right">93.5</td>
-<td class="gt_row gt_right">381.8</td>
-<td class="gt_row gt_right">1224.1</td>
-<td class="gt_row gt_right">215.6</td>
-<td class="gt_row gt_right">7.7</td>
-<td class="gt_row gt_right">221.8</td>
-<td class="gt_row gt_right">200.4</td>
-<td class="gt_row gt_right">18.9</td>
-<td class="gt_row gt_right">43.518519</td>
-<td class="gt_row gt_right">6.858711</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">2</td></tr>
-    <tr><td class="gt_row gt_left">California</td>
-<td class="gt_row gt_right">2766</td>
-<td class="gt_row gt_right">1882</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">15.6</td>
-<td class="gt_row gt_right">0.870</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">235.0</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_right">37254</td>
-<td class="gt_row gt_right">0.0</td>
-<td class="gt_row gt_right">10.6</td>
-<td class="gt_row gt_right">14.2</td>
-<td class="gt_row gt_right">58931</td>
-<td class="gt_row gt_right">20.0</td>
-<td class="gt_row gt_right">5.4</td>
-<td class="gt_row gt_right">173.7</td>
-<td class="gt_row gt_right">270.8</td>
-<td class="gt_row gt_right">622.1</td>
-<td class="gt_row gt_right">443.6</td>
-<td class="gt_row gt_right">5.2</td>
-<td class="gt_row gt_right">177.9</td>
-<td class="gt_row gt_right">161.7</td>
-<td class="gt_row gt_right">29.9</td>
-<td class="gt_row gt_right">5.051807</td>
-<td class="gt_row gt_right">7.424706</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Colorado</td>
-<td class="gt_row gt_right">349</td>
-<td class="gt_row gt_right">668</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">18.2</td>
-<td class="gt_row gt_right">0.840</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">237.6</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">5029</td>
-<td class="gt_row gt_right">4.2</td>
-<td class="gt_row gt_right">8.9</td>
-<td class="gt_row gt_right">12.9</td>
-<td class="gt_row gt_right">55430</td>
-<td class="gt_row gt_right">15.3</td>
-<td class="gt_row gt_right">3.2</td>
-<td class="gt_row gt_right">67.9</td>
-<td class="gt_row gt_right">224.5</td>
-<td class="gt_row gt_right">532.5</td>
-<td class="gt_row gt_right">250.6</td>
-<td class="gt_row gt_right">6.1</td>
-<td class="gt_row gt_right">145.3</td>
-<td class="gt_row gt_right">153.7</td>
-<td class="gt_row gt_right">35.9</td>
-<td class="gt_row gt_right">13.282959</td>
-<td class="gt_row gt_right">6.939749</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Alabama</td>
+<td headers="Number1824" class="gt_row gt_right">335</td>
+<td headers="NumberRural" class="gt_row gt_right">1981</td>
+<td headers="South" class="gt_row gt_center">1</td>
+<td headers="Region" class="gt_row gt_center">1</td>
+<td headers="Permoved" class="gt_row gt_right">15.1</td>
+<td headers="cigtax" class="gt_row gt_right">0.425</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">317.5</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">4780</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.4</td>
+<td headers="perfampoverty" class="gt_row gt_right">13.4</td>
+<td headers="perindpoverty" class="gt_row gt_right">17.5</td>
+<td headers="MedianIncome" class="gt_row gt_right">40489</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">16.9</td>
+<td headers="MurderRt" class="gt_row gt_right">7.1</td>
+<td headers="RobberyRt" class="gt_row gt_right">142.5</td>
+<td headers="AssaultRt" class="gt_row gt_right">277.5</td>
+<td headers="BurglaryRt" class="gt_row gt_right">1058.9</td>
+<td headers="MVTheftRT" class="gt_row gt_right">244.8</td>
+<td headers="InfantMort" class="gt_row gt_right">9.9</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">235.5</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">197.3</td>
+<td headers="PerBachelorD" class="gt_row gt_right">22.0</td>
+<td headers="PercentRural" class="gt_row gt_right">41.443515</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.008368</td>
+<td headers="ID" class="gt_row gt_right">1</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">2</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Alaska</td>
+<td headers="Number1824" class="gt_row gt_right">54</td>
+<td headers="NumberRural" class="gt_row gt_right">216</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">21.5</td>
+<td headers="cigtax" class="gt_row gt_right">2.000</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">270.4</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">710</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.4</td>
+<td headers="perfampoverty" class="gt_row gt_right">6.2</td>
+<td headers="perindpoverty" class="gt_row gt_right">9.0</td>
+<td headers="MedianIncome" class="gt_row gt_right">66953</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">17.7</td>
+<td headers="MurderRt" class="gt_row gt_right">3.2</td>
+<td headers="RobberyRt" class="gt_row gt_right">94.0</td>
+<td headers="AssaultRt" class="gt_row gt_right">462.0</td>
+<td headers="BurglaryRt" class="gt_row gt_right">514.2</td>
+<td headers="MVTheftRT" class="gt_row gt_right">241.5</td>
+<td headers="InfantMort" class="gt_row gt_right">6.5</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">147.9</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">179.9</td>
+<td headers="PerBachelorD" class="gt_row gt_right">26.6</td>
+<td headers="PercentRural" class="gt_row gt_right">30.422535</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.605634</td>
+<td headers="ID" class="gt_row gt_right">2</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Arizona</td>
+<td headers="Number1824" class="gt_row gt_right">443</td>
+<td headers="NumberRural" class="gt_row gt_right">607</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">19.7</td>
+<td headers="cigtax" class="gt_row gt_right">2.000</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">247.4</td>
+<td headers="Persmoke" class="gt_row gt_right">16</td>
+<td headers="totalpop" class="gt_row gt_right">6392</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.5</td>
+<td headers="perfampoverty" class="gt_row gt_right">11.6</td>
+<td headers="perindpoverty" class="gt_row gt_right">16.5</td>
+<td headers="MedianIncome" class="gt_row gt_right">48745</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">19.6</td>
+<td headers="MurderRt" class="gt_row gt_right">5.5</td>
+<td headers="RobberyRt" class="gt_row gt_right">123.9</td>
+<td headers="AssaultRt" class="gt_row gt_right">261.1</td>
+<td headers="BurglaryRt" class="gt_row gt_right">817.3</td>
+<td headers="MVTheftRT" class="gt_row gt_right">397.1</td>
+<td headers="InfantMort" class="gt_row gt_right">6.8</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">152.5</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">152.8</td>
+<td headers="PerBachelorD" class="gt_row gt_right">25.6</td>
+<td headers="PercentRural" class="gt_row gt_right">9.496245</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.930538</td>
+<td headers="ID" class="gt_row gt_right">3</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Arkansas</td>
+<td headers="Number1824" class="gt_row gt_right">200</td>
+<td headers="NumberRural" class="gt_row gt_right">1269</td>
+<td headers="South" class="gt_row gt_center">1</td>
+<td headers="Region" class="gt_row gt_center">1</td>
+<td headers="Permoved" class="gt_row gt_right">17.6</td>
+<td headers="cigtax" class="gt_row gt_right">1.150</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">323.7</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">2916</td>
+<td headers="DivorceRt" class="gt_row gt_right">5.7</td>
+<td headers="perfampoverty" class="gt_row gt_right">14.8</td>
+<td headers="perindpoverty" class="gt_row gt_right">18.8</td>
+<td headers="MedianIncome" class="gt_row gt_right">37823</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">19.2</td>
+<td headers="MurderRt" class="gt_row gt_right">6.3</td>
+<td headers="RobberyRt" class="gt_row gt_right">93.5</td>
+<td headers="AssaultRt" class="gt_row gt_right">381.8</td>
+<td headers="BurglaryRt" class="gt_row gt_right">1224.1</td>
+<td headers="MVTheftRT" class="gt_row gt_right">215.6</td>
+<td headers="InfantMort" class="gt_row gt_right">7.7</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">221.8</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">200.4</td>
+<td headers="PerBachelorD" class="gt_row gt_right">18.9</td>
+<td headers="PercentRural" class="gt_row gt_right">43.518519</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.858711</td>
+<td headers="ID" class="gt_row gt_right">4</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">2</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">California</td>
+<td headers="Number1824" class="gt_row gt_right">2766</td>
+<td headers="NumberRural" class="gt_row gt_right">1882</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">15.6</td>
+<td headers="cigtax" class="gt_row gt_right">0.870</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">235.0</td>
+<td headers="Persmoke" class="gt_row gt_right">14</td>
+<td headers="totalpop" class="gt_row gt_right">37254</td>
+<td headers="DivorceRt" class="gt_row gt_right">0.0</td>
+<td headers="perfampoverty" class="gt_row gt_right">10.6</td>
+<td headers="perindpoverty" class="gt_row gt_right">14.2</td>
+<td headers="MedianIncome" class="gt_row gt_right">58931</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">20.0</td>
+<td headers="MurderRt" class="gt_row gt_right">5.4</td>
+<td headers="RobberyRt" class="gt_row gt_right">173.7</td>
+<td headers="AssaultRt" class="gt_row gt_right">270.8</td>
+<td headers="BurglaryRt" class="gt_row gt_right">622.1</td>
+<td headers="MVTheftRT" class="gt_row gt_right">443.6</td>
+<td headers="InfantMort" class="gt_row gt_right">5.2</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">177.9</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">161.7</td>
+<td headers="PerBachelorD" class="gt_row gt_right">29.9</td>
+<td headers="PercentRural" class="gt_row gt_right">5.051807</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.424706</td>
+<td headers="ID" class="gt_row gt_right">5</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Colorado</td>
+<td headers="Number1824" class="gt_row gt_right">349</td>
+<td headers="NumberRural" class="gt_row gt_right">668</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">18.2</td>
+<td headers="cigtax" class="gt_row gt_right">0.840</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">237.6</td>
+<td headers="Persmoke" class="gt_row gt_right">18</td>
+<td headers="totalpop" class="gt_row gt_right">5029</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.2</td>
+<td headers="perfampoverty" class="gt_row gt_right">8.9</td>
+<td headers="perindpoverty" class="gt_row gt_right">12.9</td>
+<td headers="MedianIncome" class="gt_row gt_right">55430</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">15.3</td>
+<td headers="MurderRt" class="gt_row gt_right">3.2</td>
+<td headers="RobberyRt" class="gt_row gt_right">67.9</td>
+<td headers="AssaultRt" class="gt_row gt_right">224.5</td>
+<td headers="BurglaryRt" class="gt_row gt_right">532.5</td>
+<td headers="MVTheftRT" class="gt_row gt_right">250.6</td>
+<td headers="InfantMort" class="gt_row gt_right">6.1</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">145.3</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">153.7</td>
+<td headers="PerBachelorD" class="gt_row gt_right">35.9</td>
+<td headers="PercentRural" class="gt_row gt_right">13.282959</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.939749</td>
+<td headers="ID" class="gt_row gt_right">6</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
   </tbody>
   
   
@@ -2819,13 +2842,23 @@ random sample of 25 rows - into a new data object called
 <pre class="r"><code>set.seed(1234)
 StatesDataRdm25 &lt;- StatesData %&gt;% sample_n(25, replace = FALSE)
 StatesDataRdm25 %&gt;% head() %&gt;% gt()</code></pre>
-<div id="txcdzeboht" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="txcdzeboht" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#txcdzeboht table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#txcdzeboht thead, #txcdzeboht tbody, #txcdzeboht tfoot, #txcdzeboht tr, #txcdzeboht td, #txcdzeboht th {
+border-style: none;
+}
+#txcdzeboht p {
+margin: 0;
+padding: 0;
 }
 #txcdzeboht .gt_table {
 display: table;
 border-collapse: collapse;
+line-height: normal;
 margin-left: auto;
 margin-right: auto;
 color: #333333;
@@ -2847,16 +2880,9 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#txcdzeboht .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
+#txcdzeboht .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
 }
 #txcdzeboht .gt_title {
 color: #333333;
@@ -2873,12 +2899,23 @@ border-bottom-width: 0;
 color: #333333;
 font-size: 85%;
 font-weight: initial;
-padding-top: 0;
-padding-bottom: 6px;
+padding-top: 3px;
+padding-bottom: 5px;
 padding-left: 5px;
 padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
+}
+#txcdzeboht .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
 }
 #txcdzeboht .gt_bottom_border {
 border-bottom-style: solid;
@@ -2946,6 +2983,9 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
+#txcdzeboht .gt_spanner_row {
+border-bottom-style: hidden;
+}
 #txcdzeboht .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
@@ -2969,6 +3009,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
+text-align: left;
 }
 #txcdzeboht .gt_empty_group_heading {
 padding: 0.5px;
@@ -3036,6 +3077,9 @@ vertical-align: top;
 #txcdzeboht .gt_row_group_first td {
 border-top-width: 2px;
 }
+#txcdzeboht .gt_row_group_first th {
+border-top-width: 2px;
+}
 #txcdzeboht .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
@@ -3079,6 +3123,15 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
+#txcdzeboht .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
 #txcdzeboht .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
@@ -3106,8 +3159,8 @@ border-right-color: #D3D3D3;
 #txcdzeboht .gt_footnote {
 margin: 0px;
 font-size: 90%;
-padding-left: 4px;
-padding-right: 4px;
+padding-top: 4px;
+padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
@@ -3154,10 +3207,9 @@ font-style: italic;
 font-size: 65%;
 }
 #txcdzeboht .gt_footnote_marks {
-font-style: italic;
-font-weight: normal;
 font-size: 75%;
 vertical-align: 0.4em;
+position: initial;
 }
 #txcdzeboht .gt_asterisk {
 font-size: 100%;
@@ -3179,223 +3231,223 @@ text-indent: 20px;
 text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">State</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Number1824</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">NumberRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">South</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Region</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Permoved</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">cigtax</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">smokefreelaws</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">tobaccodeathrt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Persmoke</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">totalpop</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">DivorceRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perfampoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perindpoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MedianIncome</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Pernoinsurance</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MurderRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">RobberyRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">AssaultRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">BurglaryRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MVTheftRT</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">InfantMort</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">HeartDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">CancerDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PerBachelorD</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PercentRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Percent18to24</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Assault_bin</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Murdercat</th>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="State">State</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Number1824">Number1824</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="NumberRural">NumberRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="State in South">State in South</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Four regional categories">Four regional categories</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent in different house in 2008">Percent in different house in 2008</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cigarette Tax in pennies">Cigarette Tax in pennies</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Smoke Free workplace laws Implemented">Smoke Free workplace laws Implemented</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Tobacco related death rate per 100K">Tobacco related death rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Adults who smoke">Percent of Adults who smoke</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="total population in Thousands">total population in Thousands</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Divorces per 1K population">Divorces per 1K population</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Families below poverty">Percent of Families below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent Individuals below poverty">Percent Individuals below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Median Income for Households">Median Income for Households</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Population without health insurance">Percent of Population without health insurance</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Murder Rate per 100K">Murder Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Robbery Rate per 100K">Robbery Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Assault Rate per 100K">Assault Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Burglary Rate per 100K">Burglary Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Motor Vehicle Rate per 100K">Motor Vehicle Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Infant Mortality Rat per 1,000 Live Births">Infant Mortality Rat per 1,000 Live Births</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cardiovascular Death Rate per 100K">Cardiovascular Death Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cancer Death Rate Per 100K">Cancer Death Rate Per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Pop With Bachelor&#39;s degree or  more">Percent of Pop With Bachelor&#39;s degree or  more</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="PercentRural">PercentRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent18to24">Percent18to24</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k">Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Murder rate categorical">Murder rate categorical</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Nevada</td>
-<td class="gt_row gt_right">178</td>
-<td class="gt_row gt_right">170</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">20.6</td>
-<td class="gt_row gt_right">0.800</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">343.7</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">2701</td>
-<td class="gt_row gt_right">6.7</td>
-<td class="gt_row gt_right">9.0</td>
-<td class="gt_row gt_right">12.4</td>
-<td class="gt_row gt_right">53341</td>
-<td class="gt_row gt_right">20.8</td>
-<td class="gt_row gt_right">5.9</td>
-<td class="gt_row gt_right">228.0</td>
-<td class="gt_row gt_right">432.1</td>
-<td class="gt_row gt_right">835.7</td>
-<td class="gt_row gt_right">468.6</td>
-<td class="gt_row gt_right">6.4</td>
-<td class="gt_row gt_right">200.0</td>
-<td class="gt_row gt_right">180.2</td>
-<td class="gt_row gt_right">21.8</td>
-<td class="gt_row gt_right">6.293965</td>
-<td class="gt_row gt_right">6.590152</td>
-<td class="gt_row gt_right">29</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Kansas</td>
-<td class="gt_row gt_right">204</td>
-<td class="gt_row gt_right">768</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">3</td>
-<td class="gt_row gt_right">17.6</td>
-<td class="gt_row gt_right">0.790</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">262.7</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">2853</td>
-<td class="gt_row gt_right">3.7</td>
-<td class="gt_row gt_right">9.0</td>
-<td class="gt_row gt_right">13.4</td>
-<td class="gt_row gt_right">47817</td>
-<td class="gt_row gt_right">13.3</td>
-<td class="gt_row gt_right">4.7</td>
-<td class="gt_row gt_right">66.7</td>
-<td class="gt_row gt_right">297.9</td>
-<td class="gt_row gt_right">690.0</td>
-<td class="gt_row gt_right">218.2</td>
-<td class="gt_row gt_right">7.9</td>
-<td class="gt_row gt_right">178.7</td>
-<td class="gt_row gt_right">180.0</td>
-<td class="gt_row gt_right">29.5</td>
-<td class="gt_row gt_right">26.919033</td>
-<td class="gt_row gt_right">7.150368</td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Michigan</td>
-<td class="gt_row gt_right">669</td>
-<td class="gt_row gt_right">2519</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">3</td>
-<td class="gt_row gt_right">14.4</td>
-<td class="gt_row gt_right">2.000</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">281.9</td>
-<td class="gt_row gt_right">20</td>
-<td class="gt_row gt_right">9884</td>
-<td class="gt_row gt_right">3.3</td>
-<td class="gt_row gt_right">11.6</td>
-<td class="gt_row gt_right">16.2</td>
-<td class="gt_row gt_right">45255</td>
-<td class="gt_row gt_right">13.8</td>
-<td class="gt_row gt_right">6.3</td>
-<td class="gt_row gt_right">126.5</td>
-<td class="gt_row gt_right">326.5</td>
-<td class="gt_row gt_right">768.1</td>
-<td class="gt_row gt_right">297.7</td>
-<td class="gt_row gt_right">7.9</td>
-<td class="gt_row gt_right">221.5</td>
-<td class="gt_row gt_right">187.3</td>
-<td class="gt_row gt_right">24.6</td>
-<td class="gt_row gt_right">25.485633</td>
-<td class="gt_row gt_right">6.768515</td>
-<td class="gt_row gt_right">23</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">2</td></tr>
-    <tr><td class="gt_row gt_left">Oregon</td>
-<td class="gt_row gt_right">253</td>
-<td class="gt_row gt_right">727</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">17.3</td>
-<td class="gt_row gt_right">1.180</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">263.3</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">3831</td>
-<td class="gt_row gt_right">3.9</td>
-<td class="gt_row gt_right">9.8</td>
-<td class="gt_row gt_right">14.3</td>
-<td class="gt_row gt_right">48457</td>
-<td class="gt_row gt_right">17.7</td>
-<td class="gt_row gt_right">2.3</td>
-<td class="gt_row gt_right">65.3</td>
-<td class="gt_row gt_right">162.3</td>
-<td class="gt_row gt_right">513.0</td>
-<td class="gt_row gt_right">261.5</td>
-<td class="gt_row gt_right">5.8</td>
-<td class="gt_row gt_right">156.9</td>
-<td class="gt_row gt_right">179.3</td>
-<td class="gt_row gt_right">29.2</td>
-<td class="gt_row gt_right">18.976768</td>
-<td class="gt_row gt_right">6.604020</td>
-<td class="gt_row gt_right">38</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">0</td></tr>
-    <tr><td class="gt_row gt_left">Utah</td>
-<td class="gt_row gt_right">227</td>
-<td class="gt_row gt_right">263</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">16.4</td>
-<td class="gt_row gt_right">0.695</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">138.3</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">2764</td>
-<td class="gt_row gt_right">3.6</td>
-<td class="gt_row gt_right">7.8</td>
-<td class="gt_row gt_right">11.5</td>
-<td class="gt_row gt_right">55117</td>
-<td class="gt_row gt_right">14.8</td>
-<td class="gt_row gt_right">1.4</td>
-<td class="gt_row gt_right">47.3</td>
-<td class="gt_row gt_right">133.8</td>
-<td class="gt_row gt_right">548.7</td>
-<td class="gt_row gt_right">251.1</td>
-<td class="gt_row gt_right">5.1</td>
-<td class="gt_row gt_right">152.1</td>
-<td class="gt_row gt_right">128.8</td>
-<td class="gt_row gt_right">28.5</td>
-<td class="gt_row gt_right">9.515195</td>
-<td class="gt_row gt_right">8.212735</td>
-<td class="gt_row gt_right">45</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">0</td></tr>
-    <tr><td class="gt_row gt_left">Florida</td>
-<td class="gt_row gt_right">1229</td>
-<td class="gt_row gt_right">1712</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_right">15.9</td>
-<td class="gt_row gt_right">1.339</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">258.8</td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">18801</td>
-<td class="gt_row gt_right">4.2</td>
-<td class="gt_row gt_right">10.7</td>
-<td class="gt_row gt_right">14.9</td>
-<td class="gt_row gt_right">44736</td>
-<td class="gt_row gt_right">22.4</td>
-<td class="gt_row gt_right">5.5</td>
-<td class="gt_row gt_right">166.8</td>
-<td class="gt_row gt_right">410.6</td>
-<td class="gt_row gt_right">981.2</td>
-<td class="gt_row gt_right">271.2</td>
-<td class="gt_row gt_right">7.1</td>
-<td class="gt_row gt_right">162.4</td>
-<td class="gt_row gt_right">166.6</td>
-<td class="gt_row gt_right">25.3</td>
-<td class="gt_row gt_right">9.105899</td>
-<td class="gt_row gt_right">6.536886</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Nevada</td>
+<td headers="Number1824" class="gt_row gt_right">178</td>
+<td headers="NumberRural" class="gt_row gt_right">170</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">20.6</td>
+<td headers="cigtax" class="gt_row gt_right">0.800</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">343.7</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">2701</td>
+<td headers="DivorceRt" class="gt_row gt_right">6.7</td>
+<td headers="perfampoverty" class="gt_row gt_right">9.0</td>
+<td headers="perindpoverty" class="gt_row gt_right">12.4</td>
+<td headers="MedianIncome" class="gt_row gt_right">53341</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">20.8</td>
+<td headers="MurderRt" class="gt_row gt_right">5.9</td>
+<td headers="RobberyRt" class="gt_row gt_right">228.0</td>
+<td headers="AssaultRt" class="gt_row gt_right">432.1</td>
+<td headers="BurglaryRt" class="gt_row gt_right">835.7</td>
+<td headers="MVTheftRT" class="gt_row gt_right">468.6</td>
+<td headers="InfantMort" class="gt_row gt_right">6.4</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">200.0</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">180.2</td>
+<td headers="PerBachelorD" class="gt_row gt_right">21.8</td>
+<td headers="PercentRural" class="gt_row gt_right">6.293965</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.590152</td>
+<td headers="ID" class="gt_row gt_right">29</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Kansas</td>
+<td headers="Number1824" class="gt_row gt_right">204</td>
+<td headers="NumberRural" class="gt_row gt_right">768</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">3</td>
+<td headers="Permoved" class="gt_row gt_right">17.6</td>
+<td headers="cigtax" class="gt_row gt_right">0.790</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">262.7</td>
+<td headers="Persmoke" class="gt_row gt_right">18</td>
+<td headers="totalpop" class="gt_row gt_right">2853</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.7</td>
+<td headers="perfampoverty" class="gt_row gt_right">9.0</td>
+<td headers="perindpoverty" class="gt_row gt_right">13.4</td>
+<td headers="MedianIncome" class="gt_row gt_right">47817</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">13.3</td>
+<td headers="MurderRt" class="gt_row gt_right">4.7</td>
+<td headers="RobberyRt" class="gt_row gt_right">66.7</td>
+<td headers="AssaultRt" class="gt_row gt_right">297.9</td>
+<td headers="BurglaryRt" class="gt_row gt_right">690.0</td>
+<td headers="MVTheftRT" class="gt_row gt_right">218.2</td>
+<td headers="InfantMort" class="gt_row gt_right">7.9</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">178.7</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">180.0</td>
+<td headers="PerBachelorD" class="gt_row gt_right">29.5</td>
+<td headers="PercentRural" class="gt_row gt_right">26.919033</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.150368</td>
+<td headers="ID" class="gt_row gt_right">17</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Michigan</td>
+<td headers="Number1824" class="gt_row gt_right">669</td>
+<td headers="NumberRural" class="gt_row gt_right">2519</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">3</td>
+<td headers="Permoved" class="gt_row gt_right">14.4</td>
+<td headers="cigtax" class="gt_row gt_right">2.000</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">281.9</td>
+<td headers="Persmoke" class="gt_row gt_right">20</td>
+<td headers="totalpop" class="gt_row gt_right">9884</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.3</td>
+<td headers="perfampoverty" class="gt_row gt_right">11.6</td>
+<td headers="perindpoverty" class="gt_row gt_right">16.2</td>
+<td headers="MedianIncome" class="gt_row gt_right">45255</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">13.8</td>
+<td headers="MurderRt" class="gt_row gt_right">6.3</td>
+<td headers="RobberyRt" class="gt_row gt_right">126.5</td>
+<td headers="AssaultRt" class="gt_row gt_right">326.5</td>
+<td headers="BurglaryRt" class="gt_row gt_right">768.1</td>
+<td headers="MVTheftRT" class="gt_row gt_right">297.7</td>
+<td headers="InfantMort" class="gt_row gt_right">7.9</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">221.5</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">187.3</td>
+<td headers="PerBachelorD" class="gt_row gt_right">24.6</td>
+<td headers="PercentRural" class="gt_row gt_right">25.485633</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.768515</td>
+<td headers="ID" class="gt_row gt_right">23</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">2</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Oregon</td>
+<td headers="Number1824" class="gt_row gt_right">253</td>
+<td headers="NumberRural" class="gt_row gt_right">727</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">17.3</td>
+<td headers="cigtax" class="gt_row gt_right">1.180</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">263.3</td>
+<td headers="Persmoke" class="gt_row gt_right">16</td>
+<td headers="totalpop" class="gt_row gt_right">3831</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.9</td>
+<td headers="perfampoverty" class="gt_row gt_right">9.8</td>
+<td headers="perindpoverty" class="gt_row gt_right">14.3</td>
+<td headers="MedianIncome" class="gt_row gt_right">48457</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">17.7</td>
+<td headers="MurderRt" class="gt_row gt_right">2.3</td>
+<td headers="RobberyRt" class="gt_row gt_right">65.3</td>
+<td headers="AssaultRt" class="gt_row gt_right">162.3</td>
+<td headers="BurglaryRt" class="gt_row gt_right">513.0</td>
+<td headers="MVTheftRT" class="gt_row gt_right">261.5</td>
+<td headers="InfantMort" class="gt_row gt_right">5.8</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">156.9</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">179.3</td>
+<td headers="PerBachelorD" class="gt_row gt_right">29.2</td>
+<td headers="PercentRural" class="gt_row gt_right">18.976768</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.604020</td>
+<td headers="ID" class="gt_row gt_right">38</td>
+<td headers="Assault_bin" class="gt_row gt_center">0</td>
+<td headers="Murdercat" class="gt_row gt_center">0</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Utah</td>
+<td headers="Number1824" class="gt_row gt_right">227</td>
+<td headers="NumberRural" class="gt_row gt_right">263</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">16.4</td>
+<td headers="cigtax" class="gt_row gt_right">0.695</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">138.3</td>
+<td headers="Persmoke" class="gt_row gt_right">9</td>
+<td headers="totalpop" class="gt_row gt_right">2764</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.6</td>
+<td headers="perfampoverty" class="gt_row gt_right">7.8</td>
+<td headers="perindpoverty" class="gt_row gt_right">11.5</td>
+<td headers="MedianIncome" class="gt_row gt_right">55117</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">14.8</td>
+<td headers="MurderRt" class="gt_row gt_right">1.4</td>
+<td headers="RobberyRt" class="gt_row gt_right">47.3</td>
+<td headers="AssaultRt" class="gt_row gt_right">133.8</td>
+<td headers="BurglaryRt" class="gt_row gt_right">548.7</td>
+<td headers="MVTheftRT" class="gt_row gt_right">251.1</td>
+<td headers="InfantMort" class="gt_row gt_right">5.1</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">152.1</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">128.8</td>
+<td headers="PerBachelorD" class="gt_row gt_right">28.5</td>
+<td headers="PercentRural" class="gt_row gt_right">9.515195</td>
+<td headers="Percent18to24" class="gt_row gt_right">8.212735</td>
+<td headers="ID" class="gt_row gt_right">45</td>
+<td headers="Assault_bin" class="gt_row gt_center">0</td>
+<td headers="Murdercat" class="gt_row gt_center">0</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Florida</td>
+<td headers="Number1824" class="gt_row gt_right">1229</td>
+<td headers="NumberRural" class="gt_row gt_right">1712</td>
+<td headers="South" class="gt_row gt_center">1</td>
+<td headers="Region" class="gt_row gt_center">1</td>
+<td headers="Permoved" class="gt_row gt_right">15.9</td>
+<td headers="cigtax" class="gt_row gt_right">1.339</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">258.8</td>
+<td headers="Persmoke" class="gt_row gt_right">17</td>
+<td headers="totalpop" class="gt_row gt_right">18801</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.2</td>
+<td headers="perfampoverty" class="gt_row gt_right">10.7</td>
+<td headers="perindpoverty" class="gt_row gt_right">14.9</td>
+<td headers="MedianIncome" class="gt_row gt_right">44736</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">22.4</td>
+<td headers="MurderRt" class="gt_row gt_right">5.5</td>
+<td headers="RobberyRt" class="gt_row gt_right">166.8</td>
+<td headers="AssaultRt" class="gt_row gt_right">410.6</td>
+<td headers="BurglaryRt" class="gt_row gt_right">981.2</td>
+<td headers="MVTheftRT" class="gt_row gt_right">271.2</td>
+<td headers="InfantMort" class="gt_row gt_right">7.1</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">162.4</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">166.6</td>
+<td headers="PerBachelorD" class="gt_row gt_right">25.3</td>
+<td headers="PercentRural" class="gt_row gt_right">9.105899</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.536886</td>
+<td headers="ID" class="gt_row gt_right">10</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
   </tbody>
   
   
@@ -3481,13 +3533,23 @@ StateswA &lt;- StatesData %&gt;%
   dplyr::filter(State %in% c(&quot;Alabama&quot;, &quot;Alaska&quot;, &quot;Arizona&quot;, &quot;Arkansas&quot;)
   )
 StateswA %&gt;%  gt()</code></pre>
-<div id="plcwisvdhj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="plcwisvdhj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#plcwisvdhj table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#plcwisvdhj thead, #plcwisvdhj tbody, #plcwisvdhj tfoot, #plcwisvdhj tr, #plcwisvdhj td, #plcwisvdhj th {
+border-style: none;
+}
+#plcwisvdhj p {
+margin: 0;
+padding: 0;
 }
 #plcwisvdhj .gt_table {
 display: table;
 border-collapse: collapse;
+line-height: normal;
 margin-left: auto;
 margin-right: auto;
 color: #333333;
@@ -3509,16 +3571,9 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#plcwisvdhj .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
+#plcwisvdhj .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
 }
 #plcwisvdhj .gt_title {
 color: #333333;
@@ -3535,12 +3590,23 @@ border-bottom-width: 0;
 color: #333333;
 font-size: 85%;
 font-weight: initial;
-padding-top: 0;
-padding-bottom: 6px;
+padding-top: 3px;
+padding-bottom: 5px;
 padding-left: 5px;
 padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
+}
+#plcwisvdhj .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
 }
 #plcwisvdhj .gt_bottom_border {
 border-bottom-style: solid;
@@ -3608,6 +3674,9 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
+#plcwisvdhj .gt_spanner_row {
+border-bottom-style: hidden;
+}
 #plcwisvdhj .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
@@ -3631,6 +3700,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
+text-align: left;
 }
 #plcwisvdhj .gt_empty_group_heading {
 padding: 0.5px;
@@ -3698,6 +3768,9 @@ vertical-align: top;
 #plcwisvdhj .gt_row_group_first td {
 border-top-width: 2px;
 }
+#plcwisvdhj .gt_row_group_first th {
+border-top-width: 2px;
+}
 #plcwisvdhj .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
@@ -3741,6 +3814,15 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
+#plcwisvdhj .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
 #plcwisvdhj .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
@@ -3768,8 +3850,8 @@ border-right-color: #D3D3D3;
 #plcwisvdhj .gt_footnote {
 margin: 0px;
 font-size: 90%;
-padding-left: 4px;
-padding-right: 4px;
+padding-top: 4px;
+padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
@@ -3816,10 +3898,9 @@ font-style: italic;
 font-size: 65%;
 }
 #plcwisvdhj .gt_footnote_marks {
-font-style: italic;
-font-weight: normal;
 font-size: 75%;
 vertical-align: 0.4em;
+position: initial;
 }
 #plcwisvdhj .gt_asterisk {
 font-size: 100%;
@@ -3841,163 +3922,163 @@ text-indent: 20px;
 text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">State</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Number1824</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">NumberRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">South</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Region</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Permoved</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">cigtax</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">smokefreelaws</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">tobaccodeathrt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Persmoke</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">totalpop</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">DivorceRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perfampoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perindpoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MedianIncome</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Pernoinsurance</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MurderRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">RobberyRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">AssaultRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">BurglaryRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MVTheftRT</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">InfantMort</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">HeartDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">CancerDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PerBachelorD</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PercentRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Percent18to24</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Assault_bin</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Murdercat</th>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="State">State</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Number1824">Number1824</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="NumberRural">NumberRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="State in South">State in South</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Four regional categories">Four regional categories</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent in different house in 2008">Percent in different house in 2008</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cigarette Tax in pennies">Cigarette Tax in pennies</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Smoke Free workplace laws Implemented">Smoke Free workplace laws Implemented</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Tobacco related death rate per 100K">Tobacco related death rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Adults who smoke">Percent of Adults who smoke</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="total population in Thousands">total population in Thousands</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Divorces per 1K population">Divorces per 1K population</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Families below poverty">Percent of Families below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent Individuals below poverty">Percent Individuals below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Median Income for Households">Median Income for Households</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Population without health insurance">Percent of Population without health insurance</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Murder Rate per 100K">Murder Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Robbery Rate per 100K">Robbery Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Assault Rate per 100K">Assault Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Burglary Rate per 100K">Burglary Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Motor Vehicle Rate per 100K">Motor Vehicle Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Infant Mortality Rat per 1,000 Live Births">Infant Mortality Rat per 1,000 Live Births</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cardiovascular Death Rate per 100K">Cardiovascular Death Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cancer Death Rate Per 100K">Cancer Death Rate Per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Pop With Bachelor&#39;s degree or  more">Percent of Pop With Bachelor&#39;s degree or  more</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="PercentRural">PercentRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent18to24">Percent18to24</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k">Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Murder rate categorical">Murder rate categorical</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Alabama</td>
-<td class="gt_row gt_right">335</td>
-<td class="gt_row gt_right">1981</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_right">15.1</td>
-<td class="gt_row gt_right">0.425</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">317.5</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">4780</td>
-<td class="gt_row gt_right">4.4</td>
-<td class="gt_row gt_right">13.4</td>
-<td class="gt_row gt_right">17.5</td>
-<td class="gt_row gt_right">40489</td>
-<td class="gt_row gt_right">16.9</td>
-<td class="gt_row gt_right">7.1</td>
-<td class="gt_row gt_right">142.5</td>
-<td class="gt_row gt_right">277.5</td>
-<td class="gt_row gt_right">1058.9</td>
-<td class="gt_row gt_right">244.8</td>
-<td class="gt_row gt_right">9.9</td>
-<td class="gt_row gt_right">235.5</td>
-<td class="gt_row gt_right">197.3</td>
-<td class="gt_row gt_right">22.0</td>
-<td class="gt_row gt_right">41.443515</td>
-<td class="gt_row gt_right">7.008368</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">2</td></tr>
-    <tr><td class="gt_row gt_left">Alaska</td>
-<td class="gt_row gt_right">54</td>
-<td class="gt_row gt_right">216</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">21.5</td>
-<td class="gt_row gt_right">2.000</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">270.4</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">710</td>
-<td class="gt_row gt_right">4.4</td>
-<td class="gt_row gt_right">6.2</td>
-<td class="gt_row gt_right">9.0</td>
-<td class="gt_row gt_right">66953</td>
-<td class="gt_row gt_right">17.7</td>
-<td class="gt_row gt_right">3.2</td>
-<td class="gt_row gt_right">94.0</td>
-<td class="gt_row gt_right">462.0</td>
-<td class="gt_row gt_right">514.2</td>
-<td class="gt_row gt_right">241.5</td>
-<td class="gt_row gt_right">6.5</td>
-<td class="gt_row gt_right">147.9</td>
-<td class="gt_row gt_right">179.9</td>
-<td class="gt_row gt_right">26.6</td>
-<td class="gt_row gt_right">30.422535</td>
-<td class="gt_row gt_right">7.605634</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Arizona</td>
-<td class="gt_row gt_right">443</td>
-<td class="gt_row gt_right">607</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">19.7</td>
-<td class="gt_row gt_right">2.000</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">247.4</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">6392</td>
-<td class="gt_row gt_right">3.5</td>
-<td class="gt_row gt_right">11.6</td>
-<td class="gt_row gt_right">16.5</td>
-<td class="gt_row gt_right">48745</td>
-<td class="gt_row gt_right">19.6</td>
-<td class="gt_row gt_right">5.5</td>
-<td class="gt_row gt_right">123.9</td>
-<td class="gt_row gt_right">261.1</td>
-<td class="gt_row gt_right">817.3</td>
-<td class="gt_row gt_right">397.1</td>
-<td class="gt_row gt_right">6.8</td>
-<td class="gt_row gt_right">152.5</td>
-<td class="gt_row gt_right">152.8</td>
-<td class="gt_row gt_right">25.6</td>
-<td class="gt_row gt_right">9.496245</td>
-<td class="gt_row gt_right">6.930538</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Arkansas</td>
-<td class="gt_row gt_right">200</td>
-<td class="gt_row gt_right">1269</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_right">17.6</td>
-<td class="gt_row gt_right">1.150</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">323.7</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">2916</td>
-<td class="gt_row gt_right">5.7</td>
-<td class="gt_row gt_right">14.8</td>
-<td class="gt_row gt_right">18.8</td>
-<td class="gt_row gt_right">37823</td>
-<td class="gt_row gt_right">19.2</td>
-<td class="gt_row gt_right">6.3</td>
-<td class="gt_row gt_right">93.5</td>
-<td class="gt_row gt_right">381.8</td>
-<td class="gt_row gt_right">1224.1</td>
-<td class="gt_row gt_right">215.6</td>
-<td class="gt_row gt_right">7.7</td>
-<td class="gt_row gt_right">221.8</td>
-<td class="gt_row gt_right">200.4</td>
-<td class="gt_row gt_right">18.9</td>
-<td class="gt_row gt_right">43.518519</td>
-<td class="gt_row gt_right">6.858711</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">2</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Alabama</td>
+<td headers="Number1824" class="gt_row gt_right">335</td>
+<td headers="NumberRural" class="gt_row gt_right">1981</td>
+<td headers="South" class="gt_row gt_center">1</td>
+<td headers="Region" class="gt_row gt_center">1</td>
+<td headers="Permoved" class="gt_row gt_right">15.1</td>
+<td headers="cigtax" class="gt_row gt_right">0.425</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">317.5</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">4780</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.4</td>
+<td headers="perfampoverty" class="gt_row gt_right">13.4</td>
+<td headers="perindpoverty" class="gt_row gt_right">17.5</td>
+<td headers="MedianIncome" class="gt_row gt_right">40489</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">16.9</td>
+<td headers="MurderRt" class="gt_row gt_right">7.1</td>
+<td headers="RobberyRt" class="gt_row gt_right">142.5</td>
+<td headers="AssaultRt" class="gt_row gt_right">277.5</td>
+<td headers="BurglaryRt" class="gt_row gt_right">1058.9</td>
+<td headers="MVTheftRT" class="gt_row gt_right">244.8</td>
+<td headers="InfantMort" class="gt_row gt_right">9.9</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">235.5</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">197.3</td>
+<td headers="PerBachelorD" class="gt_row gt_right">22.0</td>
+<td headers="PercentRural" class="gt_row gt_right">41.443515</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.008368</td>
+<td headers="ID" class="gt_row gt_right">1</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">2</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Alaska</td>
+<td headers="Number1824" class="gt_row gt_right">54</td>
+<td headers="NumberRural" class="gt_row gt_right">216</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">21.5</td>
+<td headers="cigtax" class="gt_row gt_right">2.000</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">270.4</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">710</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.4</td>
+<td headers="perfampoverty" class="gt_row gt_right">6.2</td>
+<td headers="perindpoverty" class="gt_row gt_right">9.0</td>
+<td headers="MedianIncome" class="gt_row gt_right">66953</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">17.7</td>
+<td headers="MurderRt" class="gt_row gt_right">3.2</td>
+<td headers="RobberyRt" class="gt_row gt_right">94.0</td>
+<td headers="AssaultRt" class="gt_row gt_right">462.0</td>
+<td headers="BurglaryRt" class="gt_row gt_right">514.2</td>
+<td headers="MVTheftRT" class="gt_row gt_right">241.5</td>
+<td headers="InfantMort" class="gt_row gt_right">6.5</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">147.9</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">179.9</td>
+<td headers="PerBachelorD" class="gt_row gt_right">26.6</td>
+<td headers="PercentRural" class="gt_row gt_right">30.422535</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.605634</td>
+<td headers="ID" class="gt_row gt_right">2</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Arizona</td>
+<td headers="Number1824" class="gt_row gt_right">443</td>
+<td headers="NumberRural" class="gt_row gt_right">607</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">19.7</td>
+<td headers="cigtax" class="gt_row gt_right">2.000</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">247.4</td>
+<td headers="Persmoke" class="gt_row gt_right">16</td>
+<td headers="totalpop" class="gt_row gt_right">6392</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.5</td>
+<td headers="perfampoverty" class="gt_row gt_right">11.6</td>
+<td headers="perindpoverty" class="gt_row gt_right">16.5</td>
+<td headers="MedianIncome" class="gt_row gt_right">48745</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">19.6</td>
+<td headers="MurderRt" class="gt_row gt_right">5.5</td>
+<td headers="RobberyRt" class="gt_row gt_right">123.9</td>
+<td headers="AssaultRt" class="gt_row gt_right">261.1</td>
+<td headers="BurglaryRt" class="gt_row gt_right">817.3</td>
+<td headers="MVTheftRT" class="gt_row gt_right">397.1</td>
+<td headers="InfantMort" class="gt_row gt_right">6.8</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">152.5</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">152.8</td>
+<td headers="PerBachelorD" class="gt_row gt_right">25.6</td>
+<td headers="PercentRural" class="gt_row gt_right">9.496245</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.930538</td>
+<td headers="ID" class="gt_row gt_right">3</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Arkansas</td>
+<td headers="Number1824" class="gt_row gt_right">200</td>
+<td headers="NumberRural" class="gt_row gt_right">1269</td>
+<td headers="South" class="gt_row gt_center">1</td>
+<td headers="Region" class="gt_row gt_center">1</td>
+<td headers="Permoved" class="gt_row gt_right">17.6</td>
+<td headers="cigtax" class="gt_row gt_right">1.150</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">323.7</td>
+<td headers="Persmoke" class="gt_row gt_right">22</td>
+<td headers="totalpop" class="gt_row gt_right">2916</td>
+<td headers="DivorceRt" class="gt_row gt_right">5.7</td>
+<td headers="perfampoverty" class="gt_row gt_right">14.8</td>
+<td headers="perindpoverty" class="gt_row gt_right">18.8</td>
+<td headers="MedianIncome" class="gt_row gt_right">37823</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">19.2</td>
+<td headers="MurderRt" class="gt_row gt_right">6.3</td>
+<td headers="RobberyRt" class="gt_row gt_right">93.5</td>
+<td headers="AssaultRt" class="gt_row gt_right">381.8</td>
+<td headers="BurglaryRt" class="gt_row gt_right">1224.1</td>
+<td headers="MVTheftRT" class="gt_row gt_right">215.6</td>
+<td headers="InfantMort" class="gt_row gt_right">7.7</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">221.8</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">200.4</td>
+<td headers="PerBachelorD" class="gt_row gt_right">18.9</td>
+<td headers="PercentRural" class="gt_row gt_right">43.518519</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.858711</td>
+<td headers="ID" class="gt_row gt_right">4</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">2</td></tr>
   </tbody>
   
   
@@ -4045,13 +4126,23 @@ contains California, Colorado, and Connecticut.</li>
 StateswC &lt;- StatesData %&gt;% 
   filter(State %in% Cstates)
 StateswC %&gt;% gt()</code></pre>
-<div id="kbuovqfxsf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="kbuovqfxsf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kbuovqfxsf table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#kbuovqfxsf thead, #kbuovqfxsf tbody, #kbuovqfxsf tfoot, #kbuovqfxsf tr, #kbuovqfxsf td, #kbuovqfxsf th {
+border-style: none;
+}
+#kbuovqfxsf p {
+margin: 0;
+padding: 0;
 }
 #kbuovqfxsf .gt_table {
 display: table;
 border-collapse: collapse;
+line-height: normal;
 margin-left: auto;
 margin-right: auto;
 color: #333333;
@@ -4073,16 +4164,9 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#kbuovqfxsf .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
+#kbuovqfxsf .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
 }
 #kbuovqfxsf .gt_title {
 color: #333333;
@@ -4099,12 +4183,23 @@ border-bottom-width: 0;
 color: #333333;
 font-size: 85%;
 font-weight: initial;
-padding-top: 0;
-padding-bottom: 6px;
+padding-top: 3px;
+padding-bottom: 5px;
 padding-left: 5px;
 padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
+}
+#kbuovqfxsf .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
 }
 #kbuovqfxsf .gt_bottom_border {
 border-bottom-style: solid;
@@ -4172,6 +4267,9 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
+#kbuovqfxsf .gt_spanner_row {
+border-bottom-style: hidden;
+}
 #kbuovqfxsf .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
@@ -4195,6 +4293,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
+text-align: left;
 }
 #kbuovqfxsf .gt_empty_group_heading {
 padding: 0.5px;
@@ -4262,6 +4361,9 @@ vertical-align: top;
 #kbuovqfxsf .gt_row_group_first td {
 border-top-width: 2px;
 }
+#kbuovqfxsf .gt_row_group_first th {
+border-top-width: 2px;
+}
 #kbuovqfxsf .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
@@ -4305,6 +4407,15 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
+#kbuovqfxsf .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
 #kbuovqfxsf .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
@@ -4332,8 +4443,8 @@ border-right-color: #D3D3D3;
 #kbuovqfxsf .gt_footnote {
 margin: 0px;
 font-size: 90%;
-padding-left: 4px;
-padding-right: 4px;
+padding-top: 4px;
+padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
@@ -4380,10 +4491,9 @@ font-style: italic;
 font-size: 65%;
 }
 #kbuovqfxsf .gt_footnote_marks {
-font-style: italic;
-font-weight: normal;
 font-size: 75%;
 vertical-align: 0.4em;
+position: initial;
 }
 #kbuovqfxsf .gt_asterisk {
 font-size: 100%;
@@ -4405,133 +4515,133 @@ text-indent: 20px;
 text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">State</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Number1824</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">NumberRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">South</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Region</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Permoved</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">cigtax</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">smokefreelaws</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">tobaccodeathrt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Persmoke</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">totalpop</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">DivorceRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perfampoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perindpoverty</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MedianIncome</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Pernoinsurance</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MurderRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">RobberyRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">AssaultRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">BurglaryRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">MVTheftRT</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">InfantMort</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">HeartDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">CancerDeathRt</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PerBachelorD</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">PercentRural</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Percent18to24</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Assault_bin</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Murdercat</th>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="State">State</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Number1824">Number1824</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="NumberRural">NumberRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="State in South">State in South</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Four regional categories">Four regional categories</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent in different house in 2008">Percent in different house in 2008</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cigarette Tax in pennies">Cigarette Tax in pennies</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Smoke Free workplace laws Implemented">Smoke Free workplace laws Implemented</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Tobacco related death rate per 100K">Tobacco related death rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Adults who smoke">Percent of Adults who smoke</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="total population in Thousands">total population in Thousands</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Divorces per 1K population">Divorces per 1K population</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Families below poverty">Percent of Families below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent Individuals below poverty">Percent Individuals below poverty</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Median Income for Households">Median Income for Households</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Population without health insurance">Percent of Population without health insurance</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Murder Rate per 100K">Murder Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Robbery Rate per 100K">Robbery Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Assault Rate per 100K">Assault Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Burglary Rate per 100K">Burglary Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Motor Vehicle Rate per 100K">Motor Vehicle Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Infant Mortality Rat per 1,000 Live Births">Infant Mortality Rat per 1,000 Live Births</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cardiovascular Death Rate per 100K">Cardiovascular Death Rate per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cancer Death Rate Per 100K">Cancer Death Rate Per 100K</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent of Pop With Bachelor&#39;s degree or  more">Percent of Pop With Bachelor&#39;s degree or  more</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="PercentRural">PercentRural</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percent18to24">Percent18to24</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k">Binary for assault rate where 0= less than 200 assaults per 100k and 1=more than 200 assaults per 100k</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Murder rate categorical">Murder rate categorical</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">California</td>
-<td class="gt_row gt_right">2766</td>
-<td class="gt_row gt_right">1882</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">15.6</td>
-<td class="gt_row gt_right">0.87</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">235.0</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_right">37254</td>
-<td class="gt_row gt_right">0.0</td>
-<td class="gt_row gt_right">10.6</td>
-<td class="gt_row gt_right">14.2</td>
-<td class="gt_row gt_right">58931</td>
-<td class="gt_row gt_right">20.0</td>
-<td class="gt_row gt_right">5.4</td>
-<td class="gt_row gt_right">173.7</td>
-<td class="gt_row gt_right">270.8</td>
-<td class="gt_row gt_right">622.1</td>
-<td class="gt_row gt_right">443.6</td>
-<td class="gt_row gt_right">5.2</td>
-<td class="gt_row gt_right">177.9</td>
-<td class="gt_row gt_right">161.7</td>
-<td class="gt_row gt_right">29.9</td>
-<td class="gt_row gt_right">5.051807</td>
-<td class="gt_row gt_right">7.424706</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Colorado</td>
-<td class="gt_row gt_right">349</td>
-<td class="gt_row gt_right">668</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">2</td>
-<td class="gt_row gt_right">18.2</td>
-<td class="gt_row gt_right">0.84</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">237.6</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">5029</td>
-<td class="gt_row gt_right">4.2</td>
-<td class="gt_row gt_right">8.9</td>
-<td class="gt_row gt_right">12.9</td>
-<td class="gt_row gt_right">55430</td>
-<td class="gt_row gt_right">15.3</td>
-<td class="gt_row gt_right">3.2</td>
-<td class="gt_row gt_right">67.9</td>
-<td class="gt_row gt_right">224.5</td>
-<td class="gt_row gt_right">532.5</td>
-<td class="gt_row gt_right">250.6</td>
-<td class="gt_row gt_right">6.1</td>
-<td class="gt_row gt_right">145.3</td>
-<td class="gt_row gt_right">153.7</td>
-<td class="gt_row gt_right">35.9</td>
-<td class="gt_row gt_right">13.282959</td>
-<td class="gt_row gt_right">6.939749</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_center">1</td>
-<td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Connecticut</td>
-<td class="gt_row gt_right">228</td>
-<td class="gt_row gt_right">418</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">4</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">3.00</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">238.3</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">3574</td>
-<td class="gt_row gt_right">3.1</td>
-<td class="gt_row gt_right">6.7</td>
-<td class="gt_row gt_right">9.4</td>
-<td class="gt_row gt_right">67034</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">3.0</td>
-<td class="gt_row gt_right">113.6</td>
-<td class="gt_row gt_right">165.2</td>
-<td class="gt_row gt_right">431.1</td>
-<td class="gt_row gt_right">212.0</td>
-<td class="gt_row gt_right">6.6</td>
-<td class="gt_row gt_right">171.0</td>
-<td class="gt_row gt_right">170.7</td>
-<td class="gt_row gt_right">35.6</td>
-<td class="gt_row gt_right">11.695579</td>
-<td class="gt_row gt_right">6.379407</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_center">0</td>
-<td class="gt_row gt_center">0</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">California</td>
+<td headers="Number1824" class="gt_row gt_right">2766</td>
+<td headers="NumberRural" class="gt_row gt_right">1882</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">15.6</td>
+<td headers="cigtax" class="gt_row gt_right">0.87</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">235.0</td>
+<td headers="Persmoke" class="gt_row gt_right">14</td>
+<td headers="totalpop" class="gt_row gt_right">37254</td>
+<td headers="DivorceRt" class="gt_row gt_right">0.0</td>
+<td headers="perfampoverty" class="gt_row gt_right">10.6</td>
+<td headers="perindpoverty" class="gt_row gt_right">14.2</td>
+<td headers="MedianIncome" class="gt_row gt_right">58931</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">20.0</td>
+<td headers="MurderRt" class="gt_row gt_right">5.4</td>
+<td headers="RobberyRt" class="gt_row gt_right">173.7</td>
+<td headers="AssaultRt" class="gt_row gt_right">270.8</td>
+<td headers="BurglaryRt" class="gt_row gt_right">622.1</td>
+<td headers="MVTheftRT" class="gt_row gt_right">443.6</td>
+<td headers="InfantMort" class="gt_row gt_right">5.2</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">177.9</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">161.7</td>
+<td headers="PerBachelorD" class="gt_row gt_right">29.9</td>
+<td headers="PercentRural" class="gt_row gt_right">5.051807</td>
+<td headers="Percent18to24" class="gt_row gt_right">7.424706</td>
+<td headers="ID" class="gt_row gt_right">5</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Colorado</td>
+<td headers="Number1824" class="gt_row gt_right">349</td>
+<td headers="NumberRural" class="gt_row gt_right">668</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">2</td>
+<td headers="Permoved" class="gt_row gt_right">18.2</td>
+<td headers="cigtax" class="gt_row gt_right">0.84</td>
+<td headers="smokefreelaws" class="gt_row gt_right">1</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">237.6</td>
+<td headers="Persmoke" class="gt_row gt_right">18</td>
+<td headers="totalpop" class="gt_row gt_right">5029</td>
+<td headers="DivorceRt" class="gt_row gt_right">4.2</td>
+<td headers="perfampoverty" class="gt_row gt_right">8.9</td>
+<td headers="perindpoverty" class="gt_row gt_right">12.9</td>
+<td headers="MedianIncome" class="gt_row gt_right">55430</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">15.3</td>
+<td headers="MurderRt" class="gt_row gt_right">3.2</td>
+<td headers="RobberyRt" class="gt_row gt_right">67.9</td>
+<td headers="AssaultRt" class="gt_row gt_right">224.5</td>
+<td headers="BurglaryRt" class="gt_row gt_right">532.5</td>
+<td headers="MVTheftRT" class="gt_row gt_right">250.6</td>
+<td headers="InfantMort" class="gt_row gt_right">6.1</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">145.3</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">153.7</td>
+<td headers="PerBachelorD" class="gt_row gt_right">35.9</td>
+<td headers="PercentRural" class="gt_row gt_right">13.282959</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.939749</td>
+<td headers="ID" class="gt_row gt_right">6</td>
+<td headers="Assault_bin" class="gt_row gt_center">1</td>
+<td headers="Murdercat" class="gt_row gt_center">1</td></tr>
+    <tr><td headers="State" class="gt_row gt_left">Connecticut</td>
+<td headers="Number1824" class="gt_row gt_right">228</td>
+<td headers="NumberRural" class="gt_row gt_right">418</td>
+<td headers="South" class="gt_row gt_center">0</td>
+<td headers="Region" class="gt_row gt_center">4</td>
+<td headers="Permoved" class="gt_row gt_right">11.0</td>
+<td headers="cigtax" class="gt_row gt_right">3.00</td>
+<td headers="smokefreelaws" class="gt_row gt_right">0</td>
+<td headers="tobaccodeathrt" class="gt_row gt_right">238.3</td>
+<td headers="Persmoke" class="gt_row gt_right">16</td>
+<td headers="totalpop" class="gt_row gt_right">3574</td>
+<td headers="DivorceRt" class="gt_row gt_right">3.1</td>
+<td headers="perfampoverty" class="gt_row gt_right">6.7</td>
+<td headers="perindpoverty" class="gt_row gt_right">9.4</td>
+<td headers="MedianIncome" class="gt_row gt_right">67034</td>
+<td headers="Pernoinsurance" class="gt_row gt_right">12.0</td>
+<td headers="MurderRt" class="gt_row gt_right">3.0</td>
+<td headers="RobberyRt" class="gt_row gt_right">113.6</td>
+<td headers="AssaultRt" class="gt_row gt_right">165.2</td>
+<td headers="BurglaryRt" class="gt_row gt_right">431.1</td>
+<td headers="MVTheftRT" class="gt_row gt_right">212.0</td>
+<td headers="InfantMort" class="gt_row gt_right">6.6</td>
+<td headers="HeartDeathRt" class="gt_row gt_right">171.0</td>
+<td headers="CancerDeathRt" class="gt_row gt_right">170.7</td>
+<td headers="PerBachelorD" class="gt_row gt_right">35.6</td>
+<td headers="PercentRural" class="gt_row gt_right">11.695579</td>
+<td headers="Percent18to24" class="gt_row gt_right">6.379407</td>
+<td headers="ID" class="gt_row gt_right">7</td>
+<td headers="Assault_bin" class="gt_row gt_center">0</td>
+<td headers="Murdercat" class="gt_row gt_center">0</td></tr>
   </tbody>
   
   
@@ -4935,13 +5045,23 @@ compare your output to our first five rows.)</li>
                   max = 300) %&gt;%
   as_tibble()
 simrunif %&gt;% head() %&gt;% gt()</code></pre>
-<div id="tigsfelhpa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="tigsfelhpa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tigsfelhpa table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#tigsfelhpa thead, #tigsfelhpa tbody, #tigsfelhpa tfoot, #tigsfelhpa tr, #tigsfelhpa td, #tigsfelhpa th {
+border-style: none;
+}
+#tigsfelhpa p {
+margin: 0;
+padding: 0;
 }
 #tigsfelhpa .gt_table {
 display: table;
 border-collapse: collapse;
+line-height: normal;
 margin-left: auto;
 margin-right: auto;
 color: #333333;
@@ -4963,16 +5083,9 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#tigsfelhpa .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
+#tigsfelhpa .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
 }
 #tigsfelhpa .gt_title {
 color: #333333;
@@ -4989,12 +5102,23 @@ border-bottom-width: 0;
 color: #333333;
 font-size: 85%;
 font-weight: initial;
-padding-top: 0;
-padding-bottom: 6px;
+padding-top: 3px;
+padding-bottom: 5px;
 padding-left: 5px;
 padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
+}
+#tigsfelhpa .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
 }
 #tigsfelhpa .gt_bottom_border {
 border-bottom-style: solid;
@@ -5062,6 +5186,9 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
+#tigsfelhpa .gt_spanner_row {
+border-bottom-style: hidden;
+}
 #tigsfelhpa .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
@@ -5085,6 +5212,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
+text-align: left;
 }
 #tigsfelhpa .gt_empty_group_heading {
 padding: 0.5px;
@@ -5152,6 +5280,9 @@ vertical-align: top;
 #tigsfelhpa .gt_row_group_first td {
 border-top-width: 2px;
 }
+#tigsfelhpa .gt_row_group_first th {
+border-top-width: 2px;
+}
 #tigsfelhpa .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
@@ -5195,6 +5326,15 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
+#tigsfelhpa .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
 #tigsfelhpa .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
@@ -5222,8 +5362,8 @@ border-right-color: #D3D3D3;
 #tigsfelhpa .gt_footnote {
 margin: 0px;
 font-size: 90%;
-padding-left: 4px;
-padding-right: 4px;
+padding-top: 4px;
+padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
@@ -5270,10 +5410,9 @@ font-style: italic;
 font-size: 65%;
 }
 #tigsfelhpa .gt_footnote_marks {
-font-style: italic;
-font-weight: normal;
 font-size: 75%;
 vertical-align: 0.4em;
+position: initial;
 }
 #tigsfelhpa .gt_asterisk {
 font-size: 100%;
@@ -5295,20 +5434,20 @@ text-indent: 20px;
 text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">value</th>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="value">value</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">22.13396</td></tr>
-    <tr><td class="gt_row gt_right">92.90598</td></tr>
-    <tr><td class="gt_row gt_right">215.18152</td></tr>
-    <tr><td class="gt_row gt_right">151.36377</td></tr>
-    <tr><td class="gt_row gt_right">45.89969</td></tr>
-    <tr><td class="gt_row gt_right">151.18005</td></tr>
+    <tr><td headers="value" class="gt_row gt_right">22.13396</td></tr>
+    <tr><td headers="value" class="gt_row gt_right">92.90598</td></tr>
+    <tr><td headers="value" class="gt_row gt_right">215.18152</td></tr>
+    <tr><td headers="value" class="gt_row gt_right">151.36377</td></tr>
+    <tr><td headers="value" class="gt_row gt_right">45.89969</td></tr>
+    <tr><td headers="value" class="gt_row gt_right">151.18005</td></tr>
   </tbody>
   
   
@@ -5746,8 +5885,7 @@ understand how these interval estimates are calculated.
 <ol style="list-style-type: lower-alpha">
 <li>First, in an R chunk, estimate the <strong>standard error of the
 mean</strong> for RobberyRt using the formula in your book, which
-is<code>se = tcrit*(sd/sqrt(n))</code>, or the critical value multiplied
-by the variable’s sd divided by the square root of n. 
+is<code>se = sd/sqrt(n)</code>.
 <ul>
 <li>Recall, the standard error of the mean is our estimate of the
 standard deviation of the sampling distribution of the mean - it is the
@@ -5755,17 +5893,33 @@ estimate we use to quantify uncertainty caused by sampling variability
 in estimating the population mean from a sample.</li>
 </ul></li>
 <li>Plug in our assigned value objects into the equation by typing:
-<code>sampseRobRt &lt;- tcrit*(sampsdRobRt/sqrt(n))</code>.
+<code>sampseRobRt &lt;- (sampsdRobRt/sqrt(n))</code>. Recall that you
+can view this value after assigning it to an object by retyping it
+(<code>sampseRobRt</code>) afterwards on its own line of code.
 <ul>
 <li>In this code, <code>n</code> is equal to the number of observations,
-which is 25 (i.e., 25 randomly selected states). <code>tcrit</code> is
-our <em>t</em> critical value. <code>sampsdRobRt</code> is the standard
-deviation of the “RobberyRt” variable in our random sample.</li>
+which is 25 (i.e., 25 randomly selected states).
+<code>sampsdRobRt</code> is the standard deviation of the “RobberyRt”
+variable in our random sample.</li>
+</ul></li>
+<li>Next, we multiply the standard error of the mean by the <em>z</em>
+or <em>t</em> critical value (<em>t</em> in this case) associated with
+the alpha level we selected and our degrees of freedom by typing:
+<code>marg95RobRt &lt;- tcrit*sampseRobRt</code>
+<ul>
+<li>By multiplying the standard error of the mean by the <em>t</em>
+critical value, we are essentially identifying how many standard errors
+wide in <em>t</em> distribution units (with <em>df</em>=25) we need our
+confidence interval to be so that the area under the curve matches our
+desired confidence level, or our desired “margin of error.” In this
+code, <code>tcrit</code> is our <em>t</em> critical value and
+<code>sampseRobRt</code> is the estimated standard error of the mean of
+“RobberyRt” from our sample.</li>
 </ul></li>
 </ol>
 <ul>
 <li><em>Note:</em> In the code below, we also show an alternative way of
-generating the standard error a little more directly using
+generating these quantities a little more directly using
 <code>qt()</code> function.
 <ul>
 <li>In the alternative code, we specify the <code>0.975</code> quantile,
@@ -5783,26 +5937,30 @@ quantile by subtracting 0.025 from 1.00 (i.e., 1.00 - 0.05/2 = 1 - 0.025
 </ul></li>
 </ul></li>
 </ol>
-<p><br> <em>Sample Std Error of Mean of RobberyRt</em></p>
+<p><br> <em>Sample Std Error of Mean of RobberyRt &amp; 95% margin of
+error</em></p>
 <div class="rltgreen">
-<pre class="r"><code>sampseRobRt &lt;- tcrit*(sampsdRobRt/sqrt(n))
+<pre class="r"><code>sampseRobRt &lt;- (sampsdRobRt/sqrt(n))
 sampseRobRt</code></pre>
+<pre><code>## [1] 11.4149</code></pre>
+<pre class="r"><code>marg95RobRt &lt;- tcrit*sampseRobRt
+marg95RobRt</code></pre>
 <pre><code>## [1] 23.5592</code></pre>
-<pre class="r"><code>#Alternative method for calculating standard error of mean in R using qt()
+<pre class="r"><code>#Alternative method for calculating 95% margin of error in R using qt()
 # qt(0.975,df=n-1)*sampsdRobRt/sqrt(n)</code></pre>
 </div>
 <p><br></p>
 <ol start="6" style="list-style-type: decimal">
-<li>With the standard error of the mean estimated and assigned to an
-object, we can simply subtract it from the sample mean to calculate the
-lower 95% CI limit, then add it to the sample mean to calculate the
+<li>With the 95% margin of error of the mean estimated and assigned to
+an object, we can simply subtract it from the sample mean to calculate
+the lower 95% CI limit, then add it to the sample mean to calculate the
 upper 95% CI limit. Together, these make up the 95% confidence interval
 estimate around the sample mean of “RobberyRt”.
 <ol style="list-style-type: lower-alpha">
 <li>Insert an R chunk.</li>
-<li>Type <code>RobRt95CIlow &lt;- sampmeanRobRt - sampseRobRt</code>.
+<li>Type <code>RobRt95CIlow &lt;- sampmeanRobRt - marg95RobRt</code>.
 Hit enter and type
-<code>RobRt95CIhi &lt;- sampmeanRobRt + sampseRobRt</code>. Type each of
+<code>RobRt95CIhi &lt;- sampmeanRobRt + marg95RobRt</code>. Type each of
 the object names on subsequent lines to print their output values and
 run your code.</li>
 <li><em>Note:</em> To learn more about calculating CI using R, you might
@@ -5815,29 +5973,29 @@ check out <a href="https://www.statology.org/confidence-interval-in-r/">here</a>
 <div class="rltgreen">
 <pre class="r"><code>RobRt95CIlow &lt;- sampmeanRobRt - sampseRobRt
 RobRt95CIlow</code></pre>
-<pre><code>## [1] 75.8648</code></pre>
+<pre><code>## [1] 88.0091</code></pre>
 </div>
 <p><br> <em>Upper bound of 95% confidence interval around sample
 mean</em></p>
 <div class="rltgreen">
 <pre class="r"><code>RobRt95CIhi &lt;- sampmeanRobRt + sampseRobRt
 RobRt95CIhi</code></pre>
-<pre><code>## [1] 122.9832</code></pre>
+<pre><code>## [1] 110.8389</code></pre>
 </div>
 <p><br> <em>95% CI Estimate around Sample Mean of RobberyRt</em></p>
 <div class="rltgreen">
 <pre class="r"><code>cat(&quot;[&quot;,RobRt95CIlow,&quot;,&quot;,RobRt95CIhi,&quot;]&quot;)</code></pre>
-<pre><code>## [ 75.8648 , 122.9832 ]</code></pre>
+<pre><code>## [ 88.0091 , 110.8389 ]</code></pre>
 </div>
 <p><br></p>
 <ul>
 <li>You just calculated 95% confidence interval estimates around the
 sample mean of RobberyRt from our 25 randomly selected states!
 <ul>
-<li>As you can see, our lower bound is 75.86 and our upper bound is
-122.98.</li>
+<li>As you can see, our lower bound is 88.01 and our upper bound is
+110.84.</li>
 <li>This means our 95% CI around the sample mean of “RobberyRt” is
-[75.86, 122.98].</li>
+[88.01, 110.84].</li>
 </ul></li>
 </ul>
 <ol start="7" style="list-style-type: decimal">
@@ -5856,7 +6014,7 @@ CI estimate around the sample mean.</li>
 <p><br></p>
 <ul>
 <li>Yes, the population mean (104.58) was captured in our sample’s 95%
-confidence interval estimate [75.86, 122.98].
+confidence interval estimate [88.01, 110.84].
 <ul>
 <li>In other words, our random sample was one of the 95% of samples we
 might have drawn that would be expected to generate 95% confidence
@@ -5914,7 +6072,7 @@ div.yesgreen { background-color:#21918c80; border-radius: 5px; padding: 20px;}
 <p><br></p>
 <div class="yesgreen">
 <p><strong>CORRECT INTERPRETATION:</strong> We are 95% confident that
-the true population mean robbery rate is between 75.86 and 122.98. By
+the true population mean robbery rate is between 88.01 and 110.84. By
 95% confident, we mean that over the long run (and assuming our research
 design and statistical model are sound), the same procedures would
 result in estimates and confidence intervals that capture the true
@@ -5932,7 +6090,7 @@ div.nored { background-color:#de496880; border-radius: 5px; padding: 20px;}
 <div class="nored">
 <ul>
 <li><strong>Inaccurate:</strong> We are 95% certain that the true
-population proportion falls between 75.86 and 122.98.</li>
+population proportion falls between 88.01 and 110.84.</li>
 </ul>
 </div>
 <ul>
@@ -5948,7 +6106,7 @@ itself.<br />
 <div class="nored">
 <ul>
 <li><strong>Inaccurate:</strong> There is a 95% chance that the true
-population proportion falls between 75.86 and 122.98.</li>
+population proportion falls between 88.01 and 110.84.</li>
 </ul>
 </div>
 <ul>
@@ -5971,8 +6129,8 @@ captures the true population parameter.<br />
 <div class="nored">
 <ul>
 <li><strong>Inaccurate:</strong> In 100 repeated trials, 95% of new
-samples will have a population mean that falls between 75.86 and
-122.98.</li>
+samples will have a population mean that falls between 88.01 and
+110.84.</li>
 </ul>
 </div>
 <ul>
@@ -6239,43 +6397,43 @@ zcrit</code></pre>
 <p><br> 5. We have what we need to estimate a confidence interval around
 our sample proportion. a. Recall, the formula for the standard error of
 the proportion (aka, the standard error of the sampling distribution of
-the proportion) is: se = zcrit<em>sqrt(p</em>(1-p)/n) b. In an R chunk,
+the proportion) is: se = sqrt(p(1-p)/n) and we multiply this by the
+critical <em>z</em> value to get the margin of error. b. In an R chunk,
 input our assigned objects into the formula by typing
-<code>sampseAstRtprop &lt;- zcrit*sqrt(pAstRtgt200*(1-pAstRtgt200)/n)</code>.
-- This code estimates the standard error by multiplying our critical
-value by the square root of the proportion (.64) multiplied by its
-complement (or 1 - p) and divided by n.  - The standard error estimate
-is then assigned to a new value object called
-<code>sampseAstRtprop</code> (named differently so we do not confuse it
+<code>marg90AstRtprop &lt;- zcrit*sqrt(pAstRtgt200*(1-pAstRtgt200)/n)</code>.
+- This code estimates the margin of error for our 90% CI by multiplying
+our critical value by the square root of the proportion (.64) multiplied
+by its complement (or 1 - p) and divided by n.  - The margin of error
+estimate is then assigned to a new value object called
+<code>marg90AstRtprop</code> (named differently so we do not confuse it
 with sample standard error for the mean of ‘RobberyRt’; the name refers
-to the <strong>samp</strong>le <strong>s</strong>tandard
-<strong>e</strong>rror of <strong>As</strong>saul<strong>t</strong>
+to the sample <strong>marg</strong>in of error for <strong>90</strong>%
+CI around <strong>As</strong>saul<strong>t</strong>
 <strong>R</strong>a<strong>t</strong>e <strong>prop</strong>ortion).</p>
 <p><br> <em>Standard error of Assault Rate proportion</em></p>
 <div class="rltgreen">
-<pre class="r"><code>sampseAstRtprop &lt;- zcrit*sqrt(pAstRtgt200*(1-pAstRtgt200)/n)
-sampseAstRtprop</code></pre>
+<pre class="r"><code>marg90AstRtprop &lt;- zcrit*sqrt(pAstRtgt200*(1-pAstRtgt200)/n)
+marg90AstRtprop</code></pre>
 <pre><code>## [1] 0.1579059</code></pre>
 </div>
-<p><br> 6. With the standard error of the mean estimated and assigned to
-an object, we can now calculate the 90% confidence interval around our
-sample proportion. a. As we did in the previous section, we do this by
-simply subtracting from and adding to the sample proportion to calculate
-the lower and upper limits, respectively, for our 90% confidence
-interval around the “AssaultRt” sample proportion. b. We can do this by
-simply typing
-<code>AstProp90CIlow &lt;- pAstRtgt200 - sampseAstRtprop</code> and
-<code>AstProp90CIhi &lt;- pAstRtgt200 + sampseAstRtprop</code> to
+<p><br> 6. With the margin of error estimated and assigned to an object,
+we can now calculate the 90% confidence interval around our sample
+proportion. a. As we did in the previous section, we do this by simply
+subtracting from and adding to the sample proportion to calculate the
+lower and upper limits, respectively, for our 90% confidence interval
+around the “AssaultRt” sample proportion. b. We can do this by simply
+typing <code>AstProp90CIlow &lt;- pAstRtgt200 - marg90AstRtprop</code>
+and <code>AstProp90CIhi &lt;- pAstRtgt200 + marg90AstRtprop</code> to
 determine the 90% CI of the assault rate for our 25 states.</p>
 <p><br> <em>90% CI lower limit for AssaultRt proportion</em></p>
 <div class="rltgreen">
-<pre class="r"><code>AstProp90CIlow &lt;- pAstRtgt200 - sampseAstRtprop
+<pre class="r"><code>AstProp90CIlow &lt;- pAstRtgt200 - marg90AstRtprop
 AstProp90CIlow</code></pre>
 <pre><code>## [1] 0.4820941</code></pre>
 </div>
 <p><br> <em>90% CI upper limit for AssaultRt proportion</em></p>
 <div class="rltgreen">
-<pre class="r"><code>AstProp90CIhi &lt;- pAstRtgt200 + sampseAstRtprop
+<pre class="r"><code>AstProp90CIhi &lt;- pAstRtgt200 + marg90AstRtprop
 AstProp90CIhi</code></pre>
 <pre><code>## [1] 0.7979059</code></pre>
 </div>
@@ -6315,7 +6473,7 @@ popAstRtprop</code></pre>
 <pre><code>## [1] 0.58</code></pre>
 </div>
 <p><br> - The population proportion is 0.58, which falls within the 90%
-confidence interval we estimated around our sample proportion (p=0.16,
+confidence interval we estimated around our sample proportion (p=0.64,
 90% CI=[0.48, 0.8]). It seems our random sample was one of the 90% of
 samples we might have drawn that would be expected to generate 90%
 confidence intervals that capture the true population proportion. Again,
@@ -6331,9 +6489,9 @@ what you are doing throughout in the text portion of your RMD
 document.</li>
 <li>Remember, with a different confidence level, your <em>z</em>
 critical value should change, which will then change your sample
-standard error (i.e., <code>sampseAstRtprop</code> value) and your lower
-and upper confidence limits (i.e., <code>AstProp90CIlow</code> and
-<code>AstProp90CIhi</code>).</li>
+standard error, your margin of error (i.e., <code>marg90AstRtprop</code>
+value), and your lower and upper confidence limits (i.e.,
+<code>AstProp90CIlow</code> and <code>AstProp90CIhi</code>).</li>
 <li>Also, recall that at higher confidence levels, we want to reduce
 inference errors by increasing the probability that our interval will
 contain the true population parameter. To do this, we are going to
