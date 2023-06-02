@@ -21,7 +21,7 @@ draft: true
 
 ![Collider: The monster in our modeling closet (by DALL-E)](DALL-E-monster_in_closet.png)
 
-## Are you afraid of colliders? You will be... You will be. {#sec-afraid}
+## Are you afraid of colliders? You will be... *You will be*. {#sec-afraid}
 
 In our previous post on [causation without correlation](https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr), we concluded with a brief caution about how an otherwise fun fishing trip for indirect effects might be spoiled by the collider monster in your modeling closet. We referenced Julia Rohrer's blog entry on [hunting for indirect effects](https://www.the100.ci/2019/10/03/indirect-effect-ex-machina/), then noted the following: 
 
@@ -31,7 +31,7 @@ If you'd prefer a crime-relevant analogy, colliders also have been referred to a
 
 Perhaps without knowing it, you've likely encountered discussions of collider bias before in the [form of selection bias](https://thehardestscience.com/2014/08/04/the-selection-distortion-effect-how-selection-changes-correlations-in-surprising-ways/). It's probably safe to say that most social scientists get exposed to the problems with [selection bias](https://psycnet.apa.org/record/2004-11156-005) at some point in their graduate training. Indeed, it's been at the center of high profile debates [within criminology](https://link.springer.com/article/10.1007/s10940-007-9024-4) (e.g., [peer influence](https://www.annualreviews.org/doi/abs/10.1146/annurev-criminol-011518-024551); [turning points](https://www.annualreviews.org/doi/abs/10.1146/annurev-criminol-032317-091949); [sentencing](https://www.jstor.org/stable/23365655); [specialty courts](https://journals.sagepub.com/doi/abs/10.1177/0093854811424690?journalCode=cjbb); and [police use of force](https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/)). On some level, we often treat selection effects as a known limitation and perhaps even a minor nuisance. However, once you start to comprehend that [selection effects often are particular instances of a more general category of collider bias](https://www.the100.ci/2017/03/14/that-one-weird-third-variable-problem-nobody-ever-mentions-conditioning-on-a-collider/) then, like us, you too might begin to develop a healthy fear of colliders. You might also find yourself on a quest to master the transparent use of structural causal models or [directed acyclic graphs](https://rpubs.com/NickCHK/DAGWorkshop2020) (DAGs).  
 
-Causal assumptions are the force from which our modeling power flows and that binds our scientific claims together. The transparent causal model or DAG is a powerful ally in the force that can shed light on hidden causal assumptions. They help us make essential design, modeling, and interpretive decisions with reason rather than intuition or emotion. In case we (okay, this part is all Jon - IYKYK) have not yet stretched this extended metaphor past its breaking point already, then let's do it now. Fear (of colliders) is the path to the dark side. [Confronting fear is the destiny of a Jedi](https://starwarsthoughts.com/2019/10/27/luke-skywalker-confronting-fear-is-the-destiny-of-a-jedi/) (scientist). Your destiny. Below, we will face our fear of colliders and learn to overcome it with DAGs, perhaps the Jedi scientist's most powerful weapon.
+Causal assumptions are the force from which our modeling power flows and that binds our scientific claims together. The transparent causal model or DAG is a powerful ally in the force that can shed light on hidden causal assumptions. They help us make essential design, modeling, and interpretive decisions with reason rather than intuition or emotion. In case we (okay, this part is all Jon - IYKYK) have not yet stretched this extended *Star Wars* metaphor past its breaking point already, then let's do it now. Fear (of colliders) is the path to the dark side. [Confronting fear is the destiny of a Jedi](https://starwarsthoughts.com/2019/10/27/luke-skywalker-confronting-fear-is-the-destiny-of-a-jedi/) (scientist). Your destiny. Below, we will face our fear of colliders and learn to overcome it with DAGs, perhaps the Jedi scientist's most powerful weapon.
 
 ![Learn to fear colliders, then learn how to confront them with DAGs.](notafraid.jpg)
 
@@ -39,7 +39,7 @@ Causal assumptions are the force from which our modeling power flows and that bi
 
 Ok, so what exactly *is* a collider? To answer that, we should first specify a causal [estimand](https://onbiostatistics.blogspot.com/2022/04/estimands-estimator-estimate-and.html) of interest - say, the causal effect or "average marginal effect" of *X* on outcome *Y*. Once we've determined what exactly we are trying to estimate using data, then we might start thinking about other things - like colliquially named "third variables" - that might be related to or potentially bias our estimate of the quantity of interest. 
 
-In our experience, most criminologists understand [confounding bias](https://www.methodsman.com/blog/confounding-rose) and immediately think of confounders when asked about "third variables" that might affect causal effect estimation. Most also seem to have reasonable intuitions regarding what to do about confounders (e.g., adjust or "control" for them to block their causal paths). Additionally, many criminologists are familiar with [mediation](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation) - a type of "third variable" related to causal estimation that we discussed in our [last post on causation without correlation](https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr). In that post, we demonstrated how adjusting for a mediator *M* removes part of the total causal effect of *X* on *Y* - specifically, it isolates the indirect effect of *X* through *M* - from our causal estimate. 
+In our experience, most criminologists understand [confounding bias](https://www.methodsman.com/blog/confounding-rose) and immediately think of confounders when asked about "third variables" that might affect causal effect estimation. Most also seem to have reasonable intuitions regarding what to do about confounders (e.g., adjust or "control" for them to block their ["backdoor"](http://causality.cs.ucla.edu/blog/index.php/category/back-door-criterion/) causal paths). Additionally, many criminologists are familiar with [mediation](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation) - a type of "third variable" related to causal estimation that we discussed in our [last post on causation without correlation](https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr). In that post, we demonstrated how adjusting for a mediator *M* removes part of the total causal effect of *X* on *Y* - specifically, it isolates the indirect effect of *X* through *M* - from our causal estimate. 
 
 Like confounders and mediators of the *X*/*Y* relationship, colliders have been described as another type of ["third variable"](https://www.the100.ci/2017/03/14/that-one-weird-third-variable-problem-nobody-ever-mentions-conditioning-on-a-collider/) that is relevant to causal effect estimation. However, unlike confounders and mediators, we get the sense that many in our field do not understand and perhaps have never even heard of colliders. So, what are they? 
 
@@ -197,7 +197,7 @@ So, how do colliders affect attempts to estimate the causal effect of *X* on *Y*
 
 DAGs are extremely useful, then, in helping us identify all paths through which information might flow between *X* and *Y* and, likewise, in figuring out which variables we *should* be including in our models to adjust for confounding bias and which variables we *should not* include in our models to avoid removing indirect causal effects and/or introducing collider bias. 
 
-For instance, using the fourth example above, we can identify all paths between *X* and *Y* and [identify appropriate adjustment sets](https://evalf20.classes.andrewheiss.com/example/dags/#paths-and-adjustment-sets) automatically using `ggdag::ggdag_paths()` and `ggdag::ggdag_adjustment_set()`. You will note below that the path from *X to Y* and *X to C to Y* are open or unblocked paths, but the path from *X to Z to C to Y* is not an open path - unless we open it by conditioning on *Z* and, in turn, bias our estimate of the effect of *X* on *Y*. Likewise, the appropriate adjustment set for Example 4 contains only *C*, meaning we should control for *C* but not *Z*.   
+For instance, using the fourth example above, we can identify all paths between *X* and *Y* and [identify appropriate adjustment sets](https://evalf20.classes.andrewheiss.com/example/dags/#paths-and-adjustment-sets) automatically using `ggdag::ggdag_paths()` and `ggdag::ggdag_adjustment_set()`. You will note below that the path from *X* -> *Y* and *X* <- *C* -> *Y* are open or unblocked paths, but the path from *X -> Z <- C -> Y* is not an open path - unless we open it by conditioning on *Z* and, in turn, bias our estimate of the effect of *X* on *Y*. Likewise, the appropriate adjustment set for Example 4 contains only *C*, meaning we should control for *C* but not *Z* (or *C* and *Z*).
 
 ```{r}
 #| label: DAG3
@@ -239,38 +239,19 @@ SAT's basic claim is that most people refrain from crime for moral, not rational
 
 > "...this implies that *morality is the fundamental individual characteristic* in the explanation of crime and that an individual’s ability to exercise self-control plays a far more limited role…” (p.251, emphasis in original)
 
-While SAT actually implies a complex causal structure involving a three-way (or more) interaction between moral beliefs, moral context, and self-control, we will specify a simpler DAG for the purposes of illustrating collider biases. Instead, we will aim to specify a causal structure and simulate data that builds upon the logic of many tests of SAT, which often regress delinquency or crime on self-control, moral beliefs, and their multiplicative interaction, as well as include gender and "controls" for other (presumably independent) variables. Hence, a typical SAT test might implicitly assume a causal structure reflected in the following directed acyclic graph, or DAG: 
-
-```{r}
-#| label: DAG4
-#| fig-cap: "Figure 5. Implied causal diagram (DAG) underlying a typical SAT test"
-
-SATDAG <- dagitty('dag{
-  Male -> {SelfControl MoralBeliefs Delinquency}
-  SelfControl -> {Delinquency}
-  MoralBeliefs -> {Delinquency} 
-  Controls -> {Delinquency} 
-   }') 
-coordinates( SATDAG ) <-
-    list( x=c(SelfControl=1, Male=1, MoralBeliefs=1, Controls=1, Delinquency=2),
-        y=c(SelfControl=1, Male=0, MoralBeliefs=-1, Controls=-2, Delinquency=0) )
-
-plot(SATDAG)
-
-
-```
+While SAT actually implies a complex causal structure involving a three-way (or more) interaction between moral beliefs, moral context, and self-control, we will specify a simpler DAG for the purposes of illustrating collider biases. Instead, we will aim to specify a causal structure and simulate data that builds upon the logic of many tests of SAT, which often regress delinquency or crime on self-control, moral beliefs, and their multiplicative interaction, as well as include gender and "controls" for other (presumably independent) variables. 
 
 Specifically, we will aim to generate data that resembles the interactive relationships found in such tests, like those [Svensson and colleagues](https://journals.sagepub.com/doi/abs/10.1177/0093854810366542?journalCode=cjbb) documented across three international samples: 
 
-![Figure 6: Self-control and morality interact to predict delinquency](Interactions.jpg)
+![Figure 5: Self-control and morality interact to predict delinquency](Interactions.jpg)
 
-Yet, as we think is true in tests of most criminological theories, empirical tests of SAT often explicitly consider only a limited set of causal relationships within a data source generated by a much larger connection of complex interlinked causal processes - much more than those depicted in the Figure 5 DAG above. So, we will add a bit of plausible complexity to the DAG to illustrate how colliders might bias estimation of theorized causal effects.  
+Yet, as we think is true in tests of most criminological theories, empirical tests of SAT often explicitly consider only a limited set of causal relationships within a data source generated by a much larger connection of complex interlinked causal processes. So, we will add a bit of plausible complexity to the DAG to illustrate how colliders might bias estimation of theorized causal effects.  
 
 Below is our DAG of a simple causal structure describing a plausible (if simplified) data generating process used to simulate data for our first two examples. We highlighted the focal estimand of interest (effect of self-control on delinquency) for our first simulation example with a red arrow. 
 
 ```{r}
-#| label: DAG5
-#| fig-cap: "Figure 7. Causal diagram (DAG) used to generate simulated data"
+#| label: DAG4
+#| fig-cap: "Figure 6. Causal diagram (DAG) used to generate simulated data"
 
 collideDAG <- dagitty('dag{
   Male -> {SelfControl MoralBeliefs Delinquency PriorFelony}
@@ -376,7 +357,7 @@ collideDAGaltp2
 
 ```
 
-As suggested, even this DAG is simplified for clarity purposes. It ignores, for instance, all other potential measured (e.g., race/ethnicity) and unmeasured confounders that might affect selection into delinquent behavior, criminal justice contact and subsequent felony conviction, and participation in a survey (e.g., which was about 80% participation rate in the Pathways study). Still, an important first step in analyzing data should be to precisely and transparently specify causal assumptions. Even if the causal model is wrong (as all likely are), we can learn from it because a precisely and transparently reported causal model clearly communicates the assumptions underlying our interpretation of the data and, in turn, allows others to critique, test, and challenge our causal model with alternatives. 
+As suggested, even this DAG is simplified for clarity purposes. It ignores, for instance, all other potential measured (e.g., race/ethnicity) and unmeasured confounders that might affect selection into delinquent behavior, criminal justice contact and subsequent felony conviction, and participation in a survey. Still, an important first step in analyzing data should be to precisely and transparently specify causal assumptions. Even if the causal model is wrong (as all likely are), we can learn from it because a precisely and transparently reported causal model clearly communicates the assumptions underlying our interpretation of the data and, in turn, allows others to critique, test, and challenge our causal model with alternatives. 
 
 Put differently, DAGs force the researcher to make choices, and these choices are ultimately testable. For example, in the above DAG, there is no arrow going directly from prior felony to delinquency. Thus, this DAG explicitly assumes that any empirically observed statistical dependence between prior felony and delinquency is expected to be entirely caused by other factors in the model (i.e., morality, sex, and self-control). If you think other factors than those in the DAG are important (e.g., crime as a collateral consequence of official labeling or the pains of punishment), then you can modify the DAG and examine the empirical implications of doing so. For now, we think this DAG will suit our purposes of illustrating some consequences of conditioning on colliders in three different examples using simulated yet realistic (examples 1 & 2) and real-world (example 3) criminological data. 
 
@@ -715,7 +696,7 @@ plot_glm1a + plot_glm1b + plot_layout(guides = 'collect')
 
 ```
 
-Success! The plot on the left confirms that our simulation recreated the moderated effects of self-control on delinquency across levels of moral beliefs as documented in earlier research (e.g., see Figure 6 above, though note our x-axis is reversed and we specified a nonlinear functional form). 
+Success! The plot on the left confirms that our simulation recreated the moderated effects of self-control on delinquency across levels of moral beliefs as documented in earlier research (e.g., see Figure 5 above, though note our x-axis is reversed and we specified a nonlinear functional form). 
 
 ### Detour: On interactions in nonlinear models, psychoastronomy, & posterity {#sec-detour}
 
@@ -739,7 +720,7 @@ Yes, we know that many of us in our field were trained to rely on the presence o
 
 [^4]: Liability caveat: If it is not obvious to all, we are being facetious here. Do learn new things. Do not waste scientific resources on data and then subject them to methods that routinely deliver unreliable, random, or biased inferences. Do not make up data yourself, and do not have an ever-expanding super-intelligent AI overlord do it for you.
 
-If you have read this far, we think it is likely that you care about science, like to learn, and want to do careful work. If we are right, then please do not use *p*-values and significance stars to make inferences about interaction terms in general models. Also, please do not use *p*-values and significance stars to make decisions about which variables to include as controls in your models. Rather, use theory to generate a plausible causal model (DAG), then choose which variables to include - and which variables to exclude - based on your estimand of interest and implications derived from your transparent causal model. Again, do not just take our word for it - listen to [McElreath's 2023 lecture](https://www.youtube.com/watch?v=uanZZLlzKHw) on good and bad controls. At around the  42:15 mark, he states: 
+If you have read this far, we think it is likely that you care about science, like to learn, and want to do careful work. If we are right, then please do not use *p*-values and significance stars to make inferences about interaction terms in generalized linear models with nonlinear link functions. Also, please do not use *p*-values and significance stars to make decisions about which variables to include as controls in your models. Rather, use theory to generate a plausible causal model (DAG), then choose which variables to include - and which variables to exclude - based on your estimand of interest and implications derived from your transparent causal model. Again, do not just take our word for it - listen to [McElreath's 2023 lecture](https://www.youtube.com/watch?v=uanZZLlzKHw) on good and bad controls. At around the  42:15 mark, he states: 
 
 > "There are lots of heuristics that are taught in the sciences for choosing control variables and unfortunately most of them are simply wrong and damaging. One of the approaches of course is to just add everything in the spreadsheet and see what's significant. This is the YOLO strategy. There is no statistical framework that justifies this at all but it is a great way to get published because you can farm asterisks and publish them and leave a trail of damage through the scientific literature that can last for decades. Not the posterity we should aspire to."
 
@@ -853,9 +834,9 @@ plot_glm2a
 
 Uh oh. We simulated data to have no (i.e., null or "0") effect of SES on delinquency, but our model estimated a positive effect of SES on delinquency in the population. By now, it should be clear that this is caused by inappropriately conditioning on the collider QualityEmploy. 
 
-Note, too, that there is an estimated negative effect of employment on delinquency despite a lack of simulated causal relationship between them. This is because both employment and delinquency "listen to" (in this case, are caused by) common mechanisms, namely moral beliefs and self-control (see [Pearl & Mackenzie](http://bayes.cs.ucla.edu/WHY/) for explanation & more on the "listens to" metaphor). 
+Note, too, that there is an estimated negative coefficient for employment despite a lack of simulated causal relationship between them. This is because both employment and delinquency "listen to" (in this case, are caused by) common mechanisms, namely moral beliefs and self-control (see [Pearl & Mackenzie](http://bayes.cs.ucla.edu/WHY/) for explanation & more on the "listens to" metaphor). 
 
-Of course, if we had not simulated the data ourselves or had a reliable DAG to communicate our causal assumptions - which is exactly the situation most researchers find themselves in - then we might simply assume that these causal estimates are accurate and then proceed to tell a story about them in a paper for publication. 
+Of course, if we had not simulated the data ourselves or had a reliable DAG to communicate our causal assumptions - which is exactly the situation most researchers find themselves in - then we might simply assume that these coefficients are accurate causal estimates and then proceed to tell a story about them in a paper for publication. (Caution: It is usually a bad idea to interpret non-focal estimates like are doing in this section. We plan to explain why in a later post about the [Table 2 fallacy](http://www.dagitty.net/learn/graphs/table2-fallacy.html).)
 
 Scared yet? Don't be scared. Be empowered to change.   
 
@@ -883,7 +864,7 @@ plot_glm2a + plot_glm2b
 
 Our estimate of the causal effect of SES on delinquency is now near-zero and negligible, with zero falling well within the 95% confidence interval. 
 
-What would happen if we continue to condition on the collider QualityEmploy in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let's reestimate our two models using the simulated felony sample to see.
+What would happen if we continue to condition on the collider QualityEmploy in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let's re-estimate our two models using the simulated felony sample to see.
 
 ```{r}
 
@@ -923,9 +904,9 @@ plot_glm2d <- plot_model(glm2d, type = "pred", terms = "SES") +
 
 When conditioning on a collider (employment), SES is incorrectly estimated to have a positive effect on delinquency in the simulated general sample and a positive effect of even larger magnitude on the outcome scale in the restricted felony sample. 
 
-Additionally, employment is incorrectly predicted to have a sizeable negative effect on delinquency in both the general and felony samples, despite a lack of causal connection or direct simulated correlation between them. A review of our DAG helps us understand why this is the case: we did not adjust for self-control and moral beliefs, two confounders of the employment/delinquency relationship. 
+Additionally, employment has a sizeable negative coefficient in both the general and felony samples, despite a lack of causal connection or direct simulated correlation between them. A review of our DAG helps us understand why this is the case: we did not adjust for self-control and moral beliefs, two confounders of the employment/delinquency relationship. 
 
-Finally, a large, positive estimate of the effect of being male on delinquency is observed in the general sample, whereas a smaller positive effect estimate is observed in the felony sample. This is likely because, due to our DAG and simulation, being male is causally related to self-control and moral beliefs. Thus, in the general sample, being male is expected to have a positive total effect due to its unblocked *indirect* effects on delinquency through these mediators. In contrast, in the felony sample, these indirect effect estimates are affected by conditioning on a collider (felony).
+Finally, a large, positive coefficient for male on delinquency is observed in the general sample, whereas a smaller positive coefficient is observed in the felony sample. This is likely because, due to our DAG and simulation, being male is causally related to self-control and moral beliefs. Thus, in the general sample, being male has a positive association due to its unblocked *indirect* effects on delinquency through these mediators. In contrast, in the felony sample, these indirect effects are biased by conditioning on a collider (felony). 
 
 ![Destroy collider bias with the force. Or, you know, with a DAG and a sufficient adjustment set.](death_star.png)
 
@@ -937,9 +918,9 @@ One of the cool things about the DAG framework is that it follows systematic and
 
 [^6]: "Avoid being clever" is another McElreath motto. You're probbably picking up on a pattern with all of our McElreath references. Seriously, do yourself a favor and read his book and watch his lectures. 
 
-Specifically, for any theoretical estimand you want to empirically estimate from the data, you can start by designing your DAG with a program like "DAGitty" and identifying the exposure (cause) and outcome. Then, you can have the program automatically identify the various adjustment sets that would give you the unbiased estimate based on your theoretical model as specified in the DAG. The [DAGitty User's Manual]() explains that: 
+Specifically, for any theoretical estimand you want to empirically estimate from the data, you can start by designing your DAG with a program like "DAGitty" and identifying the exposure (cause) and outcome. Then, you can have the program automatically identify the various adjustment sets that would give you the unbiased estimate based on your theoretical model as specified in the DAG. The [DAGitty User's Manual](http://www.dagitty.net/manual-3.x.pdf) explains a sufficient adjustment set as: 
 
-> "...any set of variables in a causal diagram that blocks all biasing paths between an exposition and an outcome, but leaves the causal paths open, is called a *sufficient adjustment set*. **If the causal diagram is accurate**, then adjustment, stratification, or selection (e.g. by restriction or matching) for this set of variables in an epidemiological study minimizes bias when estimating the *total effect* from exposition to outcome..." (p.2, bold emphasis added.)
+> "a set of covariates such that adjustment, stratification, or selection (e.g. by restriction or matching) will minimize bias when estimating the causal effect of the exposure on the outcome (**assuming that the causal assumptions encoded in the diagram hold**).... One can understand adjustment sets graphically... as a set [of covariates] that closes all biasing paths while keeping desired causal paths open..." (p.9, bold emphasis added)
 
 Let's do that with our SES -> Delinquency example above. 
 
@@ -965,7 +946,7 @@ Interestingly, of the 26 possible adjustment sets for accurately estimating the 
   25. { Male, MoralBeliefs, PriorFelony, QualityEmploy, SelfControl }
   26. { College, Male, MoralBeliefs, PriorFelony, QualityEmploy, SelfControl }
 
-Given we also decide to control for "Male" in our model, there are four adjustment sets that include both "QualityEmploy" and "Male". "College" isn't in the simulated data, so that leaves us with two additional models that we could estimate from the data at hand. Let's estimate those models and confirm that we get the correct "null" estimate.
+Given we also decide to control for "Male" in our model, there are four adjustment sets that include both "QualityEmploy" and "Male". "College" isn't in the simulated data - it is common to lack key variables in a DAG in real world data - so that leaves us with two additional models that we could estimate from the data at hand. Let's estimate those models and confirm that we get the correct "null" estimate.
 
 ```{r}
 
@@ -992,11 +973,11 @@ For our final example, we present results of an analysis of pilot survey data co
 
 In this example, we focus solely on a basic bivariate association: the relationship between moral beliefs and delinquent (criminal) behavior. Self-reported measures of one's moral beliefs about crime are among the strongest and most consistent correlates of criminal behavior. Hence, we would expect to see similarly strong correlations in both the MTurk and university samples. Failure to see such correlations might raise concerns about the data. 
 
-In particular, we anticipate that selection into the University sample might introduce collider biases for estimates of various causal estimands of interest to criminologists. Of course, we communicated this expectation in our initial DAG used to simulate data, which we present again for convenience (see Figure 8 below).
+In particular, we anticipate that selection into the University sample might introduce collider biases for estimates of various causal estimands of interest to criminologists. Of course, we communicated this expectation in our initial DAG used to simulate data, which we present again for convenience (see Figure 7 below).
 
 ```{r}
-#| label: DAG6
-#| fig-cap: "Figure 8. Causal diagram (DAG), highlighting Example 3 estimand"
+#| label: DAG5
+#| fig-cap: "Figure 7. Causal diagram (DAG), highlighting Example 3 estimand"
 
 collideDAGalt2 <- dagify(
   Delinquency ~ MoralBeliefs + Male + SelfControl,

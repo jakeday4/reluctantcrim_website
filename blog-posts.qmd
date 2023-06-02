@@ -3,7 +3,7 @@ title: "a blog for criminologists, reluctant or otherwise"
 listing:
   contents: blog-posts
   sort:
-    - "date asc"  
+    - "date desc"  
   fields: [date, title, reading-time, description, image, categories]
   feed: true
 ---
