@@ -764,11 +764,11 @@ Why? Well, to risk overextending another analogy, think of your focal estimand (
 
 To add another layer of complexity, a closer look at our DAG will reveal that the SES -> Delinquency estimand is not the only potential relationship depicted for which adjusting for employment threatens to bias estimates due to conditioning on a collider. Below, we also briefly discuss nonfocal coefficients in our SES -> delinquency models (e.g., for male and employment) to help illustrate how conditioning on a collider can wreak havok on an entire model and other relevant alternative models by opening backdoor paths and letting out biasing information. However, before we do this, we want to issue a strong cautionary plea: 
 
-Do not try this at home or, worse, in scientific papers. It is typically a bad idea to interpret nonfocal coefficients as if they are effect estimates for alternative estimands like we are doing in this section. We plan to explain why in more detail in a later post about the [Table 2 fallacy](http://www.dagitty.net/learn/graphs/table2-fallacy.html). Here, we know that our DAG accurately reflects the causal processes that generated our simulated data, so we have a better understanding of what is happening in our models than one typically would in real world data analytic contexts. 
+Do not try this at home or, worse, in scientific papers. It is typically a bad idea to interpret nonfocal coefficients as if they are effect estimates for alternative estimands like we are doing in this section. We plan to explain why in more detail in a later post about the [Table 2 fallacy](http://www.dagitty.net/learn/graphs/table2-fallacy.html). Here, we know that our DAG accurately reflects the causal processes that generated our simulated data, so we have a better understanding of what is happening in our models than one typically would in real world data analytic contexts. If you really feel it is necessary, then use your DAG and specify the nonfocal variable as the exposure to identify whether the variables in the model sufficiently adjust for potential bias (more on this soon).
 
 With that cautionary statement in place, we ill-advisedly point your attention to the negative coefficient for employment in the model above. We know this should not be there, since we did not specify a causal relationship between them in our DAG and, therefore, we did not simulate a causal relationship between them. In this case, the biased coefficient arises because both employment and delinquency "listen to" (in this case, are caused by) common mechanisms, namely moral beliefs and self-control (see [Pearl & Mackenzie](http://bayes.cs.ucla.edu/WHY/) for explanation & more on the "listens to" metaphor). 
 
-In more specific terms, conditioning on employment opens multiple backdoor paths that are not blocked by the male or SES variables. For example:
+In more specific terms, tracing employment to delinquency reveals multiple forks (#1 and #2 below) and pipes (#3 and #4 below) that are not blocked by the male or SES variables. For example:
  
   1. Employment <- Self-control -> Delinquency 
   2. Employment <- Morality -> Delinquency
@@ -779,7 +779,7 @@ Of course, if we had not simulated the data ourselves or had a reliable DAG to c
 
 Scared yet? Face your fears, then be empowered to overcome them.
 
-Now, let's illustrate what happens if we remove the collider, employment, from our model.
+Now, let's illustrate what happens if we remove employment, the collider in our SES -> delinquency estimate, from our model.
 
 ```{r}
 
@@ -802,7 +802,7 @@ plot_glm2a + plot_glm2b
 
 Our estimate of the causal effect of SES on delinquency is now near-zero and negligible, with zero falling well within the 95% confidence interval. 
 
-What would happen if we continue to condition on the collider QualityEmploy in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let's re-estimate our two models using the simulated felony sample to see.
+What would happen if we continue to condition on employment in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let's re-estimate our two models using the simulated felony sample to see.
 
 ```{r}
 
@@ -841,9 +841,11 @@ plot_glm2d <- plot_model(glm2d, type = "pred", terms = "SES") +
 
 When conditioning on a collider (employment), SES is incorrectly estimated to have a positive effect on delinquency in the simulated general sample and a positive effect of even larger magnitude on the outcome scale in the restricted felony sample. 
 
-What about those nonfocal estimates? Let's plug our noses and check. First, employment has a sizeable negative coefficient in both the general and felony samples, despite a lack of causal connection or direct simulated correlation between them. A review of our DAG helps us understand why this is the case: we did not adjust for self-control and moral beliefs, two confounders of the employment/delinquency relationship. Specifically, of the four opened paths mentioned earlier, the last two (containing Prior felony) are blocked by conditioning on felony through sample selection. However, the first two paths remain open, letting the collider monster ruin our room.   
+What about those nonfocal estimates? Let's plug our noses and check. First, employment has a sizeable negative coefficient in both the general and felony samples, despite a lack of causal connection or direct simulated correlation between them. A review of our DAG helps us understand why this is the case: we did not adjust for self-control and moral beliefs, two confounders of the employment/delinquency relationship. As such, these backdoor paths remain open, resulting in a biased estimate. 
 
 Finally, a large, positive coefficient for male on delinquency is observed in the general sample, whereas a smaller positive coefficient is observed in the felony sample. This is likely because, due to our DAG and simulation, being male is causally related to self-control and moral beliefs. Thus, in the general sample, being male has a positive association due to its unblocked *indirect* effects on delinquency through these mediators. In contrast, in the felony sample, we are letting biasing information from these indirect effects into our estimate of the *total* Male -> delinquency effect by conditioning on a collider (e.g., felony). 
+
+Again, if you must interpret nonfocal estimates in your model, then we recommend specifying the nonfocal variable as the exposure and using your DAG (and a program like DAGitty) to trace the paths and identify the identify sufficient adjustment sets to determine whether the coefficient is might be biased in the model - which is likely, since you built the model to identify the causal effect of a different (i.e., the focal) variable.
 
 ![Destroy collider bias with the force. Or, you know, with a DAG and a sufficient adjustment set.](death_star.png)
 
@@ -865,6 +867,7 @@ Let's do that with our SES -> Delinquency example above.
 
 collideDAG_adjust <- adjustmentSets(collideDAG, "SES", "Delinquency", type = "all")
 collideDAG_adjust
+
 
 ```
 
