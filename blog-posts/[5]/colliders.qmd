@@ -1,10 +1,10 @@
 ---
-title: "Conditioning on colliders"
+title: "Have you checked for collider monsters in your modeling closet?"
 author: "Jon Brauer and Jake Day"
 date: "2023-06-02"
 image: DALL-E-monster_in_closet.png
 image-alt: "Collider: The monster in our modeling closet (by DALL-E)"
-description: "Conditioning on a collider is bad, and it happens more than you think."
+description: "Learn to fear colliders, the monster in our modeling closet. Then, learn to face those fears and overcome colliders with a DAG, the powerful weapon of a Jedi scientist."
 # citation: 
 #   url: https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html
 categories: [general, rstats, causality]
@@ -31,9 +31,17 @@ If you'd prefer a crime-relevant analogy, colliders also have been referred to a
 
 We think such fear-inspired collider analogies are apt as, once you understand them, it is hard not to fear, loathe, and respect them. In fact, after our initial reading of McElreath's book (and watching his [lectures](https://youtu.be/uanZZLlzKHw)), we came away pretty terrified that all our prior analyses were potentially misspecified. Yet, after that first encounter, we had not gotten a full glimpse of the villain - we lacked a full understanding and appreciation of how much they may be affecting the criminological literature (and our own previous work). 
 
+### Who should care about colliders? 
+
+Before going any deeper, we should note that colliders and collider bias are relevant to anyone using any type of regression model to estimate the causal effect of a variable on an outcome - or to determine whether one variable has an "influence" on another variable - irrespective of the functional form (e.g., linear; logistic; negative binomial), complexity, estimation method (e.g., OLS; ML; Bayes), or statistical program you use. Also, if you ever add covariates to your regression models to "adjust" for coefficient bias or "control" for alternative explanations - that is, if you use "control variables" in your regression models - then you really need to know about colliders and collider bias.
+
+Also, if you are relatively new to the topic of colliders, then we wrote this blog for you. That does not mean we think you will *understand* colliders by the end of our post. We have been reading and thinking about colliders for years now, and we still find ourselves trying to get a firm grip on them. Our hope is to introduce you to colliders and to help you develop a healthy fear of them. We also hope to convince you of the importance of reading more about colliders and related topics like DAGs, adjustment sets, and the backdoor criterion; we link to many excellent and free resources on these topics throughout this post. So, by the end of our post, if you feel fearful and confused, then rest assured you are not alone! You are taking the first of many steps on a challenging but worthwhile journey with us. Now, grab some popcorn and turn on the lights for our version of a sci-fi stats thriller mashup. 
+
+### Selection effects, causal force, and DAG-sabers
+  
 Perhaps without knowing it, you've likely encountered discussions of collider bias before in the [form of selection bias](https://thehardestscience.com/2014/08/04/the-selection-distortion-effect-how-selection-changes-correlations-in-surprising-ways/). It's probably safe to say that most social scientists get exposed to the problems with [selection effects](https://psycnet.apa.org/record/2004-11156-005) at some point in their graduate training. Indeed, it's been at the center of high profile debates [within criminology](https://link.springer.com/article/10.1007/s10940-007-9024-4) (e.g., [peer influence](https://www.annualreviews.org/doi/abs/10.1146/annurev-criminol-011518-024551); [turning points](https://www.annualreviews.org/doi/abs/10.1146/annurev-criminol-032317-091949); [sentencing](https://www.jstor.org/stable/23365655); [specialty courts](https://journals.sagepub.com/doi/abs/10.1177/0093854811424690?journalCode=cjbb); and [police use of force](https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/)). On some level, we often treat selection effects as a known limitation and perhaps even a minor nuisance. However, once you comprehend that selection effects often are caused by [restricting on levels of a collider or a causal descendant of a collider](https://pubmed.ncbi.nlm.nih.gov/35700187/) (and other times by selecting on an effect moderator) then, like us, you too might begin to develop a healthy fear of colliders. You might also find yourself on a quest to master the transparent use of structural causal models or [directed acyclic graphs](https://rpubs.com/NickCHK/DAGWorkshop2020) (DAGs). 
 
-Causal assumptions are the force from which our modeling power flows and that binds our scientific claims together. The transparent causal model or DAG is a powerful ally in the force that can shed light on hidden causal assumptions. They help us make essential design, modeling, and interpretive decisions with reason rather than intuition or emotion. In case we (okay, this part is all Jon - IYKYK) have not yet stretched this extended *Star Wars* metaphor past its breaking point already, then let's do it now. Fear (of colliders) is the path to the dark side. [Confronting fear is the destiny of a Jedi](https://starwarsthoughts.com/2019/10/27/luke-skywalker-confronting-fear-is-the-destiny-of-a-jedi/) (scientist). Your destiny. Below, we will face our fear of colliders and learn to overcome it with DAGs, a powerful weapon for the Jedi scientist.
+Causal assumptions are the force from which our modeling power flows and that binds our scientific claims together. The transparent causal model or DAG is a powerful ally in the force that can shed light on hidden causal assumptions. They help us make essential design, modeling, and interpretive decisions with reason rather than intuition or emotion. If we (okay, this part is all Jon - IYKYK) have not yet stretched this extended *Star Wars* metaphor past its breaking point already, then let's do it now. Fear (of colliders) is the path to the dark side. [Confronting fear is the destiny of a Jedi](https://starwarsthoughts.com/2019/10/27/luke-skywalker-confronting-fear-is-the-destiny-of-a-jedi/) (scientist). Your destiny. Below, we will face our fear of colliders and learn to overcome it with DAGs, a powerful weapon for the Jedi scientist.
 
 ![Learn to fear colliders, then learn how to confront them with DAGs.](notafraid.jpg)
 
@@ -99,9 +107,13 @@ hauntedDAG1p
 
 ```
 
+### Colliders are like trick shots
+
 While this common definition usefully describes some colliders, we do not think it sufficiently captures all types of colliders. Assuming you have specified an estimand and then summarized relevant causal relationships in a DAG of the theorized data generating process connecting *X* and *Y*, then a more general definition of a collider might be **any node in the DAG that you can trace along a path between *X* and *Y*, irrespective of directionality, where two or more arrows meet head-to-head**. Judea Pearl [similarly describes colliders](http://bayes.cs.ucla.edu/BOOK-2K/d-sep.html) as follows: 
 
 > "By a "path" we mean any consecutive sequence of edges, disregarding their directionalities. By "unblocked path" we mean a path that can be traced without traversing a pair of arrows that collide "head-to-head". In other words, arrows that meet head-to-head do not constitute a connection for the purpose of passing information, such a meeting will be called a "collider"."
+
+![Colliders are like trick shots where arrows meet head to head (in a DAG)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2ZhYjNlYzlmZjM1YjFmNmY3MzYxNGVmNTI4OGJjZTM1NmFhMzk0OCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/iyaBAsg1Hyn23RI9m3/giphy.gif)
 
 We have provided some example DAGs below in which the variable *Z* is a collider in a path between *X* and *Y*. As you will see, the collider *Z* is not always caused (directly or as a descendent) by the outcome *Y*.[^1] Likewise, in this blog post, we have attempted to deviate from the typical three-variable models (e.g., DAG Example 1, where *X* and *Y* cause collider *Z*) that we often encounter in collider explanations. Instead, we aimed to specify colliders and illustrate potential collider biases that might routinely occur from conditioning on a collider that is *not* necessarily an effect or a descendant of the outcome variable (*Y*).
 
@@ -768,12 +780,12 @@ Do not try this at home or, worse, in scientific papers. It is typically a bad i
 
 With that cautionary statement in place, we ill-advisedly point your attention to the negative coefficient for employment in the model above. We know this should not be there, since we did not specify a causal relationship between them in our DAG and, therefore, we did not simulate a causal relationship between them. In this case, the biased coefficient arises because both employment and delinquency "listen to" (in this case, are caused by) common mechanisms, namely moral beliefs and self-control (see [Pearl & Mackenzie](http://bayes.cs.ucla.edu/WHY/) for explanation & more on the "listens to" metaphor). 
 
-In more specific terms, tracing employment to delinquency reveals multiple forks (#1 and #2 below) and pipes (#3 and #4 below) that are not blocked by the male or SES variables. For example:
+In more specific terms, tracing employment to delinquency reveals confounding paths (forks) involving self-control and moral beliefs that are not blocked by the male or SES variables. For example:
  
   1. Employment <- Self-control -> Delinquency 
-  2. Employment <- Morality -> Delinquency
+  2. Employment <- Moral beliefs -> Delinquency
   3. Employment <- Prior felony <- Self-control -> Delinquency
-  4. Employment <- Prior felony <- Morality -> Delinquency 
+  4. Employment <- Prior felony <- Moral beliefs -> Delinquency 
   
 Of course, if we had not simulated the data ourselves or had a reliable DAG to communicate our causal assumptions - which is exactly the situation most researchers find themselves in - then we might simply assume that the SES and employment coefficients are accurate causal estimates and then proceed to tell a story about them in a paper for publication. 
 
@@ -841,11 +853,11 @@ plot_glm2d <- plot_model(glm2d, type = "pred", terms = "SES") +
 
 When conditioning on a collider (employment), SES is incorrectly estimated to have a positive effect on delinquency in the simulated general sample and a positive effect of even larger magnitude on the outcome scale in the restricted felony sample. 
 
-What about those nonfocal estimates? Let's plug our noses and check. First, employment has a sizeable negative coefficient in both the general and felony samples, despite a lack of causal connection or direct simulated correlation between them. A review of our DAG helps us understand why this is the case: we did not adjust for self-control and moral beliefs, two confounders of the employment/delinquency relationship. As such, these backdoor paths remain open, resulting in a biased estimate. 
+What about those nonfocal estimates? Let's plug our noses and check. First, employment has a sizeable negative coefficient in both the general and felony samples, despite a lack of causal connection or direct simulated correlation between them. A review of our DAG helps us understand why this is the case: again, we did not adjust for self-control and moral beliefs, two confounders of the employment/delinquency relationship. As such, these backdoor paths remain open, resulting in a biased estimate. 
 
-Finally, a large, positive coefficient for male on delinquency is observed in the general sample, whereas a smaller positive coefficient is observed in the felony sample. This is likely because, due to our DAG and simulation, being male is causally related to self-control and moral beliefs. Thus, in the general sample, being male has a positive association due to its unblocked *indirect* effects on delinquency through these mediators. In contrast, in the felony sample, we are letting biasing information from these indirect effects into our estimate of the *total* Male -> delinquency effect by conditioning on a collider (e.g., felony). 
+Finally, a large, positive coefficient for male on delinquency is observed in the general sample, whereas a smaller positive coefficient is observed in the felony sample. This is because, due to our DAG and simulation, being male is causally related to self-control and moral beliefs. Thus, in the general sample, being male has a positive association due to its unblocked *indirect* effects on delinquency through these mediators. In contrast, in the felony sample, we are letting biasing information from these indirect effects into our estimate of the *total* Male -> delinquency effect by conditioning on a collider (e.g., felony). 
 
-Again, if you must interpret nonfocal estimates in your model, then we recommend specifying the nonfocal variable as the exposure and using your DAG (and a program like DAGitty) to trace the paths and identify the identify sufficient adjustment sets to determine whether the coefficient is might be biased in the model - which is likely, since you built the model to identify the causal effect of a different (i.e., the focal) variable.
+Again, if you must interpret nonfocal estimates in your model, then we recommend specifying the nonfocal variable as the exposure and using your DAG (and a program like DAGitty) to trace the paths and identify sufficient adjustment sets to determine whether the coefficient might be biased in the model - which is likely, since you built the model to identify the causal effect of a different (i.e., the focal) variable.
 
 ![Destroy collider bias with the force. Or, you know, with a DAG and a sufficient adjustment set.](death_star.png)
 
@@ -873,9 +885,9 @@ collideDAG_adjust
 
 Above you see the various combinations of variables that you could include in your model to get an "unbiased" estimate of the total (non)effect of SES on delinquency based on the structural causal model described above. Note that there are a lot of valid adjustment sets in this case but none of these include just male and employment - the covariates in our model - as a sufficient adjustment set, which is why our earlier estimates were biased. 
 
-One of these sets does includes adjusting only for male without employment in the model. In fact, you might be surprised to see that, in the case of the SES -> Delinquency relationship, the minimal and arguably most sensible of the valid adjustment sets includes adjusting for nothing at all ("{}")! There is an important lesson here: **Depending on the DAG, it might be better to do quite literally nothing at all (i.e., include no control variables in a model) than to do the wrong thing (i.e., include bad controls).** 
+One of these sets does include adjusting only for male without employment in the model. In fact, you might be surprised to see that, in the case of the SES -> Delinquency relationship, the minimal and arguably most sensible of the valid adjustment sets includes adjusting for nothing at all ("{}")! There is an important lesson here: **Depending on the DAG, it might be better to do quite literally nothing at all (i.e., include no control variables in a model) than to do the wrong thing (i.e., include bad controls).** 
 
-![*Try not* to control. Use your DAG, then control you *do.* *or do not.* *There is no try*.](notry.png)
+![*Try not* to control. Use your DAG, then control you *do.* *Or do not.* *There is no try*.](notry.png)
 
 Interestingly, of the 26 identified adjustment sets for accurately estimating the total (null) effect of SES on delinquency, only six of them include the collider "QualityEmploy." So, given you include "QualityEmploy" in your model, you would also have to adjust for one of the following sets of variables to accurately estimate the null noncausal effect from your statistical model:
 
