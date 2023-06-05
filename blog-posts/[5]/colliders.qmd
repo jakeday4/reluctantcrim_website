@@ -31,13 +31,13 @@ If you'd prefer a crime-relevant analogy, colliders also have been referred to a
 
 We think such fear-inspired collider analogies are apt as, once you understand them, it is hard not to fear, loathe, and respect them. In fact, after our initial reading of McElreath's book (and watching his [lectures](https://youtu.be/uanZZLlzKHw)), we came away pretty terrified that all our prior analyses were potentially misspecified. Yet, after that first encounter, we had not gotten a full glimpse of the villain - we lacked a full understanding and appreciation of how much they may be affecting the criminological literature (and our own previous work). 
 
-### Who should care about colliders? 
+### Who should care about colliders? {#sec-who}
 
 Before going any deeper, we should note that colliders and collider bias are relevant to anyone using any type of regression model to estimate the causal effect of a variable on an outcome - or to determine whether one variable has an "influence" on another variable - irrespective of the functional form (e.g., linear; logistic; negative binomial), complexity, estimation method (e.g., OLS; ML; Bayes), or statistical program you use. Also, if you ever add covariates to your regression models to "adjust" for coefficient bias or "control" for alternative explanations - that is, if you use "control variables" in your regression models - then you really need to know about colliders and collider bias.
 
 Also, if you are relatively new to the topic of colliders, then we wrote this blog for you. That does not mean we think you will *understand* colliders by the end of our post. We have been reading and thinking about colliders for years now, and we still find ourselves trying to get a firm grip on them. Our hope is to introduce you to colliders and to help you develop a healthy fear of them. We also hope to convince you of the importance of reading more about colliders and related topics like DAGs, adjustment sets, and the backdoor criterion; we link to many excellent and free resources on these topics throughout this post. So, by the end of our post, if you feel fearful and confused, then rest assured you are not alone! You are taking the first of many steps on a challenging but worthwhile journey with us. Now, grab some popcorn and turn on the lights for our version of a sci-fi stats thriller mashup. 
 
-### Selection effects, causal force, and DAG-sabers
+### Selection effects, causal force, and DAG-sabers {#sec-dagsaber}
   
 Perhaps without knowing it, you've likely encountered discussions of collider bias before in the [form of selection bias](https://thehardestscience.com/2014/08/04/the-selection-distortion-effect-how-selection-changes-correlations-in-surprising-ways/). It's probably safe to say that most social scientists get exposed to the problems with [selection effects](https://psycnet.apa.org/record/2004-11156-005) at some point in their graduate training. Indeed, it's been at the center of high profile debates [within criminology](https://link.springer.com/article/10.1007/s10940-007-9024-4) (e.g., [peer influence](https://www.annualreviews.org/doi/abs/10.1146/annurev-criminol-011518-024551); [turning points](https://www.annualreviews.org/doi/abs/10.1146/annurev-criminol-032317-091949); [sentencing](https://www.jstor.org/stable/23365655); [specialty courts](https://journals.sagepub.com/doi/abs/10.1177/0093854811424690?journalCode=cjbb); and [police use of force](https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/)). On some level, we often treat selection effects as a known limitation and perhaps even a minor nuisance. However, once you comprehend that selection effects often are caused by [restricting on levels of a collider or a causal descendant of a collider](https://pubmed.ncbi.nlm.nih.gov/35700187/) (and other times by selecting on an effect moderator) then, like us, you too might begin to develop a healthy fear of colliders. You might also find yourself on a quest to master the transparent use of structural causal models or [directed acyclic graphs](https://rpubs.com/NickCHK/DAGWorkshop2020) (DAGs). 
 
@@ -107,7 +107,7 @@ hauntedDAG1p
 
 ```
 
-### Colliders are like trick shots
+### Colliders are like trick shots {#sec-trickshot}
 
 While this common definition usefully describes some colliders, we do not think it sufficiently captures all types of colliders. Assuming you have specified an estimand and then summarized relevant causal relationships in a DAG of the theorized data generating process connecting *X* and *Y*, then a more general definition of a collider might be **any node in the DAG that you can trace along a path between *X* and *Y*, irrespective of directionality, where two or more arrows meet head-to-head**. Judea Pearl [similarly describes colliders](http://bayes.cs.ucla.edu/BOOK-2K/d-sep.html) as follows: 
 
@@ -203,7 +203,7 @@ hauntedDAG4p <- hauntedDAG4 %>% ggplot(aes(x=x, y=y, xend=xend, yend=yend)) +
 
 ```
 
-## Why should we care about colliders? {#sec-whocares}
+## Why should we care about colliders? {#sec-whycare}
 
 So, how do colliders affect attempts to estimate the causal effect of *X* on *Y*? Well, when a causal system includes a collider in a path between *X* and *Y*, then *X* and *Y* are connected in such a way that, similar to mediators and confounders, we can expect the "passing" of empirical information (statistical dependence) between variables under certain conditions. Yet, paths between *X* and *Y* that contain confounders and mediators begin as unblocked and, therefore, causal estimates of the effect of *X* on *Y* will contain information from these types of third variables unless we stratify or condition on them to block their empirical information from passing between *X* and *Y*. In symmetric contrast, a path containing a collider begins as blocked, meaning that causal estimates of the effect of *X* on *Y* do not initially contain information about colliders. However, stratifying or conditioning on a collider unblocks this path, allowing information to flow through the collider and, therefore, biasing estimates of the causal effect of *X* on *Y*s. Likewise, in reference to colliders, Pearl states: 
 
