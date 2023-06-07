@@ -5,8 +5,8 @@ date: "2023-06-02"
 image: rancor.jpg
 image-alt: "Colliders: The rancor in your regression (by DALL-E)"
 description: "Learn to fear colliders, the rancor in your regression model. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist."
-# citation: 
-#   url: https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html
+# citation:
+#   url: https://reluctantcriminologists.com/blog-posts/[5]/colliders.html
 categories: [general, rstats, causality]
 # https://community.rstudio.com/t/quarto-how-to-cross-reference-unnumbered-book-chapter/136279/2
 format:
@@ -16,7 +16,7 @@ format:
 execute: 
   warning: false
   message: false
-draft: true
+draft: false
 ---
 
 ![Collider: The rancor in your regression](rancor.jpg)
@@ -776,7 +776,7 @@ Uh oh. We simulated data to have no (i.e., null or "0") effect of SES on delinqu
 
 Why? Well, to risk overextending another analogy, think of your focal estimand (SES -> delinquency) as your room and a collider (employment) as the rancor monster in your closet that, if left unattended, will destroy your room (bias your effect estimate). Adjusting for a collider risks opening the closet door - aka, "backdoor paths" in your model - and letting the monster out. So, you need to check your DAG to be sure that the closet door is closed (the collider paths are blocked) from the outset and, if the closet door is opened (by conditioning on a collider), then you need to identify an adjustment that will close the door (block the path) to stop the monster (biasing information) from escaping.
 
-To add another layer of complexity, a closer look at our [DAG4](https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-DAG4) will reveal that the SES -> Delinquency estimand is not the only potential relationship depicted for which adjusting for employment threatens to bias estimates due to conditioning on a collider. Below, we also briefly discuss nonfocal coefficients in our SES -> delinquency models (e.g., for male and employment) to help illustrate how conditioning on a collider can wreak havok on an entire model and other relevant alternative models by opening backdoor paths and letting out biasing information. However, before we do this, we want to issue a strong cautionary plea: 
+To add another layer of complexity, a closer look at our [DAG](https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-DAG4) will reveal that the SES -> Delinquency estimand is not the only potential relationship depicted for which adjusting for employment threatens to bias estimates due to conditioning on a collider. Below, we also briefly discuss nonfocal coefficients in our SES -> delinquency models (e.g., for male and employment) to help illustrate how conditioning on a collider can wreak havok on an entire model and other relevant alternative models by opening backdoor paths and letting out biasing information. However, before we do this, we want to issue a strong cautionary plea: 
 
 Do not try this at home or, worse, in scientific papers. It is typically a bad idea to interpret nonfocal coefficients as if they are effect estimates for alternative estimands like we are doing in this section. We plan to explain why in more detail in a later post about the [Table 2 fallacy](http://www.dagitty.net/learn/graphs/table2-fallacy.html). Here, we know that our DAG accurately reflects the causal processes that generated our simulated data, so we have a better understanding of what is happening in our models than one typically would in real world data analytic contexts. If you really feel it is necessary, then use your DAG and specify the nonfocal variable as the exposure to identify whether the variables in the model sufficiently adjust for potential bias (more on this soon).
 
