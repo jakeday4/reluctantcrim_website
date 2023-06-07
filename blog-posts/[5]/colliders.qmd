@@ -1,7 +1,7 @@
 ---
 title: "Are you afraid of colliders?"
 author: "Jon Brauer and Jake Day"
-date: "2023-06-02"
+date: "2023-06-06"
 image: rancor.jpg
 image-alt: "Colliders: The rancor in your regression (by DALL-E)"
 description: "Learn to fear colliders, the rancor in your regression model. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist."

@@ -10,7 +10,7 @@
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
 <generator>quarto-1.2.475</generator>
-<lastBuildDate>Fri, 02 Jun 2023 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 06 Jun 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Are you afraid of colliders?</title>
   <dc:creator>Jon Brauer and Jake Day</dc:creator>
@@ -5142,19 +5142,19 @@
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauerandjakeday2023,
   author = {Jon Brauer and Jake Day},
   title = {Are You Afraid of Colliders?},
-  date = {2023-06-02},
+  date = {2023-06-06},
   url = {https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday2023" class="csl-entry quarto-appendix-citeas">
 Jon Brauer and Jake Day. 2023. <span>“Are You Afraid of
-Colliders?”</span> June 2, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html">https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</a>.
+Colliders?”</span> June 6, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html">https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</a>.
 </div></div></section></div> ]]></description>
   <category>general</category>
   <category>rstats</category>
   <category>causality</category>
   <guid>https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</guid>
-  <pubDate>Fri, 02 Jun 2023 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 06 Jun 2023 04:00:00 GMT</pubDate>
   <media:content url="https://www.reluctantcriminologists.com/blog-posts/[5]/rancor.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
