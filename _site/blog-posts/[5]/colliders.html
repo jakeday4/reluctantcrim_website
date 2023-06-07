@@ -8,9 +8,9 @@
 
 <meta name="author" content="Jon Brauer and Jake Day">
 <meta name="dcterms.date" content="2023-06-02">
-<meta name="description" content="Learn to fear colliders, the monster in our modeling closet. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist.">
+<meta name="description" content="Learn to fear colliders, the rancor in your regression model. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist.">
 
-<title>reluctant criminologists - Have you checked for collider monsters in your modeling closet?</title>
+<title>reluctant criminologists - Are you afraid of colliders?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -215,7 +215,10 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   <li><a href="#sec-trickshot" id="toc-sec-trickshot" class="nav-link" data-scroll-target="#sec-trickshot">Colliders are like trick shots</a></li>
   </ul></li>
   <li><a href="#sec-whycare" id="toc-sec-whycare" class="nav-link" data-scroll-target="#sec-whycare">Why should we care about colliders?</a></li>
-  <li><a href="#sec-SATdag" id="toc-sec-SATdag" class="nav-link" data-scroll-target="#sec-SATdag">Causal model (DAG) for simulated data</a></li>
+  <li><a href="#sec-SATdag" id="toc-sec-SATdag" class="nav-link" data-scroll-target="#sec-SATdag">Causal model (DAG) for simulated data</a>
+  <ul class="collapse">
+  <li><a href="#sec-DAG4" id="toc-sec-DAG4" class="nav-link" data-scroll-target="#sec-DAG4">DAG of causal structure underlying simulated data</a></li>
+  </ul></li>
   <li><a href="#sec-simdata" id="toc-sec-simdata" class="nav-link" data-scroll-target="#sec-simdata">Simulating data for examples 1 &amp; 2</a></li>
   <li><a href="#sec-ex1" id="toc-sec-ex1" class="nav-link" data-scroll-target="#sec-ex1">Example 1: Estimating causal effect of self-control on delinquency</a>
   <ul class="collapse">
@@ -235,7 +238,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Have you checked for collider monsters in your modeling closet?</h1>
+<h1 class="title">Are you afraid of colliders?</h1>
   <div class="quarto-categories">
     <div class="quarto-category">general</div>
     <div class="quarto-category">rstats</div>
@@ -245,7 +248,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Learn to fear colliders, the monster in our modeling closet. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist.
+    Learn to fear colliders, the rancor in your regression model. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist.
   </div>
 </div>
 
@@ -274,8 +277,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="DALL-E-monster_in_closet.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Collider: The monster in our modeling closet (by DALL-E)</figcaption><p></p>
+<p><img src="rancor.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Collider: The rancor in your regression</figcaption><p></p>
 </figure>
 </div>
 <section id="sec-afraid" class="level2">
@@ -285,7 +288,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Her example beautifully, or frighteningly, illustrates how a collider can produce an erroneous inference about an indirect effect. You might be wondering to yourself: <em>what the heck is a collider</em>? Great question. To us, it is the scary monster in our statistical modeling closet that keeps us up at night; neither of us have ever really seen the monster, but we’ve read enough stories about it to be convinced that it is there. We’ll try tackling that one another time…</p>
 </blockquote>
 <p>If you’d prefer a crime-relevant analogy, colliders also have been referred to as the <a href="https://twitter.com/MaartenvSmeden/status/1504422704484696072?s=20">mass murderer of interpretable statistical analyses</a>. Rohrer has <a href="https://www.the100.ci/2017/03/14/that-one-weird-third-variable-problem-nobody-ever-mentions-conditioning-on-a-collider/">another excellent post</a> introducing these modeling monsters. However, the first time we can remember encountering a systematic discussion of colliders and the problems they pose for our statistical models was in our initial reading of Richard McElreath’s <a href="https://xcelab.net/rm/statistical-rethinking/"><em>Statistical Rethinking</em></a> book. In keeping with the theme here, McElreath discusses colliders in chapter six of the current edition, which he titled <em>The Haunted DAG and the Causal Terror</em>.</p>
-<p>We think such fear-inspired collider analogies are apt as, once you understand them, it is hard not to fear, loathe, and respect them. In fact, after our initial reading of McElreath’s book (and watching his <a href="https://youtu.be/uanZZLlzKHw">lectures</a>), we came away pretty terrified that all our prior analyses were potentially misspecified. Yet, after that first encounter, we had not gotten a full glimpse of the villain - we lacked a full understanding and appreciation of how much they may be affecting the criminological literature (and our own previous work).</p>
+<p>We think such fear-inspired collider analogies are apt as, once you understand them, it is hard not to fear, loathe, and respect them. In fact, after our initial reading of McElreath’s book (and watching his <a href="https://youtu.be/uanZZLlzKHw">lectures</a>), we came away pretty terrified that all our prior analyses were potentially misspecified. Yet, after that first encounter, we had not gotten a full glimpse of the villain - we lacked a full understanding and appreciation of how much they may be affecting the criminological literature (and our own previous work). Now that we have seen them, we think a collider is like a rancor - <a href="https://www.starwars.com/databank/rancor">the terrifying and destructive monster from the <em>Star Wars</em> universe</a> - that has been set loose to wreak havoc on your regression model.</p>
 <section id="sec-who" class="level3">
 <h3 class="anchored" data-anchor-id="sec-who">Who should care about colliders?</h3>
 <p>Before going any deeper, we should note that colliders and collider bias are relevant to anyone using any type of regression model to estimate the causal effect of a variable on an outcome - or to determine whether one variable has an “influence” on another variable - irrespective of the functional form (e.g., linear; logistic; negative binomial), complexity, estimation method (e.g., OLS; ML; Bayes), or statistical program you use. Also, if you ever add covariates to your regression models to “adjust” for coefficient bias or “control” for alternative explanations - that is, if you use “control variables” in your regression models - then you really need to know about colliders and collider bias.</p>
@@ -535,6 +538,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </figure>
 </div>
 <p>Yet, as we think is true in tests of most criminological theories, empirical tests of SAT often explicitly consider only a limited set of causal relationships within a data source generated by a much larger connection of complex interlinked causal processes. So, we will add a bit of plausible complexity to the DAG to illustrate how colliders might bias estimation of theorized causal effects.</p>
+<section id="sec-DAG4" class="level3">
+<h3 class="anchored" data-anchor-id="sec-DAG4">DAG of causal structure underlying simulated data</h3>
 <p>Below is our DAG of a simple causal structure describing a plausible (if simplified) data generating process used to simulate data for our first two examples. We highlighted the focal estimand of interest (effect of self-control on delinquency) for our first simulation example with a red arrow.</p>
 <div class="cell">
 <details>
@@ -661,6 +666,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p></p><figcaption class="figure-caption">Because, you know, addressing collider bias in messy real data is “just like the simulations.”</figcaption><p></p>
 </figure>
 </div>
+</section>
 </section>
 <section id="sec-simdata" class="level2">
 <h2 class="anchored" data-anchor-id="sec-simdata">Simulating data for examples 1 &amp; 2</h2>
@@ -2024,7 +2030,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </section>
 <section id="sec-ex2" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ex2">Example 2: Estimating noncausal effect of SES on delinquency</h2>
-<p>Let’s move onto our second example, where we illustrate how improperly “controlling for” (i.e., conditioning on) a collider can bias causal estimation using our simulated general population and felony sample data. Here, we are estimating the noncausal effect of SES on delinquency. Of course, since our DAG and simulations specified no such causal effect, we should expect a near-zero estimate for the coefficient.</p>
+<p>Let’s move onto our second example, where we illustrate how improperly “controlling for” (i.e., conditioning on) a collider can bias causal estimation using our simulated general population and felony sample data. Here, we are estimating the noncausal effect of SES on delinquency. Of course, since our <a href="https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-DAG4">DAG</a> and simulations specified no such causal effect, we should expect a near-zero estimate for the coefficient.</p>
 <p>Let’s start with a model that includes male and employment (i.e., QualityEmploy) as control variables Why? Well, because employment might be related to SES and to delinquency, and because everyone throws in demographic controls like sex, right? I know just said that this is <strong>not</strong> how one should select controls; however, in this example, we are trying to illustrate what might happen when people DO select controls in this way.</p>
 <div class="cell">
 <details>
@@ -2539,8 +2545,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <p>Uh oh. We simulated data to have no (i.e., null or “0”) effect of SES on delinquency, but our model estimated a positive effect of SES on delinquency in the population. By now, it should be clear that this is caused by inappropriately conditioning on the collider employment QualityEmploy.</p>
-<p>Why? Well, to risk overextending another analogy, think of your focal estimand (SES -&gt; delinquency) as your room and a collider (employment) as the monster in your closet that, if left unattended, will destroy your room (bias your effect estimate). Adjusting for a collider risks opening the closet door - aka, “backdoor paths” in your model - and letting the monster out. So, you need to check your DAG to be sure that the closet door is closed (the collider paths are blocked) from the outset and, if the closet door is opened (by conditioning on a collider), then you need to identify an adjustment that will close the door (block the path) to stop the monster (biasing information) from escaping.</p>
-<p>To add another layer of complexity, a closer look at our DAG will reveal that the SES -&gt; Delinquency estimand is not the only potential relationship depicted for which adjusting for employment threatens to bias estimates due to conditioning on a collider. Below, we also briefly discuss nonfocal coefficients in our SES -&gt; delinquency models (e.g., for male and employment) to help illustrate how conditioning on a collider can wreak havok on an entire model and other relevant alternative models by opening backdoor paths and letting out biasing information. However, before we do this, we want to issue a strong cautionary plea:</p>
+<p>Why? Well, to risk overextending another analogy, think of your focal estimand (SES -&gt; delinquency) as your room and a collider (employment) as the rancor monster in your closet that, if left unattended, will destroy your room (bias your effect estimate). Adjusting for a collider risks opening the closet door - aka, “backdoor paths” in your model - and letting the monster out. So, you need to check your DAG to be sure that the closet door is closed (the collider paths are blocked) from the outset and, if the closet door is opened (by conditioning on a collider), then you need to identify an adjustment that will close the door (block the path) to stop the monster (biasing information) from escaping.</p>
+<p>To add another layer of complexity, a closer look at our <a href="https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-DAG4">DAG4</a> will reveal that the SES -&gt; Delinquency estimand is not the only potential relationship depicted for which adjusting for employment threatens to bias estimates due to conditioning on a collider. Below, we also briefly discuss nonfocal coefficients in our SES -&gt; delinquency models (e.g., for male and employment) to help illustrate how conditioning on a collider can wreak havok on an entire model and other relevant alternative models by opening backdoor paths and letting out biasing information. However, before we do this, we want to issue a strong cautionary plea:</p>
 <p>Do not try this at home or, worse, in scientific papers. It is typically a bad idea to interpret nonfocal coefficients as if they are effect estimates for alternative estimands like we are doing in this section. We plan to explain why in more detail in a later post about the <a href="http://www.dagitty.net/learn/graphs/table2-fallacy.html">Table 2 fallacy</a>. Here, we know that our DAG accurately reflects the causal processes that generated our simulated data, so we have a better understanding of what is happening in our models than one typically would in real world data analytic contexts. If you really feel it is necessary, then use your DAG and specify the nonfocal variable as the exposure to identify whether the variables in the model sufficiently adjust for potential bias (more on this soon).</p>
 <p>With that cautionary statement in place, we ill-advisedly point your attention to the negative coefficient for employment in the model above. We know this should not be there, since we did not specify a causal relationship between them in our DAG and, therefore, we did not simulate a causal relationship between them. In this case, the biased coefficient arises because both employment and delinquency “listen to” (in this case, are caused by) common mechanisms, namely moral beliefs and self-control (see <a href="http://bayes.cs.ucla.edu/WHY/">Pearl &amp; Mackenzie</a> for explanation &amp; more on the “listens to” metaphor).</p>
 <p>In more specific terms, tracing employment to delinquency reveals confounding paths (forks) involving self-control and moral beliefs that are not blocked by the male or SES variables. For example:</p>
@@ -5391,15 +5397,14 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauerandjakeday2023,
   author = {Jon Brauer and Jake Day},
-  title = {Have You Checked for Collider Monsters in Your Modeling
-    Closet?},
+  title = {Are You Afraid of Colliders?},
   date = {2023-06-02},
   url = {https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jon Brauer and Jake Day. 2023. <span>“Have You Checked for Collider
-Monsters in Your Modeling Closet?”</span> June 2, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html">https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</a>.
+Jon Brauer and Jake Day. 2023. <span>“Are You Afraid of
+Colliders?”</span> June 2, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html">https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</a>.
 </div></div></section></div></main> <!-- /main -->
 
 <div>
