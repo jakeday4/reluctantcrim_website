@@ -6,7 +6,8 @@ image: RC_logo_white.jpg
 image-alt: "Reluctant criminologists logo"
 description: "You found our repository for sharing course material and ideas. Congrats! Or condolences. Anyway, in this first post, we discuss our motives and aims for this site."
 categories: [general]
-citation: true
+citation:
+  url: https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html
 ---
 
 ![Reluctant criminologists logo](RC_logo_white.jpg)

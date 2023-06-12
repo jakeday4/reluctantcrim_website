@@ -5,6 +5,7 @@ crossref:
   fig-title: Version
 image: hateclass_horst.png
 image-alt: Artwork by @allison_horst
+citation: false
 ---
 
 Materials for an introductory course on frequentist statistics using R Studio & R Markdown. Course versions designed for undergraduates, graduate students, and researchers with little to no prior experience with R.

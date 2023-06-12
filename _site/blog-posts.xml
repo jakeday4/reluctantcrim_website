@@ -5395,7 +5395,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
  8    -1      0    -1           4
  9     0      0    -2           2
 10     1      0    -1           4
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 <details>
 <summary>Show code</summary>
@@ -5671,12 +5671,12 @@ R = 0.5 R2 = 0.25   F = 112.47 on 3 and 996 DF   p-value:  3.83e-79
   author = {Jon Brauer},
   title = {Causation Without {Correlation?}},
   date = {2023-04-10},
-  url = {https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/causation-no-corr.html},
+  url = {https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2023" class="csl-entry quarto-appendix-citeas">
 Jon Brauer. 2023. <span>“Causation Without Correlation?”</span> April
-10, 2023. <a href="https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/causation-no-corr.html">https://www.reluctantcriminologists.com/course-materials/1_ugrad_stats/causation-no-corr.html</a>.
+10, 2023. <a href="https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html">https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</a>.
 </div></div></section></div> ]]></description>
   <category>general</category>
   <category>rstats</category>
@@ -5943,13 +5943,13 @@ Advocate for Theoretical Science in Criminology (Jon Brauer)
   author = {Jon Brauer, with Katya Botchkovar and Carter Hay},
   title = {Dr. {Charles} {R.} {Tittle’s} Intellectual Contributions},
   date = {2023-03-12},
-  url = {https://www.reluctantcriminologists.com/charles-memorial.html},
+  url = {https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer,withkatyabotchkovarandcarterhay2023" class="csl-entry quarto-appendix-citeas">
 Jon Brauer, with Katya Botchkovar and Carter Hay. 2023. <span>“Dr.
 Charles R. Tittle’s Intellectual Contributions.”</span> March 12, 2023.
-<a href="https://www.reluctantcriminologists.com/charles-memorial.html">https://www.reluctantcriminologists.com/charles-memorial.html</a>.
+<a href="https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html">https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html</a>.
 </div></div></section></div> ]]></description>
   <category>general</category>
   <guid>https://www.reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html</guid>
@@ -6093,12 +6093,12 @@ Sites.”</span> March 11, 2023. <a href="https://www.reluctantcriminologists.co
   author = {Jon Brauer and Jake Day},
   title = {Welcome to the Reluctant Criminologists},
   date = {2023-03-10},
-  url = {https://www.reluctantcriminologists.com/welcome-blog.html},
+  url = {https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauerandjakeday2023" class="csl-entry quarto-appendix-citeas">
 Jon Brauer and Jake Day. 2023. <span>“Welcome to the Reluctant
-Criminologists.”</span> March 10, 2023. <a href="https://www.reluctantcriminologists.com/welcome-blog.html">https://www.reluctantcriminologists.com/welcome-blog.html</a>.
+Criminologists.”</span> March 10, 2023. <a href="https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html">https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</a>.
 </div></div></section></div> ]]></description>
   <category>general</category>
   <guid>https://www.reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</guid>

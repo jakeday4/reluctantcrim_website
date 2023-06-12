@@ -5,6 +5,7 @@ crossref:
   fig-title: Version
 image: error_horst.png
 image-alt: Artwork by @allison_horst
+citation: false
 ---
 
 Materials for course dedicated to teaching students about *replication and reproducibility* issues in social science. Substantive readings in course also cover several core philosophies of science, with the aim of helping students understand logic of scientific inquiry and how/why replication and reproducibility are central to scientific knowledge construction. The first set of assignments in each course provide students a foundation for conducting minimally reproducible research using R Markdown. The second set of assignments guide students through the reproduction and/or conceptual replication of results from a published article. Course versions were designed for graduate and advanced undergraduate (senior seminar) students. 
