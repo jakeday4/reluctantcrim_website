@@ -230,3 +230,17 @@ BPW's chapter 12 explored describing the association between two continuous nume
 :::
 ::::
 
+:::: columns
+
+::: {.column width="35%"}
+![Representing causal mediating relationships with a DAG](ugrad-stats_Rassign/Images/SES_DAG.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Extra Credit: Causation without Correlation](ugrad-stats_Rassign/Extra_Credit_Causation_no_corr.html)
+In the last assignment, you learned how to describe associations between two continuous numeric variables using a scatterplot, Pearson’s correlation coefficient (*r*), and an ordinary least-squared (OLS) linear regression model. In this extra credit assignment, you have the opportunity to put your skills to the test. For this activity, you will read and reproduce all code from the [Causation without correlation](https://reluctantcriminologists.com/blog-posts/%5B4%5D/causation-no-corr) blog post. Then, you will be challenged to extend the blog example with new simulated data containing three mediating mechanisms and attempt to interpret the results. This assignment will push you beyond the boundaries of what you have learned. Do not let that frighten or discourage you. As extra credit, any attempt is a worthwhile success and, if you choose not to attempt it, then you only fail yourself!
+:::
+::::
