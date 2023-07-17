@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -152,46 +123,48 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     <span class="navbar-title">reluctant criminologists</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts.html">
+    <a class="nav-link" href="../../blog-posts.html" rel="" target="">
  <span class="menu-text">blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../course-materials.html">
+    <a class="nav-link" href="../../course-materials.html" rel="" target="">
  <span class="menu-text">course materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html">
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html" rel="" target="">
  <span class="menu-text">links we love</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"><i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com" rel="" target=""><i class="bi bi-envelope-fill" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/reluctantcrim"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -230,6 +203,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     <div class="quarto-category">general</div>
     <div class="quarto-category">rstats</div>
     <div class="quarto-category">causality</div>
+    <div class="quarto-category">mediation</div>
   </div>
   </div>
 
@@ -265,7 +239,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="empty-egg-dag3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Empty Easter egg, or countervailing causation?</figcaption><p></p>
+<figcaption class="figure-caption">Empty Easter egg, or countervailing causation?</figcaption>
 </figure>
 </div>
 <section id="sec-ladder" class="level2">
@@ -280,7 +254,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E_pop_art_style_portrait_painting_of_someone_very_confused3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Pop art portrait of someone very confused, by DALL-E</figcaption><p></p>
+<figcaption class="figure-caption">Pop art portrait of someone very confused, by DALL-E</figcaption>
 </figure>
 </div>
 <p>To say students are surprised by this claim is an understatement - many seem confused or downright skeptical when I state it. After all, didn’t we just discuss how a basic criteria for establishing that X causes Y is <em>observing a correlation</em> between X and Y? Anticipating this confusion, I provide an example involving multiple mediation.</p>
@@ -299,7 +273,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E_person_climbing_mountain_to_seek_wisdom_from_computer_cartoon3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Cartoon person seeking wisdom from a computer oracle, by DALL-E</figcaption><p></p>
+<figcaption class="figure-caption">Cartoon person seeking wisdom from a computer oracle, by DALL-E</figcaption>
 </figure>
 </div>
 <p>Before transforming my simulation example for students into a blog entry, I sought the wisdom of the artificial intelligence oracle <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, thinking it might lead me to existing examples that I was missing. I realize that, at present, ChatGPT is not particularly <a href="https://medium.com/@vanillaxiangshuyang/let-us-talk-about-chatgpt-b4be68dd0da">well-suited for causal reasoning</a>, as <a href="https://twitter.com/yudapearl/status/1642780699953627137?s=20">Pearl himself has documented</a> and the AI oracle itself <a href="https://twitter.com/yudapearl/status/1641386266595033088?s=20">has humbly admitted</a>, though it also notes some ability to <a href="https://twitter.com/DrJimFan/status/1641111697971884034?s=20">extract, mimic, or make guesses from data containing information about causal relations</a>. Nonetheless, I asked the oracle: “Is it possible to have causation without correlation?”</p>
@@ -706,7 +680,7 @@ Strain      0.3951323 0.03593409 10.996029</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="datacantspeak2.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Data cannot speak meme</figcaption><p></p>
+<figcaption class="figure-caption">Data cannot speak meme</figcaption>
 </figure>
 </div>
 </section>
@@ -764,38 +738,40 @@ R = 0.5 R2 = 0.25   F = 112.47 on 3 and 996 DF   p-value:  3.83e-79
 <li id="fn4"><p>This is a very <a href="https://r-workshop.mindsci.net/mediation">basic mediation function</a> that applies the Sobel product of <em>ab</em> coefficients approach mentioned earlier. Remember, do as I say and not as I do! As noted above, I would not recommend this approach for most applications to observational data. However, in this case, the data were simulated from random distributions and a simple causal mediation structure without confounding or exposure-mediator interactions, so we know the <a href="https://www.annualreviews.org/doi/10.1146/annurev-publhealth-032315-021402#_i12">strong causal mediation assumptions</a> hold. As such, this simple approach is sufficient for our purposes. That is, assuming you did us a solid by ignoring our Poisson-distributed outcome variable - and all the paint on our shoes.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Using the population parameters we specified to generate our simulated sample, the population <em>ab</em> indirect effect magnitudes equal (-0.5 * 0.5) = -0.25 and (-0.5 * -0.5) = 0.25, respectively.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
-  author = {Jon Brauer},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
+  author = {Brauer, Jon},
   title = {Causation Without {Correlation?}},
   date = {2023-04-10},
   url = {https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jon Brauer. 2023. <span>“Causation Without Correlation?”</span> April
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brauer, Jon. 2023. <span>“Causation Without Correlation?”</span> April
 10, 2023. <a href="https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html">https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</a>.
 </div></div></section></div></main> <!-- /main -->
-
 <div>
 <hr>
 
 <p> questions? feedback? want to connect? </p>
 
-<table width="100%" cellspacing="0" cellpadding="0">
-  <tbody><tr>
-      <td>
-          <table cellspacing="0" cellpadding="0">
-              <tbody><tr>
-                  <td style="border-radius: 2px;" bgcolor="#93c54b">
-                      <a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;">
-                          send us an email             
-                      </a>
-                  </td>
-              </tr>
-          </tbody></table>
-      </td>
-  </tr>
-</tbody></table>
+
+<table data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0" class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0" class="table">
+<tbody>
+<tr class="odd">
+<td style="border-radius: 2px" data-bgcolor="#93c54b"><a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;">send us an email</a></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+
 
 <hr>
 </div>
@@ -826,9 +802,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -893,6 +883,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -947,6 +1023,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

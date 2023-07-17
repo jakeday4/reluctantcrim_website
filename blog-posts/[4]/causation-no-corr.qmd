@@ -7,7 +7,7 @@ image-alt: "Empty Easter egg, or countervailing causation?"
 description: "You've heard the phrase 'correlation does not imply causation.' But does causation imply correlation?"
 citation:
   url: https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html
-categories: [general, rstats, causality]
+categories: [general, rstats, causality, mediation]
 # https://community.rstudio.com/t/quarto-how-to-cross-reference-unnumbered-book-chapter/136279/2
 format:
   html:

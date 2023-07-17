@@ -1,0 +1,30 @@
+---
+title: "Moderator Madness, Part 2"
+author: "Jon Brauer"
+date: "2023-07-19"
+image: med-or-mod-cartoon2.jpg
+image-alt: "Two lemmings confused by exposure-mediator interactions (with help from DALL-E)"
+description: "Is your mechanism both mediating and moderating? Disentangle indirect and interaction effects with potential outcomes decomposition."
+citation:
+  url: https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html
+categories: [general, rstats, causality, moderation, mediation]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+execute: 
+  warning: false
+draft: true
+---
+
+![Two lemmings confused by exposure-mediator interactions (with help from DALL-E)](med-or-mod-cartoon2.jpg)
+
+You have reached the future page for the second of a two-part blog series on issues related to modeling moderating relationships or testing interaction effects with criminological data. 
+
+In [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html), I covered issues related to estimating and interpreting interaction effects with binary or skewed count outcome variables. In Part 2, I plan to introduce the need and a method for disentangling indirect and interaction effects in the presence of a potential exposure-mediator interaction. 
+
+![Are you looking for Part 2? I hope you are not holding your breath while you wait.](still-waiting.jpg)
+
+This page is a stub. I hope to complete Part 2 soon so all one of you can read it. At least you got both a mom joke and self-deprecating humor while you wait. Hi Mom!
+
+![It's not really loading. I'm still working on it.](Loading_icon.gif)
