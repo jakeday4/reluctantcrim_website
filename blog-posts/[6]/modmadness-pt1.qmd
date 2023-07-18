@@ -438,7 +438,9 @@ A comparison of the effects plotted in the predicted event rate metric suggests 
 
 You might be thinking that we can solve this interaction artifact problem by simply specifying a Poisson distribution rather than a linear model. After all, the nonlinear Poisson model is a better match to the underlying data generating process and, as desired, that model does not show an interaction in the outcome scale. That is certainly important since, as I noted earlier, applying a linear model to skewed outcome data indeed can generate interaction artifacts. Unfortunately, things are not so simple. When we use nonlinear link functions, *all* our model coefficients are conditional, and our model-based predictions are inherently scale-dependent. 
 
-What does this mean? Well, imagine I were to adjust for another covariate in  model - say, a normally distributed control variable ranging from min=0 to max=10 with a mean=5. The focal coefficients and predicted event rate plots may vary substantially depending upon whether I add the raw covariate (i.e., 0 to 10 scale) or a version centered at its mean instead (i.e., -5 to 5 scale). Again, this scale-dependence is due to the nonlinear transformation in generalized linear models; traditional linear regression coefficients do not share this conditional property because the outcome scale is constant. Much has been written about this topic; [check out this post](https://stats.oarc.ucla.edu/stata/seminars/deciphering-interactions-in-logistic-regression/) for a brief primer and accessible examples using logistic regression. I particularly appreciate their "Quote of the day":
+What does this mean? Well, imagine I were to adjust for another covariate in  model - say, a normally distributed control variable with a mean = 0. The focal coefficients and predicted event rate plots may change substantially after adjusting for this new covariate - even if the covariate is only correlated with the outcome and uncorrelated with either of the focal predictors! (I will illustrate this later in Example 1c.) Again, this scale-dependence is due to the nonlinear transformation in generalized linear models; traditional linear regression coefficients do not share this conditional property because the outcome scale is constant. 
+
+Much has been written about this topic; I recommend [this post](https://stats.oarc.ucla.edu/stata/seminars/deciphering-interactions-in-logistic-regression/) for a brief primer and accessible examples using logistic regression. I particularly appreciate their "Quote of the day":
 
 > Departures from additivity imply the presence of interaction types, but additivity does not imply the absence of interaction types. (Greenland & Rothman, 1998)
 
@@ -529,7 +531,8 @@ Ex1tab2b
 ##### Prediction Plots
 
 ```{r}
-plot_lm1b + plot_glm1b + plot_layout(guides = 'collect') &
+(plot_lm1b + plot_lm1) / (plot_glm1b + plot_glm1) + 
+  plot_layout(guides = 'collect') &
   theme(legend.position = 'bottom',
         legend.direction = 'horizontal')
 ```

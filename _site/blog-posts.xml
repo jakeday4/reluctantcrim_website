@@ -2726,7 +2726,8 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <section id="in-nonlinear-models-its-interactions-all-the-way-down" class="level3">
 <h3 class="anchored" data-anchor-id="in-nonlinear-models-its-interactions-all-the-way-down">In nonlinear models, it’s interactions all the way down</h3>
 <p>You might be thinking that we can solve this interaction artifact problem by simply specifying a Poisson distribution rather than a linear model. After all, the nonlinear Poisson model is a better match to the underlying data generating process and, as desired, that model does not show an interaction in the outcome scale. That is certainly important since, as I noted earlier, applying a linear model to skewed outcome data indeed can generate interaction artifacts. Unfortunately, things are not so simple. When we use nonlinear link functions, <em>all</em> our model coefficients are conditional, and our model-based predictions are inherently scale-dependent.</p>
-<p>What does this mean? Well, imagine I were to adjust for another covariate in model - say, a normally distributed control variable ranging from min=0 to max=10 with a mean=5. The focal coefficients and predicted event rate plots may vary substantially depending upon whether I add the raw covariate (i.e., 0 to 10 scale) or a version centered at its mean instead (i.e., -5 to 5 scale). Again, this scale-dependence is due to the nonlinear transformation in generalized linear models; traditional linear regression coefficients do not share this conditional property because the outcome scale is constant. Much has been written about this topic; <a href="https://stats.oarc.ucla.edu/stata/seminars/deciphering-interactions-in-logistic-regression/">check out this post</a> for a brief primer and accessible examples using logistic regression. I particularly appreciate their “Quote of the day”:</p>
+<p>What does this mean? Well, imagine I were to adjust for another covariate in model - say, a normally distributed control variable with a mean = 0. The focal coefficients and predicted event rate plots may change substantially after adjusting for this new covariate - even if the covariate is only correlated with the outcome and uncorrelated with either of the focal predictors! (I will illustrate this later in Example 1c.) Again, this scale-dependence is due to the nonlinear transformation in generalized linear models; traditional linear regression coefficients do not share this conditional property because the outcome scale is constant.</p>
+<p>Much has been written about this topic; I recommend <a href="https://stats.oarc.ucla.edu/stata/seminars/deciphering-interactions-in-logistic-regression/">this post</a> for a brief primer and accessible examples using logistic regression. I particularly appreciate their “Quote of the day”:</p>
 <blockquote class="blockquote">
 <p>Departures from additivity imply the presence of interaction types, but additivity does not imply the absence of interaction types. (Greenland &amp; Rothman, 1998)</p>
 </blockquote>
@@ -4194,11 +4195,16 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <div class="cell">
 <details>
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">plot_lm1b <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">(plot_lm1b <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">+</span> plot_glm1b <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">+</span> plot_lm1) <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+font-style: inherit;">/</span> (plot_glm1b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> plot_glm1) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb11-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">plot_layout</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -4207,14 +4213,14 @@ background-color: null;
 font-style: inherit;">'collect'</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&amp;</span></span>
-<span id="cb11-2">  <span class="fu" style="color: #4758AB;
+<span id="cb11-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'bottom'</span>,</span>
-<span id="cb11-3">        <span class="at" style="color: #657422;
+<span id="cb11-4">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">legend.direction =</span> <span class="st" style="color: #20794D;
 background-color: null;
