@@ -601,23 +601,13 @@ plot_glm1c <- plot_model(glm1c, type = "pred",
 
 ##### Model coefficients
 
-:::: columns
-
-::: {.column width=48%"}
 ```{r}
-Ex1tab2c
-```
-:::
+#| layout-ncol: 2
 
-::: {.column width="4%"}
-:::
+Ex1tab2c 
 
-::: {.column width="48%"}
-```{r}
 Ex1tab2
 ```
-:::
-::::
 
 ##### Prediction Plots
 
