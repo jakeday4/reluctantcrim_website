@@ -14,7 +14,7 @@ format:
     code-summary: "Show code"
 execute: 
   warning: false
-draft: true
+draft: false
 ---
 
 ![Two lemmings confused by nonlinear interactions (with help from DALL-E)](interact-cartoon2.jpg)
@@ -374,17 +374,19 @@ regsum <- function(mymod) {
 
 Ex1tab1 <- regsum(lm1) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Simulation 1")
+  gt::tab_header(title = "Linear model, Simulation 1") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 Ex1tab2 <- regsum(glm1) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear Poisson model, Simulation 1")
+  gt::tab_header(title = "Nonlinear Poisson model, Simulation 1") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 ```
 
 #### Results (Simulation 1) 
 
-***Note: Click on the tabs to switch between models.*** 
+*Note: Click on the tabs to switch between models.*
 
 :::: {.panel-tabset}
 ##### Linear model
@@ -400,7 +402,7 @@ Ex1tab2
 ```
 ::::
 
-Note there is a statistically significant multiplicative interaction term in the linear model (*b*=0.14, *p*<.001). Though the interaction term is not significant in the nonlinear Poisson model, remember that we cannot interpret these *beta* coefficients the same way as we do linear regression coefficients. As noted earlier, models with nonlinear link functions are fundamentally conditional and potentially interactive on different scales of interest; relying on the significance and sign or direction of coefficients alone can lead to serious misinterpretation of results from regression models with nonlinear link functions. Instead, I prefer to rely on plots of predicted delinquency event rates to interpret model results, which lend themselves to more natural interpretations in the original outcome metric. 
+Note there is a statistically significant multiplicative interaction term in the linear model (*b* = 0.14, *p* < 0.001). Though the interaction term is not significant in the nonlinear Poisson model, remember that we cannot interpret these *beta* coefficients the same way as we do linear regression coefficients. As noted earlier, models with nonlinear link functions are fundamentally conditional and potentially interactive on different scales of interest; relying on the significance and sign or direction of coefficients alone can lead to serious misinterpretation of results from regression models with nonlinear link functions. Instead, I prefer to rely on plots of predicted delinquency event rates to interpret model results, which lend themselves to more natural interpretations in the original outcome metric. 
 
 ```{r}
 #|message=FALSE
@@ -446,7 +448,7 @@ I will try to further strengthen this intuition by slightly modifying the first 
 
 ### Example 1b: Slight modification to simulated data 
 
-In the code below, I made only one slight modification to the data simulation in Example 1: I specified a stronger linear effect of *moral beliefs* on *delinquency* by increasing *b*=0.4 to *b*=0.6. I did not add a multiplicative interaction term, nor did I explicitly change the functional form or nature of the relationships in our simulation. Rather, I simply increased the strength of the linear correlation between the mediator and the outcome. Let's see what happens. 
+In the code below, I made only one slight modification to the data simulation in Example 1: I specified a stronger linear effect of *moral beliefs* on *delinquency* by increasing from *b* = 0.4 to *b* = 0.6. I did not add a multiplicative interaction term, nor did I explicitly change the functional form or nature of the relationships in our simulation. Rather, I simply increased the strength of the linear correlation between the mediator and the outcome. Let's see what happens. 
 
 ```{r}
 #|message=FALSE
@@ -483,11 +485,13 @@ glm1b <- glm(Delinquency ~ ParentSupport * StrgMoralBlfs, data=simdat1b, family=
 
 Ex1tab1b <- regsum(lm1b) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Sim.1b")
+  gt::tab_header(title = "Linear model, Sim.1b") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 Ex1tab2b <- regsum(glm1b) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear model, Sim.1b")
+  gt::tab_header(title = "Nonlinear model, Sim.1b") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 # Plot interaction
 
@@ -573,7 +577,8 @@ glm1c <- glm(Delinquency ~ ExogenousCovariate + ParentSupport * StrgMoralBlfs, d
 
 Ex1tab2c <- regsum(glm1c) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear model, Sim.1c")
+  gt::tab_header(title = "Nonlinear model, Sim.1c") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 # Plot interaction
 plot_glm1c <- plot_model(glm1c, type = "pred",
@@ -790,7 +795,7 @@ Now, we should be ready to move on to Example 2, where I will introduce an expos
 
 ## Example 2: Multiplicative interaction on linear estimation scale
 
-In simulating data for Example 2 (Simulation 2), I modified the first simulated dataset (Sim.1) by adding a small multiplicative interaction term to the linear equation predicting delinquency (*b*=-0.12xParentSupportxWeakMoralBlfs). Then, After making this small change and simulating the data, I once again tabled results from linear and nonlinear Poisson regression models, plotted the predicted delinquency event rates for both models, and overlayed the data generating function (dashed lines) to help visualize model fit.
+In simulating data for Example 2 (Simulation 2), I modified the first simulated dataset (Sim.1) by adding a small multiplicative interaction term to the linear equation predicting delinquency (*b* = -0.12 x ParentSupport x WeakMoralBlfs). Then, after making this small change and simulating the data, I once again tabled results from linear and nonlinear Poisson regression models, plotted the predicted delinquency event rates for both models, and overlayed the idealized data generating function (dashed lines) to help visualize model fit.
 
 ```{r}
 #|message=FALSE 
@@ -840,11 +845,13 @@ glm2 <- glm(Delinquency ~ ParentSupport * StrgMoralBlfs, data=simdat2, family="p
 
 Ex2tab1 <- regsum(lm2) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Sim.2")
+  gt::tab_header(title = "Linear model, Sim.2") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 Ex2tab2 <- regsum(glm2) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear model, Sim.2")
+  gt::tab_header(title = "Nonlinear model, Sim.2") %>% 
+  gt::cols_label(estimate = md("**Coef.**"))
 
 #Plot interactions 
 
@@ -942,13 +949,13 @@ plot_lm2fit + plot_glm2fit + plot_layout(guides = 'collect') &
 ```
 ::::
 
-As before, there is a statistically significant interaction coefficient in the linear regression model. In comparison, the interaction coefficient is essentially zero (*b*=0.00) in the nonlinear model. Some might mistakenly consider this a win for the linear model, as we specified an interaction on the linear estimation scale when simulating the data. Yet, by now, you know better than to rely on the sign and magnitude of that coefficient to make inferences about interactions in nonlinear models.
+As before, there is a statistically significant interaction coefficient in the linear regression model. In comparison, the interaction coefficient is essentially zero (*b* = 0.00) in the nonlinear model. Some might mistakenly consider this a win for the linear model, as we specified an interaction on the linear estimation scale when simulating the data. Yet, by now, you know better than to rely on the sign and magnitude of that coefficient to make inferences about interactions in nonlinear models.
 
 In the linear model, the significant interaction term implies that freeing the regression parameter estimates to permit non-parallel slopes improves the model's linear predictive fit to the nonlinear data. The linear regression model does its best to reflect the conditional mean structure of the nonlinear relationship, but there is no mechanism to ensure the linear predictions are a *good* fit to the data. In Example 2, a quick visual comparison of the solid prediction lines to the dashed lines reveals that the linear model's fit to the idealized data-generating function is quite poor. In fact, this model would lead to  understating the effect of moral beliefs at low levels of parental support (solid black prediction line). Even worse, the linear model's results might lead to the problematic inference that moral beliefs has a *positive* effect on delinquency at high levels of parental support (solid orange prediction line) - rather than the correct and opposite inference of a negligible to weak negative effect. 
 
 In contrast, the fit of the nonlinear model is quite good yet again, as expected. Additionally, the non-parallel prediction lines imply the existence of a small interaction between parental support and moral beliefs on the predicted delinquency event rate scale. 
 
-The plots below are intended to help you visualize how the inclusion of this small interaction term on the linear estimation scale when simulating the data affected predicted delinquency event rates on the outcome's natural interpretation scale. In those plots, I removed the idealized function (dashed line) and instead added predicted delinquency event rates from models in Example 1 instead. Recall, the only difference between the simulated datasets in Examples 1 and 2 is the omission (in Sim.1) or inclusion (in Sim.2) of a small interaction term (*b*=-0.12). So, differences between the predicted delinquency event rates across Sim.2 (solid lines) and Sim.1 (dotted lines) are due to the interaction. 
+The plots below are intended to help you visualize how the inclusion of this small interaction term on the linear estimation scale when simulating the data affected predicted delinquency event rates on the outcome's natural interpretation scale. In those plots, I removed the idealized function (dashed line) and instead added predicted delinquency event rates from models in Example 1 instead. Recall, the only difference between the simulated datasets in Examples 1 and 2 is the omission (in Sim.1) or inclusion (in Sim.2) of a small interaction term (*b* = -0.12). So, differences between the predicted delinquency event rates across Sim.2 (solid lines) and Sim.1 (dotted lines) are due to the interaction. 
 
 ```{r}
 #|message=FALSE 
@@ -1011,7 +1018,7 @@ plot_lm2xlm1 + plot_glm2xglm1 + plot_layout(guides = 'collect') &
         legend.direction = 'horizontal')
 ```
 
-See how the addition of a small interaction on the linear estimation scale changed the slopes of the predicted delinquency event rates? Note, too, that this occurs even in the nonlinear model, despite the fact that the interaction coefficient was essentially zero magnitude (*b*=0.00)! 
+See how the addition of a small interaction on the linear estimation scale changed the slopes of the predicted delinquency event rates? Note, too, that this occurs even in the nonlinear model, despite the fact that the interaction coefficient was essentially zero magnitude (*b* = 0.00)! 
 
 In addition to examining changes in predicted delinquency event rates, we could discuss this interaction in terms of introducing "excess risks" of delinquency. But, how might we interpret the interaction and precisely estimate those excess risks in light of the co-occuring mediation process that we also know exists in these data? This will be the focus of [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) of this series. 
 
