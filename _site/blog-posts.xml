@@ -1382,45 +1382,46 @@ font-style: inherit;">tbl_regression</span>(mymod, <span class="at" style="color
 background-color: null;
 font-style: inherit;">intercept=</span><span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">TRUE</span>, <span class="at" style="color: #657422;
+font-style: inherit;">TRUE</span>, </span>
+<span id="cb4-24">                 <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">pvalue_fun =</span> roundp) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb4-24">  <span class="fu" style="color: #4758AB;
+<span id="cb4-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">add_significance_stars</span>(</span>
-<span id="cb4-25">        <span class="at" style="color: #657422;
+<span id="cb4-26">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">hide_se =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>,</span>
-<span id="cb4-26">        <span class="at" style="color: #657422;
+<span id="cb4-27">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">hide_ci =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>,</span>
-<span id="cb4-27">        <span class="at" style="color: #657422;
+<span id="cb4-28">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">hide_p =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span></span>
-<span id="cb4-28">      )</span>
-<span id="cb4-29">}</span>
-<span id="cb4-30"></span>
-<span id="cb4-31">Ex1tab1 <span class="ot" style="color: #003B4F;
+<span id="cb4-29">      )</span>
+<span id="cb4-30">}</span>
+<span id="cb4-31"></span>
+<span id="cb4-32">Ex1tab1 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">regsum</span>(lm1) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb4-32">  <span class="fu" style="color: #4758AB;
+<span id="cb4-33">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">as_gt</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb4-33">  gt<span class="sc" style="color: #5E5E5E;
+<span id="cb4-34">  gt<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1428,20 +1429,7 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Linear model, Simulation 1"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb4-34">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span>
+font-style: inherit;">"Linear model, Simulation 1"</span>) </span>
 <span id="cb4-35"></span>
 <span id="cb4-36">Ex1tab2 <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1463,20 +1451,7 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb4-39">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span></code></pre></div>
+font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></code></pre></div>
 </details>
 </div>
 <section id="results-simulation-1" class="level4">
@@ -1941,7 +1916,7 @@ font-style: inherit;">"**Coef.**"</span>))</span></code></pre></div>
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -2439,7 +2414,7 @@ font-style: inherit;">"**Coef.**"</span>))</span></code></pre></div>
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -2977,34 +2952,21 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Linear model, Sim.1b"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb8-36">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span>
-<span id="cb8-37"></span>
-<span id="cb8-38">Ex1tab2b <span class="ot" style="color: #003B4F;
+font-style: inherit;">"Linear model, Sim.1b"</span>) </span>
+<span id="cb8-36"></span>
+<span id="cb8-37">Ex1tab2b <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">regsum</span>(glm1b) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb8-39">  <span class="fu" style="color: #4758AB;
+<span id="cb8-38">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">as_gt</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb8-40">  gt<span class="sc" style="color: #5E5E5E;
+<span id="cb8-39">  gt<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3012,26 +2974,13 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Nonlinear model, Sim.1b"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb8-41">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span>
-<span id="cb8-42"></span>
-<span id="cb8-43"><span class="co" style="color: #5E5E5E;
+font-style: inherit;">"Nonlinear model, Sim.1b"</span>) </span>
+<span id="cb8-40"></span>
+<span id="cb8-41"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Plot interaction</span></span>
-<span id="cb8-44"></span>
-<span id="cb8-45">plot_lm1b <span class="ot" style="color: #003B4F;
+<span id="cb8-42"></span>
+<span id="cb8-43">plot_lm1b <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3040,7 +2989,7 @@ background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"pred"</span>,  </span>
-<span id="cb8-46">                       <span class="at" style="color: #657422;
+<span id="cb8-44">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">terms =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3051,7 +3000,7 @@ background-color: null;
 font-style: inherit;">"ParentSupport [-2,2]"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb8-47">  <span class="fu" style="color: #4758AB;
+<span id="cb8-45">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -3088,7 +3037,7 @@ background-color: null;
 font-style: inherit;">"High"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb8-48">  <span class="fu" style="color: #4758AB;
+<span id="cb8-46">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -3107,8 +3056,8 @@ background-color: null;
 font-style: inherit;">title=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Linear model, Sim.1b"</span>)  </span>
-<span id="cb8-49"></span>
-<span id="cb8-50">plot_glm1b <span class="ot" style="color: #003B4F;
+<span id="cb8-47"></span>
+<span id="cb8-48">plot_glm1b <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3117,19 +3066,19 @@ background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"pred"</span>,</span>
-<span id="cb8-51">                        <span class="at" style="color: #657422;
+<span id="cb8-49">                        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">terms =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"StrgMoralBlfs"</span>, </span>
-<span id="cb8-52">                                 <span class="st" style="color: #20794D;
+<span id="cb8-50">                                 <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"ParentSupport [-2,2]"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb8-53">  <span class="fu" style="color: #4758AB;
+<span id="cb8-51">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -3154,7 +3103,7 @@ background-color: null;
 font-style: inherit;">7</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb8-54">  <span class="fu" style="color: #4758AB;
+<span id="cb8-52">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_colour_colorblind</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -3167,12 +3116,12 @@ background-color: null;
 font-style: inherit;">"High"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb8-55">  <span class="fu" style="color: #4758AB;
+<span id="cb8-53">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb8-56">  <span class="fu" style="color: #4758AB;
+<span id="cb8-54">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -3183,7 +3132,7 @@ background-color: null;
 font-style: inherit;">y=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Delinquency"</span>, </span>
-<span id="cb8-57">       <span class="at" style="color: #657422;
+<span id="cb8-55">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title=</span><span class="st" style="color: #20794D;
 background-color: null;
@@ -3651,7 +3600,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -4149,7 +4098,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -4484,25 +4433,12 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Nonlinear model, Sim.1c"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb12-35">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span>
-<span id="cb12-36"></span>
-<span id="cb12-37"><span class="co" style="color: #5E5E5E;
+font-style: inherit;">"Nonlinear model, Sim.1c"</span>) </span>
+<span id="cb12-35"></span>
+<span id="cb12-36"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Plot interaction</span></span>
-<span id="cb12-38">plot_glm1c <span class="ot" style="color: #003B4F;
+<span id="cb12-37">plot_glm1c <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -4511,19 +4447,19 @@ background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"pred"</span>,</span>
-<span id="cb12-39">                        <span class="at" style="color: #657422;
+<span id="cb12-38">                        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">terms =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"StrgMoralBlfs"</span>, </span>
-<span id="cb12-40">                                 <span class="st" style="color: #20794D;
+<span id="cb12-39">                                 <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"ParentSupport [-2,2]"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb12-41">  <span class="fu" style="color: #4758AB;
+<span id="cb12-40">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -4548,7 +4484,7 @@ background-color: null;
 font-style: inherit;">7</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb12-42">  <span class="fu" style="color: #4758AB;
+<span id="cb12-41">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_colour_colorblind</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -4561,12 +4497,12 @@ background-color: null;
 font-style: inherit;">"High"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb12-43">  <span class="fu" style="color: #4758AB;
+<span id="cb12-42">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb12-44">  <span class="fu" style="color: #4758AB;
+<span id="cb12-43">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -4577,7 +4513,7 @@ background-color: null;
 font-style: inherit;">y=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Delinquency"</span>, </span>
-<span id="cb12-45">       <span class="at" style="color: #657422;
+<span id="cb12-44">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title=</span><span class="st" style="color: #20794D;
 background-color: null;
@@ -5048,7 +4984,7 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -5543,7 +5479,7 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -6905,34 +6841,21 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Linear model, Sim.2"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb17-49">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span>
-<span id="cb17-50"></span>
-<span id="cb17-51">Ex2tab2 <span class="ot" style="color: #003B4F;
+font-style: inherit;">"Linear model, Sim.2"</span>) </span>
+<span id="cb17-49"></span>
+<span id="cb17-50">Ex2tab2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">regsum</span>(glm2) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb17-52">  <span class="fu" style="color: #4758AB;
+<span id="cb17-51">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">as_gt</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
-<span id="cb17-53">  gt<span class="sc" style="color: #5E5E5E;
+<span id="cb17-52">  gt<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -6940,26 +6863,13 @@ font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Nonlinear model, Sim.2"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%&gt;%</span> </span>
-<span id="cb17-54">  gt<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">estimate =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"**Coef.**"</span>))</span>
-<span id="cb17-55"></span>
-<span id="cb17-56"><span class="co" style="color: #5E5E5E;
+font-style: inherit;">"Nonlinear model, Sim.2"</span>) </span>
+<span id="cb17-53"></span>
+<span id="cb17-54"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Plot interactions </span></span>
-<span id="cb17-57"></span>
-<span id="cb17-58">plot_lm2 <span class="ot" style="color: #003B4F;
+<span id="cb17-55"></span>
+<span id="cb17-56">plot_lm2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -6968,7 +6878,7 @@ background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"pred"</span>,  </span>
-<span id="cb17-59">                       <span class="at" style="color: #657422;
+<span id="cb17-57">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">terms =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -6979,7 +6889,7 @@ background-color: null;
 font-style: inherit;">"ParentSupport [-2,2]"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-60">  <span class="fu" style="color: #4758AB;
+<span id="cb17-58">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -7010,7 +6920,7 @@ background-color: null;
 font-style: inherit;">scale_colour_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-61">  <span class="fu" style="color: #4758AB;
+<span id="cb17-59">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -7029,8 +6939,8 @@ background-color: null;
 font-style: inherit;">title=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Linear model, Sim.2"</span>)</span>
-<span id="cb17-62"></span>
-<span id="cb17-63">plot_glm2 <span class="ot" style="color: #003B4F;
+<span id="cb17-60"></span>
+<span id="cb17-61">plot_glm2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7039,7 +6949,7 @@ background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"pred"</span>,  </span>
-<span id="cb17-64">                       <span class="at" style="color: #657422;
+<span id="cb17-62">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">terms =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7050,7 +6960,7 @@ background-color: null;
 font-style: inherit;">"ParentSupport [-2,2]"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-65">  <span class="fu" style="color: #4758AB;
+<span id="cb17-63">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -7081,7 +6991,7 @@ background-color: null;
 font-style: inherit;">scale_colour_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-66">  <span class="fu" style="color: #4758AB;
+<span id="cb17-64">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_colorblind</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -7100,15 +7010,15 @@ background-color: null;
 font-style: inherit;">title=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span>
+<span id="cb17-65"></span>
+<span id="cb17-66"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Data generating functions</span></span>
 <span id="cb17-67"></span>
 <span id="cb17-68"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Data generating functions</span></span>
-<span id="cb17-69"></span>
-<span id="cb17-70"><span class="co" style="color: #5E5E5E;
-background-color: null;
 font-style: inherit;"># Create a sequence of strong moral beliefs values from 0 to 6</span></span>
-<span id="cb17-71">moralblfs <span class="ot" style="color: #003B4F;
+<span id="cb17-69">moralblfs <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7121,66 +7031,66 @@ background-color: null;
 font-style: inherit;">length.out =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>)</span>
-<span id="cb17-72"></span>
-<span id="cb17-73"><span class="co" style="color: #5E5E5E;
+<span id="cb17-70"></span>
+<span id="cb17-71"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Calculate delq values at low parental support (-2) </span></span>
+<span id="cb17-72">delq2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">exp</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.7</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.25</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.4</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>moralblfs) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>.<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>moralblfs))</span>
+<span id="cb17-73"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#cap delq values at max=7 &amp; round to integer to match sim</span></span>
 <span id="cb17-74">delq2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">exp</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.7</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> (<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.25</span>)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> (<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.4</span>)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>moralblfs) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> (<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>.<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span>)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>moralblfs))</span>
-<span id="cb17-75"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#cap delq values at max=7 &amp; round to integer to match sim</span></span>
-<span id="cb17-76">delq2 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">if_else</span>(delq2 <span class="sc" style="color: #5E5E5E;
@@ -7194,21 +7104,21 @@ background-color: null;
 font-style: inherit;">digits=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>)</span>
-<span id="cb17-77">group_col <span class="ot" style="color: #003B4F;
+<span id="cb17-75">group_col <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"-2"</span></span>
-<span id="cb17-78">sim2eqlow <span class="ot" style="color: #003B4F;
+<span id="cb17-76">sim2eqlow <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tibble</span>(moralblfs, delq2, group_col)</span>
-<span id="cb17-79"></span>
-<span id="cb17-80"><span class="co" style="color: #5E5E5E;
+<span id="cb17-77"></span>
+<span id="cb17-78"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Calculate delq values at high parental support (2) </span></span>
-<span id="cb17-81">delq2 <span class="ot" style="color: #003B4F;
+<span id="cb17-79">delq2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7253,10 +7163,10 @@ background-color: null;
 font-style: inherit;">5</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span>moralblfs))</span>
-<span id="cb17-82"><span class="co" style="color: #5E5E5E;
+<span id="cb17-80"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#cap delq values at max=7 &amp; round to integer to match sim</span></span>
-<span id="cb17-83">delq2 <span class="ot" style="color: #003B4F;
+<span id="cb17-81">delq2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7273,35 +7183,35 @@ background-color: null;
 font-style: inherit;">digits=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>)</span>
-<span id="cb17-84">group_col <span class="ot" style="color: #003B4F;
+<span id="cb17-82">group_col <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"2"</span></span>
-<span id="cb17-85">sim2eqhi <span class="ot" style="color: #003B4F;
+<span id="cb17-83">sim2eqhi <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tibble</span>(moralblfs, delq2, group_col)</span>
-<span id="cb17-86"></span>
-<span id="cb17-87">sim2eq <span class="ot" style="color: #003B4F;
+<span id="cb17-84"></span>
+<span id="cb17-85">sim2eq <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">bind_rows</span>(sim2eqlow, sim2eqhi)</span>
-<span id="cb17-88"></span>
-<span id="cb17-89"></span>
-<span id="cb17-90"><span class="co" style="color: #5E5E5E;
+<span id="cb17-86"></span>
+<span id="cb17-87"></span>
+<span id="cb17-88"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Plot the function</span></span>
-<span id="cb17-91">plot_glm2eq <span class="ot" style="color: #003B4F;
+<span id="cb17-89">plot_glm2eq <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb17-92">  <span class="fu" style="color: #4758AB;
+<span id="cb17-90">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -7314,7 +7224,7 @@ background-color: null;
 font-style: inherit;">se =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>,</span>
-<span id="cb17-93">       <span class="at" style="color: #657422;
+<span id="cb17-91">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">method.args =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7323,19 +7233,19 @@ background-color: null;
 font-style: inherit;">family =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"poisson"</span>), </span>
-<span id="cb17-94">              <span class="fu" style="color: #4758AB;
+<span id="cb17-92">              <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x=</span>moralblfs, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y=</span>delq2,</span>
-<span id="cb17-95">                  <span class="at" style="color: #657422;
+<span id="cb17-93">                  <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">group=</span>group_col, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col=</span>group_col), </span>
-<span id="cb17-96">       <span class="at" style="color: #657422;
+<span id="cb17-94">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -7346,7 +7256,7 @@ background-color: null;
 font-style: inherit;">2</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-97">  <span class="fu" style="color: #4758AB;
+<span id="cb17-95">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_color_manual</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -7359,41 +7269,41 @@ background-color: null;
 font-style: inherit;">"#E69F00"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-98">  <span class="fu" style="color: #4758AB;
+<span id="cb17-96">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-99">  <span class="fu" style="color: #4758AB;
+<span id="cb17-97">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">xlab</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Strong moral beliefs"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb17-100">  <span class="fu" style="color: #4758AB;
+<span id="cb17-98">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ylab</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Delinquency"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb17-101">  <span class="fu" style="color: #4758AB;
+<span id="cb17-99">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggtitle</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Data-generating functions used to simulate Sim.2 data"</span>)</span>
-<span id="cb17-102"></span>
-<span id="cb17-103"><span class="co" style="color: #5E5E5E;
+<span id="cb17-100"></span>
+<span id="cb17-101"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Overlap function with linear &amp; nonlinear models</span></span>
-<span id="cb17-104"></span>
-<span id="cb17-105">plot_lm2fit <span class="ot" style="color: #003B4F;
+<span id="cb17-102"></span>
+<span id="cb17-103">plot_lm2fit <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> plot_lm2 <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-106">  <span class="fu" style="color: #4758AB;
+<span id="cb17-104">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -7406,7 +7316,7 @@ background-color: null;
 font-style: inherit;">se =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>,</span>
-<span id="cb17-107">       <span class="at" style="color: #657422;
+<span id="cb17-105">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">method.args =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7415,19 +7325,19 @@ background-color: null;
 font-style: inherit;">family =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"poisson"</span>), </span>
-<span id="cb17-108">              <span class="fu" style="color: #4758AB;
+<span id="cb17-106">              <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x=</span>moralblfs, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y=</span>delq2,</span>
-<span id="cb17-109">                  <span class="at" style="color: #657422;
+<span id="cb17-107">                  <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">group=</span>group_col, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col=</span>group_col), </span>
-<span id="cb17-110">       <span class="at" style="color: #657422;
+<span id="cb17-108">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -7438,19 +7348,19 @@ background-color: null;
 font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-111">  <span class="fu" style="color: #4758AB;
+<span id="cb17-109">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggtitle</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Linear model, Sim.2"</span>)</span>
-<span id="cb17-112"></span>
-<span id="cb17-113"></span>
-<span id="cb17-114">plot_glm2fit <span class="ot" style="color: #003B4F;
+<span id="cb17-110"></span>
+<span id="cb17-111"></span>
+<span id="cb17-112">plot_glm2fit <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> plot_glm2 <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-115">  <span class="fu" style="color: #4758AB;
+<span id="cb17-113">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -7463,7 +7373,7 @@ background-color: null;
 font-style: inherit;">se =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>,</span>
-<span id="cb17-116">       <span class="at" style="color: #657422;
+<span id="cb17-114">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">method.args =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7472,19 +7382,19 @@ background-color: null;
 font-style: inherit;">family =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"poisson"</span>), </span>
-<span id="cb17-117">              <span class="fu" style="color: #4758AB;
+<span id="cb17-115">              <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x=</span>moralblfs, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y=</span>delq2,</span>
-<span id="cb17-118">                  <span class="at" style="color: #657422;
+<span id="cb17-116">                  <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">group=</span>group_col, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col=</span>group_col), </span>
-<span id="cb17-119">       <span class="at" style="color: #657422;
+<span id="cb17-117">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -7495,7 +7405,7 @@ background-color: null;
 font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb17-120">  <span class="fu" style="color: #4758AB;
+<span id="cb17-118">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggtitle</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -7963,7 +7873,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
@@ -8461,7 +8371,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Coef.</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>Coef.</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>

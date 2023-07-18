@@ -364,7 +364,8 @@ roundp <- function(x) {
 
 # function for reg output w/custom p-values
 regsum <- function(mymod) {
-  tbl_regression(mymod, intercept=TRUE, pvalue_fun = roundp) %>%
+  tbl_regression(mymod, intercept=TRUE, 
+                 pvalue_fun = roundp) %>%
   add_significance_stars(
         hide_se = FALSE,
         hide_ci = FALSE,
@@ -374,13 +375,11 @@ regsum <- function(mymod) {
 
 Ex1tab1 <- regsum(lm1) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Simulation 1") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Linear model, Simulation 1") 
 
 Ex1tab2 <- regsum(glm1) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear Poisson model, Simulation 1") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Nonlinear Poisson model, Simulation 1") 
 
 ```
 
@@ -487,13 +486,11 @@ glm1b <- glm(Delinquency ~ ParentSupport * StrgMoralBlfs, data=simdat1b, family=
 
 Ex1tab1b <- regsum(lm1b) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Sim.1b") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Linear model, Sim.1b") 
 
 Ex1tab2b <- regsum(glm1b) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear model, Sim.1b") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Nonlinear model, Sim.1b") 
 
 # Plot interaction
 
@@ -580,8 +577,7 @@ glm1c <- glm(Delinquency ~ ExogenousCovariate + ParentSupport * StrgMoralBlfs, d
 
 Ex1tab2c <- regsum(glm1c) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear model, Sim.1c") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Nonlinear model, Sim.1c") 
 
 # Plot interaction
 plot_glm1c <- plot_model(glm1c, type = "pred",
@@ -838,13 +834,11 @@ glm2 <- glm(Delinquency ~ ParentSupport * StrgMoralBlfs, data=simdat2, family="p
 
 Ex2tab1 <- regsum(lm2) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Sim.2") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Linear model, Sim.2") 
 
 Ex2tab2 <- regsum(glm2) %>%
   as_gt() %>%
-  gt::tab_header(title = "Nonlinear model, Sim.2") %>% 
-  gt::cols_label(estimate = md("**Coef.**"))
+  gt::tab_header(title = "Nonlinear model, Sim.2") 
 
 #Plot interactions 
 
