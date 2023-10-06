@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F0XQR72SS3"></script>
@@ -287,7 +288,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Well, most of the sources that we have read explicitly or implicitly define colliders <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967310/">as a type of third variable is caused by both <em>X</em> and <em>Y</em></a>. The causal diagram depicted in the figure below represents the quintessential collider example.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simstudy)</span>
@@ -358,7 +359,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>We have provided some example DAGs below in which the variable <em>Z</em> is a collider in a path between <em>X</em> and <em>Y</em>. As you will see, the collider <em>Z</em> is not always caused (directly or as a descendent) by the outcome <em>Y</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Likewise, in this blog post, we have attempted to deviate from the typical three-variable models (e.g., DAG Example 1, where <em>X</em> and <em>Y</em> cause collider <em>Z</em>) that we often encounter in collider explanations. Instead, we aimed to specify colliders and illustrate potential collider biases that might routinely occur from conditioning on a collider that is <em>not</em> necessarily an effect or a descendant of the outcome variable (<em>Y</em>).</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hauntedDAG2 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Y <span class="sc">~</span> X,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">~</span> X, </span>
@@ -457,7 +458,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>For instance, using the fourth example above, we can identify all paths between <em>X</em> and <em>Y</em> and <a href="https://evalf20.classes.andrewheiss.com/example/dags/#paths-and-adjustment-sets">identify appropriate adjustment sets</a> automatically using <code>ggdag::ggdag_paths()</code> and <code>ggdag::ggdag_adjustment_set()</code>. You will note below that the path from <em>X</em> -&gt; <em>Y</em> and <em>X</em> &lt;- <em>C</em> -&gt; <em>Y</em> are open or unblocked paths, but the path from <em>X -&gt; Z &lt;- C -&gt; Y</em> is not an open path - unless we open it by conditioning on <em>Z</em> and, in turn, bias our estimate of the effect of <em>X</em> on <em>Y</em>. Likewise, the appropriate adjustment set for Example 4 contains only <em>C</em>, meaning we should control for <em>C</em> but not <em>Z</em> (or <em>C</em> and <em>Z</em>).</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Ex4paths <span class="ot">&lt;-</span> <span class="fu">ggdag_paths</span>(hauntedDAG4) <span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Example 4 unblocked paths"</span>) <span class="sc">+</span> </span>
@@ -516,7 +517,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Below is our DAG of a simple causal structure describing a plausible (if simplified) data generating process used to simulate data for our first two examples. We highlighted the focal estimand of interest (effect of self-control on delinquency) for our first simulation example with a red arrow.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>collideDAG <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">  Male -&gt; {SelfControl MoralBeliefs Delinquency PriorFelony}</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">  SelfControl -&gt; {Delinquency PriorFelony QualityEmploy College}</span></span>
@@ -648,7 +649,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>For the second example, we will assume no total effect of SES on delinquency association (for rationale, see our <a href="https://reluctantcriminologists.com/blog-posts/%5B4%5D/causation-no-corr">previous blog on causation without correlation</a>). However, we will assume a hypothetical positive effect of SES and negative effect of felony convictions on employment status/quality.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1138</span>)</span>
@@ -780,7 +781,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Let’s examine the bivariate correlations between our variables in the simulated “general” sample.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-coder.com/correlation-plot-r/  </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>trimpop <span class="ot">&lt;-</span> simpop <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>id)</span>
@@ -807,7 +808,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Now, let’s examine the bivariate correlations between our variables in the simulated “restricted” sample in which participants are selected based upon felony conviction status.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-coder.com/correlation-plot-r/  </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>trimsamp <span class="ot">&lt;-</span> simsamp <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(id, Felony, Felonysamp))</span>
@@ -838,7 +839,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Let’s not get ahead of ourselves. Instead, let’s illustrate in detail with our first example. We begin by estimating a generalized linear model predicting delinquency in the simulated general sample and in the restricted sample that is selected on felony convictions. In both models, we specify a Poisson distribution with a log link for our delinquency outcome. Though we should also account for ordinal nature of predictors (e.g., model monotonic effects with cumulative logit link function), we will save that for a future blog entry.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#nonlinear models predicting delinquency in pop &amp; sample</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>glm1a <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> HighSC <span class="sc">*</span> LowMoral , <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(glm1a)</span></span>
@@ -1367,7 +1368,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">regsum</span>(glm1b) <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_gt</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 1: Poisson model 1b, Felony sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1868,7 +1869,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#use min (0), mean, and +2d low moral beliefs in felony sample to plot interaction  </span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(simsamp$LowMoral)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(simsamp$LowMoral) + 2*sd(simsamp$LowMoral)</span></span>
@@ -1923,7 +1924,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Note, too, that the truncated variation from selection bias did not simply result in attenuated effect estimates in the felony sample. In fact, the magnitude of the estimated average marginal effect of self-control on delinquency is upwardly biased in the felony sample. Below, we plot the average marginal effect (AME) of self-control on delinquency in both samples, alongside a plot of the predicted delinquency count at each value of self-control in both samples.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#marginal effect of self-control plots</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plot 1 - AME of self-control (on response) in both samples </span></span>
@@ -2007,7 +2008,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Let’s start with a model that includes male and employment (i.e., QualityEmploy) as control variables Why? Well, because employment might be related to SES and to delinquency, and because everyone throws in demographic controls like sex, right? I know just said that this is <strong>not</strong> how one should select controls; however, in this example, we are trying to illustrate what might happen when people DO select controls in this way.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generalized linear model, effect of SES on delinquency in pop, strat on employment </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>glm2a <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy, <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(glm2a)</span></span>
@@ -2507,7 +2508,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_glm2a <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2a, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">"Delinquency"</span>, <span class="at">title=</span><span class="st">"General sample, Stratify on employ"</span>)  </span>
@@ -2534,7 +2535,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Now, let’s illustrate what happens if we remove employment, the collider in our SES -&gt; delinquency estimate, from our model.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generalized linear model, effect of SES on delinquency in pop, drop employment </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>glm2b <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES , <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(glm2b)</span></span>
@@ -3029,7 +3030,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plot_glm2b <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2b, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">"Delinquency"</span>, <span class="at">title=</span><span class="st">"General sample, Drop collider"</span>)  </span>
@@ -3044,7 +3045,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>What would happen if we continue to condition on employment in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let’s re-estimate our two models using the simulated felony sample to see.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generalized linear model, effect of SES on delinquency in pop, stratify employment </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>glm2c <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy, <span class="at">data=</span>simsamp, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3547,7 +3548,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot_glm2c <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2c, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">""</span>, <span class="at">title=</span><span class="st">"Felony sample, Stratify on employ"</span>)  </span>
@@ -4045,7 +4046,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plot_glm2d <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2d, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">""</span>, <span class="at">title=</span><span class="st">"Felony sample, Drop collider"</span>)  </span>
@@ -4078,7 +4079,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Let’s do that with our SES -&gt; Delinquency example above.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust <span class="ot">&lt;-</span> <span class="fu">adjustmentSets</span>(collideDAG, <span class="st">"SES"</span>, <span class="st">"Delinquency"</span>, <span class="at">type =</span> <span class="st">"all"</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4134,7 +4135,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>So, given we decide to control for male and employment in our model, then there are four adjustment sets that include both male and employment that should effectively block the path we open by conditioning on a collider (employment). “College” isn’t in the simulated data - it is common to lack key variables in a DAG in real world data - so that leaves us with two adjustment sets that we could use to block the open collider path with the data at hand. Let’s estimate those models and confirm that we get the correct “null” estimate.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>glm2e <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy <span class="sc">+</span> LowMoral <span class="sc">+</span> HighSC, <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>glm2f <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy <span class="sc">+</span> LowMoral <span class="sc">+</span> HighSC <span class="sc">+</span> Felony, <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
@@ -4644,7 +4645,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">regsum</span>(glm2f) <span class="sc">%&gt;%</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_gt</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5165,7 +5166,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>In particular, we anticipate that selection into the University sample might introduce collider biases for estimates of various causal estimands of interest to criminologists. Of course, we communicated this expectation in our initial DAG used to simulate data, which we present again for convenience (see Figure 7 below).</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>collideDAGalt2 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  Delinquency <span class="sc">~</span> MoralBeliefs <span class="sc">+</span> Male <span class="sc">+</span> SelfControl,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  PriorFelony <span class="sc">~</span> MoralBeliefs <span class="sc">+</span> Male <span class="sc">+</span> SelfControl, </span>
@@ -5229,7 +5230,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>We start by presenting sample-specific results in separate plots.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Restore RDS data to object</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dat.mturk.epred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"blog-posts"</span>, <span class="st">"[5]"</span>, <span class="st">"dat_mturk.rds"</span>))</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dat.univ.epred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"blog-posts"</span>, <span class="st">"[5]"</span>, <span class="st">"dat_univ.rds"</span>))</span>
@@ -5283,7 +5284,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>In case it is easier to visualize the selection thresholds, we also overlay both plots on the same grid below.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fig3c <span class="ot">&lt;-</span> dat.ssrfp <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> zMoralBlfIRT, <span class="at">y=</span>CrmBehavVI)) <span class="sc">+</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_line(data=dat.mturk.epred, aes(y = .epred, group = .draw), alpha = 0.5, color="grey60") +</span></span>
@@ -5317,7 +5318,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Let’s check our sufficient adjustment sets.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust2 <span class="ot">&lt;-</span> <span class="fu">adjustmentSets</span>(collideDAG, <span class="st">"MoralBeliefs"</span>, <span class="st">"Delinquency"</span>, <span class="at">type =</span> <span class="st">"all"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>

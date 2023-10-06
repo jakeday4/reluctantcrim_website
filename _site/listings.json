@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/blog-posts.html",
+    "listing": "/index.html",
     "items": [
       "/blog-posts/[6]/modmadness-pt1.html",
       "/blog-posts/[5]/colliders.html",
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog-posts.html",
     "items": [
       "/blog-posts/[6]/modmadness-pt1.html",
       "/blog-posts/[5]/colliders.html",

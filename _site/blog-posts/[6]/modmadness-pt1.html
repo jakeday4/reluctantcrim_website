@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F0XQR72SS3"></script>
@@ -262,7 +263,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Imagine the following: In one study, a researcher hypothesizes the existence of a causal mediation process, such that <em>parental support</em> causes <em>delinquency</em> both directly and indirectly through its mediated effect on <em>strong moral beliefs</em>. Then, with this theoretical assumption at work, they build linear regression models to test for and then find evidence of an indirect effect, which leads to a published paper describing support for this hypothesized causal process. That assumed causal process can be simply depicted in the following causal diagram or directed acyclic graph (DAG):</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("BS1125/CMAverse")</span></span>
@@ -374,7 +375,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Though the causal processes for both “paper 1” and “paper 2” could be represented by the same structural DAG depicted in Figure 1 above,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> it is common for criminologists to explicitly depict moderating relationships in causal diagrams. So, for the sake of familiarity, I also present a modified causal diagram depicting the posited moderation (interaction effect) for “paper 2” in Figure 2 below. The moderation indicator is a red dashed arrow to signify its departure from traditional DAG rules.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>intDAG <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Delinquency <span class="sc">~</span> ParentSupport <span class="sc">+</span> StrgMoralBlfs,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  StrgMoralBlfs <span class="sc">~</span> ParentSupport, </span>
@@ -474,7 +475,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>In the first simulation, <em>parental support</em> causes <em>strong moral beliefs</em> (positive association), whereas both <em>parental support</em> and <em>strong moral beliefs</em> cause delinquency (negative associations). There is no multiplicative interaction between <em>parental support</em> and <em>strong moral beliefs</em> in the linear equation predicting logged delinquency event rates.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data (Sim.1)</span></span>
@@ -556,7 +557,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sim.1 linear model</span></span>
@@ -606,7 +607,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Ex1tab1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -1104,7 +1105,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Ex1tab2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -1604,7 +1605,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Note there is a statistically significant multiplicative interaction term in the linear model (<em>b</em> = 0.14, <em>p</em> &lt; 0.001). Though the interaction term is not significant in the nonlinear Poisson model, remember that we cannot interpret these <em>beta</em> coefficients the same way as we do linear regression coefficients. As noted earlier, models with nonlinear link functions are fundamentally conditional and potentially interactive on different scales of interest; relying on the significance and sign or direction of coefficients alone can lead to serious misinterpretation of results from regression models with nonlinear link functions. Instead, I prefer to rely on plots of predicted delinquency event rates to interpret model results, which lend themselves to more natural interpretations in the original outcome metric.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot interaction in outcome scale</span></span>
@@ -1658,7 +1659,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>In the code below, I made only one slight modification to the data simulation in Example 1: I specified a stronger linear effect of <em>moral beliefs</em> on <em>delinquency</em> by increasing from <em>b</em> = 0.4 to <em>b</em> = 0.6. I did not add a multiplicative interaction term, nor did I explicitly change the functional form or nature of the relationships in our simulation. Rather, I simply increased the strength of the linear correlation between the mediator and the outcome. Let’s see what happens.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
@@ -1724,7 +1725,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Ex1tab1b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -2222,7 +2223,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Ex1tab2b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -2720,7 +2721,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(plot_lm1b <span class="sc">+</span> plot_lm1) <span class="sc">/</span> (plot_glm1b <span class="sc">+</span> plot_glm1) <span class="sc">+</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">'collect'</span>) <span class="sc">&amp;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
@@ -2742,7 +2743,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Still not convinced? Let’s go back to the first simulation (Sim.1), then add an exogenous covariate that is related to delinquency but unrelated to either parental support or moral beliefs to the data and our regression models and see what happens. This time, we will focus solely on the nonlinear model, and we will present the coefficients and plots for both this Sim.1c and the original Sim.1 to permit comparisons of the focal interaction term on the log event rate scale and on the predicted event rate scale.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
@@ -2797,7 +2798,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Ex1tab2c </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Ex1tab2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -3795,7 +3796,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_glm1c <span class="sc">+</span> plot_glm1 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">'collect'</span>) <span class="sc">&amp;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.direction =</span> <span class="st">'horizontal'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3822,7 +3823,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Now, let’s return to the initial simulated data (Sim.1) and overlay a plot of an idealized function that closely represents the causal equation used to generate the simulated the data (dashed line) with plots of the predicted event counts from the linear and nonlinear models. This should give us a good sense of how well our model-based predictions fit or accurately describe the underlying data-generating process.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of strong moral beliefs values from 0 to 6</span></span>
@@ -3890,7 +3891,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>At this point, it should be unsurprising that the nonlinear model provides a better fit to the underlying data-generating function. Still, sometimes visualizations simply help reaffirm what we already know. Now, let’s simulate the data again with a sample size of <em>n</em>=8,500 instead of <em>n</em>=850 and recreate these fit plots to see how sample size affects precision.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
@@ -3990,7 +3991,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>In simulating data for Example 2 (Simulation 2), I modified the first simulated dataset (Sim.1) by adding a small multiplicative interaction term to the linear equation predicting delinquency (<em>b</em> = -0.12 x ParentSupport x WeakMoralBlfs). Then, after making this small change and simulating the data, I once again tabled results from linear and nonlinear Poisson regression models, plotted the predicted delinquency event rates for both models, and overlayed the idealized data generating function (dashed lines) to help visualize model fit.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
@@ -4119,7 +4120,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Ex2tab1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -4617,7 +4618,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Ex2tab2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -5115,7 +5116,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plot_lm2fit <span class="sc">+</span> plot_glm2fit <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">'collect'</span>) <span class="sc">&amp;</span></span>
@@ -5135,7 +5136,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>The plots below are intended to help you visualize how the inclusion of this small interaction term on the linear estimation scale when simulating the data affected predicted delinquency event rates on the outcome’s natural interpretation scale. In those plots, I removed the idealized function (dashed line) and instead added predicted delinquency event rates from models in Example 1 instead. Recall, the only difference between the simulated datasets in Examples 1 and 2 is the omission (in Sim.1) or inclusion (in Sim.2) of a small interaction term (<em>b</em> = -0.12). So, differences between the predicted delinquency event rates across Sim.2 (solid lines) and Sim.1 (dotted lines) are due to the interaction.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get model data</span></span>

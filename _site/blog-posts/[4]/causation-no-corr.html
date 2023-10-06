@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F0XQR72SS3"></script>
@@ -365,7 +366,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>For instance, you might be wondering if it is really useful or accurate to say that X causes Y if there is no (total) statistical dependence between X &amp; Y - that is, if (in some populations or samples comprised of units with particular levels of key variables) Y does not reliably change after X changes. Yes, I think so! To understand why, it is helpful to consider an example, to rely on causal models, and to engage in counterfactual thinking. There are many possible examples; for simplicity, let’s imagine only four variables - X, M1, M2, and Y - that are causally related like so:</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
@@ -400,7 +401,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>We will illustrate how something like this might happen using simulated data. Specifically, we will simulate data for <em>parental SES</em>, <em>child delinquency</em>, and two potential countervailing mechanisms - <em>financial strain</em> and <em>perceived risk of detection</em> of delinquent behaviors. In our simulated example, we will assume parental SES does not directly cause child delinquency and that it indirectly causes child delinquency through both mediating mechanisms. Additionally, we will assume that the causal effects of Parental SES on financial strain and perceived risk of detection are equal in magnitude and that the causal effect of financial strain on delinquency is equal in magnitude yet opposite in direction, such that both indirect or mediated effects offset one another. Below is a directed acyclic graph, or DAG, of this simple causal structure.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SESdag <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">"dag{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">  SES -&gt; Strain -&gt; Delinquency</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">  SES -&gt; Risk -&gt; Delinquency</span></span>
@@ -418,7 +419,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>Now let’s simulate some data. In doing so, note we round data drawn from continuous (i.e., normal &amp; Poisson) distributions to integers; this adds a bit of noise to the data yet also makes our variables more comparable to the types of ordinal, Likert-type measures we see in our field.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X = Parental SES</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Y = Child delinquent behavior</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># F = Mediatior through which high Parent SES might decrease delinquency - e.g., less financial (S)train</span></span>
@@ -469,7 +470,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 # ℹ 990 more rows</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SESplot <span class="ot">&lt;-</span> simdata <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>SES, <span class="at">y=</span>..density..),</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color=</span><span class="st">"#1fa187"</span>, <span class="at">fill=</span><span class="st">"#4ac16d"</span>, <span class="at">alpha=</span>.<span class="dv">7</span>,</span>
@@ -525,7 +526,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>Let’s examine the bivariate correlations between our simulated variables.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-coder.com/correlation-plot-r/  </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(simdata,</span>
@@ -556,7 +557,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>The scatterplot and regression line from our bivariate linear regression model again illustrates the lack of total association between our simulated SES and delinqueny variables.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>lm1a <span class="ot">&lt;-</span> <span class="fu">lm</span>(Delinquency <span class="sc">~</span> SES, <span class="at">data=</span>simdata)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(lm1a)</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1a)<span class="sc">$</span>coefficients[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -567,7 +568,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 SES         -0.01125514 0.03849479</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(simdata$SES, simdata$Delinquency)</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(lm1a)</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -593,7 +594,7 @@ SES         -0.01125514 0.03849479</code></pre>
 <p>Now, let’s estimate a linear model regressing delinquency on SES and include <em>both mediators</em> as predictors in the model as well and then plot the regression line (with mediators set at their mean values). Once again, we should see a near-zero association between SES and delinquency, but for very different reasons this time. In this model, we are estimating what is commonly referred to as the <strong>direct effect</strong> of SES after stratifying on (aka, adjusting for) any potential indirect effects through financial strain and perceived risk mechanisms. Of course, we simulated our data in such a way that there would be no direct causal effect of SES on delinquency in our simulated data and, after including both mechanisms in the model, we accurately estimate virtually no direct effect of SES on delinquency (<em>b</em> = -0.03, se = 0.04). Hence, this plot looks comparable to the bivariate one above.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lm1b <span class="ot">&lt;-</span> <span class="fu">lm</span>(Delinquency <span class="sc">~</span> SES <span class="sc">+</span> Strain <span class="sc">+</span> Risk, <span class="at">data=</span>simdata)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(lm1b)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1b)<span class="sc">$</span>coefficients[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -606,7 +607,7 @@ Strain       0.38859596 0.03290744  11.8087577  3.274331e-30
 Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(simdata$SES, simdata$Delinquency)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(lm1b)</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -637,7 +638,7 @@ Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 <p>But without jumping ahead to mediation tests, what would have happened if we had failed to specify the appropriate causal model ahead of time and, as a result, we mistakenly included <em>only one mediator</em> in the model with SES predicting delinquency? Let’s add financial strain to the model and exclude perceived risk from the model, then see what happens.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lm1c <span class="ot">&lt;-</span> <span class="fu">lm</span>(Delinquency <span class="sc">~</span> SES <span class="sc">+</span> Strain, <span class="at">data=</span>simdata)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(lm1c)</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1c)<span class="sc">$</span>coefficients[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -649,7 +650,7 @@ SES         0.1790345 0.04027868  4.444895
 Strain      0.3951323 0.03593409 10.996029</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(simdata$SES, simdata$Delinquency)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(lm1c)</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -689,7 +690,7 @@ Strain      0.3951323 0.03593409 10.996029</code></pre>
 <p>Finally, let’s illustrate a simple test of the indirect effect of SES on delinquency using <code>mediate()</code> from the psych package.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mediate</span>(Delinquency <span class="sc">~</span> SES <span class="sc">+</span> (Strain) <span class="sc">+</span> (Risk), <span class="at">data =</span> simdata, <span class="at">n.iter =</span> <span class="dv">10000</span>) <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">short =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">

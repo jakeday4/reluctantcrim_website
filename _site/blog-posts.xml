@@ -9,7 +9,7 @@
 <link>https://www.reluctantcriminologists.com/blog-posts.html</link>
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
-<generator>quarto-1.3.353</generator>
+<generator>quarto-1.3.433</generator>
 <lastBuildDate>Tue, 18 Jul 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Moderator Madness, Part 1</title>
@@ -37,7 +37,7 @@
 <p>Imagine the following: In one study, a researcher hypothesizes the existence of a causal mediation process, such that <em>parental support</em> causes <em>delinquency</em> both directly and indirectly through its mediated effect on <em>strong moral beliefs</em>. Then, with this theoretical assumption at work, they build linear regression models to test for and then find evidence of an indirect effect, which leads to a published paper describing support for this hypothesized causal process. That assumed causal process can be simply depicted in the following causal diagram or directed acyclic graph (DAG):</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -477,7 +477,7 @@ font-style: inherit;">"fig1.png"</span>)</span></code></pre></div>
 <p>Though the causal processes for both “paper 1” and “paper 2” could be represented by the same structural DAG depicted in Figure 1 above,<sup>1</sup> it is common for criminologists to explicitly depict moderating relationships in causal diagrams. So, for the sake of familiarity, I also present a modified causal diagram depicting the posited moderation (interaction effect) for “paper 2” in Figure 2 below. The moderation indicator is a red dashed arrow to signify its departure from traditional DAG rules.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">intDAG <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -833,7 +833,7 @@ font-style: inherit;">"fig2.png"</span>)</span></code></pre></div>
 <p>In the first simulation, <em>parental support</em> causes <em>strong moral beliefs</em> (positive association), whereas both <em>parental support</em> and <em>strong moral beliefs</em> cause delinquency (negative associations). There is no multiplicative interaction between <em>parental support</em> and <em>strong moral beliefs</em> in the linear equation predicting logged delinquency event rates.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">options</span>(<span class="at" style="color: #657422;
@@ -1277,7 +1277,7 @@ font-style: inherit;">'collect'</span>)</span></code></pre></div>
 </div>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -1463,7 +1463,7 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">Ex1tab1</span></code></pre></div>
 </details>
 <div class="cell-output-display">
@@ -1961,7 +1961,7 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">Ex1tab2</span></code></pre></div>
 </details>
 <div class="cell-output-display">
@@ -2461,7 +2461,7 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <p>Note there is a statistically significant multiplicative interaction term in the linear model (<em>b</em> = 0.14, <em>p</em> &lt; 0.001). Though the interaction term is not significant in the nonlinear Poisson model, remember that we cannot interpret these <em>beta</em> coefficients the same way as we do linear regression coefficients. As noted earlier, models with nonlinear link functions are fundamentally conditional and potentially interactive on different scales of interest; relying on the significance and sign or direction of coefficients alone can lead to serious misinterpretation of results from regression models with nonlinear link functions. Instead, I prefer to rely on plots of predicted delinquency event rates to interpret model results, which lend themselves to more natural interpretations in the original outcome metric.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -2719,7 +2719,7 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <p>In the code below, I made only one slight modification to the data simulation in Example 1: I specified a stronger linear effect of <em>moral beliefs</em> on <em>delinquency</em> by increasing from <em>b</em> = 0.4 to <em>b</em> = 0.6. I did not add a multiplicative interaction term, nor did I explicitly change the functional form or nature of the relationships in our simulation. Rather, I simply increased the strength of the linear correlation between the mediator and the outcome. Let’s see what happens.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -3147,7 +3147,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <div id="tabset-2-1" class="tab-pane active" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">Ex1tab1b</span></code></pre></div>
 </details>
 <div class="cell-output-display">
@@ -3645,7 +3645,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <div id="tabset-2-2" class="tab-pane" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">Ex1tab2b</span></code></pre></div>
 </details>
 <div class="cell-output-display">
@@ -4143,7 +4143,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <div id="tabset-2-3" class="tab-pane" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">(plot_lm1b <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> plot_lm1) <span class="sc" style="color: #5E5E5E;
@@ -4191,7 +4191,7 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <p>Still not convinced? Let’s go back to the first simulation (Sim.1), then add an exogenous covariate that is related to delinquency but unrelated to either parental support or moral beliefs to the data and our regression models and see what happens. This time, we will focus solely on the nonlinear model, and we will present the coefficients and plots for both this Sim.1c and the original Sim.1 to permit comparisons of the focal interaction term on the log event rate scale and on the predicted event rate scale.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -4528,7 +4528,7 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 <div id="tabset-3-1" class="tab-pane active" aria-labelledby="tabset-3-1-tab">
 <div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">Ex1tab2c </span>
 <span id="cb13-2">Ex1tab2</span></code></pre></div>
 </details>
@@ -5526,7 +5526,7 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 <div id="tabset-3-2" class="tab-pane" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">plot_glm1c <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> plot_glm1 <span class="sc" style="color: #5E5E5E;
@@ -5575,7 +5575,7 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <p>Now, let’s return to the initial simulated data (Sim.1) and overlay a plot of an idealized function that closely represents the causal equation used to generate the simulated the data (dashed line) with plots of the predicted event counts from the linear and nonlinear models. This should give us a good sense of how well our model-based predictions fit or accurately describe the underlying data-generating process.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -5977,7 +5977,7 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <p>At this point, it should be unsurprising that the nonlinear model provides a better fit to the underlying data-generating function. Still, sometimes visualizations simply help reaffirm what we already know. Now, let’s simulate the data again with a sample size of <em>n</em>=8,500 instead of <em>n</em>=850 and recreate these fit plots to see how sample size affects precision.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE</span></span>
@@ -6575,7 +6575,7 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <p>In simulating data for Example 2 (Simulation 2), I modified the first simulated dataset (Sim.1) by adding a small multiplicative interaction term to the linear equation predicting delinquency (<em>b</em> = -0.12 x ParentSupport x WeakMoralBlfs). Then, after making this small change and simulating the data, I once again tabled results from linear and nonlinear Poisson regression models, plotted the predicted delinquency event rates for both models, and overlayed the idealized data generating function (dashed lines) to help visualize model fit.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE </span></span>
@@ -7420,7 +7420,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <div id="tabset-4-1" class="tab-pane active" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1">Ex2tab1</span></code></pre></div>
 </details>
 <div class="cell-output-display">
@@ -7918,7 +7918,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <div id="tabset-4-2" class="tab-pane" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1">Ex2tab2</span></code></pre></div>
 </details>
 <div class="cell-output-display">
@@ -8416,7 +8416,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <div id="tabset-4-3" class="tab-pane" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE </span></span>
@@ -8460,7 +8460,7 @@ font-style: inherit;">'horizontal'</span>)</span></code></pre></div>
 <p>The plots below are intended to help you visualize how the inclusion of this small interaction term on the linear estimation scale when simulating the data affected predicted delinquency event rates on the outcome’s natural interpretation scale. In those plots, I removed the idealized function (dashed line) and instead added predicted delinquency event rates from models in Example 1 instead. Recall, the only difference between the simulated datasets in Examples 1 and 2 is the omission (in Sim.1) or inclusion (in Sim.2) of a small interaction term (<em>b</em> = -0.12). So, differences between the predicted delinquency event rates across Sim.2 (solid lines) and Sim.1 (dotted lines) are due to the interaction.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#|message=FALSE </span></span>
@@ -8899,7 +8899,7 @@ Brauer, Jon. 2023. <span>“Moderator Madness, Part 1.”</span> July 18,
 <p>Well, most of the sources that we have read explicitly or implicitly define colliders <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967310/">as a type of third variable is caused by both <em>X</em> and <em>Y</em></a>. The causal diagram depicted in the figure below represents the quintessential collider example.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(tidyverse)</span>
@@ -9190,7 +9190,7 @@ font-style: inherit;">12</span>))</span>
 <p>We have provided some example DAGs below in which the variable <em>Z</em> is a collider in a path between <em>X</em> and <em>Y</em>. As you will see, the collider <em>Z</em> is not always caused (directly or as a descendent) by the outcome <em>Y</em>.<sup>1</sup> Likewise, in this blog post, we have attempted to deviate from the typical three-variable models (e.g., DAG Example 1, where <em>X</em> and <em>Y</em> cause collider <em>Z</em>) that we often encounter in collider explanations. Instead, we aimed to specify colliders and illustrate potential collider biases that might routinely occur from conditioning on a collider that is <em>not</em> necessarily an effect or a descendant of the outcome variable (<em>Y</em>).</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">hauntedDAG2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -9871,7 +9871,7 @@ font-style: inherit;">+</span> hauntedDAG4p)</span></code></pre></div>
 <p>For instance, using the fourth example above, we can identify all paths between <em>X</em> and <em>Y</em> and <a href="https://evalf20.classes.andrewheiss.com/example/dags/#paths-and-adjustment-sets">identify appropriate adjustment sets</a> automatically using <code>ggdag::ggdag_paths()</code> and <code>ggdag::ggdag_adjustment_set()</code>. You will note below that the path from <em>X</em> -&gt; <em>Y</em> and <em>X</em> &lt;- <em>C</em> -&gt; <em>Y</em> are open or unblocked paths, but the path from <em>X -&gt; Z &lt;- C -&gt; Y</em> is not an open path - unless we open it by conditioning on <em>Z</em> and, in turn, bias our estimate of the effect of <em>X</em> on <em>Y</em>. Likewise, the appropriate adjustment set for Example 4 contains only <em>C</em>, meaning we should control for <em>C</em> but not <em>Z</em> (or <em>C</em> and <em>Z</em>).</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">Ex4paths <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -10020,7 +10020,7 @@ font-style: inherit;">/</span> Ex4adj</span></code></pre></div>
 <p>Below is our DAG of a simple causal structure describing a plausible (if simplified) data generating process used to simulate data for our first two examples. We highlighted the focal estimand of interest (effect of self-control on delinquency) for our first simulation example with a red arrow.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">collideDAG <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -10750,7 +10750,7 @@ font-style: inherit;"># geom_dag_edges(edge_color = "steelblue") +</span></span>
 <p>For the second example, we will assume no total effect of SES on delinquency association (for rationale, see our <a href="https://reluctantcriminologists.com/blog-posts/%5B4%5D/causation-no-corr">previous blog on causation without correlation</a>). However, we will assume a hypothetical positive effect of SES and negative effect of felony convictions on employment status/quality.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">options</span>(<span class="at" style="color: #657422;
@@ -11756,7 +11756,7 @@ font-style: inherit;">'collect'</span>)</span></code></pre></div>
 <p>Let’s examine the bivariate correlations between our variables in the simulated “general” sample.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># https://r-coder.com/correlation-plot-r/  </span></span>
@@ -11877,7 +11877,7 @@ font-style: inherit;"># If TRUE, adds confidence intervals</span></span></code><
 <p>Now, let’s examine the bivariate correlations between our variables in the simulated “restricted” sample in which participants are selected based upon felony conviction status.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># https://r-coder.com/correlation-plot-r/  </span></span>
@@ -12004,7 +12004,7 @@ font-style: inherit;"># If TRUE, adds confidence intervals</span></span></code><
 <p>Let’s not get ahead of ourselves. Instead, let’s illustrate in detail with our first example. We begin by estimating a generalized linear model predicting delinquency in the simulated general sample and in the restricted sample that is selected on felony convictions. In both models, we specify a Poisson distribution with a log link for our delinquency outcome. Though we should also account for ordinal nature of predictors (e.g., model monotonic effects with cumulative logit link function), we will save that for a future blog entry.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#nonlinear models predicting delinquency in pop &amp; sample</span></span>
@@ -12657,7 +12657,7 @@ font-style: inherit;">"Example 1: Poisson model 1a, General sample"</span>)</spa
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">regsum</span>(glm1b) <span class="sc" style="color: #5E5E5E;
@@ -13174,7 +13174,7 @@ font-style: inherit;">"Example 1: Poisson model 1b, Felony sample"</span>)</span
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#use min (0), mean, and +2d low moral beliefs in felony sample to plot interaction  </span></span>
@@ -13377,7 +13377,7 @@ font-style: inherit;">'collect'</span>)</span></code></pre></div>
 <p>Note, too, that the truncated variation from selection bias did not simply result in attenuated effect estimates in the felony sample. In fact, the magnitude of the estimated average marginal effect of self-control on delinquency is upwardly biased in the felony sample. Below, we plot the average marginal effect (AME) of self-control on delinquency in both samples, alongside a plot of the predicted delinquency count at each value of self-control in both samples.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#marginal effect of self-control plots</span></span>
@@ -13939,7 +13939,7 @@ font-style: inherit;">+</span> plot_glm1cd </span></code></pre></div>
 <p>Let’s start with a model that includes male and employment (i.e., QualityEmploy) as control variables Why? Well, because employment might be related to SES and to delinquency, and because everyone throws in demographic controls like sex, right? I know just said that this is <strong>not</strong> how one should select controls; however, in this example, we are trying to illustrate what might happen when people DO select controls in this way.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#generalized linear model, effect of SES on delinquency in pop, strat on employment </span></span>
@@ -14475,7 +14475,7 @@ font-style: inherit;">"Example 2: Model 2a, General sample, Collider"</span>)</s
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">plot_glm2a <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -14556,7 +14556,7 @@ font-style: inherit;">"General sample, Stratify on employ"</span>)  </span>
 <p>Now, let’s illustrate what happens if we remove employment, the collider in our SES -&gt; delinquency estimate, from our model.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#generalized linear model, effect of SES on delinquency in pop, drop employment </span></span>
@@ -15085,7 +15085,7 @@ font-style: inherit;">"Example 2: Model 2b, General sample, No collider"</span>)
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">plot_glm2b <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -15156,7 +15156,7 @@ font-style: inherit;">+</span> plot_glm2b</span></code></pre></div>
 <p>What would happen if we continue to condition on employment in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let’s re-estimate our two models using the simulated felony sample to see.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#generalized linear model, effect of SES on delinquency in pop, stratify employment </span></span>
@@ -15699,7 +15699,7 @@ font-style: inherit;">"Example 2: Model 2c, Felony sample, with Collider"</span>
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1">plot_glm2c <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -16283,7 +16283,7 @@ font-style: inherit;">"Example 2: Model 2d, Felony sample, no Collider"</span>)<
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1">plot_glm2d <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -16376,7 +16376,7 @@ font-style: inherit;">+</span> plot_glm2d)</span></code></pre></div>
 <p>Let’s do that with our SES -&gt; Delinquency example above.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1">collideDAG_adjust <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -16444,7 +16444,7 @@ font-style: inherit;">"all"</span>)</span>
 <p>So, given we decide to control for male and employment in our model, then there are four adjustment sets that include both male and employment that should effectively block the path we open by conditioning on a collider (employment). “College” isn’t in the simulated data - it is common to lack key variables in a DAG in real world data - so that leaves us with two adjustment sets that we could use to block the open collider path with the data at hand. Let’s estimate those models and confirm that we get the correct “null” estimate.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1">glm2e <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -17012,7 +17012,7 @@ font-style: inherit;">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)
 </div>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">regsum</span>(glm2f) <span class="sc" style="color: #5E5E5E;
@@ -17549,7 +17549,7 @@ font-style: inherit;">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)
 <p>In particular, we anticipate that selection into the University sample might introduce collider biases for estimates of various causal estimands of interest to criminologists. Of course, we communicated this expectation in our initial DAG used to simulate data, which we present again for convenience (see Figure 7 below).</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1">collideDAGalt2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -17985,7 +17985,7 @@ font-style: inherit;">12</span>))</span>
 <p>We start by presenting sample-specific results in separate plots.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Restore RDS data to object</span></span>
@@ -18551,7 +18551,7 @@ font-style: inherit;">+</span> fig3b </span></code></pre></div>
 <p>In case it is easier to visualize the selection thresholds, we also overlay both plots on the same grid below.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1">fig3c <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> dat.ssrfp <span class="sc" style="color: #5E5E5E;
@@ -18869,7 +18869,7 @@ font-style: inherit;">"serif"</span>))</span>
 <p>Let’s check our sufficient adjustment sets.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1">collideDAG_adjust2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -19087,7 +19087,7 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>For instance, you might be wondering if it is really useful or accurate to say that X causes Y if there is no (total) statistical dependence between X &amp; Y - that is, if (in some populations or samples comprised of units with particular levels of key variables) Y does not reliably change after X changes. Yes, I think so! To understand why, it is helpful to consider an example, to rely on causal models, and to engage in counterfactual thinking. There are many possible examples; for simplicity, let’s imagine only four variables - X, M1, M2, and Y - that are causally related like so:</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(tidyverse)</span>
@@ -19196,7 +19196,7 @@ font-style: inherit;">plot</span>(XYdag)</span></code></pre></div>
 <p>We will illustrate how something like this might happen using simulated data. Specifically, we will simulate data for <em>parental SES</em>, <em>child delinquency</em>, and two potential countervailing mechanisms - <em>financial strain</em> and <em>perceived risk of detection</em> of delinquent behaviors. In our simulated example, we will assume parental SES does not directly cause child delinquency and that it indirectly causes child delinquency through both mediating mechanisms. Additionally, we will assume that the causal effects of Parental SES on financial strain and perceived risk of detection are equal in magnitude and that the causal effect of financial strain on delinquency is equal in magnitude yet opposite in direction, such that both indirect or mediated effects offset one another. Below is a directed acyclic graph, or DAG, of this simple causal structure.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">SESdag <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -19274,7 +19274,7 @@ font-style: inherit;">plot</span>(SESdag)</span></code></pre></div>
 <p>Now let’s simulate some data. In doing so, note we round data drawn from continuous (i.e., normal &amp; Poisson) distributions to integers; this adds a bit of noise to the data yet also makes our variables more comparable to the types of ordinal, Likert-type measures we see in our field.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># X = Parental SES</span></span>
@@ -19467,7 +19467,7 @@ font-style: inherit;">0</span>, Delinquency)</span>
 # ℹ 990 more rows</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">SESplot <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> simdata <span class="sc" style="color: #5E5E5E;
@@ -19811,7 +19811,7 @@ font-style: inherit;">+</span> Delqplot</span></code></pre></div>
 <p>Let’s examine the bivariate correlations between our simulated variables.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># https://r-coder.com/correlation-plot-r/  </span></span>
@@ -19924,7 +19924,7 @@ font-style: inherit;"># If TRUE, adds confidence intervals</span></span></code><
 <p>The scatterplot and regression line from our bivariate linear regression model again illustrates the lack of total association between our simulated SES and delinqueny variables.<sup>2</sup></p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">lm1a <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -19955,7 +19955,7 @@ font-style: inherit;">2</span>]</span></code></pre></div>
 SES         -0.01125514 0.03849479</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plot(simdata$SES, simdata$Delinquency)</span></span>
@@ -20087,7 +20087,7 @@ font-style: inherit;">"Delinquency"</span>)</span>
 <p>Now, let’s estimate a linear model regressing delinquency on SES and include <em>both mediators</em> as predictors in the model as well and then plot the regression line (with mediators set at their mean values). Once again, we should see a near-zero association between SES and delinquency, but for very different reasons this time. In this model, we are estimating what is commonly referred to as the <strong>direct effect</strong> of SES after stratifying on (aka, adjusting for) any potential indirect effects through financial strain and perceived risk mechanisms. Of course, we simulated our data in such a way that there would be no direct causal effect of SES on delinquency in our simulated data and, after including both mechanisms in the model, we accurately estimate virtually no direct effect of SES on delinquency (<em>b</em> = -0.03, se = 0.04). Hence, this plot looks comparable to the bivariate one above.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">lm1b <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -20124,7 +20124,7 @@ Strain       0.38859596 0.03290744  11.8087577  3.274331e-30
 Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plot(simdata$SES, simdata$Delinquency)</span></span>
@@ -20285,7 +20285,7 @@ font-style: inherit;">"Delinquency"</span>)</span>
 <p>But without jumping ahead to mediation tests, what would have happened if we had failed to specify the appropriate causal model ahead of time and, as a result, we mistakenly included <em>only one mediator</em> in the model with SES predicting delinquency? Let’s add financial strain to the model and exclude perceived risk from the model, then see what happens.</p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">lm1c <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -20319,7 +20319,7 @@ SES         0.1790345 0.04027868  4.444895
 Strain      0.3951323 0.03593409 10.996029</code></pre>
 </div>
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plot(simdata$SES, simdata$Delinquency)</span></span>
@@ -20477,7 +20477,7 @@ font-style: inherit;">"Delinquency"</span>)</span>
 <p>Finally, let’s illustrate a simple test of the indirect effect of SES on delinquency using <code>mediate()</code> from the psych package.<sup>4</sup></p>
 <div class="cell">
 <details>
-<summary>Show code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mediate</span>(Delinquency <span class="sc" style="color: #5E5E5E;
