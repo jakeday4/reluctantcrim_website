@@ -1,0 +1,81 @@
+---
+title: "Near Duplicates in Survey Data Series"
+author:
+  - name: Jake Day
+  - name: Jon Brauer
+  - name: Maja Kotlaja
+date: "today"
+image: Shining.jpg
+image-alt: "You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?"
+description: "Do you know how to detect exact or near duplicate rows in your data? Read on to learn more!"
+categories: [general, rstats, survey research, duplication, fraud]
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+    code-fold: true
+    code-summary: "Show code"
+    embed-resources: true
+execute:
+  warning: false
+  error: false
+draft: true
+editor_options: 
+  chunk_output_type: inline
+---
+
+![You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?](Shining.jpg)
+
+You have reached the landing page for our "Near Duplicates in Survey Data" series. Click below to read the posts in this series:  
+
+## Near Duplicates Series: Post 1
+
+:::: columns
+
+::: {.column width="35%"}
+![Near duplicates in survey data: Like "[Multiplicity](https://www.imdb.com/title/tt0117108/)" but without the humor](multiplicity.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Trust Issues: Examining Near Duplicates in Survey Data](posts/duplicates.html)
+Do you know how to detect exact or near duplicate rows in your data? Read on to learn more! 
+:::
+::::
+
+## Near Duplicates Series: Post 2
+
+:::: columns
+
+::: {.column width="35%"}
+![For this non-programmer, iterating on a percentmatch function in R was not entirely unlike stumbling in the dark.](coding-dall-e.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Stumbling in the Dark: Building/Iterating an R Function to Match Stata's percentmatch](posts/pctmatchR.html)
+If you are looking for more information about the modified R function we used to detect near duplicates, then you have come to the right place. 
+:::
+::::
+
+## Near Duplicates Series: Post 3
+
+:::: columns
+
+::: {.column width="35%"}
+![Near duplicates in more survey data: Will the sequel live up to the original? (Our sequel - no shade intended for [Matrix: Reloaded](https://www.imdb.com/title/tt0234215/)!)](matrix-sequel.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+### [Trust Issues, Part 2: Examining Near Duplicates in More Survey Data](posts/duplicates-pt2.html)
+This follow-up to our first entry on near duplication in survey data analyzes near duplicates in three more international survey data sets. 
+:::
+::::
+
