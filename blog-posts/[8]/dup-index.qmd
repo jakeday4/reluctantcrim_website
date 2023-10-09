@@ -30,7 +30,7 @@ editor_options:
 
 You have reached the landing page for our "Near Duplicates in Survey Data" series. Click below to read the posts in this series:  
 
-## 
+## Trust Issues
 
 :::: columns
 
@@ -51,7 +51,7 @@ Do you know how to detect exact or near duplicate rows in your data? Read on to 
 :::
 ::::
 
-## 
+## Stumbling in the Dark
 
 :::: columns
 
@@ -72,7 +72,7 @@ If you are looking for more information about the modified R function we used to
 :::
 ::::
 
-## 
+## Trust Issues, Part 2
 
 :::: columns
 
