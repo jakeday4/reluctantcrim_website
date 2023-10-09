@@ -1,0 +1,15 @@
+---
+title: "Supplementary materials for duplicates series"
+---
+
+## Post Slides  
+
+### [Int64_mystery_solved_slides](Int65_mystery_solved_slides.html)
+
+### [intmuni_plots_slides](intmuni_plots_slides.html)
+
+### [intmuniclust_plots_slides](intmuniclust_plots_slides.html)
+
+### [municlust_plots_slides](municlust_plots_slides.html)
+
+### [municlustint_plots_slides](municlustint_plots_slides.html)

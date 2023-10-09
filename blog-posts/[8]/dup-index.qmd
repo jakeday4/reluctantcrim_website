@@ -68,7 +68,7 @@ For this non-programmer, iterating on a percentmatch function in R was not entir
 
 ::: {.column width="60%"}
 ### [Stumbling in the Dark: Building/Iterating an R Function to Match Stata's percentmatch](dup-series/pctmatchR.html)
-If you are looking for more information about the modified R function we used to detect near duplicates, then you have come to the right place. 
+If you are looking for more information about the modified R function we used to detect near duplicates, then you have come to the right place. (Code shared; detailed write-up forthcoming) 
 :::
 ::::
 
@@ -89,7 +89,7 @@ Investigating near duplicates in different data: Will the sequel live up to the 
 
 ::: {.column width="60%"}
 ### [Trust Issues, Part 2: Investigating Near Duplicates in Different Data](dup-series/duplicates-pt2.html)
-This follow-up to our first entry on near duplication in survey data analyzes near duplicates in three more international survey data sets. 
+This follow-up to our first entry on near duplication in survey data analyzes near duplicates in three more international survey data sets. (Forthcoming) 
 :::
 ::::
 
