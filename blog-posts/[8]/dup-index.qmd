@@ -5,7 +5,7 @@ author:
   - name: Jon Brauer
   - name: Maja Kotlaja
 date: "today"
-image: Shining.jpg
+image: shining2.jpg
 image-alt: "You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?"
 description: "Do you know how to detect exact or near duplicate rows in your data? Read on to learn more!"
 categories: [general, rstats, survey research, duplication, fraud]
@@ -15,7 +15,9 @@ format:
     toc-depth: 4
     code-fold: true
     code-summary: "Show code"
-    embed-resources: true
+    # embed-resources: true
+crossref:
+  fig-title: Post
 execute:
   warning: false
   error: false
@@ -24,57 +26,69 @@ editor_options:
   chunk_output_type: inline
 ---
 
-![You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?](Shining.jpg)
+![You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?](shining2.jpg)
 
 You have reached the landing page for our "Near Duplicates in Survey Data" series. Click below to read the posts in this series:  
 
-## Near Duplicates Series: Post 1
+## 
 
 :::: columns
 
 ::: {.column width="35%"}
-![Near duplicates in survey data: Like "[Multiplicity](https://www.imdb.com/title/tt0117108/)" but without the humor](multiplicity.jpg)
+::: {#fig-duplicates}
+[![](multiplicity.jpg)](dup-series/duplicates.html)
+
+Near duplicates in survey data: Like "Multiplicity" but without the humor. (Image from [Multiplicity](https://www.imdb.com/title/tt0117108/))
+:::
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="60%"}
-### [Trust Issues: Examining Near Duplicates in Survey Data](posts/duplicates.html)
+### [Trust Issues: Examining Near Duplicates in Survey Data](dup-series/duplicates.html)
 Do you know how to detect exact or near duplicate rows in your data? Read on to learn more! 
 :::
 ::::
 
-## Near Duplicates Series: Post 2
+## 
 
 :::: columns
 
 ::: {.column width="35%"}
-![For this non-programmer, iterating on a percentmatch function in R was not entirely unlike stumbling in the dark.](coding-dall-e.jpg)
+::: {#fig-pctmatchR}
+[![](coding-dall-e.jpg)](dup-series/pctmatchR.html)
+
+For this non-programmer, iterating on a percentmatch function in R was not entirely unlike stumbling in the dark. (Image created using [DALL-E](https://openai.com/dall-e-2))
+:::
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="60%"}
-### [Stumbling in the Dark: Building/Iterating an R Function to Match Stata's percentmatch](posts/pctmatchR.html)
+### [Stumbling in the Dark: Building/Iterating an R Function to Match Stata's percentmatch](dup-series/pctmatchR.html)
 If you are looking for more information about the modified R function we used to detect near duplicates, then you have come to the right place. 
 :::
 ::::
 
-## Near Duplicates Series: Post 3
+## 
 
 :::: columns
 
 ::: {.column width="35%"}
-![Near duplicates in more survey data: Will the sequel live up to the original? (Our sequel - no shade intended for [Matrix: Reloaded](https://www.imdb.com/title/tt0234215/)!)](matrix-sequel.jpg)
+::: {#fig-duplicates-pt2}
+[![](matrix-sequel.jpg)](dup-series/duplicates-pt2.html)
+
+Investigating near duplicates in different data: Will the sequel live up to the original? (Image from [Matrix: Reloaded](https://www.imdb.com/title/tt0234215/))
+:::
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="60%"}
-### [Trust Issues, Part 2: Examining Near Duplicates in More Survey Data](posts/duplicates-pt2.html)
+### [Trust Issues, Part 2: Investigating Near Duplicates in Different Data](dup-series/duplicates-pt2.html)
 This follow-up to our first entry on near duplication in survey data analyzes near duplicates in three more international survey data sets. 
 :::
 ::::
