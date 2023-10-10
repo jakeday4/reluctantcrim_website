@@ -21,7 +21,7 @@ crossref:
 execute:
   warning: false
   error: false
-draft: true
+draft: false
 editor_options: 
   chunk_output_type: inline
 ---
