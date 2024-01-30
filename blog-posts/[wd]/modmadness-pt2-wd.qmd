@@ -331,16 +331,16 @@ What about our mechanism? The probability of experiencing sufficient ambient lig
 Now, let's consider jointly how the probability of stubbing our toes changes given different combinations of exposure and mediator conditions, or given that we open or close curtains and simultaneously observe the presence or absence of sufficient ambient light in the room. 
 
 Y00  
-Let's start with the probability of stubbing toes given open curtains and the absence of sufficient light, which we will denote as P(Y|do[X=0],do[M=0]) and abbreviate to Y00. Given some assumptions, this quantity represents the expected probability of stubbing our toes if we *do* X=0 (i.e., if we open the curtains) and if we were able to set the mechanism to its expected value when X=0. Here, we are "0" (i.e., we set the room to insufficient light, or *Light* = 0, with the curtains open). There were 2 observed cases in which X=0 and M=0. Perhaps these cases represented especially dark nights during which the open window curtains were not effective in increasing the amount of ambient light in the room. In half of these cases (1/2), we stubbed our toes, meaning **Y00 = 0.5**. 
+Let's start with the probability of stubbing toes given open curtains and the absence of sufficient light, which we will denote as P(Y|do[X=0],do[M=0]) and abbreviate to Y00. Given some assumptions, this quantity represents the expected probability of stubbing our toes if we *do* X=0 (i.e., if we open the curtains) and if we were able to set the mechanism to absent, or M=0. In other words, we are setting the room to insufficient light, or *Light* = 0, with the curtains open. There were 2 observed cases in which X=0 and M=0. Perhaps these cases represented especially dark nights during which the open window curtains were not effective in increasing the amount of ambient light in the room. In half of these cases (1/2), we stubbed our toes, meaning **Y00 = 0.5**. 
 
 Y10  
-Now, imagine we *do* X=1 instead (i.e., we close the curtains) and we continue hold the mechanism constant at the value of "0" (i.e., we set the room to insufficient light, or *Light* = 0, with the curtains closed). There are ten observed cases in which the curtains were closed and there was insufficient ambient light in the room. We stubbed our toes in five of these ten cases, meaning P(Y|do[X=1],do[M=0]) or **Y10 = 0.5**. 
+Now, imagine we *do* X=1 instead (i.e., we close the curtains) and we continue hold the mechanism constant at the value of "0". That is, we set the room to insufficient light, or *Light* = 0, with the curtains closed. There are ten observed cases in which the curtains were closed and there was insufficient ambient light in the room. We stubbed our toes in five of these ten cases, meaning P(Y|do[X=1],do[M=0]) or **Y10 = 0.5**. 
 
 #### CDE
 
 With the quantities above, we now have enough information to calculate the *controlled direct effect*, or CDE, of X on Y. Conceptually, the CDE of an exposure is the expected effect that an exposure would have on the outcome if the mechanism (M) were fixed at a specific value (m). Here is the potential outcomes equation for the CDE: 
 
-CDE = Y1m - Y0m, where we set M to a specific value "m" 
+CDE = Y1m - Y0m, where we set M to a specific value "m"  
 
 Commonly, we might wish to estimate the controlled direct effect when the mediator is equal to zero. In this case, the CDE of an exposure is the expected effect that an exposure would have on the outcome if the mechanism were removed or fixed at M=0. Here, when we set M to m=0, the CDE is equivalent to the difference between Y10 and Y00, or the estimated effect on Y of *doing* X in the absence of the mechanism:
 
@@ -810,14 +810,5 @@ summary(est2)
 ggcmest(est2) +
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8)) + coord_flip(xlim = NULL, ylim = NULL, expand = TRUE, clip = "on") 
 ```
-
-
-
-
-
-
-
-
-
 
 
