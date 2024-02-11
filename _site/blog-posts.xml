@@ -106,13 +106,13 @@
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{day2024,
   author = {Day, Jake and Brauer, Jon and Kotlaja, Maja},
   title = {Near {Duplicates} in {Survey} {Data} {Series}},
-  date = {2024-01-30},
+  date = {2024-02-11},
   url = {https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-day2024" class="csl-entry quarto-appendix-citeas">
 Day, Jake, Jon Brauer, and Maja Kotlaja. 2024. <span>“Near Duplicates in
-Survey Data Series.”</span> January 30, 2024. <a href="https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html">https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html</a>.
+Survey Data Series.”</span> February 11, 2024. <a href="https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html">https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html</a>.
 </div></div></section></div> ]]></description>
   <category>general</category>
   <category>rstats</category>
