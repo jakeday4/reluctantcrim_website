@@ -17,6 +17,14 @@ execute:
 draft: true
 ---
 
+```{r}
+#|echo=FALSE
+
+#explicitly set graphics device to png(type=cairo) to knit ggblend plots properly
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+```
+
+
 ![Two lemmings confused by exposure-mediator interactions (with help from DALL-E)](med-or-mod-cartoon2.jpg)
 
 In [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html), I covered issues related to estimating and interpreting interaction effects with binary or skewed count outcome variables. In Part 2, I introduce the need and a method for disentangling indirect and interaction effects in the presence of a potential exposure-mediator interaction. 
@@ -512,7 +520,7 @@ At this point, I am hoping the toy example above helped build your intuitions ab
 
 >"...[I]n Part 2 of the blog series, I will pick up here using the same simulated data from this example to illustrate how the addition of an exposure-mediator interaction entangles indirect and interaction effects in a way that requires decomposition of these effects. I will also illustrate how one can accomplish effect decomposition with a causal mediation approach that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates."
 
-Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional "product of coefficients (*ab* path) approaches to modeling mediation processes and are looking for a very basic introduction to [less well known yet generally preferred](https://pubmed.ncbi.nlm.nih.gov/34239282/). If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent [summaries](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation), [overviews of software alternatives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/), and [introductory primers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/) on causal mediation and on [CMAverse specifically](https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx). Additionally, the [CMAverse quickstart](https://bs1125.github.io/CMAverse/articles/quickstart.html) website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.[^Methods-note]  
+Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional "product of coefficients (*ab* path) approaches to modeling mediation processes and are looking for a very basic introduction to [less well known yet generally preferred](https://pubmed.ncbi.nlm.nih.gov/34239282/) "causal mediation" methods. If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent [summaries](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation), [overviews of software alternatives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/), and [introductory primers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/) on causal mediation and on [CMAverse specifically](https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx). Additionally, the [CMAverse quickstart](https://bs1125.github.io/CMAverse/articles/quickstart.html) website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.[^Methods-note]  
 
 [^Methods-note]:
 Given the aims, I will not get into detailed issues or advanced modeling options, such as differences between [regression-based](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/), [weighting-based](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4214081/), *g-formula*, or [other estimation methods](https://bs1125.github.io/CMAverse/articles/overview.html) available in CMAverse. However, some available methods may be better suited for your particular modeling situation, and some choices may be better than others [depending upon your specific causal estimand of interest](https://www.tandfonline.com/doi/full/10.1080/10705511.2022.2104287).   
@@ -855,6 +863,10 @@ plot_lm2
 ```{r}
 #|message=FALSE 
 
+
+#dev = "png" 
+#dev.args = list(type = "cairo-png")
+
 #use ggeffects::ggpredict() to save plot_model data for use in ggplot 
 lm2df <- ggpredict(lm2, terms = c("ParentSupport", "StrgMoralBlfs [0,2,4]"))
 
@@ -868,10 +880,10 @@ simdat3sub <- simdat3 %>%
 predplot1 <- ggplot(data=simdat3sub, aes(x=ParentSupport, y=Delinquency, 
                             color=StrgMoralBlfs, group=StrgMoralBlfs)) + 
   geom_hline(yintercept=7, linetype="dashed") +
-  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs == 0], alpha=0.4)  +
-  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs %in% c(2,4)], alpha=0.1) +
-  # geom_point() |> partition(vars(StrgMoralBlfs)) |> blend("lighten") |> 
-  # blend("multiply", alpha = 0.4)+
+  # geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs == 0], alpha=0.4)  +
+  # geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs %in% c(2,4)], alpha=0.1) +
+  geom_point() |> partition(vars(StrgMoralBlfs)) |> blend("lighten") |>
+  blend("multiply", alpha = 0.4)+
   scale_colour_colorblind() +
   scale_fill_colorblind() +
   theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) + 
@@ -881,7 +893,7 @@ predplot1 <- ggplot(data=simdat3sub, aes(x=ParentSupport, y=Delinquency,
                                ymin=conf.low, ymax=conf.high, fill=group), 
               alpha=0.3, inherit.aes=FALSE) +
   scale_linetype_manual(values = c("solid", "solid", "solid")) + 
-  guides(linetype=FALSE, fill=FALSE) + 
+  guides(linetype="none", fill="none") + 
   labs(x="Parental Support",
        y="Delinquency",
        title="Predicted conditional marginal effects of parent support on delinquency", 
@@ -891,8 +903,6 @@ predplot1
 
 ```
 ::::
-
-NOTE - FIX GGBLEND IMAGES. WORKING IN QUARTO (WITH CAIRO PNG) BUT NOT KNITTING PROPERLY IN HTML. USING WORKAROUND FOR NOW
 
 While the linear model uncovered a sizeable interaction between parental support and moral beliefs, the plot reveals some areas of poor fit between the model predictions and the underlying data - including out of bounds predictions below "0" on predicted delinquency counts. You expected this, of course, because you read the [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html) entry.
 
@@ -929,10 +939,10 @@ glm2df <- ggpredict(glm2, terms = c("ParentSupport", "StrgMoralBlfs [0,2,4]"))
 predplot2 <- ggplot(data=simdat3sub, aes(x=ParentSupport, y=Delinquency, 
                             color=StrgMoralBlfs, group=StrgMoralBlfs)) + 
   geom_hline(yintercept=7, linetype="dashed") +
-  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs == 0], alpha=0.4)  +
-  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs %in% c(2,4)], alpha=0.1) +
-  # geom_point() |> partition(vars(StrgMoralBlfs)) |> blend("lighten") |> 
-  # blend("multiply", alpha = 0.4) +
+  # geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs == 0], alpha=0.4)  +
+  # geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs %in% c(2,4)], alpha=0.1) +
+  geom_point() |> partition(vars(StrgMoralBlfs)) |> blend("lighten") |>
+  blend("multiply", alpha = 0.4) +
   scale_colour_colorblind() +
   scale_fill_colorblind() +
   theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) + 
