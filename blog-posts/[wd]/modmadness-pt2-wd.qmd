@@ -89,6 +89,8 @@ library(gtsummary)
 library(ggraph)
 library(CMAverse)
 library(ggExtra)
+library(ggeffects)
+library(ggblend)
 
 ```
 
@@ -273,19 +275,30 @@ ouchDAG3
 ```
 
 An important takeaway message is that when we are examining causal systems that we think might involve a mediating mechanism, it is important to formally assess whether there is evidence of a non-negligible **exposure-mediator interaction**. An exposure-mediator interaction is a situation where the effect of the focal cause or exposure (opening or closing the curtains) on an outcome (toe stubbing) varies across the range of values of the posited mediating mechanism (ambient light levels in the room). 
-Often, when testing mediation hypotheses, assessing this possibility will entail the inclusion of a multiplicative interaction term representing a potential exposure-mediator interaction (X\*M) into your model. If the multiplicative interaction coefficient departs from zero, then you likely need to account for the joint possibility of mediation and moderation, or of indirect and interaction effects, in your modeling approach. In this situation, you can use the "causal mediation" or potential outcomes decomposition approach to sort them out. (Note: Do NOT rely on statistical significance of the interaction coefficient to make this determination as those tests are notoriously underpowered; also, as [I discussed in the first post in this series](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-1), such inferences are particularly unreliable in nonlinear models.)
+Often, when testing mediation hypotheses, assessing this possibility will entail the inclusion of a multiplicative interaction term representing a potential exposure-mediator interaction (X\*M) into your model. If the multiplicative interaction coefficient departs from zero, then you likely need to account for the joint possibility of mediation and moderation, or of indirect and interaction effects, in your modeling approach.[^Statsig-note] In this situation, you can use the "causal mediation" or potential outcomes decomposition approach to sort them out.[^Theory-note] 
+
+[^Theory-note]:
+At this point, you might be wondering: "Do I really need to do this? The [insert] theory I am testing does not predict such an interaction!" Well, failure to examine and adjust for the possibility of an exposure-mediator interaction is equivalent to forcing your model of the data generating process to conform to a strong and potentially incorrect theoretical assumption about underlying data generating processes. 
+In SEM parlance, it is equivalent to “fixing” the effect of X on Y through M to be the same at all values of M. In situations where the effect of X on Y indeed varies across strata of M, failure to account for it could result in biased or incomplete inferences. In contrast, allowing for and decomposing a potential exposure-mediator interaction is, in SEM terms, akin to “freeing” that parameter, thus permitting a test of that strong theoretical assumption. In situations where no such interaction exists, the magnitude of the interaction will approach zero, and traditional and “causal” mediation approaches (e.g., “controlled” and “natural” effect estimates) will converge to the same values. In those situations, decomposition would be unnecessary yet nonetheless informative. 
+In short, there is substantial upside and little downside apart from learning the skills to testing and accounting for exposure-mediator interactions whether or not one exists, yet there are potentially substantial inferential risks to *not* doing so when one exists. So, just how *a priori* confident are you in that likely imprecise and discursive theory of yours? 
+
+[^Statsig-note]:
+Do NOT rely on statistical significance of the interaction coefficient to make this determination as those tests are notoriously underpowered; also, as [I discussed in the first post in this series](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-1), such inferences are particularly unreliable in nonlinear models.
 
 ### Four-way decomposition with toy example
 
-The first thing to note about causal mediation effect decomposition is that it generates population-average inferences about counterfactual conditions. Recall, we cannot observe counterfactual causality among individual units because we can only observe one of two (or more) possible conditions for any individual unit. In our example, either the curtains were closed or open, and either we did or did not stub our toe. If the curtains were closed and we stubbed our toe, then we cannot observe the counterfactual condition in which the curtains instead would have been open to see what might have happened to our toes. However, we *can* make causal inferences about potential outcomes across counterfactual conditions with sufficient data from populations, a careful research design, and a proper causal (theoretical) model. In our example, that would require many observations of mechanism states (ambient light levels in the room) and outcome occurrences (stubbed toes) in the room under both exposure and non-exposure conditions (when the curtains were open and when curtains were closed). 
+The first thing to note about causal mediation effect decomposition is that it generates population-average inferences about counterfactual conditions. Recall, we cannot observe counterfactual causality among individual units because we can only observe one of two (or more) possible conditions for any individual unit. In our example, either the curtains were closed or open, and either we did or did not stub our toe. If the curtains were closed and we stubbed our toe, then we cannot observe the counterfactual condition in which the curtains instead would have been open to see what might have happened to our toes. However, we *can* make causal inferences about potential outcomes across counterfactual conditions with sufficient data from populations, a careful research design, and a proper causal (theoretical) model. In our example, that would require many observations of mechanism states (ambient light levels in the room) and outcome occurrences (stubbed toes) in the room under both exposure and non-exposure conditions (when the curtains were open and when curtains were closed) along with some assumptions. 
 
 ![Given some key assumptions, we can estimate counterfactual causal effects as population-average differences in potential outcomes.](counterfac5.jpg)
 
 I will work through an example using simulated crime-relevant data later. First, though, I hope to build upon your intuitions about how this decomposition procedure works using some toy data based on our toe stubbing example. The goal of this example is to introduce you to key terminology and the conceptual basis for potential outcomes effect decomposition before getting into a more realistic applied example in which we will use software to perform the decomposition for us. 
 
-Note that this first toy example is intended as a simple application of [VanderWeele's initial 4-way effect decomposition example](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S2title) in which exposure and mediator values are set at specific counterfactual values (setting M to 0 or 1). Later, I will briefly introduce more [complex counterfactual logic](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S1title) (e.g., setting M at its expected value when X=0 or X=1) required for interpreting "natural" direct and indirect effects found in `CMAverse` output. For more, and better, resources on the topic, I recommend reading VanderWeele's 2014 paper itself. This paper and other resources, including tutorials and a short video course on causal mediation, are available [on his website](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/).  
+Note that this first toy example is intended as a simple application of [VanderWeele's initial 4-way effect decomposition example](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S2title) in which exposure and mediator values are set at specific counterfactual values (setting M to 0 or 1). Later, I will briefly introduce more [complex counterfactual logic](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S1title) (e.g., setting M at its expected value when X=0 or X=1), which will be required for estimating and interpreting "natural" direct and indirect effects found in `CMAverse` output. For more and better resources on this topic, I recommend reading VanderWeele's 2014 paper itself, as well as his tutorials and short video course on causal mediation, all of which are available [on his website](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/).  
 
 ```{r}
+#| tbl-cap: Toy toe-stubbing data
+#| tbl-subcap: ["X=0", "X=1"]
+#| layout-ncol: 2
 
 ouchdat <- tribble(
 ~CurtainClosed, ~AmpleLight, ~StubToe,
@@ -312,7 +325,9 @@ ouchdat <- tribble(
 0,	0,	0,
 )
 
-ouchdat %>% gt()
+head(ouchdat,n=11) %>% gt()
+tail(ouchdat,n=10) %>% gt()
+
 
 ```
 
@@ -321,20 +336,30 @@ These data represent n = 21 curtains, light, and toe stubbing observations. In a
 Y0 and Y1  
 The probability of stubbing toes varies across exposure conditions. The probability of stubbing toes given the curtains were open, denoted by P(Y|do[X=0]) or abbreviated to Y0, is 0.2. That is, we stubbed our toes in 2 out of 10 cases in which curtains were open. In contrast, we stubbed our toes in 5 out of 11 cases in which curtains were closed, which means that P(Y|do[X=1]), or Y1, is equal to 0.45. 
 
-#### TE
+![Y0 and Y1](Y0Y1-pic.png)
+
+#### Total Effect (TE)
 
 In this example, we can calculate the *total effect* (TE) simply as the difference between the outcome probabilities across exposed and unexposed conditions. The estimated total effect of closing curtains on toe stubbing is Y1 - Y0, or 0.455 - 0.2, which equals 0.255. Put differently, opening curtains reduces the predicted probability of toe stubbing by about 26 percentage points (from ~45.5% to 20%). 
 
+![Total effect (TE) = Y1 - Y0](TE-pic.png)
+
 M0 and M1  
 What about our mechanism? The probability of experiencing sufficient ambient light in the room to be able to see obstacles is P(M) = 0.43, since 9 out of 21 cases had a *Light* value = 1. Like stubbing our toes, the probability of experiencing sufficient light also varied across exposure conditions. Specifically, the probability of sufficient light given the curtains were open, denoted by P(M|do[X=0]) or abbreviated to M0, is 0.80 (i.e., 8/10). In contrast, there was sufficient light in the room in only 1 out of 11 cases in which the curtains were closed, which means that P(M|do[X=1]) or M1 = 0.09. 
+
+![M0 and M1](M0M1-pic.png)
 
 Now, let's consider jointly how the probability of stubbing our toes changes given different combinations of exposure and mediator conditions, or given that we open or close curtains and simultaneously observe the presence or absence of sufficient ambient light in the room. 
 
 Y00  
 Let's start with the probability of stubbing toes given open curtains and the absence of sufficient light, which we will denote as P(Y|do[X=0],do[M=0]) and abbreviate to Y00. Given some assumptions, this quantity represents the expected probability of stubbing our toes if we *do* X=0 (i.e., if we open the curtains) and if we were able to set the mechanism to absent, or M=0. In other words, we are setting the room to insufficient light, or *Light* = 0, with the curtains open. There were 2 observed cases in which X=0 and M=0. Perhaps these cases represented especially dark nights during which the open window curtains were not effective in increasing the amount of ambient light in the room. In half of these cases (1/2), we stubbed our toes, meaning **Y00 = 0.5**. 
 
+![Y00](Y00-pic.png)
+
 Y10  
 Now, imagine we *do* X=1 instead (i.e., we close the curtains) and we continue hold the mechanism constant at the value of "0". That is, we set the room to insufficient light, or *Light* = 0, with the curtains closed. There are ten observed cases in which the curtains were closed and there was insufficient ambient light in the room. We stubbed our toes in five of these ten cases, meaning P(Y|do[X=1],do[M=0]) or **Y10 = 0.5**. 
+
+![Y10](Y10-pic.png)
 
 #### CDE
 
@@ -352,11 +377,17 @@ In essence, this value of 0.0 indicates that *doing* X = 1 (i.e., closing the cu
 
 Think of it this way: You are in a dark room with curtains closed (do[X=1],do[M=0]) and, after opening the curtains, the room remained just as dark as it was before (do[X=0],do[M=0]). A CDE = 0 indicates that the probability of stubbing your toes would remain unchanged in that situation, where opening or closing the curtains does not add any ambient light into the dark room (Y10 - Y00 = 0). Either way, it is dark, and you are predicted to have a coinflip's chance (Y10 = Y00 = .50) of stubbing your toes.
 
+![Controlled direct effect (CDE) = Y1m - Y0m](CDE-pic.png)
+
 Y01  
 In addition to Y10 and Y00, there are additional quantities we can estimate that will help us further decompose the total effect into other meaningful components like the CDE. For instance, what if we were to open the curtains (do[X=0]) while also holding constant a sufficient amount of ambient light in the room (do[M=1])? In our toy data, there were eight observations in which the windows were open and we experienced sufficient ambient light in the room that allowed us to see. We stubbed our toe in only one of these eight cases (1/8), so P(Y|do[X=0],do[M=1]) or **Y01 = 0.125**. 
 
+![Y01](Y01-pic.png)
+
 Y11  
 Now, imagine instead we close the curtains (do[X=1]) and continue holding a sufficient amount of ambient light in the room constant (do[M=1]). There is only one observation in these toy data with X=1 and M=1. Perhaps a hall light was on, or perhaps we used our cell phone backlight to provide ambient light when the curtains were closed. In any case, we did not stub our toe in this one instance (0/1), so P(Y|do[X=1],do[M=1]) or **Y11 = 0.0**.  
+
+![Y11](Y11-pic.png)
 
 #### TE = CDE + INTref + INTmed + PIE
 With the various quantities calculated above (e.g., M0; M1; Y00; Y10; Y01; Y11), now we have enough information to decompose the total effect of X on Y into four different components. Specifically, the total effect, or TE, is a composite value representing the sum of the controlled direct effect (CDE); reference interaction (INTref); mediated interaction (INTmed); and the pure indirect effect (PIE). I already covered the CDE above. Below, I will describe the remaining three components: INTref, INTmed, and PIE.  
@@ -392,6 +423,8 @@ INTref = (Y11 - Y10 - Y01 + Y00)(M0)
 
 Here, our toy data show a small reference interaction. What does this mean and where did it come from? Well, first remember that a reference interaction is an additive interaction that operates only if mediator is present in the absence of the exposure. Likewise, we observed the mechanism (sufficient ambient light) when the curtains were open and when they were closed, so a nonzero reference interaction estimate is possible. The logic here, which mirrors that of a classic interaction, is that we must be able to assess the effect of *doing* X=1 (versus X=0) both in the absence and in the presence of the mechanism. Then, if the estimated effect of doing X differs across those conditions (or across levels of the mechanism), we would have a nonzero exposure-mediator "reference interaction." 
 
+![A reference interaction is not what it sounds like. Well, maybe it is, if it sounds like an additive interaction effect that operates only if mediator is present in the absence of the exposure. (DALL-E)](DALL-E-INTref.png)
+
 Now, recall that we did not stub our toes in that one time we observed closed curtains and the mechanism present (Y11 = 0/1 = 0.0). However, we did stub our toe in one of the eight instances with open curtains and the mechanism present (Y01 = 1/8 = 0.125). Meanwhile, the probability of stubbing our toes was equal across exposure conditions in the absence of the mediator (Y10 = 5/10 = 0.5; Y00 = 1/2 = 0.5). 
 
 From these comparisons, it appears that doing X=1 instead of X=0 (closing curtains) slightly *reduced* the probability of toe stubbing with the mechanism present (Y11 - Y01 = 0.0 - 0.125 = -.125), whereas doing X=1 instead of X=0 had no effect on the probability of toe stubbing with the mechanism absent (Y10 - Y00 = 0.5 - 0.5 = 0). In the equation above, we essentially used these same comparisons and then weighted the resulting difference-in-differences value by the expectation of observing the mediator in the absence of exposure (i.e., M0 = probability of observing M=1 given we do[X=0]).[^ContrastEQ-note]
@@ -420,10 +453,14 @@ PIE = (Y01 - Y00)(M1 - M0)
 
 Recall, the total effect of closing the curtains on toe stubbing was 0.255. Closing curtains primarily increases our chances of stubbed toes indirectly by blocking light out of the room. In this case, the indirect effect estimate is quite close to the total effect estimate (0.266 versus 0.255). However, it does not always work out this way. In fact, as we will see, the only reason it worked out this way in our toy example is because the other two nonzero components, INTref and INTmed, were of approximately equal magnitude with opposite signs, so they cancel each other out when summing for the total effect. 
 
-This is an important point. If we had relied strictly on the total effect, or on traditional mediation test procedures, to make inferences about the exposure's effect on the outcome via the primary mediating mechanism, then we would have been close to accurately estimating the indirect effect. However, we would have done so only by luck or accident, and we would have missed completely the other two nonzero interaction components. Speaking of those other two interaction components, we already discussed INTref; now, let's move onto INTmed, our fourth component.
+This is an important point. If we had relied strictly on the total effect, or on traditional mediation test procedures, to make inferences about the exposure's effect on the outcome via the primary mediating mechanism, then we would have been close to accurately estimating the indirect effect. However, we would have done so only by luck or accident, and we would have missed completely the other two nonzero interaction components. 
+
+![Pure indirect effects: As American as apple PIE? (DALL-E)](DALL-E-surreal-pie.png)
+
+Speaking of those other two interaction components, we already discussed INTref; now, let's move onto INTmed, our fourth component.
 
 #### INTmed
-So far, we have discussed controlled direct effects, reference interaction effects, and pure indirect effects. Each of these is analogous (in certain situations) to well-known direct effects, interaction effects (moderation), and indirect effects (mediation), though their empirical overlap as distinct components of a total effect may be less widely appreciated or understood. 
+So far, we have discussed controlled direct effects, reference interaction effects, and pure indirect effects. Each of these is analogous (in certain situations) to well-known direct effects, interaction effects (moderation), and indirect effects (mediation), though their empirical connections as distinct components of a total effect may be less widely appreciated or understood. 
 
 This is good time to introduce the most important use cases for decomposition: When there is no exposure-mediator interaction (and strong causal assumptions hold), then traditional approaches to detecting interaction effects or testing indirect effects are often reliable and decomposition procedures may be unnecessary. However, **when there is a nonzero exposure-mediator interaction, then traditional approaches become problematic, decomposition is essential, and the constituent components comprising a total effect become more complex - and potentially more numerous**. For instance, in such situations, we may find a fourth nonzero component also contributes to the total effect - the "mediated interaction" or *INTmed*.
 
@@ -442,6 +479,8 @@ INTmed = (Y11 - Y10 - Y01 + Y00)(M1 - M0)
        = 0.089  
 
 Recall, when the mechanism was present in this toy example (i.e., *Light*=1), toe stubbing was less likely when the curtains were closed (Y11 = 0.0) than when they were open (Y01 = 0.125). In other words, closing the curtains (do[X=1]) reduced the probability of toe stubbing in the presence of the mechanism. However, this effect was only observed in the presence of the mechanism; when *Light*=0, the probability of toe stubbing was the same whether the curtains were open (Y00 = 0.5) or closed (Y10 = 0.5). Moreover, closing the curtain reduced the probability of observing the mechanism (M1 - M0 = 0.09 - 0.80 = -0.71). So, the exposure causes this conditional effect, meaning it is a mediated interaction (INTmed). 
+
+![A mediated interaction is not what it sounds like either. Unless it sounds like an additive interaction that operates only if the exposure has an effect on the mechanism. (DALL-E)](DALL-E-INTmed.png)
 
 Put differently, since *opening* the curtains increases light in the room, and opening the curtains appears to increase toe stubbing when light is present, then the exposure actually increases risks of toe stubbing by increasing the conditions (light) under which it amplifies the risks of the  outcome occurring. Again, this is a mediated interaction. 
 
@@ -465,17 +504,22 @@ It worked! Whew.
 
 ![I wasn't worried. Were you?](not-worried.gif)
 
-## Section B. Simulated Effect Decomposition with CMAverse 
+## Section B. Effect Decomposition with Simulated Data and CMAverse 
 
-At this point, I am hoping the toy example above strengthened your intuitions for the 4-way decomposition process. I hope you feel ready to move onto a more complicated and realistic use case with simulated data and the [`CMAverse` R package](https://bs1125.github.io/CMAverse/). Though it took a long time to arrive here, as I explained in our [Moderator Madness, Part 1 post](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-2), this was the primary goal that initially motivated this blog series:
+At this point, I am hoping the toy example above helped build your intuitions about the 4-way decomposition process and that you feel ready to move onto a more complicated and realistic use case with simulated data and the [`CMAverse` R package](https://bs1125.github.io/CMAverse/). Though we took a long and winding road to arrive here, as I explained in our [Moderator Madness, Part 1 post](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-2), this is the goal that initially motivated this two-part blog series:
 
 > The central aim of ["Moderator Madness, Part 2"] will be to illustrate how exposure-mediator interactions entangle mediation and moderation processes in a way that requires decomposition of the effect. Effect decomposition is accomplished with a [causal mediation approach](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/) that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates..."
 
 >"...[I]n Part 2 of the blog series, I will pick up here using the same simulated data from this example to illustrate how the addition of an exposure-mediator interaction entangles indirect and interaction effects in a way that requires decomposition of these effects. I will also illustrate how one can accomplish effect decomposition with a causal mediation approach that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates."
 
+Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional "product of coefficients (*ab* path) approaches to modeling mediation processes and are looking for a very basic introduction to [less well known yet generally preferred](https://pubmed.ncbi.nlm.nih.gov/34239282/). If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent [summaries](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation), [overviews of software alternatives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/), and [introductory primers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/) on causal mediation and on [CMAverse specifically](https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx). Additionally, the [CMAverse quickstart](https://bs1125.github.io/CMAverse/articles/quickstart.html) website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.[^Methods-note]  
+
+[^Methods-note]:
+Given the aims, I will not get into detailed issues or advanced modeling options, such as differences between [regression-based](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/), [weighting-based](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4214081/), *g-formula*, or [other estimation methods](https://bs1125.github.io/CMAverse/articles/overview.html) available in CMAverse. However, some available methods may be better suited for your particular modeling situation, and some choices may be better than others [depending upon your specific causal estimand of interest](https://www.tandfonline.com/doi/full/10.1080/10705511.2022.2104287).   
+
 Without further ado, let's get to it! 
 
-### Simulation and "causal mediation" assumptions
+### DAG of simulated data-generating processes
 
 For this illustration, I will generate simulated data that are very similar to those found in [Example 2 from our "Moderator Madness: Part 1" post](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#outline-of-the-post).[^Sim-note] In that post, I stated:
 
@@ -484,13 +528,16 @@ Similar, but not identical. For instance, I reduced the magnitude of a coefficie
 
 > In the second example, I assume that the true data generating process underlying both imaginary papers (i.e., "paper 1" and "paper 2" in our example above) is an integrated causal model in which moral beliefs is both a mediating and moderating mechanism. That is, in the simulated data for the second example, there is a true indirect effect of *parental support* on delinquency through *strong moral beliefs* as well as a direct effect of *parental support* on *delinquency* that varies systematically across levels of (i.e., "interacts with") *strong moral beliefs*. 
 
-Thus, the simulated data here contain the same three focal variables. The exposure, *parental support* practices, is conceptualized as a variable measure of parental intervention(s) on youth attitudes and behaviors; it is generated here as a continuous, normally distributed, mean-centered variable. The mechanism, youths' *strong moral beliefs*, is generated as a negatively skewed ordinal variable ranging from 0 to 5, which was created by reverse-scoring a truncated Poisson-distributed *weak moral beliefs* variable. The outcome, *delinquency*, is a positively skewed, Poisson-distributed event count variable ranging from 0 to a truncated theoretical maximum of 7. I changed some of the effect magnitudes
+Thus, the simulated data here contain the same three focal variables. The exposure, *parental support* practices, is conceptualized as a variable measure of parental intervention(s) on youth attitudes and behaviors; it is generated here as a continuous, normally distributed, mean-centered variable. The mechanism, youths' *strong moral beliefs*, is generated as a negatively skewed ordinal variable ranging from 0 to 5, which was created by reverse-scoring a truncated Poisson-distributed *weak moral beliefs* variable. The outcome, *delinquency*, is a positively skewed, Poisson-distributed event count variable ranging from 0 to a truncated theoretical maximum of 7. 
 
 Again, the simulated data will be generated using the following hypothetical causal mediation and moderation assumptions: *Parental support* practices are a somewhat effective cause of youth's internalization of *strong moral beliefs*, and *strong moral beliefs* effectively cause fewer delinquent behavior events (i.e., they constrain temptations, promote resistance to, or encourage selection out of delinquency). Thus, the data generating processes include causal mediation or indirect effects of an exposure through a mechanism. 
 
-Additionally, *parental support* directly discourages and reduces involvement in youth delinquency. However, this effect varies across levels of the mechanism. Specifically, parental support's negative effect on youth delinquency is most pronounced among youth with weak moral beliefs (i.e., low *strong moral beliefs* index scores); these youth are most at risk of engaging in delinquency, so effective parental interventions have the greatest potential to enact behavioral change among these youth. In contrast, youth with strong moral beliefs are highly unlikely to engage in delinquency irrespective of the degree of parental support they experience; therefore, parental support is largely ineffective among youth with the highest *strong moral beliefs* index scores. This means the data generating processes include moderation or interaction effects. 
+Additionally, *parental support* directly discourages or reduces involvement in youth delinquency.[^Direct-note] However, this effect varies across levels of the mechanism. Specifically, parental support's negative effect on youth delinquency is most pronounced among youth with weak moral beliefs (i.e., low *strong moral beliefs* index scores); these youth are most at risk of engaging in delinquency, so effective parental interventions have the greatest potential to enact behavioral change among these youth. In contrast, youth with strong moral beliefs are highly unlikely to engage in delinquency irrespective of the degree of parental support they experience; therefore, parental support is largely ineffective among youth with the highest *strong moral beliefs* index scores. This means the data generating processes include moderation or interaction effects. 
 
-Moreover, since parental support both operates indirectly through and interacts with youth's strong moral beliefs, the data generating processes also involve an exposure-mediator interaction. That is, some of parental support's conditional effect on delinqeuncy might be attributable to a *reference interaction*, or heterogeneity in the effect of parental support across levels of the mechanism (e.g., across youth with weak versus strong moral beliefs). Yet, since parental support also partly causes strong moral beliefs, then parental support is partly responsible for setting the very levels across which it conditionally affects delinquency. This means that some of parental support's conditional effect also is likely attributable to a *mediated interaction*. 
+[^Direct-note]:
+Of course, in many situations, a "direct effect" estimate itself may (and likely does) represent an aggregate or composite summary of other indirect effects operating through unmeasured mechanisms.  
+
+Moreover, since parental support both operates indirectly through and interacts with youth's strong moral beliefs, the data generating processes also involve an exposure-mediator interaction. That is, some of parental support's conditional effect on delinquency might be attributable to a *reference interaction*, or heterogeneity in the effect of parental support across levels of the mechanism (e.g., across youth with weak versus strong moral beliefs). Yet, since parental support also partly causes strong moral beliefs, then parental support is partly responsible for setting the very levels across which it conditionally affects delinquency. This means that some of parental support's conditional effect also is likely attributable to a *mediated interaction*. 
 
 In causal mediation analysis using potential outcomes, the *mediated interaction* component will be variously attributed to quantities representing the direct effect of the exposure or, instead, to quantities representing the indirect effect through the mechanism; which a researcher chooses to report will depend upon one's focal research questions and estimand of interest. I will explain this in more detail later. For now, let's check out a modified version of [Part 1's basic DAG](https://reluctantcriminologists.com/blog-posts/%5B6%5D/fig1.png), which concisely communicates the causal assumptions underlying the data generating processes for our simulation.   
 
@@ -563,13 +610,18 @@ fig4 <- causalDAG2p %>% ggplot(aes(x=x, y=y, xend=xend, yend=yend)) +
 fig4
 ```
 
-The major changes here to Part 1's DAG include the addition of common "causal mediation" notations to variable names (e.g. exposure label "A" to "Parental Support" variable) and the addition of "measured confounders." With the addition of confounders, I hope to remind readers that interpreting results and making causal inferences from results of "causal mediation" models - as well as from traditional mediation models - requires important (and perhaps untenable) assumptions about the lack of unmeasured sources of confouding of the X-M, M-Y, or X-Y relationships. [Valeri and VanderWeele (2013)](https://pubmed.ncbi.nlm.nih.gov/23379553/) succinctly describe these essential assumptions:
+### "Causal mediation" assumptions
+
+Readers might notice some changes here to Part 1's DAG, such as the addition of common "causal mediation" notations to variable names (e.g. exposure label "A" to "Parental Support" variable) and the addition of "measured confounders." With the addition of confounders, I hope to remind readers that interpreting results and making causal inferences from results of "causal mediation" models - as well as from traditional mediation models - requires important, and perhaps untenable, assumptions about the lack of unmeasured sources of confounding of the X-M, M-Y, or X-Y relationships.[^Assume-note] [Valeri and VanderWeele (2013)](https://pubmed.ncbi.nlm.nih.gov/23379553/) succinctly describe these essential assumptions:
+
+[^Assume-note]:
+Again, traditional and causal mediation approaches both rest upon similar confounding assumptions. In addition to these assumptions, there are lots of other considerations as well when deciding whether a mediation model is appropriate for your situation (e.g., cross-sectional data). Too often, [a mediation model may not be appropriate](https://journals.sagepub.com/doi/10.1177/25152459221095827), but researchers use them anyway. Still, even in situations where the appropriateness of their assumptions are dubious, I think most social science areas would benefit generally from researchers thinking carefully about and transparently stating the assumptions they are making when interpreting results - whether results are from mediation models or otherwise. Likewise, reading more about causal mediation methods may help towards these ends, as the explicit and formal statement of assumptions necessary to generate valid causal inferences from mediation models is an important area of emphasis in the causal mediation literature. 
 
 > "...controlled direct effects require (i) no unmeasured treatment-outcome confounding and (ii) no unmeasured mediator-outcome confounding. Natural direct and indirect effects require these assumptions and also (iii) no unmeasured treatment-mediator confounding and (iv) no mediator-outcome confounder affected by treatment." (p.??)
 
 > "It is important to note that randomizing the treatment is not enough to rule out confounding issues in mediation analysis. This is because randomization of the treatment rules out the problem of treatment-outcome and treatment-mediator confounding but does not guarantee that the assumption of no confounding of mediator-outcome relationship holds. This is because even if the treatment is randomized, the mediator generally will not be." (p.??)
 
-As the simulated example is complex enough, I opted not to include any confounders of the modeled relationships; however, once one is familiar with CMAverse code, terminology, and interpretation of results, it is relatively trivial to extend the example by including and adjusting for measured confounders.
+I think my simulated example is complex enough for an introductory tutorial without including any confounding of the modeled relationships. However, once one is familiar with CMAverse code, terminology, and interpretation of results, it is relatively trivial to extend the example by including and adjusting for measured confounders.
 
 ### Terminology
 
@@ -588,44 +640,53 @@ Though I do not include confounders in this example, two types of outcome confou
 
 #### Controlled versus Natural Effects 
 
-Second, the CMAverse output will contain terms that do not exactly match the four-way effect decomposition components described above:
+Second, depending upon the model and options selected, the CMAverse output may contain terms that do not exactly match the four-way effect decomposition components described above.
 
 Direct Effects: You should recognize the *controlled direct effect* (CDE). However, the output may also contain estimates for a *pure natural direct effect* (PNDE) and a *total natural direct effect* (TNDE). 
 
-Indirect Effects: Instead of encountering a *pure indirect effect* (PIE) estimate, the output might instead contain estimates for a *pure natural indirect effect* and a *total natural indirect effect*. 
+Indirect Effects: Instead of encountering a *pure indirect effect* (PIE) estimate, the output might instead contain estimates for a *pure natural indirect effect* and a *total natural indirect effect*.  
 
-You can find [more detailed explanations elsewhere](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation) for the differences between controlled and natural effects. As explained above, controlled direct effects hold the mediator constant at a specific value (M=m). For example, a controlled direct effect (CDE) might contrast expected outcomes across X=0 and X=1 while holding the mechanism constant at a specific value like M=0. 
+You can find [more detailed descriptions elsewhere](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation) of the differences between controlled and natural effects. As explained above, controlled direct effects hold the mediator constant at a specific value (M=m). For example, a controlled direct effect (CDE) might contrast expected outcomes across X=0 and X=1 while holding the mechanism constant at a specific value like M=0. 
 
-In contrast, understanding natural effects requires comprehending a different type of counterfactual. Remember that, in the presence of mediation, the mediator is expected to change as the exposure changes. So, setting the mediator to a constant value (e.g., M=0) may not provide a realistic or "natural" contrast. Natural effects allow the mediator to vary as it "naturally" would across exposure conditions; effects are estimated by holding the mediator constant at specific counterfactual values that the mediator would be expected to take under different exposure conditions. For example, a (pure) natural direct effect might be estimated as a contrast between the expected outcome value when X=1 and M is set to its expected value when X=0 versus the expected outcome when X=0 and M is still set to its expected value when X=0. Modifying the notation used above, you might summarize this contrast as Y(do[X=1],do[M~X=0~]) - Y(do[X=0],do[M~X=0~]).[^Natural-note] 
+In contrast, understanding natural effects requires comprehending some of those counterfactual contrasts that we illustrated earlier. Remember that, in the presence of mediation, the mediator is expected to change as the exposure changes. So, setting the mediator to a constant value (e.g., M=0) may not provide a realistic or "natural" contrast. Natural effects allow the mediator to vary as it "naturally" would across exposure conditions. Natural effects are then estimated by holding the mediator constant at specific counterfactual values that the mediator would be expected to take under specified exposure conditions, such as setting M at the value we would expect it to be when we do[X=0] (i.e., M0) or when we do[X=1] (i.e., M1). 
+
+For example, a (pure) natural direct effect might be estimated as a contrast between: (1) the expected outcome value when X=1 and M is set to its expected value when X=0 and (2) the expected outcome when X=0 and M is still set to its expected value when X=0. Modifying the notation used above, you might summarize this contrast as Y(do[X=1],do[M~X=0~]) - Y(do[X=0],do[M~X=0~]), or Y10 - Y00.[^Natural-note] 
 
 [^Natural-note]: 
 Note that the Y(do[X=1],do[M~X=0~]) may be an unobservable counterfactual condition (e.g., in the presence of mediation). We cannot in fact simultaneously observe Y with X set to =1 and M set to equal its expected value when X=0. After all, if we do X=1 and X has an effect on M, then M would also change to its (population average) value at X=1; M would not stay at its expected value when X=0! [These slides](https://www.nimhd.nih.gov/docs/hd-workshop/day1/roleWorkInHD-2020_10_kaufman_mediationAnalysesToRacialEthnic.pdf) (especially slide 12) offer a concise description of this issue.
 
 Once you wrap your head around these important distinctions between natural and controlled effects, then you may find yourself beginning to comprehend other important issues related to mediation, moderation, and effect decomposition. 
 
-First, in a linear model without interactions (i.e., where INTref=0 and INTmed=0), the CDE estimates will not change across different values of M. Additionally, in such models, controlled and natural direct effects will converge on the same estimates. 
+First, in a linear model without interactions (i.e., where INTref=0 and INTmed=0), the CDE estimates will not change across different values of M. Additionally, in such models, controlled and natural direct effects will converge on the same estimates. This is because doing X=1 (versus X=0) will have the same effect on Y at all values of M, so doing M=0 or doing M~X=0~ will generate the same effect estimate.
 
 Second, as you have probably figured out by now, things are not as straightforward in more complex models with nonlinear link functions or exposure-mediator interactions. Specifically, when there are nonlinearities or exposure-mediator interactions, one could conceivably estimate a different CDE estimate for every possible value of M! This makes it impossible to perform effect decomposition in the presence of an interaction using controlled effects. However, the counterfactual contrasts underlying natural direct and indirect effect estimates are uniquely defined so there is a single value even in the presence of nonlinearities and exposure-mediator interactions. This permits us to perform effect decomposition even in those situations involving more complex causal relationships.
 
 #### Pure versus Total Effects 
 
-I just told you that there is only one natural direct and natural indirect effect. Yet, your CMAverse output shows more than one natural direct and indirect effect estimates! Don't lose trust in me just yet. It is more accurate to say that there is only one "pure" natural direct effect, and there is only one "total" natural direct effect estimate...
+I just told you that there is only one natural direct and natural indirect effect. Yet, your CMAverse output will probably show more than one natural direct and indirect effect estimate! Do not lose trust in me just yet. It is more accurate to say that there is only one "pure" natural direct effect, and there is only one "total" natural direct effect estimate. 
 
-As far as the differences between "pure" and "total" effects...
+![When interpreting "pure" and "total" effects, remember the "total" cat won the fight over the INTmed component.](catfight.jpg)
 
-We pair a "pure" direct effect with a "total" indirect effect, and vice versa:  
+So, what is the differences between "pure" and "total" effects? It boils down to that nonzero "mediated interaction" or INTmed estimate we find when there is an exposure-mediator interaction. Recall, the INTmed estimate describes how, in the presence of both mediation and interaction, we can contribute some differences in the effect of X on Y across different levels of M to the fact that X *causes* different levels of M. So, in a decomposition, should we attribute INTmed effects to mediation processes or to moderation processes? That is, are they indirect effects, or interaction effects? Fundamentally, they are both, but there may be advantages to attributing that INTmed component to the "direct" effect of X on Y at specific counterfactual values of M (i.e., absorbed into heterogeneous estimates of direct effects across values of M) or to the "indirect" effect of X on Y through M. In any case, there are a few important points to remember when interpreting these effects. 
+
+First, "pure" effects do *not* include the INTmed component, whereas "total" effects do include the INTmed component. So, for instance, a "pure direct effect" essentially summarizes the effect of X on Y that is due to its controlled direct effect (CDE) and heterogeneity across M that is not due to mediation (i.e. to INTref but not INTmed), while a "total indirect effect" contains both the "pure" indirect effect (PIE) of X on Y through M and any effect of X on Y across levels of M that is due to mediation (i.e., INTmed). 
+
+Second, we always pair the following effect estimates:  
 
 - Pure natural direct effect & total natural indirect effect (PNDE & TNIE)
 - Total natural direct effect & pure natural direct effect (TNDE & PNIE) 
 
-Depends on if you want the INTmed attributed to the indirect effect or to the direct effect... "pure" is without it, whereas "total" is with it... 
+Perhaps the reasons we do this are now obvious to you. These pairings ensure that the INTmed component is always counted once and only once - either in the (total) direct effect estimate or in the (total) indirect effect estimate. Likewise, in a linear model, the PNDE + TNIE estimates will sum to the same value as the TNDE + PNIE estimates. Which pair you choose to interpret, then, depends upon your research question, goals, and estimand of interest. 
 
+![Relationship between 4-way effect decomposition and CMAverse effect estimates. Modified from Table 4 in Vanderweele 2014](effects-table.jpg)
 
-![Table 4 from VanderWeele 2014](vanderweele-table4.jpg)
+Third, in the absence of an exposure-mediator interaction - such as when the interaction term equals zero or when you ignore a nonzero interaction term by not specifying or including it in the model - then the CDE, TNDE, and PNDE estimates all will converge to the same value. Conceptually, this is because the INTref and INTmed components will be fixed to zero, either by the data or by the researcher. 
+
+That's enough talking. Let's start walking with a simulation. 
 
 ### Simulate data 
 
-Unlike in Part 1, this analysis will be based on n=10,000 simulated observations to generate precise estimates of the focal components. We have more than enough going on; we do not need to deal simultaneously with issues related to noisy estimates.   
+Unlike in Part 1, this analysis will be based on n=10,000 simulated observations, which will allow us to generate precise estimates of the focal components. We have more than enough going on; we do not need to deal simultaneously with issues related to noisy estimates.   
 
 ```{r}
 #|message=FALSE 
@@ -681,7 +742,7 @@ simdat3 <- simdat2 %>%
       StrgMoralBlfs <= 1, 1, StrgMoralBlfs), 
     StrgMoralBlfs = StrgMoralBlfs - 1
     )
-summary(simdat3$StrgMoralBlfs)
+# summary(simdat3$StrgMoralBlfs)
 
 p <- ggplot(simdat3, aes(x = ParentSupport, y = StrgMoralBlfs)) +
   geom_point()
@@ -699,6 +760,8 @@ Note joint distribution... lack of observations at high ParentSupport and low St
 ### Regression & Plot
 
 ```{r}
+#|message=FALSE 
+
 # Sim.2 linear model
 lm2 <- lm(Delinquency ~ ParentSupport * StrgMoralBlfs, data=simdat3)
 
@@ -728,21 +791,33 @@ regsum <- function(mymod) {
 
 Ex2tab1 <- regsum(lm2) %>%
   as_gt() %>%
-  gt::tab_header(title = "Linear model, Sim.2")
+  gt::tab_header(title = "Linear regression predicting delinquency values")
 
 Ex2tab2 <- regsum(glm2) %>%
   as_gt() %>%
   gt::tab_header(title = "Poisson regression predicting delinquency event rates")
 
+
 #Plot interactions 
   #plot at all four values: minimum (0), (1), median (2), and maximum (3) strong moral beliefs
   #show x-axis from approx -2sd to 2sd parental support
-
-plot_glm2 <- plot_model(glm2, type = "pred",  
+plot_lm2 <- plot_model(lm2, type = "pred", show.data = FALSE,   
                        terms = c("ParentSupport", "StrgMoralBlfs [0,2,4]")) + 
   geom_hline(yintercept=7, linetype="dashed") +
-  theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) + scale_colour_colorblind() + 
-  scale_fill_colorblind() + 
+  theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) +
+  scale_colour_colorblind() +
+  scale_fill_colorblind() +
+  labs(x="Parental Support", 
+       y="Delinquency",
+       title="Predicted conditional marginal effects of parent support on delinquency", 
+       subtitle="Plotted at minimum (0), scale midpoint (2), & maximum (4) strong moral beliefs\n(Linear regression, n=10k simulated observations)")  
+
+plot_glm2 <- plot_model(glm2, type = "pred",  show.data=FALSE,
+                       terms = c("ParentSupport", "StrgMoralBlfs [0,2,4]")) + 
+  geom_hline(yintercept=7, linetype="dashed") +
+  theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) + 
+  scale_colour_colorblind() +
+  scale_fill_colorblind() +
   labs(x="Parental Support", 
        y="Delinquency",
        title="Predicted conditional marginal effects of parent support on delinquency", 
@@ -751,6 +826,79 @@ plot_glm2 <- plot_model(glm2, type = "pred",
 ```
 
 #### Results (Simulation 2) 
+
+As is typically the case with real-world crime data, there are some nonlinearities in the data generating processes underlying our simulated data. Yet, I will start with a linear model. Why? Well, because so many people in our field seem to be infatuated with them...
+
+:::: {.panel-tabset}
+
+##### Linear Model Results 
+
+```{r}
+Ex2tab1
+```
+
+##### Prediction Plots
+
+
+```{r}
+#|message=FALSE 
+
+plot_lm2
+# plot_lm2 & 
+#   theme(legend.position = 'bottom',
+#         legend.direction = 'horizontal') 
+
+```
+##### Prediction Plots with Data
+
+
+```{r}
+#|message=FALSE 
+
+#use ggeffects::ggpredict() to save plot_model data for use in ggplot 
+lm2df <- ggpredict(lm2, terms = c("ParentSupport", "StrgMoralBlfs [0,2,4]"))
+
+#save subsets of simdat3 to plot observations where StrgMoralBlfs in (0,2,4)
+simdat3sub <- simdat3 %>%
+  filter(StrgMoralBlfs %in% c(0,2,4)) %>%
+  mutate(
+    StrgMoralBlfs = as_factor(StrgMoralBlfs))
+
+# prediction plot with data subset - use ggblend to improve overlap viz
+predplot1 <- ggplot(data=simdat3sub, aes(x=ParentSupport, y=Delinquency, 
+                            color=StrgMoralBlfs, group=StrgMoralBlfs)) + 
+  geom_hline(yintercept=7, linetype="dashed") +
+  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs == 0], alpha=0.4)  +
+  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs %in% c(2,4)], alpha=0.1) +
+  # geom_point() |> partition(vars(StrgMoralBlfs)) |> blend("lighten") |> 
+  # blend("multiply", alpha = 0.4)+
+  scale_colour_colorblind() +
+  scale_fill_colorblind() +
+  theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) + 
+  geom_line(data=lm2df, aes(x=x, y=predicted,
+                             linetype=group, color=group), inherit.aes=FALSE) +  
+  geom_ribbon(data=lm2df, aes(x=x, y=predicted, 
+                               ymin=conf.low, ymax=conf.high, fill=group), 
+              alpha=0.3, inherit.aes=FALSE) +
+  scale_linetype_manual(values = c("solid", "solid", "solid")) + 
+  guides(linetype=FALSE, fill=FALSE) + 
+  labs(x="Parental Support",
+       y="Delinquency",
+       title="Predicted conditional marginal effects of parent support on delinquency", 
+       subtitle="Plotted at minimum (0), scale midpoint (2), & maximum (4) strong moral beliefs\n(Poisson regression, n=10k simulated observations)") 
+
+predplot1
+
+```
+::::
+
+NOTE - FIX GGBLEND IMAGES. WORKING IN QUARTO (WITH CAIRO PNG) BUT NOT KNITTING PROPERLY IN HTML. USING WORKAROUND FOR NOW
+
+While the linear model uncovered a sizeable interaction between parental support and moral beliefs, the plot reveals some areas of poor fit between the model predictions and the underlying data - including out of bounds predictions below "0" on predicted delinquency counts. You expected this, of course, because you read the [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html) entry.
+
+The second figure (third tab above) gives you a sense of the relatively poor fit of the model predictions by overlaying these prediction lines with a scatterplot of the relevant data (i.e., subset of Strong Moral Beliefs values equal to "0", "2", and "4").  
+
+Let's compare these results with the nonlinear model. 
 
 :::: {.panel-tabset}
 
@@ -762,53 +910,416 @@ Ex2tab2
 
 ##### Prediction Plots
 
-
 ```{r}
 #|message=FALSE 
 
 plot_glm2
-# plot_glm2 & 
-#   theme(legend.position = 'bottom',
-#         legend.direction = 'horizontal') 
+
+```
+
+##### Prediction Plots with Data 
+
+```{r}
+#|message=FALSE 
+
+#use ggeffects::ggpredict() to save plot_model data for use in ggplot 
+glm2df <- ggpredict(glm2, terms = c("ParentSupport", "StrgMoralBlfs [0,2,4]"))
+
+#prediction plot with data subset & ggblend
+predplot2 <- ggplot(data=simdat3sub, aes(x=ParentSupport, y=Delinquency, 
+                            color=StrgMoralBlfs, group=StrgMoralBlfs)) + 
+  geom_hline(yintercept=7, linetype="dashed") +
+  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs == 0], alpha=0.4)  +
+  geom_point(data=simdat3sub[simdat3sub$StrgMoralBlfs %in% c(2,4)], alpha=0.1) +
+  # geom_point() |> partition(vars(StrgMoralBlfs)) |> blend("lighten") |> 
+  # blend("multiply", alpha = 0.4) +
+  scale_colour_colorblind() +
+  scale_fill_colorblind() +
+  theme_minimal() + coord_cartesian(xlim=c(-2,2), ylim=c(-1,8)) + 
+  geom_line(data=glm2df, aes(x=x, y=predicted,
+                             linetype=group, color=group), inherit.aes=FALSE) +  
+  geom_ribbon(data=glm2df, aes(x=x, y=predicted, 
+                               ymin=conf.low, ymax=conf.high, fill=group), 
+              alpha=0.4, inherit.aes=FALSE) +
+  scale_linetype_manual(values = c("solid", "solid", "solid")) + 
+  guides(linetype=FALSE, fill=FALSE) + 
+  labs(x="Parental Support",
+       y="Delinquency",
+       title="Predicted conditional marginal effects of parent support on delinquency", 
+       subtitle="Plotted at minimum (0), scale midpoint (2), & maximum (4) strong moral beliefs\n(Poisson regression, n=10k simulated observations)") 
+
+predplot2
+```
+
+::::
+
+#### Linear mediation model, traditional *ab* approach
+
+Traditional product of coefficients approach
+
+```{r}
+psych::mediate(Delinquency ~ ParentSupport + (StrgMoralBlfs), data = simdat3, n.iter = 10000) %>% print(short = TRUE)
+```
+
+#### Linear mediation model, decomposition, no EMint 
+
+Equivalent to traditional approach. 
+
+For all models, estimating effect of moving from exposure A=0 to exposure Astar=1 
+
+
+```{r}
+#| output: FALSE
+
+set.seed(1138)
+est2 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = "ParentSupport",
+                mediator = "StrgMoralBlfs", EMint = FALSE,
+                mreg = list("linear"), yreg = "linear",
+                astar = 0, a = 1, mval = list(0),
+                estimation = "imputation", inference = "bootstrap", nboot = 20)
+
+```
+
+:::: {.panel-tabset}
+
+##### Results: linear no EMint
+
+```{r}
+est2dat <- as.data.frame(est2$effect.pe) %>% rownames_to_column("CMA_est") 
+
+est2dattab <- est2dat %>%
+  add_column(
+    trad_est = c("direct", "--", "--", "indirect", "--", "total", "prop_med"), 
+    estimate = c(-.33, NA, NA, -.11, NA, -.44, .25)) %>%
+  rename("linear_noEM" = "est2$effect.pe") %>% 
+  relocate(trad_est, estimate) 
+
+est2dattab %>%
+  gt() %>% 
+    tab_spanner(label = "CMAverse", columns = c("CMA_est", "linear_noEM")) %>%
+    tab_spanner(label = "Traditional", columns = c("trad_est","estimate")) %>%
+    cols_add('blank' = '', .after = 'estimate') %>%
+    cols_label('blank' = md('&emsp;&emsp;&emsp;'))  
+
+```
+
+##### Default plot: linear no EMint
+```{r}
+ggcmest(est2) +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
+
+```
+
+
+##### Full output: linear no EMint
+
+```{r}
+summary(est2)
+
+```
+
+::::
+
+First, note that CDE == PNDE == TNDE and that  PNIE == TNIE ...
+
+This is because we set `EMint=FALSE`, which means we did not specify an exposure-mediator interaction. Of course, this does not mean there is no exposure-mediator interaction in the data. On the contrary, we simulated the data to include one! Rather, it just means we ignored the possibility by essentially fixing the exposure-mediator interaction parameter to equal "0" in our model. 
+
+This is also what happens by default in the traditional "product of coefficients" mediation approach. In fact, you can see that the estimates from both approaches converge in this case: 
+
+The pm or prop_med refers to proportion mediated. ... 
+
+Also, since we have a continuous exposure variable, ParentSupport, we could define different meaningful contrasts (e.g., -1SD vs. 1SD; max vs. min). Since ParentSupport is standardized exposure variable, by setting `a=0` and `astar=1`, I am specifying the exposure contrast as the predicted difference in Y at mean parental support values (ParentSupport=0) and +1SD parental support values (ParentSupport=1). The setting `mval = list(0)` indicates that I want controlled direct effect estimates to be calculated at m=0 (StrgMoralBlfs=0).    
+
+#### Linear mediation model, decomposition, with EMint 
+
+Now, let's estimate another linear model in CMAverse but instead allow for the possibility of an exposure-mediator interaction. 
+
+```{r}
+#| output: FALSE
+
+set.seed(1138)
+est3 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = "ParentSupport",
+                mediator = "StrgMoralBlfs", EMint = TRUE,
+                mreg = list("linear"), yreg = "linear",
+                astar = 0, a = 1, mval = list(0),
+                estimation = "imputation", inference = "bootstrap", nboot = 20)
+
+```
+
+:::: {.panel-tabset}
+
+##### Results: linear with EMint
+
+```{r}
+est3dat <- as.data.frame(est3$effect.pe) %>% rownames_to_column("CMA_est") 
+
+est3dattab <- left_join(est2dattab, est3dat, by="CMA_est") %>%
+  rename("linear_EM" = "est3$effect.pe") 
+
+est3dattab %>%
+  gt() %>% 
+    tab_spanner(label = "CMAverse", columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
+    tab_spanner(label = "Traditional", columns = c("trad_est","estimate")) %>%
+    cols_add('blank' = '', .after = 'estimate') %>%
+    cols_label('blank' = md('&emsp;&emsp;&emsp;'))  
+
+```
+
+##### Default plot: linear with EMint
+```{r}
+ggcmest(est3) +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
+
+```
+
+##### Custom plot: linear with EMint
+
+```{r}
+
+#save estimates and intervals data
+est3dat <- as.data.frame(est3[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+
+# drop proportion estimates
+est3dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "pnie(prop)", "intref(prop)","intmed(prop)","cde(prop)", "int")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("intmed", "intref", "te", "tnie", "pnie", "tnde", "pnde", "cde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 0, lty = 2) +
+  labs(
+    x = "Estimated effects on linear difference scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition"
+  )
+
+```
+
+##### Full output: linear with EMint
+
+```{r}
+summary(est3)
+
+```
+
+::::
+
+Look at differences... due to sizeable exposure-mediator interaction. WHen we ignored the exposure-mediator interaction (i.e, by using traditional *ab* method or by setting `EMint=FALSE` in CMAverse), the "proportion mediated" estimate was about 25%. After accounting for the sizeable exposure-mediator interaction, the proportion mediated estimate dropped to 4.5%. Recall, the TNIE represents the "total" indirect effects of X on Y through M, including the "pure" indirect effect component (PIE) and the part of the exposure-mediator interaction that is due to mediation (INTmed). Since the PIE and INTmed components are of similar size yet opposite signs, they largely cancel each other out (0.25 vs. -0.21). This results in a very small "total" natural indirect effect estimate (TNIE) and, likewise, a small proportion mediated estimated (PM = TNIE/TE). However, the proportion of the total effect that is due to the pure indirect effect (PIE) remains approximately 25%. 
+
+One lesson should be apparent by now: If you are going to interpret any of these estimates, proportion or otherwise, it is important to know precisely what each estimate means and which causal contrasts you do (and do not) wish to make. Such determinations require an understanding of the various decomposition components described earlier and careful consideration of which components align best with your causal estimand of interest. 
+
+There are various other important differences across these model results. I will highlight only a couple of them. 
+
+First, the CDE is much larger in the linear model with the exposure-mediator interaction specified, and it is no longer equivalent to the PNDE or TNDE. This is because the effect of parental support varies across values of the mediator, and we estimated the CDE at m=0 (i.e., at the lowest value of strong moral beliefs) where the effect of parental support is strongest. You can see this in the regression effect plots we presented earlier. Had we estimated the CDE at a different value (e.g., m=4), the CDE would have been much smaller or even negligible in magnitude. 
+The PNDE, however, is largely unchanged. Substantively, the PNDE indicates that doing astar=1 instead of a=0, or increasing from mean levels of parental support (a=0) to one-SD unit above the mean levels of parental support (astar=1), is predicted to reduce delinquency by -0.33 units on the linear difference scale in the absence of the exposure.  
+
+See [Table 1](https://bs1125.github.io/CMAverse/articles/overview.html) for description of all the various effect estimates generated by CMAverse in linear decomposition models... I dropped all proportion measures (i.e., everything after mediated interaction or INTmed) from custom coefficient plots. However, I kept proportion mediated (pm) in comparison tables.  
+
+Consistent with Section A in post. Proportion estimates tend to mess up scale when plotting... Also, I usually ignore proportion estimates... monotonicity assumptions... estimands of interest are not likely to be about proportions of total effect attributable to different components... 
+
+Now, we know the linear model is not appropriate for these data; this is frequently the case when analyzing criminological data as well. Yet, my hope is that these poor-fitting models help ease the transition given the familiarity that many readers will likely have with linear models. As you will soon see, output and interpretations get a bit more complicated with nonlinear models due to changes in the outcome scale. 
+
+Below, I will estimate models with and without EM interactions again, but this time I will specify a Poisson distribution for the outcome variable. This means that the predicted contrasts will be described on the event rate ratio scale instead of the linear difference scale. See [Table 2 here](https://bs1125.github.io/CMAverse/articles/overview.html) for descriptions of the various causal estimates on the ratio scale that are output by CMAverse, and the [`cmest` documentation](https://bs1125.github.io/CMAverse/reference/cmest.html) for for descriptions of which causal estimates are generated under different modeling specifications.    
+
+#### Nonlinear decomposition model, no EM interaction 
+
+```{r}
+#| output: FALSE
+
+set.seed(1138)
+est4 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = "ParentSupport",
+                mediator = "StrgMoralBlfs", EMint = FALSE,
+                mreg = list("linear"), yreg = "poisson",
+                astar = 0, a = 1, mval = list(0),
+                estimation = "imputation", inference = "bootstrap", nboot = 20)
+```
+
+
+:::: {.panel-tabset}
+
+##### Results: nonlinear no EMint
+
+```{r}
+
+est4dat <- as.data.frame(est4$effect.pe) %>% rownames_to_column("CMA_est2") %>%
+  mutate(CMA_est = if_else(CMA_est2=="Rcde","cde",CMA_est2),
+         CMA_est = if_else(CMA_est2=="Rpnde","pnde",CMA_est), 
+         CMA_est = if_else(CMA_est2=="Rtnde","tnde",CMA_est),
+         CMA_est = if_else(CMA_est2=="Rpnie","pnie",CMA_est),
+         CMA_est = if_else(CMA_est2=="Rtnie","tnie",CMA_est),
+         CMA_est = if_else(CMA_est2=="Rte","te",CMA_est)
+  )
+
+est4dattab <- left_join(est3dattab, est4dat, join_by("CMA_est")) %>%
+  rename("nonlin_noEM" = "est4$effect.pe") 
+
+est4dattab %>%
+  gt() %>% 
+    tab_spanner(label = "CMAverse (linear)", 
+                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
+    tab_spanner(label = "CMAverse (nonlinear)", 
+                columns = c("CMA_est2", "nonlin_noEM")) %>%
+    tab_spanner(label = "Traditional (linear)", 
+                columns = c("trad_est","estimate")) %>%
+    cols_add('blank' = '', .after = 'estimate') %>%
+    cols_label('blank' = md('&emsp;&emsp;&emsp;')) %>%
+    cols_add('blank2' = '', .before = 'CMA_est2') %>%
+    cols_label('blank2' = md('&emsp;&emsp;&emsp;')) 
+
+
+```
+
+##### Default plot: nonlinear no EMint
+```{r}
+ggcmest(est4) +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
+
+```
+
+
+##### Full output: nonlinear no EMint
+
+```{r}
+summary(est4)
+
+```
+
+::::
+
+
+#### Nonlinear decomposition model, with EM interaction 
+
+```{r}
+#| output: FALSE
+
+set.seed(1138)
+est5 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = "ParentSupport",
+                mediator = "StrgMoralBlfs", EMint = TRUE,
+                mreg = list("linear"), yreg = "poisson",
+                astar = 0, a = 1, mval = list(0),
+                estimation = "imputation", inference = "bootstrap", nboot = 20)
+```
+
+
+
+:::: {.panel-tabset}
+
+##### Results: nonlinear with EMint
+
+```{r}
+est5dat <- as.data.frame(est5$effect.pe) %>% rownames_to_column("CMA_est2") %>%
+  mutate(CMA_est = if_else(CMA_est2=="Rcde","cde",CMA_est2),
+         CMA_est = if_else(CMA_est2=="Rpnde","pnde",CMA_est), 
+         CMA_est = if_else(CMA_est2=="Rtnde","tnde",CMA_est),
+         CMA_est = if_else(CMA_est2=="Rpnie","pnie",CMA_est),
+         CMA_est = if_else(CMA_est2=="Rtnie","tnie",CMA_est),
+         CMA_est = if_else(CMA_est2=="Rte","te",CMA_est)
+  )
+
+est5dattab <- full_join(est4dattab, est5dat, join_by("CMA_est2")) %>%
+  rename("nonlin_EM" = "est5$effect.pe",
+         "CMA_est" = "CMA_est.x") %>%
+  select(!CMA_est.y) %>% 
+  filter(!CMA_est2 %in% c("ERcde(prop)", "ERintref(prop)", "ERintmed(prop)", 
+                          "ERpnie(prop)", "pm", "int", "pe")) %>% 
+  mutate(
+    trad_est = if_else(is.na(trad_est), "--", trad_est), 
+    CMA_est = if_else(is.na(CMA_est), "--", CMA_est)
+  )
+
+est5dattab %>%
+  gt() %>% 
+    tab_spanner(label = "CMAverse (linear)", 
+                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
+    tab_spanner(label = "CMAverse (nonlinear)", 
+                columns = c("CMA_est2", "nonlin_noEM", "nonlin_EM")) %>%
+    tab_spanner(label = "Traditional (linear)", 
+                columns = c("trad_est","estimate")) %>%
+    cols_add('blank' = '', .after = 'estimate') %>%
+    cols_label('blank' = md('&emsp;&emsp;&emsp;')) %>%
+    cols_add('blank2' = '', .before = 'CMA_est2') %>%
+    cols_label('blank2' = md('&emsp;&emsp;&emsp;')) 
+
+```
+
+##### Default plot: nonlinear, with EMint
+```{r}
+ggcmest(est5) +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
+
+```
+
+##### Risk ratio plot: nonlinear, with EMint
+
+```{r}
+
+#save estimates and intervals data
+est5dat <- as.data.frame(est5[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+
+# drop proportion estimates
+est5dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "ERpnie", "ERintmed", "ERintref", "ERcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = c(0,1), lty = 2) +
+  labs(
+    x = "Estimated effects on risk ratio scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (risk ratios)"
+  )
+
+```
+
+##### Excess Risk plot: nonlinear, with EMint
+
+```{r}
+
+# drop proportion estimates
+est5dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("ERpnie", "ERintmed", "ERintref", "ERcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 0, lty = 2) +
+  labs(
+    x = "Estimated effects on excess risks scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (excess risks)"
+  )
+
+```
+
+##### Full output: nonlinear with EMint
+
+```{r}
+summary(est5)
 
 ```
 ::::
 
 
-
-#### Nonlinear decomposition model, no EM interaction 
-
-```{r}
-set.seed(1138)
-est2 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = "ParentSupport",
-                mediator = "StrgMoralBlfs", EMint = FALSE,
-                mreg = list("linear"), yreg = "poisson",
-                astar = 0, a = 1, mval = list(0),
-                estimation = "imputation", inference = "bootstrap", nboot = 20)
-summary(est2)
-
-ggcmest(est2) +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
-```
+Rate ratio interpretations ...  accessible discussions of interpreting risk and rate ratio estimates, see [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351073/) and [here](https://sph.unc.edu/wp-content/uploads/sites/112/2015/07/nciph_ERIC7.pdf).
 
 
-#### Nonlinear decomposition model, with EM interaction 
-
-Effect of moving from min A (0) to max A (4) 
-
-Figure out how to limit output (drop proportion values; see effect.pe)
-
-```{r}
-set.seed(1138)
-est2 <- cmest(data = simdat2, model = "rb", outcome = "Delinquency", exposure = "ParentSupport",
-                mediator = "StrgMoralBlfs", EMint = TRUE,
-                mreg = list("linear"), yreg = "poisson",
-                astar = 0, a = 4, mval = list(0),
-                estimation = "imputation", inference = "bootstrap", nboot = 20)
-summary(est2) 
-
-ggcmest(est2) +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8)) + coord_flip(xlim = NULL, ylim = NULL, expand = TRUE, clip = "on") 
-```
-
+"Excess rate ratio" (or "excess risk ratio" in logistic regressions) may help with interpreting relative effect estimates ... I prefer these to proportion estimates in nonlinear models for assessing relative contributions of mediation, interaction, & direct effects. For more information on relative excess ratio estimates, see [VanderWeele and Tchetgen Tchetgen (2014)](https://www.hsph.harvard.edu/tyler-vanderweele/wp-content/uploads/sites/603/2018/04/AttributingInt_Ep.pdf). [VanderWeele and Knol's 2014](https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/InteractionTutorial_EM.pdf) tutorial on interaction is also helpful here; additionally, it contains a wealth of information that may be new to readers about estimating and interpreting interactions, including distinctions between concepts such as *statistical*, *mechanistic*, and *sufficient cause* interactions. 
 
