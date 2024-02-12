@@ -190,15 +190,9 @@ ouchDAG2 <- ouchDAG2 %>% ggplot(aes(x=x, y=y, xend=xend, yend=yend)) +
 ouchDAG2
 ```
 
-After examining this DAG, many of you might immediately assume it that it displays a classic indirect causal effect or mediating relationship.[^Paper1-note] However, it is worth taking a moment to ponder whether you think light really is a mediator, or instead whether it is a moderator, or perhaps both? For example, consider that opening the curtains might reduce the chances of stubbing your toes when it is light outside and, hence, when doing so lets sufficient light in the room for you to see obstacles in your path. In contrast, when it is not light outside, opening the curtains might not let sufficient light in and, in those situations, opening the curtains (i.e., *doing* X=0) might not reduce (i.e., cause) the probability of stubbing toes. 
+After examining this DAG, many of you might immediately assume it that it displays a classic indirect causal effect or mediating relationship. However, it is worth taking a moment to ponder whether you think light really is a mediator, or instead whether it is a moderator, or perhaps both? For example, consider that opening the curtains might reduce the chances of stubbing your toes when it is light outside and, hence, when doing so lets sufficient light in the room for you to see obstacles in your path. In contrast, when it is not light outside, opening the curtains might not let sufficient light in and, in those situations, opening the curtains (i.e., *doing* X=0) might not reduce (i.e., cause) the probability of stubbing toes. 
 
-[^Paper1-note]: 
-Remember [hypothetical paper #1](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Moderator Madness, Part 1? 
-
-Put differently, we might posit a heterogeneous causal effect of opening the curtains on the probability of toe stubbing, where the causal effect is strongest when accompanied by sufficient light but weakest or nonexistent when not accompanied by sufficient light.[^Paper2-note]
-
-[^Paper2-note]: 
-Remember [hypothetical paper #2](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Moderator Madness, Part 1? 
+Put differently, we might posit a heterogeneous causal effect of opening the curtains on the probability of toe stubbing, where the causal effect is strongest when accompanied by sufficient light but weakest or nonexistent when not accompanied by sufficient light.
 
 If you are a social scientist, you might also be accustomed to seeing an intersecting arrow in a causal diagram to depict this type of conditional effect or moderating relationship, like below: 
 
@@ -305,7 +299,7 @@ Note that this first toy example is intended as a simple application of [VanderW
 
 ```{r}
 #| tbl-cap: Toy toe-stubbing data
-#| tbl-subcap: ["X=0", "X=1"]
+#| tbl-subcap: ["X=1", "X=0"]
 #| layout-ncol: 2
 
 ouchdat <- tribble(
@@ -335,7 +329,6 @@ ouchdat <- tribble(
 
 head(ouchdat,n=11) %>% gt()
 tail(ouchdat,n=10) %>% gt()
-
 
 ```
 
@@ -465,7 +458,7 @@ This is an important point. If we had relied strictly on the total effect, or on
 
 ![Pure indirect effects: As American as apple PIE? (DALL-E)](DALL-E-surreal-pie.png)
 
-Speaking of those other two interaction components, we already discussed INTref; now, let's move onto INTmed, our fourth component.
+Speaking of those other two interaction components, we already discussed INTref; now, let's move on to INTmed, our fourth component.
 
 #### INTmed
 So far, we have discussed controlled direct effects, reference interaction effects, and pure indirect effects. Each of these is analogous (in certain situations) to well-known direct effects, interaction effects (moderation), and indirect effects (mediation), though their empirical connections as distinct components of a total effect may be less widely appreciated or understood. 
@@ -496,7 +489,7 @@ Another caveat: I strongly caution against such real world inferences when data 
 
 #### Revisiting TE
 
-Before moving onto a simulated example, I want to revisit the *total effect* (TE) that we just decomposed into four component parts. Recall earlier how we calculated the total effect of X on Y as the difference between the outcome probabilities across exposed and unexposed conditions (Y1 - Y0)?  
+Before moving on to a simulated example, I want to revisit the *total effect* (TE) that we just decomposed into four component parts. Recall earlier how we calculated the total effect of X on Y as the difference between the outcome probabilities across exposed and unexposed conditions (Y1 - Y0)?  
 
 TE = Y1 - Y0  
    = 0.455 - .20  
@@ -514,13 +507,13 @@ It worked! Whew.
 
 ## Section B. Effect Decomposition with Simulated Data and CMAverse 
 
-At this point, I am hoping the toy example above helped build your intuitions about the 4-way decomposition process and that you feel ready to move onto a more complicated and realistic use case with simulated data and the [`CMAverse` R package](https://bs1125.github.io/CMAverse/). Though we took a long and winding road to arrive here, as I explained in our [Moderator Madness, Part 1 post](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-2), this is the goal that initially motivated this two-part blog series:
+At this point, I am hoping the toy example above helped build your intuitions about the 4-way decomposition process and that you feel ready to move on to a more complicated and realistic use case with simulated data and the [`CMAverse` R package](https://bs1125.github.io/CMAverse/). Though we took a long and winding road to arrive here, as I explained in our [Moderator Madness, Part 1 post](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-2), this is the goal that initially motivated this two-part blog series:
 
 > The central aim of ["Moderator Madness, Part 2"] will be to illustrate how exposure-mediator interactions entangle mediation and moderation processes in a way that requires decomposition of the effect. Effect decomposition is accomplished with a [causal mediation approach](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/) that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates..."
 
 >"...[I]n Part 2 of the blog series, I will pick up here using the same simulated data from this example to illustrate how the addition of an exposure-mediator interaction entangles indirect and interaction effects in a way that requires decomposition of these effects. I will also illustrate how one can accomplish effect decomposition with a causal mediation approach that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates."
 
-Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional "product of coefficients (*ab* path) approaches to modeling mediation processes and are looking for a very basic introduction to [less well known yet generally preferred](https://pubmed.ncbi.nlm.nih.gov/34239282/) "causal mediation" methods. If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent [summaries](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation), [overviews of software alternatives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/), and [introductory primers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/) on causal mediation and on [CMAverse specifically](https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx). Additionally, the [CMAverse quickstart](https://bs1125.github.io/CMAverse/articles/quickstart.html) website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.[^Methods-note]  
+Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional "product of coefficients (*ab* path) approaches to modeling mediation processes and are looking for a very basic introduction to [less well known yet generally preferred](https://pubmed.ncbi.nlm.nih.gov/34239282/) "causal mediation" methods. If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent [summaries](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation), [overviews of software alternatives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/), and introductory primers on [causal mediation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/) and on [CMAverse specifically](https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx). Additionally, the [CMAverse quickstart](https://bs1125.github.io/CMAverse/articles/quickstart.html) website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.[^Methods-note]  
 
 [^Methods-note]:
 Given the aims, I will not get into detailed issues or advanced modeling options, such as differences between [regression-based](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/), [weighting-based](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4214081/), *g-formula*, or [other estimation methods](https://bs1125.github.io/CMAverse/articles/overview.html) available in CMAverse. However, some available methods may be better suited for your particular modeling situation, and some choices may be better than others [depending upon your specific causal estimand of interest](https://www.tandfonline.com/doi/full/10.1080/10705511.2022.2104287).   
@@ -532,7 +525,7 @@ Without further ado, let's get to it!
 For this illustration, I will generate simulated data that are very similar to those found in [Example 2 from our "Moderator Madness: Part 1" post](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#outline-of-the-post).[^Sim-note] In that post, I stated:
 
 [^Sim-note]: 
-Similar, but not identical. For instance, I reduced the magnitude of a coefficient (from -0.5 to -0.3) to weaken the causal effect of parental support on moral beliefs, which moves it closer to the range of plausible effect sizes of many theorized causes of attitudes and behaviors observed in criminology.   
+Similar, but not identical. For instance, I made small changes to the magnitude of some coefficients, which modified the relative contributions of various components to the total effect. 
 
 > In the second example, I assume that the true data generating process underlying both imaginary papers (i.e., "paper 1" and "paper 2" in our example above) is an integrated causal model in which moral beliefs is both a mediating and moderating mechanism. That is, in the simulated data for the second example, there is a true indirect effect of *parental support* on delinquency through *strong moral beliefs* as well as a direct effect of *parental support* on *delinquency* that varies systematically across levels of (i.e., "interacts with") *strong moral beliefs*. 
 
@@ -963,6 +956,15 @@ predplot2
 
 ::::
 
+For some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient ground for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the [hypothetical paper #2](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Part 1?)
+
+Yet, note that this model does not account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. So, to test for indirect effects, a researcher might use what is popularly known as the classic ["Baron and Kenny" (1986) causal steps approach](https://www.psych.mcgill.ca/perpg/fac/falk/tutorials/mediation/methods/#baron-kenny-1986) to detecting indirect effects. This "traditional" approach to testing mediation hypotheses usually involves estimating a series of regression models and then, depending upon the specific procedures adopted, estimating a "difference in coefficients" or "product of coefficients" representing causal path estimates (e.g., *ab* paths) paired with a test of significance. (See [MacKinnon and colleagues' 2002](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2819363/) paper, and especially their Table 1, for a summary of these traditional approaches).[^Kenny-note] 
+
+[^Kenny-note]:
+If you have not read it yourself, then you might be unaware that [Baron & Kenny's (1986) classic paper](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.51.6.1173) was actually about distinguishing between mediation and moderation concepts, with an emphasis on testing indirect and interaction hypotheses *in the same analysis*. You might also be surprised to learn that [Judd and Kenny's (1981) classic mediation paper](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=6c841fdea3122bdbd49570fc2ee0efcd3aad9913) outlined the core causal assumptions necessary for valid mediation analysis and explicitly discussed exposure-mediator interactions. So, in some important ways, this entry is trying help get our field caught up to leading mediation advice published over 40 years ago. Unfortunately, for decades, researchers following the "Baron and Kenny" causal steps approach to mediation largely have ignored Judd and Kenny's earlier discussions of causal assumptions pertaining to confounding or exposure-mediator interactions. [David Kenny](https://davidakenny.net/cm/mediate.htm#id.3dy6vkm) suggests this might be partly due (among other important reasons) to the fact that Baron and Kenny's highly cited paper "does not even mention confounding as an assumption"; rather, that paper did "discuss reliability and interaction" and it "suggests to the reader to consult Judd and Kenny (1981a) for more information about assumptions." Sadly, you might *not* be surprised to learn that, according to Kenny, the "initial submission did discuss confounding, but the editor suggested cutting that section and unfortunately the authors complied." Let's focus on improving our analytic approaches to mediation and moderation for now, then work on problematic reviewer, editor, and publisher practices at a later date.  
+
+For this illustration, I will use `psych::mediate()` to estimate "traditional" direct and indirect effects of parental support on delinquency through moral beliefs. This package by default relies upon the "product of coefficients" estimation approach with bootstrapped standard errors, which is a very popular method in social sciences due perhaps to its status for years as the default method for testing indirect effects in [SEM programs like Mplus](https://www.statmodel.com/download/Causal.pdf) as well as the increasing popularity of [PROCESS modeling](https://processmacro.org/index.html) in other stats programs.
+
 #### Linear mediation model, traditional *ab* approach
 
 Traditional product of coefficients approach
@@ -971,12 +973,21 @@ Traditional product of coefficients approach
 psych::mediate(Delinquency ~ ParentSupport + (StrgMoralBlfs), data = simdat3, n.iter = 10000) %>% print(short = TRUE)
 ```
 
+Results from the "traditional" mediation analysis show an indirect effect estimate of -0.11. You can calculate the indirect effect estimate yourself from the path diagram by multiplying the so-called *a* and *b* path coefficients, or (0.22)x(-0.49) = -0.11, hence the "product of coefficients" terminology. 
+
+The estimate is also statistically significant. Of course, with a simulated sample size of n=10,000, pretty much any non-zero estimate will be significant. You will rarely find us pointing to statistical significance as a useful information signal in our blog entries; we will cover that topic another time. To me, a better question here might be whether, given a causal indirect effect of this estimated magnitude, a change in exposure (e.g., from "0" to "1") would be predicted to generate differences of substantively meaningful magnitudes on the outcome scale indirectly through mechanistic changes in the mediator. 
+
+You might notice that our interaction plots above depicting predicted marginal effects provide us substantially greater leverage for answering this type of question. Still, we are on a mission here, so I will avoid the temptation to embark on a yet another tangent, this time about effect sizes. Instead, I will simply note that this indirect effect output and path diagram might be viewed as sufficient for some scholars in our field to declare another contribution and submit yet another paper to the publication pile. (Remember [hypothetical paper #1](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Part 1?)   
+
+![Scientists don't let scientists publish crap. Decompose total effects into mediation and moderation components, and do it all in a single paper. (DALL-E)](DALL-E-dung-heap-small.png)
+
+Let's move to `CMAverse`, starting with a simple linear mediation model that reproduces key results from the "traditional" mediation approach.  
+
 #### Linear mediation model, decomposition, no EMint 
 
 Equivalent to traditional approach. 
 
 For all models, estimating effect of moving from exposure A=0 to exposure Astar=1 
-
 
 ```{r}
 #| output: FALSE

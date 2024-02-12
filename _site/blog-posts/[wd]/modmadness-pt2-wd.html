@@ -438,8 +438,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>After examining this DAG, many of you might immediately assume it that it displays a classic indirect causal effect or mediating relationship.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> However, it is worth taking a moment to ponder whether you think light really is a mediator, or instead whether it is a moderator, or perhaps both? For example, consider that opening the curtains might reduce the chances of stubbing your toes when it is light outside and, hence, when doing so lets sufficient light in the room for you to see obstacles in your path. In contrast, when it is not light outside, opening the curtains might not let sufficient light in and, in those situations, opening the curtains (i.e., <em>doing</em> X=0) might not reduce (i.e., cause) the probability of stubbing toes.</p>
-<p>Put differently, we might posit a heterogeneous causal effect of opening the curtains on the probability of toe stubbing, where the causal effect is strongest when accompanied by sufficient light but weakest or nonexistent when not accompanied by sufficient light.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>After examining this DAG, many of you might immediately assume it that it displays a classic indirect causal effect or mediating relationship. However, it is worth taking a moment to ponder whether you think light really is a mediator, or instead whether it is a moderator, or perhaps both? For example, consider that opening the curtains might reduce the chances of stubbing your toes when it is light outside and, hence, when doing so lets sufficient light in the room for you to see obstacles in your path. In contrast, when it is not light outside, opening the curtains might not let sufficient light in and, in those situations, opening the curtains (i.e., <em>doing</em> X=0) might not reduce (i.e., cause) the probability of stubbing toes.</p>
+<p>Put differently, we might posit a heterogeneous causal effect of opening the curtains on the probability of toe stubbing, where the causal effect is strongest when accompanied by sufficient light but weakest or nonexistent when not accompanied by sufficient light.</p>
 <p>If you are a social scientist, you might also be accustomed to seeing an intersecting arrow in a causal diagram to depict this type of conditional effect or moderating relationship, like below:</p>
 <div class="cell">
 <details>
@@ -532,7 +532,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>An important takeaway message is that when we are examining causal systems that we think might involve a mediating mechanism, it is important to formally assess whether there is evidence of a non-negligible <strong>exposure-mediator interaction</strong>. An exposure-mediator interaction is a situation where the effect of the focal cause or exposure (opening or closing the curtains) on an outcome (toe stubbing) varies across the range of values of the posited mediating mechanism (ambient light levels in the room). Often, when testing mediation hypotheses, assessing this possibility will entail the inclusion of a multiplicative interaction term representing a potential exposure-mediator interaction (X*M) into your model. If the multiplicative interaction coefficient departs from zero, then you likely need to account for the joint possibility of mediation and moderation, or of indirect and interaction effects, in your modeling approach.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In this situation, you can use the “causal mediation” or potential outcomes decomposition approach to sort them out.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>An important takeaway message is that when we are examining causal systems that we think might involve a mediating mechanism, it is important to formally assess whether there is evidence of a non-negligible <strong>exposure-mediator interaction</strong>. An exposure-mediator interaction is a situation where the effect of the focal cause or exposure (opening or closing the curtains) on an outcome (toe stubbing) varies across the range of values of the posited mediating mechanism (ambient light levels in the room). Often, when testing mediation hypotheses, assessing this possibility will entail the inclusion of a multiplicative interaction term representing a potential exposure-mediator interaction (X*M) into your model. If the multiplicative interaction coefficient departs from zero, then you likely need to account for the joint possibility of mediation and moderation, or of indirect and interaction effects, in your modeling approach.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In this situation, you can use the “causal mediation” or potential outcomes decomposition approach to sort them out.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
 <section id="four-way-decomposition-with-toy-example" class="level3">
 <h3 class="anchored" data-anchor-id="four-way-decomposition-with-toy-example">Four-way decomposition with toy example</h3>
@@ -576,30 +576,30 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ouchdat,<span class="at">n=</span><span class="dv">11</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(ouchdat,<span class="at">n=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-anonymous-738100" class="cell tbl-parent quarto-layout-panel anchored">
+<div id="tbl-anonymous-979015" class="cell tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Toy toe-stubbing data</p>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-anonymous-738100-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-738100" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-anonymous-979015-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-979015" style="flex-basis: 50.0%;justify-content: center;">
 
-<div id="xdhmvtjbim" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xdhmvtjbim table {
+<div id="mvvhubuhkx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mvvhubuhkx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xdhmvtjbim thead, #xdhmvtjbim tbody, #xdhmvtjbim tfoot, #xdhmvtjbim tr, #xdhmvtjbim td, #xdhmvtjbim th {
+#mvvhubuhkx thead, #mvvhubuhkx tbody, #mvvhubuhkx tfoot, #mvvhubuhkx tr, #mvvhubuhkx td, #mvvhubuhkx th {
   border-style: none;
 }
 
-#xdhmvtjbim p {
+#mvvhubuhkx p {
   margin: 0;
   padding: 0;
 }
 
-#xdhmvtjbim .gt_table {
+#mvvhubuhkx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -625,12 +625,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_caption {
+#mvvhubuhkx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xdhmvtjbim .gt_title {
+#mvvhubuhkx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -642,7 +642,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#xdhmvtjbim .gt_subtitle {
+#mvvhubuhkx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -654,7 +654,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#xdhmvtjbim .gt_heading {
+#mvvhubuhkx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -666,13 +666,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_bottom_border {
+#mvvhubuhkx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_col_headings {
+#mvvhubuhkx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -687,7 +687,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_col_heading {
+#mvvhubuhkx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -707,7 +707,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#xdhmvtjbim .gt_column_spanner_outer {
+#mvvhubuhkx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -719,15 +719,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#xdhmvtjbim .gt_column_spanner_outer:first-child {
+#mvvhubuhkx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xdhmvtjbim .gt_column_spanner_outer:last-child {
+#mvvhubuhkx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xdhmvtjbim .gt_column_spanner {
+#mvvhubuhkx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -739,11 +739,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#xdhmvtjbim .gt_spanner_row {
+#mvvhubuhkx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xdhmvtjbim .gt_group_heading {
+#mvvhubuhkx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +769,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#xdhmvtjbim .gt_empty_group_heading {
+#mvvhubuhkx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -784,15 +784,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#xdhmvtjbim .gt_from_md > :first-child {
+#mvvhubuhkx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xdhmvtjbim .gt_from_md > :last-child {
+#mvvhubuhkx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xdhmvtjbim .gt_row {
+#mvvhubuhkx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -811,7 +811,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#xdhmvtjbim .gt_stub {
+#mvvhubuhkx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -824,7 +824,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#xdhmvtjbim .gt_stub_row_group {
+#mvvhubuhkx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -838,15 +838,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#xdhmvtjbim .gt_row_group_first td {
+#mvvhubuhkx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xdhmvtjbim .gt_row_group_first th {
+#mvvhubuhkx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xdhmvtjbim .gt_summary_row {
+#mvvhubuhkx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -856,16 +856,16 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#xdhmvtjbim .gt_first_summary_row {
+#mvvhubuhkx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_first_summary_row.thick {
+#mvvhubuhkx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xdhmvtjbim .gt_last_summary_row {
+#mvvhubuhkx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -875,7 +875,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_grand_summary_row {
+#mvvhubuhkx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -885,7 +885,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#xdhmvtjbim .gt_first_grand_summary_row {
+#mvvhubuhkx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -895,7 +895,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_last_grand_summary_row_top {
+#mvvhubuhkx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -905,11 +905,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_striped {
+#mvvhubuhkx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xdhmvtjbim .gt_table_body {
+#mvvhubuhkx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -918,7 +918,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_footnotes {
+#mvvhubuhkx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -932,7 +932,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_footnote {
+#mvvhubuhkx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -941,7 +941,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#xdhmvtjbim .gt_sourcenotes {
+#mvvhubuhkx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -955,7 +955,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#xdhmvtjbim .gt_sourcenote {
+#mvvhubuhkx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -963,67 +963,67 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#xdhmvtjbim .gt_left {
+#mvvhubuhkx .gt_left {
   text-align: left;
 }
 
-#xdhmvtjbim .gt_center {
+#mvvhubuhkx .gt_center {
   text-align: center;
 }
 
-#xdhmvtjbim .gt_right {
+#mvvhubuhkx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xdhmvtjbim .gt_font_normal {
+#mvvhubuhkx .gt_font_normal {
   font-weight: normal;
 }
 
-#xdhmvtjbim .gt_font_bold {
+#mvvhubuhkx .gt_font_bold {
   font-weight: bold;
 }
 
-#xdhmvtjbim .gt_font_italic {
+#mvvhubuhkx .gt_font_italic {
   font-style: italic;
 }
 
-#xdhmvtjbim .gt_super {
+#mvvhubuhkx .gt_super {
   font-size: 65%;
 }
 
-#xdhmvtjbim .gt_footnote_marks {
+#mvvhubuhkx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xdhmvtjbim .gt_asterisk {
+#mvvhubuhkx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xdhmvtjbim .gt_indent_1 {
+#mvvhubuhkx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xdhmvtjbim .gt_indent_2 {
+#mvvhubuhkx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xdhmvtjbim .gt_indent_3 {
+#mvvhubuhkx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xdhmvtjbim .gt_indent_4 {
+#mvvhubuhkx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xdhmvtjbim .gt_indent_5 {
+#mvvhubuhkx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=0</p> </caption>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=1</p> </caption>
   <thead>
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CurtainClosed">CurtainClosed</th>
@@ -1071,25 +1071,25 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </table>
 </div>
 </div>
-<div id="tbl-anonymous-738100-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-738100" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-anonymous-979015-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-979015" style="flex-basis: 50.0%;justify-content: center;">
 
-<div id="qltdudtces" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qltdudtces table {
+<div id="iunslhwnqn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iunslhwnqn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qltdudtces thead, #qltdudtces tbody, #qltdudtces tfoot, #qltdudtces tr, #qltdudtces td, #qltdudtces th {
+#iunslhwnqn thead, #iunslhwnqn tbody, #iunslhwnqn tfoot, #iunslhwnqn tr, #iunslhwnqn td, #iunslhwnqn th {
   border-style: none;
 }
 
-#qltdudtces p {
+#iunslhwnqn p {
   margin: 0;
   padding: 0;
 }
 
-#qltdudtces .gt_table {
+#iunslhwnqn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1115,12 +1115,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#qltdudtces .gt_caption {
+#iunslhwnqn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qltdudtces .gt_title {
+#iunslhwnqn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1132,7 +1132,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#qltdudtces .gt_subtitle {
+#iunslhwnqn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1144,7 +1144,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#qltdudtces .gt_heading {
+#iunslhwnqn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1156,13 +1156,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qltdudtces .gt_bottom_border {
+#iunslhwnqn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qltdudtces .gt_col_headings {
+#iunslhwnqn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1177,7 +1177,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qltdudtces .gt_col_heading {
+#iunslhwnqn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1197,7 +1197,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#qltdudtces .gt_column_spanner_outer {
+#iunslhwnqn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1209,15 +1209,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#qltdudtces .gt_column_spanner_outer:first-child {
+#iunslhwnqn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qltdudtces .gt_column_spanner_outer:last-child {
+#iunslhwnqn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qltdudtces .gt_column_spanner {
+#iunslhwnqn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1229,11 +1229,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#qltdudtces .gt_spanner_row {
+#iunslhwnqn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qltdudtces .gt_group_heading {
+#iunslhwnqn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1259,7 +1259,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#qltdudtces .gt_empty_group_heading {
+#iunslhwnqn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1274,15 +1274,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#qltdudtces .gt_from_md > :first-child {
+#iunslhwnqn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qltdudtces .gt_from_md > :last-child {
+#iunslhwnqn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qltdudtces .gt_row {
+#iunslhwnqn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1301,7 +1301,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#qltdudtces .gt_stub {
+#iunslhwnqn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1314,7 +1314,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qltdudtces .gt_stub_row_group {
+#iunslhwnqn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1328,15 +1328,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#qltdudtces .gt_row_group_first td {
+#iunslhwnqn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qltdudtces .gt_row_group_first th {
+#iunslhwnqn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qltdudtces .gt_summary_row {
+#iunslhwnqn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1346,16 +1346,16 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qltdudtces .gt_first_summary_row {
+#iunslhwnqn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qltdudtces .gt_first_summary_row.thick {
+#iunslhwnqn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qltdudtces .gt_last_summary_row {
+#iunslhwnqn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1365,7 +1365,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#qltdudtces .gt_grand_summary_row {
+#iunslhwnqn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1375,7 +1375,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qltdudtces .gt_first_grand_summary_row {
+#iunslhwnqn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1385,7 +1385,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#qltdudtces .gt_last_grand_summary_row_top {
+#iunslhwnqn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1395,11 +1395,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#qltdudtces .gt_striped {
+#iunslhwnqn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qltdudtces .gt_table_body {
+#iunslhwnqn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1408,7 +1408,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#qltdudtces .gt_footnotes {
+#iunslhwnqn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1422,7 +1422,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qltdudtces .gt_footnote {
+#iunslhwnqn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1431,7 +1431,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qltdudtces .gt_sourcenotes {
+#iunslhwnqn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1445,7 +1445,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qltdudtces .gt_sourcenote {
+#iunslhwnqn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1453,67 +1453,67 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qltdudtces .gt_left {
+#iunslhwnqn .gt_left {
   text-align: left;
 }
 
-#qltdudtces .gt_center {
+#iunslhwnqn .gt_center {
   text-align: center;
 }
 
-#qltdudtces .gt_right {
+#iunslhwnqn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qltdudtces .gt_font_normal {
+#iunslhwnqn .gt_font_normal {
   font-weight: normal;
 }
 
-#qltdudtces .gt_font_bold {
+#iunslhwnqn .gt_font_bold {
   font-weight: bold;
 }
 
-#qltdudtces .gt_font_italic {
+#iunslhwnqn .gt_font_italic {
   font-style: italic;
 }
 
-#qltdudtces .gt_super {
+#iunslhwnqn .gt_super {
   font-size: 65%;
 }
 
-#qltdudtces .gt_footnote_marks {
+#iunslhwnqn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qltdudtces .gt_asterisk {
+#iunslhwnqn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qltdudtces .gt_indent_1 {
+#iunslhwnqn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qltdudtces .gt_indent_2 {
+#iunslhwnqn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qltdudtces .gt_indent_3 {
+#iunslhwnqn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qltdudtces .gt_indent_4 {
+#iunslhwnqn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qltdudtces .gt_indent_5 {
+#iunslhwnqn .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=1</p> </caption>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=0</p> </caption>
   <thead>
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CurtainClosed">CurtainClosed</th>
@@ -1670,7 +1670,7 @@ Now, imagine instead we close the curtains (do[X=1]) and continue holding a suff
 </figure>
 </div>
 <p>Now, recall that we did not stub our toes in that one time we observed closed curtains and the mechanism present (Y11 = 0/1 = 0.0). However, we did stub our toe in one of the eight instances with open curtains and the mechanism present (Y01 = 1/8 = 0.125). Meanwhile, the probability of stubbing our toes was equal across exposure conditions in the absence of the mediator (Y10 = 5/10 = 0.5; Y00 = 1/2 = 0.5).</p>
-<p>From these comparisons, it appears that doing X=1 instead of X=0 (closing curtains) slightly <em>reduced</em> the probability of toe stubbing with the mechanism present (Y11 - Y01 = 0.0 - 0.125 = -.125), whereas doing X=1 instead of X=0 had no effect on the probability of toe stubbing with the mechanism absent (Y10 - Y00 = 0.5 - 0.5 = 0). In the equation above, we essentially used these same comparisons and then weighted the resulting difference-in-differences value by the expectation of observing the mediator in the absence of exposure (i.e., M0 = probability of observing M=1 given we do[X=0]).<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>From these comparisons, it appears that doing X=1 instead of X=0 (closing curtains) slightly <em>reduced</em> the probability of toe stubbing with the mechanism present (Y11 - Y01 = 0.0 - 0.125 = -.125), whereas doing X=1 instead of X=0 had no effect on the probability of toe stubbing with the mechanism absent (Y10 - Y00 = 0.5 - 0.5 = 0). In the equation above, we essentially used these same comparisons and then weighted the resulting difference-in-differences value by the expectation of observing the mediator in the absence of exposure (i.e., M0 = probability of observing M=1 given we do[X=0]).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Strong caveat: If these were real data, I would strongly recommend against making any inferences from this INTref estimate given it was generated using a very small sample (e.g., only n=1 observation for one of the cells). Unfortunately, such <a href="https://journals.sagepub.com/doi/full/10.1177/0049124119826158">noisy and unreliable inferences</a> are all too common in criminology. But, that is an entry for another day.</p>
 <p>One final point about the INTref component: As <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/MedInt_Ep.pdf">VanderWeele explains (p.755)</a>, the INTref “requires the mediator to operate, but the effect does not come about by the exposure changing the mediator — it simply requires that the mediator is present even when the exposure is absent; the effect is ‘unmediated,’ in the sense that it does not operate by the exposure changing the mediator, but it requires the presence of the mediator nonetheless.” In contrast, the remaining two components (PIE and INTmed) both involve mediation such that <em>doing</em> X (i.e., the exposure) affects the outcome at least partly by changing the mediator. Now, let’s move to the next component.</p>
 </section>
@@ -1690,7 +1690,7 @@ Now, imagine instead we close the curtains (do[X=1]) and continue holding a suff
 <figcaption class="figure-caption">Pure indirect effects: As American as apple PIE? (DALL-E)</figcaption>
 </figure>
 </div>
-<p>Speaking of those other two interaction components, we already discussed INTref; now, let’s move onto INTmed, our fourth component.</p>
+<p>Speaking of those other two interaction components, we already discussed INTref; now, let’s move on to INTmed, our fourth component.</p>
 </section>
 <section id="intmed" class="level4">
 <h4 class="anchored" data-anchor-id="intmed">INTmed</h4>
@@ -1717,7 +1717,7 @@ Curtains closed: P(Y|do[X=1],do[M=1]) = Y11 = 0/1 = 0.0</p>
 </section>
 <section id="revisiting-te" class="level4">
 <h4 class="anchored" data-anchor-id="revisiting-te">Revisiting TE</h4>
-<p>Before moving onto a simulated example, I want to revisit the <em>total effect</em> (TE) that we just decomposed into four component parts. Recall earlier how we calculated the total effect of X on Y as the difference between the outcome probabilities across exposed and unexposed conditions (Y1 - Y0)?</p>
+<p>Before moving on to a simulated example, I want to revisit the <em>total effect</em> (TE) that we just decomposed into four component parts. Recall earlier how we calculated the total effect of X on Y as the difference between the outcome probabilities across exposed and unexposed conditions (Y1 - Y0)?</p>
 <p>TE = Y1 - Y0<br>
 = 0.455 - .20<br>
 = 0.255</p>
@@ -1737,24 +1737,24 @@ Curtains closed: P(Y|do[X=1],do[M=1]) = Y11 = 0/1 = 0.0</p>
 </section>
 <section id="section-b.-effect-decomposition-with-simulated-data-and-cmaverse" class="level2">
 <h2 class="anchored" data-anchor-id="section-b.-effect-decomposition-with-simulated-data-and-cmaverse">Section B. Effect Decomposition with Simulated Data and CMAverse</h2>
-<p>At this point, I am hoping the toy example above helped build your intuitions about the 4-way decomposition process and that you feel ready to move onto a more complicated and realistic use case with simulated data and the <a href="https://bs1125.github.io/CMAverse/"><code>CMAverse</code> R package</a>. Though we took a long and winding road to arrive here, as I explained in our <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-2">Moderator Madness, Part 1 post</a>, this is the goal that initially motivated this two-part blog series:</p>
+<p>At this point, I am hoping the toy example above helped build your intuitions about the 4-way decomposition process and that you feel ready to move on to a more complicated and realistic use case with simulated data and the <a href="https://bs1125.github.io/CMAverse/"><code>CMAverse</code> R package</a>. Though we took a long and winding road to arrive here, as I explained in our <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-2">Moderator Madness, Part 1 post</a>, this is the goal that initially motivated this two-part blog series:</p>
 <blockquote class="blockquote">
 <p>The central aim of [“Moderator Madness, Part 2”] will be to illustrate how exposure-mediator interactions entangle mediation and moderation processes in a way that requires decomposition of the effect. Effect decomposition is accomplished with a <a href="https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/">causal mediation approach</a> that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates…”</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>“…[I]n Part 2 of the blog series, I will pick up here using the same simulated data from this example to illustrate how the addition of an exposure-mediator interaction entangles indirect and interaction effects in a way that requires decomposition of these effects. I will also illustrate how one can accomplish effect decomposition with a causal mediation approach that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates.”</p>
 </blockquote>
-<p>Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional “product of coefficients (<em>ab</em> path) approaches to modeling mediation processes and are looking for a very basic introduction to <a href="https://pubmed.ncbi.nlm.nih.gov/34239282/">less well known yet generally preferred</a>”causal mediation” methods. If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">summaries</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/">overviews of software alternatives</a>, and <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/">introductory primers</a> on causal mediation and on <a href="https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx">CMAverse specifically</a>. Additionally, the <a href="https://bs1125.github.io/CMAverse/articles/quickstart.html">CMAverse quickstart</a> website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>Before diving in, I should explain that this section is meant for social scientists that already have some familiarity with traditional “product of coefficients (<em>ab</em> path) approaches to modeling mediation processes and are looking for a very basic introduction to <a href="https://pubmed.ncbi.nlm.nih.gov/34239282/">less well known yet generally preferred</a>”causal mediation” methods. If you find yourself in the position of testing or estimating indirect effects and unaware of the causal mediation approach, then I strongly encourage you to read more on the topic. There are lots of excellent <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">summaries</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7853644/">overviews of software alternatives</a>, and introductory primers on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/">causal mediation</a> and on <a href="https://journals.lww.com/epidem/Fulltext/2021/09000/CMAverse__A_Suite_of_Functions_for_Reproducible.23.aspx">CMAverse specifically</a>. Additionally, the <a href="https://bs1125.github.io/CMAverse/articles/quickstart.html">CMAverse quickstart</a> website itself is a great place to start. If nothing else, I hope this entry serves as a segue for folks curious about advancing beyond traditional mediation approaches by learning more about causal mediation approaches.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p>Without further ado, let’s get to it!</p>
 <section id="dag-of-simulated-data-generating-processes" class="level3">
 <h3 class="anchored" data-anchor-id="dag-of-simulated-data-generating-processes">DAG of simulated data-generating processes</h3>
-<p>For this illustration, I will generate simulated data that are very similar to those found in <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#outline-of-the-post">Example 2 from our “Moderator Madness: Part 1” post</a>.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> In that post, I stated:</p>
+<p>For this illustration, I will generate simulated data that are very similar to those found in <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#outline-of-the-post">Example 2 from our “Moderator Madness: Part 1” post</a>.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> In that post, I stated:</p>
 <blockquote class="blockquote">
 <p>In the second example, I assume that the true data generating process underlying both imaginary papers (i.e., “paper 1” and “paper 2” in our example above) is an integrated causal model in which moral beliefs is both a mediating and moderating mechanism. That is, in the simulated data for the second example, there is a true indirect effect of <em>parental support</em> on delinquency through <em>strong moral beliefs</em> as well as a direct effect of <em>parental support</em> on <em>delinquency</em> that varies systematically across levels of (i.e., “interacts with”) <em>strong moral beliefs</em>.</p>
 </blockquote>
 <p>Thus, the simulated data here contain the same three focal variables. The exposure, <em>parental support</em> practices, is conceptualized as a variable measure of parental intervention(s) on youth attitudes and behaviors; it is generated here as a continuous, normally distributed, mean-centered variable. The mechanism, youths’ <em>strong moral beliefs</em>, is generated as a negatively skewed ordinal variable ranging from 0 to 5, which was created by reverse-scoring a truncated Poisson-distributed <em>weak moral beliefs</em> variable. The outcome, <em>delinquency</em>, is a positively skewed, Poisson-distributed event count variable ranging from 0 to a truncated theoretical maximum of 7.</p>
 <p>Again, the simulated data will be generated using the following hypothetical causal mediation and moderation assumptions: <em>Parental support</em> practices are a somewhat effective cause of youth’s internalization of <em>strong moral beliefs</em>, and <em>strong moral beliefs</em> effectively cause fewer delinquent behavior events (i.e., they constrain temptations, promote resistance to, or encourage selection out of delinquency). Thus, the data generating processes include causal mediation or indirect effects of an exposure through a mechanism.</p>
-<p>Additionally, <em>parental support</em> directly discourages or reduces involvement in youth delinquency.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> However, this effect varies across levels of the mechanism. Specifically, parental support’s negative effect on youth delinquency is most pronounced among youth with weak moral beliefs (i.e., low <em>strong moral beliefs</em> index scores); these youth are most at risk of engaging in delinquency, so effective parental interventions have the greatest potential to enact behavioral change among these youth. In contrast, youth with strong moral beliefs are highly unlikely to engage in delinquency irrespective of the degree of parental support they experience; therefore, parental support is largely ineffective among youth with the highest <em>strong moral beliefs</em> index scores. This means the data generating processes include moderation or interaction effects.</p>
+<p>Additionally, <em>parental support</em> directly discourages or reduces involvement in youth delinquency.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> However, this effect varies across levels of the mechanism. Specifically, parental support’s negative effect on youth delinquency is most pronounced among youth with weak moral beliefs (i.e., low <em>strong moral beliefs</em> index scores); these youth are most at risk of engaging in delinquency, so effective parental interventions have the greatest potential to enact behavioral change among these youth. In contrast, youth with strong moral beliefs are highly unlikely to engage in delinquency irrespective of the degree of parental support they experience; therefore, parental support is largely ineffective among youth with the highest <em>strong moral beliefs</em> index scores. This means the data generating processes include moderation or interaction effects.</p>
 <p>Moreover, since parental support both operates indirectly through and interacts with youth’s strong moral beliefs, the data generating processes also involve an exposure-mediator interaction. That is, some of parental support’s conditional effect on delinquency might be attributable to a <em>reference interaction</em>, or heterogeneity in the effect of parental support across levels of the mechanism (e.g., across youth with weak versus strong moral beliefs). Yet, since parental support also partly causes strong moral beliefs, then parental support is partly responsible for setting the very levels across which it conditionally affects delinquency. This means that some of parental support’s conditional effect also is likely attributable to a <em>mediated interaction</em>.</p>
 <p>In causal mediation analysis using potential outcomes, the <em>mediated interaction</em> component will be variously attributed to quantities representing the direct effect of the exposure or, instead, to quantities representing the indirect effect through the mechanism; which a researcher chooses to report will depend upon one’s focal research questions and estimand of interest. I will explain this in more detail later. For now, let’s check out a modified version of <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/fig1.png">Part 1’s basic DAG</a>, which concisely communicates the causal assumptions underlying the data generating processes for our simulation.</p>
 <div class="cell">
@@ -1828,7 +1828,7 @@ Curtains closed: P(Y|do[X=1],do[M=1]) = Y11 = 0/1 = 0.0</p>
 </section>
 <section id="causal-mediation-assumptions" class="level3">
 <h3 class="anchored" data-anchor-id="causal-mediation-assumptions">“Causal mediation” assumptions</h3>
-<p>Readers might notice some changes here to Part 1’s DAG, such as the addition of common “causal mediation” notations to variable names (e.g.&nbsp;exposure label “A” to “Parental Support” variable) and the addition of “measured confounders.” With the addition of confounders, I hope to remind readers that interpreting results and making causal inferences from results of “causal mediation” models - as well as from traditional mediation models - requires important, and perhaps untenable, assumptions about the lack of unmeasured sources of confounding of the X-M, M-Y, or X-Y relationships.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> <a href="https://pubmed.ncbi.nlm.nih.gov/23379553/">Valeri and VanderWeele (2013)</a> succinctly describe these essential assumptions:</p>
+<p>Readers might notice some changes here to Part 1’s DAG, such as the addition of common “causal mediation” notations to variable names (e.g.&nbsp;exposure label “A” to “Parental Support” variable) and the addition of “measured confounders.” With the addition of confounders, I hope to remind readers that interpreting results and making causal inferences from results of “causal mediation” models - as well as from traditional mediation models - requires important, and perhaps untenable, assumptions about the lack of unmeasured sources of confounding of the X-M, M-Y, or X-Y relationships.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> <a href="https://pubmed.ncbi.nlm.nih.gov/23379553/">Valeri and VanderWeele (2013)</a> succinctly describe these essential assumptions:</p>
 <blockquote class="blockquote">
 <p>“…controlled direct effects require (i) no unmeasured treatment-outcome confounding and (ii) no unmeasured mediator-outcome confounding. Natural direct and indirect effects require these assumptions and also (iii) no unmeasured treatment-mediator confounding and (iv) no mediator-outcome confounder affected by treatment.” (p.??)</p>
 </blockquote>
@@ -1856,7 +1856,7 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 <p>Indirect Effects: Instead of encountering a <em>pure indirect effect</em> (PIE) estimate, the output might instead contain estimates for a <em>pure natural indirect effect</em> and a <em>total natural indirect effect</em>.</p>
 <p>You can find <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">more detailed descriptions elsewhere</a> of the differences between controlled and natural effects. As explained above, controlled direct effects hold the mediator constant at a specific value (M=m). For example, a controlled direct effect (CDE) might contrast expected outcomes across X=0 and X=1 while holding the mechanism constant at a specific value like M=0.</p>
 <p>In contrast, understanding natural effects requires comprehending some of those counterfactual contrasts that we illustrated earlier. Remember that, in the presence of mediation, the mediator is expected to change as the exposure changes. So, setting the mediator to a constant value (e.g., M=0) may not provide a realistic or “natural” contrast. Natural effects allow the mediator to vary as it “naturally” would across exposure conditions. Natural effects are then estimated by holding the mediator constant at specific counterfactual values that the mediator would be expected to take under specified exposure conditions, such as setting M at the value we would expect it to be when we do[X=0] (i.e., M0) or when we do[X=1] (i.e., M1).</p>
-<p>For example, a (pure) natural direct effect might be estimated as a contrast between: (1) the expected outcome value when X=1 and M is set to its expected value when X=0 and (2) the expected outcome when X=0 and M is still set to its expected value when X=0. Modifying the notation used above, you might summarize this contrast as Y(do[X=1],do[M<sub>X=0</sub>]) - Y(do[X=0],do[M<sub>X=0</sub>]), or Y10 - Y00.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<p>For example, a (pure) natural direct effect might be estimated as a contrast between: (1) the expected outcome value when X=1 and M is set to its expected value when X=0 and (2) the expected outcome when X=0 and M is still set to its expected value when X=0. Modifying the notation used above, you might summarize this contrast as Y(do[X=1],do[M<sub>X=0</sub>]) - Y(do[X=0],do[M<sub>X=0</sub>]), or Y10 - Y00.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 <p>Once you wrap your head around these important distinctions between natural and controlled effects, then you may find yourself beginning to comprehend other important issues related to mediation, moderation, and effect decomposition.</p>
 <p>First, in a linear model without interactions (i.e., where INTref=0 and INTmed=0), the CDE estimates will not change across different values of M. Additionally, in such models, controlled and natural direct effects will converge on the same estimates. This is because doing X=1 (versus X=0) will have the same effect on Y at all values of M, so doing M=0 or doing M<sub>X=0</sub> will generate the same effect estimate.</p>
 <p>Second, as you have probably figured out by now, things are not as straightforward in more complex models with nonlinear link functions or exposure-mediator interactions. Specifically, when there are nonlinearities or exposure-mediator interactions, one could conceivably estimate a different CDE estimate for every possible value of M! This makes it impossible to perform effect decomposition in the presence of an interaction using controlled effects. However, the counterfactual contrasts underlying natural direct and indirect effect estimates are uniquely defined so there is a single value even in the presence of nonlinearities and exposure-mediator interactions. This permits us to perform effect decomposition even in those situations involving more complex causal relationships.</p>
@@ -3162,6 +3162,9 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 </div>
 </div>
 </div>
+<p>For some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient ground for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #2</a> from Part 1?)</p>
+<p>Yet, note that this model does not account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. So, to test for indirect effects, a researcher might use what is popularly known as the classic <a href="https://www.psych.mcgill.ca/perpg/fac/falk/tutorials/mediation/methods/#baron-kenny-1986">“Baron and Kenny” (1986) causal steps approach</a> to detecting indirect effects. This “traditional” approach to testing mediation hypotheses usually involves estimating a series of regression models and then, depending upon the specific procedures adopted, estimating a “difference in coefficients” or “product of coefficients” representing causal path estimates (e.g., <em>ab</em> paths) paired with a test of significance. (See <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2819363/">MacKinnon and colleagues’ 2002</a> paper, and especially their Table 1, for a summary of these traditional approaches).<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<p>For this illustration, I will use <code>psych::mediate()</code> to estimate “traditional” direct and indirect effects of parental support on delinquency through moral beliefs. This package by default relies upon the “product of coefficients” estimation approach with bootstrapped standard errors, which is a very popular method in social sciences due perhaps to its status for years as the default method for testing indirect effects in <a href="https://www.statmodel.com/download/Causal.pdf">SEM programs like Mplus</a> as well as the increasing popularity of <a href="https://processmacro.org/index.html">PROCESS modeling</a> in other stats programs.</p>
 </section>
 <section id="linear-mediation-model-traditional-ab-approach" class="level4">
 <h4 class="anchored" data-anchor-id="linear-mediation-model-traditional-ab-approach">Linear mediation model, traditional <em>ab</em> approach</h4>
@@ -3191,6 +3194,16 @@ R = 0.52 R2 = 0.27   F = 1894 on 2 and 9997 DF   p-value:  0
  To see the longer output, specify short = FALSE in the print statement or ask for the summary</code></pre>
 </div>
 </div>
+<p>Results from the “traditional” mediation analysis show an indirect effect estimate of -0.11. You can calculate the indirect effect estimate yourself from the path diagram by multiplying the so-called <em>a</em> and <em>b</em> path coefficients, or (0.22)x(-0.49) = -0.11, hence the “product of coefficients” terminology.</p>
+<p>The estimate is also statistically significant. Of course, with a simulated sample size of n=10,000, pretty much any non-zero estimate will be significant. You will rarely find us pointing to statistical significance as a useful information signal in our blog entries; we will cover that topic another time. To me, a better question here might be whether, given a causal indirect effect of this estimated magnitude, a change in exposure (e.g., from “0” to “1”) would be predicted to generate differences of substantively meaningful magnitudes on the outcome scale indirectly through mechanistic changes in the mediator.</p>
+<p>You might notice that our interaction plots above depicting predicted marginal effects provide us substantially greater leverage for answering this type of question. Still, we are on a mission here, so I will avoid the temptation to embark on a yet another tangent, this time about effect sizes. Instead, I will simply note that this indirect effect output and path diagram might be viewed as sufficient for some scholars in our field to declare another contribution and submit yet another paper to the publication pile. (Remember <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #1</a> from Part 1?)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DALL-E-dung-heap-small.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Scientists don’t let scientists publish crap. Decompose total effects into mediation and moderation components, and do it all in a single paper. (DALL-E)</figcaption>
+</figure>
+</div>
+<p>Let’s move to <code>CMAverse</code>, starting with a simple linear mediation model that reproduces key results from the “traditional” mediation approach.</p>
 </section>
 <section id="linear-mediation-model-decomposition-no-emint" class="level4">
 <h4 class="anchored" data-anchor-id="linear-mediation-model-decomposition-no-emint">Linear mediation model, decomposition, no EMint</h4>
@@ -6031,21 +6044,20 @@ $mval[[1]]
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Remember <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #1</a> from Moderator Madness, Part 1?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Remember <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #2</a> from Moderator Madness, Part 1?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Do NOT rely on statistical significance of the interaction coefficient to make this determination as those tests are notoriously underpowered; also, as <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-1">I discussed in the first post in this series</a>, such inferences are particularly unreliable in nonlinear models.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>At this point, you might be wondering: “Do I really need to do this? The [insert] theory I am testing does not predict such an interaction!” Well, failure to examine and adjust for the possibility of an exposure-mediator interaction is equivalent to forcing your model of the data generating process to conform to a strong and potentially incorrect theoretical assumption about underlying data generating processes. In SEM parlance, it is equivalent to “fixing” the effect of X on Y through M to be the same at all values of M. In situations where the effect of X on Y indeed varies across strata of M, failure to account for it could result in biased or incomplete inferences. In contrast, allowing for and decomposing a potential exposure-mediator interaction is, in SEM terms, akin to “freeing” that parameter, thus permitting a test of that strong theoretical assumption. In situations where no such interaction exists, the magnitude of the interaction will approach zero, and traditional and “causal” mediation approaches (e.g., “controlled” and “natural” effect estimates) will converge to the same values. In those situations, decomposition would be unnecessary yet nonetheless informative. In short, there is substantial upside and little downside apart from learning the skills to testing and accounting for exposure-mediator interactions whether or not one exists, yet there are potentially substantial inferential risks to <em>not</em> doing so when one exists. So, just how <em>a priori</em> confident are you in that likely imprecise and discursive theory of yours?<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Are you wondering what the (Y11 - Y10 - Y01 + Y00) term represents? Well, you can think of it as contrasting the effect of X (i.e., doing X=1 - doing X=0) in the mechanism’s presence (M=1) versus its absence (M=0). Alternatively, you can also think of it as contrasting the effect of M (i.e,. doing M=1 - doing M=0) in the exposure’s presence (X=1) versus its absence (X=0). Let’s use the latter to show our work:<br>
+<li id="fn1"><p>Do NOT rely on statistical significance of the interaction coefficient to make this determination as those tests are notoriously underpowered; also, as <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-1">I discussed in the first post in this series</a>, such inferences are particularly unreliable in nonlinear models.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>At this point, you might be wondering: “Do I really need to do this? The [insert] theory I am testing does not predict such an interaction!” Well, failure to examine and adjust for the possibility of an exposure-mediator interaction is equivalent to forcing your model of the data generating process to conform to a strong and potentially incorrect theoretical assumption about underlying data generating processes. In SEM parlance, it is equivalent to “fixing” the effect of X on Y through M to be the same at all values of M. In situations where the effect of X on Y indeed varies across strata of M, failure to account for it could result in biased or incomplete inferences. In contrast, allowing for and decomposing a potential exposure-mediator interaction is, in SEM terms, akin to “freeing” that parameter, thus permitting a test of that strong theoretical assumption. In situations where no such interaction exists, the magnitude of the interaction will approach zero, and traditional and “causal” mediation approaches (e.g., “controlled” and “natural” effect estimates) will converge to the same values. In those situations, decomposition would be unnecessary yet nonetheless informative. In short, there is substantial upside and little downside apart from learning the skills to testing and accounting for exposure-mediator interactions whether or not one exists, yet there are potentially substantial inferential risks to <em>not</em> doing so when one exists. So, just how <em>a priori</em> confident are you in that likely imprecise and discursive theory of yours?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Are you wondering what the (Y11 - Y10 - Y01 + Y00) term represents? Well, you can think of it as contrasting the effect of X (i.e., doing X=1 - doing X=0) in the mechanism’s presence (M=1) versus its absence (M=0). Alternatively, you can also think of it as contrasting the effect of M (i.e,. doing M=1 - doing M=0) in the exposure’s presence (X=1) versus its absence (X=0). Let’s use the latter to show our work:<br>
 (Effect of M | X=1) - (Effect of M | X=0)<br>
 = (Y11 - Y10) - (Y01 - Y00)<br>
 From here, we just do a bit of basic algebra:<br>
 = Y11 - Y10 + (-1)(Y01 - Y00)<br>
-= Y11 - Y10 - Y01 + Y00<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Given the aims, I will not get into detailed issues or advanced modeling options, such as differences between <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/">regression-based</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4214081/">weighting-based</a>, <em>g-formula</em>, or <a href="https://bs1125.github.io/CMAverse/articles/overview.html">other estimation methods</a> available in CMAverse. However, some available methods may be better suited for your particular modeling situation, and some choices may be better than others <a href="https://www.tandfonline.com/doi/full/10.1080/10705511.2022.2104287">depending upon your specific causal estimand of interest</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Similar, but not identical. For instance, I reduced the magnitude of a coefficient (from -0.5 to -0.3) to weaken the causal effect of parental support on moral beliefs, which moves it closer to the range of plausible effect sizes of many theorized causes of attitudes and behaviors observed in criminology.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Of course, in many situations, a “direct effect” estimate itself may (and likely does) represent an aggregate or composite summary of other indirect effects operating through unmeasured mechanisms.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Again, traditional and causal mediation approaches both rest upon similar confounding assumptions. In addition to these assumptions, there are lots of other considerations as well when deciding whether a mediation model is appropriate for your situation (e.g., cross-sectional data). Too often, <a href="https://journals.sagepub.com/doi/10.1177/25152459221095827">a mediation model may not be appropriate</a>, but researchers use them anyway. Still, even in situations where the appropriateness of their assumptions are dubious, I think most social science areas would benefit generally from researchers thinking carefully about and transparently stating the assumptions they are making when interpreting results - whether results are from mediation models or otherwise. Likewise, reading more about causal mediation methods may help towards these ends, as the explicit and formal statement of assumptions necessary to generate valid causal inferences from mediation models is an important area of emphasis in the causal mediation literature.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Note that the Y(do[X=1],do[M<sub>X=0</sub>]) may be an unobservable counterfactual condition (e.g., in the presence of mediation). We cannot in fact simultaneously observe Y with X set to =1 and M set to equal its expected value when X=0. After all, if we do X=1 and X has an effect on M, then M would also change to its (population average) value at X=1; M would not stay at its expected value when X=0! <a href="https://www.nimhd.nih.gov/docs/hd-workshop/day1/roleWorkInHD-2020_10_kaufman_mediationAnalysesToRacialEthnic.pdf">These slides</a> (especially slide 12) offer a concise description of this issue.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+= Y11 - Y10 - Y01 + Y00<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Given the aims, I will not get into detailed issues or advanced modeling options, such as differences between <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10368791/">regression-based</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4214081/">weighting-based</a>, <em>g-formula</em>, or <a href="https://bs1125.github.io/CMAverse/articles/overview.html">other estimation methods</a> available in CMAverse. However, some available methods may be better suited for your particular modeling situation, and some choices may be better than others <a href="https://www.tandfonline.com/doi/full/10.1080/10705511.2022.2104287">depending upon your specific causal estimand of interest</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Similar, but not identical. For instance, I made small changes to the magnitude of some coefficients, which modified the relative contributions of various components to the total effect.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Of course, in many situations, a “direct effect” estimate itself may (and likely does) represent an aggregate or composite summary of other indirect effects operating through unmeasured mechanisms.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Again, traditional and causal mediation approaches both rest upon similar confounding assumptions. In addition to these assumptions, there are lots of other considerations as well when deciding whether a mediation model is appropriate for your situation (e.g., cross-sectional data). Too often, <a href="https://journals.sagepub.com/doi/10.1177/25152459221095827">a mediation model may not be appropriate</a>, but researchers use them anyway. Still, even in situations where the appropriateness of their assumptions are dubious, I think most social science areas would benefit generally from researchers thinking carefully about and transparently stating the assumptions they are making when interpreting results - whether results are from mediation models or otherwise. Likewise, reading more about causal mediation methods may help towards these ends, as the explicit and formal statement of assumptions necessary to generate valid causal inferences from mediation models is an important area of emphasis in the causal mediation literature.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Note that the Y(do[X=1],do[M<sub>X=0</sub>]) may be an unobservable counterfactual condition (e.g., in the presence of mediation). We cannot in fact simultaneously observe Y with X set to =1 and M set to equal its expected value when X=0. After all, if we do X=1 and X has an effect on M, then M would also change to its (population average) value at X=1; M would not stay at its expected value when X=0! <a href="https://www.nimhd.nih.gov/docs/hd-workshop/day1/roleWorkInHD-2020_10_kaufman_mediationAnalysesToRacialEthnic.pdf">These slides</a> (especially slide 12) offer a concise description of this issue.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>If you have not read it yourself, then you might be unaware that <a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.51.6.1173">Baron &amp; Kenny’s (1986) classic paper</a> was actually about distinguishing between mediation and moderation concepts, with an emphasis on testing indirect and interaction hypotheses <em>in the same analysis</em>. You might also be surprised to learn that <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=6c841fdea3122bdbd49570fc2ee0efcd3aad9913">Judd and Kenny’s (1981) classic mediation paper</a> outlined the core causal assumptions necessary for valid mediation analysis and explicitly discussed exposure-mediator interactions. So, in some important ways, this entry is trying help get our field caught up to leading mediation advice published over 40 years ago. Unfortunately, for decades, researchers following the “Baron and Kenny” causal steps approach to mediation largely have ignored Judd and Kenny’s earlier discussions of causal assumptions pertaining to confounding or exposure-mediator interactions. <a href="https://davidakenny.net/cm/mediate.htm#id.3dy6vkm">David Kenny</a> suggests this might be partly due (among other important reasons) to the fact that Baron and Kenny’s highly cited paper “does not even mention confounding as an assumption”; rather, that paper did “discuss reliability and interaction” and it “suggests to the reader to consult Judd and Kenny (1981a) for more information about assumptions.” Sadly, you might <em>not</em> be surprised to learn that, according to Kenny, the “initial submission did discuss confounding, but the editor suggested cutting that section and unfortunately the authors complied.” Let’s focus on improving our analytic approaches to mediation and moderation for now, then work on problematic reviewer, editor, and publisher practices at a later date.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
   author = {Brauer, Jon},
