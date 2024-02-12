@@ -192,7 +192,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   <li><a href="#causal-mediation-assumptions" id="toc-causal-mediation-assumptions" class="nav-link" data-scroll-target="#causal-mediation-assumptions">“Causal mediation” assumptions</a></li>
   <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology">Terminology</a></li>
   <li><a href="#simulate-data" id="toc-simulate-data" class="nav-link" data-scroll-target="#simulate-data">Simulate data</a></li>
-  <li><a href="#regression-plot" id="toc-regression-plot" class="nav-link" data-scroll-target="#regression-plot">Regression &amp; Plot</a></li>
+  <li><a href="#regressions-interaction-plots" id="toc-regressions-interaction-plots" class="nav-link" data-scroll-target="#regressions-interaction-plots">Regressions &amp; Interaction Plots</a></li>
+  <li><a href="#traditional-ab-linear-mediation-model" id="toc-traditional-ab-linear-mediation-model" class="nav-link" data-scroll-target="#traditional-ab-linear-mediation-model">Traditional (<em>ab</em>) linear mediation model</a></li>
+  <li><a href="#linear-cma-model-no-emint" id="toc-linear-cma-model-no-emint" class="nav-link" data-scroll-target="#linear-cma-model-no-emint">Linear CMA model, no EMint</a></li>
+  <li><a href="#linear-cma-model-with-emint" id="toc-linear-cma-model-with-emint" class="nav-link" data-scroll-target="#linear-cma-model-with-emint">Linear CMA model, with EMint</a></li>
+  <li><a href="#nonlinear-cma-model-no-emint" id="toc-nonlinear-cma-model-no-emint" class="nav-link" data-scroll-target="#nonlinear-cma-model-no-emint">Nonlinear CMA model, no EMint</a></li>
+  <li><a href="#nonlinear-cma-model-with-emint" id="toc-nonlinear-cma-model-with-emint" class="nav-link" data-scroll-target="#nonlinear-cma-model-with-emint">Nonlinear CMA model, with EMint</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -576,30 +582,30 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ouchdat,<span class="at">n=</span><span class="dv">11</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(ouchdat,<span class="at">n=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-anonymous-979015" class="cell tbl-parent quarto-layout-panel anchored">
+<div id="tbl-anonymous-7518913" class="cell tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Toy toe-stubbing data</p>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-anonymous-979015-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-979015" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-anonymous-7518913-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-7518913" style="flex-basis: 50.0%;justify-content: center;">
 
-<div id="mvvhubuhkx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mvvhubuhkx table {
+<div id="tehuqmehli" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tehuqmehli table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mvvhubuhkx thead, #mvvhubuhkx tbody, #mvvhubuhkx tfoot, #mvvhubuhkx tr, #mvvhubuhkx td, #mvvhubuhkx th {
+#tehuqmehli thead, #tehuqmehli tbody, #tehuqmehli tfoot, #tehuqmehli tr, #tehuqmehli td, #tehuqmehli th {
   border-style: none;
 }
 
-#mvvhubuhkx p {
+#tehuqmehli p {
   margin: 0;
   padding: 0;
 }
 
-#mvvhubuhkx .gt_table {
+#tehuqmehli .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -625,12 +631,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_caption {
+#tehuqmehli .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mvvhubuhkx .gt_title {
+#tehuqmehli .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -642,7 +648,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#mvvhubuhkx .gt_subtitle {
+#tehuqmehli .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -654,7 +660,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#mvvhubuhkx .gt_heading {
+#tehuqmehli .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -666,13 +672,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_bottom_border {
+#tehuqmehli .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_col_headings {
+#tehuqmehli .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -687,7 +693,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_col_heading {
+#tehuqmehli .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -707,7 +713,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#mvvhubuhkx .gt_column_spanner_outer {
+#tehuqmehli .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -719,15 +725,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#mvvhubuhkx .gt_column_spanner_outer:first-child {
+#tehuqmehli .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mvvhubuhkx .gt_column_spanner_outer:last-child {
+#tehuqmehli .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mvvhubuhkx .gt_column_spanner {
+#tehuqmehli .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -739,11 +745,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#mvvhubuhkx .gt_spanner_row {
+#tehuqmehli .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mvvhubuhkx .gt_group_heading {
+#tehuqmehli .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +775,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#mvvhubuhkx .gt_empty_group_heading {
+#tehuqmehli .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -784,15 +790,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#mvvhubuhkx .gt_from_md > :first-child {
+#tehuqmehli .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mvvhubuhkx .gt_from_md > :last-child {
+#tehuqmehli .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mvvhubuhkx .gt_row {
+#tehuqmehli .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -811,7 +817,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#mvvhubuhkx .gt_stub {
+#tehuqmehli .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -824,7 +830,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mvvhubuhkx .gt_stub_row_group {
+#tehuqmehli .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -838,15 +844,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#mvvhubuhkx .gt_row_group_first td {
+#tehuqmehli .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mvvhubuhkx .gt_row_group_first th {
+#tehuqmehli .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mvvhubuhkx .gt_summary_row {
+#tehuqmehli .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -856,16 +862,16 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mvvhubuhkx .gt_first_summary_row {
+#tehuqmehli .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_first_summary_row.thick {
+#tehuqmehli .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mvvhubuhkx .gt_last_summary_row {
+#tehuqmehli .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -875,7 +881,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_grand_summary_row {
+#tehuqmehli .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -885,7 +891,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mvvhubuhkx .gt_first_grand_summary_row {
+#tehuqmehli .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -895,7 +901,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_last_grand_summary_row_top {
+#tehuqmehli .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -905,11 +911,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_striped {
+#tehuqmehli .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mvvhubuhkx .gt_table_body {
+#tehuqmehli .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -918,7 +924,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_footnotes {
+#tehuqmehli .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -932,7 +938,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_footnote {
+#tehuqmehli .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -941,7 +947,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mvvhubuhkx .gt_sourcenotes {
+#tehuqmehli .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -955,7 +961,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#mvvhubuhkx .gt_sourcenote {
+#tehuqmehli .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -963,63 +969,63 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#mvvhubuhkx .gt_left {
+#tehuqmehli .gt_left {
   text-align: left;
 }
 
-#mvvhubuhkx .gt_center {
+#tehuqmehli .gt_center {
   text-align: center;
 }
 
-#mvvhubuhkx .gt_right {
+#tehuqmehli .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mvvhubuhkx .gt_font_normal {
+#tehuqmehli .gt_font_normal {
   font-weight: normal;
 }
 
-#mvvhubuhkx .gt_font_bold {
+#tehuqmehli .gt_font_bold {
   font-weight: bold;
 }
 
-#mvvhubuhkx .gt_font_italic {
+#tehuqmehli .gt_font_italic {
   font-style: italic;
 }
 
-#mvvhubuhkx .gt_super {
+#tehuqmehli .gt_super {
   font-size: 65%;
 }
 
-#mvvhubuhkx .gt_footnote_marks {
+#tehuqmehli .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mvvhubuhkx .gt_asterisk {
+#tehuqmehli .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mvvhubuhkx .gt_indent_1 {
+#tehuqmehli .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mvvhubuhkx .gt_indent_2 {
+#tehuqmehli .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mvvhubuhkx .gt_indent_3 {
+#tehuqmehli .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mvvhubuhkx .gt_indent_4 {
+#tehuqmehli .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mvvhubuhkx .gt_indent_5 {
+#tehuqmehli .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1071,25 +1077,25 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </table>
 </div>
 </div>
-<div id="tbl-anonymous-979015-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-979015" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-anonymous-7518913-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-7518913" style="flex-basis: 50.0%;justify-content: center;">
 
-<div id="iunslhwnqn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iunslhwnqn table {
+<div id="iomtnjzjda" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iomtnjzjda table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iunslhwnqn thead, #iunslhwnqn tbody, #iunslhwnqn tfoot, #iunslhwnqn tr, #iunslhwnqn td, #iunslhwnqn th {
+#iomtnjzjda thead, #iomtnjzjda tbody, #iomtnjzjda tfoot, #iomtnjzjda tr, #iomtnjzjda td, #iomtnjzjda th {
   border-style: none;
 }
 
-#iunslhwnqn p {
+#iomtnjzjda p {
   margin: 0;
   padding: 0;
 }
 
-#iunslhwnqn .gt_table {
+#iomtnjzjda .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1115,12 +1121,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_caption {
+#iomtnjzjda .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iunslhwnqn .gt_title {
+#iomtnjzjda .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1132,7 +1138,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#iunslhwnqn .gt_subtitle {
+#iomtnjzjda .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1144,7 +1150,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#iunslhwnqn .gt_heading {
+#iomtnjzjda .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1156,13 +1162,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_bottom_border {
+#iomtnjzjda .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_col_headings {
+#iomtnjzjda .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1177,7 +1183,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_col_heading {
+#iomtnjzjda .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1197,7 +1203,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#iunslhwnqn .gt_column_spanner_outer {
+#iomtnjzjda .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1209,15 +1215,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#iunslhwnqn .gt_column_spanner_outer:first-child {
+#iomtnjzjda .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iunslhwnqn .gt_column_spanner_outer:last-child {
+#iomtnjzjda .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iunslhwnqn .gt_column_spanner {
+#iomtnjzjda .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1229,11 +1235,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#iunslhwnqn .gt_spanner_row {
+#iomtnjzjda .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iunslhwnqn .gt_group_heading {
+#iomtnjzjda .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1259,7 +1265,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#iunslhwnqn .gt_empty_group_heading {
+#iomtnjzjda .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1274,15 +1280,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#iunslhwnqn .gt_from_md > :first-child {
+#iomtnjzjda .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iunslhwnqn .gt_from_md > :last-child {
+#iomtnjzjda .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iunslhwnqn .gt_row {
+#iomtnjzjda .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1301,7 +1307,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#iunslhwnqn .gt_stub {
+#iomtnjzjda .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1314,7 +1320,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iunslhwnqn .gt_stub_row_group {
+#iomtnjzjda .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1328,15 +1334,15 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#iunslhwnqn .gt_row_group_first td {
+#iomtnjzjda .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iunslhwnqn .gt_row_group_first th {
+#iomtnjzjda .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iunslhwnqn .gt_summary_row {
+#iomtnjzjda .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1346,16 +1352,16 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iunslhwnqn .gt_first_summary_row {
+#iomtnjzjda .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_first_summary_row.thick {
+#iomtnjzjda .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iunslhwnqn .gt_last_summary_row {
+#iomtnjzjda .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1365,7 +1371,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_grand_summary_row {
+#iomtnjzjda .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1375,7 +1381,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iunslhwnqn .gt_first_grand_summary_row {
+#iomtnjzjda .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1385,7 +1391,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_last_grand_summary_row_top {
+#iomtnjzjda .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1395,11 +1401,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_striped {
+#iomtnjzjda .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iunslhwnqn .gt_table_body {
+#iomtnjzjda .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1408,7 +1414,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_footnotes {
+#iomtnjzjda .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1422,7 +1428,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_footnote {
+#iomtnjzjda .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1431,7 +1437,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iunslhwnqn .gt_sourcenotes {
+#iomtnjzjda .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1445,7 +1451,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iunslhwnqn .gt_sourcenote {
+#iomtnjzjda .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1453,63 +1459,63 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iunslhwnqn .gt_left {
+#iomtnjzjda .gt_left {
   text-align: left;
 }
 
-#iunslhwnqn .gt_center {
+#iomtnjzjda .gt_center {
   text-align: center;
 }
 
-#iunslhwnqn .gt_right {
+#iomtnjzjda .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iunslhwnqn .gt_font_normal {
+#iomtnjzjda .gt_font_normal {
   font-weight: normal;
 }
 
-#iunslhwnqn .gt_font_bold {
+#iomtnjzjda .gt_font_bold {
   font-weight: bold;
 }
 
-#iunslhwnqn .gt_font_italic {
+#iomtnjzjda .gt_font_italic {
   font-style: italic;
 }
 
-#iunslhwnqn .gt_super {
+#iomtnjzjda .gt_super {
   font-size: 65%;
 }
 
-#iunslhwnqn .gt_footnote_marks {
+#iomtnjzjda .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iunslhwnqn .gt_asterisk {
+#iomtnjzjda .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iunslhwnqn .gt_indent_1 {
+#iomtnjzjda .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iunslhwnqn .gt_indent_2 {
+#iomtnjzjda .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iunslhwnqn .gt_indent_3 {
+#iomtnjzjda .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iunslhwnqn .gt_indent_4 {
+#iomtnjzjda .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iunslhwnqn .gt_indent_5 {
+#iomtnjzjda .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1853,7 +1859,7 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 <h4 class="anchored" data-anchor-id="controlled-versus-natural-effects">Controlled versus Natural Effects</h4>
 <p>Second, depending upon the model and options selected, the CMAverse output may contain terms that do not exactly match the four-way effect decomposition components described above.</p>
 <p>Direct Effects: You should recognize the <em>controlled direct effect</em> (CDE). However, the output may also contain estimates for a <em>pure natural direct effect</em> (PNDE) and a <em>total natural direct effect</em> (TNDE).</p>
-<p>Indirect Effects: Instead of encountering a <em>pure indirect effect</em> (PIE) estimate, the output might instead contain estimates for a <em>pure natural indirect effect</em> and a <em>total natural indirect effect</em>.</p>
+<p>Indirect Effects: Instead of encountering a <em>pure indirect effect</em> (PIE) estimate, the output might instead contain estimates for a <em>pure natural indirect effect</em> (PNIE) and a <em>total natural indirect effect</em> (TNIE).</p>
 <p>You can find <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">more detailed descriptions elsewhere</a> of the differences between controlled and natural effects. As explained above, controlled direct effects hold the mediator constant at a specific value (M=m). For example, a controlled direct effect (CDE) might contrast expected outcomes across X=0 and X=1 while holding the mechanism constant at a specific value like M=0.</p>
 <p>In contrast, understanding natural effects requires comprehending some of those counterfactual contrasts that we illustrated earlier. Remember that, in the presence of mediation, the mediator is expected to change as the exposure changes. So, setting the mediator to a constant value (e.g., M=0) may not provide a realistic or “natural” contrast. Natural effects allow the mediator to vary as it “naturally” would across exposure conditions. Natural effects are then estimated by holding the mediator constant at specific counterfactual values that the mediator would be expected to take under specified exposure conditions, such as setting M at the value we would expect it to be when we do[X=0] (i.e., M0) or when we do[X=1] (i.e., M1).</p>
 <p>For example, a (pure) natural direct effect might be estimated as a contrast between: (1) the expected outcome value when X=1 and M is set to its expected value when X=0 and (2) the expected outcome when X=0 and M is still set to its expected value when X=0. Modifying the notation used above, you might summarize this contrast as Y(do[X=1],do[M<sub>X=0</sub>]) - Y(do[X=0],do[M<sub>X=0</sub>]), or Y10 - Y00.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
@@ -1961,8 +1967,8 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 </div>
 <p>Note joint distribution… lack of observations at high ParentSupport and low StrgMoralBlfs. This is expected given mediation processes; high parental support causes strong moral beliefs…</p>
 </section>
-<section id="regression-plot" class="level3">
-<h3 class="anchored" data-anchor-id="regression-plot">Regression &amp; Plot</h3>
+<section id="regressions-interaction-plots" class="level3">
+<h3 class="anchored" data-anchor-id="regressions-interaction-plots">Regressions &amp; Interaction Plots</h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -2030,8 +2036,6 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 <span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Plotted at minimum (0), scale midpoint (2), &amp; maximum (4) strong moral beliefs</span><span class="sc">\n</span><span class="st">(Poisson regression, n=10k simulated observations)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="results-simulation-2" class="level4">
-<h4 class="anchored" data-anchor-id="results-simulation-2">Results (Simulation 2)</h4>
 <p>As is typically the case with real-world crime data, there are some nonlinearities in the data generating processes underlying our simulated data. Yet, I will start with a linear model. Why? Well, because so many people in our field seem to be infatuated with them…</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Linear Model Results</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Prediction Plots</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Prediction Plots with Data</a></li></ul>
@@ -3162,17 +3166,17 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 </div>
 </div>
 </div>
-<p>For some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient ground for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #2</a> from Part 1?)</p>
+<p>For some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient grounds for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #2</a> from Part 1?)</p>
 <p>Yet, note that this model does not account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. So, to test for indirect effects, a researcher might use what is popularly known as the classic <a href="https://www.psych.mcgill.ca/perpg/fac/falk/tutorials/mediation/methods/#baron-kenny-1986">“Baron and Kenny” (1986) causal steps approach</a> to detecting indirect effects. This “traditional” approach to testing mediation hypotheses usually involves estimating a series of regression models and then, depending upon the specific procedures adopted, estimating a “difference in coefficients” or “product of coefficients” representing causal path estimates (e.g., <em>ab</em> paths) paired with a test of significance. (See <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2819363/">MacKinnon and colleagues’ 2002</a> paper, and especially their Table 1, for a summary of these traditional approaches).<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
 <p>For this illustration, I will use <code>psych::mediate()</code> to estimate “traditional” direct and indirect effects of parental support on delinquency through moral beliefs. This package by default relies upon the “product of coefficients” estimation approach with bootstrapped standard errors, which is a very popular method in social sciences due perhaps to its status for years as the default method for testing indirect effects in <a href="https://www.statmodel.com/download/Causal.pdf">SEM programs like Mplus</a> as well as the increasing popularity of <a href="https://processmacro.org/index.html">PROCESS modeling</a> in other stats programs.</p>
 </section>
-<section id="linear-mediation-model-traditional-ab-approach" class="level4">
-<h4 class="anchored" data-anchor-id="linear-mediation-model-traditional-ab-approach">Linear mediation model, traditional <em>ab</em> approach</h4>
+<section id="traditional-ab-linear-mediation-model" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-ab-linear-mediation-model">Traditional (<em>ab</em>) linear mediation model</h3>
 <p>Traditional product of coefficients approach</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">mediate</span>(Delinquency <span class="sc">~</span> ParentSupport <span class="sc">+</span> (StrgMoralBlfs), <span class="at">data =</span> simdat3, <span class="at">n.iter =</span> <span class="dv">10000</span>) <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">short =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">mediate</span>(Delinquency <span class="sc">~</span> ParentSupport <span class="sc">+</span> (StrgMoralBlfs), <span class="at">data =</span> simdat3, <span class="at">n.iter =</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">short =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="modmadness-pt2-wd_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
@@ -3181,7 +3185,7 @@ Confounders == C (Ignored throughout, but <a href="https://reluctantcriminologis
 <pre><code>
 Mediation/Moderation Analysis 
 Call: psych::mediate(y = Delinquency ~ ParentSupport + (StrgMoralBlfs), 
-    data = simdat3, n.iter = 10000)
+    data = simdat3, n.iter = 2000)
 
 The DV (Y) was  Delinquency . The IV (X) was  ParentSupport . The mediating variable(s) =  StrgMoralBlfs .
 
@@ -3205,8 +3209,8 @@ R = 0.52 R2 = 0.27   F = 1894 on 2 and 9997 DF   p-value:  0
 </div>
 <p>Let’s move to <code>CMAverse</code>, starting with a simple linear mediation model that reproduces key results from the “traditional” mediation approach.</p>
 </section>
-<section id="linear-mediation-model-decomposition-no-emint" class="level4">
-<h4 class="anchored" data-anchor-id="linear-mediation-model-decomposition-no-emint">Linear mediation model, decomposition, no EMint</h4>
+<section id="linear-cma-model-no-emint" class="level3">
+<h3 class="anchored" data-anchor-id="linear-cma-model-no-emint">Linear CMA model, no EMint</h3>
 <p>Equivalent to traditional approach.</p>
 <p>For all models, estimating effect of moving from exposure A=0 to exposure Astar=1</p>
 <div class="cell">
@@ -3229,19 +3233,25 @@ R = 0.52 R2 = 0.27   F = 1894 on 2 and 9997 DF   p-value:  0
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>est2dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est2<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>) </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>est2dattab <span class="ot">&lt;-</span> est2dat <span class="sc">%&gt;%</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_column</span>(</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">trad_est =</span> <span class="fu">c</span>(<span class="st">"direct"</span>, <span class="st">"--"</span>, <span class="st">"--"</span>, <span class="st">"indirect"</span>, <span class="st">"--"</span>, <span class="st">"total"</span>, <span class="st">"prop_med"</span>), </span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimate =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">33</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="sc">-</span>.<span class="dv">11</span>, <span class="cn">NA</span>, <span class="sc">-</span>.<span class="dv">44</span>, .<span class="dv">25</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"linear_noEM"</span> <span class="ot">=</span> <span class="st">"est2$effect.pe"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(trad_est, estimate) </span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>est2dattab <span class="sc">%&gt;%</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"CMAverse"</span>, <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Traditional"</span>, <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>est2dattab <span class="ot">&lt;-</span> est2dat <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_column</span>(</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">trad_est =</span> <span class="fu">c</span>(<span class="st">"direct"</span>, <span class="st">"--"</span>, <span class="st">"--"</span>, <span class="st">"indirect"</span>, <span class="st">"--"</span>, <span class="st">"total"</span>, <span class="st">"prop_med"</span>), </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimate =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">33</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="sc">-</span>.<span class="dv">11</span>, <span class="cn">NA</span>, <span class="sc">-</span>.<span class="dv">44</span>, .<span class="dv">25</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"linear_noEM"</span> <span class="ot">=</span> <span class="st">"est2$effect.pe"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(trad_est, estimate) </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>est2dattab <span class="sc">%&gt;%</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"CMAverse&lt;br&gt;(linear)"</span>), <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"Traditional&lt;br&gt;(linear)"</span>), <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>),</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">trad_est =</span> <span class="st">"effect"</span>, </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">CMA_est =</span> <span class="st">"effect"</span>,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">estimate =</span> <span class="st">"estimate"</span>,</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_noEM =</span> <span class="fu">html</span>(<span class="st">"No_EMint&lt;br&gt;estimate"</span>)</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -3688,19 +3698,19 @@ R = 0.52 R2 = 0.27   F = 1894 on 2 and 9997 DF   p-value:  0
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional">
-        <span class="gt_column_spanner">Traditional</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
+        <span class="gt_column_spanner">Traditional<br>(linear)</span>
       </th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse">
-        <span class="gt_column_spanner">CMAverse</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse<br>(linear)">
+        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
       </th>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="trad_est">trad_est</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="CMA_est">CMA_est</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_noEM">linear_noEM</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -3852,8 +3862,8 @@ $mval[[1]]
 <p>The pm or prop_med refers to proportion mediated. …</p>
 <p>Also, since we have a continuous exposure variable, ParentSupport, we could define different meaningful contrasts (e.g., -1SD vs.&nbsp;1SD; max vs.&nbsp;min). Since ParentSupport is standardized exposure variable, by setting <code>a=0</code> and <code>astar=1</code>, I am specifying the exposure contrast as the predicted difference in Y at mean parental support values (ParentSupport=0) and +1SD parental support values (ParentSupport=1). The setting <code>mval = list(0)</code> indicates that I want controlled direct effect estimates to be calculated at m=0 (StrgMoralBlfs=0).</p>
 </section>
-<section id="linear-mediation-model-decomposition-with-emint" class="level4">
-<h4 class="anchored" data-anchor-id="linear-mediation-model-decomposition-with-emint">Linear mediation model, decomposition, with EMint</h4>
+<section id="linear-cma-model-with-emint" class="level3">
+<h3 class="anchored" data-anchor-id="linear-cma-model-with-emint">Linear CMA model, with EMint</h3>
 <p>Now, let’s estimate another linear model in CMAverse but instead allow for the possibility of an exposure-mediator interaction.</p>
 <div class="cell">
 <details>
@@ -3875,15 +3885,27 @@ $mval[[1]]
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>est3dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est3<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>) </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>est3dattab <span class="ot">&lt;-</span> <span class="fu">left_join</span>(est2dattab, est3dat, <span class="at">by=</span><span class="st">"CMA_est"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"linear_EM"</span> <span class="ot">=</span> <span class="st">"est3$effect.pe"</span>) </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>est3dattab <span class="sc">%&gt;%</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"CMAverse"</span>, <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>, <span class="st">"linear_EM"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Traditional"</span>, <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>est3dattab <span class="ot">&lt;-</span> <span class="fu">full_join</span>(est2dattab, est3dat, <span class="at">by=</span><span class="st">"CMA_est"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"linear_EM"</span> <span class="ot">=</span> <span class="st">"est3$effect.pe"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>CMA_est <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"cde(prop)"</span>, <span class="st">"intref(prop)"</span>, <span class="st">"intmed(prop)"</span>, </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"pnie(prop)"</span>, <span class="st">"pm"</span>, <span class="st">"int"</span>, <span class="st">"pe"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">trad_est =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(trad_est), <span class="st">"--"</span>, trad_est)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>est3dattab <span class="sc">%&gt;%</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"CMAverse&lt;br&gt;(linear)"</span>), </span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>, <span class="st">"linear_EM"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"Traditional&lt;br&gt;(linear)"</span>), <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>),</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">trad_est =</span> <span class="st">"effect"</span>, </span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">CMA_est =</span> <span class="st">"effect"</span>,</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">estimate =</span> <span class="st">"estimate"</span>,</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_noEM =</span> <span class="fu">html</span>(<span class="st">"No_EMint&lt;br&gt;estimate"</span>),</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_EM =</span> <span class="fu">html</span>(<span class="st">"EMint&lt;br&gt;estimate"</span>)</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -4330,20 +4352,20 @@ $mval[[1]]
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional">
-        <span class="gt_column_spanner">Traditional</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
+        <span class="gt_column_spanner">Traditional<br>(linear)</span>
       </th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse">
-        <span class="gt_column_spanner">CMAverse</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(linear)">
+        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
       </th>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="trad_est">trad_est</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="CMA_est">CMA_est</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_noEM">linear_noEM</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_EM">linear_EM</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -4383,12 +4405,18 @@ $mval[[1]]
 <td headers="CMA_est" class="gt_row gt_left">te</td>
 <td headers="linear_noEM" class="gt_row gt_right">-0.442</td>
 <td headers="linear_EM" class="gt_row gt_right">-0.3513</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">prop_med</td>
-<td headers="estimate" class="gt_row gt_right">0.25</td>
+    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
+<td headers="estimate" class="gt_row gt_right">NA</td>
 <td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pm</td>
-<td headers="linear_noEM" class="gt_row gt_right">0.245</td>
-<td headers="linear_EM" class="gt_row gt_right">0.0445</td></tr>
+<td headers="CMA_est" class="gt_row gt_left">intref</td>
+<td headers="linear_noEM" class="gt_row gt_right">NA</td>
+<td headers="linear_EM" class="gt_row gt_right">1.0519</td></tr>
+    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
+<td headers="estimate" class="gt_row gt_right">NA</td>
+<td headers="blank" class="gt_row gt_right"></td>
+<td headers="CMA_est" class="gt_row gt_left">intmed</td>
+<td headers="linear_noEM" class="gt_row gt_right">NA</td>
+<td headers="linear_EM" class="gt_row gt_right">0.0723</td></tr>
   </tbody>
   
   
@@ -4546,8 +4574,8 @@ $mval[[1]]
 <p>Now, we know the linear model is not appropriate for these data; this is frequently the case when analyzing criminological data as well. Yet, my hope is that these poor-fitting models help ease the transition given the familiarity that many readers will likely have with linear models. As you will soon see, output and interpretations get a bit more complicated with nonlinear models due to changes in the outcome scale.</p>
 <p>Below, I will estimate models with and without EM interactions again, but this time I will specify a Poisson distribution for the outcome variable. This means that the predicted contrasts will be described on the event rate ratio scale instead of the linear difference scale. See <a href="https://bs1125.github.io/CMAverse/articles/overview.html">Table 2 here</a> for descriptions of the various causal estimates on the ratio scale that are output by CMAverse, and the <a href="https://bs1125.github.io/CMAverse/reference/cmest.html"><code>cmest</code> documentation</a> for for descriptions of which causal estimates are generated under different modeling specifications.</p>
 </section>
-<section id="nonlinear-decomposition-model-no-em-interaction" class="level4">
-<h4 class="anchored" data-anchor-id="nonlinear-decomposition-model-no-em-interaction">Nonlinear decomposition model, no EM interaction</h4>
+<section id="nonlinear-cma-model-no-emint" class="level3">
+<h3 class="anchored" data-anchor-id="nonlinear-cma-model-no-emint">Nonlinear CMA model, no EMint</h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4576,20 +4604,31 @@ $mval[[1]]
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>est4dattab <span class="ot">&lt;-</span> <span class="fu">left_join</span>(est3dattab, est4dat, <span class="fu">join_by</span>(<span class="st">"CMA_est"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"nonlin_noEM"</span> <span class="ot">=</span> <span class="st">"est4$effect.pe"</span>) </span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>est4dattab <span class="sc">%&gt;%</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"CMAverse (linear)"</span>, </span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>, <span class="st">"linear_EM"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"CMAverse (nonlinear)"</span>, </span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est2"</span>, <span class="st">"nonlin_noEM"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Traditional (linear)"</span>, </span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.before =</span> <span class="st">'CMA_est2'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"nonlin_noEM"</span> <span class="ot">=</span> <span class="st">"est4$effect.pe"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">CMA_est2 =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(CMA_est2), <span class="st">"--"</span>, CMA_est2)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>est4dattab <span class="sc">%&gt;%</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"CMAverse&lt;br&gt;(nonlinear)"</span>), </span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est2"</span>, <span class="st">"nonlin_noEM"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"CMAverse&lt;br&gt;(linear)"</span>), </span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>, <span class="st">"linear_EM"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"Traditional&lt;br&gt;(linear)"</span>), <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.before =</span> <span class="st">'CMA_est2'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>), </span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">trad_est =</span> <span class="st">"effect"</span>, </span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>               <span class="at">CMA_est =</span> <span class="st">"effect"</span>,</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>               <span class="at">CMA_est2 =</span> <span class="st">"effect"</span>,</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>               <span class="at">estimate =</span> <span class="st">"estimate"</span>,</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_noEM =</span> <span class="fu">html</span>(<span class="st">"No_EMint&lt;br&gt;estimate"</span>),</span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_EM =</span> <span class="fu">html</span>(<span class="st">"EMint&lt;br&gt;estimate"</span>),</span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">nonlin_noEM =</span> <span class="fu">html</span>(<span class="st">"No_EMint&lt;br&gt;estimate"</span>)</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -5036,26 +5075,26 @@ $mval[[1]]
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional (linear)">
-        <span class="gt_column_spanner">Traditional (linear)</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
+        <span class="gt_column_spanner">Traditional<br>(linear)</span>
       </th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse (linear)">
-        <span class="gt_column_spanner">CMAverse (linear)</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(linear)">
+        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
       </th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse (nonlinear)">
-        <span class="gt_column_spanner">CMAverse (nonlinear)</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse<br>(nonlinear)">
+        <span class="gt_column_spanner">CMAverse<br>(nonlinear)</span>
       </th>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="trad_est">trad_est</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="CMA_est">CMA_est</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_noEM">linear_noEM</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_EM">linear_EM</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="CMA_est2">CMA_est2</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="nonlin_noEM">nonlin_noEM</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -5113,15 +5152,24 @@ $mval[[1]]
 <td headers="blank2" class="gt_row gt_right"></td>
 <td headers="CMA_est2" class="gt_row gt_left">Rte</td>
 <td headers="nonlin_noEM" class="gt_row gt_right">0.614</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">prop_med</td>
-<td headers="estimate" class="gt_row gt_right">0.25</td>
+    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
+<td headers="estimate" class="gt_row gt_right">NA</td>
 <td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pm</td>
-<td headers="linear_noEM" class="gt_row gt_right">0.245</td>
-<td headers="linear_EM" class="gt_row gt_right">0.0445</td>
+<td headers="CMA_est" class="gt_row gt_left">intref</td>
+<td headers="linear_noEM" class="gt_row gt_right">NA</td>
+<td headers="linear_EM" class="gt_row gt_right">1.0519</td>
 <td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">pm</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.154</td></tr>
+<td headers="CMA_est2" class="gt_row gt_left">--</td>
+<td headers="nonlin_noEM" class="gt_row gt_right">NA</td></tr>
+    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
+<td headers="estimate" class="gt_row gt_right">NA</td>
+<td headers="blank" class="gt_row gt_right"></td>
+<td headers="CMA_est" class="gt_row gt_left">intmed</td>
+<td headers="linear_noEM" class="gt_row gt_right">NA</td>
+<td headers="linear_EM" class="gt_row gt_right">0.0723</td>
+<td headers="blank2" class="gt_row gt_right"></td>
+<td headers="CMA_est2" class="gt_row gt_left">--</td>
+<td headers="nonlin_noEM" class="gt_row gt_right">NA</td></tr>
   </tbody>
   
   
@@ -5230,8 +5278,8 @@ $mval[[1]]
 </div>
 </div>
 </section>
-<section id="nonlinear-decomposition-model-with-em-interaction" class="level4">
-<h4 class="anchored" data-anchor-id="nonlinear-decomposition-model-with-em-interaction">Nonlinear decomposition model, with EM interaction</h4>
+<section id="nonlinear-cma-model-with-emint" class="level3">
+<h3 class="anchored" data-anchor-id="nonlinear-cma-model-with-emint">Nonlinear CMA model, with EMint</h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -5244,7 +5292,7 @@ $mval[[1]]
 </details>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Results: nonlinear with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Default plot: nonlinear, with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Risk ratio plot: nonlinear, with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false">Excess Risk plot: nonlinear, with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-5" role="tab" aria-controls="tabset-6-5" aria-selected="false">Full output: nonlinear with EMint</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Results: nonlinear with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Default plot: nonlinear with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Risk ratio plot: nonlinear with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false">Excess Risk plot: nonlinear, with EMint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-5" role="tab" aria-controls="tabset-6-5" aria-selected="false">Full output: nonlinear with EMint</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
@@ -5272,16 +5320,24 @@ $mval[[1]]
 <span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>est5dattab <span class="sc">%&gt;%</span></span>
 <span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"CMAverse (linear)"</span>, </span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>, <span class="st">"linear_EM"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"CMAverse (nonlinear)"</span>, </span>
-<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est2"</span>, <span class="st">"nonlin_noEM"</span>, <span class="st">"nonlin_EM"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Traditional (linear)"</span>, </span>
-<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.before =</span> <span class="st">'CMA_est2'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"CMAverse&lt;br&gt;(nonlinear)"</span>), </span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est2"</span>, <span class="st">"nonlin_noEM"</span>, <span class="st">"nonlin_EM"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"CMAverse&lt;br&gt;(linear)"</span>), </span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"CMA_est"</span>, <span class="st">"linear_noEM"</span>, <span class="st">"linear_EM"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">html</span>(<span class="st">"Traditional&lt;br&gt;(linear)"</span>), <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"trad_est"</span>,<span class="st">"estimate"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.after =</span> <span class="st">'estimate'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_add</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="at">.before =</span> <span class="st">'CMA_est2'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(<span class="st">'blank2'</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">'&amp;emsp;&amp;emsp;&amp;emsp;'</span>), </span>
+<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>               <span class="at">trad_est =</span> <span class="st">"effect"</span>, </span>
+<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">CMA_est =</span> <span class="st">"effect"</span>,</span>
+<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">CMA_est2 =</span> <span class="st">"effect"</span>,</span>
+<span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">estimate =</span> <span class="st">"estimate"</span>,</span>
+<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_noEM =</span> <span class="fu">html</span>(<span class="st">"No_EMint&lt;br&gt;estimate"</span>),</span>
+<span id="cb37-37"><a href="#cb37-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">linear_EM =</span> <span class="fu">html</span>(<span class="st">"EMint&lt;br&gt;estimate"</span>),</span>
+<span id="cb37-38"><a href="#cb37-38" aria-hidden="true" tabindex="-1"></a>               <span class="at">nonlin_noEM =</span> <span class="fu">html</span>(<span class="st">"No_EMint&lt;br&gt;estimate"</span>),</span>
+<span id="cb37-39"><a href="#cb37-39" aria-hidden="true" tabindex="-1"></a>               <span class="at">nonlin_EM =</span> <span class="fu">html</span>(<span class="st">"EMint&lt;br&gt;estimate"</span>)</span>
+<span id="cb37-40"><a href="#cb37-40" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -5728,27 +5784,27 @@ $mval[[1]]
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional (linear)">
-        <span class="gt_column_spanner">Traditional (linear)</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
+        <span class="gt_column_spanner">Traditional<br>(linear)</span>
       </th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse (linear)">
-        <span class="gt_column_spanner">CMAverse (linear)</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(linear)">
+        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
       </th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse (nonlinear)">
-        <span class="gt_column_spanner">CMAverse (nonlinear)</span>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(nonlinear)">
+        <span class="gt_column_spanner">CMAverse<br>(nonlinear)</span>
       </th>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="trad_est">trad_est</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="CMA_est">CMA_est</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_noEM">linear_noEM</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="linear_EM">linear_EM</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="CMA_est2">CMA_est2</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="nonlin_noEM">nonlin_noEM</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="nonlin_EM">nonlin_EM</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -5812,6 +5868,26 @@ $mval[[1]]
 <td headers="CMA_est2" class="gt_row gt_left">Rte</td>
 <td headers="nonlin_noEM" class="gt_row gt_right">0.614</td>
 <td headers="nonlin_EM" class="gt_row gt_right">0.6299</td></tr>
+    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
+<td headers="estimate" class="gt_row gt_right">NA</td>
+<td headers="blank" class="gt_row gt_right"></td>
+<td headers="CMA_est" class="gt_row gt_left">intref</td>
+<td headers="linear_noEM" class="gt_row gt_right">NA</td>
+<td headers="linear_EM" class="gt_row gt_right">1.0519</td>
+<td headers="blank2" class="gt_row gt_right"></td>
+<td headers="CMA_est2" class="gt_row gt_left">--</td>
+<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
+<td headers="nonlin_EM" class="gt_row gt_right">NA</td></tr>
+    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
+<td headers="estimate" class="gt_row gt_right">NA</td>
+<td headers="blank" class="gt_row gt_right"></td>
+<td headers="CMA_est" class="gt_row gt_left">intmed</td>
+<td headers="linear_noEM" class="gt_row gt_right">NA</td>
+<td headers="linear_EM" class="gt_row gt_right">0.0723</td>
+<td headers="blank2" class="gt_row gt_right"></td>
+<td headers="CMA_est2" class="gt_row gt_left">--</td>
+<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
+<td headers="nonlin_EM" class="gt_row gt_right">NA</td></tr>
     <tr><td headers="trad_est" class="gt_row gt_left">--</td>
 <td headers="estimate" class="gt_row gt_right">NA</td>
 <td headers="blank" class="gt_row gt_right"></td>
@@ -6034,9 +6110,11 @@ $mval[[1]]
 </div>
 <p>Rate ratio interpretations … accessible discussions of interpreting risk and rate ratio estimates, see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351073/">here</a> and <a href="https://sph.unc.edu/wp-content/uploads/sites/112/2015/07/nciph_ERIC7.pdf">here</a>.</p>
 <p>“Excess rate ratio” (or “excess risk ratio” in logistic regressions) may help with interpreting relative effect estimates … I prefer these to proportion estimates in nonlinear models for assessing relative contributions of mediation, interaction, &amp; direct effects. For more information on relative excess ratio estimates, see <a href="https://www.hsph.harvard.edu/tyler-vanderweele/wp-content/uploads/sites/603/2018/04/AttributingInt_Ep.pdf">VanderWeele and Tchetgen Tchetgen (2014)</a>. <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/InteractionTutorial_EM.pdf">VanderWeele and Knol’s 2014</a> tutorial on interaction is also helpful here; additionally, it contains a wealth of information that may be new to readers about estimating and interpreting interactions, including distinctions between concepts such as <em>statistical</em>, <em>mechanistic</em>, and <em>sufficient cause</em> interactions.</p>
-
-
 </section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+
+
 </section>
 </section>
 

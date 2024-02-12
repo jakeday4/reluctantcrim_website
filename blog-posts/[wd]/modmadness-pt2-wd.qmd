@@ -645,7 +645,7 @@ Second, depending upon the model and options selected, the CMAverse output may c
 
 Direct Effects: You should recognize the *controlled direct effect* (CDE). However, the output may also contain estimates for a *pure natural direct effect* (PNDE) and a *total natural direct effect* (TNDE). 
 
-Indirect Effects: Instead of encountering a *pure indirect effect* (PIE) estimate, the output might instead contain estimates for a *pure natural indirect effect* and a *total natural indirect effect*.  
+Indirect Effects: Instead of encountering a *pure indirect effect* (PIE) estimate, the output might instead contain estimates for a *pure natural indirect effect* (PNIE) and a *total natural indirect effect* (TNIE).  
 
 You can find [more detailed descriptions elsewhere](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation) of the differences between controlled and natural effects. As explained above, controlled direct effects hold the mediator constant at a specific value (M=m). For example, a controlled direct effect (CDE) might contrast expected outcomes across X=0 and X=1 while holding the mechanism constant at a specific value like M=0. 
 
@@ -758,7 +758,7 @@ ggMarginal(p, type = "densigram")
 
 Note joint distribution... lack of observations at high ParentSupport and low StrgMoralBlfs. This is expected given mediation processes; high parental support causes strong moral beliefs... 
 
-### Regression & Plot
+### Regressions & Interaction Plots
 
 ```{r}
 #|message=FALSE 
@@ -826,19 +826,17 @@ plot_glm2 <- plot_model(glm2, type = "pred",  show.data=FALSE,
 
 ```
 
-#### Results (Simulation 2) 
-
 As is typically the case with real-world crime data, there are some nonlinearities in the data generating processes underlying our simulated data. Yet, I will start with a linear model. Why? Well, because so many people in our field seem to be infatuated with them...
 
 :::: {.panel-tabset}
 
-##### Linear Model Results 
+#### Linear Model Results 
 
 ```{r}
 Ex2tab1
 ```
 
-##### Prediction Plots
+#### Prediction Plots
 
 
 ```{r}
@@ -850,7 +848,7 @@ plot_lm2
 #         legend.direction = 'horizontal') 
 
 ```
-##### Prediction Plots with Data
+#### Prediction Plots with Data
 
 
 ```{r}
@@ -905,13 +903,13 @@ Let's compare these results with the nonlinear model.
 
 :::: {.panel-tabset}
 
-##### Nonlinear Poisson model
+#### Nonlinear Poisson model
 
 ```{r}
 Ex2tab2
 ```
 
-##### Prediction Plots
+#### Prediction Plots
 
 ```{r}
 #|message=FALSE 
@@ -920,7 +918,7 @@ plot_glm2
 
 ```
 
-##### Prediction Plots with Data 
+#### Prediction Plots with Data 
 
 ```{r}
 #|message=FALSE 
@@ -956,7 +954,7 @@ predplot2
 
 ::::
 
-For some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient ground for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the [hypothetical paper #2](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Part 1?)
+For some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient grounds for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the [hypothetical paper #2](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Part 1?)
 
 Yet, note that this model does not account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. So, to test for indirect effects, a researcher might use what is popularly known as the classic ["Baron and Kenny" (1986) causal steps approach](https://www.psych.mcgill.ca/perpg/fac/falk/tutorials/mediation/methods/#baron-kenny-1986) to detecting indirect effects. This "traditional" approach to testing mediation hypotheses usually involves estimating a series of regression models and then, depending upon the specific procedures adopted, estimating a "difference in coefficients" or "product of coefficients" representing causal path estimates (e.g., *ab* paths) paired with a test of significance. (See [MacKinnon and colleagues' 2002](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2819363/) paper, and especially their Table 1, for a summary of these traditional approaches).[^Kenny-note] 
 
@@ -965,12 +963,12 @@ If you have not read it yourself, then you might be unaware that [Baron & Kenny'
 
 For this illustration, I will use `psych::mediate()` to estimate "traditional" direct and indirect effects of parental support on delinquency through moral beliefs. This package by default relies upon the "product of coefficients" estimation approach with bootstrapped standard errors, which is a very popular method in social sciences due perhaps to its status for years as the default method for testing indirect effects in [SEM programs like Mplus](https://www.statmodel.com/download/Causal.pdf) as well as the increasing popularity of [PROCESS modeling](https://processmacro.org/index.html) in other stats programs.
 
-#### Linear mediation model, traditional *ab* approach
+### Traditional (*ab*) linear mediation model
 
 Traditional product of coefficients approach
 
 ```{r}
-psych::mediate(Delinquency ~ ParentSupport + (StrgMoralBlfs), data = simdat3, n.iter = 10000) %>% print(short = TRUE)
+psych::mediate(Delinquency ~ ParentSupport + (StrgMoralBlfs), data = simdat3, n.iter = 2000) %>% print(short = TRUE)
 ```
 
 Results from the "traditional" mediation analysis show an indirect effect estimate of -0.11. You can calculate the indirect effect estimate yourself from the path diagram by multiplying the so-called *a* and *b* path coefficients, or (0.22)x(-0.49) = -0.11, hence the "product of coefficients" terminology. 
@@ -983,7 +981,7 @@ You might notice that our interaction plots above depicting predicted marginal e
 
 Let's move to `CMAverse`, starting with a simple linear mediation model that reproduces key results from the "traditional" mediation approach.  
 
-#### Linear mediation model, decomposition, no EMint 
+### Linear CMA model, no EMint 
 
 Equivalent to traditional approach. 
 
@@ -1003,10 +1001,11 @@ est2 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = 
 
 :::: {.panel-tabset}
 
-##### Results: linear no EMint
+#### Results: linear no EMint
 
 ```{r}
 est2dat <- as.data.frame(est2$effect.pe) %>% rownames_to_column("CMA_est") 
+
 
 est2dattab <- est2dat %>%
   add_column(
@@ -1017,14 +1016,19 @@ est2dattab <- est2dat %>%
 
 est2dattab %>%
   gt() %>% 
-    tab_spanner(label = "CMAverse", columns = c("CMA_est", "linear_noEM")) %>%
-    tab_spanner(label = "Traditional", columns = c("trad_est","estimate")) %>%
+    tab_spanner(label = html("CMAverse<br>(linear)"), columns = c("CMA_est", "linear_noEM")) %>%
+    tab_spanner(label = html("Traditional<br>(linear)"), columns = c("trad_est","estimate")) %>%
     cols_add('blank' = '', .after = 'estimate') %>%
-    cols_label('blank' = md('&emsp;&emsp;&emsp;'))  
+    cols_label('blank' = md('&emsp;&emsp;&emsp;'),
+               trad_est = "effect", 
+               CMA_est = "effect",
+               estimate = "estimate",
+               linear_noEM = html("No_EMint<br>estimate")
+               )
 
 ```
 
-##### Default plot: linear no EMint
+#### Default plot: linear no EMint
 ```{r}
 ggcmest(est2) +
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
@@ -1032,7 +1036,7 @@ ggcmest(est2) +
 ```
 
 
-##### Full output: linear no EMint
+#### Full output: linear no EMint
 
 ```{r}
 summary(est2)
@@ -1051,7 +1055,7 @@ The pm or prop_med refers to proportion mediated. ...
 
 Also, since we have a continuous exposure variable, ParentSupport, we could define different meaningful contrasts (e.g., -1SD vs. 1SD; max vs. min). Since ParentSupport is standardized exposure variable, by setting `a=0` and `astar=1`, I am specifying the exposure contrast as the predicted difference in Y at mean parental support values (ParentSupport=0) and +1SD parental support values (ParentSupport=1). The setting `mval = list(0)` indicates that I want controlled direct effect estimates to be calculated at m=0 (StrgMoralBlfs=0).    
 
-#### Linear mediation model, decomposition, with EMint 
+### Linear CMA model, with EMint 
 
 Now, let's estimate another linear model in CMAverse but instead allow for the possibility of an exposure-mediator interaction. 
 
@@ -1069,31 +1073,43 @@ est3 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = 
 
 :::: {.panel-tabset}
 
-##### Results: linear with EMint
+#### Results: linear with EMint
 
 ```{r}
 est3dat <- as.data.frame(est3$effect.pe) %>% rownames_to_column("CMA_est") 
 
-est3dattab <- left_join(est2dattab, est3dat, by="CMA_est") %>%
-  rename("linear_EM" = "est3$effect.pe") 
+est3dattab <- full_join(est2dattab, est3dat, by="CMA_est") %>%
+  rename("linear_EM" = "est3$effect.pe") %>%
+  filter(!CMA_est %in% c("cde(prop)", "intref(prop)", "intmed(prop)", 
+                          "pnie(prop)", "pm", "int", "pe")) %>%
+  mutate(
+    trad_est = if_else(is.na(trad_est), "--", trad_est)
+  )
 
 est3dattab %>%
   gt() %>% 
-    tab_spanner(label = "CMAverse", columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
-    tab_spanner(label = "Traditional", columns = c("trad_est","estimate")) %>%
+    tab_spanner(label = html("CMAverse<br>(linear)"), 
+                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
+    tab_spanner(label = html("Traditional<br>(linear)"), columns = c("trad_est","estimate")) %>%
     cols_add('blank' = '', .after = 'estimate') %>%
-    cols_label('blank' = md('&emsp;&emsp;&emsp;'))  
+    cols_label('blank' = md('&emsp;&emsp;&emsp;'),
+               trad_est = "effect", 
+               CMA_est = "effect",
+               estimate = "estimate",
+               linear_noEM = html("No_EMint<br>estimate"),
+               linear_EM = html("EMint<br>estimate")
+               )
 
 ```
 
-##### Default plot: linear with EMint
+#### Default plot: linear with EMint
 ```{r}
 ggcmest(est3) +
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
 
 ```
 
-##### Custom plot: linear with EMint
+#### Custom plot: linear with EMint
 
 ```{r}
 
@@ -1121,7 +1137,7 @@ est3dat %>%
 
 ```
 
-##### Full output: linear with EMint
+#### Full output: linear with EMint
 
 ```{r}
 summary(est3)
@@ -1147,7 +1163,7 @@ Now, we know the linear model is not appropriate for these data; this is frequen
 
 Below, I will estimate models with and without EM interactions again, but this time I will specify a Poisson distribution for the outcome variable. This means that the predicted contrasts will be described on the event rate ratio scale instead of the linear difference scale. See [Table 2 here](https://bs1125.github.io/CMAverse/articles/overview.html) for descriptions of the various causal estimates on the ratio scale that are output by CMAverse, and the [`cmest` documentation](https://bs1125.github.io/CMAverse/reference/cmest.html) for for descriptions of which causal estimates are generated under different modeling specifications.    
 
-#### Nonlinear decomposition model, no EM interaction 
+### Nonlinear CMA model, no EMint 
 
 ```{r}
 #| output: FALSE
@@ -1163,7 +1179,7 @@ est4 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = 
 
 :::: {.panel-tabset}
 
-##### Results: nonlinear no EMint
+#### Results: nonlinear no EMint
 
 ```{r}
 
@@ -1177,25 +1193,36 @@ est4dat <- as.data.frame(est4$effect.pe) %>% rownames_to_column("CMA_est2") %>%
   )
 
 est4dattab <- left_join(est3dattab, est4dat, join_by("CMA_est")) %>%
-  rename("nonlin_noEM" = "est4$effect.pe") 
+  rename("nonlin_noEM" = "est4$effect.pe") %>%
+  mutate(
+    CMA_est2 = if_else(is.na(CMA_est2), "--", CMA_est2)
+  )
+  
 
 est4dattab %>%
   gt() %>% 
-    tab_spanner(label = "CMAverse (linear)", 
-                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
-    tab_spanner(label = "CMAverse (nonlinear)", 
+    tab_spanner(label = html("CMAverse<br>(nonlinear)"), 
                 columns = c("CMA_est2", "nonlin_noEM")) %>%
-    tab_spanner(label = "Traditional (linear)", 
-                columns = c("trad_est","estimate")) %>%
+    tab_spanner(label = html("CMAverse<br>(linear)"), 
+                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
+    tab_spanner(label = html("Traditional<br>(linear)"), columns = c("trad_est","estimate")) %>%
     cols_add('blank' = '', .after = 'estimate') %>%
     cols_label('blank' = md('&emsp;&emsp;&emsp;')) %>%
     cols_add('blank2' = '', .before = 'CMA_est2') %>%
-    cols_label('blank2' = md('&emsp;&emsp;&emsp;')) 
+    cols_label('blank2' = md('&emsp;&emsp;&emsp;'), 
+               trad_est = "effect", 
+               CMA_est = "effect",
+               CMA_est2 = "effect",
+               estimate = "estimate",
+               linear_noEM = html("No_EMint<br>estimate"),
+               linear_EM = html("EMint<br>estimate"),
+               nonlin_noEM = html("No_EMint<br>estimate")
+               )
 
 
 ```
 
-##### Default plot: nonlinear no EMint
+#### Default plot: nonlinear no EMint
 ```{r}
 ggcmest(est4) +
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
@@ -1203,7 +1230,7 @@ ggcmest(est4) +
 ```
 
 
-##### Full output: nonlinear no EMint
+#### Full output: nonlinear no EMint
 
 ```{r}
 summary(est4)
@@ -1213,7 +1240,7 @@ summary(est4)
 ::::
 
 
-#### Nonlinear decomposition model, with EM interaction 
+### Nonlinear CMA model, with EMint 
 
 ```{r}
 #| output: FALSE
@@ -1230,7 +1257,7 @@ est5 <- cmest(data = simdat3, model = "rb", outcome = "Delinquency", exposure = 
 
 :::: {.panel-tabset}
 
-##### Results: nonlinear with EMint
+#### Results: nonlinear with EMint
 
 ```{r}
 est5dat <- as.data.frame(est5$effect.pe) %>% rownames_to_column("CMA_est2") %>%
@@ -1255,27 +1282,35 @@ est5dattab <- full_join(est4dattab, est5dat, join_by("CMA_est2")) %>%
 
 est5dattab %>%
   gt() %>% 
-    tab_spanner(label = "CMAverse (linear)", 
-                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
-    tab_spanner(label = "CMAverse (nonlinear)", 
+    tab_spanner(label = html("CMAverse<br>(nonlinear)"), 
                 columns = c("CMA_est2", "nonlin_noEM", "nonlin_EM")) %>%
-    tab_spanner(label = "Traditional (linear)", 
-                columns = c("trad_est","estimate")) %>%
+    tab_spanner(label = html("CMAverse<br>(linear)"), 
+                columns = c("CMA_est", "linear_noEM", "linear_EM")) %>%
+    tab_spanner(label = html("Traditional<br>(linear)"), columns = c("trad_est","estimate")) %>%
     cols_add('blank' = '', .after = 'estimate') %>%
     cols_label('blank' = md('&emsp;&emsp;&emsp;')) %>%
     cols_add('blank2' = '', .before = 'CMA_est2') %>%
-    cols_label('blank2' = md('&emsp;&emsp;&emsp;')) 
+    cols_label('blank2' = md('&emsp;&emsp;&emsp;'), 
+               trad_est = "effect", 
+               CMA_est = "effect",
+               CMA_est2 = "effect",
+               estimate = "estimate",
+               linear_noEM = html("No_EMint<br>estimate"),
+               linear_EM = html("EMint<br>estimate"),
+               nonlin_noEM = html("No_EMint<br>estimate"),
+               nonlin_EM = html("EMint<br>estimate")
+               )
 
 ```
 
-##### Default plot: nonlinear, with EMint
+#### Default plot: nonlinear with EMint
 ```{r}
 ggcmest(est5) +
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
 
 ```
 
-##### Risk ratio plot: nonlinear, with EMint
+#### Risk ratio plot: nonlinear with EMint
 
 ```{r}
 
@@ -1305,7 +1340,7 @@ est5dat %>%
 
 ```
 
-##### Excess Risk plot: nonlinear, with EMint
+#### Excess Risk plot: nonlinear, with EMint
 
 ```{r}
 
@@ -1330,7 +1365,7 @@ est5dat %>%
 
 ```
 
-##### Full output: nonlinear with EMint
+#### Full output: nonlinear with EMint
 
 ```{r}
 summary(est5)
@@ -1343,4 +1378,7 @@ Rate ratio interpretations ...  accessible discussions of interpreting risk and 
 
 
 "Excess rate ratio" (or "excess risk ratio" in logistic regressions) may help with interpreting relative effect estimates ... I prefer these to proportion estimates in nonlinear models for assessing relative contributions of mediation, interaction, & direct effects. For more information on relative excess ratio estimates, see [VanderWeele and Tchetgen Tchetgen (2014)](https://www.hsph.harvard.edu/tyler-vanderweele/wp-content/uploads/sites/603/2018/04/AttributingInt_Ep.pdf). [VanderWeele and Knol's 2014](https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/InteractionTutorial_EM.pdf) tutorial on interaction is also helpful here; additionally, it contains a wealth of information that may be new to readers about estimating and interpreting interactions, including distinctions between concepts such as *statistical*, *mechanistic*, and *sufficient cause* interactions. 
+
+### Conclusion 
+
 
