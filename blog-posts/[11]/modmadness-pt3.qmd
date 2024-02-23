@@ -1,0 +1,32 @@
+---
+title: "Moderator Madness, Part 3"
+author: "Jon Brauer"
+date: "2024-02-24"
+image: med-or-mod-cartoon2.jpg
+image-alt: "Two lemmings confused by exposure-mediator interactions (with help from DALL-E)"
+description: "Exposure-mediator interaction? No problem! Disentangle indirect and interaction effects with CMAverse in R"
+citation:
+  url: https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html
+categories: [general, rstats, causality, moderation, mediation]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+execute: 
+  warning: false
+draft: true
+---
+
+![Two lemmings confused by exposure-mediator interactions (with help from DALL-E)](med-or-mod-cartoon2.jpg)
+
+You have reached the future page for the third of a three-part blog series on issues related to modeling moderating relationships or testing interaction effects with criminological data. 
+
+This is the third and final entry in a three-part blog series on modeling moderators in criminological data. In [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html), I covered issues related to estimating and interpreting interaction effects with binary or skewed count outcome variables. In [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html), I introduced counterfactual causality, exposure-mediator interactions, and a potential outcomes framework for conducting a four-way decomposition of a total effect into controlled direct effect (*CDE*), pure indirect effect (*PIE*), reference interaction (*INT~ref~*), and mediated interaction (*INT~med~*) components. 
+
+In this final entry, I illustrate how to use the `CMAverse` software package in R to conduct "causal mediation" analysis, which relies on the 4-way potential outcomes decomposition introduced in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) to disentangle indirect and interaction effects in the presence of a potential exposure-mediator interaction.[^Theory-note] Along the way, I will also introduce the important assumptions required to interpret "causal mediation" results as estimates of causal effects.
+
+![Are you looking for Part 3? Check back soon!](still-waiting.jpg)
+
+This page is a stub. Part 3 is nearly complete, so check back soon!
+
+![It's not really loading. I'm still working on it.](Loading_icon.gif)

@@ -4,7 +4,7 @@ author:
   - name: Jake Day
   - name: Jon Brauer
   - name: Maja Kotlaja
-date: "today"
+date: "2023-10-10"
 image: shining2.jpg
 image-alt: "You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?"
 description: "Do you know how to detect exact or near duplicate rows in your data? Read on to learn more!"

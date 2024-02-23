@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jon Brauer">
-<meta name="dcterms.date" content="2023-07-19">
-<meta name="description" content="Is your mechanism both mediating and moderating? Disentangle indirect and interaction effects with potential outcomes decomposition.">
+<meta name="dcterms.date" content="2024-02-21">
+<meta name="description" content="Is your mediator also a moderator? Learn how counterfactuals and potential outcomes can help decompose a total effect into four distinct components.">
 
 <title>reluctant criminologists - Moderator Madness, Part 2</title>
 <style>
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -141,7 +175,26 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-counterfac" id="toc-sec-counterfac" class="nav-link active" data-scroll-target="#sec-counterfac">Comprehending counterfactuals</a></li>
+  <li><a href="#sec-potentialoutcomes" id="toc-sec-potentialoutcomes" class="nav-link" data-scroll-target="#sec-potentialoutcomes">Prepare for potential outcomes notation</a></li>
+  <li><a href="#sec-medandmod" id="toc-sec-medandmod" class="nav-link" data-scroll-target="#sec-medandmod">Is your mechanism a mediator, a moderator, or both?</a></li>
+  <li><a href="#sec-fourwaydecomp" id="toc-sec-fourwaydecomp" class="nav-link" data-scroll-target="#sec-fourwaydecomp">Four-way decomposition with toy example</a>
+  <ul class="collapse">
+  <li><a href="#sec-TE" id="toc-sec-TE" class="nav-link" data-scroll-target="#sec-TE">Total effect (<em>TE</em>)</a></li>
+  <li><a href="#sec-CDE" id="toc-sec-CDE" class="nav-link" data-scroll-target="#sec-CDE">Controlled direct effect (<em>CDE</em>)</a></li>
+  <li><a href="#sec-TEequation" id="toc-sec-TEequation" class="nav-link" data-scroll-target="#sec-TEequation">TE = <em>CDE</em> + <em>INT<sub>ref</sub></em> + <em>INT<sub>med</sub></em> + <em>PIE</em></a></li>
+  <li><a href="#sec-INTref" id="toc-sec-INTref" class="nav-link" data-scroll-target="#sec-INTref">Reference interaction (<em>INT<sub>ref</sub></em>)</a></li>
+  <li><a href="#sec-PIE" id="toc-sec-PIE" class="nav-link" data-scroll-target="#sec-PIE">Pure indirect effect (<em>PIE</em>)</a></li>
+  <li><a href="#sec-INTmed" id="toc-sec-INTmed" class="nav-link" data-scroll-target="#sec-INTmed">Mediated interaction (<em>INT<sub>med</sub></em>)</a></li>
+  <li><a href="#sec-revisitTE" id="toc-sec-revisitTE" class="nav-link" data-scroll-target="#sec-revisitTE">Revisiting <em>TE</em></a></li>
+  </ul></li>
+  <li><a href="#sec-intermission2" id="toc-sec-intermission2" class="nav-link" data-scroll-target="#sec-intermission2">Second intermission</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -160,7 +213,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Is your mechanism both mediating and moderating? Disentangle indirect and interaction effects with potential outcomes decomposition.
+    Is your mediator also a moderator? Learn how counterfactuals and potential outcomes can help decompose a total effect into four distinct components.
   </div>
 </div>
 
@@ -177,7 +230,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 19, 2023</p>
+      <p class="date">February 21, 2024</p>
     </div>
   </div>
   
@@ -189,38 +242,1499 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="med-or-mod-cartoon2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Two lemmings confused by exposure-mediator interactions (with help from DALL-E)</figcaption>
+<p><img src="decomp-cartoon2.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Lemmings puzzled by 4-way total effect decomposition (with help from DALL-E)</figcaption>
 </figure>
 </div>
-<p>You have reached the future page for the second of a two-part blog series on issues related to modeling moderating relationships or testing interaction effects with criminological data.</p>
-<p>In <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1.html">Part 1</a>, I covered issues related to estimating and interpreting interaction effects with binary or skewed count outcome variables. In Part 2, I plan to introduce the need and a method for disentangling indirect and interaction effects in the presence of a potential exposure-mediator interaction.</p>
+<p>This is the second of a three-part blog series on modeling moderators in criminological data. <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1">Part 1</a> addressed issues related to the estimation and interpretation of interaction effects in generalized linear regression models with nonlinear link functions (e.g., logistic, Poisson, and negative binomial regression). In this Part 2 entry, I use a simple example to introduce a 4-way decomposition procedure for separating a total effect into direct, indirect, and interaction components in the presence of a potential exposure-mediator interaction. <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a> will then use more realistic simulated data to illustrate “causal mediation” analysis with the <code>CMAverse</code> software package in R, which relies on this 4-way potential outcomes decomposition approach to disentangle indirect and interaction effects in the presence of a potential exposure-mediator interaction.</p>
+<p>My primary goals in this second post are to introduce counterfactual causality, exposure-mediator interactions, and a potential outcomes framework for conducting a four-way decomposition of a total effect into four distinct components: a <em>controlled direct effect</em> (<em>CDE</em>); a <em>pure indirect effect</em> (<em>PIE</em>); a <em>reference interaction</em> (<em>INT<sub>ref</sub></em>); and a <em>mediated interaction</em> (<em>INT<sub>med</sub></em>).</p>
+<p>Ready to dip your toes into the deep end?</p>
+<section id="sec-counterfac" class="level2">
+<h2 class="anchored" data-anchor-id="sec-counterfac">Comprehending counterfactuals</h2>
+<p>Have you ever stubbed your toe in the dark? Think back to one of those times. Did you say “ouch” or some other four letter word? What do you think <strong>caused</strong> you to stub your toe?</p>
+<p>Let’s add some details to this example: Imagine that you are in an unfamiliar room, at night, with blackout curtains drawn closed over a single window. With the curtains closed, the room lacks sufficient light to help you see obstacles in your path. You are tip-toing across the room in search of a light switch when suddenly - “OUCH!” - you stub your toe on what feels like the leg of a chair. Your mind suddenly and angrily turns to the curtains: “If I had just left those #&amp;%@! curtains open, I never would have stubbed my toe!”</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="still-waiting.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Are you looking for Part 2? I hope you are not holding your breath while you wait.</figcaption>
+<p><img src="counterfac1.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Your thoughts communicate a causal claim about the world - that the closed window curtain caused your pain.</figcaption>
 </figure>
 </div>
-<p>This page is a stub. I hope to complete Part 2 soon so all one of you can read it. Hi Mom!</p>
+<p>There are two important things to note about this imaginary angry thought. First, it communicates a causal belief or claim. Specifically, your momentary thought communicates a belief that the closed window curtains are (at least partly) responsible for you stubbing your toe. Put differently, you view the closed curtains as a <em>cause</em> of the undesired outcome - perhaps not the only cause, but a noteworthy cause nonetheless.</p>
+<p>Second, the structure of this angry thought conveys an implicit view of causal claims as dependent upon contrasts between plausible “potential outcomes” across observed and “counterfactual” conditions. That is, your momentary thought contrasts an observed or factual initial condition (the closed curtain) with a <em>counterfactual</em> initial condition (an open curtain), and then implies a different potential outcome (i.e, a stubbed versus an unstubbed toe) might have occurred if the observed initial condition would have been changed to the counterfactual condition instead.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Loading_icon.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">It’s not really loading. I’m still working on it.</figcaption>
+<p><img src="counterfac2.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Causal claims depend upon contrasts between “potential outcomes” across observed and counterfactual conditions.</figcaption>
 </figure>
 </div>
+<p>Many social scientific questions and claims reflect a similar counterfactual logic or, at least, can be recast in counterfactual terms:</p>
+<ul>
+<li><em>If politicians had not campaigned on these platforms or had not signed those policies into law, then US incarceration rates would not have increased exponentially…</em></li>
+<li><em>If we intervene in those neighborhoods in these ways, then crime rates in those neighborhoods will reduce…</em></li>
+<li><em>If that group had those different characteristics, then they would have received better (worse) criminal justice outcomes…</em><br>
+</li>
+<li><em>If those adults had not experienced adverse childhood experiences, then they might not have participated in violent criminal behaviors…</em></li>
+</ul>
+<p>In our <a href="https://reluctantcriminologists.com/blog-posts/%5B4%5D/causation-no-corr">earlier post on causation without correlation</a>, we also noted that counterfactual reasoning is central to statistical tests of causal claims and even underlies justifications for randomized controlled trials themselves:</p>
+<blockquote class="blockquote">
+<p>“We seem to engage in counterfactual thinking naturally, as it appears central to <a href="https://plato.stanford.edu/entries/counterfactuals/">imagination and rational agency</a>. Pearl and Mackenzie go so far as to claim that the ability to use counterfactual thinking to make “explanation-seeking inferences reliably and repeatably” is what “most distinguishes human from animal intelligence, as well as from model-blind versions of AI and machine learning” (<a href="https://www.basicbooks.com/titles/judea-pearl/the-book-of-why/9780465097616/">2018</a>, p.33). Moreover, the belief that randomization in controlled experiments offers a valid mechanism for making causal inferences relies upon counterfactual reasoning about potential outcomes; these counterfactual justifications underlying classical statistics were proposed by pioneers Jersey Neyman and Sir Ronald Fisher <a href="https://www.cambridge.org/core/books/abs/causal-inference-for-statistics-social-and-biomedical-sciences/brief-history-of-the-potential-outcomes-approach-to-causal-inference/B8CEDDC08F0E0D6C577847F0CBE4E6A3">a century ago</a>! Meanwhile, principled counterfactual frameworks using potential outcomes to make causal inferences with observational data have been in use <a href="https://en.wikipedia.org/wiki/Rubin_causal_model">since the 1970s</a> and represent arguably <a href="https://jech.bmj.com/content/76/11/960">the best approach to causal identification with observational data today</a>.”</p>
+</blockquote>
+</section>
+<section id="sec-potentialoutcomes" class="level2">
+<h2 class="anchored" data-anchor-id="sec-potentialoutcomes">Prepare for potential outcomes notation</h2>
+<p>With that said, let’s recast our hypothetical toe-stubbing example into the language of counterfactuals and potential outcomes.</p>
+<p>In this simple example, we have two initial “exposure” or “treatment” conditions: <em>curtains closed</em> and <em>curtains open</em>. We will denote <em>curtains open</em> as X=0 and <em>curtains closed</em> as X=1. Likewise, we have two “potential outcome” conditions: <em>unstubbed toe</em>, denoted as Y=0, and <em>stubbed toe</em>, denoted as Y=1.</p>
+<p>Given these and our causal expectations, we can write two potential outcomes equations, Y(0)=0 (or Y0=0) and Y(1)=1 (or Y1=1), that respectively represent our expectation of a <em>stubbed toe</em> when curtains are closed and our expectation of an <em>unstubbed toe</em> when curtains are open. Here, I am (loosely) adopting <a href="http://causality.cs.ucla.edu/blog/index.php/2013/10/26/comments-on-kennys-summary-of-causal-mediation/">Pearl’s <em>do-calculus</em> notation</a>, where these two equations are abbreviations of longer structural equations for outcome probability expectations under different initial conditions where we <em>do</em> X=0 or X=1. The first equation, Y(0), is shorthand for Y(do[x=0])=0, which means that we expect the value of Y to equal “0” (i.e., we expect an unstubbed toe) when we <em>do</em> X=0 (i.e., when we open the curtains). Similarly, the second equation, Y(1), is shorthand for Y(do[x=1])=1, which means that we expect the value of Y to be “1” (i.e., we expect a stubbed toe) when we <em>do</em> X=1 (i.e., when we close the curtains). Technically, we expect the probability to be closer to zero or one when we do X=0 or X=1, respectively, but just bear with me here.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="counterfac3.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">We can recast our thought experiment into the language of potential outcomes.</figcaption>
+</figure>
+</div>
+<p>Additionally, <a href="https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-dagsaber">as we have explained before</a>, it is usually helpful to communicate our causal assumptions transparently using a causal diagram or a DAG. In the DAG below, we collapse our exposure conditions and potential outcomes into two variables connected by an arrow to represent our expectation of a causal relationship between curtains (open versus closed) and uttering a four-letter word (unstubbed versus stubbed toe).</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dagitty)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdag)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ouchDAG <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Curtains,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure =</span> <span class="st">"Curtains"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="st">"Ouch"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords=</span><span class="fu">list</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="fu">c</span>(<span class="at">Curtains=</span><span class="dv">0</span>, <span class="at">Ouch=</span><span class="dv">2</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="fu">c</span>(<span class="at">Curtains =</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">1</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> <span class="fu">tidy_dagitty</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">focal =</span> <span class="fu">ifelse</span>(name <span class="sc">!=</span> <span class="st">"Curtains"</span>, <span class="st">"#56B4E9"</span>, <span class="st">"#CC79A7"</span>))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#function to shorten arrows (edges)</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># https://stackoverflow.com/questions/65420136/how-do-you-adjust-the-arrows-in-a-ggplot-of-a-ggdag</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>shorten_dag_arrows <span class="ot">&lt;-</span> <span class="cf">function</span>(tidy_dag, proportion){</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Update underlying ggdag object</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>tidy_dag<span class="sc">$</span>data <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(tidy_dag<span class="sc">$</span>data, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                             <span class="at">xend =</span> (<span class="dv">1</span><span class="sc">-</span>proportion<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>(xend <span class="sc">-</span> x) <span class="sc">+</span> x, </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                             <span class="at">yend =</span> (<span class="dv">1</span><span class="sc">-</span>proportion<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>(yend <span class="sc">-</span> y) <span class="sc">+</span> y,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                             <span class="at">xstart =</span> (<span class="dv">1</span><span class="sc">-</span>proportion<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>(x <span class="sc">-</span> xend) <span class="sc">+</span> xend,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ystart =</span> (<span class="dv">1</span><span class="sc">-</span>proportion<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>(y<span class="sc">-</span>yend) <span class="sc">+</span> yend)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(tidy_dag)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ouchDAG1 <span class="ot">&lt;-</span> <span class="fu">shorten_dag_arrows</span>(ouchDAG, <span class="fl">0.08</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ouchDAG1 <span class="ot">&lt;-</span> ouchDAG1 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">xend=</span>xend, <span class="at">yend=</span>yend)) <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_edges</span>() <span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_text</span>(<span class="fu">aes</span>(<span class="at">color =</span> focal)) <span class="sc">+</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span> </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>, <span class="at">color =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#56B4E9"</span>,<span class="st">"#CC79A7"</span>)) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">#change default expansion on y-axis min &amp; max</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"DAG1"</span>) <span class="sc">+</span> </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ouchDAG1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="modmadness-pt2_files/figure-html/DAG1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure 1. Simple DAG representing causal effect of window curtains on stubbed toes (ouch!)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-medandmod" class="level2">
+<h2 class="anchored" data-anchor-id="sec-medandmod">Is your mechanism a mediator, a moderator, or both?</h2>
+<p>Now, let’s step back and revisit our causal assumptions. Do we <em>really</em> think the closed curtains directly caused us to stub our toes? When interrogating a causal claim, it is usually a good idea to ask “how” and “why” questions, as doing so might illuminate mechanisms that can help us better identify, predict, and explain causal relationships. For instance, <em>why</em> do we think the closed curtains caused us to stub our toe? <em>How</em> might the closed curtains have caused such an outcome to occur?</p>
+<p>In this case, you probably do not think that the closed window curtains <em>directly</em> caused toe stubbing. Rather, you likely expect that closed curtains <em>indirectly</em> caused this painful outcome by blocking light from entering the room through the window. In contrast, had the window curtains been open, then there might have been more ambient light in the room and, with sufficient light, you might have been better able to see and to avoid colliding with hazardous objects.</p>
+<p>Let’s recast these more precise mechanistic beliefs as potential outcomes and communicate them graphically with a new DAG.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="counterfac4.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Specifying mechanisms can help us identify, predict, and explain causal relationships.</figcaption>
+</figure>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ouchDAG2 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Light ,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  Light <span class="sc">~</span> Curtains, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure =</span> <span class="st">"Curtains"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="st">"Ouch"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords=</span><span class="fu">list</span>(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="fu">c</span>(<span class="at">Curtains=</span><span class="dv">0</span>, <span class="at">Light=</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">2</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="fu">c</span>(<span class="at">Curtains =</span><span class="dv">1</span>, <span class="at">Light=</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> <span class="fu">tidy_dagitty</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">focal =</span> <span class="fu">ifelse</span>(name <span class="sc">!=</span> <span class="st">"Curtains"</span>, <span class="st">"#56B4E9"</span>, <span class="st">"#CC79A7"</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ouchDAG2 <span class="ot">&lt;-</span> <span class="fu">shorten_dag_arrows</span>(ouchDAG2, <span class="fl">0.08</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ouchDAG2 <span class="ot">&lt;-</span> ouchDAG2 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">xend=</span>xend, <span class="at">yend=</span>yend)) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_edges</span>() <span class="sc">+</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_text</span>(<span class="fu">aes</span>(<span class="at">color =</span> focal)) <span class="sc">+</span> </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span> </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>, <span class="at">color =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#56B4E9"</span>,<span class="st">"#CC79A7"</span>)) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">#change default expansion on y-axis min &amp; max</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"DAG2"</span>) <span class="sc">+</span> </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ouchDAG2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="modmadness-pt2_files/figure-html/DAG2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure 2. DAG of indirect causal effect of window curtains through light on stubbed toes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>After examining this DAG, many of you might immediately assume it that it displays a classic indirect causal effect or mediating relationship. However, it is worth taking a moment to ponder whether you think light really is a mediator, or instead whether it is a moderator, or perhaps both? For example, consider that opening the curtains might reduce the chances of stubbing your toes when it is light outside and, hence, when doing so lets sufficient light in the room for you to see obstacles in your path. In contrast, when it is not light outside, opening the curtains might not let sufficient light in and, in those situations, opening the curtains (i.e., <em>doing</em> X=0) might not reduce (i.e., cause) the probability of stubbing toes.</p>
+<p>Put differently, we might posit a heterogeneous causal effect of opening the curtains on the probability of toe stubbing, where the causal effect is strongest when accompanied by sufficient light but weakest or nonexistent when not accompanied by sufficient light.</p>
+<p>If you are a social scientist, you might also be accustomed to seeing an intersecting arrow in a causal diagram to depict this type of conditional effect or moderating relationship, like below:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ouchDAG2b <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Curtains ,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  holder <span class="sc">~</span> Light, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure =</span> <span class="st">"Curtains"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="st">"Ouch"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords=</span><span class="fu">list</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="fu">c</span>(<span class="at">Curtains=</span><span class="dv">0</span>, <span class="at">Light=</span><span class="dv">1</span>, <span class="at">holder=</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">2</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="fu">c</span>(<span class="at">Curtains =</span><span class="dv">1</span>, <span class="at">Light=</span><span class="dv">0</span>, <span class="at">holder=</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">1</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> <span class="fu">tidy_dagitty</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">focal =</span> <span class="fu">ifelse</span>(name <span class="sc">!=</span> <span class="st">"Window"</span>, <span class="st">"#56B4E9"</span>, <span class="st">"#CC79A7"</span>))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ouchDAG2b <span class="ot">&lt;-</span> <span class="fu">shorten_dag_arrows</span>(ouchDAG2b, <span class="fl">0.08</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#create factor variable to isolate edge of interest, permits specifying edge color</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>ouchDAG2b <span class="ot">&lt;-</span> ouchDAG2b <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">myedge1 =</span> <span class="fu">if_else</span>(ouchDAG2b<span class="sc">$</span>data<span class="sc">$</span>name <span class="sc">==</span> <span class="st">"Light"</span> <span class="sc">&amp;</span> ouchDAG2b<span class="sc">$</span>data<span class="sc">$</span>to <span class="sc">==</span> <span class="st">"holder"</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"yes"</span>, <span class="st">"no"</span>), </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">modlinetype =</span> <span class="fu">ifelse</span>(myedge1 <span class="sc">==</span> <span class="st">"yes"</span>, <span class="st">"solid"</span>, <span class="st">"dashed"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#plot dag</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> ouchDAG2b <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">xend=</span>xend, <span class="at">yend=</span>yend)) <span class="sc">+</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_edges</span>(<span class="fu">aes</span>(<span class="at">x =</span> xstart, <span class="at">y =</span> ystart, <span class="at">edge_color=</span>myedge1, </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                     <span class="at">edge_linetype =</span> modlinetype), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_text</span>(<span class="at">data =</span> <span class="cf">function</span>(x) <span class="fu">filter</span>(x, name <span class="sc">!=</span> <span class="st">"holder"</span>), </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">color=</span><span class="st">"#56B4E9"</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span> </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.2</span>))) <span class="sc">+</span> <span class="co">#change default expansion on y-axis min &amp; max</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_edge_colour_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"darkgrey"</span>, <span class="st">"maroon"</span>)) <span class="sc">+</span> <span class="co">#change second color to highlight focal myedge1 </span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ggtitle("DAG w/mediation &amp; interaction") + </span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Classic Moderation Diagram"</span>) <span class="sc">+</span> </span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>fig3 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="modmadness-pt2_files/figure-html/Moderation-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure 3. Causal graph of light moderating the effect of window curtains on stubbed toes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>So, is light a mediator, or a moderator, or is it both? Well, it turns out that mediation and moderation are <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/">not always as distinguishable</a> as one might think.</p>
+<p>In fact, this potential overlap is communicated by a proper DAG of mediating and moderating relationships. As we noted <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">in Part 1</a>, a traditional DAG does not use intersecting arrows to depict moderation. Rather, arrows indicate information flow, while heterogeneous (moderation) effects are captured in the functional forms of the mathematical equations used to model causal relationships. Likewise, below is a DAG that illustrates the possibility of (heterogeneous) direct and indirect effects of closed curtains on stubbing toes.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ouchDAG3 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Curtains <span class="sc">+</span> Light ,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  Light <span class="sc">~</span> Curtains, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure =</span> <span class="st">"Curtains"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="st">"Ouch"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords=</span><span class="fu">list</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="fu">c</span>(<span class="at">Curtains=</span><span class="dv">0</span>, <span class="at">Light=</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">2</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="fu">c</span>(<span class="at">Curtains =</span><span class="dv">0</span>, <span class="at">Light=</span><span class="dv">1</span>, <span class="at">Ouch=</span><span class="dv">0</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> <span class="fu">tidy_dagitty</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">focal =</span> <span class="fu">ifelse</span>(name <span class="sc">!=</span> <span class="st">"Curtains"</span>, <span class="st">"#56B4E9"</span>, <span class="st">"#CC79A7"</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ouchDAG3 <span class="ot">&lt;-</span> <span class="fu">shorten_dag_arrows</span>(ouchDAG3, <span class="fl">0.08</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ouchDAG3 <span class="ot">&lt;-</span> ouchDAG3 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">xend=</span>xend, <span class="at">yend=</span>yend)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_edges</span>() <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dag_text</span>(<span class="fu">aes</span>(<span class="at">color =</span> focal)) <span class="sc">+</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>, <span class="at">color =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#56B4E9"</span>,<span class="st">"#CC79A7"</span>)) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">#change default expansion on y-axis min &amp; max</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"DAG3"</span>) <span class="sc">+</span> </span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>ouchDAG3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="modmadness-pt2_files/figure-html/DAG3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure 4. DAG of direct and indirect causal effects of window curtains through light on stubbed toes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>An important takeaway message is that when we are examining causal systems that we think might involve a mediating mechanism, it is important to formally assess whether there is evidence of a non-negligible <strong>exposure-mediator interaction</strong>. An exposure-mediator interaction is a situation where the effect of the focal cause or exposure (opening or closing the curtains) on an outcome (toe stubbing) varies across the range of values of the posited mediating mechanism (ambient light levels in the room).</p>
+<p>Often, when testing mediation hypotheses, assessing this possibility will entail the inclusion of a multiplicative interaction term representing a potential exposure-mediator interaction (X*M) into your model, estimating marginal effects, and plotting model predictions on the outcome scale across levels of the exposure and mechanism.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In the presence of an additive interaction, your modeling approach should account for the joint possibility of mediation and moderation. In this situation, the “causal mediation” or potential outcomes decomposition approach can help you disentangle indirect and interaction effects.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="sec-fourwaydecomp" class="level2">
+<h2 class="anchored" data-anchor-id="sec-fourwaydecomp">Four-way decomposition with toy example</h2>
+<p>The first thing to note about causal mediation effect decomposition is that it generates population-average inferences about counterfactual conditions. Recall, we cannot observe counterfactual causality among individual units because we can only observe one of two (or more) possible conditions for any individual unit. In our example, either the curtains were closed or open, and either we did or did not stub our toe. If the curtains were closed and we stubbed our toe, then we cannot observe the counterfactual condition in which the curtains instead would have been open to see what might have happened to our toes. However, we <em>can</em> make causal inferences about potential outcomes across counterfactual conditions with sufficient data from populations, a careful research design, and a proper causal (theoretical) model. In our example, that would require many observations of mechanism states (ambient light levels in the room) and outcome occurrences (stubbed toes) in the room under both exposure and non-exposure conditions (when the curtains were open and when curtains were closed) along with some assumptions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="counterfac5.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Given some key assumptions, we can estimate counterfactual causal effects as population-average differences in potential outcomes.</figcaption>
+</figure>
+</div>
+<p>In <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a> of this series, I will work through an example of effect decomposition in R using simulated crime-relevant data. First, though, I hope to build upon your intuitions about how this decomposition procedure works in this entry using some toy data based on our toe stubbing example. The goal of this example is to introduce you to key terminology and the conceptual basis for potential outcomes effect decomposition before getting into a more realistic applied example in which we will use software to perform the decomposition for us.</p>
+<p>Note that this first toy example is intended as a simple application of <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S2title">VanderWeele’s initial 4-way effect decomposition example</a> in which exposure and mediator values are set at specific counterfactual values (setting M to 0 or 1). Later, I will briefly introduce more <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S1title">complex counterfactual logic</a> (e.g., setting M at its expected value when X=0 or X=1), which will be required for estimating and interpreting “natural” direct and indirect effects found in <code>CMAverse</code> output in <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a>. For more and better resources on this topic, I recommend reading VanderWeele’s 2014 paper itself, as well as his tutorials and short video course on causal mediation, all of which are available <a href="https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/">on his website</a>.</p>
+<div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ouchdat <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span>CurtainClosed, <span class="sc">~</span>AmpleLight, <span class="sc">~</span>StubToe,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ouchdat,<span class="at">n=</span><span class="dv">11</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(ouchdat,<span class="at">n=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-anonymous-5551572" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Toy toe-stubbing data</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-anonymous-5551572-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-5551572" style="flex-basis: 50.0%;justify-content: center;">
+
+<div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#upmcaersso table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#upmcaersso thead, #upmcaersso tbody, #upmcaersso tfoot, #upmcaersso tr, #upmcaersso td, #upmcaersso th {
+  border-style: none;
+}
+
+#upmcaersso p {
+  margin: 0;
+  padding: 0;
+}
+
+#upmcaersso .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#upmcaersso .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#upmcaersso .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#upmcaersso .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#upmcaersso .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#upmcaersso .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upmcaersso .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#upmcaersso .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#upmcaersso .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#upmcaersso .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#upmcaersso .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#upmcaersso .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#upmcaersso .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#upmcaersso .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#upmcaersso .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#upmcaersso .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#upmcaersso .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#upmcaersso .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#upmcaersso .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upmcaersso .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#upmcaersso .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#upmcaersso .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#upmcaersso .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upmcaersso .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#upmcaersso .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#upmcaersso .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upmcaersso .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upmcaersso .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#upmcaersso .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upmcaersso .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#upmcaersso .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upmcaersso .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#upmcaersso .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upmcaersso .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#upmcaersso .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upmcaersso .gt_left {
+  text-align: left;
+}
+
+#upmcaersso .gt_center {
+  text-align: center;
+}
+
+#upmcaersso .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#upmcaersso .gt_font_normal {
+  font-weight: normal;
+}
+
+#upmcaersso .gt_font_bold {
+  font-weight: bold;
+}
+
+#upmcaersso .gt_font_italic {
+  font-style: italic;
+}
+
+#upmcaersso .gt_super {
+  font-size: 65%;
+}
+
+#upmcaersso .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#upmcaersso .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#upmcaersso .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#upmcaersso .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#upmcaersso .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#upmcaersso .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#upmcaersso .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=1</p> </caption>
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CurtainClosed">CurtainClosed</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="AmpleLight">AmpleLight</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="StubToe">StubToe</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+<div id="tbl-anonymous-5551572-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-5551572" style="flex-basis: 50.0%;justify-content: center;">
+
+<div id="gvvydsugpf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gvvydsugpf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gvvydsugpf thead, #gvvydsugpf tbody, #gvvydsugpf tfoot, #gvvydsugpf tr, #gvvydsugpf td, #gvvydsugpf th {
+  border-style: none;
+}
+
+#gvvydsugpf p {
+  margin: 0;
+  padding: 0;
+}
+
+#gvvydsugpf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gvvydsugpf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gvvydsugpf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gvvydsugpf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gvvydsugpf .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gvvydsugpf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gvvydsugpf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gvvydsugpf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gvvydsugpf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gvvydsugpf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gvvydsugpf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gvvydsugpf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gvvydsugpf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gvvydsugpf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gvvydsugpf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvvydsugpf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gvvydsugpf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gvvydsugpf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gvvydsugpf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvvydsugpf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gvvydsugpf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvvydsugpf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gvvydsugpf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvvydsugpf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gvvydsugpf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvvydsugpf .gt_left {
+  text-align: left;
+}
+
+#gvvydsugpf .gt_center {
+  text-align: center;
+}
+
+#gvvydsugpf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gvvydsugpf .gt_font_normal {
+  font-weight: normal;
+}
+
+#gvvydsugpf .gt_font_bold {
+  font-weight: bold;
+}
+
+#gvvydsugpf .gt_font_italic {
+  font-style: italic;
+}
+
+#gvvydsugpf .gt_super {
+  font-size: 65%;
+}
+
+#gvvydsugpf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gvvydsugpf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gvvydsugpf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gvvydsugpf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gvvydsugpf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gvvydsugpf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gvvydsugpf .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=0</p> </caption>
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CurtainClosed">CurtainClosed</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="AmpleLight">AmpleLight</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="StubToe">StubToe</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">1</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
+<td headers="AmpleLight" class="gt_row gt_right">0</td>
+<td headers="StubToe" class="gt_row gt_right">0</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>These data represent n = 21 curtains, light, and toe stubbing observations. In approximately half of the cases, the curtains were closed (<em>CurtainClosed</em> = 1; n = 11); in the other cases, the curtains were open (<em>CurtainClosed</em> = 0; n = 10). The overall probability of stubbing toes, or P(Y), is 0.33 (<em>StubToe</em> = 1; n = 7/21). We will use these hypothetical “observed” probabilities to represent (counterfactual) expectations.</p>
+<p>Y0 and Y1<br>
+The probability of stubbing toes varies across exposure conditions. The probability of stubbing toes given the curtains were open, denoted by P(Y|<em>do</em>[X=0]) or abbreviated to Y0, is 0.2. That is, we stubbed our toes in 2 out of 10 cases in which curtains were open. In contrast, we stubbed our toes in 5 out of 11 cases in which curtains were closed, which means that P(Y|<em>do</em>[X=1]), or Y1, is equal to 0.45.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Y0Y1-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Y0 and Y1</figcaption>
+</figure>
+</div>
+<section id="sec-TE" class="level3">
+<h3 class="anchored" data-anchor-id="sec-TE">Total effect (<em>TE</em>)</h3>
+<p>In this example, we can calculate the <em>total effect</em> (<em>TE</em>) simply as the difference between the outcome probabilities across exposed and unexposed conditions. The estimated total effect of closing curtains on toe stubbing is Y1 - Y0, or 0.455 - 0.2, which equals 0.255. Put differently, opening curtains reduces the predicted probability of toe stubbing by about 26 percentage points (from ~45.5% to 20%).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="TE-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Total effect (<em>TE</em>) = Y1 - Y0</figcaption>
+</figure>
+</div>
+<p>M0 and M1<br>
+What about our mechanism? The probability of experiencing sufficient ambient light in the room to be able to see obstacles is P(M) = 0.43, since 9 out of 21 cases had a <em>AmpleLight</em> value = 1. Like stubbing our toes, the probability of experiencing sufficient light also varied across exposure conditions. The probability of sufficient light given the curtains were open, denoted by P(M|<em>do</em>[X=0]) or abbreviated to M0, is 0.80 (i.e., 8/10). In contrast, there was sufficient light in the room in only 1 out of 11 cases in which the curtains were closed, which means that P(M|<em>do</em>[X=1]) or M1 = 0.09.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="M0M1-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">M0 and M1</figcaption>
+</figure>
+</div>
+<p>Now, let’s consider jointly how the probability of stubbing our toes changes given different combinations of exposure and mediator conditions, or given that we open or close curtains and simultaneously observe the presence or absence of sufficient ambient light in the room.</p>
+<p>Y00<br>
+Let’s start with the probability of stubbing toes given open curtains and the absence of sufficient light, which we will denote as P(Y|<em>do</em>[X=0],<em>do</em>[M=0]) and abbreviate to Y00. Given some assumptions, this quantity represents the expected probability of stubbing our toes if we <em>do</em> X=0 (i.e., if we open the curtains) and if we were able to set the mechanism to absent, or M=0. In other words, we are setting the room to insufficient light, or <em>AmpleLight</em> = 0, with the curtains open. There were 2 observed cases in which X=0 and M=0. Perhaps these cases represented especially dark nights during which the open window curtains were not effective in increasing the amount of ambient light in the room. In half of these cases (1/2), we stubbed our toes, meaning <strong>Y00 = 0.5</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Y00-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Y00</figcaption>
+</figure>
+</div>
+<p>Y10<br>
+Now, imagine we <em>do</em> X=1 instead (i.e., we close the curtains) and we continue hold the mechanism constant at the value of “0”. That is, we set the room to insufficient light, or <em>AmpleLight</em> = 0, with the curtains closed. There are ten observed cases in which the curtains were closed and there was insufficient ambient light in the room. We stubbed our toes in five of these ten cases, meaning P(Y|<em>do</em>[X=1],<em>do</em>[M=0]) or <strong>Y10 = 0.5</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Y10-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Y10</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-CDE" class="level3">
+<h3 class="anchored" data-anchor-id="sec-CDE">Controlled direct effect (<em>CDE</em>)</h3>
+<p>With the quantities above, we now have enough information to calculate the <em>controlled direct effect</em>, or <em>CDE</em>, of X on Y. Conceptually, the <em>CDE</em> of an exposure is the expected effect that an exposure would have on the outcome if the mechanism (M) were fixed at a specific value (m). Here is the potential outcomes equation for the <em>CDE</em>:</p>
+<p><em>CDE</em> = Y1m - Y0m, where we set M to a specific value “m”</p>
+<p>Commonly, we might wish to estimate the controlled direct effect when the mediator is equal to zero. In this case, the <em>CDE</em> of an exposure is the expected effect that an exposure would have on the outcome if the mechanism were removed or fixed at M=0. Here, when we set M to m=0, the <em>CDE</em> is equivalent to the difference between Y10 and Y00, or the estimated effect on Y of <em>doing</em> X in the absence of the mechanism:</p>
+<p><em>CDE</em>(M=0) = Y10 - Y00<br>
+= 0.5 - 0.5<br>
+= 0.0</p>
+<p>In essence, this value of 0.0 indicates that <em>doing</em> X = 1 (i.e., closing the curtains) instead of <em>doing</em> X = 0 is expected to have no effect on the probability of toe stubbing once we remove from the equation the effect that opening curtains has on the mechanism (ie., letting sufficient ambient light into the room). Put differently, closing the window curtains is not expected to have a direct effect on stubbing toes above and beyond any indirect effects it has on the ambient light levels in the room.</p>
+<p>Think of it this way: You are in a dark room with curtains closed (<em>do</em>[X=1],<em>do</em>[M=0]) and, after opening the curtains, the room remained just as dark as it was before (<em>do</em>[X=0],<em>do</em>[M=0]). A <em>CDE</em> = 0 indicates that the probability of stubbing your toes would remain unchanged in that situation, where opening or closing the curtains does not add any ambient light into the dark room (Y10 - Y00 = 0). Either way, it is dark, and you are predicted to have a coinflip’s chance (Y10 = Y00 = .50) of stubbing your toes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="CDE-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Controlled direct effect (<em>CDE</em>) = Y1m - Y0m</figcaption>
+</figure>
+</div>
+<p>Y01<br>
+In addition to Y10 and Y00, there are additional quantities we can estimate that will help us further decompose the total effect into other meaningful components like the <em>CDE</em>. For instance, what if we were to open the curtains (<em>do</em>[X=0]) while also holding constant a sufficient amount of ambient light in the room (<em>do</em>[M=1])? In our toy data, there were eight observations in which the curtains were open and we experienced sufficient ambient light in the room that allowed us to see. We stubbed our toe in only one of these eight cases (1/8), so P(Y|<em>do</em>[X=0],<em>do</em>[M=1]) or <strong>Y01 = 0.125</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Y01-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Y01</figcaption>
+</figure>
+</div>
+<p>Y11<br>
+Now, imagine instead we close the curtains (<em>do</em>[X=1]) and continue holding a sufficient amount of ambient light in the room constant (<em>do</em>[M=1]). There is only one observation in these toy data with X=1 and M=1. Perhaps a hall light was on, or perhaps we used our cell phone backlight to provide ambient light when the curtains were closed. In any case, we did not stub our toe in this one instance (0/1), so P(Y|<em>do</em>[X=1],<em>do</em>[M=1]) or <strong>Y11 = 0.0</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Y11-pic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Y11</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-TEequation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-TEequation">TE = <em>CDE</em> + <em>INT<sub>ref</sub></em> + <em>INT<sub>med</sub></em> + <em>PIE</em></h3>
+<p>With the various quantities calculated above (e.g., M0; M1; Y00; Y10; Y01; Y11), now we have enough information to decompose the total effect of X on Y into four different components. Specifically, the total effect, or TE, is a composite value representing the sum of the controlled direct effect (<em>CDE</em>); reference interaction (<em>INT<sub>ref</sub></em>); mediated interaction (<em>INT<sub>med</sub></em>); and the pure indirect effect (<em>PIE</em>). I already covered the <em>CDE</em> above. Below, I will describe the remaining three components: <em>INT<sub>ref</sub></em>, <em>INT<sub>med</sub></em>, and <em>PIE</em>.</p>
+</section>
+<section id="sec-INTref" class="level3">
+<h3 class="anchored" data-anchor-id="sec-INTref">Reference interaction (<em>INT<sub>ref</sub></em>)</h3>
+<p>When we observe a nonzero total effect of an exposure on an outcome, a common thing to do is to test whether the exposure operates indirectly through a posited mediating mechanism(s). However, an observed total effect might wholly (or partly) reflect the operation of an additive interaction between the exposure and a mechanism <em>rather than</em> (or in addition to) a mediation process as is often assumed.</p>
+<p>Yes, you read that right. An observed total effect of an exposure on an outcome might (only) reflect the presence of an interaction effect, and failure to account for this when testing indirect effect hypotheses using traditional mediation tests might result in erroneously attributing moderation to mediation, or vice versa. Moderator madness indeed! If you cannot recall learning about this in your graduate stats courses, then you are not alone.</p>
+<p>At this point, you can probably guess that we account for this possibility by decomposing the total effect into its various possible constituent parts. As implied here, one of the components that may comprise a total effect is the <em>reference interaction</em> (<em>INT<sub>ref</sub></em>), which is an additive interaction that operates only if mediator is present in the absence of the exposure. As <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/MedInt_Ep.pdf">VanderWeele explains (p.750)</a>, the reference interaction component is nonzero when “the effect on the outcome of setting both the exposure and the mediator to present differs from the sum of the effect of having only the exposure present and the effect of having only the mediator present.”</p>
+<p>Though that might sound confusing, this is essentially a classic interaction effect. Do you find yourself preferring our probability notation yet? Either way, let’s use it to calculate <em>INT<sub>ref</sub></em>.</p>
+<p>The <em>INT<sub>ref</sub></em> component is nonzero when [P(Y|<em>do</em>[X=1],<em>do</em>[M=1]) - P(Y|<em>do</em>[X=0],<em>do</em>[M=0])] is not equal to [(P(Y|<em>do</em>[X=1]) - P(Y|<em>do</em>[X=0])] + [(P(Y|<em>do</em>[M=1]) - P(Y|<em>do</em>[M=0])]. Let’s check this with our toy data, using our abbreviated notation for quantities that we have already calculated:</p>
+<p>Y11 - Y00<br>
+= 0.0 - 0.5<br>
+= -0.5</p>
+<p>[Y1 - Y0] + [(P(Y|<em>do</em>[M=1]) - P(Y|<em>do</em>[M=0])]<br>
+= [0.45 - 0.2] + [.11 - 0.5]<br>
+= -0.25 + -0.39<br>
+= -0.64</p>
+<p>Since -0.5 is not equal to -0.64, we would expect a nonzero <em>INT<sub>ref</sub></em> estimate.</p>
+<p>We can use the quantities calculated earlier to estimate the reference interaction using the equations provided in <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/MedInt_Ep.pdf">VanderWeele’s Table 1 on p.751</a>:</p>
+<p><em>INT<sub>ref</sub></em> = (Y11 - Y10 - Y01 + Y00)(M0)<br>
+= (0.0 - 0.5 - 0.125 + 0.5)(0.8)<br>
+= (-.125)(0.8)<br>
+= -0.1</p>
+<p>Here, our toy data show a small reference interaction. What does this mean and where did it come from? Well, first remember that a reference interaction is an additive interaction that operates only if mediator is present in the absence of the exposure. Likewise, we observed the mechanism (sufficient ambient light) when the curtains were open and when they were closed, so a nonzero reference interaction estimate is possible. The logic here, which mirrors that of a classic interaction, is that we must be able to assess the effect of <em>doing</em> X=1 (versus X=0) both in the absence and in the presence of the mechanism. Then, if the estimated effect of <em>doing</em> X=1 differs across those conditions (or across levels of the mechanism), we would have a nonzero exposure-mediator “reference interaction.”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DALL-E-INTref.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A reference interaction is not what it sounds like. Well, maybe it is, if it sounds like an additive interaction effect that operates only if mediator is present in the absence of the exposure. (DALL-E)</figcaption>
+</figure>
+</div>
+<p>Now, recall that we did not stub our toes in that one time we observed closed curtains and the mechanism present (Y11 = 0/1 = 0.0). However, we did stub our toe in one of the eight instances with open curtains and the mechanism present (Y01 = 1/8 = 0.125). Meanwhile, the probability of stubbing our toes was equal across exposure conditions in the absence of the mediator (Y10 = 5/10 = 0.5; Y00 = 1/2 = 0.5).</p>
+<p>From these comparisons, it appears that <em>doing</em> X=1 instead of X=0 (closing curtains) slightly reduced the probability of toe stubbing with the mechanism present (Y11 - Y01 = 0.0 - 0.125 = -.125), whereas <em>doing</em> X=1 instead of X=0 had no effect on the probability of toe stubbing with the mechanism absent (Y10 - Y00 = 0.5 - 0.5 = 0). In the equation above, we essentially used these same comparisons and then weighted the resulting difference-in-differences value by the expectation of observing the mediator in the absence of exposure (i.e., M0 = probability of observing M=1 given we <em>do</em>[X=0]).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Strong caveat: If these were real data, I would strongly recommend against making any inferences from this <em>INT<sub>ref</sub></em> estimate given it was generated using a very small sample (e.g., only n=1 observation for one of the cells). Unfortunately, such <a href="https://journals.sagepub.com/doi/full/10.1177/0049124119826158">noisy and unreliable inferences</a> are all too common in criminology. But, that is an entry for another day.</p>
+<p>One final point about the <em>INT<sub>ref</sub></em> component: As <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/MedInt_Ep.pdf">VanderWeele explains (p.755)</a>, the <em>INT<sub>ref</sub></em> “requires the mediator to operate, but the effect does not come about by the exposure changing the mediator — it simply requires that the mediator is present even when the exposure is absent; the effect is ‘unmediated,’ in the sense that it does not operate by the exposure changing the mediator, but it requires the presence of the mediator nonetheless.” In contrast, the remaining two components (<em>PIE</em> and <em>INT<sub>med</sub></em>) both involve mediation such that <em>doing</em> X (i.e., the exposure) affects the outcome at least partly by changing the mediator. Now, let’s move to the next component.</p>
+</section>
+<section id="sec-PIE" class="level3">
+<h3 class="anchored" data-anchor-id="sec-PIE">Pure indirect effect (<em>PIE</em>)</h3>
+<p>As noted above, when we observe a total effect of an exposure on an outcome, that total effect might also reflect an indirect effect of the exposure operating through a specific mediating mechanism(s). In this four-way decomposition, the “pure indirect effect” (<em>PIE</em>) component is the analogue of this classic indirect effect. Formally, the <em>PIE</em> component represents the effect of the mediator in the absence of the exposure, and it is non-zero only if: (1) the exposure itself affects mediator and (2) the mediator affects the outcome when the exposure is absent.</p>
+<p>Here, closing curtains decreases light in the room, and light reduces the chances of stubbing toes when the curtains are open. Using the equations in <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/MedInt_Ep.pdf">VanderWeele’s Table 1</a>, we can estimate the <em>PIE</em> component using the quantities calculated earlier by estimating the effect of <em>doing</em> M in the absence of X (Y01 - Y00) and then weighting this contrast by the effect of <em>doing</em> X on the mediator (M1-M0):</p>
+<p><em>PIE</em> = (Y01 - Y00)(M1 - M0)<br>
+= (0.125 - 0.5)(0.09 - 0.8)<br>
+= (-0.375)(-0.71)<br>
+= 0.266</p>
+<p>Recall, the total effect of closing the curtains on toe stubbing was 0.255. Closing curtains primarily increases our chances of stubbed toes indirectly by blocking light out of the room. In this case, the indirect effect estimate is quite close to the total effect estimate (0.266 versus 0.255). However, it does not always work out this way. In fact, as we will see, the only reason it worked out this way in our toy example is because the other two nonzero components, <em>INT<sub>ref</sub></em> and <em>INT<sub>med</sub></em>, were of approximately equal magnitude with opposite signs, so they cancel each other out when summing for the total effect.</p>
+<p>This is an important point. If we had relied strictly on the total effect, or on traditional mediation test procedures, to make inferences about the exposure’s effect on the outcome via the primary mediating mechanism, then we would have been close to accurately estimating the indirect effect. However, we would have done so only by luck or accident, and we would have missed completely the other two nonzero interaction components.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DALL-E-surreal-pie.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Pure indirect effects: As American as apple <em>PIE</em>? (DALL-E)</figcaption>
+</figure>
+</div>
+<p>Speaking of those other two interaction components, we already discussed <em>INT<sub>ref</sub></em>; now, let’s move on to <em>INT<sub>med</sub></em>, our fourth component.</p>
+</section>
+<section id="sec-INTmed" class="level3">
+<h3 class="anchored" data-anchor-id="sec-INTmed">Mediated interaction (<em>INT<sub>med</sub></em>)</h3>
+<p>So far, we have discussed controlled direct effects, reference interaction effects, and pure indirect effects. Each of these is analogous (in certain situations) to well-known direct effects, interaction effects (moderation), and indirect effects (mediation), though their empirical connections as distinct components of a total effect may be less widely appreciated or understood.</p>
+<p>This is good time to introduce the most important use cases for decomposition: When there is no exposure-mediator interaction (and strong causal assumptions hold), then traditional approaches to detecting interaction effects or testing indirect effects are often reliable and decomposition procedures may be unnecessary. However, <strong>when there is a nonzero exposure-mediator interaction, then traditional approaches become problematic, decomposition is essential, and the constituent components comprising a total effect become more complex - and potentially more numerous</strong>. For instance, in such situations, we may find a fourth nonzero component also contributes to the total effect - the “mediated interaction” or <em>INT<sub>med</sub></em>.</p>
+<p>The “mediated interaction” or <em>INT<sub>med</sub></em> component represents an additive interaction that operates only if the exposure has an effect on the mechanism. As <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/603/2018/04/MedInt_Ep.pdf">VanderWeele explains (p.750)</a>, when the <em>INT<sub>med</sub></em> component is nonzero, this means that “the exposure causes the mediator, and the presence of the mediator is itself necessary for the exposure to have an effect on the outcome.”</p>
+<p>In our toy example, the probability of stubbing our toes varies across values of X (i.e., whether curtains are open or closed); that is, P(Y|<em>do</em>[X=x],<em>do</em>[M=1]) varies across <em>do</em>[X=0] and <em>do</em>[X=1]. Given the presence of the mechanism (sufficient ambient light), the probability of stubbing toes is higher when the exposure is “absent” (X=0, or curtains open) than it is when the exposure is present (X=1, or curtains closed). We can check this with our data:</p>
+<p>Curtains open: P(Y|<em>do</em>[X=0],<em>do</em>[M=1]) = Y01 = 1/8 = 0.125<br>
+Curtains closed: P(Y|<em>do</em>[X=1],<em>do</em>[M=1]) = Y11 = 0/1 = 0.0</p>
+<p>We can also use the quantities estimated earlier to calculate the <em>INT<sub>med</sub></em> component. Like the <em>INT<sub>ref</sub></em> component, we are essentially generating a weighted difference-in-difference contrast. Like the <em>PIE</em> component, we are weighting that contrast by the effect of <em>doing</em> X on the mediator (M1 - M0):</p>
+<p><em>INT<sub>med</sub></em> = (Y11 - Y10 - Y01 + Y00)(M1 - M0)<br>
+= (0.0 - 0.5 - 0.125 + 0.5)(0.09 - 0.8)<br>
+= (-0.125)(-0.71)<br>
+= 0.089</p>
+<p>Recall, when the mechanism was present in this toy example (i.e., <em>AmpleLight</em>=1), toe stubbing was less likely when the curtains were closed (Y11 = 0.0) than when they were open (Y01 = 0.125). In other words, closing the curtains (<em>do</em>[X=1]) reduced the probability of toe stubbing in the presence of the mechanism. However, this effect was only observed in the presence of the mechanism; when <em>AmpleLight</em>=0, the probability of toe stubbing was the same whether the curtains were open (Y00 = 0.5) or closed (Y10 = 0.5). Moreover, closing the curtain reduced the probability of observing the mechanism (M1 - M0 = 0.09 - 0.80 = -0.71). So, the exposure causes this conditional effect, meaning it is a mediated interaction (<em>INT<sub>med</sub></em>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DALL-E-INTmed.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A mediated interaction is not what it sounds like either. Unless it sounds like an additive interaction that operates only if the exposure has an effect on the mechanism. (DALL-E)</figcaption>
+</figure>
+</div>
+<p>Put differently, since <em>opening</em> the curtains increases light in the room, and opening the curtains appears to increase toe stubbing when light is present, then the exposure actually increases risks of toe stubbing by increasing the conditions (light) under which it amplifies the risks of the outcome occurring. Again, this is a mediated interaction.</p>
+<p>Another caveat: I strongly caution against such real world inferences when data are so sparse; like our <em>INT<sub>ref</sub></em>, this mediated interaction is based on a comparison generated from n=1 observation in one of the cells! If we had more (and real) data, I highly doubt we would observe a negative effect of closing curtains on toe stubbing in the presence of the mechanism. Still, despite the implausibility of this toy example, I hope it helps you better understand the components that comprise a total effect.</p>
+</section>
+<section id="sec-revisitTE" class="level3">
+<h3 class="anchored" data-anchor-id="sec-revisitTE">Revisiting <em>TE</em></h3>
+<p>Before moving on to a simulated example, I want to revisit the <em>total effect</em> (TE) that we just decomposed into four component parts. Recall earlier how we calculated the total effect of X on Y as the difference between the outcome probabilities across exposed and unexposed conditions (Y1 - Y0)?</p>
+<p>TE = Y1 - Y0<br>
+= 0.455 - .20<br>
+= 0.255</p>
+<p>Well, after decomposing these four constituent components of the total effect, we can also calculate the total effect by summing these four components. This is a good way to check that our calculations were correct!</p>
+<p>TE = <em>CDE</em> + <em>INT<sub>ref</sub></em> + <em>INT<sub>med</sub></em> + <em>PIE</em><br>
+= 0 + (-0.1) + 0.089 + 0.266<br>
+= 0.255</p>
+<p>It worked! Whew.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sherlock-worried.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">You were worried. I wasn’t worried.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-intermission2" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intermission2">Second intermission</h2>
+<p>At this point, I am hoping the toy example above helped build your intuitions about the 4-way total effect decomposition and that you feel ready to move on to a somewhat more realistic use case with simulated data.</p>
+<p>In the next post (<a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a>), I will illustrate how to use the <a href="https://bs1125.github.io/CMAverse/"><code>CMAverse</code> package</a> in R to conduct <a href="https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/">causal mediation</a> analysis, which relies on potential outcomes decomposition to disentangle indirect and interaction effects in the presence of a potential exposure-mediator interaction. <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a> will also introduce the important assumptions required to interpret results as estimates of causal effects.</p>
 
 
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In a linear model, if the multiplicative interaction coefficient departs from zero, then you should typically acccount for the possibility of an exposure-mediator interaction. However, do NOT rely on statistical significance of the interaction coefficient to make this determination as those tests are notoriously underpowered. Things get more complicated with nonlinear models, as a substantial additive exposure-mediator interaction on the outcome scale might exist even if the interaction coefficient is near-zero in magnitude on the estimation scale. Recall, this is because nonlinear models are fundamentally interactive: A linear effect of the exposure on the model estimation scale quite often implies a heterogeneous effect of the exposure on the outcome scale across covariate (e.g., mechanism) levels irrespective of the magnitude or significance of the interaction term on the linear estimation scale. <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#example-1">I discussed this issue in Part 1 of this series</a>, and I will provide another example of a substantial exposure-mediator interaction accompanied by a near-zero interaction coefficient in <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3, the next post in the series</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>At this point, you might be wondering: “Do I really need to do this? The [insert] theory I am testing does not predict such an interaction!” Well, failure to examine and adjust for the possibility of an exposure-mediator interaction is equivalent to forcing your model of the data generating process to conform to a strong and potentially incorrect theoretical assumption about underlying data generating processes. In SEM parlance, it is equivalent to “fixing” the effect of X on Y through M to be the same at all values of M. In situations where the effect of X on Y indeed varies across strata of M, failure to account for it could result in biased or incomplete inferences. In contrast, allowing for and decomposing a potential exposure-mediator interaction is, in SEM terms, akin to “freeing” that parameter, thus permitting a test of that strong theoretical assumption. In situations where no such interaction exists, the magnitude of the interaction will approach zero, and traditional and “causal” mediation approaches (e.g., “controlled” and “natural” effect estimates) will converge to the same values. In those situations, decomposition would be unnecessary yet nonetheless informative. In short, there is substantial upside and little downside apart from learning the skills to testing and accounting for exposure-mediator interactions whether or not one exists, yet there are potentially substantial inferential risks to <em>not</em> doing so when one exists. So, just how <em>a priori</em> confident are you in that likely imprecise and discursive theory of yours?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Are you wondering what the (Y11 - Y10 - Y01 + Y00) term represents? Well, you can think of it as contrasting the effect of X (i.e., <em>doing</em> X=1 - <em>doing</em> X=0) in the mechanism’s presence (M=1) versus its absence (M=0). Alternatively, you can also think of it as contrasting the effect of M (i.e,. <em>doing</em> M=1 - <em>doing</em> M=0) in the exposure’s presence (X=1) versus its absence (X=0). Let’s use the latter to show our work:<br>
+(Effect of M | X=1) - (Effect of M | X=0)<br>
+= (Y11 - Y10) - (Y01 - Y00)<br>
+From here, we just do a bit of basic algebra:<br>
+= Y11 - Y10 + (-1)(Y01 - Y00)<br>
+= Y11 - Y10 - Y01 + Y00<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
   author = {Brauer, Jon},
   title = {Moderator {Madness,} {Part} 2},
-  date = {2023-07-19},
+  date = {2024-02-23},
   url = {https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Brauer, Jon. 2023. <span>“Moderator Madness, Part 2.”</span> July 19,
-2023. <a href="https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html">https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brauer, Jon. 2024. <span>“Moderator Madness, Part 2.”</span> February
+23, 2024. <a href="https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html">https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
 <hr>

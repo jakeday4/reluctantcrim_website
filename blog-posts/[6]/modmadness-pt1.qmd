@@ -22,7 +22,10 @@ draft: false
 
 ## Preamble
 
-This is the first of a two-part blog series on modeling moderators in criminological data. I started writing this series as a single entry designed introduce the need and a method for disentangling indirect and interaction effects in the presence of a potential exposure-mediator interaction. That topic is now the focus of [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) in this series. 
+This is the first of a three-part blog series on modeling moderators in criminological data.[^Part2-note] I started writing this series as a single entry designed introduce the need and a method for disentangling indirect and interaction effects in the presence of a potential exposure-mediator interaction. That topic is now the focus of [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) and [Part 3](https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html) in this series. 
+
+[^Part2-note]:
+Initially, I anticipated writing a two-part series. However, the second post ended up being too long for a single entry, so I split it into Parts 2 and 3. Upon realizing this, I revisited Part 1 to make several minor edits to reference Parts 2 and/or 3 (instead of a singular Part 2) throughout.
 
 Along the way, I intended to briefly cover issues I routinely find myself raising in manuscript reviews in criminology related to the estimation and interpretation of interaction effects with binary or skewed count outcome variables. First, estimating interactions with such data using linear regression methods can generate misleading interaction terms that are data artifacts of a poorly fitting model. Second, generalized linear regression models with nonlinear link functions (e.g., logistic, Poisson, and negative binomial regression) may generate coefficients that more accurately summarize the underlying data generating process, but these coefficients - and especially the interaction terms - often are misinterpreted. 
 
@@ -30,7 +33,7 @@ We touched upon this topic in our [previous post on collider bias](https://reluc
 
 Now, let's get started with an "imaginary" story about an imaginary author before moving on to illustrate these issues using imaginary (ok, simulated) data.
 
-## Two papers walk into a bar...
+## Two papers walk into a bar... {#sec-twopapers}
 
 Imagine the following: In one study, a researcher hypothesizes the existence of a causal mediation process, such that *parental support* causes *delinquency* both directly and indirectly through its mediated effect on *strong moral beliefs*. Then, with this theoretical assumption at work, they build linear regression models to test for and then find evidence of an indirect effect, which leads to a published paper describing support for this hypothesized causal process. That assumed causal process can be simply depicted in the following causal diagram or directed acyclic graph (DAG): 
 
@@ -225,11 +228,11 @@ Please, don't leave just yet. I promise this is not another blog entry about pie
 
 [^3]: Perverse structural incentives, which are deeply embedded in [modern academic publishing](https://www.liebertpub.com/doi/10.1089/ees.2016.0223), motivate all sorts of career-oriented pragmatic forays through the [garden of forking paths](http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf) on the way to piecemeal publication. You know, the ones that compel scholars to increase CV lines and citation counts by carving up their measures, switching outcomes, adding new subgroups, swapping analytic methods, variably positing [different “process” models](https://journals.sagepub.com/doi/full/10.1177/25152459221095827) (e.g., main effects; indirect effects; interaction effects; and other combinations of mediation and moderation), and even to commit fraud in pursuit of career advancement.
 
-Those are topics for another day. In this blog series, my main focus is to introduce some common issues criminologists face, often unknowingly, when modeling moderating relationships. Ultimately, my aim in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) will be to build upon the examples in Part 1 to introduce a statistical issue that might be wreaking havoc behind the scenes in many situations like the one described above: the *the inability to distinguish mediation from moderation* in commonly used regression-based tests of indirect or interaction effects in the presence of an *exposure-mediator interaction*. In doing so, I will make the case that both studies should really be combined into a single study in which the researcher explicitly models both the mediating and moderating relationships and then uses a potential outcomes approach to decompose the overlapping indirect and interaction effects. But, before we get there, I want to point out a couple other interaction-related pitfalls that threaten to snare researchers on the road to testing interaction effects.
+Those are topics for another day. In this blog series, my main focus is to introduce some common issues criminologists face, often unknowingly, when modeling moderating relationships. Ultimately, my aim in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) and [Part 3](https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html) will be to build upon the examples in Part 1 to introduce a statistical issue that might be wreaking havoc behind the scenes in many situations like the one described above: the *the inability to distinguish mediation from moderation* in commonly used regression-based tests of indirect or interaction effects in the presence of an *exposure-mediator interaction*. In doing so, I will make the case that both studies should really be combined into a single study in which the researcher explicitly models both the mediating and moderating relationships and then uses a potential outcomes approach to decompose the overlapping indirect and interaction effects. But, before we get there, I want to point out a couple other interaction-related pitfalls that threaten to snare researchers on the road to testing interaction effects.
 
-### When data are normally non-normal, it's interactions all the way down
+### When data are normally non-normal, it's interactions all the way down {#sec-nonnormal}
 
-Before attempting to tackle the problem of distinguishing mediation from moderation (in Part 2), let's first consider that the outcome variable in the imaginary papers discussed above - delinquent behaviors - is a relatively rare event. As such, delinquency measures tend to be quite positively skewed, resembling rare Poisson or negative binomial event count distributions. 
+Before attempting to tackle the problem of distinguishing mediation from moderation (in Parts 2 and 3), let's first consider that the outcome variable in the imaginary papers discussed above - delinquent behaviors - is a relatively rare event. As such, delinquency measures tend to be quite positively skewed, resembling rare Poisson or negative binomial event count distributions. 
 
 Why does this matter? Well, [as some criminologists have warned](https://www.jstor.org/stable/23366756), testing a moderation hypothesis using a multiplicative interaction term in a linear regression model fit to a highly skewed outcome variable like delinquency can generate significant interaction effect estimates that are statistical artifacts caused by improper model specification. Meanwhile, if these outcomes are modeled using generalized linear equations with nonlinear link functions (e.g., logistic; Poisson; negative binomial), then the interpretation of [interaction terms](https://www.sciencedirect.com/science/article/abs/pii/S0165176503000326) changes drastically and, technically, all model coefficients are conditional - essentially, it is interactions all the way down. 
 
@@ -237,25 +240,25 @@ Put simply, conceptualizing, estimating, and interpreting interaction effects is
 
 !["It's not you, it's me." Nonlinear interactions are statistical heartbreakers.](not-norm.jpg)
 
-## Outline of the post
+## Outline of the post {#sec-outline}
 
 In Part 1, I will illustrate some of these issues with two examples using simulated data. 
 
-### Example 1
+### Example 1 {#sec-Example1}
 
 In the first example, I assume the causal process from the first imaginary paper ("paper 1") is the true underlying data generating process by simulating data that include a direct effect of *parental support* on *delinquency* and an indirect effect through *strong moral beliefs*. Importantly, in this first example, I do not include a multiplicative interaction term (i.e., an exposure-mediator interaction) in the linear equation predicting logged delinquency event rates when simulating the data. So, if a linear model estimates a non-negligible and statistically significant interaction coefficient, then the result might be due to random sampling variation, or it could be an artifact from inappropriate model specification (e.g., applying a linear model to a skewed outcome variable). 
 
 The central aim of this first example is to demonstrate such an interaction artifact in a linear model. Along the way, I hope to reinforce some important intuitions about generalized linear models with nonlinear link functions (e.g., logistic; Poisson; negative binomial): (1) that these models are fundamentally interactive in the outcome [scale of interest](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/90179/hesr1314.pdf%3Fsequence%3D1); and (2) that you should [ignore the sign and statistical significance of interaction coefficients](https://sociologicalscience.com/articles-v6-4-81/) and, instead, improve inferences through plotting potential interactions in the outcome scale of interest. 
 
-### Example 2
+### Example 2 {#sec-Example2}
 
 In the second example, I assume that the true data generating process underlying both imaginary papers (i.e., "paper 1" and "paper 2" in our example above) is an integrated causal model in which moral beliefs is both a mediating and moderating mechanism. That is, in the simulated data for the second example, there is a true indirect effect of *parental support* on delinquency through *strong moral beliefs* as well as a direct effect of *parental support* on *delinquency* that varies systematically across levels of (i.e., "interacts with") *strong moral beliefs*. 
 
 In Part 1, I will simply illustrate how adding a small multiplicative (exposure-mediator) interaction term on the estimation scale might further change predicted counts on natural outcome scale. In doing so, I will use this example again to reinforce the lesson that you should ignore the sign and statistical significance of interaction coefficients from nonlinear models. 
 
-Then, in Part 2 of the blog series, I will pick up here using the same simulated data from this example to illustrate how the addition of an exposure-mediator interaction entangles indirect and interaction effects in a way that requires decomposition of these effects. I will also illustrate how one can accomplish effect decomposition with a [causal mediation approach](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/) that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates.  
+In Parts 2 and 3 of the blog series, I will illustrate how an exposure-mediator interaction entangles indirect and interaction effects in a way that requires decomposition of these effects. Part 3 will also pick up here using similar simulated data from this example to illustrate how one can accomplish effect decomposition in R with a [causal mediation approach](https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/) that involves clever estimation of potential outcomes and transparent acknowledgement of strong causal assumptions underlying those estimates.
 
-## Example 1: No interaction on linear estimation scale
+## Example 1: No interaction on linear estimation scale {#sec-Ex1}
 
 Let's simulate some data.[^4] *Parental support* is a continuous, normally distributed, mean-centered variable. *Strong moral beliefs* is a negatively skewed ordinal variable ranging from 0 to 5, created by reverse-scoring a truncated Poisson-distributed *weak moral beliefs* variable. *Delinquency* is a positively skewed, Poisson-distributed event count variable ranging from 0 to a truncated theoretical maximum of 7 (observed max = 6 in first simulation). 
 
@@ -327,7 +330,7 @@ ParSupplot + StrgMoralplot + Delqplot +
 
 ```
 
-### Model & plot interaction artifact 
+### Model & plot interaction artifact {#sec-Ex1mod}
 
 Now, let's build a model for our hypothetical "paper 2" in which we test the hypothesis that *parental support* and *strong moral beliefs* interact to predict delinquency. 
 
@@ -383,7 +386,7 @@ Ex1tab2 <- regsum(glm1) %>%
 
 ```
 
-#### Results (Simulation 1) 
+#### Results (Simulation 1) {#sec-Ex1results}
 
 *Note: Click on the tabs to switch between models.*
 
@@ -433,7 +436,7 @@ plot_lm1 + plot_glm1 + plot_layout(guides = 'collect') &
 
 A comparison of the effects plotted in the predicted event rate metric suggests there is an interaction in the linear model (i.e., the predicted event rate lines are not parallel) but no interaction in the nonlinear model (i.e., lines are nearly parallel). Recall, the data were simulated from a mediation model without any interactions between these two causes in the linear estimation scale, so we suspect **the observed interaction in the linear model outcome scale is likely a data artifact created by applying a linear model to a skewed outcome variable**.  
 
-### In nonlinear models, it's interactions all the way down
+### In nonlinear models, it's interactions all the way down {#sec-nonlinear}
 
 You might be thinking that we can solve this interaction artifact problem by simply specifying a Poisson distribution rather than a linear model. After all, the nonlinear Poisson model is a better match to the underlying data generating process and, as desired, that model does not show an interaction in the outcome scale. That is certainly important since, as I noted earlier, applying a linear model to skewed outcome data indeed can generate interaction artifacts. Unfortunately, things are not so simple. When we use nonlinear link functions, *all* our model coefficients are conditional, and our model-based predictions are inherently scale-dependent. 
 
@@ -447,7 +450,7 @@ I will try to further strengthen this intuition by slightly modifying the first 
 
 ![Greenland & Rothman (1998) said it with the best words. But reading is so hard... ;)](zach-interact.jpg)
 
-### Example 1b: Slight modification to simulated data 
+### Example 1b: Slight modification to simulated data  {#sec-Ex1b}
 
 In the code below, I made only one slight modification to the data simulation in Example 1: I specified a stronger linear effect of *moral beliefs* on *delinquency* by increasing from *b* = 0.4 to *b* = 0.6. I did not add a multiplicative interaction term, nor did I explicitly change the functional form or nature of the relationships in our simulation. Rather, I simply increased the strength of the linear correlation between the mediator and the outcome. Let's see what happens. 
 
@@ -510,7 +513,7 @@ plot_glm1b <- plot_model(glm1b, type = "pred",
 
 ```
 
-#### Results (Sim.1b, Stronger covariate effect) 
+#### Results (Sim.1b, Stronger covariate effect) {#sec-Ex1bresults}
 
 :::: {.panel-tabset}
 ##### Linear model
@@ -539,7 +542,7 @@ As before, I specified a mediating relationship but did not specify an interacti
 
 Again, this has occurred despite the fact that the data were generated from a mediation model without a multiplicative interaction term in the equation, so what is happening? Well, the simulated relationships are linear and non-interactive (parallel) **in the estimation scale** - in this case, when predicting logged delinquency event rates. However, remember how I said that *all* model coefficients in generalized linear models with nonlinear link functions are conditional and model-based predictions are inherently scale-dependent? This is an example of what I meant. I did not add an interaction in the linear model - I only increased the strength of the relationship between a predictor and the outcome. Yet, this change affected the outcome scale and, likewise, the model coefficients generated to describe predictor-outcome relationships changed as well. Moreover, the nonlinear transformation used to plot our results on the scale of interest - in this case, exponentiating the linear equation to plot predicted delinquency event counts - causes an interaction (i.e., nonparallel lines) **in the outcome scale of interest**. 
 
-### Example 1c: A different slight modification to simulated data 
+### Example 1c: A different slight modification to simulated data {#sec-Ex1c}
 
 Still not convinced? Let's go back to the first simulation (Sim.1), then add an exogenous covariate that is related to delinquency but unrelated to either parental support or moral beliefs to the data and our regression models and see what happens. This time, we will focus solely on the nonlinear model, and we will present the coefficients and plots for both this Sim.1c and the original Sim.1 to permit comparisons of the focal interaction term on the log event rate scale and on the predicted event rate scale. 
 
@@ -591,7 +594,7 @@ plot_glm1c <- plot_model(glm1c, type = "pred",
 
 ```
 
-#### Results (Sim.1c, Exogenous covariate) 
+#### Results (Sim.1c, Exogenous covariate) {#sec-Ex1cresults}
 
 ::::: {.panel-tabset}
 
@@ -620,7 +623,7 @@ Hopefully, you have seen enough to be convinced that one should never rely simpl
 
 ![Don't hate nonlinear interactions. But do treat them more like bees than honey.](pooh-nonlin.jpg)
 
-### Example 1: Fit between model predictions & simulation function 
+### Example 1: Fit between model predictions & simulation function {#sec-Ex1fit}
 
 Now, let's return to the initial simulated data (Sim.1) and overlay a plot of an idealized function that closely represents the causal equation used to generate the simulated the data (dashed line) with plots of the predicted event counts from the linear and nonlinear models. This should give us a good sense of how well our model-based predictions fit or accurately describe the underlying data-generating process. 
 
@@ -768,7 +771,7 @@ plot_glm1fitb <- plot_glm1fit +
 
 Again, the nonlinear model is a better fit to the idealized function than the linear model. Additionally, the one exception where the nonlinear model predictions diverge from the idealized data-generating function is not unexpected. First, there is increased sampling variability in the prediction space where data are especially sparse (i.e., low parental support & extremely weak moral beliefs, or top left section of each plot). Second, I resampled out-of-bounds Poisson-generated observations in this sparse sampling space (e.g., strong moral beliefs < 0; delinquency > 7) to better match truncated ordinal measures found in real-world data, and the simple idealized function (i.e., the dashed line) does not perfectly capture this more complex mixture process used to generate the simulated data.
 
-### Pair introverted coefficients with extroverted plots on the outcome scale
+### Pair introverted coefficients with extroverted plots on the outcome scale {#sec-plotscale}
 
 I hope it is clear by now that using a generalized linear model with a nonlinear link function to describe a set of relationships between variables complicates things, as these models are fundamentally interactive. Moreover, the nature of the interactions in these models varies across scales of estimation or interest (e.g., log odds/event rate; predicted probability/event count; odds/event rate ratio) in ways that often are too difficult to grasp from model coefficients alone. 
 
@@ -780,9 +783,9 @@ Rather, you might think of your regression coefficients as panelists at a confer
 
 So, instead of ditching these coefficients, we should instead aim to be extremely cautious with modeling and interpreting findings and, likewise, we should educate ourselves about and commit to adopting good practices when using such models. For instance, we can pair our introverted nonlinear coefficients with plots in the  outcome scale of interest for meaningful interpretations. Such visualizations are the flashy, tech savvy, extroverted panelist that has learned there is substantial social value in translating Professor Introvert's equations into visualizations that maintain their descriptive accuracy while delivering them in an aesthetically pleasing package that is intellectually accessible to the audience.
 
-Now, we should be ready to move on to Example 2, where I will introduce an exposure-mediator interaction to the simulated data. Recall, in Part 2 of this blog series, I will use these same simulated data from Example 2 to learn about decomposing indirect and interaction effects with a potential outcomes approach. In the conference organized to describe hidden signals in your data, potential outcomes estimates are the venerable keynote speakers that inspire us to do more while also secretly stoking our insecurities by making us question things that we thought were well understood. For now, I will simply illustrate how the regression coefficients and outcome scale plots change with the addition of a small exposure-mediator interaction.
+Now, we should be ready to move on to Example 2, where I will introduce an exposure-mediator interaction to the simulated data. Recall, in Parts 2 and 3 of this blog series, I will use similar simulated data from Example 2 to learn about decomposing indirect and interaction effects with a potential outcomes approach. In the conference organized to describe hidden signals in your data, potential outcomes estimates are the venerable keynote speakers that inspire us to do more while also secretly stoking our insecurities by making us question things that we thought were well understood. For now, I will simply illustrate how the regression coefficients and outcome scale plots change with the addition of a small exposure-mediator interaction.
 
-## Example 2: Multiplicative interaction on linear estimation scale
+## Example 2: Multiplicative interaction on linear estimation scale {#sec-Ex2}
 
 In simulating data for Example 2 (Simulation 2), I modified the first simulated dataset (Sim.1) by adding a small multiplicative interaction term to the linear equation predicting delinquency (*b* = -0.12 x ParentSupport x WeakMoralBlfs). Then, after making this small change and simulating the data, I once again tabled results from linear and nonlinear Poisson regression models, plotted the predicted delinquency event rates for both models, and overlayed the idealized data generating function (dashed lines) to help visualize model fit.
 
@@ -909,7 +912,7 @@ plot_glm2fit <- plot_glm2 +
 
 ```
 
-#### Results (Simulation 2) 
+#### Results (Simulation 2) {#sec-Ex2results}
 
 :::: {.panel-tabset}
 ##### Linear model
@@ -1007,9 +1010,9 @@ plot_lm2xlm1 + plot_glm2xglm1 + plot_layout(guides = 'collect') &
 
 See how the addition of a small interaction on the linear estimation scale changed the slopes of the predicted delinquency event rates? Note, too, that this occurs even in the nonlinear model, despite the fact that the interaction coefficient was essentially zero magnitude (*b* = 0.00)! 
 
-In addition to examining changes in predicted delinquency event rates, we could discuss this interaction in terms of introducing "excess risks" of delinquency. But, how might we interpret the interaction and precisely estimate those excess risks in light of the co-occuring mediation process that we also know exists in these data? This will be the focus of [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) of this series. 
+In addition to examining changes in predicted delinquency event rates, we could discuss this interaction in terms of introducing "excess risks" of delinquency. But, how might we interpret the interaction and precisely estimate those excess risks in light of the co-occurring mediation process that we also know exists in these data? This will be the focus of [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) and [Part 3](https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html) of this series. 
 
-## Intermission 
+## Intermission {#sec-intermission}
 
 Ok, that's enough of the from me on this topic. There are a lot of great resources out there but, to wrap up this first example, I will echo some great advice from [Trenton Mize's  (2019, p.112-3) insightful primer on the topic](https://sociologicalscience.com/articles-v6-4-81/):   
 
@@ -1036,6 +1039,6 @@ data."
 
 In this post, I have tried to build or strengthen your intuition about the importance of the first four points. The last two points (#5 & #6) about testing interactions with marginal effects are also extremely important, but I will need to wait to tackle these in greater detail in a different post. Or, better yet, read Andrew Heiss' excellent ["Marginalia" blog post on the topic](https://www.andrewheiss.com/blog/2022/05/20/marginalia/), followed by his post on [marginal effects in generalized linear mixed models](https://www.andrewheiss.com/blog/2022/11/29/conditional-marginal-marginaleffects/).  
 
-As the curtains close on Part 1 and the stage is being reset, go stretch your limbs and grab refreshments, then return to check out [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) of this series. In that post, you will learn why our moderator madness work is not yet done: There is an interaction between the focal cause or exposure (parental support) and the mediator (moral beliefs) in the Example 2 data (Sim.2), which means mediation and moderation are statistically entangled! Return to your seats for the second act to learn how to decompose indirect and interaction effects in the presence of an exposure-mediator interaction using a potential outcomes approach. 
+As the curtains close on Part 1 and the stage is being reset, go stretch your limbs and grab refreshments, then return to check out [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) and [Part 3](https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html) of this series. In that post, you will learn why our moderator madness work is not yet done: There is an interaction between the focal cause or exposure (parental support) and the mediator (moral beliefs) in the Example 2 data (Sim.2), which means mediation and moderation are statistically entangled! Return to your seats for the second act to learn how to conduct a 4-way decomposition of a total effect in the presence of an exposure-mediator interaction using a potential outcomes approach. 
 
-![Looking forward to Part 2? Just don't hold your breath while you wait.](still-waiting.jpg)
+![Parts 2 and 3 have finally arrived! Hope you did not hold your breath as you waited.](still-waiting.jpg)
