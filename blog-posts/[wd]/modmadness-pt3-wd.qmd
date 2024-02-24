@@ -21,13 +21,23 @@ draft: true
 
 This is the third and final entry in a three-part blog series on modeling moderators in criminological data. In [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html), I covered issues related to estimating and interpreting interaction effects with binary or skewed count outcome variables. In [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html), I introduced counterfactual causality, exposure-mediator interactions, and a potential outcomes framework for conducting a four-way decomposition of a total effect into controlled direct effect (*CDE*), pure indirect effect (*PIE*), reference interaction (*INT~ref~*), and mediated interaction (*INT~med~*) components. 
 
-In this final entry, I illustrate how to use the `CMAverse` software package in R to conduct "causal mediation" analysis, which relies on the 4-way potential outcomes decomposition introduced in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) to disentangle indirect and interaction effects in the presence of a potential exposure-mediator interaction.[^Theory-note] Along the way, I will also introduce the important assumptions required to interpret "causal mediation" results as estimates of causal effects.
+In this final entry, I illustrate how to use the `CMAverse` software package in R to conduct "causal mediation" analysis, which relies on the 4-way potential outcomes decomposition introduced in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html) to disentangle indirect and interaction effects in the presence of a potential exposure-mediator interaction. Along the way, I will also introduce the important assumptions required to interpret "causal mediation" results as estimates of causal effects.
 
-[^Theory-note]:
-I included the following footnote in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html#fn2), but it bears repeating here: 
-"At this point, you might be wondering: 'Do I really need to do this? The [insert] theory I am testing does not predict such an interaction!' Well, failure to examine and adjust for the possibility of an exposure-mediator interaction is equivalent to forcing your model of the data generating process to conform to a strong and potentially incorrect theoretical assumption about underlying data generating processes. 
-In SEM parlance, it is equivalent to 'fixing' the effect of X on Y through M to be the same at all values of M. In situations where the effect of X on Y indeed varies across strata of M, failure to account for it could result in biased or incomplete inferences. In contrast, allowing for and decomposing a potential exposure-mediator interaction is, in SEM terms, akin to 'freeing' that parameter, thus permitting a test of that strong theoretical assumption. In situations where no such interaction exists, the magnitude of the interaction will approach zero, and traditional and 'causal' mediation approaches (e.g., 'controlled' and 'natural' effect estimates) will converge to the same values. In those situations, decomposition would be unnecessary yet nonetheless informative. 
+## Do I really need to learn this?
+
+Do you ever examine interaction effects? If so, is it ever plausible that the hypothesized moderator also mediates the effect of the exposure (i.e., treatment or focal causal variable)? 
+
+Do you ever test for indirect effects? If so, is it ever plausible that the hypothesized mediator also interacts with the exposure (treatment or focal causal) variable? In other words, is it possible that the exposure variable's effect could differ across levels of the mediator, or is it possible that the mediator's effect could differ across exposed and unexposed groups? 
+
+Do you work with data (e.g., crime or delinquency counts) for which nonlinear modeling approaches (e.g., Poisson regression) are more appropriate than traditional linear regression procedures? When testing indirect effects with such data, do you find yourself making concessions (e.g., dichotomizing data or using linear models anyway) because the software programs you use to test for mediation are restricted to a limited set of specific (e.g., linear; logistic) distributions? 
+
+If you answered "YES" to any of the above questions, then you should probably learn about causal mediation procedures. If you said "NO" to the first two questions, consider the following footnote that I included in [Part 2](https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html#fn2) of this series: 
+
+> "At this point, you might be wondering: 'Do I really need to do this? The [insert] theory I am testing does not predict such an interaction!' Well, failure to examine and adjust for the possibility of an exposure-mediator interaction is equivalent to forcing your model of the data generating process to conform to a strong and potentially incorrect theoretical assumption about underlying data generating processes.  
+In SEM parlance, it is equivalent to 'fixing' the effect of X on Y through M to be the same at all values of M. In situations where the effect of X on Y indeed varies across strata of M, failure to account for it could result in biased or incomplete inferences. In contrast, allowing for and decomposing a potential exposure-mediator interaction is, in SEM terms, akin to 'freeing' that parameter, thus permitting a test of that strong theoretical assumption. In situations where no such interaction exists, the magnitude of the interaction will approach zero, and traditional and 'causal' mediation approaches (e.g., 'controlled' and 'natural' effect estimates) will converge to the same values. In those situations, decomposition would be unnecessary yet nonetheless informative.  
 In short, there is substantial upside and little downside apart from learning the skills to testing and accounting for exposure-mediator interactions whether or not one exists, yet there are potentially substantial inferential risks to *not* doing so when one exists. So, just how *a priori* confident are you in that likely imprecise and discursive theory of yours?" 
+
+If you ever test moderation or mediation hypotheses, then it is generally [a good idea to incorporate the evaluation of exposure-mediator interactions](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6992469/) into your research workflow. The "causal mediation" approach I describe in this post is well-suited for this task. It is also generally applicable to a wide variety of data analytic situations and distributional types for exposures, mediators, and outcomes. For example, the `CMAverse` package in R introduced below [can be applied to various combinations](https://bs1125.github.io/CMAverse/) of continuous, binary, count, nominal, ordinal, and survival data. 
 
 ## Have you read Parts 1 and 2? {#sec-readfirst}
 
@@ -224,18 +234,18 @@ Indirect Effects: Instead of encountering a *pure indirect effect* (*PIE*) estim
 
 Recall, controlled direct effects hold the mediator constant at a specific value (M=m). For example, a controlled direct effect (*CDE*) might contrast expected outcomes across A=0 and A=1 while holding the mechanism constant at a specific value like M=0. 
 
-Understanding natural effects requires comprehending and extending upon the counterfactual contrasts underlying the *CDE* or described in Part 2. Remember that, in the presence of mediation, the mediator is expected to change as the exposure changes. So, setting the mediator to a constant value (e.g., M=0) may not provide a realistic or "natural" contrast. Natural effects allow the mediator to vary as it "naturally" would across exposure conditions, and they are then estimated by holding the mediator constant at specific counterfactual values that the mediator would be expected to take under specified exposure conditions. For example, we might estimate a contrast in Y across values A=0 and A=1 when set M at the value we would expect it to be when we do[X=0] (i.e., M0); alternatively we might estimate the contrast when M is set to the value we would expect it to be when we do[X=1] (i.e., M1). 
+Understanding natural effects requires comprehending and extending upon the counterfactual contrasts underlying the *CDE* described in Part 2. Remember that, in the presence of mediation, the mediator is expected to change as the exposure changes. So, setting the mediator to a constant value (e.g., M=0) may not provide a realistic or "natural" contrast. Natural effects allow the mediator to vary as it "naturally" would across exposure conditions, and they are then estimated by holding the mediator constant at specific counterfactual values that the mediator would be expected to take under specified exposure conditions. For example, we might estimate a contrast in Y across values A=0 and A=1 when set M at the value we would expect it to be when we do[A=0] (i.e., M0); alternatively we might estimate the contrast when M is set to the value we would expect it to be when we do[A=1] (i.e., M1). 
 
-For a more detailed example, a (pure) natural direct effect might be estimated as a contrast between: (1) the expected outcome value when X=1 and M is set to its expected value when X=0 and (2) the expected outcome when X=0 and M is still set to its expected value when X=0. Modifying the notation used above, you might summarize this contrast as Y(do[X=1],do[M~X=0~]) - Y(do[X=0],do[M~X=0~]), or Y10 - Y00. You might notice that this overlaps with the notation presented in Part 2; however, that post presented simplified "natural" contrasts for the sake of clarity in explaining the basic decomposition components. It is important to realize, though, that do[M~X=0~] is not necessarily the same as setting M to m=0, *unless* the mechanism is expected to equal "0" when X=0.[^Natural-note] 
+For a more detailed example, a (pure) natural direct effect might be estimated as a contrast between: (1) the expected outcome value when A=1 and M is set to its expected value when A=0 and (2) the expected outcome when A=0 and M is still set to its expected value when A=0. Modifying the notation used above, you might summarize this contrast as Y(do[A=1],do[M~A=0~]) - Y(do[A=0],do[M~A=0~]), or Y10 - Y00. You might notice that this overlaps with the notation presented in Part 2; however, that post presented simplified "natural" contrasts for the sake of clarity in explaining the basic decomposition components. It is important to realize, though, that do[M~A=0~] is not necessarily the same as setting M to m=0, *unless* the mechanism is expected to equal "0" when A=0.[^Natural-note] 
 
 [^Natural-note]: 
-Note, too, that the Y(do[X=1],do[M~X=0~]) may be an unobservable counterfactual condition (e.g., in the presence of mediation). We cannot in fact simultaneously observe Y with X set to =1 and M set to equal its expected value when X=0. After all, if we do X=1 and X has an effect on M, then M would also change to its (population average) value at X=1; M would not stay at its expected value when X=0! [These slides](https://www.nimhd.nih.gov/docs/hd-workshop/day1/roleWorkInHD-2020_10_kaufman_mediationAnalysesToRacialEthnic.pdf) (especially slide 12) offer a concise description of this issue.
+Note, too, that the Y(do[A=1],do[M~A=0~]) may be an unobservable counterfactual condition (e.g., in the presence of mediation). We cannot in fact simultaneously observe Y with X set to =1 and M set to equal its expected value when A=0. After all, if we do A=1 and X has an effect on M, then M would also change to its (population average) value at A=1; M would not stay at its expected value when A=0! [These slides](https://www.nimhd.nih.gov/docs/hd-workshop/day1/roleWorkInHD-2020_10_kaufman_mediationAnalysesToRacialEthnic.pdf) (especially slide 12) offer a concise description of this issue.
 
 !["Natural" effects are estimated by allowing the mediator to vary as it naturally would across exposure conditions and then setting it to specific counterfactual values.](its-natural.jpg)
 
 You can find [more detailed descriptions elsewhere](https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation) of the differences between controlled and natural effects. Once you wrap your head around these important distinctions between counterfactual contrasts and their relations to natural and controlled effects, then you may find yourself beginning to comprehend other important issues underlying mediation, moderation, and total effect decomposition. 
 
-First, in a linear model without interactions (i.e., where *INT~ref~*=0 and *INT~med~*=0), the *CDE* estimates will not change across different values of M. Additionally, in such models, controlled and natural direct effects will converge on the same estimates. This is because doing X=1 (versus X=0) will have the same effect on Y at all values of M, so doing M=0 or doing M~X=0~ will generate the same direct effect estimate. This should become apparent in the examples using simulated data below. 
+First, in a linear model without interactions (i.e., where *INT~ref~*=0 and *INT~med~*=0), the *CDE* estimates will not change across different values of M. Additionally, in such models, controlled and natural direct effects will converge on the same estimates. This is because doing A=1 (versus A=0) will have the same effect on Y at all values of M, so doing M=0 or doing M~A=0~ will generate the same direct effect estimate. This should become apparent in the examples using simulated data below. 
 
 Second, as you have probably figured out by now, things are not as straightforward in more complex models with nonlinear link functions or exposure-mediator interactions. For instance, when the effect of the exposure varies across levels of the mechanism, as it would in the presence of an exposure-mediator interaction, controlled (Y1m - Y0m) and natural (e.g., Y10 - Y00) direct effect estimates may vary as well. This, too, should become apparent in the examples below.
 
@@ -363,7 +373,7 @@ Finally, there are relatively few observations at the lowest value (M=0) of the 
 
 Now that I have simulated data resembling real-world self-reported criminological data, my next step will be to build regression models and then estimate and plot marginal effects of parental support on delinquency at different levels of strong moral beliefs to visualize any exposure-mediator interactions in these data. 
 
-As I explained in [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html), I will want ultimately to build a generalized linear model with a nonlinear link function that can flexibly describe the data generating processes causing the skewed distributions and nonlinearities observed in the simulated data. Additionally, I will want to add an interaction term to that model to account for the possibility of an exposure-mediator interaction on the estimation scale.
+As I explained in [Part 1](https://reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html), I will want to build a generalized linear model with a nonlinear link function that can flexibly describe the data generating processes causing the skewed distributions and nonlinearities observed in the simulated data. Additionally, I will want to add an interaction term to that model to account for the possibility of an exposure-mediator interaction on the estimation scale.
 
 Yet, I will start by presenting results from a simple linear interaction model. Why? Well, because so many researchers in our field seem to be most comfortable, if not outright obsessed, with simple linear models. What else explains our field's collective unwillingness to move on from them? 
 
@@ -650,7 +660,7 @@ Now, for some in our field, documenting an additive interaction like this, wheth
 
 [Part 1's "Imaginary Paper #2"](fake_paper2.jpg)
 
-Yet, note that this model does not seem to account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. Moreover, since the exposure causes the mechanism, is the observed interaction an example of a "mediated interaction" (*INT~med~*)? Or, is this an example of a reference interaction (*INT~ref~*), or perhaps both? We will use CMAverse to answer this question soon, but you might be able to intuit the answer from prediction plots and with an understanding of what these two components represent that you gained from the toe-stubbing example in Part 1. 
+Yet, note that this model does not seem to account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. Moreover, since the exposure causes the mechanism, is the observed interaction an example of a "mediated interaction" (*INT~med~*)? Or, is this an example of a reference interaction (*INT~ref~*), or perhaps both? We will use CMAverse to answer this question soon, but you might be able to intuit the answer from prediction plots and with an understanding of what these two components represent that you gained from the toe-stubbing example in Part 2. 
 
 Before using CMAverse, I want to first illustrate a "traditional" approach to testing for indirect effects. Commonly, researchers in our field might use what is popularly known as the classic ["Baron and Kenny" (1986) causal steps approach](https://www.psych.mcgill.ca/perpg/fac/falk/tutorials/mediation/methods/#baron-kenny-1986) to detecting indirect effects. This "traditional" approach to testing mediation hypotheses usually involves estimating a series of regression models and then, depending upon the specific procedures adopted, estimating a "difference in coefficients" or "product of coefficients" representing causal path estimates (e.g., *ab* paths) paired with a test of significance. (See [MacKinnon and colleagues' 2002](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2819363/) paper, and especially their Table 1, for a summary of these traditional approaches).[^Kenny-note] 
 
@@ -673,7 +683,7 @@ The estimate is also statistically significant. Of course, with a simulated samp
 
 To me, a better question here might be whether, given a causal indirect effect of this estimated magnitude, a change in exposure (e.g., from "0" to "1") would be predicted to generate differences of substantively meaningful magnitudes on the outcome scale indirectly through a mechanistic change in the mediator. You might notice that our interaction plots above depicting predicted marginal effects provide us substantially greater leverage for answering this type of question. 
 
-Still, we are on a mission here, so I will avoid the temptation to embark on a yet another tangent, this time about effect sizes. Instead, I will simply note that this indirect effect output and path diagram might be viewed as sufficient for some scholars in our field to declare another contribution and submit yet another paper to the publication pile. (Remember [hypothetical paper #1](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Part 1?)   
+Still, we are on a mission here, so I will avoid the temptation to embark on a yet another tangent, this time about effect sizes. Instead, I will simply note that this indirect effect output and path diagram might be viewed as sufficient in our field to declare another contribution and submit yet another paper to the publication pile. (Remember [hypothetical paper #1](https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar) from Part 1?)   
 
 [![](fake_paper1.jpg)](fake_paper1.jpg)
 
@@ -729,7 +739,7 @@ est2dattab %>%
 ### Default plot: linear no EMint
 ```{r}
 ggcmest(est2) +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8)) 
 
 ```
 
@@ -747,9 +757,11 @@ First, looking at the results, you will notice that all the CMAverse direct effe
 
 This is also what happens by default in the traditional "product of coefficients" mediation approach. In fact, you can see the estimates from both approaches converge in this case; that is, the "traditional" direct, indirect, and total effect estimates are equivalent to the comparable *CDE*, *PNIE*, and *TE* effect estimates from the CMAverse model.
 
-The "pm" or "prop_med" estimates refer to "proportion mediated" or the proportion of the total effect attributable to mediation. Though they are included here to show equivalence across traditional and CMAverse output, I will not discuss proportion measures moving forward and will drop most proportion estimates from my custom tables. Proportion mediated estimators can be useful for interpreting relative contributions of components under certain assumptions and conditions (e.g., no opposite-signed direct or indirect effects), though too often those assumptions are untenable and, when they are, the properties of these estimators become unreliable. 
+The "pm" or "prop_med" estimates refer to "proportion mediated" or the proportion of the total effect attributable to mediation. Though they are included here to show equivalence across traditional and CMAverse output, as explained later, I will not focus much on proportion measures in this entry. 
 
-Also, with an exposure variable with more than two levels, note that I could have defined different meaningful contrasts (e.g., -1SD vs. 1SD; max vs. min). Recall that ParentSupport is simulated as a standardized exposure variable, so by setting `astar=0` and `a=1`, I am specifying the exposure contrast as the predicted difference in Y at mean parental support values (ParentSupport=0) and +1SD parental support values (ParentSupport=1). The setting `mval = list(0)` indicates that I want controlled direct effect estimates to be calculated at m=0 (StrgMoralBlfs=0).    
+Also, with an exposure variable with more than two levels, note that I could have defined different meaningful contrasts (e.g., -1SD vs. 1SD; max vs. min). Recall that ParentSupport is simulated as a standardized exposure variable, so by setting `astar=0` and `a=1`, I am specifying the exposure contrast as the predicted difference in Y at mean parental support values (ParentSupport=0) and +1SD parental support values (ParentSupport=1). The setting `mval = list(0)` indicates that I want controlled direct effect estimates to be calculated at m=0 (StrgMoralBlfs=0).
+
+You might also wonder why confidence intervals are asymmetric around point estimates in these tables and plots. This is because "bootstrap" is the default inference method for estimating standard errors and confidence intervals [in CMAverse](https://bs1125.github.io/CMAverse/reference/cmest.html). Unlike the well-known "delta" method (available for some models), which calculates confidence intervals using approximations to a normal distribution, this method estimates percentile-based confidence intervals using the standard deviations of estimates from bootstrapped samples. Since indirect effect estimators (e.g., [*ab* product term](https://journals.sagepub.com/doi/full/10.1177/0956797613480187?casa_token=lnKZD-5ujc0AAAAA%3AqL5l3aA8B2BgzQ7cKoBvqkNAx8BA7T7G-ZUR3JwLffMuJn3ensuaDZF3tSn3kmiZny-zhMFAumSPysA) or [potential outcomes resampling procedures](https://imai.fas.harvard.edu/research/files/BaronKenny.pdf)) are known to generate non-normally distributed estimates, bootstrapped confidence intervals are [generally preferred in mediation tests](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.01549/full#B7a) because they better represent the asymptotic distributions generated by indirect effect estimators.
 
 ## Linear CMA model, with *EMint* {#sec-CMAlin-int}
 
@@ -801,7 +813,7 @@ est3dattab %>%
 ### Default plot: linear with EMint
 ```{r}
 ggcmest(est3) +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8))
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30, vjust = 0.8)) 
 
 ```
 
@@ -829,7 +841,8 @@ est3dat %>%
     x = "Estimated effects on linear difference scale",
     y = NULL,
     title = "Effect estimates from causal mediation decomposition"
-  )
+  ) + 
+  theme_minimal()
 
 ```
 
@@ -847,16 +860,16 @@ First, a comparison of the tabled results reveals substantial differences in est
 [^Linearmod-note]:
 Upon close inspection of the full output for the `EMint=TRUE` model, you might also notice that the outcome model regression coefficients are equivalent to those generated by the linear interaction model used earlier to create prediction plots. This is because essentially the same underlying linear interaction model is used to estimate indirect effects and conduct total effect decomposition. 
 
-Second, when we ignored the exposure-mediator interaction (i.e, by using traditional *ab* method or by setting `EMint=FALSE` in CMAverse), the "proportion mediated" estimate was about 25%. After allowing for the possibility of a nonzero exposure-mediator interaction (with `EMint=TRUE`), the proportion mediated estimate dropped to 4.5%. What happened? Did the indirect effect shrink after including the interaction term?
+Second, when we ignored the exposure-mediator interaction (i.e, by using traditional *ab* method or by setting `EMint=FALSE` in CMAverse), the "proportion mediated" estimate was about 24%. After allowing for the possibility of a nonzero exposure-mediator interaction (with `EMint=TRUE`), the proportion mediated estimate dropped to 7.2%. What happened? Did the indirect effect shrink after including the interaction term?
 
-To understand what is happening here, recall the "*TNIE*" component, which represents the "total" indirect effect of X on Y through M, is a composite measure of the total indirect effect comprised of both the "pure" indirect effect component (*PIE*) and the part of an exposure-mediator interaction that is due to mediation (*INT~med~*). Now, check out the *PIE* and *INT~med~* effect estimates, which are similar in magnitude but in opposite directions. As a result, these two indirect effect components largely cancel each other out (0.25 vs. -0.21), resulting in a very small "total" natural indirect effect estimate (*TNIE*) and, likewise, a small proportion mediated estimated (*PM* = *TNIE*/*TE*). Meanwhile, the proportion of the total effect that is due to the pure indirect effect (*PIE*) remains approximately 25%. 
+To understand what is happening here, recall the "*TNIE*" component, which represents the "total" indirect effect of X on Y through M, is a composite measure of the total indirect effect comprised of both the "pure" indirect effect component (*PNIE*) and the part of an exposure-mediator interaction that is due to mediation (*INT~med~*). Now, check out the *PNIE* and *INT~med~* effect estimates, which are similar in magnitude but in opposite directions. As a result, these two indirect effect components largely cancel each other out (-0.09 vs. 0.06), resulting in a very small "total" natural indirect effect estimate (*TNIE*) and, likewise, a small proportion mediated estimated (*PM* = *TNIE*/*TE*). Meanwhile, the proportion of the total effect that is due to the pure indirect effect (*PNIE*) remains approximately 24%. 
 
-Similarly, the results also show negative direct effect estimates (*CDE*; *PNDE*) and a positive reference interaction (*INT~ref~*) effect. The presence of such non-monotonic effect estimates, or effects operating in different directions, undermines the utility of "proportion mediated" estimates. For this reason and others,[^pm-note] I will exclude most proportion estimates (except proportion mediated or *PM*) in custom tables and plots and will largely avoid discussing proportion estimates moving forward. 
+Similarly, the results also show negative direct effect estimates (*CDE*; *PNDE*) and a positive reference interaction (*INT~ref~*) effect. The presence of such non-monotonic effect estimates, or effects operating in different directions, undermines the utility of "proportion mediated" estimates. While proportion mediated estimators can be useful for interpreting relative contributions of components under certain assumptions and conditions (e.g., no opposite-signed direct or indirect effects), too often those assumptions are untenable and, when they are, the properties of these estimators become unreliable. For this reason and others,[^pm-note] I will exclude most proportion estimates (except proportion mediated or *PM*) in custom tables and plots and will largely avoid discussing proportion estimates moving forward. 
 
 [^pm-note]:
-Invalid proportion estimates extending beyond expected bounds of 0 to 1 also can mess up axis scales when plotting. Additionally, even in situations where proportion estimates are valid, I am skeptical that the proportion of a total effect that is attributable to specific underlying component is likely to be a very useful estimand of interest. 
+Invalid proportion estimates extending beyond expected bounds of 0 to 1 also can mess up axis scales when plotting; you can see this in some of the CMAverse "default" plots. Additionally, even in situations where proportion estimates are valid, I am skeptical that the proportion of a total effect that is attributable to specific underlying component is likely to be a very useful estimand of interest. 
 
-Third, notice that the *CDE*(M=0) estimate is much larger and is no longer equivalent to the *PNDE* or *TNDE* estimates in the linear model with `EMint=TRUE`. This is because the effect of parental support varies across values of the mediator, and we estimated the *CDE* at M=0, or at the lowest value of strong moral beliefs, where the effect of parental support is strongest. You can see this in the regression prediction plots presented earlier. In fact, if you look closely at the linear prediction plot, you will notice that the slope of the "M=0" line is equivalent to the *CDE* estimate from this model (*CDE* = -1.23); that is, with a ParentSupport change from "0" to "1" units, delinquency is predicted to change by -1.23 units. To help visualize this, I regenerated the linear prediction plot from earlier and added lines to help visualize the slope of this *CDE* estimate.
+Third, notice that the *CDE*(M=0) estimate is much larger and is no longer equivalent to the *PNDE* or *TNDE* estimates in the linear model with `EMint=TRUE`. This is because the effect of parental support varies across values of the mediator, and we estimated the *CDE* at M=0, or at the lowest value of strong moral beliefs, where the effect of parental support is strongest. You can see this in the regression prediction plots presented earlier. In fact, if you look closely at the linear prediction plot, you will notice that the slope of the "M=0" line is equivalent to the *CDE* estimate from this model (*CDE* = -1.17); that is, with a ParentSupport change from "0" to "1" units, delinquency is predicted to change by -1.17 units. To help visualize this, I regenerated the linear prediction plot from earlier and added lines to help visualize the slope of this *CDE* estimate.
 
 ```{r}
 #|message=FALSE 
@@ -871,7 +884,7 @@ plot_lm2 +
                col = "maroon", linewidth = 1.5) + 
   geom_segment(aes(x = segdat$x3, y = segdat$y3, xend = segdat$x4, yend = segdat$y4),
                col = "maroon", linewidth = .5) + 
-  annotate("text", x=.6, y=2.5, label= "CDE(M=0) = -1.23", col = "maroon", 
+  annotate("text", x=.6, y=2.5, label= "CDE(M=0) = -1.17", col = "maroon", 
            fontface = "bold", hjust=0) 
   
 
@@ -880,11 +893,11 @@ plot_lm2 +
 
 Looking at this plot, I am hoping it is clear that the magnitude of the *CDE* estimate would have been much smaller or even negligible  if we had instead estimated it at a different level of strong moral beliefs (e.g., M=4).
 
-Unlike the *CDE*, the *PNDE* estimate remains largely unchanged across the linear models that do and do not specify an exposure-mediator interaction. Substantively, the *PNDE* indicates that doing `a=1` instead of `astar=0`, or increasing from mean levels of parental support to one-SD unit above the mean levels of parental support, is predicted to reduce delinquency by -0.33 units on the linear difference scale in the absence of the exposure. However, recall that *PNDE* is estimating Y1M~X=0~ - Y0M~X=0~ or setting M to value it is expected to be when X=0. So, changing the exposure contrast, say, to `astar=-1` and `a=0`, would change the *PNDE* because it would change the value at which M is set (e.g., estimating Y1M~X=-1~ - Y0M~X=-1~ instead); in contrast, changing the exposure contrast would have no effect on the *CDE*(M=0) in a linear model.  
+Unlike the *CDE*, the *PNDE* estimate remains largely unchanged across the linear models that do and do not specify an exposure-mediator interaction. Substantively, the *PNDE* indicates that doing `a=1` instead of `astar=0`, or increasing from mean levels of parental support to one-SD unit above the mean levels of parental support, is predicted to reduce delinquency by -0.33 units on the linear difference scale in the absence of the exposure. However, recall that *PNDE* is estimating Y1M~A=0~ - Y0M~A=0~ or setting M to value it is expected to be when A=0. So, changing the exposure contrast, say, to `astar=-1` and `a=0`, would change the *PNDE* because it would change the value at which M is set (e.g., estimating Y1M~X=-1~ - Y0M~X=-1~ instead); in contrast, changing the exposure contrast would have no effect on the *CDE*(M=0) in a linear model.  
 
 Fourth, recall that in a linear model, the sum of *PIE* and *TNIE* estimates should equal the sum of the *TNDE* and *PNIE* estimates, and each of these sums should equal to the total effect (*TE*) estimate. I explained this before; you can check to see that it holds true here.  
 
-Fifth, notice how small in magnitude the pure indirect (*PNIE*) and mediated interaction (*INT~med~*) components are relative to the pure natural direct (*PIE*) and reference interaction (*INT~ref~*) components. Though there is some evidence of mediation in these simulated data, it would seem that parental support primarily causes delinquency directly and conditionally via unmediated interaction with strong moral beliefs. 
+Fifth, notice how small in magnitude the pure indirect (*PNIE*) and mediated interaction (*INT~med~*) components are relative to the pure natural direct (*PNDE*) and reference interaction (*INT~ref~*) components. Though there is some evidence of mediation in these simulated data, it would seem that parental support primarily causes delinquency directly and conditionally via unmediated interaction with strong moral beliefs. 
 
 Finally, I hope one lesson is apparent by now: If you wish to interpret any of these estimates, or indirect and interaction effects generally, then it is important to know precisely what each estimate means,[^CMAlin-note] which causal contrasts you do (and do not) wish to make, and what assumptions your model and you are making if interpreting them as causal effects. Such determinations require an understanding of the various decomposition components described earlier and careful consideration of which components align best with your causal estimand of interest. 
 
@@ -1074,12 +1087,13 @@ est5dat %>%
   geom_point() + 
   geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
   # add in a dotted line at zero
-  geom_vline(xintercept = c(0,1), lty = 2) +
+  geom_vline(xintercept = 1, lty = 2) +
   labs(
     x = "Estimated effects on risk ratio scale",
     y = NULL,
     title = "Effect estimates from causal mediation decomposition (risk ratios)"
-  )
+  ) + 
+  theme_minimal()
 
 ```
 
@@ -1104,7 +1118,8 @@ est5dat %>%
     x = "Estimated effects on excess risks scale",
     y = NULL,
     title = "Effect estimates from causal mediation decomposition (excess risks)"
-  )
+  ) + 
+  theme_minimal()
 
 ```
 
@@ -1130,7 +1145,7 @@ Recall, the additive interaction in the data is on the outcome scale, or delinqu
 
 Meanwhile, the estimates from a generalized linear model with a Poisson-distributed outcome and log link function (aka, a nonlinear model) already are conditional on covariates. That is, these estimates already build conditional variability across mechanism levels into the model, so they are flexible enough to capture a similar additive interaction on the delinquency event rate outcome scale without the need for an interaction on estimation scale. 
 
-If there *had* there been a non-negligible exposure-mediator interaction in the nonlinear model, such that estimates changed when we switched from `EMint = FALSE` to `EMint = TRUE`, then this would have signaled the existence of an interaction on the estimation scale, or in *logged* delinquency rates and differences in relative effects across mechanism levels. Plotting such changes in predicted effects on the outcome scale might have shown, for instance, a growth or a reduction across mechanism levels in the predicted differences in delinquency rates attributed to the exposure's effect.[^Mize-note] 
+If there *had* been a non-negligible exposure-mediator interaction in the nonlinear model, such that estimates changed when we switched from `EMint = FALSE` to `EMint = TRUE`, then this would have signaled the existence of an interaction on the estimation scale, or in *logged* delinquency rates and differences in relative effects across mechanism levels. Plotting such changes in predicted effects on the outcome scale might have shown, for instance, a growth or a reduction across mechanism levels in the predicted differences in delinquency rates attributed to the exposure's effect.[^Mize-note] 
 
 [^Mize-note]: 
 To echo my recommendation from Part 1, [Trenton Mize's (2019) paper](https://sociologicalscience.com/download/vol-6/february/SocSci_v6_81to117.pdf) is an excellent resource for better understanding interactions in nonlinear models. 
@@ -1259,12 +1274,13 @@ est6dat %>%
   geom_point() + 
   geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
   # add in a dotted line at zero
-  geom_vline(xintercept = c(0,1), lty = 2) +
+  geom_vline(xintercept = 1, lty = 2) +
   labs(
     x = "Estimated effects on risk ratio scale",
     y = NULL,
     title = "Effect estimates from causal mediation decomposition (risk ratios)"
-  )
+  ) + 
+  theme_minimal()
 
 ```
 
@@ -1289,7 +1305,8 @@ est6dat %>%
     x = "Estimated effects on excess risks scale",
     y = NULL,
     title = "Effect estimates from causal mediation decomposition (excess risks)"
-  )
+  ) + 
+  theme_minimal()
 
 ```
 
