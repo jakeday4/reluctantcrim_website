@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -114,9 +121,9 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo">
     </a>
@@ -131,42 +138,42 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts.html" rel="" target="">
- <span class="menu-text">blog posts</span></a>
+    <a class="nav-link" href="../../blog-posts.html"> 
+<span class="menu-text">blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../course-materials.html" rel="" target="">
- <span class="menu-text">course materials</span></a>
+    <a class="nav-link" href="../../course-materials.html"> 
+<span class="menu-text">course materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html" rel="" target="">
- <span class="menu-text">links we love</span></a>
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links we love</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com" rel="" target=""><i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/reluctantcrim" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -235,12 +242,14 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="empty-egg-dag3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Empty Easter egg, or countervailing causation?</figcaption>
+<figcaption>Empty Easter egg, or countervailing causation?</figcaption>
 </figure>
 </div>
 <section id="sec-ladder" class="level2">
@@ -255,7 +264,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E_pop_art_style_portrait_painting_of_someone_very_confused3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Pop art portrait of someone very confused, by DALL-E</figcaption>
+<figcaption>Pop art portrait of someone very confused, by DALL-E</figcaption>
 </figure>
 </div>
 <p>To say students are surprised by this claim is an understatement - many seem confused or downright skeptical when I state it. After all, didn’t we just discuss how a basic criteria for establishing that X causes Y is <em>observing a correlation</em> between X and Y? Anticipating this confusion, I provide an example involving multiple mediation.</p>
@@ -274,7 +283,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E_person_climbing_mountain_to_seek_wisdom_from_computer_cartoon3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Cartoon person seeking wisdom from a computer oracle, by DALL-E</figcaption>
+<figcaption>Cartoon person seeking wisdom from a computer oracle, by DALL-E</figcaption>
 </figure>
 </div>
 <p>Before transforming my simulation example for students into a blog entry, I sought the wisdom of the artificial intelligence oracle <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, thinking it might lead me to existing examples that I was missing. I realize that, at present, ChatGPT is not particularly <a href="https://medium.com/@vanillaxiangshuyang/let-us-talk-about-chatgpt-b4be68dd0da">well-suited for causal reasoning</a>, as <a href="https://twitter.com/yudapearl/status/1642780699953627137?s=20">Pearl himself has documented</a> and the AI oracle itself <a href="https://twitter.com/yudapearl/status/1641386266595033088?s=20">has humbly admitted</a>, though it also notes some ability to <a href="https://twitter.com/DrJimFan/status/1641111697971884034?s=20">extract, mimic, or make guesses from data containing information about causal relations</a>. Nonetheless, I asked the oracle: “Is it possible to have causation without correlation?”</p>
@@ -365,8 +374,8 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>One final point of clarification before getting to an example. The basic criteria are not really wrong. Causation involves <strong>statistical dependence</strong> between X and (mechanisms of) Y, and statistical dependence may exist despite a lack of observed linear correlation. I think it may be easier for some people to understand how this might happen for methodological reasons (e.g., imprecise measures; insufficient data; mispecified model) than it is to understand how this might happen for theoretical reasons. Counterfactual reasoning can help; so can <a href="https://onlinelibrary.wiley.com/doi/10.1111/1745-9133.12027">causal models</a> or <a href="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html">directed acyclic graphs (DAGs)</a>.</p>
 <p>For instance, you might be wondering if it is really useful or accurate to say that X causes Y if there is no (total) statistical dependence between X &amp; Y - that is, if (in some populations or samples comprised of units with particular levels of key variables) Y does not reliably change after X changes. Yes, I think so! To understand why, it is helpful to consider an example, to rely on causal models, and to engage in counterfactual thinking. There are many possible examples; for simplicity, let’s imagine only four variables - X, M1, M2, and Y - that are causally related like so:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
@@ -386,7 +395,11 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(XYdag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>In this hypothetical example, imagine that increasing or “dialing up the knob” on X causes an increase in both M1 and M2. Imagine also that increasing or dialing up M1 causes an <em>increase</em> in Y, whereas an increase in M2 causes a <em>decrease</em> in Y of comparable magnitude in the opposite direction (i.e., countervailing indirect effects). So, when we dial up X, we also causally up M1 and M2, which in turn equivalently dials Y up (through M1) and down (through M2) - meaning Y does not change when X changes despite changes in mediators.</p>
@@ -400,8 +413,8 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <p>The basic idea is this: There is a long history of debates over the SES-delinquency relationship. Some theories specifically posit a negative causal relationship (i.e., low SES -&gt; high delinquency), yet observational research has documented inconsistent patterns (e.g., weak negative, nonexistent, or even positive relationships). Wright and colleagues argue that this state of affairs may be due to SES simultaneously having positive and negative causal effects on crime through countervailing mechanisms. Together, the positive and negative effects of these mechanisms may generally offset each other in many survey datasets, which might result in observing a lack of any bivariate correlation between SES and delinquency (i.e., “total effect” estimate = 0) and/or inconsistent partial correlations (i.e., variable conditional direct effect etimates) depending on which mechanisms are included or excluded from researchers’ statistical models.</p>
 <p>We will illustrate how something like this might happen using simulated data. Specifically, we will simulate data for <em>parental SES</em>, <em>child delinquency</em>, and two potential countervailing mechanisms - <em>financial strain</em> and <em>perceived risk of detection</em> of delinquent behaviors. In our simulated example, we will assume parental SES does not directly cause child delinquency and that it indirectly causes child delinquency through both mediating mechanisms. Additionally, we will assume that the causal effects of Parental SES on financial strain and perceived risk of detection are equal in magnitude and that the causal effect of financial strain on delinquency is equal in magnitude yet opposite in direction, such that both indirect or mediated effects offset one another. Below is a directed acyclic graph, or DAG, of this simple causal structure.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SESdag <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">"dag{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">  SES -&gt; Strain -&gt; Delinquency</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">  SES -&gt; Risk -&gt; Delinquency</span></span>
@@ -413,13 +426,17 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SESdag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now let’s simulate some data. In doing so, note we round data drawn from continuous (i.e., normal &amp; Poisson) distributions to integers; this adds a bit of noise to the data yet also makes our variables more comparable to the types of ordinal, Likert-type measures we see in our field.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X = Parental SES</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Y = Child delinquent behavior</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># F = Mediatior through which high Parent SES might decrease delinquency - e.g., less financial (S)train</span></span>
@@ -469,8 +486,8 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 10     1      0    -1           4
 # ℹ 990 more rows</code></pre>
 </div>
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SESplot <span class="ot">&lt;-</span> simdata <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>SES, <span class="at">y=</span>..density..),</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color=</span><span class="st">"#1fa187"</span>, <span class="at">fill=</span><span class="st">"#4ac16d"</span>, <span class="at">alpha=</span>.<span class="dv">7</span>,</span>
@@ -518,15 +535,19 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>SESplot <span class="sc">+</span> Strainplot <span class="sc">+</span> Riskplot <span class="sc">+</span> Delqplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="sec-bivar" class="level3">
 <h3 class="anchored" data-anchor-id="sec-bivar">Bivariate correlation</h3>
 <p>Let’s examine the bivariate correlations between our simulated variables.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-coder.com/correlation-plot-r/  </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(simdata,</span>
@@ -545,7 +566,11 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">ci =</span> <span class="cn">TRUE</span>)          <span class="co"># If TRUE, adds confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>As the pairs plot shows, there is virtually no correlation between SES and delinquency (<em>r</em> = -0.01). However, SES is negatively correlated with both mediators - financial strain (<em>r</em> = -0.43) and perceived risk (<em>r</em> = -0.40). Additionally, the mediator-delinquency correlations are similar in magnitude but opposite in direction (<em>r</em> = 0.30 for financial strain; <em>r</em> = -0.35 for perceived risk).</p>
@@ -556,8 +581,8 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 <h3 class="anchored" data-anchor-id="sec-lm">Linear regressions</h3>
 <p>The scatterplot and regression line from our bivariate linear regression model again illustrates the lack of total association between our simulated SES and delinqueny variables.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>lm1a <span class="ot">&lt;-</span> <span class="fu">lm</span>(Delinquency <span class="sc">~</span> SES, <span class="at">data=</span>simdata)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(lm1a)</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1a)<span class="sc">$</span>coefficients[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -567,8 +592,8 @@ div.limey { background-color:#d1e18980; border-radius: 5px; padding: 20px;}
 (Intercept)  1.09914632 0.03855249
 SES         -0.01125514 0.03849479</code></pre>
 </div>
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(simdata$SES, simdata$Delinquency)</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(lm1a)</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -588,13 +613,17 @@ SES         -0.01125514 0.03849479</code></pre>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>lmYplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now, let’s estimate a linear model regressing delinquency on SES and include <em>both mediators</em> as predictors in the model as well and then plot the regression line (with mediators set at their mean values). Once again, we should see a near-zero association between SES and delinquency, but for very different reasons this time. In this model, we are estimating what is commonly referred to as the <strong>direct effect</strong> of SES after stratifying on (aka, adjusting for) any potential indirect effects through financial strain and perceived risk mechanisms. Of course, we simulated our data in such a way that there would be no direct causal effect of SES on delinquency in our simulated data and, after including both mechanisms in the model, we accurately estimate virtually no direct effect of SES on delinquency (<em>b</em> = -0.03, se = 0.04). Hence, this plot looks comparable to the bivariate one above.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lm1b <span class="ot">&lt;-</span> <span class="fu">lm</span>(Delinquency <span class="sc">~</span> SES <span class="sc">+</span> Strain <span class="sc">+</span> Risk, <span class="at">data=</span>simdata)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(lm1b)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1b)<span class="sc">$</span>coefficients[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -606,8 +635,8 @@ SES         -0.02905861 0.03980686  -0.7299899  4.655680e-01
 Strain       0.38859596 0.03290744  11.8087577  3.274331e-30
 Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 </div>
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(simdata$SES, simdata$Delinquency)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(lm1b)</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -628,7 +657,11 @@ Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>lmYplot2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Note that this model above also estimates a positive effect of financial strain (<em>b</em> = 0.39, se = 0.03) and a negative effect of perceived risk (<em>b</em> = -0.44, se = 0.03) on delinquency. So, we might conclude that these theoretical mechanisms are related to delinquency as expected. But how would we know SES has indirect causal effects on delinquency through these mechanisms - i.e., that these variables <em>mediate</em> the SES-delinquency relationship? Well, we could estimate additional models regressing each mediator on SES; if SES predicts each mediator (which we know it does in our simulated data) and if each mediator predicts delinquency then, with certain strong assumptions in place (e.g., no exposure-mediator interaction and no unmeasured confounding of any paths; see <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">here</a>, <a href="https://datacolada.org/103">here</a>, and <a href="https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/">here</a>), we can infer indirect causal effects of SES on delinquency. This is essentially the logic behind the classic <a href="https://davidakenny.net/cm/mediate.htm#BK">Baron &amp; Kenny method</a>. We can also extend this logic to test for and estimate the magnitude and confidence intervals around such indirect effects through each specific mediator.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
@@ -637,8 +670,8 @@ Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 <h3 class="anchored" data-anchor-id="sec-trap">Springing the causal trap</h3>
 <p>But without jumping ahead to mediation tests, what would have happened if we had failed to specify the appropriate causal model ahead of time and, as a result, we mistakenly included <em>only one mediator</em> in the model with SES predicting delinquency? Let’s add financial strain to the model and exclude perceived risk from the model, then see what happens.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lm1c <span class="ot">&lt;-</span> <span class="fu">lm</span>(Delinquency <span class="sc">~</span> SES <span class="sc">+</span> Strain, <span class="at">data=</span>simdata)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(lm1c)</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1c)<span class="sc">$</span>coefficients[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -649,8 +682,8 @@ Risk        -0.43975564 0.03164821 -13.8951191  2.980525e-40</code></pre>
 SES         0.1790345 0.04027868  4.444895
 Strain      0.3951323 0.03593409 10.996029</code></pre>
 </div>
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(simdata$SES, simdata$Delinquency)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(lm1c)</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -671,7 +704,11 @@ Strain      0.3951323 0.03593409 10.996029</code></pre>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>lmYplot3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Uh oh. Suddenly, our model estimates a <em>positive</em> effect of SES on delinquency! Why?! Well, since we stratified on (adjusted for) financial strain, we essentially removed SES’s indirect effect on delinquency that operates through financial strain from our causal estimate. However, since we simulated these data, we know that SES also has an indirect effect on delinquency through perceived risk that is excluded from our model. So, the positive causal estimate of SES on delinquency in this model (<em>b</em> = 0.18, se = 0.04) reflects any direct effects of SES on delinquency (which we set to equal “0” in our simulation) and any indirect effects of SES on delinquency through unmeasured mediators - in this case, through perceived risk. We know that, in our simulated example, SES increases delinquency by reducing perceived risk of detection among those with high SES - that is, SES has <em>a positive indirect causal effect</em> on delinquency through perceived risk. Likewise, if we stratify on financial strain, thereby adjusting our estimate for this other known mediator, we are left with a positive estimate of the net causal effect of SES on delinquency (which we know is through perceived risk).</p>
@@ -681,7 +718,7 @@ Strain      0.3951323 0.03593409 10.996029</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="datacantspeak2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Data cannot speak meme</figcaption>
+<figcaption>Data cannot speak meme</figcaption>
 </figure>
 </div>
 </section>
@@ -689,12 +726,16 @@ Strain      0.3951323 0.03593409 10.996029</code></pre>
 <h3 class="anchored" data-anchor-id="sec-mediate">Simple mediation tests</h3>
 <p>Finally, let’s illustrate a simple test of the indirect effect of SES on delinquency using <code>mediate()</code> from the psych package.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mediate</span>(Delinquency <span class="sc">~</span> SES <span class="sc">+</span> (Strain) <span class="sc">+</span> (Risk), <span class="at">data =</span> simdata, <span class="at">n.iter =</span> <span class="dv">10000</span>) <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">short =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="causation-no-corr_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -739,7 +780,7 @@ R = 0.5 R2 = 0.25   F = 112.47 on 3 and 996 DF   p-value:  3.83e-79
 <li id="fn4"><p>This is a very <a href="https://r-workshop.mindsci.net/mediation">basic mediation function</a> that applies the Sobel product of <em>ab</em> coefficients approach mentioned earlier. Remember, do as I say and not as I do! As noted above, I would not recommend this approach for most applications to observational data. However, in this case, the data were simulated from random distributions and a simple causal mediation structure without confounding or exposure-mediator interactions, so we know the <a href="https://www.annualreviews.org/doi/10.1146/annurev-publhealth-032315-021402#_i12">strong causal mediation assumptions</a> hold. As such, this simple approach is sufficient for our purposes. That is, assuming you did us a solid by ignoring our Poisson-distributed outcome variable - and all the paint on our shoes.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Using the population parameters we specified to generate our simulated sample, the population <em>ab</em> indirect effect magnitudes equal (-0.5 * 0.5) = -0.25 and (-0.5 * -0.5) = 0.25, respectively.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2023,
   author = {Brauer, Jon},
   title = {Causation Without {Correlation?}},
   date = {2023-04-10},
@@ -751,9 +792,15 @@ Brauer, Jon. 2023. <span>“Causation Without Correlation?”</span> April
 10, 2023. <a href="https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html">https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
+<div>
+
 <hr>
 
+
+
 <p> questions? feedback? want to connect? </p>
+
+
 
 
 <table data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0" class="table">
@@ -774,7 +821,11 @@ Brauer, Jon. 2023. <span>“Causation Without Correlation?”</span> April
 </table>
 
 
+
+
 <hr>
+
+</div>
 </div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -855,10 +906,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -868,8 +936,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -881,7 +958,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -925,6 +1125,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -950,6 +1151,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1051,6 +1278,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

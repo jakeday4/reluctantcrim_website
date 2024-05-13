@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -114,9 +121,9 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo">
     </a>
@@ -131,42 +138,42 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts.html" rel="" target="">
- <span class="menu-text">blog posts</span></a>
+    <a class="nav-link" href="../../blog-posts.html"> 
+<span class="menu-text">blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../course-materials.html" rel="" target="">
- <span class="menu-text">course materials</span></a>
+    <a class="nav-link" href="../../course-materials.html"> 
+<span class="menu-text">course materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html" rel="" target="">
- <span class="menu-text">links we love</span></a>
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links we love</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com" rel="" target=""><i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/reluctantcrim" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -247,12 +254,14 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rancor.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Collider: The rancor in your regression</figcaption>
+<figcaption>Collider: The rancor in your regression</figcaption>
 </figure>
 </div>
 <section id="sec-afraid" class="level2">
@@ -275,7 +284,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="notafraid.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Learn to fear colliders, then learn how to confront them with DAGs.</figcaption>
+<figcaption>Learn to fear colliders, then learn how to confront them with DAGs.</figcaption>
 </figure>
 </div>
 </section>
@@ -287,8 +296,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Like confounders and mediators of the <em>X</em>/<em>Y</em> relationship, colliders have been described as another type of <a href="https://www.the100.ci/2017/03/14/that-one-weird-third-variable-problem-nobody-ever-mentions-conditioning-on-a-collider/">“third variable”</a> that is relevant to causal effect estimation. However, unlike confounders and mediators, we get the sense that many in our field do not understand and perhaps have never even heard of colliders. So, what are they?</p>
 <p>Well, most of the sources that we have read explicitly or implicitly define colliders <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967310/">as a type of third variable is caused by both <em>X</em> and <em>Y</em></a>. The causal diagram depicted in the figure below represents the quintessential collider example.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simstudy)</span>
@@ -339,7 +348,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="colliders_files/figure-html/DAG1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 1. DAG of classic three-variable example of a collider (Z)</figcaption>
+<figcaption>Figure 1. DAG of classic three-variable example of a collider (Z)</figcaption>
 </figure>
 </div>
 </div>
@@ -353,13 +362,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2ZhYjNlYzlmZjM1YjFmNmY3MzYxNGVmNTI4OGJjZTM1NmFhMzk0OCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/iyaBAsg1Hyn23RI9m3/giphy.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Colliders are like trick shots where arrows meet head to head (in a DAG)</figcaption>
+<figcaption>Colliders are like trick shots where arrows meet head to head (in a DAG)</figcaption>
 </figure>
 </div>
 <p>We have provided some example DAGs below in which the variable <em>Z</em> is a collider in a path between <em>X</em> and <em>Y</em>. As you will see, the collider <em>Z</em> is not always caused (directly or as a descendent) by the outcome <em>Y</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Likewise, in this blog post, we have attempted to deviate from the typical three-variable models (e.g., DAG Example 1, where <em>X</em> and <em>Y</em> cause collider <em>Z</em>) that we often encounter in collider explanations. Instead, we aimed to specify colliders and illustrate potential collider biases that might routinely occur from conditioning on a collider that is <em>not</em> necessarily an effect or a descendant of the outcome variable (<em>Y</em>).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hauntedDAG2 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Y <span class="sc">~</span> X,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">~</span> X, </span>
@@ -441,7 +450,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="colliders_files/figure-html/DAG2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 2. Examples of colliders (Z) in four different DAGs</figcaption>
+<figcaption>Figure 2. Examples of colliders (Z) in four different DAGs</figcaption>
 </figure>
 </div>
 </div>
@@ -457,8 +466,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>DAGs are extremely useful, then, in helping us identify all paths through which information might flow between <em>X</em> and <em>Y</em> and, likewise, in figuring out which variables we <em>should</em> be including in our models to adjust for confounding bias and which variables we <em>should not</em> include in our models to avoid removing indirect causal effects and/or introducing collider bias.</p>
 <p>For instance, using the fourth example above, we can identify all paths between <em>X</em> and <em>Y</em> and <a href="https://evalf20.classes.andrewheiss.com/example/dags/#paths-and-adjustment-sets">identify appropriate adjustment sets</a> automatically using <code>ggdag::ggdag_paths()</code> and <code>ggdag::ggdag_adjustment_set()</code>. You will note below that the path from <em>X</em> -&gt; <em>Y</em> and <em>X</em> &lt;- <em>C</em> -&gt; <em>Y</em> are open or unblocked paths, but the path from <em>X -&gt; Z &lt;- C -&gt; Y</em> is not an open path - unless we open it by conditioning on <em>Z</em> and, in turn, bias our estimate of the effect of <em>X</em> on <em>Y</em>. Likewise, the appropriate adjustment set for Example 4 contains only <em>C</em>, meaning we should control for <em>C</em> but not <em>Z</em> (or <em>C</em> and <em>Z</em>).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Ex4paths <span class="ot">&lt;-</span> <span class="fu">ggdag_paths</span>(hauntedDAG4) <span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Example 4 unblocked paths"</span>) <span class="sc">+</span> </span>
@@ -477,7 +486,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="colliders_files/figure-html/DAG3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 3. Unblocked paths (top) &amp; adjustment set (bottom) from Example 4 DAG above</figcaption>
+<figcaption>Figure 3. Unblocked paths (top) &amp; adjustment set (bottom) from Example 4 DAG above</figcaption>
 </figure>
 </div>
 </div>
@@ -493,7 +502,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Brauer-SAT-figure.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 4: Stick figures depicting SAT’s perception-choice process</figcaption>
+<figcaption>Figure 4: Stick figures depicting SAT’s perception-choice process</figcaption>
 </figure>
 </div>
 <p>SAT’s basic claim is that most people refrain from crime for moral, not rational, reasons: Those who strongly believe that a criminal behavior is morally wrong generally will not perceive that crime as morally viable situational action alternative and, likewise, will not engage in that behavior - irrespective of their levels of self-control (i.e., executive functioning capacities). However, those with weaker moral beliefs might perceive a criminal behavior as a situational action alternative and, in such situations, their levels of self-control may become causally relevant to decision-making. As <a href="https://journals.sagepub.com/doi/abs/10.1177/1477370807074858?journalCode=euca">Wikstrom &amp; Treiber explain</a>:</p>
@@ -508,7 +517,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Interactions.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 5: Self-control and morality interact to predict delinquency</figcaption>
+<figcaption>Figure 5: Self-control and morality interact to predict delinquency</figcaption>
 </figure>
 </div>
 <p>Yet, as we think is true in tests of most criminological theories, empirical tests of SAT often explicitly consider only a limited set of causal relationships within a data source generated by a much larger connection of complex interlinked causal processes. So, we will add a bit of plausible complexity to the DAG to illustrate how colliders might bias estimation of theorized causal effects.</p>
@@ -516,8 +525,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="sec-DAG4">DAG of causal structure underlying simulated data</h3>
 <p>Below is our DAG of a simple causal structure describing a plausible (if simplified) data generating process used to simulate data for our first two examples. We highlighted the focal estimand of interest (effect of self-control on delinquency) for our first simulation example with a red arrow.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>collideDAG <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">  Male -&gt; {SelfControl MoralBeliefs Delinquency PriorFelony}</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">  SelfControl -&gt; {Delinquency PriorFelony QualityEmploy College}</span></span>
@@ -623,7 +632,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="colliders_files/figure-html/DAG4-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 6. Causal diagram (DAG) used to generate simulated data</figcaption>
+<figcaption>Figure 6. Causal diagram (DAG) used to generate simulated data</figcaption>
 </figure>
 </div>
 </div>
@@ -637,7 +646,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="simulations.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Because, you know, addressing collider bias in messy real data is “just like the simulations.”</figcaption>
+<figcaption>Because, you know, addressing collider bias in messy real data is “just like the simulations.”</figcaption>
 </figure>
 </div>
 </section>
@@ -648,8 +657,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>For realism, the magnitudes of key simulated causal effects for the first example are relatively consistent with <a href="https://www.researchgate.net/profile/Lieven-Pauwels/publication/257467328_PAUWELS_L_2012_How_Similar_is_the_Interaction_Between_Low_Self-Control_and_Deviant_Moral_Beliefs_in_the_Explanation_of_Adolescent_Offending_An_Inquiry_in_Sub_Groups_by_Gender_and_Immigrant_Background_/links/004635255013c9d38d000000/PAUWELS-L-2012-How-Similar-is-the-Interaction-Between-Low-Self-Control-and-Deviant-Moral-Beliefs-in-the-Explanation-of-Adolescent-Offending-An-Inquiry-in-Sub-Groups-by-Gender-and-Immigrant-Background.pdf">published correlation matrices</a>.</p>
 <p>For the second example, we will assume no total effect of SES on delinquency association (for rationale, see our <a href="https://reluctantcriminologists.com/blog-posts/%5B4%5D/causation-no-corr">previous blog on causation without correlation</a>). However, we will assume a hypothetical positive effect of SES and negative effect of felony convictions on employment status/quality.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1138</span>)</span>
@@ -775,13 +784,17 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guide_area</span>() <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">'collect'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Let’s examine the bivariate correlations between our variables in the simulated “general” sample.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-coder.com/correlation-plot-r/  </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>trimpop <span class="ot">&lt;-</span> simpop <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>id)</span>
@@ -802,13 +815,17 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">ci =</span> <span class="cn">TRUE</span>)          <span class="co"># If TRUE, adds confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now, let’s examine the bivariate correlations between our variables in the simulated “restricted” sample in which participants are selected based upon felony conviction status.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-coder.com/correlation-plot-r/  </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>trimsamp <span class="ot">&lt;-</span> simsamp <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(id, Felony, Felonysamp))</span>
@@ -829,7 +846,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">ci =</span> <span class="cn">TRUE</span>)          <span class="co"># If TRUE, adds confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Even a brief examination of the bivariate correlation matrices foreshadows some of the problems we face when our research design invokes selection on a collider into the sample. For instance, imagine one group of researchers estimates gender gaps in self-control (<em>r</em>=-0.09), weak moral beliefs (<em>r</em>=0.17), and delinquency (<em>r</em>=0.18) using the general sample and then another group replicates their analysis using the felony sample (<em>r</em>=-0.01, 0.05, and 0.05, respectively). How might conclusions differ across these two studies?</p>
@@ -838,8 +859,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="sec-ex1">Example 1: Estimating causal effect of self-control on delinquency</h2>
 <p>Let’s not get ahead of ourselves. Instead, let’s illustrate in detail with our first example. We begin by estimating a generalized linear model predicting delinquency in the simulated general sample and in the restricted sample that is selected on felony convictions. In both models, we specify a Poisson distribution with a log link for our delinquency outcome. Though we should also account for ordinal nature of predictors (e.g., model monotonic effects with cumulative logit link function), we will save that for a future blog entry.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#nonlinear models predicting delinquency in pop &amp; sample</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>glm1a <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> HighSC <span class="sc">*</span> LowMoral , <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(glm1a)</span></span>
@@ -873,7 +894,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 1: Poisson model 1a, General sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="zpcxbyzutw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#zpcxbyzutw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1314,67 +1335,78 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 1: Poisson model 1a, General sample</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">-0.50***</td>
-<td headers="std.error" class="gt_row gt_center">0.022</td>
-<td headers="ci" class="gt_row gt_center">-0.55, -0.46</td>
-<td headers="p.value" class="gt_row gt_center">4.51e-115</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.17***</td>
-<td headers="std.error" class="gt_row gt_center">0.024</td>
-<td headers="ci" class="gt_row gt_center">0.12, 0.22</td>
-<td headers="p.value" class="gt_row gt_center"> 4.22e-13</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">HighSC</td>
-<td headers="estimate" class="gt_row gt_center">-0.23***</td>
-<td headers="std.error" class="gt_row gt_center">0.018</td>
-<td headers="ci" class="gt_row gt_center">-0.26, -0.19</td>
-<td headers="p.value" class="gt_row gt_center"> 2.27e-35</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">LowMoral</td>
-<td headers="estimate" class="gt_row gt_center">0.50***</td>
-<td headers="std.error" class="gt_row gt_center">0.010</td>
-<td headers="ci" class="gt_row gt_center">0.48, 0.52</td>
-<td headers="p.value" class="gt_row gt_center"> 0.00e+00</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">HighSC * LowMoral</td>
-<td headers="estimate" class="gt_row gt_center">-0.01</td>
-<td headers="std.error" class="gt_row gt_center">0.009</td>
-<td headers="ci" class="gt_row gt_center">-0.03, 0.00</td>
-<td headers="p.value" class="gt_row gt_center">0.133</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 1: Poisson model 1a, General sample</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-0.50***</td>
+<td class="gt_row gt_center" headers="std.error">0.022</td>
+<td class="gt_row gt_center" headers="ci">-0.55, -0.46</td>
+<td class="gt_row gt_center" headers="p.value">4.51e-115</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.17***</td>
+<td class="gt_row gt_center" headers="std.error">0.024</td>
+<td class="gt_row gt_center" headers="ci">0.12, 0.22</td>
+<td class="gt_row gt_center" headers="p.value">4.22e-13</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">HighSC</td>
+<td class="gt_row gt_center" headers="estimate">-0.23***</td>
+<td class="gt_row gt_center" headers="std.error">0.018</td>
+<td class="gt_row gt_center" headers="ci">-0.26, -0.19</td>
+<td class="gt_row gt_center" headers="p.value">2.27e-35</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">LowMoral</td>
+<td class="gt_row gt_center" headers="estimate">0.50***</td>
+<td class="gt_row gt_center" headers="std.error">0.010</td>
+<td class="gt_row gt_center" headers="ci">0.48, 0.52</td>
+<td class="gt_row gt_center" headers="p.value">0.00e+00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">HighSC * LowMoral</td>
+<td class="gt_row gt_center" headers="estimate">-0.01</td>
+<td class="gt_row gt_center" headers="std.error">0.009</td>
+<td class="gt_row gt_center" headers="ci">-0.03, 0.00</td>
+<td class="gt_row gt_center" headers="p.value">0.133</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">regsum</span>(glm1b) <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_gt</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 1: Poisson model 1b, Felony sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="ynjnlyqdfn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ynjnlyqdfn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1815,61 +1847,72 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 1: Poisson model 1b, Felony sample</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">-0.29***</td>
-<td headers="std.error" class="gt_row gt_center">0.069</td>
-<td headers="ci" class="gt_row gt_center">-0.43, -0.16</td>
-<td headers="p.value" class="gt_row gt_center"> 3.02e-05</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.11</td>
-<td headers="std.error" class="gt_row gt_center">0.062</td>
-<td headers="ci" class="gt_row gt_center">-0.01, 0.23</td>
-<td headers="p.value" class="gt_row gt_center">0.071</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">HighSC</td>
-<td headers="estimate" class="gt_row gt_center">-0.32***</td>
-<td headers="std.error" class="gt_row gt_center">0.039</td>
-<td headers="ci" class="gt_row gt_center">-0.40, -0.24</td>
-<td headers="p.value" class="gt_row gt_center"> 3.07e-16</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">LowMoral</td>
-<td headers="estimate" class="gt_row gt_center">0.44***</td>
-<td headers="std.error" class="gt_row gt_center">0.018</td>
-<td headers="ci" class="gt_row gt_center">0.41, 0.48</td>
-<td headers="p.value" class="gt_row gt_center">5.18e-136</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">HighSC * LowMoral</td>
-<td headers="estimate" class="gt_row gt_center">0.04**</td>
-<td headers="std.error" class="gt_row gt_center">0.016</td>
-<td headers="ci" class="gt_row gt_center">0.01, 0.08</td>
-<td headers="p.value" class="gt_row gt_center">0.006</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 1: Poisson model 1b, Felony sample</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-0.29***</td>
+<td class="gt_row gt_center" headers="std.error">0.069</td>
+<td class="gt_row gt_center" headers="ci">-0.43, -0.16</td>
+<td class="gt_row gt_center" headers="p.value">3.02e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.11</td>
+<td class="gt_row gt_center" headers="std.error">0.062</td>
+<td class="gt_row gt_center" headers="ci">-0.01, 0.23</td>
+<td class="gt_row gt_center" headers="p.value">0.071</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">HighSC</td>
+<td class="gt_row gt_center" headers="estimate">-0.32***</td>
+<td class="gt_row gt_center" headers="std.error">0.039</td>
+<td class="gt_row gt_center" headers="ci">-0.40, -0.24</td>
+<td class="gt_row gt_center" headers="p.value">3.07e-16</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">LowMoral</td>
+<td class="gt_row gt_center" headers="estimate">0.44***</td>
+<td class="gt_row gt_center" headers="std.error">0.018</td>
+<td class="gt_row gt_center" headers="ci">0.41, 0.48</td>
+<td class="gt_row gt_center" headers="p.value">5.18e-136</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">HighSC * LowMoral</td>
+<td class="gt_row gt_center" headers="estimate">0.04**</td>
+<td class="gt_row gt_center" headers="std.error">0.016</td>
+<td class="gt_row gt_center" headers="ci">0.01, 0.08</td>
+<td class="gt_row gt_center" headers="p.value">0.006</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#use min (0), mean, and +2d low moral beliefs in felony sample to plot interaction  </span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(simsamp$LowMoral)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(simsamp$LowMoral) + 2*sd(simsamp$LowMoral)</span></span>
@@ -1886,7 +1929,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plot_glm1a <span class="sc">+</span> plot_glm1b <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">'collect'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Success! The plot on the left confirms that our simulation recreated the moderated effects of self-control on delinquency across levels of moral beliefs as documented in earlier research (e.g., see Figure 5 above, though note our x-axis is reversed and we specified a nonlinear functional form).</p>
@@ -1897,7 +1944,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="trap.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Beware naive interpretations of interaction terms in models with nonlinear link functions - it’s a trap!</figcaption>
+<figcaption>Beware naive interpretations of interaction terms in models with nonlinear link functions - it’s a trap!</figcaption>
 </figure>
 </div>
 <p>Hence, these simulated results help illustrate an important lesson: <strong>Never rely on the statistical significance test results of an interaction term in a generalized linear model with a nonlinear link function (e.g., logistic; Poisson; negative binomial) to determine whether there is a significant interaction.</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Instead, we recommend estimating and plotting the potential interaction on the <a href="https://pubmed.ncbi.nlm.nih.gov/33523708/">outcome probability or count scale</a> and calculating predicted marginal contrasts when estimating and interpreting these types of models.</p>
@@ -1913,7 +1960,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="For_the_Better_Right2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">So you want your research to change the world - for the better, right?</figcaption>
+<figcaption>So you want your research to change the world - for the better, right?</figcaption>
 </figure>
 </div>
 </section>
@@ -1923,8 +1970,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Specifically, those with the strongest moral beliefs constraining delinquency (i.e., <code>LowMoral == 0</code>) are not expected to engage in delinquency and, therefore, self-control should be unimportant to (i.e., have no effect on) delinquency since there is little to no temptation to resist. This is exactly what we see in the general sample plot. However, in the felony sample plot, self-control is predicted to have a negative effect on delinquency of similar magnitude for respondents with strong (==0), average, and weak (+2SD) moral beliefs.</p>
 <p>Note, too, that the truncated variation from selection bias did not simply result in attenuated effect estimates in the felony sample. In fact, the magnitude of the estimated average marginal effect of self-control on delinquency is upwardly biased in the felony sample. Below, we plot the average marginal effect (AME) of self-control on delinquency in both samples, alongside a plot of the predicted delinquency count at each value of self-control in both samples.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#marginal effect of self-control plots</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plot 1 - AME of self-control (on response) in both samples </span></span>
@@ -1990,14 +2037,18 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>coefplot <span class="sc">+</span> plot_glm1cd </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This may be surprising to some of you. After all, it is quite common for researchers to incorrectly defend against charges of selection bias by claiming that, with truncated distributions, the documented associations are likely attenuated and hence conservative estimates. In fact, we have made such claims ourselves,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> before we learned about collider bias and came to realize that predicting the nature, extent, or direction of bias is not always as simple as it may seem.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="looking_for.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Don’t use Jedi mind tricks. State causal assumptions (in a DAG), then identify your estimand and adjustment set.</figcaption>
+<figcaption>Don’t use Jedi mind tricks. State causal assumptions (in a DAG), then identify your estimand and adjustment set.</figcaption>
 </figure>
 </div>
 </section>
@@ -2007,8 +2058,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Let’s move onto our second example, where we illustrate how improperly “controlling for” (i.e., conditioning on) a collider can bias causal estimation using our simulated general population and felony sample data. Here, we are estimating the noncausal effect of SES on delinquency. Of course, since our <a href="https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-DAG4">DAG</a> and simulations specified no such causal effect, we should expect a near-zero estimate for the coefficient.</p>
 <p>Let’s start with a model that includes male and employment (i.e., QualityEmploy) as control variables Why? Well, because employment might be related to SES and to delinquency, and because everyone throws in demographic controls like sex, right? I know just said that this is <strong>not</strong> how one should select controls; however, in this example, we are trying to illustrate what might happen when people DO select controls in this way.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generalized linear model, effect of SES on delinquency in pop, strat on employment </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>glm2a <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy, <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(glm2a)</span></span>
@@ -2018,7 +2069,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2a, General sample, Collider"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="cneanpaseg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#cneanpaseg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -2459,63 +2510,76 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 2: Model 2a, General sample, Collider</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">-0.09***</td>
-<td headers="std.error" class="gt_row gt_center">0.019</td>
-<td headers="ci" class="gt_row gt_center">-0.13, -0.05</td>
-<td headers="p.value" class="gt_row gt_center"> 1.82e-06</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.24***</td>
-<td headers="std.error" class="gt_row gt_center">0.024</td>
-<td headers="ci" class="gt_row gt_center">0.19, 0.29</td>
-<td headers="p.value" class="gt_row gt_center"> 1.35e-23</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">SES</td>
-<td headers="estimate" class="gt_row gt_center">0.10***</td>
-<td headers="std.error" class="gt_row gt_center">0.012</td>
-<td headers="ci" class="gt_row gt_center">0.08, 0.12</td>
-<td headers="p.value" class="gt_row gt_center"> 2.85e-17</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">QualityEmploy</td>
-<td headers="estimate" class="gt_row gt_center">-0.22***</td>
-<td headers="std.error" class="gt_row gt_center">0.008</td>
-<td headers="ci" class="gt_row gt_center">-0.23, -0.20</td>
-<td headers="p.value" class="gt_row gt_center">1.02e-171</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2a, General sample, Collider</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-0.09***</td>
+<td class="gt_row gt_center" headers="std.error">0.019</td>
+<td class="gt_row gt_center" headers="ci">-0.13, -0.05</td>
+<td class="gt_row gt_center" headers="p.value">1.82e-06</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.24***</td>
+<td class="gt_row gt_center" headers="std.error">0.024</td>
+<td class="gt_row gt_center" headers="ci">0.19, 0.29</td>
+<td class="gt_row gt_center" headers="p.value">1.35e-23</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">SES</td>
+<td class="gt_row gt_center" headers="estimate">0.10***</td>
+<td class="gt_row gt_center" headers="std.error">0.012</td>
+<td class="gt_row gt_center" headers="ci">0.08, 0.12</td>
+<td class="gt_row gt_center" headers="p.value">2.85e-17</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">QualityEmploy</td>
+<td class="gt_row gt_center" headers="estimate">-0.22***</td>
+<td class="gt_row gt_center" headers="std.error">0.008</td>
+<td class="gt_row gt_center" headers="ci">-0.23, -0.20</td>
+<td class="gt_row gt_center" headers="p.value">1.02e-171</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_glm2a <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2a, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">"Delinquency"</span>, <span class="at">title=</span><span class="st">"General sample, Stratify on employ"</span>)  </span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plot_glm2a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Uh oh. We simulated data to have no (i.e., null or “0”) effect of SES on delinquency, but our model estimated a positive effect of SES on delinquency in the population. By now, it should be clear that this is caused by inappropriately conditioning on the collider employment QualityEmploy.</p>
@@ -2534,8 +2598,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Scared yet? Face your fears, then be empowered to overcome them.</p>
 <p>Now, let’s illustrate what happens if we remove employment, the collider in our SES -&gt; delinquency estimate, from our model.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generalized linear model, effect of SES on delinquency in pop, drop employment </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>glm2b <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES , <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(glm2b)</span></span>
@@ -2545,7 +2609,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2b, General sample, No collider"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="anjemdhssl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#anjemdhssl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -2986,51 +3050,58 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 2: Model 2b, General sample, No collider</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">0.02</td>
-<td headers="std.error" class="gt_row gt_center">0.018</td>
-<td headers="ci" class="gt_row gt_center">-0.01, 0.06</td>
-<td headers="p.value" class="gt_row gt_center">0.210</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.43***</td>
-<td headers="std.error" class="gt_row gt_center">0.023</td>
-<td headers="ci" class="gt_row gt_center">0.38, 0.47</td>
-<td headers="p.value" class="gt_row gt_center">1.43e-77</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">SES</td>
-<td headers="estimate" class="gt_row gt_center">-0.01</td>
-<td headers="std.error" class="gt_row gt_center">0.011</td>
-<td headers="ci" class="gt_row gt_center">-0.03, 0.01</td>
-<td headers="p.value" class="gt_row gt_center">0.515</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2b, General sample, No collider</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">0.02</td>
+<td class="gt_row gt_center" headers="std.error">0.018</td>
+<td class="gt_row gt_center" headers="ci">-0.01, 0.06</td>
+<td class="gt_row gt_center" headers="p.value">0.210</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.43***</td>
+<td class="gt_row gt_center" headers="std.error">0.023</td>
+<td class="gt_row gt_center" headers="ci">0.38, 0.47</td>
+<td class="gt_row gt_center" headers="p.value">1.43e-77</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">SES</td>
+<td class="gt_row gt_center" headers="estimate">-0.01</td>
+<td class="gt_row gt_center" headers="std.error">0.011</td>
+<td class="gt_row gt_center" headers="ci">-0.03, 0.01</td>
+<td class="gt_row gt_center" headers="p.value">0.515</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plot_glm2b <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2b, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">"Delinquency"</span>, <span class="at">title=</span><span class="st">"General sample, Drop collider"</span>)  </span>
@@ -3038,14 +3109,18 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>plot_glm2a <span class="sc">+</span> plot_glm2b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Our estimate of the causal effect of SES on delinquency is now near-zero and negligible, with zero falling well within the 95% confidence interval.</p>
 <p>What would happen if we continue to condition on employment in our other simulated sample that also essentially conditions on felony status, or a key (simulated) cause of employment quality/status? Let’s re-estimate our two models using the simulated felony sample to see.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generalized linear model, effect of SES on delinquency in pop, stratify employment </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>glm2c <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy, <span class="at">data=</span>simsamp, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3058,7 +3133,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2c, Felony sample, with Collider"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="azymxkhsts" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#azymxkhsts table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -3499,56 +3574,65 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 2: Model 2c, Felony sample, with Collider</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">-0.03</td>
-<td headers="std.error" class="gt_row gt_center">0.076</td>
-<td headers="ci" class="gt_row gt_center">-0.18, 0.11</td>
-<td headers="p.value" class="gt_row gt_center">0.666</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.17**</td>
-<td headers="std.error" class="gt_row gt_center">0.062</td>
-<td headers="ci" class="gt_row gt_center">0.05, 0.29</td>
-<td headers="p.value" class="gt_row gt_center">0.006</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">SES</td>
-<td headers="estimate" class="gt_row gt_center">0.15***</td>
-<td headers="std.error" class="gt_row gt_center">0.022</td>
-<td headers="ci" class="gt_row gt_center">0.10, 0.19</td>
-<td headers="p.value" class="gt_row gt_center">1.58e-11</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">QualityEmploy</td>
-<td headers="estimate" class="gt_row gt_center">-0.22***</td>
-<td headers="std.error" class="gt_row gt_center">0.018</td>
-<td headers="ci" class="gt_row gt_center">-0.26, -0.19</td>
-<td headers="p.value" class="gt_row gt_center">4.42e-37</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2c, Felony sample, with Collider</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-0.03</td>
+<td class="gt_row gt_center" headers="std.error">0.076</td>
+<td class="gt_row gt_center" headers="ci">-0.18, 0.11</td>
+<td class="gt_row gt_center" headers="p.value">0.666</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.17**</td>
+<td class="gt_row gt_center" headers="std.error">0.062</td>
+<td class="gt_row gt_center" headers="ci">0.05, 0.29</td>
+<td class="gt_row gt_center" headers="p.value">0.006</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">SES</td>
+<td class="gt_row gt_center" headers="estimate">0.15***</td>
+<td class="gt_row gt_center" headers="std.error">0.022</td>
+<td class="gt_row gt_center" headers="ci">0.10, 0.19</td>
+<td class="gt_row gt_center" headers="p.value">1.58e-11</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">QualityEmploy</td>
+<td class="gt_row gt_center" headers="estimate">-0.22***</td>
+<td class="gt_row gt_center" headers="std.error">0.018</td>
+<td class="gt_row gt_center" headers="ci">-0.26, -0.19</td>
+<td class="gt_row gt_center" headers="p.value">4.42e-37</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot_glm2c <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2c, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">""</span>, <span class="at">title=</span><span class="st">"Felony sample, Stratify on employ"</span>)  </span>
@@ -3561,7 +3645,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2d, Felony sample, no Collider"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="lgznoejcgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#lgznoejcgw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -4002,51 +4086,58 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 2: Model 2d, Felony sample, no Collider</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">0.56***</td>
-<td headers="std.error" class="gt_row gt_center">0.058</td>
-<td headers="ci" class="gt_row gt_center">0.44, 0.67</td>
-<td headers="p.value" class="gt_row gt_center">4.49e-22</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.17**</td>
-<td headers="std.error" class="gt_row gt_center">0.062</td>
-<td headers="ci" class="gt_row gt_center">0.05, 0.29</td>
-<td headers="p.value" class="gt_row gt_center">0.005</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">SES</td>
-<td headers="estimate" class="gt_row gt_center">0.03</td>
-<td headers="std.error" class="gt_row gt_center">0.020</td>
-<td headers="ci" class="gt_row gt_center">-0.01, 0.07</td>
-<td headers="p.value" class="gt_row gt_center">0.100</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2d, Felony sample, no Collider</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">0.56***</td>
+<td class="gt_row gt_center" headers="std.error">0.058</td>
+<td class="gt_row gt_center" headers="ci">0.44, 0.67</td>
+<td class="gt_row gt_center" headers="p.value">4.49e-22</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.17**</td>
+<td class="gt_row gt_center" headers="std.error">0.062</td>
+<td class="gt_row gt_center" headers="ci">0.05, 0.29</td>
+<td class="gt_row gt_center" headers="p.value">0.005</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">SES</td>
+<td class="gt_row gt_center" headers="estimate">0.03</td>
+<td class="gt_row gt_center" headers="std.error">0.020</td>
+<td class="gt_row gt_center" headers="ci">-0.01, 0.07</td>
+<td class="gt_row gt_center" headers="p.value">0.100</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plot_glm2d <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(glm2d, <span class="at">type =</span> <span class="st">"pred"</span>, <span class="at">terms =</span> <span class="st">"SES"</span>) <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"SES"</span>, <span class="at">y=</span><span class="st">""</span>, <span class="at">title=</span><span class="st">"Felony sample, Drop collider"</span>)  </span>
@@ -4055,7 +4146,11 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>(plot_glm2a <span class="sc">+</span> plot_glm2b) <span class="sc">/</span> (plot_glm2c <span class="sc">+</span> plot_glm2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>When conditioning on a collider (employment), SES is incorrectly estimated to have a positive effect on delinquency in the simulated general sample and a positive effect of even larger magnitude on the outcome scale in the restricted felony sample.</p>
@@ -4065,7 +4160,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="death_star.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Destroy collider bias with the force. Or, you know, with a DAG and a sufficient adjustment set.</figcaption>
+<figcaption>Destroy collider bias with the force. Or, you know, with a DAG and a sufficient adjustment set.</figcaption>
 </figure>
 </div>
 <section id="sec-clever" class="level3">
@@ -4078,8 +4173,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </blockquote>
 <p>Let’s do that with our SES -&gt; Delinquency example above.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust <span class="ot">&lt;-</span> <span class="fu">adjustmentSets</span>(collideDAG, <span class="st">"SES"</span>, <span class="st">"Delinquency"</span>, <span class="at">type =</span> <span class="st">"all"</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -4118,7 +4213,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="notry.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption"><em>Try not</em> to control. Use your DAG, then control you <em>do.</em> <em>Or do not.</em> <em>There is no try</em>.</figcaption>
+<figcaption><em>Try not</em> to control. Use your DAG, then control you <em>do.</em> <em>Or do not.</em> <em>There is no try</em>.</figcaption>
 </figure>
 </div>
 <p>Interestingly, of the 26 identified adjustment sets for accurately estimating the total (null) effect of SES on delinquency, only six of them include the collider “QualityEmploy.” So, given you include “QualityEmploy” in your model, you would also have to adjust for one of the following sets of variables to accurately estimate the null noncausal effect from your statistical model:</p>
@@ -4134,8 +4229,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Meanwhile, given this DAG and the SES -&gt; Delinquency estimand, we can basically control for any combination of variables that is not one of the two colliders to which SES is causally related (employment or college), as the rest are essentially superfluous controls for our estimand. However, if we do open a path by conditioning on a collider, then we have to block it with something else between the collider and the outcome.</p>
 <p>So, given we decide to control for male and employment in our model, then there are four adjustment sets that include both male and employment that should effectively block the path we open by conditioning on a collider (employment). “College” isn’t in the simulated data - it is common to lack key variables in a DAG in real world data - so that leaves us with two adjustment sets that we could use to block the open collider path with the data at hand. Let’s estimate those models and confirm that we get the correct “null” estimate.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>glm2e <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy <span class="sc">+</span> LowMoral <span class="sc">+</span> HighSC, <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>glm2f <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency <span class="sc">~</span> Male <span class="sc">+</span> SES <span class="sc">+</span> QualityEmploy <span class="sc">+</span> LowMoral <span class="sc">+</span> HighSC <span class="sc">+</span> Felony, <span class="at">data=</span>simpop, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
@@ -4145,7 +4240,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="chbsmotnlq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#chbsmotnlq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -4586,72 +4681,85 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 2: Model 2e, General sample, Adj.Set #25</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">-0.51***</td>
-<td headers="std.error" class="gt_row gt_center">0.021</td>
-<td headers="ci" class="gt_row gt_center">-0.55, -0.47</td>
-<td headers="p.value" class="gt_row gt_center">2.77e-124</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.17***</td>
-<td headers="std.error" class="gt_row gt_center">0.024</td>
-<td headers="ci" class="gt_row gt_center">0.12, 0.21</td>
-<td headers="p.value" class="gt_row gt_center"> 5.74e-12</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">SES</td>
-<td headers="estimate" class="gt_row gt_center">0.00</td>
-<td headers="std.error" class="gt_row gt_center">0.012</td>
-<td headers="ci" class="gt_row gt_center">-0.03, 0.02</td>
-<td headers="p.value" class="gt_row gt_center">0.858</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">QualityEmploy</td>
-<td headers="estimate" class="gt_row gt_center">-0.01</td>
-<td headers="std.error" class="gt_row gt_center">0.009</td>
-<td headers="ci" class="gt_row gt_center">-0.02, 0.01</td>
-<td headers="p.value" class="gt_row gt_center">0.502</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">LowMoral</td>
-<td headers="estimate" class="gt_row gt_center">0.51***</td>
-<td headers="std.error" class="gt_row gt_center">0.010</td>
-<td headers="ci" class="gt_row gt_center">0.48, 0.53</td>
-<td headers="p.value" class="gt_row gt_center"> 0.00e+00</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">HighSC</td>
-<td headers="estimate" class="gt_row gt_center">-0.25***</td>
-<td headers="std.error" class="gt_row gt_center">0.012</td>
-<td headers="ci" class="gt_row gt_center">-0.27, -0.22</td>
-<td headers="p.value" class="gt_row gt_center"> 1.04e-95</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2e, General sample, Adj.Set #25</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-0.51***</td>
+<td class="gt_row gt_center" headers="std.error">0.021</td>
+<td class="gt_row gt_center" headers="ci">-0.55, -0.47</td>
+<td class="gt_row gt_center" headers="p.value">2.77e-124</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.17***</td>
+<td class="gt_row gt_center" headers="std.error">0.024</td>
+<td class="gt_row gt_center" headers="ci">0.12, 0.21</td>
+<td class="gt_row gt_center" headers="p.value">5.74e-12</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">SES</td>
+<td class="gt_row gt_center" headers="estimate">0.00</td>
+<td class="gt_row gt_center" headers="std.error">0.012</td>
+<td class="gt_row gt_center" headers="ci">-0.03, 0.02</td>
+<td class="gt_row gt_center" headers="p.value">0.858</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">QualityEmploy</td>
+<td class="gt_row gt_center" headers="estimate">-0.01</td>
+<td class="gt_row gt_center" headers="std.error">0.009</td>
+<td class="gt_row gt_center" headers="ci">-0.02, 0.01</td>
+<td class="gt_row gt_center" headers="p.value">0.502</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">LowMoral</td>
+<td class="gt_row gt_center" headers="estimate">0.51***</td>
+<td class="gt_row gt_center" headers="std.error">0.010</td>
+<td class="gt_row gt_center" headers="ci">0.48, 0.53</td>
+<td class="gt_row gt_center" headers="p.value">0.00e+00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">HighSC</td>
+<td class="gt_row gt_center" headers="estimate">-0.25***</td>
+<td class="gt_row gt_center" headers="std.error">0.012</td>
+<td class="gt_row gt_center" headers="ci">-0.27, -0.22</td>
+<td class="gt_row gt_center" headers="p.value">1.04e-95</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">regsum</span>(glm2f) <span class="sc">%&gt;%</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_gt</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
+<div>
 <div id="vtmdokfxyi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#vtmdokfxyi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -5092,67 +5200,82 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Example 2: Model 2f, General sample, Adj.Set #26</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">-0.51***</td>
-<td headers="std.error" class="gt_row gt_center">0.022</td>
-<td headers="ci" class="gt_row gt_center">-0.55, -0.47</td>
-<td headers="p.value" class="gt_row gt_center">2.93e-123</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Male</td>
-<td headers="estimate" class="gt_row gt_center">0.17***</td>
-<td headers="std.error" class="gt_row gt_center">0.025</td>
-<td headers="ci" class="gt_row gt_center">0.12, 0.22</td>
-<td headers="p.value" class="gt_row gt_center"> 4.50e-11</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">SES</td>
-<td headers="estimate" class="gt_row gt_center">0.00</td>
-<td headers="std.error" class="gt_row gt_center">0.013</td>
-<td headers="ci" class="gt_row gt_center">-0.03, 0.02</td>
-<td headers="p.value" class="gt_row gt_center">0.877</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">QualityEmploy</td>
-<td headers="estimate" class="gt_row gt_center">-0.01</td>
-<td headers="std.error" class="gt_row gt_center">0.011</td>
-<td headers="ci" class="gt_row gt_center">-0.03, 0.02</td>
-<td headers="p.value" class="gt_row gt_center">0.569</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">LowMoral</td>
-<td headers="estimate" class="gt_row gt_center">0.51***</td>
-<td headers="std.error" class="gt_row gt_center">0.010</td>
-<td headers="ci" class="gt_row gt_center">0.48, 0.53</td>
-<td headers="p.value" class="gt_row gt_center"> 0.00e+00</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">HighSC</td>
-<td headers="estimate" class="gt_row gt_center">-0.25***</td>
-<td headers="std.error" class="gt_row gt_center">0.012</td>
-<td headers="ci" class="gt_row gt_center">-0.27, -0.22</td>
-<td headers="p.value" class="gt_row gt_center"> 1.68e-95</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Felony</td>
-<td headers="estimate" class="gt_row gt_center">0.00</td>
-<td headers="std.error" class="gt_row gt_center">0.036</td>
-<td headers="ci" class="gt_row gt_center">-0.07, 0.07</td>
-<td headers="p.value" class="gt_row gt_center">0.951</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2f, General sample, Adj.Set #26</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-0.51***</td>
+<td class="gt_row gt_center" headers="std.error">0.022</td>
+<td class="gt_row gt_center" headers="ci">-0.55, -0.47</td>
+<td class="gt_row gt_center" headers="p.value">2.93e-123</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Male</td>
+<td class="gt_row gt_center" headers="estimate">0.17***</td>
+<td class="gt_row gt_center" headers="std.error">0.025</td>
+<td class="gt_row gt_center" headers="ci">0.12, 0.22</td>
+<td class="gt_row gt_center" headers="p.value">4.50e-11</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">SES</td>
+<td class="gt_row gt_center" headers="estimate">0.00</td>
+<td class="gt_row gt_center" headers="std.error">0.013</td>
+<td class="gt_row gt_center" headers="ci">-0.03, 0.02</td>
+<td class="gt_row gt_center" headers="p.value">0.877</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">QualityEmploy</td>
+<td class="gt_row gt_center" headers="estimate">-0.01</td>
+<td class="gt_row gt_center" headers="std.error">0.011</td>
+<td class="gt_row gt_center" headers="ci">-0.03, 0.02</td>
+<td class="gt_row gt_center" headers="p.value">0.569</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">LowMoral</td>
+<td class="gt_row gt_center" headers="estimate">0.51***</td>
+<td class="gt_row gt_center" headers="std.error">0.010</td>
+<td class="gt_row gt_center" headers="ci">0.48, 0.53</td>
+<td class="gt_row gt_center" headers="p.value">0.00e+00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">HighSC</td>
+<td class="gt_row gt_center" headers="estimate">-0.25***</td>
+<td class="gt_row gt_center" headers="std.error">0.012</td>
+<td class="gt_row gt_center" headers="ci">-0.27, -0.22</td>
+<td class="gt_row gt_center" headers="p.value">1.68e-95</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Felony</td>
+<td class="gt_row gt_center" headers="estimate">0.00</td>
+<td class="gt_row gt_center" headers="std.error">0.036</td>
+<td class="gt_row gt_center" headers="ci">-0.07, 0.07</td>
+<td class="gt_row gt_center" headers="p.value">0.951</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
+</div>
 </div>
 </div>
 </div>
@@ -5165,8 +5288,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>In this example, we focus solely on a basic bivariate association: the relationship between moral beliefs and delinquent (criminal) behavior. Self-reported measures of one’s moral beliefs about crime are among the strongest and most consistent correlates of criminal behavior. Hence, we would expect to see similarly strong correlations in both the MTurk and university samples. Failure to see such correlations might raise concerns about the data.</p>
 <p>In particular, we anticipate that selection into the University sample might introduce collider biases for estimates of various causal estimands of interest to criminologists. Of course, we communicated this expectation in our initial DAG used to simulate data, which we present again for convenience (see Figure 7 below).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>collideDAGalt2 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  Delinquency <span class="sc">~</span> MoralBeliefs <span class="sc">+</span> Male <span class="sc">+</span> SelfControl,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  PriorFelony <span class="sc">~</span> MoralBeliefs <span class="sc">+</span> Male <span class="sc">+</span> SelfControl, </span>
@@ -5220,7 +5343,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="colliders_files/figure-html/DAG5-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 7. Causal diagram (DAG), highlighting Example 3 estimand</figcaption>
+<figcaption>Figure 7. Causal diagram (DAG), highlighting Example 3 estimand</figcaption>
 </figure>
 </div>
 </div>
@@ -5229,8 +5352,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Important caveats aside, let’s get to the results. Below, we skip the coefficient tables this time and instead jump straight to prediction plots in the outcome scale (like our previous plots). These plots are visualizations of posterior estimates generated by Bayesian bivariate negative binomial regression models predicting a criminal behavior variety index in each sample (integer counts ranging from <em>min</em>=0 to <em>max</em>=11).<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
 <p>We start by presenting sample-specific results in separate plots.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Restore RDS data to object</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dat.mturk.epred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"blog-posts"</span>, <span class="st">"[5]"</span>, <span class="st">"dat_mturk.rds"</span>))</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dat.univ.epred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"blog-posts"</span>, <span class="st">"[5]"</span>, <span class="st">"dat_univ.rds"</span>))</span>
@@ -5278,13 +5401,17 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a>fig3a <span class="sc">+</span> fig3b </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>In case it is easier to visualize the selection thresholds, we also overlay both plots on the same grid below.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fig3c <span class="ot">&lt;-</span> dat.ssrfp <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> zMoralBlfIRT, <span class="at">y=</span>CrmBehavVI)) <span class="sc">+</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_line(data=dat.mturk.epred, aes(y = .epred, group = .draw), alpha = 0.5, color="grey60") +</span></span>
@@ -5311,14 +5438,18 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>fig3c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="colliders_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="colliders_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now, what is happening here? Well, if our DAG is correct, then we conditioned on a collider when selecting a sample of university students to survey about moral beliefs and crime.</p>
 <p>Let’s check our sufficient adjustment sets.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust2 <span class="ot">&lt;-</span> <span class="fu">adjustmentSets</span>(collideDAG, <span class="st">"MoralBeliefs"</span>, <span class="st">"Delinquency"</span>, <span class="at">type =</span> <span class="st">"all"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>collideDAG_adjust2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -5350,7 +5481,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="mindwhatlearned.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Mind what you have learned. Save you it can.</figcaption>
+<figcaption>Mind what you have learned. Save you it can.</figcaption>
 </figure>
 </div>
 
@@ -5369,7 +5500,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <li id="fn6"><p>“Avoid being clever” is another McElreath motto. You’re probably picking up on a pattern with all of our McElreath references. Seriously, do yourself a favor and read his book and watch his lectures.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>Strong moral beliefs is measured as a standardized item response theory (IRT) score scale. It is similar to measures found in existing criminological literature and, like our simulated moral beliefs variable above, is assumed to capture an underlying latent continuous dimension theoretically ranging from endorsement of strong pro-crime moral beliefs (<em>min</em>=-3.84) to strong anti-crime moral beliefs (<em>max</em>=1.18). We also specify weakly informative priors for the <em>beta</em> coefficient; we hope to write more about specification of prior distributions in such models in a later post.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer and jake day2023,
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer and jake day2023,
   author = {Brauer and Jake Day, Jon},
   title = {Are You Afraid of Colliders?},
   date = {2023-06-06},
@@ -5381,9 +5512,15 @@ Brauer and Jake Day, Jon. 2023. <span>“Are You Afraid of
 Colliders?”</span> June 6, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html">https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
+<div>
+
 <hr>
 
+
+
 <p> questions? feedback? want to connect? </p>
+
+
 
 
 <table data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0" class="table">
@@ -5404,7 +5541,11 @@ Colliders?”</span> June 6, 2023. <a href="https://www.reluctantcriminologists.
 </table>
 
 
+
+
 <hr>
+
+</div>
 </div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -5485,10 +5626,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -5498,8 +5656,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -5511,7 +5678,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -5555,6 +5845,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -5580,6 +5871,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -5681,6 +5998,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
