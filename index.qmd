@@ -11,7 +11,7 @@ listing:
     filter-ui: false
     fields: [date, title, reading-time, description, image, categories]
 crossref:
-  fig-title: Course
+  fig-title: ""
 page-layout: full
 css: styles.css
 # title-block-banner: false
@@ -32,7 +32,7 @@ css: styles.css
 ::: {#fig-hate-class}
 [![](course-materials/1_ugrad_stats/hateclass_horst.png)](course-materials/intro-stats.html)
 
-[Introduction to statistics in R for criminologists](course-materials/intro-stats.html)
+[Introduction to statistics in R for criminologists (Artwork by @allison_horst)](course-materials/intro-stats.html)
 :::
 :::
 
@@ -45,10 +45,29 @@ css: styles.css
 ::: {#fig-problems}
 [![](course-materials/error_horst.png)](course-materials/rnr.html)
 
-[Replication & reproducibility in social science](course-materials/rnr.html)
+[Replication & reproducibility in social science (Artwork by @allison_horst)](course-materials/rnr.html)
 :::
 
 :::
 
 ::::
 
+## supplementary files
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+::: {#fig-supp-files}
+[![](supp/hill-horst-steps.png)](supp/index.html)
+
+[Supplementary materials (Illustration by Alison Hill and Allison Horst, for RStudio)](supp/index.html)
+:::
+
+:::
+
+::: {.column width="55%"}
+<!-- empty column to create gap -->
+:::
+
+::::

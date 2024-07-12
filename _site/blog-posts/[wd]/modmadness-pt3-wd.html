@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -114,9 +121,9 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo">
     </a>
@@ -131,42 +138,46 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts.html" rel="" target="">
- <span class="menu-text">blog posts</span></a>
+    <a class="nav-link" href="../../blog-posts.html"> 
+<span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../course-materials.html" rel="" target="">
- <span class="menu-text">course materials</span></a>
+    <a class="nav-link" href="../../course-materials.html"> 
+<span class="menu-text">courses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html" rel="" target="">
- <span class="menu-text">links we love</span></a>
+    <a class="nav-link" href="../../supp/index.html"> 
+<span class="menu-text">supplementary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com" rel="" target=""><i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/reluctantcrim" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -245,12 +256,14 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="med-or-mod-cartoon2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Two lemmings confused by exposure-mediator interactions (with help from DALL-E)</figcaption>
+<figcaption>Two lemmings confused by exposure-mediator interactions (with help from DALL-E)</figcaption>
 </figure>
 </div>
 <p>This is the third and final entry in a three-part blog series on modeling moderators in criminological data. In <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1.html">Part 1</a>, I covered issues related to estimating and interpreting interaction effects with binary or skewed count outcome variables. In <a href="https://reluctantcriminologists.com/blog-posts/%5B7%5D/modmadness-pt2.html">Part 2</a>, I introduced counterfactual causality, exposure-mediator interactions, and a potential outcomes framework for conducting a four-way decomposition of a total effect into controlled direct effect (<em>CDE</em>), pure indirect effect (<em>PIE</em>), reference interaction (<em>INT<sub>ref</sub></em>), and mediated interaction (<em>INT<sub>med</sub></em>) components.</p>
@@ -287,8 +300,8 @@ In short, there is substantial upside and little downside apart from learning th
 <p>Moreover, since parental support both operates indirectly through and interacts with youth’s strong moral beliefs, I expect the operation of an underlying <em>exposure-mediator interaction</em> in the data generating process. Recall, when we expect the existence of an additive exposure-mediator interaction, then part of the total effect of parental support might be attributable to a <em>reference interaction</em>, which involves an additive interaction that would occur when the mediator is observed even the absence of the exposure (e.g., if some youth internalize strong moral beliefs even in the absence of high parental support). Additionally, since parental support also partly causes strong moral beliefs, then parental support may be partly responsible for setting the very levels across which it variably or conditionally affects delinquency. Thus, part of the total effect of parental support on delinquency also might be attributable to a <em>mediated interaction</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Now that the key variables and their underlying causal relationships have been discursively described, it is a good idea to generate a <a href="https://rpubs.com/NickCHK/DAGWorkshop2020"><em>directed acyclic graph</em></a> or DAG that concisely and formally communicates the causal assumptions about the data generating processes underlying our data simulation.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|echo=FALSE</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#explicitly set graphics device to png(type=cairo) to knit ggblend plots properly</span></span>
@@ -296,8 +309,8 @@ In short, there is substantial upside and little downside apart from learning th
 </details>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simstudy)</span>
@@ -327,8 +340,8 @@ In short, there is substantial upside and little downside apart from learning th
 </details>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#function to shorten arrows (edges)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># https://stackoverflow.com/questions/65420136/how-do-you-adjust-the-arrows-in-a-ggplot-of-a-ggdag</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>shorten_dag_arrows <span class="ot">&lt;-</span> <span class="cf">function</span>(tidy_dag, proportion){</span>
@@ -401,7 +414,7 @@ In short, there is substantial upside and little downside apart from learning th
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="modmadness-pt3-wd_files/figure-html/DAG4-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 1. DAG illustrating simulated data-generating process and ‘no unmeasured confounding’ assumptions underlying causal mediation. (Modified from Fig.2 in Valeri &amp; VanderWeele 2013)</figcaption>
+<figcaption>Figure 1. DAG illustrating simulated data-generating process and ‘no unmeasured confounding’ assumptions underlying causal mediation. (Modified from Fig.2 in Valeri &amp; VanderWeele 2013)</figcaption>
 </figure>
 </div>
 </div>
@@ -443,7 +456,7 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="its-natural.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">“Natural” effects are estimated by allowing the mediator to vary as it naturally would across exposure conditions and then setting it to specific counterfactual values.</figcaption>
+<figcaption>“Natural” effects are estimated by allowing the mediator to vary as it naturally would across exposure conditions and then setting it to specific counterfactual values.</figcaption>
 </figure>
 </div>
 <p>You can find <a href="https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation">more detailed descriptions elsewhere</a> of the differences between controlled and natural effects. Once you wrap your head around these important distinctions between counterfactual contrasts and their relations to natural and controlled effects, then you may find yourself beginning to comprehend other important issues underlying mediation, moderation, and total effect decomposition.</p>
@@ -460,7 +473,7 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="catfight.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">When interpreting “pure” and “total” effects, remember the “total” cat won the fight over the <em>INT<sub>med</sub></em> component.</figcaption>
+<figcaption>When interpreting “pure” and “total” effects, remember the “total” cat won the fight over the <em>INT<sub>med</sub></em> component.</figcaption>
 </figure>
 </div>
 <p>Fundamentally, <em>INT<sub>med</sub></em> effects are simultaneously indirect <em>and</em> interaction effects. However, depending upon your research question and estimand of interest, you may wish to attribute that <em>INT<sub>med</sub></em> component to the “direct” effect of X on Y at specific counterfactual values of M (i.e., absorbed into heterogeneous estimates of direct effects across values of M) or, instead, to the “indirect” effect of X on Y through M. In any case, there are a few important points to remember when interpreting these effects.</p>
@@ -474,7 +487,7 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="effects-table.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Relationship between 4-way effect decomposition and CMAverse effect estimates. Modified from Table 4 in Vanderweele 2014</figcaption>
+<figcaption>Relationship between 4-way effect decomposition and CMAverse effect estimates. Modified from Table 4 in Vanderweele 2014</figcaption>
 </figure>
 </div>
 <p>Third, since all four components of a total effect are accounted for in each of these two pairings of pure and total effects, each paired direct and indirect effect estimate essentially sums to the total effect of an exposure on an outcome. In fact, in a linear model, the <em>PNDE</em> + <em>TNIE</em> estimates quite literally will sum to the same value as the <em>TNDE</em> + <em>PNIE</em> estimates, and each of these pairs will sum to the total effect estimate. The pair you choose to interpret, then, depends upon your research question, goals, and estimand of interest.</p>
@@ -486,8 +499,8 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <h2 class="anchored" data-anchor-id="sec-simulate">Simulate data</h2>
 <p>I start by simulating n=3,000 observations, which should allow us to generate relatively precise estimates of each estimated component. We have more than enough going on; we do not need to deal simultaneously with issues related to particularly noisy estimates.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">0</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span>
@@ -562,7 +575,11 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">"#E69F00"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The plot above shows the joint distribution of the exposure (A=ParentSupport) and mechanism (M=StrgMoralBlfs). Notice the lack of observations in the bottom right of the plot, at the highest values of parental support (A&gt;2) and lowest values of strong moral beliefs (M=0). This pattern might be expected given the existence of mediation processes; that is, high parental support causes strong moral beliefs, so we might not expect to observe the lowest values of the mechanism at the highest exposure levels.</p>
@@ -575,8 +592,8 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <p>As I explained in <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1.html">Part 1</a>, I will want to build a generalized linear model with a nonlinear link function that can flexibly describe the data generating processes causing the skewed distributions and nonlinearities observed in the simulated data. Additionally, I will want to add an interaction term to that model to account for the possibility of an exposure-mediator interaction on the estimation scale.</p>
 <p>Yet, I will start by presenting results from a simple linear interaction model. Why? Well, because so many researchers in our field seem to be most comfortable, if not outright obsessed, with simple linear models. What else explains our field’s collective unwillingness to move on from them?</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sim.2 linear model</span></span>
@@ -649,12 +666,11 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Ex2tab1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="wrxfwrmosu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#wrxfwrmosu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1095,69 +1111,81 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Linear regression predicting delinquency values</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">2.1***</td>
-<td headers="std.error" class="gt_row gt_center">0.068</td>
-<td headers="ci" class="gt_row gt_center">2.0, 2.3</td>
-<td headers="p.value" class="gt_row gt_center">1.11e-190</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">ParentSupport</td>
-<td headers="estimate" class="gt_row gt_center">-1.2***</td>
-<td headers="std.error" class="gt_row gt_center">0.063</td>
-<td headers="ci" class="gt_row gt_center">-1.3, -1.1</td>
-<td headers="p.value" class="gt_row gt_center"> 1.46e-72</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">StrgMoralBlfs</td>
-<td headers="estimate" class="gt_row gt_center">-0.42***</td>
-<td headers="std.error" class="gt_row gt_center">0.020</td>
-<td headers="ci" class="gt_row gt_center">-0.46, -0.38</td>
-<td headers="p.value" class="gt_row gt_center"> 9.17e-91</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">ParentSupport * StrgMoralBlfs</td>
-<td headers="estimate" class="gt_row gt_center">0.26***</td>
-<td headers="std.error" class="gt_row gt_center">0.019</td>
-<td headers="ci" class="gt_row gt_center">0.23, 0.30</td>
-<td headers="p.value" class="gt_row gt_center"> 9.07e-43</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear regression predicting delinquency values</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">2.1***</td>
+<td class="gt_row gt_center" headers="std.error">0.068</td>
+<td class="gt_row gt_center" headers="ci">2.0, 2.3</td>
+<td class="gt_row gt_center" headers="p.value">1.11e-190</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">ParentSupport</td>
+<td class="gt_row gt_center" headers="estimate">-1.2***</td>
+<td class="gt_row gt_center" headers="std.error">0.063</td>
+<td class="gt_row gt_center" headers="ci">-1.3, -1.1</td>
+<td class="gt_row gt_center" headers="p.value">1.46e-72</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">StrgMoralBlfs</td>
+<td class="gt_row gt_center" headers="estimate">-0.42***</td>
+<td class="gt_row gt_center" headers="std.error">0.020</td>
+<td class="gt_row gt_center" headers="ci">-0.46, -0.38</td>
+<td class="gt_row gt_center" headers="p.value">9.17e-91</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">ParentSupport * StrgMoralBlfs</td>
+<td class="gt_row gt_center" headers="estimate">0.26***</td>
+<td class="gt_row gt_center" headers="std.error">0.019</td>
+<td class="gt_row gt_center" headers="ci">0.23, 0.30</td>
+<td class="gt_row gt_center" headers="p.value">9.07e-43</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plot_lm2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot_lm2 &amp; </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme(legend.position = 'bottom',</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#         legend.direction = 'horizontal') </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1166,8 +1194,8 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1209,14 +1237,18 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>predplot1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plot_lm2 <span class="sc">+</span> </span>
@@ -1228,14 +1260,18 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Plotted across full range (min-to-max) of parental support values and</span><span class="sc">\n</span><span class="st">at minimum (0), scale midpoint (2), &amp; maximum (4) strong moral beliefs</span><span class="sc">\n</span><span class="st">(Poisson regression, n=3k simulated observations)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>simdat3sub, <span class="fu">aes</span>(<span class="at">x=</span>ParentSupport, <span class="at">y=</span>Delinquency, </span>
@@ -1258,7 +1294,11 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Plotted at minimum (0) strong moral beliefs</span><span class="sc">\n</span><span class="st">(Poisson regression, n=3k simulated observations)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1279,12 +1319,11 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Ex2tab2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="zcfhdpajps" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#zcfhdpajps table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1725,73 +1764,85 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Poisson regression predicting delinquency event rates</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">0.99***</td>
-<td headers="std.error" class="gt_row gt_center">0.064</td>
-<td headers="ci" class="gt_row gt_center">0.86, 1.1</td>
-<td headers="p.value" class="gt_row gt_center">9.75e-54</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">ParentSupport</td>
-<td headers="estimate" class="gt_row gt_center">-0.38***</td>
-<td headers="std.error" class="gt_row gt_center">0.047</td>
-<td headers="ci" class="gt_row gt_center">-0.47, -0.29</td>
-<td headers="p.value" class="gt_row gt_center">1.08e-15</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">StrgMoralBlfs</td>
-<td headers="estimate" class="gt_row gt_center">-0.42***</td>
-<td headers="std.error" class="gt_row gt_center">0.021</td>
-<td headers="ci" class="gt_row gt_center">-0.46, -0.38</td>
-<td headers="p.value" class="gt_row gt_center">1.88e-90</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">ParentSupport * StrgMoralBlfs</td>
-<td headers="estimate" class="gt_row gt_center">0.00</td>
-<td headers="std.error" class="gt_row gt_center">0.016</td>
-<td headers="ci" class="gt_row gt_center">-0.03, 0.03</td>
-<td headers="p.value" class="gt_row gt_center">0.963</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Poisson regression predicting delinquency event rates</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">0.99***</td>
+<td class="gt_row gt_center" headers="std.error">0.064</td>
+<td class="gt_row gt_center" headers="ci">0.86, 1.1</td>
+<td class="gt_row gt_center" headers="p.value">9.75e-54</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">ParentSupport</td>
+<td class="gt_row gt_center" headers="estimate">-0.38***</td>
+<td class="gt_row gt_center" headers="std.error">0.047</td>
+<td class="gt_row gt_center" headers="ci">-0.47, -0.29</td>
+<td class="gt_row gt_center" headers="p.value">1.08e-15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">StrgMoralBlfs</td>
+<td class="gt_row gt_center" headers="estimate">-0.42***</td>
+<td class="gt_row gt_center" headers="std.error">0.021</td>
+<td class="gt_row gt_center" headers="ci">-0.46, -0.38</td>
+<td class="gt_row gt_center" headers="p.value">1.88e-90</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">ParentSupport * StrgMoralBlfs</td>
+<td class="gt_row gt_center" headers="estimate">0.00</td>
+<td class="gt_row gt_center" headers="std.error">0.016</td>
+<td class="gt_row gt_center" headers="ci">-0.03, 0.03</td>
+<td class="gt_row gt_center" headers="p.value">0.963</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plot_glm2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#use ggeffects::ggpredict() to save plot_model data for use in ggplot </span></span>
@@ -1823,14 +1874,18 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>predplot2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#prediction plot with data subset &amp; ggblend</span></span>
@@ -1856,7 +1911,11 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>predplot2b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1868,11 +1927,7 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <section id="sec-indirect" class="level2">
 <h2 class="anchored" data-anchor-id="sec-indirect">Whither the indirect effect?</h2>
 <p>Now, for some in our field, documenting an additive interaction like this, whether generated with linear or nonlinear model specifications, would be deemed sufficient grounds for declaring a contribution to existing literature and for publishing a manuscript in a peer-reviewed journal. (Remember the <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #2</a> from Part 1?)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fake_paper2.jpg"><img src="fake_paper2.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="fake_paper2.jpg"><img src="fake_paper2.jpg" class="img-fluid"></a></p>
 <p><a href="fake_paper2.jpg">Part 1’s “Imaginary Paper #2”</a></p>
 <p>Yet, note that this model does not seem to account for the possibility of an indirect effect of parental support on delinquency through the moderating mechanism. Moreover, since the exposure causes the mechanism, is the observed interaction an example of a “mediated interaction” (<em>INT<sub>med</sub></em>)? Or, is this an example of a reference interaction (<em>INT<sub>ref</sub></em>), or perhaps both? We will use CMAverse to answer this question soon, but you might be able to intuit the answer from prediction plots and with an understanding of what these two components represent that you gained from the toe-stubbing example in Part 2.</p>
 <p>Before using CMAverse, I want to first illustrate a “traditional” approach to testing for indirect effects. Commonly, researchers in our field might use what is popularly known as the classic <a href="https://www.psych.mcgill.ca/perpg/fac/falk/tutorials/mediation/methods/#baron-kenny-1986">“Baron and Kenny” (1986) causal steps approach</a> to detecting indirect effects. This “traditional” approach to testing mediation hypotheses usually involves estimating a series of regression models and then, depending upon the specific procedures adopted, estimating a “difference in coefficients” or “product of coefficients” representing causal path estimates (e.g., <em>ab</em> paths) paired with a test of significance. (See <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2819363/">MacKinnon and colleagues’ 2002</a> paper, and especially their Table 1, for a summary of these traditional approaches).<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
@@ -1882,12 +1937,16 @@ Confounders == C (Ignored here, but <a href="https://reluctantcriminologists.com
 <h2 class="anchored" data-anchor-id="sec-traditional">Traditional (<em>ab</em>) linear mediation model</h2>
 <p>Traditional product of coefficients approach</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">mediate</span>(Delinquency <span class="sc">~</span> ParentSupport <span class="sc">+</span> (StrgMoralBlfs), <span class="at">data =</span> simdat3, <span class="at">n.iter =</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">short =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1910,11 +1969,7 @@ R = 0.53 R2 = 0.28   F = 580 on 2 and 2997 DF   p-value:  4.04e-297
 <p>The estimate is also statistically significant. Of course, with a simulated sample size of n=3,000, even modest non-zero estimates will be significant. You will rarely find us pointing to statistical significance as a useful information signal in our blog entries; that is a topic for another time.</p>
 <p>To me, a better question here might be whether, given a causal indirect effect of this estimated magnitude, a change in exposure (e.g., from “0” to “1”) would be predicted to generate differences of substantively meaningful magnitudes on the outcome scale indirectly through a mechanistic change in the mediator. You might notice that our interaction plots above depicting predicted marginal effects provide us substantially greater leverage for answering this type of question.</p>
 <p>Still, we are on a mission here, so I will avoid the temptation to embark on a yet another tangent, this time about effect sizes. Instead, I will simply note that this indirect effect output and path diagram might be viewed as sufficient in our field to declare another contribution and submit yet another paper to the publication pile. (Remember <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">hypothetical paper #1</a> from Part 1?)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="fake_paper1.jpg"><img src="fake_paper1.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="fake_paper1.jpg"><img src="fake_paper1.jpg" class="img-fluid"></a></p>
 <p><a href="fake_paper1.jpg">Part 1’s “Imaginary Paper #1”</a></p>
 <p>Let’s move to <code>CMAverse</code>, starting with a simple linear mediation model that reproduces key results from the “traditional” mediation approach.</p>
 </section>
@@ -1922,8 +1977,8 @@ R = 0.53 R2 = 0.28   F = 580 on 2 and 2997 DF   p-value:  4.04e-297
 <h2 class="anchored" data-anchor-id="sec-CMAlin-noint">Linear CMA model, no <em>EMint</em></h2>
 <p>Below, I use the <code>cmest()</code> function from the <code>CMAverse</code> R package. Specifying the mediator and outcome distributions (<code>mreg</code> and <code>yreg</code>) as “linear” and setting the exposure-mediator coefficient (<code>EMint</code>) to “FALSE” makes this model equivalent to the traditional mediation model above.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1138</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>est2 <span class="ot">&lt;-</span> <span class="fu">cmest</span>(<span class="at">data =</span> simdat3, <span class="at">model =</span> <span class="st">"rb"</span>, <span class="at">outcome =</span> <span class="st">"Delinquency"</span>, <span class="at">exposure =</span> <span class="st">"ParentSupport"</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">mediator =</span> <span class="st">"StrgMoralBlfs"</span>, <span class="at">EMint =</span> <span class="cn">FALSE</span>,</span>
@@ -1937,8 +1992,8 @@ R = 0.53 R2 = 0.28   F = 580 on 2 and 2997 DF   p-value:  4.04e-297
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>est2dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est2<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>) </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1962,7 +2017,6 @@ R = 0.53 R2 = 0.28   F = 580 on 2 and 2997 DF   p-value:  4.04e-297
 <span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -2403,84 +2457,108 @@ R = 0.53 R2 = 0.28   F = 580 on 2 and 2997 DF   p-value:  4.04e-297
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
-        <span class="gt_column_spanner">Traditional<br>(linear)</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse<br>(linear)">
-        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="trad_est" class="gt_row gt_left">direct</td>
-<td headers="estimate" class="gt_row gt_right">-0.33</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">cde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">indirect</td>
-<td headers="estimate" class="gt_row gt_right">-0.10</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">total</td>
-<td headers="estimate" class="gt_row gt_right">-0.43</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">te</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.428</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">prop_med</td>
-<td headers="estimate" class="gt_row gt_right">0.23</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pm</td>
-<td headers="linear_noEM" class="gt_row gt_right">0.235</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
+(linear)</span></th>
+<th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
+<th colspan="2" id="CMAverse<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(linear)</span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="No_EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">No_EMint<br>
+estimate</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">direct</td>
+<td class="gt_row gt_right" headers="estimate">-0.33</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">cde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">indirect</td>
+<td class="gt_row gt_right" headers="estimate">-0.10</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">total</td>
+<td class="gt_row gt_right" headers="estimate">-0.43</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">te</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.428</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">prop_med</td>
+<td class="gt_row gt_right" headers="estimate">0.23</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pm</td>
+<td class="gt_row gt_right" headers="linear_noEM">0.235</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcmest</span>(est2) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">vjust =</span> <span class="fl">0.8</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(est2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -2574,8 +2652,8 @@ $mval[[1]]
 <h2 class="anchored" data-anchor-id="sec-CMAlin-int">Linear CMA model, with <em>EMint</em></h2>
 <p>Now, let’s estimate another linear model in CMAverse but instead allow for the possibility of an exposure-mediator interaction by setting <code>EMint=TRUE</code>.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1138</span>)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>est3 <span class="ot">&lt;-</span> <span class="fu">cmest</span>(<span class="at">data =</span> simdat3, <span class="at">model =</span> <span class="st">"rb"</span>, <span class="at">outcome =</span> <span class="st">"Delinquency"</span>, <span class="at">exposure =</span> <span class="st">"ParentSupport"</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">mediator =</span> <span class="st">"StrgMoralBlfs"</span>, <span class="at">EMint =</span> <span class="cn">TRUE</span>,</span>
@@ -2589,8 +2667,8 @@ $mval[[1]]
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>est3dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est3<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>) </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>est3dattab <span class="ot">&lt;-</span> <span class="fu">full_join</span>(est2dattab, est3dat, <span class="at">by=</span><span class="st">"CMA_est"</span>) <span class="sc">%&gt;%</span></span>
@@ -2616,7 +2694,6 @@ $mval[[1]]
 <span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -3057,98 +3134,126 @@ $mval[[1]]
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
-        <span class="gt_column_spanner">Traditional<br>(linear)</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(linear)">
-        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="trad_est" class="gt_row gt_left">direct</td>
-<td headers="estimate" class="gt_row gt_right">-0.33</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">cde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-1.1747</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.3325</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.2784</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">indirect</td>
-<td headers="estimate" class="gt_row gt_right">-0.10</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.0864</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.0322</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">total</td>
-<td headers="estimate" class="gt_row gt_right">-0.43</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">te</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.428</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.3647</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">intref</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">0.8422</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">intmed</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">0.0541</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
+(linear)</span></th>
+<th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
+<th colspan="3" id="CMAverse<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(linear)</span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="No_EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">No_EMint<br>
+estimate</th>
+<th id="EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EMint<br>
+estimate</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">direct</td>
+<td class="gt_row gt_right" headers="estimate">-0.33</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">cde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-1.1747</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.3325</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.2784</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">indirect</td>
+<td class="gt_row gt_right" headers="estimate">-0.10</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.0864</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.0322</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">total</td>
+<td class="gt_row gt_right" headers="estimate">-0.43</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">te</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.428</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.3647</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">intref</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">0.8422</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">intmed</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">0.0541</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcmest</span>(est3) <span class="sc">+</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">vjust =</span> <span class="fl">0.8</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save estimates and intervals data</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>est3dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est3[<span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>]) <span class="sc">%&gt;%</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>)</span>
@@ -3173,14 +3278,18 @@ $mval[[1]]
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(est3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -3280,8 +3389,8 @@ $mval[[1]]
 <p>Similarly, the results also show negative direct effect estimates (<em>CDE</em>; <em>PNDE</em>) and a positive reference interaction (<em>INT<sub>ref</sub></em>) effect. The presence of such non-monotonic effect estimates, or effects operating in different directions, undermines the utility of “proportion mediated” estimates. While proportion mediated estimators can be useful for interpreting relative contributions of components under certain assumptions and conditions (e.g., no opposite-signed direct or indirect effects), too often those assumptions are untenable and, when they are, the properties of these estimators become unreliable. For this reason and others,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> I will exclude most proportion estimates (except proportion mediated or <em>PM</em>) in custom tables and plots and will largely avoid discussing proportion estimates moving forward.</p>
 <p>Third, notice that the <em>CDE</em>(M=0) estimate is much larger and is no longer equivalent to the <em>PNDE</em> or <em>TNDE</em> estimates in the linear model with <code>EMint=TRUE</code>. This is because the effect of parental support varies across values of the mediator, and we estimated the <em>CDE</em> at M=0, or at the lowest value of strong moral beliefs, where the effect of parental support is strongest. You can see this in the regression prediction plots presented earlier. In fact, if you look closely at the linear prediction plot, you will notice that the slope of the “M=0” line is equivalent to the <em>CDE</em> estimate from this model (<em>CDE</em> = -1.17); that is, with a ParentSupport change from “0” to “1” units, delinquency is predicted to change by -1.17 units. To help visualize this, I regenerated the linear prediction plot from earlier and added lines to help visualize the slope of this <em>CDE</em> estimate.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>segdat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x1 =</span> <span class="dv">0</span>, <span class="at">x2 =</span> <span class="dv">1</span>, <span class="at">x3 =</span> .<span class="dv">55</span>, <span class="at">x4 =</span> .<span class="dv">05</span>, </span>
@@ -3298,7 +3407,11 @@ $mval[[1]]
 <span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">hjust=</span><span class="dv">0</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Looking at this plot, I am hoping it is clear that the magnitude of the <em>CDE</em> estimate would have been much smaller or even negligible if we had instead estimated it at a different level of strong moral beliefs (e.g., M=4).</p>
@@ -3312,8 +3425,8 @@ $mval[[1]]
 <p>Now, we already know the linear model does not provide a good approximation for the data generating processes underlying these simulated data. This is frequently the case when analyzing real-world criminological data as well. Yet, given the familiarity that many readers will likely have with linear models, my hope is that the relatively poor-fitting linear models above will help ease the transition to better-fitting but more complex nonlinear models.</p>
 <p>Below, I conclude by briefly presenting CMAverse models with and without EM interactions again but, this time, I will specify a Poisson distribution for the outcome variable. This means that the predicted contrasts will be described on the event rate ratio scale instead of the linear difference scale.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> As you will soon see, the output and interpretations get a bit more complicated with nonlinear models due to changes in the outcome scale (and related issues like <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7986756/">noncollapsibility</a> of certain estimates).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1138</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>est4 <span class="ot">&lt;-</span> <span class="fu">cmest</span>(<span class="at">data =</span> simdat3, <span class="at">model =</span> <span class="st">"rb"</span>, <span class="at">outcome =</span> <span class="st">"Delinquency"</span>, <span class="at">exposure =</span> <span class="st">"ParentSupport"</span>,</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">mediator =</span> <span class="st">"StrgMoralBlfs"</span>, <span class="at">EMint =</span> <span class="cn">FALSE</span>,</span>
@@ -3327,8 +3440,8 @@ $mval[[1]]
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>est4dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est4<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est2"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CMA_est =</span> <span class="fu">if_else</span>(CMA_est2<span class="sc">==</span><span class="st">"Rcde"</span>,<span class="st">"cde"</span>,CMA_est2),</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">CMA_est =</span> <span class="fu">if_else</span>(CMA_est2<span class="sc">==</span><span class="st">"Rpnde"</span>,<span class="st">"pnde"</span>,CMA_est), </span>
@@ -3366,7 +3479,6 @@ $mval[[1]]
 <span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -3807,128 +3919,159 @@ $mval[[1]]
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
-        <span class="gt_column_spanner">Traditional<br>(linear)</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(linear)">
-        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse<br>(nonlinear)">
-        <span class="gt_column_spanner">CMAverse<br>(nonlinear)</span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="trad_est" class="gt_row gt_left">direct</td>
-<td headers="estimate" class="gt_row gt_right">-0.33</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">cde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-1.1747</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rcde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.683</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.3325</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rpnde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.683</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.2784</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rtnde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.683</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">indirect</td>
-<td headers="estimate" class="gt_row gt_right">-0.10</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.0864</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rpnie</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.917</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.0322</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rtnie</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.917</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">total</td>
-<td headers="estimate" class="gt_row gt_right">-0.43</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">te</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.428</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.3647</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rte</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.626</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">intref</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">0.8422</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">--</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">intmed</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">0.0541</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">--</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
+(linear)</span></th>
+<th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
+<th colspan="3" id="CMAverse<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(linear)</span></th>
+<th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
+<th colspan="2" id="CMAverse<br>(nonlinear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(nonlinear)</span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="No_EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">No_EMint<br>
+estimate</th>
+<th id="EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EMint<br>
+estimate</th>
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="No_EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">No_EMint<br>
+estimate</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">direct</td>
+<td class="gt_row gt_right" headers="estimate">-0.33</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">cde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-1.1747</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rcde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.683</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.3325</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rpnde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.683</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.2784</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rtnde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.683</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">indirect</td>
+<td class="gt_row gt_right" headers="estimate">-0.10</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.0864</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rpnie</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.917</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.0322</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rtnie</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.917</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">total</td>
+<td class="gt_row gt_right" headers="estimate">-0.43</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">te</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.428</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.3647</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rte</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.626</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">intref</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">0.8422</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">--</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">intmed</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">0.0541</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">--</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcmest</span>(est4) <span class="sc">+</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">vjust =</span> <span class="fl">0.8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(est4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -4020,8 +4163,8 @@ $mval[[1]]
 <section id="sec-CMAnonlin-int" class="level2">
 <h2 class="anchored" data-anchor-id="sec-CMAnonlin-int">Nonlinear CMA model, with <em>EMint</em></h2>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1138</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>est5 <span class="ot">&lt;-</span> <span class="fu">cmest</span>(<span class="at">data =</span> simdat3, <span class="at">model =</span> <span class="st">"rb"</span>, <span class="at">outcome =</span> <span class="st">"Delinquency"</span>, <span class="at">exposure =</span> <span class="st">"ParentSupport"</span>,</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">mediator =</span> <span class="st">"StrgMoralBlfs"</span>, <span class="at">EMint =</span> <span class="cn">TRUE</span>,</span>
@@ -4035,8 +4178,8 @@ $mval[[1]]
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>est5dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est5<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est2"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CMA_est =</span> <span class="fu">if_else</span>(CMA_est2<span class="sc">==</span><span class="st">"Rcde"</span>,<span class="st">"cde"</span>,CMA_est2),</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">CMA_est =</span> <span class="fu">if_else</span>(CMA_est2<span class="sc">==</span><span class="st">"Rpnde"</span>,<span class="st">"pnde"</span>,CMA_est), </span>
@@ -4079,7 +4222,6 @@ $mval[[1]]
 <span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -4520,177 +4662,218 @@ $mval[[1]]
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Traditional<br>(linear)">
-        <span class="gt_column_spanner">Traditional<br>(linear)</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(linear)">
-        <span class="gt_column_spanner">CMAverse<br>(linear)</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="   ">   </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="CMAverse<br>(nonlinear)">
-        <span class="gt_column_spanner">CMAverse<br>(nonlinear)</span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="estimate">estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No_EMint<br>estimate">No_EMint<br>estimate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="trad_est" class="gt_row gt_left">direct</td>
-<td headers="estimate" class="gt_row gt_right">-0.33</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">cde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-1.1747</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rcde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.683</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.6841</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.3325</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rpnde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.683</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.6827</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnde</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.327</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.2784</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rtnde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.683</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.6826</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">indirect</td>
-<td headers="estimate" class="gt_row gt_right">-0.10</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">pnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.0864</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rpnie</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.917</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.9174</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">tnie</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.101</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.0322</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rtnie</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.917</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.9173</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">total</td>
-<td headers="estimate" class="gt_row gt_right">-0.43</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">te</td>
-<td headers="linear_noEM" class="gt_row gt_right">-0.428</td>
-<td headers="linear_EM" class="gt_row gt_right">-0.3647</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">Rte</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">0.626</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.6262</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">intref</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">0.8422</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">--</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
-<td headers="nonlin_EM" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">intmed</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">0.0541</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">--</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
-<td headers="nonlin_EM" class="gt_row gt_right">NA</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">--</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">NA</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">ERcde</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
-<td headers="nonlin_EM" class="gt_row gt_right">-1.1268</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">--</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">NA</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">ERintref</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.8094</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">--</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">NA</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">ERintmed</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.0261</td></tr>
-    <tr><td headers="trad_est" class="gt_row gt_left">--</td>
-<td headers="estimate" class="gt_row gt_right">NA</td>
-<td headers="blank" class="gt_row gt_right"></td>
-<td headers="CMA_est" class="gt_row gt_left">--</td>
-<td headers="linear_noEM" class="gt_row gt_right">NA</td>
-<td headers="linear_EM" class="gt_row gt_right">NA</td>
-<td headers="blank2" class="gt_row gt_right"></td>
-<td headers="CMA_est2" class="gt_row gt_left">ERpnie</td>
-<td headers="nonlin_noEM" class="gt_row gt_right">NA</td>
-<td headers="nonlin_EM" class="gt_row gt_right">-0.0826</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
+(linear)</span></th>
+<th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
+<th colspan="3" id="CMAverse<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(linear)</span></th>
+<th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
+<th colspan="3" id="CMAverse<br>(nonlinear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(nonlinear)</span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="No_EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">No_EMint<br>
+estimate</th>
+<th id="EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EMint<br>
+estimate</th>
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="No_EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">No_EMint<br>
+estimate</th>
+<th id="EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EMint<br>
+estimate</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">direct</td>
+<td class="gt_row gt_right" headers="estimate">-0.33</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">cde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-1.1747</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rcde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.683</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.6841</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.3325</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rpnde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.683</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.6827</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnde</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.327</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.2784</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rtnde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.683</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.6826</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">indirect</td>
+<td class="gt_row gt_right" headers="estimate">-0.10</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">pnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.0864</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rpnie</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.917</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.9174</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">tnie</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.101</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.0322</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rtnie</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.917</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.9173</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">total</td>
+<td class="gt_row gt_right" headers="estimate">-0.43</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">te</td>
+<td class="gt_row gt_right" headers="linear_noEM">-0.428</td>
+<td class="gt_row gt_right" headers="linear_EM">-0.3647</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">Rte</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">0.626</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.6262</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">intref</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">0.8422</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">--</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+<td class="gt_row gt_right" headers="nonlin_EM">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">intmed</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">0.0541</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">--</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+<td class="gt_row gt_right" headers="nonlin_EM">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">--</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">NA</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">ERcde</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+<td class="gt_row gt_right" headers="nonlin_EM">-1.1268</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">--</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">NA</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">ERintref</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.8094</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">--</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">NA</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">ERintmed</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.0261</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="trad_est">--</td>
+<td class="gt_row gt_right" headers="estimate">NA</td>
+<td class="gt_row gt_right" headers="blank"></td>
+<td class="gt_row gt_left" headers="CMA_est">--</td>
+<td class="gt_row gt_right" headers="linear_noEM">NA</td>
+<td class="gt_row gt_right" headers="linear_EM">NA</td>
+<td class="gt_row gt_right" headers="blank2"></td>
+<td class="gt_row gt_left" headers="CMA_est2">ERpnie</td>
+<td class="gt_row gt_right" headers="nonlin_noEM">NA</td>
+<td class="gt_row gt_right" headers="nonlin_EM">-0.0826</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcmest</span>(est5) <span class="sc">+</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">vjust =</span> <span class="fl">0.8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save estimates and intervals data</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>est5dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est5[<span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>]) <span class="sc">%&gt;%</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>)</span>
@@ -4717,14 +4900,18 @@ $mval[[1]]
 <span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop proportion estimates</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>est5dat <span class="sc">%&gt;%</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>CMA_est <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"pm"</span>, <span class="st">"pe"</span>, <span class="st">"ERpnie(prop)"</span>, <span class="st">"ERintref(prop)"</span>,</span>
@@ -4746,14 +4933,18 @@ $mval[[1]]
 <span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-6-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-5-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(est5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -4863,8 +5054,8 @@ $mval[[1]]
 Example interaction in nonlinear model
 </summary>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sim.2 nonlinear model (alt DV)</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>glm3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Delinquency2 <span class="sc">~</span> ParentSupport <span class="sc">*</span> StrgMoralBlfs, <span class="at">data=</span>simdat3, <span class="at">family=</span><span class="st">"poisson"</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4885,14 +5076,13 @@ Example interaction in nonlinear model
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sim.2 nonlinear model (alt DV)</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>Ex2tab3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -5333,60 +5523,68 @@ Example interaction in nonlinear model
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Poisson regression predicting delinquency2 event rates</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>p-value</strong>"><strong>p-value</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">(Intercept)</td>
-<td headers="estimate" class="gt_row gt_center">0.79***</td>
-<td headers="std.error" class="gt_row gt_center">0.065</td>
-<td headers="ci" class="gt_row gt_center">0.66, 0.91</td>
-<td headers="p.value" class="gt_row gt_center"> 1.57e-33</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">ParentSupport</td>
-<td headers="estimate" class="gt_row gt_center">-1.1***</td>
-<td headers="std.error" class="gt_row gt_center">0.036</td>
-<td headers="ci" class="gt_row gt_center">-1.2, -1.0</td>
-<td headers="p.value" class="gt_row gt_center">2.15e-209</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">StrgMoralBlfs</td>
-<td headers="estimate" class="gt_row gt_center">-0.37***</td>
-<td headers="std.error" class="gt_row gt_center">0.021</td>
-<td headers="ci" class="gt_row gt_center">-0.41, -0.33</td>
-<td headers="p.value" class="gt_row gt_center"> 4.87e-69</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">ParentSupport * StrgMoralBlfs</td>
-<td headers="estimate" class="gt_row gt_center">0.20***</td>
-<td headers="std.error" class="gt_row gt_center">0.013</td>
-<td headers="ci" class="gt_row gt_center">0.17, 0.22</td>
-<td headers="p.value" class="gt_row gt_center"> 1.81e-54</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Poisson regression predicting delinquency2 event rates</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
+<th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>95% CI</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+<th id="<strong>p-value</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">0.79***</td>
+<td class="gt_row gt_center" headers="std.error">0.065</td>
+<td class="gt_row gt_center" headers="ci">0.66, 0.91</td>
+<td class="gt_row gt_center" headers="p.value">1.57e-33</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">ParentSupport</td>
+<td class="gt_row gt_center" headers="estimate">-1.1***</td>
+<td class="gt_row gt_center" headers="std.error">0.036</td>
+<td class="gt_row gt_center" headers="ci">-1.2, -1.0</td>
+<td class="gt_row gt_center" headers="p.value">2.15e-209</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">StrgMoralBlfs</td>
+<td class="gt_row gt_center" headers="estimate">-0.37***</td>
+<td class="gt_row gt_center" headers="std.error">0.021</td>
+<td class="gt_row gt_center" headers="ci">-0.41, -0.33</td>
+<td class="gt_row gt_center" headers="p.value">4.87e-69</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">ParentSupport * StrgMoralBlfs</td>
+<td class="gt_row gt_center" headers="estimate">0.20***</td>
+<td class="gt_row gt_center" headers="std.error">0.013</td>
+<td class="gt_row gt_center" headers="ci">0.17, 0.22</td>
+<td class="gt_row gt_center" headers="p.value">1.81e-54</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=FALSE </span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">#use ggeffects::ggpredict() to save plot_model data for use in ggplot </span></span>
@@ -5417,14 +5615,18 @@ Example interaction in nonlinear model
 <span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a>predplot3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>est6dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est6<span class="sc">$</span>effect.pe) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est2"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CMA_est =</span> <span class="fu">if_else</span>(CMA_est2<span class="sc">==</span><span class="st">"Rcde"</span>,<span class="st">"cde"</span>,CMA_est2),</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">CMA_est =</span> <span class="fu">if_else</span>(CMA_est2<span class="sc">==</span><span class="st">"Rpnde"</span>,<span class="st">"pnde"</span>,CMA_est), </span>
@@ -5449,7 +5651,6 @@ Example interaction in nonlinear model
 <span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>               )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="dsvgaztkvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dsvgaztkvn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -5890,63 +6091,91 @@ Example interaction in nonlinear model
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="CMAverse<br>(nonlinear, alt DV)">
-        <span class="gt_column_spanner">CMAverse<br>(nonlinear, alt DV)</span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="effect">effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="EMint<br>estimate">EMint<br>estimate</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="CMA_est2" class="gt_row gt_left">Rcde</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.3338</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">Rpnde</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.5997</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">Rtnde</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.6244</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">Rpnie</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.9272</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">Rtnie</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.9654</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">Rte</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.5790</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">ERcde</td>
-<td headers="nonlin_EM" class="gt_row gt_right">-2.0461</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">ERintref</td>
-<td headers="nonlin_EM" class="gt_row gt_right">1.6458</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">ERintmed</td>
-<td headers="nonlin_EM" class="gt_row gt_right">0.0520</td></tr>
-    <tr><td headers="CMA_est2" class="gt_row gt_left">ERpnie</td>
-<td headers="nonlin_EM" class="gt_row gt_right">-0.0728</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th colspan="2" id="CMAverse<br>(nonlinear, alt DV)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
+(nonlinear, alt DV)</span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
+<th id="EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EMint<br>
+estimate</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="CMA_est2">Rcde</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.3338</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="CMA_est2">Rpnde</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.5997</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="CMA_est2">Rtnde</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.6244</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="CMA_est2">Rpnie</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.9272</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="CMA_est2">Rtnie</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.9654</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="CMA_est2">Rte</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.5790</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="CMA_est2">ERcde</td>
+<td class="gt_row gt_right" headers="nonlin_EM">-2.0461</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="CMA_est2">ERintref</td>
+<td class="gt_row gt_right" headers="nonlin_EM">1.6458</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="CMA_est2">ERintmed</td>
+<td class="gt_row gt_right" headers="nonlin_EM">0.0520</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="CMA_est2">ERpnie</td>
+<td class="gt_row gt_right" headers="nonlin_EM">-0.0728</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-7-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-4-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcmest</span>(est6) <span class="sc">+</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">vjust =</span> <span class="fl">0.8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-7-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-5-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save estimates and intervals data</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>est6dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(est5[<span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>]) <span class="sc">%&gt;%</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"CMA_est"</span>)</span>
@@ -5973,14 +6202,18 @@ Example interaction in nonlinear model
 <span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-7-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-6-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop proportion estimates</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>est6dat <span class="sc">%&gt;%</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>CMA_est <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"pm"</span>, <span class="st">"pe"</span>, <span class="st">"ERpnie(prop)"</span>, <span class="st">"ERintref(prop)"</span>,</span>
@@ -6002,14 +6235,18 @@ Example interaction in nonlinear model
 <span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="modmadness-pt3-wd_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-7-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-7-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(est6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -6114,7 +6351,7 @@ $mval[[1]]
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="thatsallfolks.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">That’s all folks!</figcaption>
+<figcaption>That’s all folks!</figcaption>
 </figure>
 </div>
 
@@ -6137,7 +6374,7 @@ $mval[[1]]
 <li id="fn10"><p><a href="https://bs1125.github.io/CMAverse/articles/overview.html">See Table 2 here</a> for descriptions of the various causal estimates on the ratio scale that are output by CMAverse, and see the <a href="https://bs1125.github.io/CMAverse/reference/cmest.html"><code>cmest</code> documentation</a> for descriptions of which causal estimates are generated under different modeling specifications.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>To echo my recommendation from Part 1, <a href="https://sociologicalscience.com/download/vol-6/february/SocSci_v6_81to117.pdf">Trenton Mize’s (2019) paper</a> is an excellent resource for better understanding interactions in nonlinear models.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
   author = {Brauer, Jon},
   title = {Moderator {Madness,} {Part} 3},
   date = {2024-02-21},
@@ -6149,18 +6386,23 @@ Brauer, Jon. 2024. <span>“Moderator Madness, Part 3.”</span> February
 21, 2024. <a href="https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html">https://reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
+
 <hr>
+
+
 
 <p> questions? feedback? want to connect? </p>
 
 
-<table data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0" class="table">
+
+
+<table class="caption-top table" data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0" class="table">
+<td><table class="caption-top table" data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0">
 <tbody>
 <tr class="odd">
 <td style="border-radius: 2px" data-bgcolor="#93c54b"><a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #000000;text-decoration: none;font-weight:bold;display: inline-block;">send us an email</a></td>
@@ -6172,7 +6414,10 @@ Brauer, Jon. 2024. <span>“Moderator Madness, Part 3.”</span> February
 </table>
 
 
+
+
 <hr>
+
 </div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -6253,10 +6498,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -6266,8 +6528,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -6279,7 +6550,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -6323,6 +6717,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -6348,6 +6743,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -6449,6 +6870,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

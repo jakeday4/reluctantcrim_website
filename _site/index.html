@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -109,16 +116,43 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./images/RC_banner.jpg" alt="" class="navbar-logo">
     </a>
@@ -133,42 +167,46 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog-posts.html" rel="" target="">
- <span class="menu-text">blog posts</span></a>
+    <a class="nav-link" href="./blog-posts.html"> 
+<span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course-materials.html" rel="" target="">
- <span class="menu-text">course materials</span></a>
+    <a class="nav-link" href="./course-materials.html"> 
+<span class="menu-text">courses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog-posts/[2]/favorite_links.html" rel="" target="">
- <span class="menu-text">links we love</span></a>
+    <a class="nav-link" href="./supp/index.html"> 
+<span class="menu-text">supplementary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com" rel="" target=""><i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/reluctantcrim" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -181,7 +219,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -194,9 +232,10 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="bayesian">bayesian <span class="quarto-category-count">(1)</span></div><div class="category" data-category="causality">causality <span class="quarto-category-count">(5)</span></div><div class="category" data-category="duplication">duplication <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fraud">fraud <span class="quarto-category-count">(1)</span></div><div class="category" data-category="general">general <span class="quarto-category-count">(9)</span></div><div class="category" data-category="mediation">mediation <span class="quarto-category-count">(3)</span></div><div class="category" data-category="moderation">moderation <span class="quarto-category-count">(3)</span></div><div class="category" data-category="rstats">rstats <span class="quarto-category-count">(7)</span></div><div class="category" data-category="survey research">survey research <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="bayesian">bayesian <span class="quarto-category-count">(1)</span></div><div class="category" data-category="causality">causality <span class="quarto-category-count">(6)</span></div><div class="category" data-category="duplication">duplication <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fraud">fraud <span class="quarto-category-count">(1)</span></div><div class="category" data-category="general">general <span class="quarto-category-count">(10)</span></div><div class="category" data-category="mediation">mediation <span class="quarto-category-count">(4)</span></div><div class="category" data-category="moderation">moderation <span class="quarto-category-count">(3)</span></div><div class="category" data-category="rstats">rstats <span class="quarto-category-count">(8)</span></div><div class="category" data-category="survey research">survey research <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
 
 
 
@@ -205,19 +244,61 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="blog-posts">blog posts</h2>
 <div id="listing-posts" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="general,rstats,causality,moderation,mediation" data-listing-date-sort="1708923600000" data-listing-file-modified-sort="1708962268968" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="75">
+<div class="quarto-post image-right" data-index="0" data-categories="general,rstats,causality,mediation" data-listing-date-sort="1715572800000" data-listing-file-modified-sort="1715630466128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1392">
 <div class="thumbnail">
-<p><a href="./blog-posts/[11]/modmadness-pt3.html"> <img src="./blog-posts/[11]/med-or-mod-cartoon2.jpg" class="thumbnail-image" alt="Two lemmings confused by exposure-mediator interactions (with help from DALL-E)"> </a></p>
+<p><a href="./blog-posts/[12]/RRR_mediation.html" class="no-external"></a></p><a href="./blog-posts/[12]/RRR_mediation.html" class="no-external">
+<p><img src="./blog-posts/[12]/thinking_hurts.jpeg" class="thumbnail-image" alt="Mediation makes my head hurt"></p>
+</a><p><a href="./blog-posts/[12]/RRR_mediation.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[11]/modmadness-pt3.html">
 <h3 class="no-anchor listing-title">
-Moderator Madness, Part 3
+<a href="./blog-posts/[12]/RRR_mediation.html" class="no-external">RRR: Mediation Makes My Head Hurt!</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[12]/RRR_mediation.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
+general
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rstats'); return false;">
+rstats
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('causality'); return false;">
+causality
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mediation'); return false;">
+mediation
+</div>
+</div>
+<div class="listing-description">
+<a href="./blog-posts/[12]/RRR_mediation.html" class="no-external">Our first Reluctantly Rapid Response (RRR) post addresses a confusing mediation issue.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blog-posts/[12]/RRR_mediation.html" class="no-external">
+<div class="listing-date">
+May 13, 2024
+</div>
+<div class="listing-reading-time">
+7 min
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="general,rstats,causality,moderation,mediation" data-listing-date-sort="1708923600000" data-listing-file-modified-sort="1708962268000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="75" data-listing-word-count-sort="14807">
+<div class="thumbnail">
+<p><a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external"></a></p><a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external">
+<p><img src="./blog-posts/[11]/med-or-mod-cartoon2.jpg" class="thumbnail-image" alt="Two lemmings confused by exposure-mediator interactions (with help from DALL-E)"></p>
+</a><p><a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external">Moderator Madness, Part 3</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -235,14 +316,12 @@ moderation
 mediation
 </div>
 </div>
-<a href="./blog-posts/[11]/modmadness-pt3.html">
 <div class="listing-description">
-<p>Exposure-mediator interaction? No problem! Disentangle indirect and interaction effects with CMAverse in R</p>
+<a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external">Exposure-mediator interaction? No problem! Disentangle indirect and interaction effects with CMAverse in R</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[11]/modmadness-pt3.html">
+<a href="./blog-posts/[11]/modmadness-pt3.html" class="no-external">
 <div class="listing-date">
 Feb 26, 2024
 </div>
@@ -252,19 +331,19 @@ Feb 26, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="general,rstats,causality,moderation,mediation" data-listing-date-sort="1708664400000" data-listing-file-modified-sort="1708964069337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="36">
+<div class="quarto-post image-right" data-index="2" data-categories="general,rstats,causality,moderation,mediation" data-listing-date-sort="1708664400000" data-listing-file-modified-sort="1708711459000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="36" data-listing-word-count-sort="7028">
 <div class="thumbnail">
-<p><a href="./blog-posts/[7]/modmadness-pt2.html"> <img src="./blog-posts/[7]/decomp-cartoon2.jpg" class="thumbnail-image" alt="Lemmings puzzled by 4-way total effect decomposition (with help from DALL-E)"> </a></p>
+<p><a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external"></a></p><a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external">
+<p><img src="./blog-posts/[7]/decomp-cartoon2.jpg" class="thumbnail-image" alt="Lemmings puzzled by 4-way total effect decomposition (with help from DALL-E)"></p>
+</a><p><a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[7]/modmadness-pt2.html">
 <h3 class="no-anchor listing-title">
-Moderator Madness, Part 2
+<a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external">Moderator Madness, Part 2</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -282,14 +361,12 @@ moderation
 mediation
 </div>
 </div>
-<a href="./blog-posts/[7]/modmadness-pt2.html">
 <div class="listing-description">
-<p>Is your mediator also a moderator? Learn how counterfactuals and potential outcomes can help decompose a total effect into four distinct components.</p>
+<a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external">Is your mediator also a moderator? Learn how counterfactuals and potential outcomes can help decompose a total effect into four distinct components.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[7]/modmadness-pt2.html">
+<a href="./blog-posts/[7]/modmadness-pt2.html" class="no-external">
 <div class="listing-date">
 Feb 23, 2024
 </div>
@@ -299,19 +376,19 @@ Feb 23, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="general,rstats,survey research,duplication,fraud" data-listing-date-sort="1696910400000" data-listing-file-modified-sort="1708964069352" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="3" data-categories="general,rstats,survey research,duplication,fraud" data-listing-date-sort="1696910400000" data-listing-file-modified-sort="1708711610000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="225">
 <div class="thumbnail">
-<p><a href="./blog-posts/[8]/dup-index.html"> <img src="./blog-posts/[8]/shining2.jpg" class="thumbnail-image" alt="You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?"> </a></p>
+<p><a href="./blog-posts/[8]/dup-index.html" class="no-external"></a></p><a href="./blog-posts/[8]/dup-index.html" class="no-external">
+<p><img src="./blog-posts/[8]/shining2.jpg" class="thumbnail-image" alt="You thought [The Shining](https://www.imdb.com/title/tt0081505/) was scary? Have you looked under your data for near duplicates?"></p>
+</a><p><a href="./blog-posts/[8]/dup-index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[8]/dup-index.html">
 <h3 class="no-anchor listing-title">
-Near Duplicates in Survey Data Series
+<a href="./blog-posts/[8]/dup-index.html" class="no-external">Near Duplicates in Survey Data Series</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[8]/dup-index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -329,14 +406,12 @@ duplication
 fraud
 </div>
 </div>
-<a href="./blog-posts/[8]/dup-index.html">
 <div class="listing-description">
-<p>Do you know how to detect exact or near duplicate rows in your data? Read on to learn more!</p>
+<a href="./blog-posts/[8]/dup-index.html" class="no-external">Do you know how to detect exact or near duplicate rows in your data? Read on to learn more!</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[8]/dup-index.html">
+<a href="./blog-posts/[8]/dup-index.html" class="no-external">
 <div class="listing-date">
 Oct 10, 2023
 </div>
@@ -346,19 +421,19 @@ Oct 10, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="general,rstats,moderation" data-listing-date-sort="1689652800000" data-listing-file-modified-sort="1708964069316" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="48">
+<div class="quarto-post image-right" data-index="4" data-categories="general,rstats,moderation" data-listing-date-sort="1689652800000" data-listing-file-modified-sort="1708460932000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="48" data-listing-word-count-sort="9571">
 <div class="thumbnail">
-<p><a href="./blog-posts/[6]/modmadness-pt1.html"> <img src="./blog-posts/[6]/interact-cartoon2.jpg" class="thumbnail-image" alt="Two lemmings confused by nonlinear interactions (with help from DALL-E)"> </a></p>
+<p><a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external"></a></p><a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external">
+<p><img src="./blog-posts/[6]/interact-cartoon2.jpg" class="thumbnail-image" alt="Two lemmings confused by nonlinear interactions (with help from DALL-E)"></p>
+</a><p><a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[6]/modmadness-pt1.html">
 <h3 class="no-anchor listing-title">
-Moderator Madness, Part 1
+<a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external">Moderator Madness, Part 1</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -370,14 +445,12 @@ rstats
 moderation
 </div>
 </div>
-<a href="./blog-posts/[6]/modmadness-pt1.html">
 <div class="listing-description">
-<p>Properly model, plot, and interpret your nonlinear interactions.</p>
+<a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external">Properly model, plot, and interpret your nonlinear interactions.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[6]/modmadness-pt1.html">
+<a href="./blog-posts/[6]/modmadness-pt1.html" class="no-external">
 <div class="listing-date">
 Jul 18, 2023
 </div>
@@ -387,19 +460,19 @@ Jul 18, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="general,rstats,causality" data-listing-date-sort="1686024000000" data-listing-file-modified-sort="1708964069273" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="65">
+<div class="quarto-post image-right" data-index="5" data-categories="general,rstats,causality" data-listing-date-sort="1686024000000" data-listing-file-modified-sort="1689446800000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="65" data-listing-word-count-sort="12901">
 <div class="thumbnail">
-<p><a href="./blog-posts/[5]/colliders.html"> <img src="./blog-posts/[5]/rancor.jpg" class="thumbnail-image" alt="Colliders: The rancor in your regression (by DALL-E)"> </a></p>
+<p><a href="./blog-posts/[5]/colliders.html" class="no-external"></a></p><a href="./blog-posts/[5]/colliders.html" class="no-external">
+<p><img src="./blog-posts/[5]/rancor.jpg" class="thumbnail-image" alt="Colliders: The rancor in your regression (by DALL-E)"></p>
+</a><p><a href="./blog-posts/[5]/colliders.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[5]/colliders.html">
 <h3 class="no-anchor listing-title">
-Are you afraid of colliders?
+<a href="./blog-posts/[5]/colliders.html" class="no-external">Are you afraid of colliders?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[5]/colliders.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -411,14 +484,12 @@ rstats
 causality
 </div>
 </div>
-<a href="./blog-posts/[5]/colliders.html">
 <div class="listing-description">
-<p>Learn to fear colliders, the rancor in your regression model. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist.</p>
+<a href="./blog-posts/[5]/colliders.html" class="no-external">Learn to fear colliders, the rancor in your regression model. Then, learn to face those fears and overcome colliders with a DAG, the elegant weapon of a Jedi scientist.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[5]/colliders.html">
+<a href="./blog-posts/[5]/colliders.html" class="no-external">
 <div class="listing-date">
 Jun 6, 2023
 </div>
@@ -428,19 +499,19 @@ Jun 6, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="general,rstats,causality,mediation" data-listing-date-sort="1681099200000" data-listing-file-modified-sort="1708964069237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="39">
+<div class="quarto-post image-right" data-index="6" data-categories="general,rstats,causality,mediation" data-listing-date-sort="1681099200000" data-listing-file-modified-sort="1689634459000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="39" data-listing-word-count-sort="7601">
 <div class="thumbnail">
-<p><a href="./blog-posts/[4]/causation-no-corr.html"> <img src="./blog-posts/[4]/empty-egg-dag3.png" class="thumbnail-image" alt="Empty Easter egg, or countervailing causation?"> </a></p>
+<p><a href="./blog-posts/[4]/causation-no-corr.html" class="no-external"></a></p><a href="./blog-posts/[4]/causation-no-corr.html" class="no-external">
+<p><img src="./blog-posts/[4]/empty-egg-dag3.png" class="thumbnail-image" alt="Empty Easter egg, or countervailing causation?"></p>
+</a><p><a href="./blog-posts/[4]/causation-no-corr.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[4]/causation-no-corr.html">
 <h3 class="no-anchor listing-title">
-Causation without Correlation?
+<a href="./blog-posts/[4]/causation-no-corr.html" class="no-external">Causation without Correlation?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[4]/causation-no-corr.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -455,14 +526,12 @@ causality
 mediation
 </div>
 </div>
-<a href="./blog-posts/[4]/causation-no-corr.html">
 <div class="listing-description">
-<p>You’ve heard the phrase ‘correlation does not imply causation.’ But does causation imply correlation?</p>
+<a href="./blog-posts/[4]/causation-no-corr.html" class="no-external">You’ve heard the phrase ‘correlation does not imply causation.’ But does causation imply correlation?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[4]/causation-no-corr.html">
+<a href="./blog-posts/[4]/causation-no-corr.html" class="no-external">
 <div class="listing-date">
 Apr 10, 2023
 </div>
@@ -472,32 +541,30 @@ Apr 10, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="general" data-listing-date-sort="1678597200000" data-listing-file-modified-sort="1708964069215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="31">
+<div class="quarto-post image-right" data-index="7" data-categories="general" data-listing-date-sort="1678597200000" data-listing-file-modified-sort="1686576150000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="31" data-listing-word-count-sort="6060">
 <div class="thumbnail">
-<p><a href="./blog-posts/[3]/charles-memorial.html"> <img src="./blog-posts/[3]/charles_smiling.jpg" class="thumbnail-image" alt="Dr. Charles R. Tittle"> </a></p>
+<p><a href="./blog-posts/[3]/charles-memorial.html" class="no-external"></a></p><a href="./blog-posts/[3]/charles-memorial.html" class="no-external">
+<p><img src="./blog-posts/[3]/charles_smiling.jpg" class="thumbnail-image" alt="Dr. Charles R. Tittle"></p>
+</a><p><a href="./blog-posts/[3]/charles-memorial.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[3]/charles-memorial.html">
 <h3 class="no-anchor listing-title">
-Dr.&nbsp;Charles R. Tittle’s intellectual contributions
+<a href="./blog-posts/[3]/charles-memorial.html" class="no-external">Dr.&nbsp;Charles R. Tittle’s intellectual contributions</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[3]/charles-memorial.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
 </div>
 </div>
-<a href="./blog-posts/[3]/charles-memorial.html">
 <div class="listing-description">
-<p>This post is dedicated to the intellectual contributions of our late mentor, Dr.&nbsp;Charles R. Tittle.</p>
+<a href="./blog-posts/[3]/charles-memorial.html" class="no-external">This post is dedicated to the intellectual contributions of our late mentor, Dr.&nbsp;Charles R. Tittle.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[3]/charles-memorial.html">
+<a href="./blog-posts/[3]/charles-memorial.html" class="no-external">
 <div class="listing-date">
 Mar 12, 2023
 </div>
@@ -507,19 +574,19 @@ Mar 12, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="general,rstats,causality,bayesian" data-listing-date-sort="1678510800000" data-listing-file-modified-sort="1708964069207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="8" data-categories="general,rstats,causality,bayesian" data-listing-date-sort="1678510800000" data-listing-file-modified-sort="1680802976812" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1576">
 <div class="thumbnail">
-<p><a href="./blog-posts/[2]/favorite_links.html"> <img src="./blog-posts/[2]/DALL-E-melting_heart_of_statistics_in_Dali_style_80.png" class="thumbnail-image" alt="Melting heart of statistics in Salvadore Dali&amp;#039;s surrealist style, by DALL-E"> </a></p>
+<p><a href="./blog-posts/[2]/favorite_links.html" class="no-external"></a></p><a href="./blog-posts/[2]/favorite_links.html" class="no-external">
+<p><img src="./blog-posts/[2]/DALL-E-melting_heart_of_statistics_in_Dali_style_80.png" class="thumbnail-image" alt="Melting heart of statistics in Salvadore Dali&amp;#039;s surrealist style, by DALL-E"></p>
+</a><p><a href="./blog-posts/[2]/favorite_links.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[2]/favorite_links.html">
 <h3 class="no-anchor listing-title">
-Check out some of our favorite sites
+<a href="./blog-posts/[2]/favorite_links.html" class="no-external">Check out some of our favorite sites</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[2]/favorite_links.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
@@ -534,14 +601,12 @@ causality
 bayesian
 </div>
 </div>
-<a href="./blog-posts/[2]/favorite_links.html">
 <div class="listing-description">
-We have learned so much from blogs, bookdowns, and videos openly shared by others. Here, we compiled a list of some of our favorite resources.
+<a href="./blog-posts/[2]/favorite_links.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:blog-posts/[2]/favorite_links.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[2]/favorite_links.html">
+<a href="./blog-posts/[2]/favorite_links.html" class="no-external">
 <div class="listing-date">
 Mar 11, 2023
 </div>
@@ -551,32 +616,30 @@ Mar 11, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="general" data-listing-date-sort="1678424400000" data-listing-file-modified-sort="1708964069189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="9" data-categories="general" data-listing-date-sort="1678424400000" data-listing-file-modified-sort="1686576150000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1476">
 <div class="thumbnail">
-<p><a href="./blog-posts/[1]/welcome-blog.html"> <img src="./blog-posts/[1]/RC_logo_white.jpg" class="thumbnail-image" alt="Reluctant criminologists logo"> </a></p>
+<p><a href="./blog-posts/[1]/welcome-blog.html" class="no-external"></a></p><a href="./blog-posts/[1]/welcome-blog.html" class="no-external">
+<p><img src="./blog-posts/[1]/RC_logo_white.jpg" class="thumbnail-image" alt="Reluctant criminologists logo"></p>
+</a><p><a href="./blog-posts/[1]/welcome-blog.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./blog-posts/[1]/welcome-blog.html">
 <h3 class="no-anchor listing-title">
-Welcome to the reluctant criminologists
+<a href="./blog-posts/[1]/welcome-blog.html" class="no-external">Welcome to the reluctant criminologists</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./blog-posts/[1]/welcome-blog.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('general'); return false;">
 general
 </div>
 </div>
-<a href="./blog-posts/[1]/welcome-blog.html">
 <div class="listing-description">
-<p>You found our repository for sharing course material and ideas. Congrats! Or condolences. Anyway, in this first post, we discuss our motives and aims for this site.</p>
+<a href="./blog-posts/[1]/welcome-blog.html" class="no-external">You found our repository for sharing course material and ideas. Congrats! Or condolences. Anyway, in this first post, we discuss our motives and aims for this site.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./blog-posts/[1]/welcome-blog.html">
+<a href="./blog-posts/[1]/welcome-blog.html" class="no-external">
 <div class="listing-date">
 Mar 10, 2023
 </div>
@@ -596,29 +659,48 @@ No matching items
 <h2 class="anchored" data-anchor-id="course-materials">course materials</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div id="fig-hate-class" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
+<div id="fig-hate-class" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hate-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><a href="course-materials/intro-stats.html"><img src="course-materials/1_ugrad_stats/hateclass_horst.png" class="img-fluid figure-img"></a></p>
-</figure>
 </div>
-<figcaption class="figure-caption">Course&nbsp;1: <a href="course-materials/intro-stats.html">Introduction to statistics in R for criminologists</a></figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hate-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+&nbsp;1: <a href="course-materials/intro-stats.html">Introduction to statistics in R for criminologists (Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>)</a>
+</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:10%;">
 <!-- empty column to create gap -->
 </div><div class="column" style="width:45%;">
-<div id="fig-problems" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
+<div id="fig-problems" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-problems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><a href="course-materials/rnr.html"><img src="course-materials/error_horst.png" class="img-fluid figure-img"></a></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-problems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+&nbsp;2: <a href="course-materials/rnr.html">Replication &amp; reproducibility in social science (Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>)</a>
+</figcaption>
 </figure>
 </div>
-<figcaption class="figure-caption">Course&nbsp;2: <a href="course-materials/rnr.html">Replication &amp; reproducibility in social science</a></figcaption>
+</div>
+</div>
+</section>
+<section id="supplementary-files" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-files">supplementary files</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div id="fig-supp-files" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-supp-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><a href="supp/index.html"><img src="supp/hill-horst-steps.png" class="img-fluid figure-img"></a></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-supp-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+&nbsp;3: <a href="supp/index.html">Supplementary materials (Illustration by Alison Hill and Allison Horst, for RStudio)</a>
+</figcaption>
 </figure>
 </div>
+</div><div class="column" style="width:55%;">
+<!-- empty column to create gap -->
 </div>
 </div>
 
@@ -628,18 +710,23 @@ No matching items
 
 </main> <!-- /main -->
 <div>
+
 <hr>
+
+
 
 <p> questions? feedback? want to connect? </p>
 
 
-<table data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0" class="table">
+
+
+<table class="caption-top table" data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0" class="table">
+<td><table class="caption-top table" data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0">
 <tbody>
 <tr class="odd">
 <td style="border-radius: 2px" data-bgcolor="#93c54b"><a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #000000;text-decoration: none;font-weight:bold;display: inline-block;">send us an email</a></td>
@@ -651,7 +738,10 @@ No matching items
 </table>
 
 
+
+
 <hr>
+
 </div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -732,10 +822,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -745,8 +852,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -758,7 +874,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -802,6 +1041,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -827,6 +1067,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -926,6 +1192,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>reluctant criminologists</title>
+<link>https://www.reluctantcriminologists.com/blog-posts.html</link>
+<atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
+<description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
+<generator>quarto-1.4.555</generator>
+<lastBuildDate>Mon, 13 May 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/blog-posts/[12]/RRR_mediation.html}</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[12]/RRR_mediation.html</link>
+  <description>{B4F502887207:/blog-posts/[12]/RRR_mediation.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <category>mediation</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[12]/RRR_mediation.html</guid>
+  <pubDate>Mon, 13 May 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[12]/thinking_hurts.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[11]/modmadness-pt3.html}</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html</link>
+  <description>{B4F502887207:/blog-posts/[11]/modmadness-pt3.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <category>moderation</category>
+  <category>mediation</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[11]/modmadness-pt3.html</guid>
+  <pubDate>Mon, 26 Feb 2024 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[11]/med-or-mod-cartoon2.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[7]/modmadness-pt2.html}</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html</link>
+  <description>{B4F502887207:/blog-posts/[7]/modmadness-pt2.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <category>moderation</category>
+  <category>mediation</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html</guid>
+  <pubDate>Fri, 23 Feb 2024 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[7]/decomp-cartoon2.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[8]/dup-index.html}</title>
+  <dc:creator>Jake Day</dc:creator>
+  <dc:creator>Jon Brauer</dc:creator>
+  <dc:creator>Maja Kotlaja</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html</link>
+  <description>{B4F502887207:/blog-posts/[8]/dup-index.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>survey research</category>
+  <category>duplication</category>
+  <category>fraud</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[8]/dup-index.html</guid>
+  <pubDate>Tue, 10 Oct 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[8]/shining2.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[6]/modmadness-pt1.html}</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html</link>
+  <description>{B4F502887207:/blog-posts/[6]/modmadness-pt1.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>moderation</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[6]/modmadness-pt1.html</guid>
+  <pubDate>Tue, 18 Jul 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[6]/interact-cartoon2.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[5]/colliders.html}</title>
+  <dc:creator>Jon Brauer and Jake Day</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</link>
+  <description>{B4F502887207:/blog-posts/[5]/colliders.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</guid>
+  <pubDate>Tue, 06 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[5]/rancor.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[4]/causation-no-corr.html}</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</link>
+  <description>{B4F502887207:/blog-posts/[4]/causation-no-corr.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <category>mediation</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html</guid>
+  <pubDate>Mon, 10 Apr 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[4]/empty-egg-dag3.png" medium="image" type="image/png" height="135" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[3]/charles-memorial.html}</title>
+  <dc:creator>Jon Brauer, with Katya Botchkovar and Carter Hay</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html</link>
+  <description>{B4F502887207:/blog-posts/[3]/charles-memorial.html}</description>
+  <category>general</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html</guid>
+  <pubDate>Sun, 12 Mar 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[3]/charles_smiling.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[2]/favorite_links.html}</title>
+  <dc:creator>Jon Brauer and Jake Day</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[2]/favorite_links.html</link>
+  <description>{B4F502887207:/blog-posts/[2]/favorite_links.html}</description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <category>bayesian</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[2]/favorite_links.html</guid>
+  <pubDate>Sat, 11 Mar 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[2]/DALL-E-melting_heart_of_statistics_in_Dali_style_80.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/blog-posts/[1]/welcome-blog.html}</title>
+  <dc:creator>Jon Brauer and Jake Day</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</link>
+  <description>{B4F502887207:/blog-posts/[1]/welcome-blog.html}</description>
+  <category>general</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</guid>
+  <pubDate>Fri, 10 Mar 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[1]/RC_logo_white.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

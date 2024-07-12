@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -114,9 +121,9 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo">
     </a>
@@ -131,42 +138,46 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts.html" rel="" target="">
- <span class="menu-text">blog posts</span></a>
+    <a class="nav-link" href="../../blog-posts.html"> 
+<span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../course-materials.html" rel="" target="">
- <span class="menu-text">course materials</span></a>
+    <a class="nav-link" href="../../course-materials.html"> 
+<span class="menu-text">courses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html" rel="" target="">
- <span class="menu-text">links we love</span></a>
+    <a class="nav-link" href="../../supp/index.html"> 
+<span class="menu-text">supplementary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:reluctantcrim@gmail.com" rel="" target=""><i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/reluctantcrim" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -238,12 +249,14 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="decomp-cartoon2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Lemmings puzzled by 4-way total effect decomposition (with help from DALL-E)</figcaption>
+<figcaption>Lemmings puzzled by 4-way total effect decomposition (with help from DALL-E)</figcaption>
 </figure>
 </div>
 <p>This is the second of a three-part blog series on modeling moderators in criminological data. <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1">Part 1</a> addressed issues related to the estimation and interpretation of interaction effects in generalized linear regression models with nonlinear link functions (e.g., logistic, Poisson, and negative binomial regression). In this Part 2 entry, I use a simple example to introduce a 4-way decomposition procedure for separating a total effect into direct, indirect, and interaction components in the presence of a potential exposure-mediator interaction. <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a> will then use more realistic simulated data to illustrate “causal mediation” analysis with the <code>CMAverse</code> software package in R, which relies on this 4-way potential outcomes decomposition approach to disentangle indirect and interaction effects in the presence of a potential exposure-mediator interaction.</p>
@@ -256,7 +269,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="counterfac1.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Your thoughts communicate a causal claim about the world - that the closed window curtain caused your pain.</figcaption>
+<figcaption>Your thoughts communicate a causal claim about the world - that the closed window curtain caused your pain.</figcaption>
 </figure>
 </div>
 <p>There are two important things to note about this imaginary angry thought. First, it communicates a causal belief or claim. Specifically, your momentary thought communicates a belief that the closed window curtains are (at least partly) responsible for you stubbing your toe. Put differently, you view the closed curtains as a <em>cause</em> of the undesired outcome - perhaps not the only cause, but a noteworthy cause nonetheless.</p>
@@ -264,7 +277,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="counterfac2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Causal claims depend upon contrasts between “potential outcomes” across observed and counterfactual conditions.</figcaption>
+<figcaption>Causal claims depend upon contrasts between “potential outcomes” across observed and counterfactual conditions.</figcaption>
 </figure>
 </div>
 <p>Many social scientific questions and claims reflect a similar counterfactual logic or, at least, can be recast in counterfactual terms:</p>
@@ -288,13 +301,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="counterfac3.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">We can recast our thought experiment into the language of potential outcomes.</figcaption>
+<figcaption>We can recast our thought experiment into the language of potential outcomes.</figcaption>
 </figure>
 </div>
 <p>Additionally, <a href="https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders#sec-dagsaber">as we have explained before</a>, it is usually helpful to communicate our causal assumptions transparently using a causal diagram or a DAG. In the DAG below, we collapse our exposure conditions and potential outcomes into two variables connected by an arrow to represent our expectation of a causal relationship between curtains (open versus closed) and uttering a four-letter word (unstubbed versus stubbed toe).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -305,8 +318,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </details>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ouchDAG <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Curtains,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure =</span> <span class="st">"Curtains"</span>,</span>
@@ -350,7 +363,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="modmadness-pt2_files/figure-html/DAG1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 1. Simple DAG representing causal effect of window curtains on stubbed toes (ouch!)</figcaption>
+<figcaption>Figure 1. Simple DAG representing causal effect of window curtains on stubbed toes (ouch!)</figcaption>
 </figure>
 </div>
 </div>
@@ -364,12 +377,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="counterfac4.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Specifying mechanisms can help us identify, predict, and explain causal relationships.</figcaption>
+<figcaption>Specifying mechanisms can help us identify, predict, and explain causal relationships.</figcaption>
 </figure>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ouchDAG2 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Light ,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  Light <span class="sc">~</span> Curtains, </span>
@@ -402,7 +415,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="modmadness-pt2_files/figure-html/DAG2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 2. DAG of indirect causal effect of window curtains through light on stubbed toes</figcaption>
+<figcaption>Figure 2. DAG of indirect causal effect of window curtains through light on stubbed toes</figcaption>
 </figure>
 </div>
 </div>
@@ -411,8 +424,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>Put differently, we might posit a heterogeneous causal effect of opening the curtains on the probability of toe stubbing, where the causal effect is strongest when accompanied by sufficient light but weakest or nonexistent when not accompanied by sufficient light.</p>
 <p>If you are a social scientist, you might also be accustomed to seeing an intersecting arrow in a causal diagram to depict this type of conditional effect or moderating relationship, like below:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ouchDAG2b <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Curtains ,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  holder <span class="sc">~</span> Light, </span>
@@ -454,7 +467,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="modmadness-pt2_files/figure-html/Moderation-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 3. Causal graph of light moderating the effect of window curtains on stubbed toes</figcaption>
+<figcaption>Figure 3. Causal graph of light moderating the effect of window curtains on stubbed toes</figcaption>
 </figure>
 </div>
 </div>
@@ -462,8 +475,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <p>So, is light a mediator, or a moderator, or is it both? Well, it turns out that mediation and moderation are <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/">not always as distinguishable</a> as one might think.</p>
 <p>In fact, this potential overlap is communicated by a proper DAG of mediating and moderating relationships. As we noted <a href="https://reluctantcriminologists.com/blog-posts/%5B6%5D/modmadness-pt1#two-papers-walk-into-a-bar">in Part 1</a>, a traditional DAG does not use intersecting arrows to depict moderation. Rather, arrows indicate information flow, while heterogeneous (moderation) effects are captured in the functional forms of the mathematical equations used to model causal relationships. Likewise, below is a DAG that illustrates the possibility of (heterogeneous) direct and indirect effects of closed curtains on stubbing toes.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ouchDAG3 <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  Ouch <span class="sc">~</span> Curtains <span class="sc">+</span> Light ,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  Light <span class="sc">~</span> Curtains, </span>
@@ -496,7 +509,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="modmadness-pt2_files/figure-html/DAG3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure 4. DAG of direct and indirect causal effects of window curtains through light on stubbed toes</figcaption>
+<figcaption>Figure 4. DAG of direct and indirect causal effects of window curtains through light on stubbed toes</figcaption>
 </figure>
 </div>
 </div>
@@ -510,14 +523,13 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="counterfac5.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Given some key assumptions, we can estimate counterfactual causal effects as population-average differences in potential outcomes.</figcaption>
+<figcaption>Given some key assumptions, we can estimate counterfactual causal effects as population-average differences in potential outcomes.</figcaption>
 </figure>
 </div>
 <p>In <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a> of this series, I will work through an example of effect decomposition in R using simulated crime-relevant data. First, though, I hope to build upon your intuitions about how this decomposition procedure works in this entry using some toy data based on our toe stubbing example. The goal of this example is to introduce you to key terminology and the conceptual basis for potential outcomes effect decomposition before getting into a more realistic applied example in which we will use software to perform the decomposition for us.</p>
 <p>Note that this first toy example is intended as a simple application of <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S2title">VanderWeele’s initial 4-way effect decomposition example</a> in which exposure and mediator values are set at specific counterfactual values (setting M to 0 or 1). Later, I will briefly introduce more <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4220271/#S1title">complex counterfactual logic</a> (e.g., setting M at its expected value when X=0 or X=1), which will be required for estimating and interpreting “natural” direct and indirect effects found in <code>CMAverse</code> output in <a href="https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3.html">Part 3</a>. For more and better resources on this topic, I recommend reading VanderWeele’s 2014 paper itself, as well as his tutorials and short video course on causal mediation, all of which are available <a href="https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/">on his website</a>.</p>
-<div>
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ouchdat <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span>CurtainClosed, <span class="sc">~</span>AmpleLight, <span class="sc">~</span>StubToe,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>,</span>
@@ -546,13 +558,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ouchdat,<span class="at">n=</span><span class="dv">11</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(ouchdat,<span class="at">n=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-anonymous-3488286" class="cell tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Toy toe-stubbing data</p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-anonymous-3488286-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-3488286" style="flex-basis: 50.0%;justify-content: center;">
-
+<div id="tbl-anonymous-5612362" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -993,56 +1000,76 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=1</p> </caption>
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CurtainClosed">CurtainClosed</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="AmpleLight">AmpleLight</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="StubToe">StubToe</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">1</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
-<div id="tbl-anonymous-3488286-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-anonymous-3488286" style="flex-basis: 50.0%;justify-content: center;">
 
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>X=1 {#tbl-anonymous-5612362-1}</caption>
+<thead>
+<tr class="header gt_col_headings">
+<th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
+<th id="AmpleLight" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">AmpleLight</th>
+<th id="StubToe" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">StubToe</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 <div id="gvvydsugpf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#gvvydsugpf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1483,51 +1510,75 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>X=0</p> </caption>
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CurtainClosed">CurtainClosed</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="AmpleLight">AmpleLight</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="StubToe">StubToe</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">1</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">1</td></tr>
-    <tr><td headers="CurtainClosed" class="gt_row gt_right">0</td>
-<td headers="AmpleLight" class="gt_row gt_right">0</td>
-<td headers="StubToe" class="gt_row gt_right">0</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>X=0 {#tbl-anonymous-5612362-2}</caption>
+<thead>
+<tr class="header gt_col_headings">
+<th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
+<th id="AmpleLight" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">AmpleLight</th>
+<th id="StubToe" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">StubToe</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="CurtainClosed">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="AmpleLight">0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="StubToe">0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Toy toe-stubbing data</p>
 </div>
 </div>
 </div>
@@ -1537,7 +1588,7 @@ The probability of stubbing toes varies across exposure conditions. The probabil
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Y0Y1-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Y0 and Y1</figcaption>
+<figcaption>Y0 and Y1</figcaption>
 </figure>
 </div>
 <section id="sec-TE" class="level3">
@@ -1546,7 +1597,7 @@ The probability of stubbing toes varies across exposure conditions. The probabil
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="TE-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Total effect (<em>TE</em>) = Y1 - Y0</figcaption>
+<figcaption>Total effect (<em>TE</em>) = Y1 - Y0</figcaption>
 </figure>
 </div>
 <p>M0 and M1<br>
@@ -1554,7 +1605,7 @@ What about our mechanism? The probability of experiencing sufficient ambient lig
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="M0M1-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">M0 and M1</figcaption>
+<figcaption>M0 and M1</figcaption>
 </figure>
 </div>
 <p>Now, let’s consider jointly how the probability of stubbing our toes changes given different combinations of exposure and mediator conditions, or given that we open or close curtains and simultaneously observe the presence or absence of sufficient ambient light in the room.</p>
@@ -1563,7 +1614,7 @@ Let’s start with the probability of stubbing toes given open curtains and the 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Y00-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Y00</figcaption>
+<figcaption>Y00</figcaption>
 </figure>
 </div>
 <p>Y10<br>
@@ -1571,7 +1622,7 @@ Now, imagine we <em>do</em> X=1 instead (i.e., we close the curtains) and we con
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Y10-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Y10</figcaption>
+<figcaption>Y10</figcaption>
 </figure>
 </div>
 </section>
@@ -1588,7 +1639,7 @@ Now, imagine we <em>do</em> X=1 instead (i.e., we close the curtains) and we con
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="CDE-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Controlled direct effect (<em>CDE</em>) = Y1m - Y0m</figcaption>
+<figcaption>Controlled direct effect (<em>CDE</em>) = Y1m - Y0m</figcaption>
 </figure>
 </div>
 <p>Y01<br>
@@ -1596,7 +1647,7 @@ In addition to Y10 and Y00, there are additional quantities we can estimate that
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Y01-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Y01</figcaption>
+<figcaption>Y01</figcaption>
 </figure>
 </div>
 <p>Y11<br>
@@ -1604,7 +1655,7 @@ Now, imagine instead we close the curtains (<em>do</em>[X=1]) and continue holdi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Y11-pic.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Y11</figcaption>
+<figcaption>Y11</figcaption>
 </figure>
 </div>
 </section>
@@ -1636,7 +1687,7 @@ Now, imagine instead we close the curtains (<em>do</em>[X=1]) and continue holdi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E-INTref.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A reference interaction is not what it sounds like. Well, maybe it is, if it sounds like an additive interaction effect that operates only if mediator is present in the absence of the exposure. (DALL-E)</figcaption>
+<figcaption>A reference interaction is not what it sounds like. Well, maybe it is, if it sounds like an additive interaction effect that operates only if mediator is present in the absence of the exposure. (DALL-E)</figcaption>
 </figure>
 </div>
 <p>Now, recall that we did not stub our toes in that one time we observed closed curtains and the mechanism present (Y11 = 0/1 = 0.0). However, we did stub our toe in one of the eight instances with open curtains and the mechanism present (Y01 = 1/8 = 0.125). Meanwhile, the probability of stubbing our toes was equal across exposure conditions in the absence of the mediator (Y10 = 5/10 = 0.5; Y00 = 1/2 = 0.5).</p>
@@ -1657,7 +1708,7 @@ Now, imagine instead we close the curtains (<em>do</em>[X=1]) and continue holdi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E-surreal-pie.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Pure indirect effects: As American as apple <em>PIE</em>? (DALL-E)</figcaption>
+<figcaption>Pure indirect effects: As American as apple <em>PIE</em>? (DALL-E)</figcaption>
 </figure>
 </div>
 <p>Speaking of those other two interaction components, we already discussed <em>INT<sub>ref</sub></em>; now, let’s move on to <em>INT<sub>med</sub></em>, our fourth component.</p>
@@ -1679,7 +1730,7 @@ Curtains closed: P(Y|<em>do</em>[X=1],<em>do</em>[M=1]) = Y11 = 0/1 = 0.0</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="DALL-E-INTmed.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A mediated interaction is not what it sounds like either. Unless it sounds like an additive interaction that operates only if the exposure has an effect on the mechanism. (DALL-E)</figcaption>
+<figcaption>A mediated interaction is not what it sounds like either. Unless it sounds like an additive interaction that operates only if the exposure has an effect on the mechanism. (DALL-E)</figcaption>
 </figure>
 </div>
 <p>Put differently, since <em>opening</em> the curtains increases light in the room, and opening the curtains appears to increase toe stubbing when light is present, then the exposure actually increases risks of toe stubbing by increasing the conditions (light) under which it amplifies the risks of the outcome occurring. Again, this is a mediated interaction.</p>
@@ -1699,7 +1750,7 @@ Curtains closed: P(Y|<em>do</em>[X=1],<em>do</em>[M=1]) = Y11 = 0/1 = 0.0</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="sherlock-worried.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">You were worried. I wasn’t worried.</figcaption>
+<figcaption>You were worried. I wasn’t worried.</figcaption>
 </figure>
 </div>
 </section>
@@ -1725,7 +1776,7 @@ From here, we just do a bit of basic algebra:<br>
 = Y11 - Y10 + (-1)(Y01 - Y00)<br>
 = Y11 - Y10 - Y01 + Y00<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
   author = {Brauer, Jon},
   title = {Moderator {Madness,} {Part} 2},
   date = {2024-02-23},
@@ -1737,18 +1788,23 @@ Brauer, Jon. 2024. <span>“Moderator Madness, Part 2.”</span> February
 23, 2024. <a href="https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html">https://reluctantcriminologists.com/blog-posts/[7]/modmadness-pt2.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
+
 <hr>
+
+
 
 <p> questions? feedback? want to connect? </p>
 
 
-<table data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0" class="table">
+
+
+<table class="caption-top table" data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0" class="table">
+<td><table class="caption-top table" data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0">
 <tbody>
 <tr class="odd">
 <td style="border-radius: 2px" data-bgcolor="#93c54b"><a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #000000;text-decoration: none;font-weight:bold;display: inline-block;">send us an email</a></td>
@@ -1760,7 +1816,10 @@ Brauer, Jon. 2024. <span>“Moderator Madness, Part 2.”</span> February
 </table>
 
 
+
+
 <hr>
+
 </div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1841,10 +1900,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1854,8 +1930,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1867,7 +1952,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1911,6 +2119,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1936,6 +2145,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2037,6 +2272,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

@@ -2,6 +2,8 @@
 title: "Supplementary materials"
 ---
 
-## Duplicates series  
+### [Duplicates series](dup-supp/index.html)
 
-### [Post Slides](dup-supp/index.html)
+### [Bègue & Brauer (Forth.)](LB-JRB-supp/index.html)
+
+

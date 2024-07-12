@@ -1,0 +1,3578 @@
+---
+title: "SRPA Replication in France"
+author: "Jon Brauer"
+date: "2024-07-11"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-float: true
+    number-sections: true
+    code-fold: true
+    code-summary: "Show code"
+    embed-resources: true
+execute: 
+  warning: false
+draft: true
+---
+
+## Preamble
+
+This file contains all R code and output (e.g., data wrangling; analysis; visualizations) that I conducted for the working titled paper: "Victimogenic Beauty: Attractiveness and Sexual Victimization Risks among University Students" by Laurent Bègue and Jonathan Brauer.
+
+If you are interested in learning about how I became involved in this paper and some preliminary exchanges that shaped the analytic decisions below, click the "Introductory Comments" link below to expand and view these contents. Otherwise, skip over it to loading R libraries and settings.
+
+<details>
+
+<summary>Introductory Comments</summary>
+
+On May 16, 2024, Laurent Bègue emailed my coauthors and I to inform us that he was working on a paper reporting results of a preregistered replication of our 2020 [study](https://www.sciencedirect.com/science/article/abs/pii/S004723521930354X) documenting correlations between self-reported physical attractiveness (SRPA) and victimization; the replication study used survey data collected from a very large online sample of university students in France. Laurent asked if we were interested in co-authoring the manuscript.
+
+After reading the initial draft of the front end, I asked if the data will be publicly available upon publication, if I would have access to the data to conduct analyses, and if I could review a copy of the preregistration to compare the preregistered plan with the reported measurements and analysis. Laurent affirmed all of the above.
+
+I also recommended adding a correlation matrix and discussed the inclusion of the "number of lifetime sexual partners" (NLP), a proxy for sexual activity, as a covariate in regression models. The addition of this variable to the dataset and model represents an important difference between our original study and the current study. Yet, I questioned the appropriateness of conceptualizing NLP as a confounder that should be adjusted for via covariate stratification and, instead, suggested it might be more appropriately conceptualized and modeled as a mediator. Here was my exact comment:
+
+> "The SRPA effect estimate is very small; sure, it is statistically significant, but that is due to the very large sample size. What is the bivariate correlation between SRPA and victimization, and between SRPA and NLP? You referred to NLP as a confounder but, as described, is it not a mediator instead (like time in public or other routine activities)? That is, do you assume that NLP causes SRPA, or SRPA causes NLP (or some alternative causal assumption)? If SRPA (as a proxy for attractiveness) causes more lifetime partners (proxy for sexual activity), then a mediation model is appropriate (like we used)."
+
+My reasoning was based on our original causal model found in Figure 1 (2020, p.101652) and on Laurent's first draft of the manuscript's front end. Specifically, Laurent had argued:
+
+> "The interpretation of the link between youth physical attractiveness and sexual victimization among students as a consequence of perpetrator’s selection of more gratifiable targets is challenged by the fact that physically attractive individuals may have different routine activities when compared to less attractive individuals. Possibly because they have a lower level of anxiety and neuroticism and a higher self-esteem and social status (Ciosta & Maestripieri, 2023; Feingold, 1992), physically attractive students have a larger number of friends (Gordon et al., 2013), spend more time in public places (Savolainen et al., 2020) and have on average more sexual interactions (Felson et al., 2021; Rhodes, Simmons, & Petrs, 2005). The risk of sexual victimization being related with individual’s prior sexual history and activity (Abbey et al., 1996; Himelein et al., 1994; Koss & Dinero, 1989; Schapanski et al., 2021; Synovitz, & Byrne, 2010), the attractivity-victimization link could therefore be the consequence of a mere differential exposure to situations involving sexual encounters by attractive individuals."
+
+The manuscript continued by stating:
+
+> "Spending more time at more risky timing is a known risk factor for sexual victimization (Quigg et al. 2020). In a study based on a representative sample of Finnish youths, Savolainen, Brauer & Ellonen (2020) confirmed that attractive individuals had a riskier lifestyle (going more out for parties and at more risky timing), and this feature partially mediated the attractivity-sexual victimization relationship. However, victim’s sexual activity was not controlled in the study and may have contributed to the attractivity-victimization link."
+
+So, is sexual activity as measured by NLP a confounder or a mediator? For now, this is a theoretical question that requires us to make a causal assumption one way or the other. Sure, it is also an empirical question, but it is not one that can be answered with these data. Barring an explicit research design for identifying and estimating potential causal effects of the exposure (attractiveness) on the mediator (NLP), confounders and mediators are statistically indistinguishable. That is, inclusion of the NLP variable into a regression model would have the same consequence irrespective of whether it is in reality a mediator or a confounder of the SRPA-victimization relationship.
+
+Hence, in my email reply to Laurent, I also offered the following suggestion:
+
+> "In general, I would state the causal assumptions formally (e.g., in a directed acyclic graph), estimate appropriate model (e.g., indirect effects if appropriate; or, document confounding bias), and then discuss alternative interpretations from different plausible causal assumptions. It is fine if those additional models are not explicitly identified in your preregistration – just be transparent about what is confirmatory and what is exploratory (and, in this case, justified theoretically and follows precedent from replicated study)."
+
+In reply, Laurent provided me with a copy of the preregistration and the data. The following represents my attempt to follow my suggestion above. I try to strike a balance between following the preregistration design while also presenting competing "confounding" and "mediating" causal assumptions, and demonstrating how these different assumptions affect interpretation of the findings.
+
+</details>
+
+## Load libraries & set options
+
+```{r}
+
+library(here)
+library(haven)
+library(ggplot2)
+library(tidyverse)
+library(naniar)
+library(dagitty)
+library(ggdag)
+library(ggraph)
+library(ggdist)
+library(gt)
+library(gtExtras)
+library(ggthemes)
+library(gtools)
+# library(summarytools)
+library(modelsummary)
+library(ggmosaic)
+library(GGally)
+library(viridis)
+library(ggalluvial)
+library(patchwork)
+library(mediation)
+library(CMAverse)
+library(rstanarm)
+library(brms)
+library(bayesplot)
+library(tidybayes)
+library(marginaleffects)
+library(parallelly)
+library(ordPens)
+
+# https://cran.r-project.org/bin/windows/Rtools/rtools40.html
+# install.packages("cmdstanr",repos = c("https://mc-stan.org/r-packages/",
+#                                       getOption("repos")))
+# library(cmdstanr)
+# cmdstanr::check_cmdstan_toolchain(fix = TRUE)
+# check_cmdstan_toolchain()
+
+#set default knit & scientific notation options
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE, fig.align="center")
+options(scipen = 999, digits = 2) #set global option to two decimals 
+
+# identify & set # of available cores
+  # replaced parallel::detectCores()
+  # https://www.jottr.org/2022/12/05/avoid-detectcores/
+nCoresphys <- parallelly::availableCores(logical = FALSE) 
+
+theme_set(bayesplot::theme_default())
+# options(mc.cores = parallelly::availableCores(logical=FALSE))
+# options(mc.cores = 4, logical=FALSE)
+  #alt: can specify exact number of cores desired here &/or in models/ppchecks   
+
+print("T/F: Root 'here()' folder contains subfolder 'Models'")
+#check for Models folder to save figures, create if one does not exist
+ifelse(dir.exists(here("supp/LB-JRB-supp/os/Models")), TRUE, dir.create(here("Models")))
+
+
+
+```
+
+## FIG1: DAGs
+
+The preregistration mentions stratifying on age as a potential confounder. It also mentions adjusting for general positive self-perceptions by stratifying on participant’s self-evaluations of intelligence (SRintel) and popularity (SRpopular).
+
+Gender is identified as a possible moderator and calls for separate analyses for males and females. Thus, models using the full sample will stratify on gender, and subsequent models will generate gender-specific estimates.
+
+The preregistration also identifies sexual activity, measured as the respondent's reported number of lifetime sexual partners (nlp), as a possible confounder. However, it is unclear whether sexual activity would confound or mediate the potential effect of (self-reported) physical attractiveness (SRPA) on sexual victimization. For instance, sexual activity might confound this effect by causing heightened self-assessments and, thus, higher responses on SRPA items. However, higher physical attractiveness might also increase desirability and, likewise, might increase opportunities for and participation in sexual activity which, in turn, increases sexual victimization risks. These two alternative possibilities are demonstrated in DAGs below.
+
+```{r}
+
+#function to shorten arrows (edges)
+# https://stackoverflow.com/questions/65420136/how-do-you-adjust-the-arrows-in-a-ggplot-of-a-ggdag
+shorten_dag_arrows <- function(tidy_dag, proportion){
+# Update underlying ggdag object
+tidy_dag$data <- dplyr::mutate(tidy_dag$data, 
+                             xend = (1-proportion/2)*(xend - x) + x, 
+                             yend = (1-proportion/2)*(yend - y) + y,
+                             xstart = (1-proportion/2)*(x - xend) + xend,
+                             ystart = (1-proportion/2)*(y-yend) + yend)
+return(tidy_dag)
+}
+
+################
+# DAG 1 (NLP as confounder)
+
+DAG1 <- dagify(
+  Y ~ A + M + C,
+  A ~ M + C,
+  exposure = "A",
+  outcome = "Y",
+  coords=list(
+    x=c(A=1, M=1.5, Y=2, C=1.5),
+    y=c(A=1, M=2, Y=1, C=3)
+  )) %>% tidy_dagitty() %>% 
+  dplyr::mutate(covar = if_else(name == "C",  
+                                  "grey", "darkslategrey"), 
+                covar = if_else(name == "M",  
+                                  "maroon", covar)
+                )
+
+
+#function to shorten arrows - set percentage to shorten
+DAG1p <- shorten_dag_arrows(DAG1, 0.25)
+
+#create factor variable to isolate edge of interest, permits specifying edge color
+testdat <- DAG1p %>% dplyr::mutate(
+  myedge1 = if_else(DAG1p$data$name == "A" & DAG1p$data$to == "Y", 
+                    "focal", "other"), 
+  modlinetype = ifelse(myedge1 == "focal", "dashed", "solid")
+  ) 
+
+
+DAG1p2 <- testdat %>% ggplot(aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_dag_edges(aes(x = xstart, y = ystart, 
+                     edge_color=myedge1, 
+                     edge_linetype = modlinetype), show.legend = FALSE) +
+  geom_dag_text(label=c("Physically\nAttractive\n(SRPA)", 
+                        "Measured\nConfounders\n(E.g., Gender)", 
+                        "# of Lifetime\nSexual Partners\n(NLP)", 
+                        "Victimiz."), 
+                aes(color=covar), size=4) +
+  theme_dag() + 
+  guides(fill = 'none', color = 'none', edge_color = 'none') +
+  scale_color_manual(values = c("darkslategrey","grey", "maroon")) +
+  scale_edge_colour_manual(values=c("darkslategrey","grey")) + 
+  scale_x_continuous(expand=expansion(mult=c(0.3,0.3))) +
+  scale_y_continuous(expand=expansion(mult=c(0.3,0.3))) +
+  annotate("text", x = -Inf, y = Inf, label = paste("DAG 1"), vjust = 4, hjust = -.2) +
+  # annotate("text", x = -Inf, y = Inf, label = paste("DAG 1"), vjust = 7, hjust = -2)
+  # ggtitle("DAG 1") + 
+  theme(plot.title = element_text(size = 14))
+
+
+################
+# DAG 2 (NLP as mediator)
+
+DAG2 <- dagify(
+  Y ~ A + M + C,
+  M ~ A + C,
+  A ~ C,
+  exposure = "A",
+  outcome = "Y",
+  coords=list(
+    x=c(A=1, M=1.5, Y=2, C=1.5),
+    y=c(A=1, M=2, Y=1, C=3)
+  )) %>% tidy_dagitty() %>% 
+  dplyr::mutate(covar = if_else(name == "C",  
+                                  "grey", "darkslategrey"), 
+                covar = if_else(name == "M",  
+                                  "maroon", covar)
+                )
+
+
+#function to shorten arrows - set percentage to shorten
+DAG2p <- shorten_dag_arrows(DAG2, 0.25)
+
+#create factor variable to isolate edge of interest, permits specifying edge color
+testdat <- DAG2p %>% dplyr::mutate(
+  myedge1 = if_else(DAG2p$data$name == "A" & DAG2p$data$to == "M" | 
+                      DAG2p$data$name == "M" & DAG2p$data$to == "Y" | 
+                      DAG2p$data$name == "A" & DAG2p$data$to == "Y", 
+                    "focal", "other"), 
+  modlinetype = ifelse(myedge1 == "focal", "dashed", "solid")
+  ) 
+
+
+DAG2p2 <- testdat %>% ggplot(aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_dag_edges(aes(x = xstart, y = ystart, 
+                     edge_color=myedge1, 
+                     edge_linetype = modlinetype), show.legend = FALSE) +
+  geom_dag_text(label=c("Physically\nAttractive\n(SRPA)", 
+                        "Measured\nConfounders\n(E.g., Gender)", 
+                        "# of Lifetime\nSexual Partners\n(NLP)", 
+                        "Victimiz."), 
+                aes(color=covar), size=4) +
+  theme_dag() + 
+  guides(fill = 'none', color = 'none', edge_color = 'none') +
+  scale_color_manual(values = c("darkslategrey","grey", "maroon")) +
+  scale_edge_colour_manual(values=c("darkslategrey","grey")) + 
+  scale_x_continuous(expand=expansion(mult=c(0.3,0.3))) +
+  scale_y_continuous(expand=expansion(mult=c(0.3,0.3))) +
+  annotate("text", x = -Inf, y = Inf, label = paste("DAG 2"), vjust = 4, hjust = -.2) +
+  # annotate("text", x = -Inf, y = Inf, label = paste("DAG 2"), vjust = 5, hjust = -.5)
+  # ggtitle("DAG 2") + 
+  theme(plot.title = element_text(size = 14))
+
+# ggsave("DAG1.jpeg", DAG1p2)
+# ggsave("DAG2.jpeg", DAG2p2)
+
+```
+
+```{r}
+#| label: DAGs
+#| echo: false
+#| fig-cap: "Figure 1. DAGs illustrating assumed causal relationship between self-reported physical attractiveness and victimization, with sexual activity (number of lifetime sexual partners) as a confounder (DAG 1) or mediator (DAG 2)"
+
+DAG1p2 + DAG2p2
+
+```
+
+As a result of this ambiguity, initial models will estimate SRPA effects with and without stratifying on nlp to assess the potential total and net effects after adjusting for confounding and/or mediating effects. Exploratory models will also present estimates of indirect effects; these should be interpreted with caution given the unclear role and lack of precise causal identification.
+
+## Data
+
+### Description of variables
+
+I received an SPSS datafile containing the relevant items needed to conduct the analysis. The file I received appears to be a raw subset of a much larger database containing survey responses of university students in France. In his initial drafts, Laurent had retained as eligible participants only males and female university students (dropping non-students and those who did not answer the student status question). He had also removed those who failed two attention checks. Specifically, participants were asked if they gave accurate answers at the beginning of the questionnaire and at the very end; unreliable responses and non-responses were dropped.   
+
+### Read, Wrangle, & Skim Data
+
+::: panel-tabset
+#### Read SPSS Data into R
+
+```{r}
+# datv3 <- read_spss(here('GratifpaperV3.sav'))
+datv3 <- read_spss(here('supp/LB-JRB-supp/os/Gratif_LBS_JB.sav'))
+head(datv3) %>% gt()
+```
+
+#### Data wrangling
+
+```{r}
+# ChecK1: Approximate translation: "Q10. Are you currently a student?" Retain affirmative responses ("Oui")
+
+# CHECK2: Approx. translation: "Q721. If you started the questionnaire “just to see” and answered very roughly or inaccurately, can you clarify this? So far I have responded precisely and accurately." Retain participants who responded affirmatively ("Oui") that they have responded precisely and accurately 
+
+# Q765_final_check: Approx. translation: "Q765 Can you confirm that you responded as truthfully as possible to this study (if you answer "no", you will still be able to participate in the draw and receive the results)?" Drop disconfirming ("3") responses.  
+
+#initial N=86,426 rows 
+datv3 <- datv3 %>% 
+  zap_labels %>%
+  zap_label %>% 
+  dplyr::filter(ChecK1 == "Oui") %>%  #N=77,597 (dropped n=8,829 non-students)
+  dplyr::filter(CHECK2 == "Oui") %>%  #N=73,093 (dropped n=4,504 initial attn check)
+  dplyr::filter(Q765_final_check %in% c(1,2)) %>%  #N=55,786 (dropped n=17,307 reportedly "unreliable" [=3, n=89] or missing a response [NA, n=17,218] on final attn check)
+  dplyr::filter(Gender_HF %in% c("1","2")) %>% #dropped N=240 not reporting M/F sex on birth records (neither: n=44; don't know: n=22; don't wish to answer: n=163; NA: n=11)
+  rename(
+    sexvic1 = Q331_Attempt_sexual_touch_Vict1, 
+    sexvic2 = Q368_Sexual_touch_Vict2, 
+    sexvic3 = Q148_Attempt_rape_Vict3, 
+    sexvic4 = Q405_Rape_Vict4, 
+    SRPA1 = Q83_physically_seducing_SRPA1, 
+    SRPA2 = Q85_Attractive_SRPA2, 
+    nlp = Lifetime_N_sex_partners,
+    age = Age
+  ) %>% 
+  mutate(
+    nlp = if_else(Ever_sexual_intercourse == "Non", 0, nlp), #skip pattern to replace NA with "0" sex partners for valid observations
+    eversex = if_else(Ever_sexual_intercourse == "Oui", "1", Ever_sexual_intercourse), 
+    eversex = if_else(Ever_sexual_intercourse == "Non", "0", eversex) 
+    ) %>%
+  mutate(
+    sexvicsum = sexvic1 + sexvic2 + sexvic3 + sexvic4, 
+    SRPAavg = (SRPA1 + SRPA2)/2, 
+    SRPA95 = as_factor(if_else(
+      SRPAavg >= quantile(SRPAavg, probs = 0.95, na.rm = TRUE), 1, 0)),
+    gender = as_factor(Gender_HF), 
+    worked = as_factor(if_else(Q17_work_during_studies %in% "Je ne réponds pas", 
+                               NA, Q17_work_during_studies)),
+    worked = if_else(worked == "Oui", "1", worked),
+    worked = if_else(worked == "Non", "0", worked),
+    agez = as.numeric(scale(age)),  
+    SRintelz = as.numeric(scale(Q81_intelligent)), 
+    SRpopularz = as.numeric(scale(Q82_popular)), 
+    SRmuscularz = as.numeric(scale(Q84_Strong_muscular)), 
+    SRPAavgz = as.numeric(scale(SRPAavg)), 
+    nlpz = as.numeric(scale(nlp)), 
+    sexvicsumf = factor(sexvicsum, ordered=TRUE, levels = c(0, 1, 2, 3, 4)), 
+    nlpf = factor(nlp, ordered=TRUE, levels = c(0,1,2,3,4,5,6,7,8,9))
+  )  
+
+# Note: stdzing cols using scale() generates a matrix col w/in df
+# This causes problems (e.g., w/avg_comparisons())
+# One solution is to wrap in as.numeric() to convert back to numeric vector
+  # class(datv3$age)
+# https://stackoverflow.com/questions/70377294/why-does-mutateacross-with-scale-add-1-to-the-column-header
+
+head(datv3) %>% gt()
+
+```
+
+#### Skim data
+
+```{r}
+datasummary_skim(datv3)
+
+# cor(datv3$SRPA1,datv3$SRPA2, use="complete.obs")
+# psych::alpha(datv3[,c("sexvic1","sexvic2", "sexvic3","sexvic4")])
+```
+:::
+
+### Missingness
+
+After filtering on student status, gender (M/F), and data quality checks for reliable survey completers, this data file contains survey responses from N=55,546 eligible male and female students who passed two attention checks (out of 86,426 initial rows from Qualtrics). Let's take a look at remaining missing data patterns among responses from eligible participants on variables we will use in analyses. 
+
+::: panel-tabset
+
+#### Visualize missingness
+
+```{r}
+# https://cran.r-project.org/web/packages/naniar/vignettes/naniar-visualisation.html
+datv3 %>% 
+  dplyr::select(c(sexvicsum, eversex, SRPAavg, SRpopularz, SRintelz, nlp, 
+                  age, worked)) %>%
+  vis_miss()
+```
+#### Count NAs
+
+```{r}
+datv3 %>%
+  dplyr::select(c(sexvicsum, eversex, SRPAavg, SRpopularz, SRintelz, nlp, 
+                  age, worked, gender)) %>%
+  summarise_all(funs(sum(is.na(.))))
+```
+
+#### % Missing
+
+```{r}
+
+datv3 %>% 
+  dplyr::select(c(sexvicsum, eversex, SRPAavg, SRpopularz, SRintelz, nlp, 
+                  age, worked)) %>%
+  gg_miss_var(show_pct = TRUE)
+```
+
+#### % Missing by SRPAavg
+
+```{r}
+
+datv3 %>% 
+  dplyr::select(c(sexvicsum, eversex, SRPAavg, SRpopularz, SRintelz, nlp, 
+                  age, worked)) %>%
+  gg_miss_var(facet = SRPAavg, show_pct = TRUE)
+```
+
+#### % Missing by sexvicsum
+
+```{r}
+
+datv3 %>% 
+  dplyr::select(c(sexvicsum, eversex, SRPAavg, SRpopularz, SRintelz, nlp, 
+                  age, worked)) %>%
+  gg_miss_var(facet = sexvicsum, show_pct = TRUE)
+```
+
+#### Summary stats (Victimiz, SRPA) by NLP missing/not missing (!NA)  
+```{r}
+shadowdat <- bind_shadow(datv3)
+datv3 %>%
+  bind_shadow() %>%
+  group_by(nlp_NA) %>%
+  summarise_at(.vars = c("sexvicsum", "SRPAavg"),
+               .funs = c("mean", "sd", "var", "min", "max"),
+               na.rm = TRUE)
+
+```
+
+#### Distribution of Victimiz by NLP missing
+
+```{r}
+ggplot(shadowdat,
+       aes(x = sexvicsum,
+           colour = nlp_NA)) + 
+  geom_density()
+```
+
+#### Distribution of SRPA by NLP missing
+
+```{r}
+ggplot(shadowdat,
+       aes(x = SRPAavg,
+           colour = nlp_NA)) + 
+  geom_density()
+```
+
+#### Xtab sexvicsum by NLPmiss
+
+```{r}
+
+table(shadowdat$sexvicsum, shadowdat$nlp_NA)
+prop.table(table(shadowdat$sexvicsum, shadowdat$nlp_NA), margin=2)
+```
+
+:::
+
+Among eligible survey completers, missingness rates were negligible or low for most variables, and missingness on all but NLP did not appear to vary systematically across levels of our key DV or IV. Full information or casewise deletion approaches should be appropriate for most of these variables. 
+
+However, missingness on NLP (~9%, n=5,133) appears potentially problematic, as those not responding about number of sexual partners were more likely to have high SRPA scores and to report sexual victimization. In fact, 17.9% (1-0.821=0.179) of the 55,546 eligible participants not missing on NLP report at least one victimization experience compared to 41% of the 4,771 participants with missing NLP values who reported on sexual victimization. 
+
+Yet, most of the 5,133 participants that did not report on the number of life partners did report on the previous skip pattern variable indicating any past sexual activity; that variable had only n=91 (0.16%) missing observations. 
+
+So, I will remove rows with missing data on all study variables except NLP, then conduct complete case analysis when including NLP (dropping NA values). Given the potentially biasing missingness patterns on this variable, I will also conduct sensitivity analyses using the more crudely measured yet more completely reported dichotomous "sexual activity" variable instead.   
+
+```{r}
+datv3 <- datv3 %>% drop_na(SRPAavg, sexvicsum, age, worked, gender, 
+                  SRpopularz, SRintelz)
+
+datv3sub <- datv3 %>% 
+  mutate(workedn = as.numeric(worked)) %>% 
+  dplyr::select(c(SRPAavg, sexvicsum, nlp, eversex, age, Gender_HF, workedn, 
+                  SRpopularz, SRintelz)) 
+
+```
+
+
+## Basic descriptives 
+
+### Univariate statistics 
+
+::: panel-tabset
+
+#### Skim analytic sample data
+
+```{r}
+datasummary_skim(datv3sub)
+
+```
+
+#### Correlation SRPA items
+
+```{r}
+cor(datv3$SRPA1,datv3$SRPA2, use="complete.obs")
+```
+
+#### Cronbach's alpha victimization
+
+```{r}
+psych::alpha(datv3[,c("sexvic1","sexvic2", "sexvic3","sexvic4")])$total
+```
+:::
+
+### Traditional correlations
+
+::: panel-tabset
+#### Correlation heatmap
+
+```{r}
+# https://www.guru99.com/r-pearson-spearman-correlation.html
+
+ggcorr(datv3sub, 
+       digits = 2, 
+       label = TRUE, 
+       label_size = 3,
+       color = "grey50")
+
+
+```
+
+#### Pairs plot
+
+```{r}
+
+datv3sub <- datv3 %>% 
+  dplyr::select(c(SRPAavg, sexvicsum, nlp, age, worked, gender)) 
+
+datv3sub %>% drop_na() %>% 
+  ggpairs()
+```
+
+#### Pairs plot grouped by gender
+
+Preregistration stated expectation that predicted correlations would be stronger for girls compared to boys. So, here are initial bivariate correlations grouped by gender.
+
+```{r}
+pairsgen <- datv3sub %>% drop_na() %>% 
+  mutate(gender = as_factor(gender)) %>% 
+  ggpairs(columns = c("SRPAavg", "nlp", "sexvicsum"), 
+        upper = list(continuous = wrap("cor", size = 3)),
+        lower = list(continuous = wrap("smooth", alpha = 0.3, size = 0.1)),
+        mapping = aes(color = gender)
+        )
+pairsgen
+```
+
+#### Pearson/Spearman matrix (select vars)
+
+```{r}
+#Pearsons r & Spearman
+datasummary_correlation(datv3sub, method="pearspear")
+
+```
+
+#### Pearson/Spearman matrix (full dataset)
+
+```{r}
+datasummary_correlation(datv3, method="pearspear")
+```
+:::
+
+The correlation between SRPA and victimization appears to be somewhat stronger for girls; however, girls also report more victimization experiences than boys, and there may be systematic gender differences in levels of confounding variables. So, we will need to examine contrasts and relative risk by gender in multivariable models later.
+
+### Mosaic Plots
+
+Scatterplots are notoriously bad at generating useful visual descriptions of bivariate relationships between ordinal or categorical variables. So, I will use a mosaic plot instead. As [Will Ball describes](https://will-ball.github.io/ordinalplots/), a mosaic plot as "similar to a heatmap, except that the frequency of an observation... is proportional to the area of a tile."
+
+::: panel-tabset
+#### Victimization by SR attractiveness (mean)
+
+```{r}
+
+#Function to quickly generate custom mosaic plots with labels 
+  # see https://stackoverflow.com/questions/58034811/ggplot2-not-recognizing-a-column-in-a-function-call 
+  # for help with passing column names to ggplot in functions
+
+mosyplot <- function(df, yvar, xvar, xlabel, ylabel, mytitle, mysubtitle){
+  ggplot() +
+  geom_mosaic(data=df, aes(x = product(!!as.name(yvar), !!as.name(xvar)), fill = !!as.name(yvar)),
+              na.rm=TRUE) +
+  labs(x = xlabel,
+       y = ylabel,
+       title=mytitle,
+       subtitle = mysubtitle) +
+  scale_fill_viridis_d(begin=.1, end=.9, direction=-1, option="magma") +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.y = element_blank())
+  }
+
+# SRPAavg
+mosyx <- mosyplot(df=datv3, "sexvicsum", "SRPAavg", "SR Physical Attractiveness (Mean scale)",
+         "Proportion victimized", "Victimization by SRPAavg",
+         "Left to Right = (1) Lowest to (7) Highest SR Attractiveness"
+)
+mosyx
+
+
+```
+
+#### Victimization by SR attractiveness (95 pctl)
+
+```{r}
+# SRPA95
+mosyx95 <- mosyplot(df=datv3, "sexvicsum", "SRPA95", "SR Physical Attractiveness  (95pctl)",
+         "Proportion victimized", "Victimization by SRPA95",
+         "Left to Right = (0) 0 to 94pctl / (1) >= 95pctl SR Attractiveness"
+)
+mosyx95
+```
+
+#### Victimization by sexual activity
+
+```{r}
+
+mosym <- mosyplot(df=datv3, "sexvicsum", "nlp", "# of Lifetime Partners",
+         "Proportion victimized", "Victimization by # of Lifetime Partners",
+         "Left to Right = (0) None to (9) Nine or more partners"
+)
+mosym
+```
+
+#### Sexual activity by SRPA (mean)
+
+```{r}
+
+mosmx <- mosyplot(df=datv3, "nlp", "SRPAavg", "SR Physical Attractiveness (Mean scale)",
+         "Proportion w/# of Lifetime Partners", "# of Lifetime Partners by SRPAavg",
+         "Left to Right = (1) Lowest to (7) Highest SR Attractiveness"
+)
+mosmx
+
+
+```
+
+#### Sexual activity by SRPA (95 pctl)
+
+```{r}
+
+mosmx95 <- mosyplot(df=datv3, "nlp", "SRPA95", "SR Physical Attractiveness (95 pctl)",
+         "Proportion w/# of Lifetime Partners", "# of Lifetime Partners by SRPA95",
+         "Left to Right = (0) 0 to 94pctl / (1) >= 95pctl SR Attractiveness"
+)
+mosmx95
+
+```
+:::
+
+#### FIG2: Combined mosaic plots (full & by gender)
+
+Let's split the sample by gender and then combine these plots into one.
+
+```{r}
+
+#data subsets for males & females
+datv3male <- datv3 %>% dplyr::filter(gender==1) 
+datv3fem <- datv3 %>% dplyr::filter(gender==2) 
+
+#Function to generate simpler mosaic plots to combine in patchwork  
+
+mosyplot2 <- function(df, yvar, xvar, guidelab, xlab){
+df %>% 
+  ggplot() +
+  geom_mosaic(aes(x = product(!!as.name(yvar), !!as.name(xvar)), fill = !!as.name(yvar)),
+              na.rm=TRUE) +
+  scale_fill_viridis_d(begin=.1, end=.9, direction=-1, option="magma") +
+  guides(fill = guide_legend(reverse=T)) + 
+  labs(fill=guidelab, x = xlab) +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.title.x = element_text(size=10, vjust = 3),
+        axis.text.y = element_blank(), 
+        axis.text.x = element_blank(), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10))
+  }
+
+
+# sexvicsum by SRPAavg 
+mosyx <- mosyplot2(df=datv3, "sexvicsum", "SRPAavg", "Victimiz.", "SRPA") + 
+  labs(y= "Prop. Victimized", subtitle="Full Sample") + 
+  theme(axis.title.y= element_text(size=10, vjust = -2), 
+        plot.subtitle = element_text(hjust = 0.5, face="bold"))
+
+# sexvicsum by SRPAavg - male
+mosyx_m <- mosyplot2(df=datv3male, "sexvicsum", "SRPAavg", "Victimiz.", "SRPA") + 
+  labs(subtitle="Males") + 
+  theme(axis.title.y = element_blank(), 
+        plot.subtitle = element_text(hjust = 0.5, face="bold"))
+
+# sexvicsum by SRPAavg - female
+mosyx_f <- mosyplot2(df=datv3fem, "sexvicsum", "SRPAavg", "Victimiz.", "SRPA") + 
+  labs(subtitle="Females") + 
+  theme(axis.title.y = element_blank(), 
+        plot.subtitle = element_text(hjust = 0.5, face="bold")) 
+
+# sexvicsum by nlp  
+mosym <- mosyplot2(df=datv3, "sexvicsum", "nlp", "Victimiz.", "NLP") + 
+  labs(y= "Prop. Victimized") + 
+  theme(axis.title.y= element_text(size=10, vjust = -2))
+
+# sexvicsum by nlp - male
+mosym_m <- mosyplot2(df=datv3male, "sexvicsum", "nlp", "Victimiz.", "NLP") + 
+  theme(axis.title.y = element_blank()) 
+
+# sexvicsum by nlp - female
+mosym_f <- mosyplot2(df=datv3fem, "sexvicsum", "nlp", "Victimiz.", "NLP") + 
+  theme(axis.title.y = element_blank()) 
+
+# nlp by SRPAavg  
+mosmx <- mosyplot2(df=datv3, "nlp", "SRPAavg", "NLP", "SRPA") + 
+  scale_fill_viridis_d(begin=.1, end=.9, direction=-1, option="viridis") + 
+  labs(y= "Prop. NLP") + 
+  theme(legend.key.height= unit(.3, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.text=element_text(size=9), 
+        axis.title.y= element_text(size=10, vjust = -2))
+
+# nlp by SRPAavg - male
+mosmx_m <- mosyplot2(df=datv3male, "nlp", "SRPAavg", "NLP", "SRPA") + 
+  scale_fill_viridis_d(begin=.1, end=.9, direction=-1, option="viridis") + 
+  theme(legend.key.height= unit(.3, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.text=element_text(size=9), 
+        axis.title.y = element_blank()) 
+
+# nlp by SRPAavg - female
+mosmx_f <- mosyplot2(df=datv3fem, "nlp", "SRPAavg", "NLP", "SRPA") + 
+  scale_fill_viridis_d(begin=.1, end=.9, direction=-1, option="viridis") + 
+  theme(legend.key.height= unit(.3, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.text=element_text(size=9), 
+        axis.title.y = element_blank())
+
+mosaicfig <- (mosyx + mosyx_m + mosyx_f + plot_layout(guides = 'collect')) / 
+  (mosym + mosym_m + mosym_f + plot_layout(guides = 'collect')) / 
+    (mosmx + mosmx_m + mosmx_f + plot_layout(guides = 'collect')) 
+mosaicfig
+
+# ggsave("mosaicfig.jpeg", mosaicfig, width=9, height=6.5)
+
+```
+
+As expected, victimization risks increase with SR physical attractiveness and sexual activity, and sexual activity is higher for those self-rated as more physically attractive.
+
+## Modeling
+
+Before estimating a model, it is a good idea to view distributions of our key variables to ensure we specify appropriate link functions.
+
+```{r}
+
+# magma(5, alpha = 1, begin = 0, end = 1, direction = 1)
+
+# datv3 %>% summarytools::freq(sexvicsum)
+# datv3 %>% summarytools::freq(SRPAavg)
+
+p1 <- ggplot(datv3, aes(sexvicsum)) + geom_bar(fill="#B63679FF") + theme_minimal()
+p2 <- ggplot(datv3, aes(SRPAavg)) + geom_bar(fill="#B63679FF") + theme_minimal()
+p3 <- ggplot(datv3, aes(nlp)) + geom_bar(fill="#B63679FF") + theme_minimal()
+
+p1 + p2 + p3
+```
+
+`SRPAavg` has 13 categories and exhibits approximately symmetric decay about the mean. It might be appropriate to treat it as a metric continuous predictor, though there is little downside to treating it as an ordinal variable (given we have sufficient data, which we do, and ample processing power).
+
+In contrast, `nlp` and `sexvicsum` exhibit highly skewed ordinal distributions. Ordinal modeling techniques are likely to be more appropriate for these variables.
+
+### Ordinal: So What?
+
+Building a regression model that treats ordinal variables as if they are metric continuous variables can generate model predictions that exhibit poor fit to the data and, ultimately, can result in substantial inference errors (e.g., see [Liddell & Kruschke 2018](https://www.sciencedirect.com/science/article/abs/pii/S0022103117307746)).
+
+In the first couple models below, I present linear and ordinal Bayesian "Intercept only" models to illustrate the poor fit of linear modeling to ordinal data and the substantial improvements we gain in predictive fit to underlying data distribution by using ordinal (e.g., cumulative probit) modeing instead.
+
+### Intercept: Lin\~1 model (poor fit)
+
+I start by estimating a simple linear intercept model of `sexvicsum` with no predictors to illustrate the poor fit of a linear model to the ordinal outcome. I use Bayesian estimation with diffuse priors; Bayesian models will be beneficial for model building and visualization later.
+
+```{r}
+  #Manual caching for stan_glm - file & file_refit built into brms 
+mod1 <- stan_glm(sexvicsum ~ 1,
+            family = gaussian(),
+            data = datv3,
+            prior_intercept = normal(.3, 2.5),
+            chains = 4, 
+            cores = nCoresphys,
+            seed = 1138
+            )
+
+# mcmc_areas(mod1, regex_pars = "^bsp_", prob = 0.95) +
+#     labs(title = "Coefficient plot",
+#          subtitle = "Posterior distributions for monotonic ordinal stress coefficients \nwith medians and 95% intervals")
+
+# mcmc_plot(modelfit, variable = "^bsp_", regex = TRUE, prob = 0.80, prob_outer = 0.95) + 
+#         labs(title = "Coefficient plot", 
+#              subtitle = "Posterior intervals for monotonic ordinal stress coefficients 
+#              \nwith medians, 80%, and 95% intervals")
+
+
+```
+
+::: panel-tabset
+#### PPcheck(density)
+
+```{r}
+pp_check(mod1)
+
+```
+
+#### PPcheck(histogram)
+
+```{r, warning=FALSE}
+pp_check(mod1, plotfun = "hist")
+```
+
+#### PPcheck(boxplots)
+
+```{r}
+pp_check(mod1, plotfun = "boxplot", nreps = 10, notch = FALSE)
+```
+
+#### Fit summary
+
+```{r}
+summary(mod1, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod1) #check priors  
+```
+:::
+
+The linear (metric normal) model above recovers the mean of `sexvicsum` (=0.3), which is what it is designed to do. However, the posterior predictive check plots (e.g., density; histogram; box) show that the underlying normal distribution assumption results in model predictions that fail to recover the observed ordinal item values.
+
+Now, let's compare how a basic cumulative probit model without predictors fits the data.
+
+### Priors on ordinal response distribution
+
+I will specify what is essentially a flat prior distribution on the response thresholds in the cumulative probit model by specifying values that equate to equal probabilities (=1/5 or 0.20) for each of the five response categories. Transforming these to cumulative normal distribution thresholds results in values of c(-.84, -.25, .25, .84).
+
+I could specify somewhat more informative priors. For instance, I know that sexual victimization is a relatively rare event, so I could specify the probability of a "0" response as something like 0.6, then specify lower \[=0.10 instead of 0.20\] and equal probabilities for the remaining categories. One advantage (or drawback, depending on your perspective and aims) of specifying flat priors is that results will typically converge with those generated by traditional frequentist methods.
+
+```{r}
+# Load model fits 
+  # added eval=FALSE to model fitting to speed website rendering
+
+mod2 <- readRDS(here("supp/LB-JRB-supp/os/Models/mod2_fit.rds"))
+mod3 <- readRDS(here("supp/LB-JRB-supp/os/Models/mod3_fit.rds"))
+mod3mo <- readRDS(here("supp/LB-JRB-supp/os/Models/mod3mo_fit.rds"))
+mod4mo <- readRDS(here("supp/LB-JRB-supp/os/Models/mod4mo_fit.rds"))
+mod5mo <- readRDS(here("supp/LB-JRB-supp/os/Models/mod5mo_fit.rds"))
+mod6mo <- readRDS(here("supp/LB-JRB-supp/os/Models/mod6mo_fit.rds"))
+mod7mo <- readRDS(here("supp/LB-JRB-supp/os/Models/mod7mo_fit.rds"))
+
+```
+
+
+### Intercept: Ord\~1 (better fit)
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+
+#estimation is slow - cache model fits
+
+#sexvicsum is a 5-category ordinal variable (0 to 4)
+# table(datv3$sexvicsumf)
+
+# develop formula
+bf.form = brms::bf(sexvicsumf ~ 1)
+
+# brms default prior is a wide student's t dist
+get_prior(bf.form, data = datv3, family = cumulative('probit'))
+
+# use this code to identify values that set priors to equal likelihood for all thresholds
+# tibble(rating = 0:4) %>% 
+#   mutate(proportion = 1/5) %>% 
+#   mutate(cumulative_proportion = cumsum(proportion)) %>% 
+#   mutate(right_hand_threshold = qnorm(cumulative_proportion))
+
+# if I wanted to specify more informative priors, I could use this code to identify values that set priors to 0.6 for "no victimization" and equal 0.1 probability for all nonzero thresholds
+
+# tibble(rating = 0:4) %>%
+#   mutate(proportion = if_else(rating == 0,.6,.1)) %>%
+#   mutate(cumulative_proportion = cumsum(proportion)) %>%
+#   mutate(right_hand_threshold = qnorm(cumulative_proportion))
+
+# altpriors = c(
+#   prior(normal(0.25, 1), class = Intercept, coef = 1),
+#   prior(normal(0.52, 1), class = Intercept, coef = 2),
+#   prior(normal(0.84, 1), class = Intercept, coef = 3),
+#   prior(normal(1.28, 1), class = Intercept, coef = 4)
+# )
+
+
+priors = c(
+  prior(normal(-0.84, 1), class = Intercept, coef = 1),
+  prior(normal(-0.25, 1), class = Intercept, coef = 2),
+  prior(normal(0.25, 1), class = Intercept, coef = 3),
+  prior(normal(0.84, 1), class = Intercept, coef = 4)
+)
+
+#sexvicsum - Thresholds only, Cumulative probit model:
+mod2 <-
+  brm(data = datv3,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1,
+      # prior(normal(0, 4), class = Intercept), #see kruschke/kurtz re: priors for this model
+      prior = priors,
+      iter = 2000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309,
+      file = "Models/mod2_fit",
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### PPcheck(density)
+
+```{r}
+pp_check(mod2)
+```
+
+#### PPcheck(bars)
+
+```{r}
+pp_check(
+  mod2, 
+  type = "bars", 
+  ndraws = 1000, 
+  linewidth = 1/2, 
+  size = 1/4) +
+  labs(subtitle = "Intercept model") 
+
+
+```
+
+#### Fit summary
+
+```{r}
+summary(mod2, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod2) #check priors  
+```
+:::
+
+As expected, posterior predictions generated by the cumulative probit model are a much better fit to the ordinal response data.
+
+Now, let's add SRPA as a metric (linear) predictor. Standardizing SRPA first provides interpretive advantages, as the beta coefficient in the cumulative probit model without predictors represents the (unadjusted, unconditional) predicted average marginal effect on latent victimization of increasing from an average SRPA score (mean=0) and one standard deviation units above average SRPA score (+1SD = 1).
+
+Ultimately, I will illustrate what I think are preferable ways of interpreting and visualizing results of ordinal models using "maximum" (monotonic) marginal contrasts. Also, since the key predictors are ordinal items (nlp) or a composite of ordinal items (SRPA), I will follow this model with more complex versions that estimate monotonic effects using cumulative probit links for the key predictors (SRPA & nlp) as well as for the ordinal response variable. For now, let's examine results of a bivariate cumulative probit model of victimization with a standardized metric SRPA (SRPAavgz) predictor.
+
+### Bivariate: Ord\~Lin (sexvicsumf by SRPAavgz)
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+
+# set priors: 
+# equal likelihood for all outcome thresholds
+# weakly informative normal(0,1) for default beta
+
+priors2 = c(
+  prior(normal(-0.84, 1), class = Intercept, coef = 1),
+  prior(normal(-0.25, 1), class = Intercept, coef = 2),
+  prior(normal(0.25, 1), class = Intercept, coef = 3),
+  prior(normal(0.84, 1), class = Intercept, coef = 4), 
+  prior(normal(0, 1), class = b)
+)
+
+#sexvicsum - bivariate sexvicsum by SRPAavg:
+mod3 <-
+  brm(data = datv3,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1 + SRPAavgz,
+      # prior(normal(0, 4), class = Intercept), #see kruschke/kurtz re: priors for this model
+      prior = priors2,
+      iter = 2000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309, 
+      file = 'Models/mod3_fit',
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### Coefficient plot (SRPAavg)
+
+```{r}
+post3 <- as.matrix(mod3)
+
+mcmc_intervals(
+  post3, 
+  regex_pars = "SRPAavg",
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.95, # 95%
+  point_est = "median",
+) + 
+  xlim(0, .2) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for SRPAavg beta coefficient 
+       \nwith medians, 80%, and 95% intervals")
+
+# mcmc_plot(mod3, variable = "SRPAavg", regex = TRUE, 
+#           prob = 0.80, prob_outer = 0.95) + 
+#   xlim(0, .2) + 
+#   labs(title = "Coefficient plot", 
+#        subtitle = "Posterior intervals for SRPAavg beta coefficient 
+#        \nwith medians, 80%, and 95% intervals")
+
+# mcmc_areas(mod3, regex_pars = "SRPAavg", prob = 0.95) + 
+#   xlim(0, .3) + 
+#   labs(title = "Coefficient plot",
+#        subtitle = "Posterior distributions for SRPAavg beta coefficient 
+#        \nwith medians and 95% intervals")
+
+```
+
+#### Conditional effects (continuous y)
+
+```{r}
+conditional_effects(mod3, "SRPAavgz")
+```
+
+#### Conditional effects (by y category)
+
+```{r}
+conditional_effects(mod3, "SRPAavgz", categorical=TRUE)
+```
+
+#### PPcheck(density)
+
+```{r}
+pp_check(mod3)
+```
+
+#### Fit summary
+
+```{r}
+summary(mod3, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod3) #check priors  
+```
+:::
+
+#### Visualize probs & contrasts by response category (mod3)
+
+If the ordinal sexual victimization index (sexvicsum) can be plausibly assumed to represent a coarse measure of an underlying continuous latent sexual victimization variable (e.g., Bürkner & Vuorre, 2019; see [Kurz](https://solomonkurz.netlify.app/blog/2023-05-21-causal-inference-with-ordinal-regression/)), then the beta for SRPAavg from a cumulative probit response model represents the estimated average marginal effects of a 1-SD increase (from the mean to +1SD) in SRPAavg on the latent continuous victimization scale.
+
+(It is past time I gave a huge shout-out to Solomon Kurz for his [blog on ordinal Bayesian models](https://solomonkurz.netlify.app/blog/2023-05-21-causal-inference-with-ordinal-regression/) and [bookdown translation of McElreath's Monsters & Mixtures chapter](https://bookdown.org/content/4857/monsters-and-mixtures.html)).
+
+Moreover, with the latent response expressed on a standard normal scale in a cumulative probit model, the beta can be interpreted as a latent Cohen’s D. Hence, the beta coefficients themselves in these models are useful for visualizing effect estimates. (Of course, causal interpretations require additional assumptions as well...)
+
+Yet, with ordinal data, it can be helpful to visualize predicted probabilities and contrasts of these predicted probabilities separately for each ordinal response category. Let's do that next.
+
+```{r}
+
+#avg contrast on latent scale
+
+#ANOVA
+# latent scale - below generates same contrast estimate as model beta
+# see https://solomonkurz.netlify.app/blog/2023-05-21-causal-inference-with-ordinal-regression/
+
+# update the data grid
+# nd_id <- datv3 %>% 
+#   mutate(id = row_number()) %>% 
+#   dplyr::select(id, nlpz, SRintelz, SRpopularz, agez, worked, gender) %>% 
+#   expand_grid(SRPAavgz = 0:1) %>% 
+#   mutate(row = 1:n())
+
+# compute the posterior predictions
+# fitted(mod3,
+#        newdata = nd_id,
+#        scale = "linear",
+#        summary = F) %>% 
+#   # convert the results to a data frame
+#   data.frame() %>% 
+#   # rename the columns
+#   set_names(pull(nd_id, row)) %>% 
+#   # add a numeric index for the MCMC draws
+#   mutate(draw = 1:n()) %>% 
+#   # convert to the long format
+#   pivot_longer(-draw) %>% 
+#   # convert the row column from the character to the numeric format
+#   mutate(row = as.double(name)) %>% 
+#   # join the nd_id predictor grid to the output
+#   left_join(nd_id, by = "row") %>% 
+#   # drop two of the unnecessary columns
+#   dplyr::select(-name, -row) %>% 
+#   # convert to a wider format so we can compute the contrast
+#   pivot_wider(names_from = SRPAavgz, values_from = value) %>% 
+#   # compute the AME contrast
+#   mutate(tau = `1` - `0`) %>% 
+#   # compute the average AME value within each MCMC draw
+#   group_by(draw) %>% 
+#   summarise(ame = mean(tau)) %>% 
+#   # remove the draw index column
+#   dplyr::select(ame) %>% 
+#   # now summarize the AME across the MCMC draws
+#   summarise(m = mean(ame),
+#             s = sd(ame),
+#             ll = quantile(ame, probs = .025),
+#             ul = quantile(ame, probs = .975))
+# 
+
+
+#contrasts by response category
+
+# define the predictor grid
+nd <- tibble(SRPAavgz = 0:1)
+
+# compute and save
+fit3_conditional_probabilities_by_group <- nd %>%
+  add_epred_draws(mod3) %>%
+  ungroup()
+
+# show the first 6 rows
+# fit3_conditional_probabilities_by_group %>% 
+#   head()
+
+
+#plot
+
+# conditional probabilities (alt method - data type not working)
+# mod3pred <- predictions(mod3, newdata = nd) %>% 
+#   data.frame() %>% 
+#   mutate(SRPAavgz = ifelse(SRPAavgz == 0, "italic(p[j])^0", "italic(p[j])^1")) 
+
+#use fitted + epred workflow
+mod3pred <- fit3_conditional_probabilities_by_group %>% 
+  # now summarize the category-level probabilities, by SRPAavg
+  group_by(SRPAavgz, .category) %>% 
+  summarise(p = mean(.epred),
+            sd = sd(.epred),
+            ll = quantile(.epred, probs = .025),
+            ul = quantile(.epred, probs = .975)) %>% 
+  data.frame() %>% 
+  mutate(SRPAavgz = ifelse(SRPAavgz == 0, "italic(p[j])^0", "italic(p[j])^1")) 
+
+#function to find & drop leading zeroes (used for x-axis label)
+dropLeadingZero <- function(l){
+  str_replace(l, '0(?=.)', '')
+}
+
+#full range of y responses (0:4)
+mod3p1 <- mod3pred %>% 
+  ggplot(aes(x = .category, y = p, ymin = ll, ymax = ul, 
+             color = SRPAavgz)) +
+  geom_hline(yintercept = 0:9 / 10, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAavgz),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .9), breaks=seq(0, .9, by = .2), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "Pred. response probabilities\n(all)") +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank())
+
+#nonzero victimization values only (1:4)
+mod3p2 <- mod3pred %>% 
+  # dplyr::filter(.category != 0) %>% 
+  ggplot(aes(x = .category, y = p, ymin = ll, ymax = ul, 
+             color = SRPAavgz)) +
+  geom_hline(yintercept = 0:5 / 50, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAavgz),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .11), breaks=seq(0, .1, by = .02), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "(y > 0)",
+       x = expression(Victimiz.~response~option~(italic(j)))) +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank() 
+        )
+
+# contrasts (alt method not working - data type error)
+# p2 <- comparisons(mod3, newdata = nd, by = "group")  
+
+# contrasts
+mod3con <- fit3_conditional_probabilities_by_group %>% 
+  dplyr::select(SRPAavgz, .draw, .category, .epred) %>% 
+  pivot_wider(names_from = SRPAavgz, values_from = .epred) %>% 
+  mutate(`1 - 0` = `1` - `0`) %>% 
+  # now summarize the category-level probabilities, by SRPAavg
+  group_by(.category) %>% 
+  summarise(p = mean(`1 - 0`),
+            sd = sd(`1 - 0`),
+            ll = quantile(`1 - 0`, probs = .025),
+            ul = quantile(`1 - 0`, probs = .975)) %>% 
+data.frame() 
+
+mod3p3 <- mod3con %>% 
+  ggplot(aes(x = .category, y = p, ymin = ll, ymax = ul)) +
+  geom_hline(yintercept = -2:2 / 40, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(linewidth = 3/4, size = 1/3) +
+  scale_y_continuous(expression(italic(p[j])^1-italic(p[j])^0), 
+                     limits = c(-0.06, 0.06), breaks=seq(-.05, .05, by = .025), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{AME}~(contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j))))
+
+# combine and entitle
+((mod3p3 | mod3p1 / mod3p2)) +
+  plot_annotation(title = "Cumulative probit y ~ SRPAavgz") 
+
+```
+
+Given that sexual victimization is a rare event in these data (p\|sexvicsum \> 0 \~ .18), a difference of 0.04 in the overall probability of victimization (i.e., *j*=0 or "no victimization" response contrast) between those with mean SRPAavg scores (SRPAavgz=0) and those with +1SD scores (SRPAavgz=1) might represent a relatively substantial effect.
+
+Yet, a +1SD-unit increase in SRPA and its average marginal effect on ordinal victimization responses remain a bit vague and difficult to interpret. So, I will modify this modeling approach by: (1) estimating and interpreting "maximum" predictive contrast effects instead, and (2) generating maximum contrasts with a cumulative probit link for the key predictor(s) to estimate the monotonic marginal effects of moving "up" each of the 13 ordinal SRPA categories on the (conditional) probabilities of each response category.
+
+Why not just treat SRPA (or nlp) as metric variables? Well, doing so assumes both monotonic and equal effects on the outcome across all category increases on the predictor variable. Yet, what if higher attractiveness has larger effects across some categories than others? Treating ordinal outcomes and predictors as metric can result in substantial inference errors, such as magnitude and, in some cases, even directional sign errors (see McElreath's *Statistical Rethinking* \[2020, 2nd Ed.\]; [Liddell & Kruschke 2018](https://www.sciencedirect.com/science/article/abs/pii/S0022103117307746).
+
+One preferable solution is to retain the monotonicity assumption but relax the "equal" effects across categories assumption by specifying a cumulative probit link for the ordinal predictor. The `brms` package offers this option by using its `mo()` (meaning monotonic) function for ordinal predictors.
+
+Let's re-estimate the bivariate model above with SRPA specified as an ordinal predictor (using an ordered factor version - SRPAf). Then, rather than estimating average marginal contrasts of potential outcomes for those with "mean" and "+1SD" SRPA scores, I will estimate "maximum" marginal contrasts (see McElreath 2020; [Kurz](https://bookdown.org/content/4857/monsters-and-mixtures.html)) as differences in predicted probabilities for each victimization response category across "minimum" (SRPAavg=1) and "maximum" (SRPAavg=7) SRPA scores.
+
+### Priors on parameters for ordinal predictors
+
+Since I am adding predictors, I need to add prior distributions on their parameters. A weakly informative prior distribution (Normal\[0,1\]) for covariate beta coefficients will be highly diffuse in this context to allow for a wide range of likelihood-driven estimates. The priors for SRPA’s (and later NLP’s) monotonic beta coefficient are equivalent to this covariate prior distribution; the hyperparamenter (sd=1) was simply divided by twelve (or nine for NLP) estimated ordinal thresholds or cutpoints for SRPA (1/12 = 0.083; for NLP, 1/9 = 0.11).
+
+A Dirichlet prior distribution is specified for SRPA's (and later NLP's) cumulative monotonic simplex parameter (delta), which is a multivariate extension of the beta distribution and, likewise, is a distribution for probabilities. A Dirichlet distribution is parameterized using a vector of alpha values that regulate the range of potential probability values for each cutpoint. McElreath notes that an alpha=2 prior distribution is a very weak prior that allows each cutpoint probability to vary substantially from one another; specifying alpha=2 for all 12 cutpoints results in a uniform prior distribution across the cutpoints.
+
+As usual, with help from McElreath (2020, p.393) and [Kurz's bookdown translation & code](https://bookdown.org/content/4857/monsters-and-mixtures.html#over-dispersed-counts), we can visualize the specified Dirichlet prior on mo(SRPA) simplex parameter in plots below.
+
+::: panel-tabset
+#### n=20 draws from uniform Dirichlet prior (alpha=2, cutpoints=12)
+
+```{r}
+
+
+set.seed(8675309)
+
+delta <- rdirichlet(20, alpha = rep(2, 12)) 
+# str(delta)
+
+#n=20 example draws from Dirichlet distribution with alpha=rep(2,12)
+# one draw bolded to illustrate variation in a single vector (see McElreath p.393) 
+delta %>% 
+  data.frame() %>%
+  set_names(1:12) %>% 
+  mutate(row = 1:n()) %>% 
+  pivot_longer(-row, names_to = "index") %>% 
+  mutate(index = as.numeric(index)) %>% 
+
+  ggplot(aes(x = index, y = value, group = row,
+             alpha = row == 3, color = row == 3)) +
+  geom_line() +
+  geom_point() +
+  scale_alpha_manual(values = c(1/3, 1)) +
+  scale_color_manual(values = canva_pal("Green fields")(4)[1:2]) + 
+  scale_x_continuous(breaks = 1:12) + 
+  ylab("probability") +
+  theme(legend.position = "none")
+
+
+```
+
+#### Prior probability distributions for 12 cutpoints
+
+```{r}
+
+
+# name2 = factor(name,
+#                        levels = unique(name)), 
+#          name2 = fct_relevel(name, 
+#                              "1", "2", "3", "4", "5", "6", 
+#                              "7", "8", "9", "10", "11", "12"),
+
+#prior probability distributions for 12 thresholds  
+brms::rdirichlet(n = 1e4, alpha = rep(2, 12)) %>% 
+  data.frame() %>% 
+  set_names(1:12) %>% 
+  pivot_longer(everything()) %>% 
+  mutate(name  = name %>% as.double(),
+         alpha = str_c("alpha[", name, "]"), 
+         alpha = factor(alpha, levels = unique(alpha)) #preserve factor ordering 
+         ) %>% 
+  ggplot(aes(x = value, color = name, group = name, fill= name)) + 
+  geom_density(alpha = .8) + 
+  scale_fill_gradient(low = canva_pal("Green fields")(4)[2],
+                      high = canva_pal("Green fields")(4)[3]) +
+  scale_color_gradient(low = canva_pal("Green fields")(4)[2],
+                       high = canva_pal("Green fields")(4)[3]) +
+  scale_x_continuous("probability", limits = c(0, 1),
+                     breaks = c(0, .5, 1), labels = c("0", ".5", "1"), ) +
+  scale_y_continuous(NULL, breaks = NULL) +
+  labs(subtitle = expression("Dirichlet"*(2*", "*2*", "*2*", "*2*", "*2*", "*2*", "*2*", "*2*", "*2*", "*2*", "*2*", "*2))) +
+  theme(legend.position = "none") +
+
+  facet_wrap(~ alpha, labeller = label_parsed, nrow = 2)
+
+```
+:::
+
+Overall, applied to our large sample size, the likelihood should dominate these diffuse priors, resulting in data-driven estimates that are consistent with those that would be generated in a comparable frequentist analysis. Now, let's move onto the model.
+
+### M1 (Bivariate): Ord\~Ord (sexvicsumf by moSRPAf)
+
+```{r}
+datv3tmp <- datv3 %>% 
+  mutate(
+    SRPAf = SRPA1 + SRPA2, 
+    SRPAf = factor(SRPAf, ordered = T)
+  )
+# levels(datv3tmp$SRPAf)
+
+```
+
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+#with ordinal (monotonic cumulative probit) SRPA predictor
+
+# set priors: 
+# equal likelihood for all outcome thresholds
+# weakly informative normal(0,1) for default beta
+
+
+#13 SRPA response categories = 12 thresholds 
+# so, beta prior (0,1) equiv to (0,[1/12]) or (0,.083) 
+
+priors3 = c(
+  prior(normal(-0.84, 1), class = Intercept, coef = 1),
+  prior(normal(-0.25, 1), class = Intercept, coef = 2),
+  prior(normal(0.25, 1), class = Intercept, coef = 3),
+  prior(normal(0.84, 1), class = Intercept, coef = 4), 
+  prior(normal(0, 1), class = b), 
+  prior(normal(0, 0.083), class = b, coef = moSRPAf),
+  prior(dirichlet(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2), class = simo, coef = moSRPAf1)
+)
+
+#sexvicsum - bivariate sexvicsum by mo(SRPAf):
+mod3mo <-
+  brm(data = datv3tmp,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1 + mo(SRPAf),
+      # prior(normal(0, 4), class = Intercept), #see kruschke/kurtz re: priors for this model
+      prior = priors3,
+      iter = 2000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309, 
+      file = 'Models/mod3mo_fit',
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### Coefficient plot (moSRPAf)
+
+```{r}
+post3mo <- as.matrix(mod3mo)
+
+mcmc_intervals(
+  post3mo, 
+  regex_pars = "bsp_moSRPAf",
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.95, # 95%
+  point_est = "median",
+) + 
+  xlim(0, .2) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for moSRPAf beta coefficient 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Conditional effects (continuous y)
+
+```{r}
+conditional_effects(mod3mo, "SRPAf")
+```
+
+#### Conditional effects (by y category)
+
+```{r}
+conditional_effects(mod3mo, "SRPAf", categorical=TRUE)
+```
+
+#### PPcheck(density)
+
+```{r}
+pp_check(mod3mo)
+```
+
+#### PPcheck (bars)
+
+```{r}
+pp_check(
+  mod3mo, 
+  type = "bars_grouped", 
+  group = "SRPAf", 
+  ndraws = 1000, 
+  linewidth = 1/2, 
+  size = 1/4) +
+  labs(subtitle = "Bivariate model") 
+
+```
+
+#### Fit summary
+
+```{r}
+summary(mod3mo, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod3mo) #check priors  
+```
+:::
+
+Again, posterior predictive checks confirm that a cumulative probit response model fits the ordinal outcome data quite well.
+
+A primary reason to specify a cumulative probit link to model monotonic effects of the ordinal independent variable (SRPA) is that the equidistant category assumption underlying traditional metric modeling approaches render estimates that are insensitive to (i.e., average over) potentially important differences in effects across crude or discrete ordinal categories. One practical consequence may be downwardly biased coefficients or misspecification of nonlinear effects. In this case, compare the "conditional effects" plots (see tabs above) from this model with those generated by the previous ("Ord-Lin") model. The conditional effects plot from this fully ordinal bivariate model reveals that increased victimization risks emerge primarily at the upper range of SRPA scores (e.g., \>8 on the ordinal scale ranging from 2 to 14). Interestingly, examination of the conditional effects plot also reveals that increased victimization risks emerge primarily at the upper range of SRPA scores (e.g., \>8 on the ordinal scale ranging from 2 to 14). This is lower than the 95th-percentile threshold suggested by Savolainen and colleagues (i.e., the 95th percentile is a score of 12 on the 2 to 14 scale), though the pattern is consistent with their expectation that increased victimization risks should be observed at the highest ranges of physical attractiveness scales.
+
+The beta coefficient in this model represents the average monotonic effect of a one-category increase in a summed SRPA scale (ranging from "2" to "14") on latent victimization. We could multiply the beta by the number of SRPA thresholds (x12) to estimate the "maximum" effect on the latent victimization scale.
+
+Instead, to improve interpretation and better match our estimates to the ordinal outcome variable, I will estimate predicted probabilities and contrasts between the minimum and maximum SRPA categories for each of the victimization response categories.
+
+#### FIG3: Visualize max moSRPA effect by response category (mod3mo)
+
+```{r}
+
+#contrasts by response category
+
+# define the predictor grid
+ndmo <- tibble(SRPAf = c("2","14"))
+
+# compute and save
+fit3mo_conditional_probabilities_by_group <- ndmo %>%
+  add_epred_draws(mod3mo) %>%
+  ungroup() %>% 
+  mutate(SRPAf = if_else(SRPAf=="2", "min", "max"))
+
+# show the first 6 rows
+# fit3_conditional_probabilities_by_group %>% 
+#   head()
+
+#use fitted + epred workflow
+mod3mopred <- fit3mo_conditional_probabilities_by_group %>% 
+  group_by(SRPAf, .category) %>% 
+  summarise(p = mean(.epred),
+            sd = sd(.epred),
+            ll = quantile(.epred, probs = .025),
+            ul = quantile(.epred, probs = .975)) %>% 
+  data.frame() %>% 
+  mutate(SRPAf = ifelse(SRPAf == "min", "italic(p[j])^min", "italic(p[j])^max")) 
+
+#function to find & drop leading zeroes (used for x-axis label)
+dropLeadingZero <- function(l){
+  str_replace(l, '0(?=.)', '')
+}
+
+#full range of y responses (0:4)
+mod3mop1 <- mod3mopred %>% 
+  ggplot(aes(x = .category, y = p, ymin = ll, ymax = ul, 
+             color = SRPAf)) +
+  geom_hline(yintercept = 0:9 / 10, color = "lightgrey") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAf),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .9), breaks=seq(0, .9, by = .2), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "Pred. response probabilities\n(all)") +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=14), 
+        legend.text=element_text(size=14), 
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank())
+
+#nonzero victimization values only (1:4)
+mod3mop2 <- mod3mopred %>% 
+  # dplyr::filter(.category != 0) %>% 
+  ggplot(aes(x = .category, y = p, ymin = ll, ymax = ul, 
+             color = SRPAf)) +
+  geom_hline(yintercept = 0:7 / 50, color = "lightgrey") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAf),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .15), breaks=seq(0, .14, by = .02), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "(y > 0)",
+       x = expression(Victimiz.~response~option~(italic(j)))) +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=14), 
+        legend.text=element_text(size=14), 
+        axis.title.y = element_blank() 
+        )
+
+# contrasts (alt method not working - data type error)
+# p2 <- comparisons(mod3, newdata = nd, by = "group")  
+
+# contrasts
+mod3mocon <- fit3mo_conditional_probabilities_by_group %>% 
+  dplyr::select(SRPAf, .draw, .category, .epred) %>% 
+  pivot_wider(names_from = SRPAf, values_from = .epred) %>% 
+  mutate(`max - min` = `max` - `min`) %>% 
+  # now summarize the category-level probabilities, by SRPA
+  group_by(.category) %>% 
+  summarise(p = mean(`max - min`),
+            sd = sd(`max - min`),
+            ll = quantile(`max - min`, probs = .025),
+            ul = quantile(`max - min`, probs = .975)) %>% 
+data.frame() 
+
+mod3mop3 <- mod3mocon %>% 
+  ggplot(aes(x = .category, y = p, ymin = ll, ymax = ul)) +
+  geom_hline(yintercept = -4:4 / 20, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(linewidth = 3/4, size = 1/3) +
+  scale_y_continuous(expression(italic(p[j])^max-italic(p[j])^min), 
+                     limits = c(-0.21, 0.2), breaks=seq(-.2, .2, by = .05), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{AME}~(max~contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j)))) + 
+  theme(
+    axis.title.y = element_text(size=14)
+  )
+
+# combine and entitle
+mod3plot <- ((mod3mop3 | mod3mop1 / mod3mop2)) +
+  plot_annotation(title = "Cumulative probit y ~ mo(SRPAf)", 
+  subtitle = "Maximum monotonic AME of SRPA on Victimization") 
+mod3plot
+
+# ggsave("mod3plot.jpeg", mod3plot, width=9, height=6.5)
+
+
+```
+
+These plots show estimates of the maximum monotonic AME of SRPA on sexual victimization as predicted probability potential outcomes and probability contrasts for each ordinal victimization response category across minimum and maximum SRPA scores. Examining the "zero" response category contrast reveals that the probability of any victimization is predicted to be approximately 18-percentage points higher (diff = -0.178 \[95% CrI: \[-0.198, -0.160\]) among those with the highest compared to the lowest SRPA scores.
+
+This is a descriptive bivariate estimate unadjusted for potential measured confounders. Using the same modeling and estimation approach, let's next add covariates (as metric standardized variables or unordered factors) to adjust for some potential sources of confounding.
+
+### M2 (Controls): Ord\~Ord (sexvicsumf by moSRPAf)
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+#with ordinal (monotonic cumulative probit) SRPA predictor & linear controls
+
+#sexvicsum - bivariate sexvicsum by mo(SRPAf):
+mod4mo <-
+  brm(data = datv3tmp,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1 + mo(SRPAf) + SRintelz + SRpopularz + agez + worked + gender,
+      prior = priors3,
+      iter = 2000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309, 
+      file = "Models/mod4mo_fit",
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### Coefficient plot (moSRPAf)
+
+```{r}
+post4mo <- as.matrix(mod4mo)
+
+mcmc_intervals(
+  post4mo, 
+  regex_pars = "bsp_moSRPAf",
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.95, # 95%
+  point_est = "median",
+) + 
+  xlim(0, .2) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for moSRPAf beta coefficient 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Coefficient plot (all)
+
+```{r}
+coefgrp <- c("bsp_moSRPAf", "SRintel", "SRpopular", 
+             "age", "worked", "gender")
+mcmc_plot(mod4mo, variable = coefgrp, regex = TRUE, 
+          prob = 0.80, prob_outer = 0.95) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for all beta coefficients 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Conditional effects (continuous y)
+
+```{r}
+conditional_effects(mod4mo, "SRPAf")
+```
+
+#### Conditional effects (by y category)
+
+```{r}
+conditional_effects(mod3mo, "SRPAf", categorical = TRUE)
+```
+
+#### Fit summary
+
+```{r}
+summary(mod4mo, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod4mo) #check priors  
+```
+:::
+
+#### Visualize max moSRPA effect by response category (mod4mo)
+
+```{r}
+
+
+#contrasts by response category
+
+# update the data grid
+# ndmo_id <- datv3tmp %>% 
+#   mutate(id = 1:n()) %>% 
+#   dplyr::select(id, SRintelz, SRpopularz, agez, worked, gender) %>% 
+#   expand_grid(SRPAf = c("2","14")) %>% 
+#   mutate(row = 1:n())
+
+# conditional probabilities (marginaleffects workflow - fixed matrix issue)
+# mod4mopred <- avg_predictions(mod4mo, newdata = ndmo_id, 
+#                               by = c("SRPAf", "group")) %>% 
+#   data.frame() %>%
+#   mutate(SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))  
+
+
+#method above for aap are too computationally intensive
+# see here: https://marginaleffects.com/vignettes/performance.html
+
+# One option is to limit variables averaged over. E.g., 
+
+# predictions(
+#     mod4mo,
+#     type = "response",
+#     by = "SRPAf",
+#     datagrid(SRPAf = c("2","14")), 
+#     variables = c("SRintelz", "SRpopularz", "agez"))
+
+# For now, I am opting to estimate adjusted predictions at mean (apm) instead
+
+mod4mopred <- predictions(mod4mo, newdata = datagrid(SRPAf = c("2","14")), by = c("SRPAf","group")) %>% 
+  data.frame() %>%
+  mutate(SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))
+
+#function to find & drop leading zeroes (used for x-axis label)
+dropLeadingZero <- function(l){
+  str_replace(l, '0(?=.)', '')
+}
+
+#full range of y responses (0:4)
+mod4mop1 <- mod4mopred %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = SRPAf)) +
+  geom_hline(yintercept = 0:9 / 10, color = "lightgrey") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAf),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .9), breaks=seq(0, .9, by = .2), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "Pred. response probabilities\n(all)") +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank())
+
+#nonzero victimization values only (1:4)
+mod4mop2 <- mod4mopred %>% 
+  # dplyr::filter(group != 0) %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = SRPAf)) +
+  geom_hline(yintercept = 0:7 / 50, color = "lightgrey") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAf),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .15), breaks=seq(0, .14, by = .02), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "(y > 0)",
+       x = expression(Victimiz.~response~option~(italic(j)))) +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank() 
+        )
+
+# contrasts (marginaleffects workflow - fixed matrix issue)
+# also too computationally intensive
+# mod4mocon <- avg_comparisons(mod4mo, variables = "SRPAf") %>%
+#   data.frame() 
+
+# estimate contrasts at means
+
+mod4mocon <- comparisons(mod4mo, variables = list(SRPAf = c("2","14")), 
+newdata = "mean", by = "group") %>% 
+  data.frame() 
+
+  
+mod4mop3 <- mod4mocon %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high)) +
+  geom_hline(yintercept = -4:4 / 20, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(linewidth = 3/4, size = 1/3) +
+  scale_y_continuous(expression(italic(p[j])^max-italic(p[j])^min), 
+                     limits = c(-0.2, 0.2), breaks=seq(-.2, .2, by = .05), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{MEM}~(max~contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j))))
+
+# combine and entitle
+((mod4mop3 | mod4mop1 / mod4mop2)) +
+  plot_annotation(title = "Cumulative probit y ~ mo(SRPAf) + Controls", 
+  subtitle = "Maximum monotonic MEM of SRPA on Victimization") 
+
+```
+
+After adjusting for these covariates, the SRPAf coefficient shrinks slightly (from 0.05 to 0.04).
+
+Also, as expected, the beta coefficient for gender shows girls report substantially more sexual victimization experiences than boys. Likewise, it will be important to interact SRPAf with gender later to explore possible heterogeneity in predicted probabilities and contrasts.
+
+Unfortunately, estimating average predictions and contracts marginalized across all covariates from these ordinal models with a large (\~50k) dataset is too computationally intensive; doing so bogged down my computer and resulted in multiple crashes. For now, I've settled on the much more computationally efficient yet somewhat less interpretable marginal effects at means (MEM) instead to generate predictions and contrasts by response category in models with covariates. Like the beta coefficient, the estimated maximum contrast is slightly smaller (-0.154 versus -0.178 from Bivariate model). However, as the predicted probabilities are estimated at the means and not averaged over all covariate values, these estimates are not directly comparable.
+
+For now, let's adjust for "nlp" as an ordinal variable with a cumulative monotonic effect on victimization and compare the MEM contrast.
+
+Before we do, now might be a good time to formalize the "full" (Controls + NLP) Model 3 in equation form. For more information about these models and specifications, see previous links to Kurz's blog and bookdowns; Bürkner's papers, & McElreath's *Statistical Rethinking*.
+
+$$ \begin{align*} \text{victimiz}_i & \sim \operatorname{Cumulative}(\mathbf p, \mu_i, \alpha) \\ p_j & = \Phi(\tau_j) \\ \mu_i & = 0 + \beta_1 \text{mo(SRPA}_i,\delta_1) + \beta_2 \text{mo(NLP}_i,\delta_2)) + \beta_3 \text{Covariate}_{3i} + \beta_K \text{Covariate}_{Ki}\\ \alpha & = 1 \\ \tau_1 & \sim \operatorname{Normal}(-0.84, 1) \\ \tau_2 & \sim \operatorname{Normal}(-0.25, 1) \\ \tau_3 & \sim \operatorname{Normal}(0.25, 1) \\ \tau_4 & \sim \operatorname{Normal}(0.84, 1) \\ \beta_1 & \sim \operatorname{Normal}(0, 0.083) \\ \beta_2 & \sim \operatorname{Normal}(0, 0.11) \\ \beta_3, \dots, \beta_k & \sim \operatorname{Normal}(0, 1) \\ \delta_1 & \sim \operatorname{Dirichlet}(2,2,2,2,2,2,2,2,2,2,2,2) \\ \delta_2 & \sim \operatorname{Dirichlet}(2,2,2,2,2,2,2,2,2) \end{align*} $$
+
+### M3 (NLP): Ord\~Ord (sexvicsumf by moSRPAf)
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+#with ordinal (monotonic cumulative probit) SRPA predictor, linear controls, & mo(nlp)
+
+#10 nlp response categories = 9 thresholds 
+# so, beta prior (0,1) equiv to (0,[1/9]) or (0,.11) 
+
+priors4 = c(
+  prior(normal(-0.84, 1), class = Intercept, coef = 1),
+  prior(normal(-0.25, 1), class = Intercept, coef = 2),
+  prior(normal(0.25, 1), class = Intercept, coef = 3),
+  prior(normal(0.84, 1), class = Intercept, coef = 4), 
+  prior(normal(0, 1), class = b), 
+  prior(normal(0, 0.083), class = b, coef = moSRPAf),
+  prior(normal(0, 0.11), class = b, coef = monlpf),
+  prior(dirichlet(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2), class = simo, coef = moSRPAf1),
+  prior(dirichlet(2, 2, 2, 2, 2, 2, 2, 2, 2), class = simo, coef = monlpf1)
+)
+
+#sexvicsum - bivariate sexvicsum by mo(SRPAf):
+mod5mo <-
+  brm(data = datv3tmp,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1 + mo(SRPAf) + mo(nlpf) + SRintelz + SRpopularz + agez + worked + gender,
+      prior = priors4,
+      iter = 2000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309, 
+      file = 'Models/mod5mo_fit',
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### Coefficient plot (moSRPAf)
+
+```{r}
+post5mo <- as.matrix(mod5mo)
+
+mcmc_intervals(
+  post5mo, 
+  regex_pars = "bsp_moSRPAf",
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.95, # 95%
+  point_est = "median",
+) + 
+  xlim(0, .2) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for moSRPAf beta coefficient 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Coefficient plot (all)
+
+```{r}
+coefgrp <- c("bsp_moSRPAf", "SRintel", "SRpopular", 
+             "age", "worked", "gender")
+mcmc_plot(mod5mo, variable = coefgrp, regex = TRUE, 
+          prob = 0.80, prob_outer = 0.95) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for all beta coefficients 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Conditional effects (continuous y)
+
+```{r}
+conditional_effects(mod5mo, "SRPAf")
+```
+
+#### Conditional effects (by y category)
+
+```{r}
+conditional_effects(mod3mo, "SRPAf", categorical = TRUE)
+```
+
+#### Fit summary
+
+```{r}
+summary(mod5mo, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod5mo) #check priors  
+```
+:::
+
+#### Visualize max moSRPA effect by response category (mod5mo)
+
+```{r}
+
+
+#contrasts by response category
+
+# update the data grid
+# ndmo_id <- datv3tmp %>% 
+#   mutate(id = 1:n()) %>% 
+#   dplyr::select(id, SRintelz, SRpopularz, agez, worked, gender) %>% 
+#   expand_grid(SRPAf = c("2","14")) %>% 
+#   mutate(row = 1:n())
+
+# conditional probabilities (marginaleffects workflow - fixed matrix issue)
+# mod5mopred <- avg_predictions(mod5mo, newdata = ndmo_id, 
+#                               by = c("SRPAf", "group")) %>% 
+#   data.frame() %>%
+#   mutate(SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))  
+
+
+#method above for aap are too computationally intensive
+# see here: https://marginaleffects.com/vignettes/performance.html
+
+# One option is to limit variables averaged over. E.g., 
+
+# predictions(
+#     mod5mo,
+#     type = "response",
+#     by = "SRPAf",
+#     datagrid(SRPAf = c("2","14")), 
+#     variables = c("SRintelz", "SRpopularz", "agez"))
+
+# For now, I am opting to estimate adjusted predictions at mean (apm) instead
+
+mod5mopred <- predictions(mod5mo, newdata = datagrid(SRPAf = c("2","14")), by = c("SRPAf","group")) %>% 
+  data.frame() %>%
+  mutate(SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))
+
+#function to find & drop leading zeroes (used for x-axis label)
+dropLeadingZero <- function(l){
+  str_replace(l, '0(?=.)', '')
+}
+
+#full range of y responses (0:4)
+mod5mop1 <- mod5mopred %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = SRPAf)) +
+  geom_hline(yintercept = 0:9 / 10, color = "lightgrey") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAf),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .9), breaks=seq(0, .9, by = .2), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "Pred. response probabilities\n(all)") +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank())
+
+#nonzero victimization values only (1:4)
+mod5mop2 <- mod5mopred %>% 
+  # dplyr::filter(group != 0) %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = SRPAf)) +
+  geom_hline(yintercept = 0:7 / 50, color = "lightgrey") +
+  geom_linerange(linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(aes(shape = SRPAf),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .6,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(20, 18),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .15), breaks=seq(0, .14, by = .02), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "(y > 0)",
+       x = expression(Victimiz.~response~option~(italic(j)))) +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank() 
+        )
+
+# contrasts (marginaleffects workflow - fixed matrix issue)
+# also too computationally intensive
+# mod5mocon <- avg_comparisons(mod5mo, variables = "SRPAf") %>%
+#   data.frame() 
+
+# estimate contrasts at means
+
+mod5mocon <- comparisons(mod5mo, variables = list(SRPAf = c("2","14")), 
+newdata = "mean", by = "group") %>% 
+  data.frame() 
+
+  
+mod5mop3 <- mod5mocon %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high)) +
+  geom_hline(yintercept = -4:4 / 20, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(linewidth = 3/4, size = 1/3) +
+  scale_y_continuous(expression(italic(p[j])^max-italic(p[j])^min), 
+                     limits = c(-0.2, 0.2), breaks=seq(-.2, .2, by = .05), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{MEM}~(max~contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j))))
+
+# combine and entitle
+((mod5mop3 | mod5mop1 / mod5mop2)) +
+  plot_annotation(title = "Cumulative probit y ~ mo(SRPAf) + Controls + NLP", 
+  subtitle = "Maximum monotonic MEM of SRPA on Victimization") 
+
+```
+
+After adjusting for nlp, the SRPAf coefficient shrinks substantially (0.04 in Controls model to 0.02).
+
+Once again, estimating average predictions and contracts marginalized across all covariates from these ordinal models with a large (\~50k) dataset is too computationally intensive (attempting it crashed my computer multiple times). For now, I've continued to rely on the much more computationally efficient marginal effects at means (MEM) estimation approach instead to generate predictions and contrasts by response category. The estimated maximum MEM contrast is substantially smaller (-0.046 versus -0.136 from Controls model).
+
+Again, the predicted probabilities are not averaged over all covariate values, so the estimates are not directly comparable (i.e., they are conditional average marginal effects, not average marginal effects). Nonetheless, they do illustrate that stratification on nlp accounts for a substantial portion of the observed association between SRPA and sexual victimization. Recall, the degree to which this overlap represents plausible confounding or mediation processes is unknown.
+
+Later, I estimate indirect effects of SRPA on victimization via nlp to illustrate the inferences we might make under the assumption that a mediation process generated these data.
+
+For now, let's combine some of these estimates into plots that show how they change across models.
+
+## Combining estimates across models
+
+### Comparing beta estimates of SRPA effect on latent victimization
+
+Let's start by plotting the beta estimates from models without covariates, with covariates, and with nlp (a confounder and/or mediator). Recall, these betas represent effect estimates on a latent continuous response scale.
+
+::: panel-tabset
+#### Avg (1-category) beta on latent y
+
+```{r}
+# https://stackoverflow.com/questions/52875665/plotting-posterior-parameter-estimates-from-multiple-models-with-bayesplot
+intdat3 <- mcmc_intervals_data(post3mo) %>% 
+  mutate(model="Bivariate") %>% 
+  dplyr::filter(parameter=="bsp_moSRPAf")
+intdat4 <- mcmc_intervals_data(post4mo) %>% 
+  mutate(model="Controls") %>% 
+  dplyr::filter(parameter=="bsp_moSRPAf")
+intdat5 <- mcmc_intervals_data(post5mo) %>% 
+  mutate(model="Controls + NLP") %>% 
+  dplyr::filter(parameter=="bsp_moSRPAf")
+  
+allpost <- rbind(intdat3, intdat4, intdat5) %>%
+  mutate(
+    model = factor(model, levels = c("Bivariate", "Controls", "Controls + NLP"), 
+                      ordered = FALSE)
+    )
+
+#redo with different factor levels
+theme_set(bayesplot::theme_default())
+pos <- position_nudge(y = if_else(allpost$model == "Bivariate", .2, 
+                                 if_else(allpost$model == "Controls", 0, -.2)))
+ggplot(allpost, aes(x = m, y = parameter, color=model)) + 
+  geom_linerange(aes(xmin = ll, xmax = hh), position = pos, size=1) + #95%interval
+  geom_point(position = pos, color="black", shape=124, size=4) + #pointestimate
+  scale_color_manual(values = c("#FE9F6DFF","#DE4968FF","#8C2981FF")) +
+  xlim(0,.06) + 
+  labs(x=expression(hat(italic(z))[italic(ij)]^1-hat(italic(z))[italic(ij)]^0), 
+    subtitle = "Est. avg. effect of 1-category increase in SRPA on latent scale (est + 95% CrI)") +
+  theme(
+    axis.text.y = element_blank(),
+    axis.title.y = element_blank()
+  )
+
+  
+#estimated avg monotonic effect of 1-category increase in SRPA on latent victimization scale   
+```
+
+#### Maximum (max-min category) beta on latent y
+
+```{r}
+
+# intdat3 <- mcmc_intervals_data(post3mo) %>% 
+#   mutate(model="Bivariate") %>% 
+#   dplyr::filter(parameter=="bsp_moSRPAf") %>% 
+#   transmute(bE = m * 12)  
+
+maxbdat3 <- as_draws_df(post3mo) %>% 
+  transmute(bE = bsp_moSRPAf * 12) %>% 
+  median_qi(.width = .95) %>% 
+  mutate_if(is.double, round, digits = 2) %>% 
+  mutate(model="Bivariate", parameter="bsp_moSRPAf")  
+
+maxbdat4 <- as_draws_df(post4mo) %>% 
+  transmute(bE = bsp_moSRPAf * 12) %>% 
+  median_qi(.width = .95) %>% 
+  mutate_if(is.double, round, digits = 2) %>% 
+  mutate(model="Controls", parameter="bsp_moSRPAf") 
+
+maxbdat5 <- as_draws_df(post5mo) %>% 
+  transmute(bE = bsp_moSRPAf * 12) %>% 
+  median_qi(.width = .95) %>% 
+  mutate_if(is.double, round, digits = 2) %>% 
+  mutate(model="Controls + NLP", parameter="bsp_moSRPAf")  
+  
+allmaxbpost <- rbind(maxbdat3, maxbdat4, maxbdat5) %>%
+  mutate(
+    model = factor(model, levels = c("Bivariate", "Controls", "Controls + NLP"), 
+                      ordered = FALSE)
+    )
+
+#redo with different factor levels
+theme_set(bayesplot::theme_default())
+pos <- position_nudge(y = if_else(allmaxbpost$model == "Bivariate", .2, 
+                                 if_else(allmaxbpost$model == "Controls", 0, -.2)))
+ggplot(allmaxbpost, aes(x = bE, y = parameter, color=model)) + 
+  geom_linerange(aes(xmin = .lower, xmax = .upper), position = pos, size=1) + #95%interval
+  geom_point(position = pos, color="black", shape=124, size=4) + #pointestimate
+  scale_color_manual(values = c("#FE9F6DFF","#DE4968FF","#8C2981FF")) +
+  xlim(0,.80) + 
+  labs(x=expression(hat(italic(z))[italic(ij)]^max-hat(italic(z))[italic(ij)]^min),
+    subtitle = "Est. avg. effect of min-to-max increase in SRPA on latent scale (est + 95% CrI)") +
+  theme(
+    axis.text.y = element_blank(),
+    axis.title.y = element_blank()
+  )
+
+  
+#estimated maximum monotonic effect of min-to-max increase in SRPA on latent victimization scale   
+```
+:::
+
+Before plotting contrasts, I will make sure all the maximum and minimum predicted probabilities, maximum contrast (pmax - pmin), and maximum adjusted risk ratios (pmax / pmin) estimates from Models 1 to 3 are easily accessible for reporting in the paper.
+
+::: panel-tabset
+#### M1 Unadj. PP
+
+```{r}
+mod3mopred %>% gt()
+```
+
+#### M2 Adj. PP
+
+```{r}
+mod4mopred %>% gt()
+```
+
+#### M3 Adj. PP
+
+```{r}
+mod5mopred %>% gt()
+```
+
+#### M1 Unadj. Contrasts
+
+```{r}
+mod3mocon %>% gt()
+```
+
+#### M2 Adj. Contrasts
+
+```{r}
+mod4mocon %>% gt()
+```
+
+#### M3 Adj. Contrasts
+
+```{r}
+mod5mocon %>% gt()
+```
+
+#### M1 Unadj. RR
+
+```{r}
+
+#using estimates - helps to work out logic & check
+# mod3mopred %>%
+#   dplyr::select(c(.category, SRPAf, p)) %>%
+#   pivot_wider(
+#     names_from = SRPAf,
+#     values_from = p
+#   ) %>%
+#   mutate(
+#     rr = `italic(p[j])^max` /  `italic(p[j])^min`
+#     ) %>%
+#   gt()
+
+#using draws (more accurate & permits calculation of SD & CrIs) 
+
+# manual method
+# fit3mo_conditional_probabilities_by_group %>% 
+#   dplyr::select(SRPAf, .draw, .category, .epred) %>% 
+#   pivot_wider(names_from = SRPAf, values_from = .epred) %>% 
+#   mutate(`max / min` = `max` / `min`) %>% 
+#   # now summarize the category-level probabilities, by SRPA
+#   group_by(.category) %>% 
+#   summarise(rr = mean(`max / min`),
+#             sd = sd(`max / min`),
+#             ll = quantile(`max / min`, probs = .025),
+#             ul = quantile(`max / min`, probs = .975)) %>% 
+#   data.frame() %>% 
+#   gt()
+
+#using draws - marginaleffects (exp^ln(max/min))
+mod3moRR <- avg_comparisons(mod3mo, variables = list("SRPAf" = c("2","14")), 
+                comparison = "lnratioavg",
+                transform = exp) %>%
+  data.frame() 
+
+mod3moRR %>% gt()
+
+```
+
+#### M2 Adj. RR
+
+```{r}
+
+#using estimates
+# mod4mopred %>% 
+#   dplyr::select(c(group, SRPAf, estimate)) %>% 
+#   pivot_wider(
+#     names_from = SRPAf, 
+#     values_from = estimate
+#   ) %>% 
+#   mutate( 
+#     rr = `E[italic(j)](hat(italic(p))[italic(ij)]^max)` /  `E[italic(j)](hat(italic(p))[italic(ij)]^min)`
+#     ) %>% 
+#   gt()
+
+#using draws
+mod4moRR <- avg_comparisons(mod4mo, variables = list("SRPAf" = c("2","14")), 
+                            newdata = "mean", by = "group",
+                            comparison = "lnratioavg",
+                            transform = exp) %>%
+  data.frame() 
+
+mod4moRR %>% gt()
+
+
+
+```
+
+#### M3 Adj. RR
+
+```{r}
+
+#using estimates
+# mod5mopred %>% 
+#   dplyr::select(c(group, SRPAf, estimate)) %>% 
+#   pivot_wider(
+#     names_from = SRPAf, 
+#     values_from = estimate
+#   ) %>% 
+#   mutate( 
+#     rr = `E[italic(j)](hat(italic(p))[italic(ij)]^max)` /  `E[italic(j)](hat(italic(p))[italic(ij)]^min)`
+#     ) %>% 
+#   gt()
+  
+#using draws
+mod5moRR <- avg_comparisons(mod5mo, variables = list("SRPAf" = c("2","14")), 
+                            newdata = "mean", by = "group",
+                            comparison = "lnratioavg",
+                            transform = exp) %>%
+  data.frame() 
+
+mod5moRR %>% gt()
+
+
+
+```
+:::
+
+### Risk Estimates table
+
+While I'm at it, let's compile these risk estimates in a single table.
+
+```{r}
+
+risktabf <- function(riskdat, coefest, cilow, cihi, ycat, modcol, coefcol) {
+riskdat %>% 
+  rename(
+    est = !!as.name(coefest), 
+    ll = !!as.name(cilow), 
+    ul = !!as.name(cihi)
+  ) %>%
+  pivot_wider(
+    names_from = !!as.name(ycat),
+    values_from = c(est, ll, ul)
+  ) %>% 
+  mutate(
+    model = modcol, 
+    coef = coefcol
+  ) %>% 
+  relocate(
+    c(model, coef), .before = everything()
+  )
+}
+
+riskppm1 <- mod3mopred %>% 
+  dplyr::select(-sd) %>% 
+  risktabf("p", "ll", "ul", ".category", "Model 1 (Unadj.)", "pp") %>% 
+  dplyr::select(-coef) %>% 
+  rename(coef = SRPAf) %>% 
+  mutate(
+    coef = if_else(coef=="italic(p[j])^min", "$p_j^{min}$", "$p_j^{max}$")
+  ) %>% 
+  arrange(est_1)  
+riskppm2 <- mod4mopred %>% 
+  risktabf("estimate", "conf.low", "conf.high", "group", "Model 2 (Adj. $C_k$)", "pp") %>% 
+  dplyr::select(-coef) %>% 
+  rename(coef = SRPAf) %>% 
+  mutate(
+    coef = if_else(coef=="E[italic(j)](hat(italic(p))[italic(ij)]^min)",
+                   "$E_j(p_{ij}^{min}|C_k=mean)$", "$E_j(p_{ij}^{max}|C_k=mean)$")
+  ) 
+riskppm3 <- mod5mopred %>% 
+  risktabf("estimate", "conf.low", "conf.high", "group", "Model 3 (Adj. $C_k$ + NLP)", "pp") %>% 
+  dplyr::select(-coef) %>%  
+  rename(coef = SRPAf) %>% 
+  mutate(
+    coef = if_else(coef=="E[italic(j)](hat(italic(p))[italic(ij)]^min)",
+                   "$E_j(p_{ij}^{min}|C_k=mean)$", "$E_j(p_{ij}^{max}|C_k=mean)$")
+  ) 
+
+riskconm1 <- mod3mocon %>% 
+  dplyr::select(-sd) %>% 
+  risktabf("p", "ll", "ul", ".category", 
+           "Model 1 (Unadj.)", "maxcon") %>% 
+  mutate(coef = "$p_j^{max}$ - $p_j^{min}$")
+riskconm2 <- mod4mocon %>% 
+  dplyr::select(c(group, estimate, conf.low, conf.high)) %>% 
+  risktabf("estimate", "conf.low", "conf.high", "group", 
+           "Model 2 (Adj. $C_k$)", "maxcon") %>% 
+  mutate(coef = "$E_j(p_{ij}^{max}|C_k=mean)$ - $E_j(p_{ij}^{min}|C=mean)$")
+riskconm3 <- mod5mocon %>% 
+  dplyr::select(c(group, estimate, conf.low, conf.high)) %>% 
+  risktabf("estimate", "conf.low", "conf.high", "group", 
+           "Model 3 (Adj. $C_k$ + NLP)", "maxcon") %>% 
+  mutate(coef = "$E_j(p_{ij}^{max}|C_k=mean)$ - $E_j(p_{ij}^{min}|C_k=mean)$")
+
+
+riskrrm1 <- risktabf(mod3moRR, "estimate", "conf.low", "conf.high", "group", 
+                     "Model 1 (Unadj.)", "maxrr") %>% 
+  dplyr::select(-c(term, contrast)) %>% 
+  mutate(coef = "$p_j^{max}$ / $p_j^{min}$")  
+riskrrm2 <- risktabf(mod4moRR, "estimate", "conf.low", "conf.high", "group", 
+                     "Model 2 (Adj. $C_k$)", "maxrr") %>% 
+  dplyr::select(-c(term, contrast)) %>% 
+  mutate(coef = "$E_j(p_{ij}^{max}|C_k=mean)$ / $E_j(p_{ij}^{min}|C_k=mean)$")
+riskrrm3 <- risktabf(mod5moRR, "estimate", "conf.low", "conf.high", "group", 
+                     "Model 3 (Adj. $C_k$ + NLP)", "maxrr") %>% 
+  dplyr::select(-c(term, contrast)) %>% 
+  mutate(coef = "$E_j(p_{ij}^{max}|C=mean)$ / $E_j(p_{ij}^{min}|C=mean)$")
+
+risktable <- bind_rows(riskppm1, riskconm1, riskrrm1, 
+                       riskppm2, riskconm2, riskrrm2,
+                       riskppm3, riskconm3, riskrrm3) 
+
+
+  
+risktable <- risktable %>% gt(groupname_col = "model") %>%
+  fmt_markdown(c(coef, model), rows = everything()) %>% 
+  fmt_number(columns = everything(), rows = everything(), decimals = 3) %>% 
+  cols_merge(columns = c(ll_0, ul_0), pattern = "[{1}, {2}]") %>% 
+  cols_merge(columns = c(ll_1, ul_1), pattern = "[{1}, {2}]") %>% 
+  cols_merge(columns = c(ll_2, ul_2), pattern = "[{1}, {2}]") %>% 
+  cols_merge(columns = c(ll_3, ul_3), pattern = "[{1}, {2}]") %>% 
+  cols_merge(columns = c(ll_4, ul_4), pattern = "[{1}, {2}]") %>% 
+  cols_move(columns = ll_0, after = est_0) %>% 
+  cols_move(columns = ll_1, after = est_1) %>% 
+  cols_move(columns = ll_2, after = est_2) %>% 
+  cols_move(columns = ll_3, after = est_3) %>% 
+  cols_move(columns = ll_4, after = est_4) %>% 
+  cols_label(
+    "est_0" ~ "y=0",
+    "ll_0" ~ "", 
+    "est_1" ~ "y=1",
+    "ll_1" ~ "", 
+    "est_2" ~ "y=2",
+    "ll_2" ~ "", 
+    "est_3" ~ "y=3",
+    "ll_3" ~ "", 
+    "est_4" ~ "y=4",
+    "ll_4" ~ ""
+    ) %>%
+  tab_header(
+    title = md("**Table X. Risks, Risk Differences, & Risk Ratios from Models Predicting Victimization**"), 
+    subtitle = md("Absolute & relative risk estimates contrasting  min versus max SRPA by victimization category")
+    ) %>% 
+  opt_align_table_header(align = "left") %>% 
+  opt_vertical_padding(scale = 0.5) %>% 
+  opt_table_font(font = "serif") %>% 
+  opt_row_striping(row_striping = FALSE) %>% 
+  gt_highlight_cols(starts_with("y="), fill = "lightgrey", alpha = 0.3) %>% 
+ tab_style(
+    style = cell_text(style = "italic"),
+    locations = cells_row_groups()
+  )  
+
+risktable
+
+# risktable %>% gtsave("risktable.docx")
+
+```
+
+Now, let's pull the maximum predicted probability contrasts from our three primary models together into one plot.
+
+### FIG4: Comparing maximum contrasts across models
+
+```{r}
+
+# regenerate contrasts for model 3 using same method to make data merging easier
+mod3mocon2 <- avg_comparisons(mod3mo, variables = list("SRPAf" = c("2","14"))) %>%
+  data.frame() %>% mutate(model = "M1: Unadj.")
+
+mod4mocon2 <- mod4mocon %>% mutate(model = "M2: Controls") %>% 
+  dplyr::select(!rowid)
+mod5mocon2 <- mod5mocon %>% mutate(model = "M3: NLP") %>% 
+  dplyr::select(!rowid)
+
+allmodcon <- rbind(mod3mocon2, mod4mocon2, mod5mocon2) %>%
+  mutate(
+    model = factor(model, levels = c("M1: Unadj.", "M2: Controls", "M3: NLP"), 
+                      ordered = FALSE)
+    )
+
+allmodconp <- allmodcon %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+              color = model)) +
+  geom_hline(yintercept = -4:4 / 20, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(aes(color = model), linewidth = 3/4, size = 1/3, 
+                      position = position_dodge(width = 1/3)) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .7,
+                        labels = scales::parse_format(), name = "model") +
+  scale_y_continuous(expression(italic(p[j])^max-italic(p[j])^min), 
+                     limits = c(-0.21, 0.2), breaks=seq(-.2, .2, by = .05), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{AME~or~MEM}~(max~contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j)))) + 
+  theme( 
+    legend.background = element_blank(),
+    legend.position = c(0.9, 0.85), 
+    legend.key.height= unit(.5, 'cm'),
+    legend.key.width= unit(.5, 'cm'), 
+    legend.title = element_text(size=14), 
+    legend.text=element_text(size=14),
+    axis.title.y = element_text(size=14)
+    )
+
+allmodconp <- allmodconp +  
+  plot_annotation(title = "Predicted Response Contrasts from Cumulative Probit Models", 
+  subtitle = "Maximum monotonic AME or MEM contrasts of SRPA on Victimization by Model") 
+
+allmodconp
+
+# ggsave("allmodconp.jpeg", allmodconp, width=9, height=6.5)
+
+```
+
+This combined plot makes it easier to see that covariate adjustment in the "Controls" model has little impact on the maximum effect contrast. However, as expected given the strong ordinal bivariate association between SRPA and NLP (see mosaic plots above), adjusting for NLP results in substantial reductions in SRPA's maximum effect contrasts. Of course, the question is whether this reduction is due to proper stratification on a strong confounder or improper adjustment on a mediator. Again, we cannot ascertain which is the case in these data. However, it is worth noting that one reason for conceptualizing sexual activity as a confounder was that it might cause heightened self-assessments and, thus, higher responses on SRPA items. Yet, results from the "Controls" model reveals little change in SRPA's estimated maximum effect after adjusting for other measures of heightened self-assessments (e.g., self-reported intelligence and popularity). Given this, it remains plausible that the NLP's impact on SRPA's effect estimates at least partly represents mediation processes. Thus, operating on the strong assumption that the data generating process reflects underlying causal mediation processes, exploratory mediation models below further assess "direct" and potential "indirect" effects of SRPA on victimization.
+
+Let's wrap up by compiling some key coefficients into a table.
+
+### TAB1: Coefficient Table
+
+```{r}
+
+# custom function to extract and wrangle coefficients from brms models for gt()
+coeftbl <- function(modfit) {fixef(modfit, summary = TRUE, robust = FALSE, probs = c(0.025, 0.975)) %>% 
+  data.frame() %>% 
+  dplyr::select(!Est.Error) %>% 
+  rownames_to_column(var = "Coefficient") %>% 
+  mutate(
+    rowgrp = if_else(grepl("Intercept", Coefficient, ignore.case = TRUE), "Threshold", "beta"), 
+    rowgrp = if_else(grepl("SRPA", Coefficient, fixed = TRUE), "SRPA (beta)", rowgrp), 
+    rowgrp = factor(rowgrp, levels = c("SRPA (beta)","beta","Threshold")) 
+  ) 
+  }
+
+#Extract beta coefficients (latent response scale) from Bivariate model
+coefm1 <- coeftbl(mod3mo) %>% 
+  rename(Est.M1 = Estimate, 
+         LL.M1 = Q2.5, 
+         UL.M1 = Q97.5) 
+
+#Extract beta coefficients (latent response scale) from Controls model
+coefm2 <- coeftbl(mod4mo) %>% 
+  rename(Est.M2 = Estimate, 
+         LL.M2 = Q2.5, 
+         UL.M2 = Q97.5) 
+
+#Extract beta coefficients (latent response scale) from Controls + NLP model
+coefm3 <- coeftbl(mod5mo) %>% 
+  rename(Est.M3 = Estimate, 
+         LL.M3 = Q2.5, 
+         UL.M3 = Q97.5) 
+
+#Merge coefficients from all 3 models into one dataset
+coefm123 <- full_join(coefm1, coefm2)
+coefm123 <- full_join(coefm123, coefm3) 
+
+#Add transformed "maximum" beta (still on latent response scale)
+coefm123 <- coefm123 %>% 
+  add_row(Coefficient = "moSRPAf(max)",
+          Est.M1 = maxbdat3$bE, LL.M1 = maxbdat3$.lower, UL.M1 = maxbdat3$.upper, 
+          Est.M2 = maxbdat4$bE, LL.M2 = maxbdat4$.lower, UL.M2 = maxbdat4$.upper, 
+          Est.M3 = maxbdat5$bE, LL.M3 = maxbdat5$.lower, UL.M3 = maxbdat5$.upper, 
+          rowgrp = "SRPA (max. beta)"
+          ) %>%
+  mutate( 
+    rowgrp = factor(rowgrp, levels = c("SRPA (beta)", "SRPA (max. beta)", "beta","Threshold"))
+    ) %>% 
+  arrange(rowgrp)  
+
+tab1 <- coefm123 %>%
+  gt(groupname_col = "rowgrp") %>%
+  fmt_number(columns = everything(), rows = everything(), decimals = 2) %>% 
+  cols_merge(columns = c(LL.M1, UL.M1), pattern = "[{1}, {2}]") %>% 
+  cols_merge(columns = c(LL.M2, UL.M2), pattern = "[{1}, {2}]") %>% 
+  cols_merge(columns = c(LL.M3, UL.M3), pattern = "[{1}, {2}]") %>% 
+  cols_label(
+    starts_with("Est.") ~ "Estimate",
+    starts_with("LL.") ~ "95% Cr.I" 
+  ) %>%
+  sub_missing(columns = everything(), rows = everything(), missing_text = "--") %>%
+  tab_spanner(label = "Bivariate", columns = ends_with("M1")) %>% 
+  tab_spanner(label = "Controls", columns = ends_with("M2")) %>% 
+  tab_spanner(label = "Controls + NLP", columns = ends_with("M3")) %>% 
+  tab_header(
+    title = md("**Table 1. Coefficients from brms Models Predicting Victimization**"), 
+    subtitle = md("Model betas represent estimated effects on latent continuous response scale")
+    ) %>% 
+  opt_align_table_header(align = "left") %>% 
+  opt_vertical_padding(scale = 0.5) %>% 
+  opt_table_font(font = "serif") %>% 
+  opt_row_striping(row_striping = FALSE) %>% 
+  gt_highlight_cols(starts_with("Est."), fill = "lightgrey", alpha = 0.3) %>% 
+ tab_style(
+    style = cell_text(style = "italic"),
+    locations = cells_row_groups()
+  )  
+
+tab1
+ 
+# tab1 %>% gtsave("tab1.png", expand = 10)
+# tab1 %>% gtsave("tab1.docx")
+
+
+```
+
+## Exploratory mediation model
+
+In mediation models below, I specified `yval=0` to estimating differences relative risks of "not" experiencing victimization (versus reporting 1,2,3 or 4 of the measured victimization experiences). The victimzation (y) model is specified as ordinal (estimated with `polr` package). However, the models are simplified relative to those estimated above as sexual activity (nlp) and physical attractiveness (SRPAavgz) are treated as metric standardized variables. I specified `astar` at the maximum SRPA score and `a` at the minimum SRPA score, which will essentially generate counterfactual contrasts that represent differences in the relative risks of any victimization. Values greater than one will indicate greater risks of victimization among respondents with maximum SRPA scores compared to minimum scores - or, more specifically, indicate greater risks of reporting "no victimization" \[y=0\] among those with minimum SRPA scores relative to those with maximum scores. 
+
+An important point here: Since non-victimization (y=0) is much more prevalent than "any" victimization (y>0), CMAverse contrast estimates on the relative risk scale for non-victimization will be much smaller than those describing victimization risks. For instance, consider a difference in predicted probabilities of non-victimization of 0.8 for Group 1 versus 0.7 in Group 2. The "risks" of not being victimized are greater in Group 1, with a prevalence (risk) ratio of 1.14 (0.8/0.7). In comparison, the risks of being victimized instead are 0.2 for Group 1 and 0.3 for Group 3; the risks are greater for Group 2, with a prevalence (risk) ratio of 1.5 (0.3/0.2). Note that both estimates are describing the same absolute contrast, but the relative risk estimates vary due to differences in baseline prevalance rates of non-victimization versus victimization. 
+
+Given potential confusion caused by this property of relative risk estimates, I will follow these ordinal y models with a logistic model predicting "any" victimization (collapsing y>0 sexual victimization responses into "1" response category) to generate victimization risk estimates and report these in the supplement section of the paper. I will also replicate the final logistic model with the "eversex" dichotomous mediator variable to assess whether results are sensitive to substantial nonrandom missingness (MNAR) on the mediator.
+
+Finally, I will focus on results from the model specifying an EM interaction (EMint), though I present estimates from ordinal y models without and with a specified exposure-mediator (SRPA:NLP) interaction for supplementary comparison. In cases where the EMint is negligible, results will converge across both model types. However, where a nonnegligible EMint exists, mediation models should account for it.
+
+
+### CMAverse (ordinal Y, metric X & M) w/out exposure-mediator interaction
+
+```{r}
+#| output: FALSE
+
+datv3trim <- datv3 %>% drop_na()
+
+est1 <- cmest(data = datv3trim, model = "rb", 
+             outcome = "sexvicsumf", 
+             exposure = "SRPAavgz",
+             mediator = "nlpz", 
+             basec = c("SRintelz", "SRpopularz", "agez", "worked", "gender"),
+             EMint = FALSE,
+             mreg = list("linear"), yreg = "ordinal",
+             astar = max(datv3trim$SRPAavgz), a = min(datv3trim$SRPAavgz), 
+             mval = list(0),
+             yval = list(0),
+             estimation = "imputation", inference = "bootstrap", nboot = 20)
+
+```
+
+### CMAverse (ordinal Y, metric X & M) w/exposure-mediator interaction
+
+```{r}
+#| output: FALSE
+
+datv3trim <- datv3 %>% drop_na()
+
+est2 <- cmest(data = datv3trim, model = "rb", 
+             outcome = "sexvicsumf", 
+             exposure = "SRPAavgz",
+             mediator = "nlpz", 
+             basec = c("SRintelz", "SRpopularz", "agez", "worked", "gender"),
+             EMint = TRUE,
+             mreg = list("linear"), yreg = "ordinal",
+             astar = max(datv3trim$SRPAavgz), a = min(datv3trim$SRPAavgz), 
+             mval = list(0),
+             yval = list(0),
+             estimation = "imputation", inference = "bootstrap", nboot = 20)
+
+```
+
+::: panel-tabset
+#### TAB2A: Mediation Results (EMint)
+
+```{r}
+
+meddat <- as.data.frame(est2[9:12]) %>% rownames_to_column("CMA_est") 
+
+medtab <- meddat %>%
+  rename("Estimate" = "effect.pe",
+         "SE" = "effect.se", 
+         "ci_low" = "effect.ci.low",
+         "ci_high" = "effect.ci.high") %>%
+  filter(!CMA_est %in% c("ERcde(prop)", "ERintref(prop)", "ERintmed(prop)", 
+                          "ERpnie(prop)", "pm", "int", "pe")) %>% 
+  mutate(
+    Description = if_else(CMA_est == "Rcde", "controlled direct effect (RR)", NA), 
+    Description = if_else(CMA_est == "Rpnde", "pure natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnde", "total natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rpnie", "pure natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnie", "total natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rte", "total effect (RR)", Description), 
+    Description = if_else(CMA_est == "ERcde", "excess relative risk due to cde", Description), 
+    Description = if_else(CMA_est == "ERintref", "excess rel. risk due to reference interaction", Description), 
+    Description = if_else(CMA_est == "ERintmed", "excess rel. risk due to mediated interaction", Description),
+    Description = if_else(CMA_est == "ERpnie", "excess rel. risk due to pure natural indirect effect", Description), 
+    rowgrp = if_else(CMA_est %in% c("Rcde", "Rte"), " ", NA),
+    rowgrp = if_else(CMA_est %in% c("Rtnde", "Rpnie"), "  ", rowgrp),
+    rowgrp = if_else(CMA_est %in% c("Rpnde", "Rtnie"), "   ", rowgrp),
+    rowgrp = if_else(CMA_est %in% c("ERcde", "ERintref", "ERintmed", "ERpnie"), "    ", rowgrp)
+) %>% 
+  relocate(Description, .after = CMA_est)
+
+
+medtab <- medtab %>%
+  gt(groupname_col = "rowgrp", rowname_col = "CMA_est") %>%
+  tab_stubhead(label = "Effect") %>% 
+  cols_label(ci_low = html("95% CrI<br>lower"), 
+             ci_high = html("95% CrI<br>upper")) %>% 
+  fmt_number(columns = everything(), rows = everything(), decimals = 2) %>% 
+  tab_header(
+    title = md("**Table 2A. CMAverse Mediation Model Results**"),
+    subtitle = md("`yval=0; astar=max(SRPA); a=min(SRPA)`")
+    ) %>% 
+  opt_align_table_header(align = "left") %>% 
+  opt_vertical_padding(scale = 0.5) %>% 
+  opt_table_font(font = "serif") %>% 
+  cols_hide(columns = SE) %>% 
+  cols_move(columns = Estimate, after = ci_low) %>% 
+  gt_highlight_cols(Estimate, fill = "lightgrey", alpha = 0.3) 
+  # tab_style(
+  #   style = cell_text(style = "italic"),
+  #   locations = cells_body(columns = c(ci_low, ci_high)))
+
+medtab
+
+```
+
+#### Comparing Results: EMint vs. No EMint
+
+```{r}
+est1dat <- as.data.frame(est1$effect.pe) %>% rownames_to_column("CMA_est") 
+est2dat <- as.data.frame(est2$effect.pe) %>% rownames_to_column("CMA_est") 
+
+estdattab <- full_join(est1dat, est2dat, by="CMA_est") %>%
+  rename("No_EMint" = "est1$effect.pe", "EMint" = "est2$effect.pe") %>%
+  filter(!CMA_est %in% c("ERcde(prop)", "ERintref(prop)", "ERintmed(prop)", 
+                          "ERpnie(prop)", "pm", "int", "pe")) %>% 
+  mutate(
+    Description = if_else(CMA_est == "Rcde", "controlled direct effect (RR)", NA), 
+    Description = if_else(CMA_est == "Rpnde", "pure natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnde", "total natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rpnie", "pure natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnie", "total natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rte", "total effect (RR)", Description), 
+    Description = if_else(CMA_est == "ERcde", "excess relative risk due to cde", Description), 
+    Description = if_else(CMA_est == "ERintref", "excess rel. risk due to reference interaction", Description), 
+    Description = if_else(CMA_est == "ERintmed", "excess rel. risk due to mediated interaction", Description),
+    Description = if_else(CMA_est == "ERpnie", "excess rel. risk due to pure natural indirect effect", Description)
+)
+
+
+estdattab %>%
+  gt() %>% 
+    tab_spanner(label = html("CMAverse Mediation Model Results"), 
+                columns = c("CMA_est", "No_EMint", "EMint", "Description")) %>%
+    cols_label(CMA_est = "Effect",
+               No_EMint = html("No EMint<br>estimate"),
+               EMint = html("EMint<br>estimate")) %>% 
+    fmt_number(columns = everything(), rows = everything(), decimals = 2) %>% 
+    cols_move(columns = "Description", after = "CMA_est")
+
+```
+
+#### Risk Ratio Plot (EMint)
+
+```{r}
+#save estimates and intervals data
+est2dat <- as.data.frame(est2[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+#Transformation function used to display two decimal places on x axis
+scaleFUN <- function(dec) sprintf("%.2f", dec)
+
+# drop proportion estimates
+est2dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "ERpnie", "ERintmed", "ERintref", "ERcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 1, lty = 2) +
+  scale_x_continuous(labels=scaleFUN) + 
+  labs(
+    x = "Estimated effects on risk ratio scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (risk ratios)"
+  ) + 
+  theme_minimal()
+```
+
+#### Excess Risk Plot (EMint)
+
+```{r}
+#save estimates and intervals data
+est2dat <- as.data.frame(est2[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+# drop proportion estimates
+est2dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("ERpnie", "ERintmed", "ERintref", "ERcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 0, lty = 2) +
+  labs(
+    x = "Estimated effects on excess risks scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (excess risks)"
+  ) + 
+  theme_minimal()
+```
+
+#### Risk Ratio Plot (no EMint)
+
+```{r}
+#save estimates and intervals data
+est1dat <- as.data.frame(est1[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+#Transformation function used to display two decimal places on x axis
+scaleFUN <- function(dec) sprintf("%.2f", dec)
+
+# drop proportion estimates
+est1dat %>%
+  filter(!CMA_est %in% c("pm")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 1, lty = 2) +
+  scale_x_continuous(labels=scaleFUN) + 
+  labs(
+    x = "Estimated effects on risk ratio scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (risk ratios)"
+  ) + 
+  theme_minimal()
+```
+
+#### Full Output (EMint)
+
+```{r}
+summary(est2)
+```
+
+#### Full Output (No EMint)
+
+```{r}
+summary(est1)
+```
+:::
+
+The "No EMint" model estimates above do not account for a possible interaction between SRPA and NLP; like a classic" mediation model (and like our models above), it assumes these variables do not interact in their effects (apart from a pure mediation process). With this assumption, the model predicts sizable independent direct and indirect effects, implying that higher SRPA scores directly increase victimization risks as well as indirectly increase risks by increasing NLP. (Or, if a confounder, in indirect portion might be interpreted as the portion of the SRPA/victimization relationship that is due to confounding.)
+
+However, when estimating indirect (or confounding) effects, it is important to account for the possibility of exposure-mediator (EMint) interactions (or, in this case, possibly an exposure-confounder interaction). So, I will focus on results from the EMint model, though supplemental results above also report estimates from a model without an EMint specified. 
+
+The estimates above predict relative risk contrasts for "no" versus "any" victimization (yval=0). Notice that these estimates are smaller than might be expected compared to similar contrasts from Bayesian models above. They are also a bit more confusing because they represent contrasts in relative risks of non-victimization rather than risks of victimization. Below, I modify the EMint model to predict a binary victimization outcome item using logistic regression and flip the `astar` and `a` values; this  will provide more interpretable estimates of the relative risks of "any" victimization for high versus low SRPA scores. Then, I will replicate this new model after substituting NLP with an alternative dichotomous "eversex" mediator that has substantially less missing data. 
+
+### CMAverse (binary Y, metric X & M) w/EMint
+
+```{r}
+#| output: FALSE
+
+datv3trim <- datv3 %>% 
+  mutate(anyvic = if_else(sexvicsum > 0, 1, sexvicsum)) %>% 
+  drop_na() 
+
+est3 <- cmest(data = datv3trim, model = "rb", 
+             outcome = "anyvic", 
+             exposure = "SRPAavgz",
+             mediator = "nlpz", 
+             basec = c("SRintelz", "SRpopularz", "agez", "worked", "gender"),
+             EMint = TRUE,
+             mreg = list("linear"), yreg = "logistic",
+             astar = min(datv3trim$SRPAavgz), a = max(datv3trim$SRPAavgz), 
+             mval = list(0),
+             yval = list(1),
+             estimation = "imputation", inference = "bootstrap", nboot = 20)
+```
+
+
+### CMAverse (binary Y, metric X, binary "eversex" M) w/EMint
+
+```{r}
+#| output: FALSE
+
+datv3trim <- datv3 %>% 
+  mutate(anyvic = if_else(sexvicsum > 0, 1, sexvicsum), 
+         eversex = as.numeric(eversex)) %>% 
+  drop_na(eversex) 
+
+est4 <- cmest(data = datv3trim, model = "rb", 
+             outcome = "anyvic", 
+             exposure = "SRPAavgz",
+             mediator = "eversex", 
+             basec = c("SRintelz", "SRpopularz", "agez", "worked", "gender"),
+             EMint = TRUE,
+             mreg = list("logistic"), yreg = "logistic",
+             astar = min(datv3trim$SRPAavgz), a = max(datv3trim$SRPAavgz), 
+             mval = list(0),
+             yval = list(1),
+             estimation = "imputation", inference = "bootstrap", nboot = 20)
+
+```
+
+
+::: panel-tabset
+#### TAB2B: Mediation Results (NLP)
+
+```{r}
+
+meddat <- as.data.frame(est3[9:12]) %>% rownames_to_column("CMA_est") 
+
+# as.data.frame(est4[9:12]) %>% rownames_to_column("CMA_est") 
+
+medtab <- meddat %>%
+  rename("Estimate" = "effect.pe",
+         "SE" = "effect.se", 
+         "ci_low" = "effect.ci.low",
+         "ci_high" = "effect.ci.high") %>%
+  filter(!CMA_est %in% c("ERcde(prop)", "ERintref(prop)", "ERintmed(prop)", 
+                          "ERpnie(prop)", "pm", "int", "pe")) %>% 
+  mutate(
+    Description = if_else(CMA_est == "Rcde", "controlled direct effect (RR)", NA), 
+    Description = if_else(CMA_est == "Rpnde", "pure natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnde", "total natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rpnie", "pure natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnie", "total natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rte", "total effect (RR)", Description), 
+    Description = if_else(CMA_est == "ERcde", "excess relative risk due to cde", Description), 
+    Description = if_else(CMA_est == "ERintref", "excess rel. risk due to reference interaction", Description), 
+    Description = if_else(CMA_est == "ERintmed", "excess rel. risk due to mediated interaction", Description),
+    Description = if_else(CMA_est == "ERpnie", "excess rel. risk due to pure natural indirect effect", Description), 
+    rowgrp = if_else(CMA_est %in% c("Rcde", "Rte"), " ", NA),
+    rowgrp = if_else(CMA_est %in% c("Rtnde", "Rpnie"), "  ", rowgrp),
+    rowgrp = if_else(CMA_est %in% c("Rpnde", "Rtnie"), "   ", rowgrp),
+    rowgrp = if_else(CMA_est %in% c("ERcde", "ERintref", "ERintmed", "ERpnie"), "    ", rowgrp)
+) %>% 
+  relocate(Description, .after = CMA_est)
+
+
+medtab <- medtab %>%
+  gt(groupname_col = "rowgrp", rowname_col = "CMA_est") %>%
+  tab_stubhead(label = "Effect") %>% 
+  cols_label(ci_low = html("95% CrI<br>lower"), 
+             ci_high = html("95% CrI<br>upper")) %>% 
+  fmt_number(columns = everything(), rows = everything(), decimals = 2) %>% 
+  tab_header(
+    title = md("**Table 2B. CMAverse Mediation Model Results**"),
+    subtitle = md("`yval=1; astar=min(SRPA); a=max(SRPA)`")
+    ) %>% 
+  opt_align_table_header(align = "left") %>% 
+  opt_vertical_padding(scale = 0.5) %>% 
+  opt_table_font(font = "serif") %>% 
+  cols_hide(columns = SE) %>% 
+  cols_move(columns = Estimate, after = ci_low) %>% 
+  gt_highlight_cols(Estimate, fill = "lightgrey", alpha = 0.3) 
+  # tab_style(
+  #   style = cell_text(style = "italic"),
+  #   locations = cells_body(columns = c(ci_low, ci_high)))
+
+medtab
+
+# medtab %>% gtsave("medtab.png", expand = 10)
+# medtab %>% gtsave("medtab.docx")
+
+
+```
+
+#### Comparing Results: M=NLP vs. M=Eversex
+
+```{r}
+est3dat <- as.data.frame(est3$effect.pe) %>% rownames_to_column("CMA_est") 
+est4dat <- as.data.frame(est4$effect.pe) %>% rownames_to_column("CMA_est") 
+
+estdattab <- full_join(est3dat, est4dat, by="CMA_est") %>%
+  rename("M_NLP" = "est3$effect.pe", "M_Eversex" = "est4$effect.pe") %>%
+  filter(!CMA_est %in% c("ERcde(prop)", "ERintref(prop)", "ERintmed(prop)", 
+                          "ERpnie(prop)", "int")) %>% 
+  mutate(
+    Description = if_else(CMA_est == "Rcde", "controlled direct effect (RR)", NA), 
+    Description = if_else(CMA_est == "Rpnde", "pure natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnde", "total natural direct effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rpnie", "pure natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rtnie", "total natural indirect effect (RR)", Description), 
+    Description = if_else(CMA_est == "Rte", "total effect (RR)", Description), 
+    Description = if_else(CMA_est == "ERcde", "excess relative risk due to cde", Description), 
+    Description = if_else(CMA_est == "ERintref", "excess rel. risk due to reference interaction", Description), 
+    Description = if_else(CMA_est == "ERintmed", "excess rel. risk due to mediated interaction", Description),
+    Description = if_else(CMA_est == "ERpnie", "excess rel. risk due to pure natural indirect effect", Description), 
+    Description = if_else(CMA_est == "pm", "proportion mediated", Description),
+    Description = if_else(CMA_est == "pe", "proportion eliminated", Description)
+)
+
+
+estdattab %>%
+  gt() %>% 
+    tab_spanner(label = html("CMAverse Mediation Model Results"), 
+                columns = c("CMA_est", "M_NLP", "M_Eversex", "Description")) %>%
+    cols_label(CMA_est = "Effect",
+               M_NLP = html("M=NLP<br>estimate"),
+               M_Eversex = html("M=Eversex<br>estimate")) %>% 
+    fmt_number(columns = everything(), rows = everything(), decimals = 2) %>% 
+    cols_move(columns = "Description", after = "CMA_est")
+
+```
+
+#### Risk Ratio Plot (NLP)
+
+```{r}
+#save estimates and intervals data
+est3dat <- as.data.frame(est3[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+#Transformation function used to display two decimal places on x axis
+scaleFUN <- function(dec) sprintf("%.2f", dec)
+
+# drop proportion estimates
+est3dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "ERpnie", "ERintmed", "ERintref", "ERcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 1, lty = 2) +
+  scale_x_continuous(labels=scaleFUN) + 
+  labs(
+    x = "Estimated effects on risk ratio scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (risk ratios)"
+  ) + 
+  theme_minimal()
+```
+
+#### Excess Risk Plot (NLP)
+
+```{r}
+#save estimates and intervals data
+est3dat <- as.data.frame(est3[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+# drop proportion estimates
+est3dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("ERpnie", "ERintmed", "ERintref", "ERcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 0, lty = 2) +
+  labs(
+    x = "Estimated effects on excess risks scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (excess risks)"
+  ) + 
+  theme_minimal()
+```
+
+#### Risk Ratio Plot (eversex)
+
+```{r}
+#save estimates and intervals data
+est4dat <- as.data.frame(est4[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+#Transformation function used to display two decimal places on x axis
+scaleFUN <- function(dec) sprintf("%.2f", dec)
+
+# drop proportion estimates
+est1dat %>%
+  filter(!CMA_est %in% c("pm")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 1, lty = 2) +
+  scale_x_continuous(labels=scaleFUN) + 
+  labs(
+    x = "Estimated effects on risk ratio scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (risk ratios)"
+  ) + 
+  theme_minimal()
+```
+
+#### Excess Risk Plot (eversex)
+
+```{r}
+#save estimates and intervals data
+est4dat <- as.data.frame(est4[9:12]) %>%
+  rownames_to_column("CMA_est")
+
+# drop proportion estimates
+est4dat %>%
+  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+                         "ERintmed(prop)","ERcde(prop)", "int", 
+                         "Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde")) %>%
+  mutate(CMA_est = factor(CMA_est, levels=c("ERpnie", "ERintmed", "ERintref", "ERcde"))) %>%
+  # reorder the coefficients so that the largest is at the top of the plot
+  # mutate(term = fct_reorder(CMA_est, effect.pe)) %>%
+  ggplot(aes(effect.pe, CMA_est)) +
+  geom_point() + 
+  geom_errorbarh(aes(xmin = effect.ci.low, xmax = effect.ci.high), height = .1) +
+  # add in a dotted line at zero
+  geom_vline(xintercept = 0, lty = 2) +
+  labs(
+    x = "Estimated effects on excess risks scale",
+    y = NULL,
+    title = "Effect estimates from causal mediation decomposition (excess risks)"
+  ) + 
+  theme_minimal()
+```
+
+#### Full Output (NLP)
+
+```{r}
+summary(est3)
+```
+
+#### Full Output (eversex)
+
+```{r}
+summary(est4)
+```
+:::
+
+
+Assuming sexual activity (measured as number of lifetime sexual partners, or NLP) mediates a causal effect of physical attractiveness (SRPA) on sexual victimization, these results provide estimates of the relative magnitudes of direct and indirect effects on the victimization risk ratio scale. As with earlier models, these estimates were generated as "maximum" risk ratio contrasts comparing relative risks of victimization for those with highest and lowest SRPA scores. Even if the mediation assumption is wholly invalid and NLP is fully a confounder of the SRPA/victimization relationship, these results provide useful insights into the nature of the joint relationships. 
+
+The pure natural direct effect (PNDE) might be considered a lower bound estimate that represents a minimum effect under an assumption that NLP is a confounder rather than a mediator, as the so-called "direct" effect represents associations generated by unmeasured mechanisms (e.g., target gratifiability) after adjusting out any effects that are related to the mediator (sexual activity). The "pure natural direct effect" (PNDE) estimate predicts those with the highest SRPA scores directly experience approximately 1.56 times the risk of victimization, or a 56% increase in risk of victimization, compared to those with the lowest SRPA scores after adjusting for NLP and controls.
+
+In comparison, if NLP indeed is (at least partly) a mediator, the model also predicts sizeable indirect effects of SRPA on victimization risks through its effects on NLP. the total "indirect" effect, or that attributed to covariation and interaction with NLP, is 1.41. The proportion eliminated estimate (0.61) suggests that roughly three-fifths of the total effect of SRPA on the relative risks of sexual victimization appears to be due to more physically attractive participants' increased exposure risks from sexual activity. The total RR effect estimate is 2.20, which equates to a total effect of 2.2 times the risk due to combined effects of increased exposure risks from sexual activity and other unmeasured ("direct" effect) mechanisms.
+
+For more information about CMAverse models and effect estimates, see my [blog posts](https://reluctantcriminologists.com/blog-posts/%5B11%5D/modmadness-pt3) on the topic.
+
+
+## Supplemental Interaction Models
+
+Now, with primary models completed, let's turn to supplementary models assessing effect heterogeneity across gender and nlp.
+
+First, to assess whether estimates vary across gender (noted as possibility in preregistration based on prior research), I add an interaction between SRPA and gender to the "Controls" model (ie., with covariates but without NLP due to ambiguity of NLP's status as a confounding or mediating mechanism), then plot predicted probabilities and contrasts for each ordinal response category for males and females.
+
+### Gender: Ord\~Ord (sexvicsumf by moSRPAf:gender)
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+#with ordinal (monotonic cumulative probit) SRPA predictor, 
+# linear controls, & mo(SRPA):gender
+
+#10 nlp response categories = 9 thresholds 
+# so, beta prior (0,1) equiv to (0,[1/9]) or (0,.11) 
+
+#sexvicsum - bivariate sexvicsum by mo(SRPAf):
+mod6mo <-
+  brm(data = datv3tmp,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1 + mo(SRPAf) + 
+        SRintelz + SRpopularz + agez + worked + 
+        gender + mo(SRPAf):gender,
+      prior = priors3,
+      iter = 2000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309, 
+      file = 'Models/mod6mo_fit',
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### Coefficient plot (moSRPAf)
+
+```{r}
+post6mo <- as.matrix(mod6mo)
+
+mcmc_intervals(
+  post6mo, 
+  regex_pars = "bsp_moSRPAf",
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.95, # 95%
+  point_est = "median",
+) + 
+  xlim(-.05, .15) +
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for moSRPAf beta coefficient 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Coefficient plot (all)
+
+```{r}
+coefgrp <- c("bsp_","b_SR", "age", "worked", "b_gender")
+mcmc_plot(mod6mo, variable = coefgrp, regex = TRUE, 
+          prob = 0.80, prob_outer = 0.95) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for all beta coefficients 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Conditional effects (continuous y)
+
+```{r}
+conditional_effects(mod6mo, "SRPAf:gender")
+```
+
+#### Fit summary
+
+```{r}
+summary(mod6mo, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod6mo) #check priors  
+```
+:::
+
+#### Visualize max moSRPA effect by response category & gender (mod6mo)
+
+```{r}
+
+#manual predictions at user-specified means or representative values
+
+# function to generate var mean
+# meanvar <- function(x){
+#   mean(x, na.rm=TRUE)
+# }
+
+#define predictor grid for conditional avg at covariate means or rep values
+# ndmo_gen <- tibble(
+#   gender= c("1","2"), 
+#   nlpf = "2", #set at 2 lifetime partners (mean=1.9)  
+#   SRintelz = 0, 
+#   SRpopularz = 0, 
+#   agez = 0, 
+#   worked = "1") %>%
+#   expand_grid(SRPAf = c("2","14")) 
+
+# generate and save predictions at user-specified covariate values
+# mod6mopred <- predictions(mod6mo, newdata = ndmo_gen) %>% 
+#   data.frame() %>%
+#   mutate(
+#     colgrp = if_else(gender == "1" & SRPAf == "2", "M: E[italic(j)](hat(italic(p))[italic(ij)]^min)", "M: E[italic(j)](hat(italic(p))[italic(ij)]^max)"), 
+#     colgrp = if_else(gender == "2" & SRPAf == "2", "F: E[italic(j)](hat(italic(p))[italic(ij)]^min)", colgrp), 
+#     colgrp = if_else(gender == "2" & SRPAf == "14", "F: E[italic(j)](hat(italic(p))[italic(ij)]^max)", colgrp), 
+#   SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))
+
+
+#Let's go with automated predictions by response category at means 
+
+mod6mopred <- predictions(mod6mo, variables = list(SRPAf = c("2","14")), 
+newdata = "mean", by = c("SRPAf", "group","gender")) %>% 
+  data.frame() %>%
+  mutate(
+    colgrp = if_else(gender == "1" & SRPAf == "2", "M: E[italic(j)](hat(italic(p))[italic(ij)]^min)", "M: E[italic(j)](hat(italic(p))[italic(ij)]^max)"),
+    colgrp = if_else(gender == "2" & SRPAf == "2", "F: E[italic(j)](hat(italic(p))[italic(ij)]^min)", colgrp),
+    colgrp = if_else(gender == "2" & SRPAf == "14", "F: E[italic(j)](hat(italic(p))[italic(ij)]^max)", colgrp),
+  SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))
+
+
+#function to find & drop leading zeroes (used for x-axis label)
+dropLeadingZero <- function(l){
+  str_replace(l, '0(?=.)', '')
+}
+
+mod6mopred_m <- mod6mopred %>% dplyr::filter(gender=="1")
+mod6mopred_f <- mod6mopred %>% dplyr::filter(gender=="2")
+
+#full range of y responses (0:4)
+mod6mop1 <-  ggplot(mod6mopred, aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = colgrp)) +
+  geom_hline(yintercept = 0:10 / 10, color = "lightgrey") +
+  geom_linerange(data=mod6mopred_m, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(data=mod6mopred_m, aes(shape = colgrp),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  geom_linerange(data=mod6mopred_f, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/6)) +
+  geom_point(data=mod6mopred_f, aes(shape = colgrp),
+             position = position_dodge(width = 1/6),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .2, end = .8,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(19, 19, 17, 17),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, 1), breaks=seq(0, 1, by = .2), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "Pred. response probabilities\n(all)") +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank())
+
+
+#nonzero victimization values only (1:4)
+mod6mop2 <-  ggplot(mod6mopred, aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = colgrp)) +
+  geom_hline(yintercept = 0:7 / 50, color = "lightgrey") +
+  geom_linerange(data=mod6mopred_m, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(data=mod6mopred_m, aes(shape = colgrp),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  geom_linerange(data=mod6mopred_f, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/6)) +
+  geom_point(data=mod6mopred_f, aes(shape = colgrp),
+             position = position_dodge(width = 1/6),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .2, end = .8,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(19, 19, 17, 17),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .14), breaks=seq(0, .14, by = .02), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "(y > 0)",
+       x = expression(Victimiz.~response~option~(italic(j)))) +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank() 
+        )
+
+
+# estimate contrasts at means or rep values
+
+mod6mocon <- comparisons(mod6mo, variables = list(SRPAf = c("2","14")), 
+newdata = "mean", by = c("group","gender")) %>% 
+  data.frame() %>% 
+  mutate( 
+    gender = if_else(gender == "1", "Males", "Females"))
+
+  
+mod6mop3 <- mod6mocon %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, color = gender)) +
+  geom_hline(yintercept = -4:4 / 20, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(aes(color = gender), linewidth = 3/4, size = 1/3, position = position_dodge(width = 1/3)) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .7,
+                        labels = scales::parse_format()) +
+  scale_y_continuous(expression(italic(p[j])^max-italic(p[j])^min), 
+                     limits = c(-0.2, 0.2), breaks=seq(-.2, .2, by = .05), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{MEM}~(max~contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j)))) + 
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10)
+        )
+
+# combine and entitle
+((mod6mop3 | mod6mop1 / mod6mop2)) +
+  plot_annotation(title = "Cumulative probit y ~ mo(SRPAf):Gender + Controls", 
+  subtitle = "Maximum monotonic MEM of SRPA on Victimization by Gender") 
+
+```
+
+#### "Interaction Model 2 (Controls)" Contrasts
+
+```{r}
+mod6mocon %>% gt()
+```
+
+Estimates from this model shows higher predicted probabilities of reported sexual victimization for females compared to males across both the lowest and highest SRPA scores. Likewise, the "conditional effects" plot displaying predicted probabilities by gender across all SRPA categories (see tab above) also illustrates these gender differences. Interestingly, examination of the conditional effects plot also reveals that the pattern of increased victimization risks emerging primarily at the upper range of SRPA scores (e.g., \>8 on the ordinal scale ranging from 2 to 14) is apparent both for females and males.
+
+Also, the maximum effect contrasts indicate that differences in predicted probabilities between those with the lowest and highest SRPA scores are larger for females than for males. Recall, these estimates adjust for measured potential confounders but not nlp.
+
+Let's rerun the model to see if patterns hold after adjusting for NLP. This time, though, we will increase the number of iterations and the warmup. This is because two mo(x) variables and an interaction with one of the mo(x) variables is asking a lot from our data, and our previous specifications resulted in low ESS (\<1000) & high Rhat (\>1.01) values (see [here](https://easystats.github.io/effectsize/reference/interpret_ess.html) for more information). With four chains each generating 10k iterations (minus 1k warmup), we will end with 36k post-warmup draws from the posterior (compared to 4k in simpler models above). This may be going a bit overboard here, but the model already takes a long time to run so I want to be sure we have enough samples to generate valid conclusions about the posterior.
+
+### Gender: Ord\~Ord (sexvicsumf by moSRPAf:gender, add NLP)
+
+```{r eval=FALSE}
+#Ordinal cumulative probit model of sexual victimization index 
+#with ordinal (monotonic cumulative probit) SRPA predictor, 
+# linear controls, mo(SRPA):gender, & mo(nlp)
+
+#sexvicsum - bivariate sexvicsum by mo(SRPAf):
+mod7mo <-
+  brm(data = datv3tmp,
+      family = cumulative("probit"),
+      sexvicsumf ~ 1 + mo(SRPAf) +  mo(nlpf) + 
+        SRintelz + SRpopularz + agez + worked + 
+        gender + mo(SRPAf):gender,
+      prior = priors4,
+      iter = 10000, warmup = 1000, 
+      chains = 4,               
+      cores = nCoresphys, 
+        backend = "cmdstanr",
+        # threads = threading(2), #consider within-chain threading if machine has at least 8 physical cores
+      seed = 8675309, 
+      file = 'Models/mod7mo_fit',
+      file_refit = "on_change"
+      )
+
+```
+
+::: panel-tabset
+#### Coefficient plot (moSRPAf)
+
+```{r}
+post7mo <- as.matrix(mod7mo)
+
+mcmc_intervals(
+  post7mo, 
+  regex_pars = "bsp_moSRPAf",
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.95, # 95%
+  point_est = "median",
+) + 
+  xlim(-.05, .15) +
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for moSRPAf beta coefficient 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Coefficient plot (all)
+
+```{r}
+coefgrp <- c("bsp_","b_SR", "age", "worked", "b_gender")
+mcmc_plot(mod7mo, variable = coefgrp, regex = TRUE, 
+          prob = 0.80, prob_outer = 0.95) + 
+  labs(title = "Coefficient plot", 
+       subtitle = "Posterior intervals for all beta coefficients 
+       \nwith medians, 80%, and 95% intervals")
+
+```
+
+#### Conditional effects (continuous y)
+
+```{r}
+conditional_effects(mod7mo, "SRPAf:gender")
+```
+
+#### Fit summary
+
+```{r}
+summary(mod7mo, probs = c(0.025, 0.975), digits = 2) #summarize results
+```
+
+#### Prior summary
+
+```{r}
+prior_summary(mod6mo) #check priors  
+```
+:::
+
+#### Visualize max moSRPA effect by response category & gender (mod7mo)
+
+```{r}
+
+#manual predictions at user-specified means or representative values
+
+# function to generate var mean
+# meanvar <- function(x){
+#   mean(x, na.rm=TRUE)
+# }
+
+#define predictor grid for conditional avg at covariate means or rep values
+# ndmo_gen <- tibble(
+#   gender= c("1","2"), 
+#   nlpf = "2", #set at 2 lifetime partners (mean=1.9)  
+#   SRintelz = 0, 
+#   SRpopularz = 0, 
+#   agez = 0, 
+#   worked = "1") %>%
+#   expand_grid(SRPAf = c("2","14")) 
+
+# generate and save predictions at user-specified covariate values
+# mod7mopred <- predictions(mod7mo, newdata = ndmo_gen) %>% 
+#   data.frame() %>%
+#   mutate(
+#     colgrp = if_else(gender == "1" & SRPAf == "2", "M: E[italic(j)](hat(italic(p))[italic(ij)]^min)", "M: E[italic(j)](hat(italic(p))[italic(ij)]^max)"), 
+#     colgrp = if_else(gender == "2" & SRPAf == "2", "F: E[italic(j)](hat(italic(p))[italic(ij)]^min)", colgrp), 
+#     colgrp = if_else(gender == "2" & SRPAf == "14", "F: E[italic(j)](hat(italic(p))[italic(ij)]^max)", colgrp), 
+#   SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))
+
+
+#Let's go with automated predictions by response category at means 
+
+mod7mopred <- predictions(mod7mo, variables = list(SRPAf = c("2","14")), 
+newdata = "mean", by = c("SRPAf", "group","gender")) %>% 
+  data.frame() %>%
+  mutate(
+    colgrp = if_else(gender == "1" & SRPAf == "2", "M: E[italic(j)](hat(italic(p))[italic(ij)]^min)", "M: E[italic(j)](hat(italic(p))[italic(ij)]^max)"),
+    colgrp = if_else(gender == "2" & SRPAf == "2", "F: E[italic(j)](hat(italic(p))[italic(ij)]^min)", colgrp),
+    colgrp = if_else(gender == "2" & SRPAf == "14", "F: E[italic(j)](hat(italic(p))[italic(ij)]^max)", colgrp),
+  SRPAf = ifelse(SRPAf == "2", "E[italic(j)](hat(italic(p))[italic(ij)]^min)", "E[italic(j)](hat(italic(p))[italic(ij)]^max)"))
+
+
+#function to find & drop leading zeroes (used for x-axis label)
+dropLeadingZero <- function(l){
+  str_replace(l, '0(?=.)', '')
+}
+
+mod7mopred_m <- mod7mopred %>% dplyr::filter(gender=="1")
+mod7mopred_f <- mod7mopred %>% dplyr::filter(gender=="2")
+
+#full range of y responses (0:4)
+mod7mop1 <-  ggplot(mod7mopred, aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = colgrp)) +
+  geom_hline(yintercept = 0:10 / 10, color = "lightgrey") +
+  geom_linerange(data=mod7mopred_m, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(data=mod7mopred_m, aes(shape = colgrp),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  geom_linerange(data=mod7mopred_f, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/6)) +
+  geom_point(data=mod7mopred_f, aes(shape = colgrp),
+             position = position_dodge(width = 1/6),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .2, end = .8,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(19, 19, 17, 17),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, 1), breaks=seq(0, 1, by = .2), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "Pred. response probabilities\n(all)") +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank())
+
+
+#nonzero victimization values only (1:4)
+mod7mop2 <-  ggplot(mod7mopred, aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, 
+             color = colgrp)) +
+  geom_hline(yintercept = 0:7 / 50, color = "lightgrey") +
+  geom_linerange(data=mod7mopred_m, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/3)) +
+  geom_point(data=mod7mopred_m, aes(shape = colgrp),
+             position = position_dodge(width = 1/3),
+             size = 2) +
+  geom_linerange(data=mod7mopred_f, aes(color = colgrp), linewidth = 3/4, position = position_dodge(width = 1/6)) +
+  geom_point(data=mod7mopred_f, aes(shape = colgrp),
+             position = position_dodge(width = 1/6),
+             size = 2) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .2, end = .8,
+                        labels = scales::parse_format()) +
+  scale_shape_manual(NULL, values = c(19, 19, 17, 17),
+                     labels = scales::parse_format()) +
+  scale_y_continuous(limits = c(0, .14), breaks=seq(0, .14, by = .02), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = "(y > 0)",
+       x = expression(Victimiz.~response~option~(italic(j)))) +
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10), 
+        axis.title.y = element_blank() 
+        )
+
+
+# estimate contrasts at means or rep values
+
+mod7mocon <- comparisons(mod7mo, variables = list(SRPAf = c("2","14")), 
+newdata = "mean", by = c("group","gender")) %>% 
+  data.frame() %>% 
+  mutate( 
+    gender = if_else(gender == "1", "Males", "Females"))
+
+  
+mod7mop3 <- mod7mocon %>% 
+  ggplot(aes(x = group, y = estimate, ymin = conf.low, ymax = conf.high, color = gender)) +
+  geom_hline(yintercept = -4:4 / 20, color = "lightgrey") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_pointrange(aes(color = gender), linewidth = 3/4, size = 1/3, position = position_dodge(width = 1/3)) +
+  scale_color_viridis_d(NULL, option = "magma", begin = .3, end = .7,
+                        labels = scales::parse_format()) +
+  scale_y_continuous(expression(italic(p[j])^max-italic(p[j])^min), 
+                     limits = c(-0.2, 0.2), breaks=seq(-.2, .2, by = .05), 
+                     labels = dropLeadingZero) +
+  labs(subtitle = expression(Delta[italic(j)]^{MEM}~(max~contrasts)),
+       x = expression(Victimiz.~response~option~(italic(j)))) + 
+  theme(legend.background = element_blank(),
+        legend.position = c(0.9, 0.85), 
+        legend.key.height= unit(.5, 'cm'),
+        legend.key.width= unit(.5, 'cm'), 
+        legend.title = element_text(size=10), 
+        legend.text=element_text(size=10)
+        )
+
+# combine and entitle
+((mod7mop3 | mod7mop1 / mod7mop2)) +
+  plot_annotation(title = "Cumulative probit y ~ mo(SRPAf):Gender + Controls + NLP", 
+  subtitle = "Maximum monotonic MEM of SRPA on Victimization by Gender")
+
+```
+
+#### "Interaction Model 3 (Controls + NLP)" Contrasts
+
+```{r}
+mod7mocon %>% gt()
+```
+
+We knew from earlier models that stratifying on NLP would result in much smaller predicted probability contrasts (i.e., SRPA's maximum effect estimates). Comparing this gender interaction model to the previous interaction model without NLP reveals that the gender differences in contrasts have nearly disappeared after adjusting for NLP. This might indicate that observed gender differences in the effects of SRPA on sexual victimization are accounted for largely by increased exposure risks of physically attractive and sexually active women compared to men. The small remaining estimated effect may be accounted for by other unmeasured mechanisms like gratifiability.

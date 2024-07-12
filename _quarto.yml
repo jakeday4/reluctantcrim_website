@@ -11,11 +11,13 @@ website:
     left:
       - text: "About"
         href: about.qmd
-      - text: "blog posts"
+      - text: "blog"
         href: blog-posts.qmd
-      - text: "course materials"
+      - text: "courses"
         href: course-materials.qmd
-      - text: "links we love"
+      - text: "supplementary"
+        href: supp/index.qmd
+      - text: "links"
         href: blog-posts/[2]/favorite_links.qmd
     right:
       - icon: envelope-fill
