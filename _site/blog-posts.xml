@@ -9,7 +9,7 @@
 <link>https://www.reluctantcriminologists.com/blog-posts.html</link>
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
-<generator>quarto-1.4.553</generator>
+<generator>quarto-1.4.555</generator>
 <lastBuildDate>Mon, 13 May 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>RRR: Mediation Makes My Head Hurt!</title>
@@ -2593,7 +2593,6 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">Ex2tab1</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="wrxfwrmosu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#wrxfwrmosu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -3035,7 +3034,7 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear regression predicting delinquency values</th>
@@ -3088,7 +3087,6 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -3726,7 +3724,6 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">Ex2tab2</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="zcfhdpajps" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#zcfhdpajps table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -4168,7 +4165,7 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Poisson regression predicting delinquency event rates</th>
@@ -4221,7 +4218,6 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -5057,7 +5053,6 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 <span id="cb19-21">               )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -5499,7 +5494,7 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -5576,7 +5571,6 @@ estimate</th>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -5984,7 +5978,6 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <span id="cb24-23">               )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -6426,7 +6419,7 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -6521,7 +6514,6 @@ estimate</th>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -7405,7 +7397,6 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 <span id="cb31-35">               )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -7847,7 +7838,7 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 11%">
 <col style="width: 11%">
@@ -7975,7 +7966,6 @@ estimate</th>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -8544,7 +8534,6 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <span id="cb36-40">               )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -8986,7 +8975,7 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -9173,7 +9162,6 @@ estimate</th>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -9791,7 +9779,6 @@ font-style: inherit;"># Sim.2 nonlinear model (alt DV)</span></span>
 <span id="cb43-3">Ex2tab3</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="babjvbhiev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#babjvbhiev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -10233,7 +10220,7 @@ font-style: inherit;"># Sim.2 nonlinear model (alt DV)</span></span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Poisson regression predicting delinquency2 event rates</th>
@@ -10286,7 +10273,6 @@ font-style: inherit;"># Sim.2 nonlinear model (alt DV)</span></span>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -10709,7 +10695,6 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <span id="cb45-22">               )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="dsvgaztkvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dsvgaztkvn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -11151,7 +11136,7 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -11211,7 +11196,6 @@ estimate</th>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -13060,9 +13044,8 @@ font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 </details>
-<div id="tbl-anonymous-7816746" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
+<div id="tbl-anonymous-3965049" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -13504,8 +13487,8 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=1 {#tbl-anonymous-7816746-1}</caption>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>X=1 {#tbl-anonymous-3965049-1}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -13573,8 +13556,6 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </table>
 
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="gvvydsugpf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#gvvydsugpf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -14016,8 +13997,8 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=0 {#tbl-anonymous-7816746-2}</caption>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>X=0 {#tbl-anonymous-3965049-2}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -14079,7 +14060,6 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 <div class="quarto-layout-row">
@@ -15864,7 +15844,6 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">Ex1tab1</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="fzwtfmozjv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#fzwtfmozjv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -16306,7 +16285,7 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear model, Simulation 1</th>
@@ -16363,7 +16342,6 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 </div>
 </div>
 </div>
-</div>
 <div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <details class="code-fold">
@@ -16371,7 +16349,6 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">Ex1tab2</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="agwjqpqxqp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#agwjqpqxqp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -16813,7 +16790,7 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Nonlinear Poisson model, Simulation 1</th>
@@ -16866,7 +16843,6 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -17570,7 +17546,6 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">Ex1tab1b</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="dtzwoizpym" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dtzwoizpym table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -18012,7 +17987,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear model, Sim.1b</th>
@@ -18069,7 +18044,6 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 </div>
 </div>
 </div>
-</div>
 <div id="tabset-2-2" class="tab-pane" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
 <details class="code-fold">
@@ -18077,7 +18051,6 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">Ex1tab2b</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="izfdcbhwrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#izfdcbhwrr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -18519,7 +18492,7 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Nonlinear model, Sim.1b</th>
@@ -18572,7 +18545,6 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -18974,7 +18946,6 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 </details>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="plmsftbwnz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#plmsftbwnz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -19416,7 +19387,7 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="text-align: left;">Nonlinear model, Sim.1c</th>
@@ -19477,8 +19448,6 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 </table>
 
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="gsxidlgdye" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#gsxidlgdye table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -19920,7 +19889,7 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="text-align: left;">Nonlinear Poisson model, Simulation 1</th>
@@ -19973,7 +19942,6 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -21891,7 +21859,6 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1">Ex2tab1</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="cdtzwoizpy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#cdtzwoizpy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -22333,7 +22300,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear model, Sim.2</th>
@@ -22390,7 +22357,6 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <div id="tabset-4-2" class="tab-pane" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
 <details class="code-fold">
@@ -22398,7 +22364,6 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1">Ex2tab2</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="mbizfdcbhw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#mbizfdcbhw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -22840,7 +22805,7 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Nonlinear model, Sim.2</th>
@@ -22893,7 +22858,6 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -26669,7 +26633,6 @@ background-color: null;
 font-style: inherit;">"Example 1: Poisson model 1a, General sample"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="zpcxbyzutw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#zpcxbyzutw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -27111,7 +27074,7 @@ font-style: inherit;">"Example 1: Poisson model 1a, General sample"</span>)</spa
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 1: Poisson model 1a, General sample</th>
@@ -27173,7 +27136,6 @@ font-style: inherit;">"Example 1: Poisson model 1a, General sample"</span>)</spa
 
 </div>
 </div>
-</div>
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;
@@ -27197,7 +27159,6 @@ background-color: null;
 font-style: inherit;">"Example 1: Poisson model 1b, Felony sample"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="ynjnlyqdfn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ynjnlyqdfn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -27639,7 +27600,7 @@ font-style: inherit;">"Example 1: Poisson model 1b, Felony sample"</span>)</span
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 1: Poisson model 1b, Felony sample</th>
@@ -27699,7 +27660,6 @@ font-style: inherit;">"Example 1: Poisson model 1b, Felony sample"</span>)</span
 
 </table>
 
-</div>
 </div>
 </div>
 <details class="code-fold">
@@ -28522,7 +28482,6 @@ background-color: null;
 font-style: inherit;">"Example 2: Model 2a, General sample, Collider"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="cneanpaseg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#cneanpaseg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -28964,7 +28923,7 @@ font-style: inherit;">"Example 2: Model 2a, General sample, Collider"</span>)</s
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2a, General sample, Collider</th>
@@ -29017,7 +28976,6 @@ font-style: inherit;">"Example 2: Model 2a, General sample, Collider"</span>)</s
 
 </table>
 
-</div>
 </div>
 </div>
 <details class="code-fold">
@@ -29150,7 +29108,6 @@ background-color: null;
 font-style: inherit;">"Example 2: Model 2b, General sample, No collider"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="anjemdhssl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#anjemdhssl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -29592,7 +29549,7 @@ font-style: inherit;">"Example 2: Model 2b, General sample, No collider"</span>)
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2b, General sample, No collider</th>
@@ -29638,7 +29595,6 @@ font-style: inherit;">"Example 2: Model 2b, General sample, No collider"</span>)
 
 </table>
 
-</div>
 </div>
 </div>
 <details class="code-fold">
@@ -29770,7 +29726,6 @@ background-color: null;
 font-style: inherit;">"Example 2: Model 2c, Felony sample, with Collider"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="azymxkhsts" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#azymxkhsts table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -30212,7 +30167,7 @@ font-style: inherit;">"Example 2: Model 2c, Felony sample, with Collider"</span>
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2c, Felony sample, with Collider</th>
@@ -30265,7 +30220,6 @@ font-style: inherit;">"Example 2: Model 2c, Felony sample, with Collider"</span>
 
 </table>
 
-</div>
 </div>
 </div>
 <details class="code-fold">
@@ -30368,7 +30322,6 @@ background-color: null;
 font-style: inherit;">"Example 2: Model 2d, Felony sample, no Collider"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="lgznoejcgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#lgznoejcgw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -30810,7 +30763,7 @@ font-style: inherit;">"Example 2: Model 2d, Felony sample, no Collider"</span>)<
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2d, Felony sample, no Collider</th>
@@ -30856,7 +30809,6 @@ font-style: inherit;">"Example 2: Model 2d, Felony sample, no Collider"</span>)<
 
 </table>
 
-</div>
 </div>
 </div>
 <details class="code-fold">
@@ -31093,7 +31045,6 @@ background-color: null;
 font-style: inherit;">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="chbsmotnlq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#chbsmotnlq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -31535,7 +31486,7 @@ font-style: inherit;">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2e, General sample, Adj.Set #25</th>
@@ -31604,7 +31555,6 @@ font-style: inherit;">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)
 
 </div>
 </div>
-</div>
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><span class="fu" style="color: #4758AB;
@@ -31628,7 +31578,6 @@ background-color: null;
 font-style: inherit;">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
 <div id="vtmdokfxyi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#vtmdokfxyi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -32070,7 +32019,7 @@ font-style: inherit;">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2f, General sample, Adj.Set #26</th>
@@ -32144,7 +32093,6 @@ font-style: inherit;">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
