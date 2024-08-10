@@ -1,0 +1,15 @@
+---
+title: "Supplementary materials for Brauer, Day, & Kotlaja (Forth.)"
+draft: true
+---
+
+## Online Supplements 
+
+### [My "lab notebook" w/all code & results](os/BDK_Stress.html)
+
+### [Supplemental review of mechanisms (coming soon)]()
+
+## Manuscript Draft 
+
+### [Coming soon]()
+
