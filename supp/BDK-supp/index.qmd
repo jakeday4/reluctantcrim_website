@@ -7,7 +7,7 @@ draft: true
 
 ### [My "lab notebook" w/all code & results](os/BDK_Stress.html)
 
-### [Supplemental review of mechanisms (coming soon)]()
+### [Supplemental review of mechanisms](os/BDK_stress_2024.08.20_supplement_2.4.docx)
 
 ## Manuscript Draft 
 
