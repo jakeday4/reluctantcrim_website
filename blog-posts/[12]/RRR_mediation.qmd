@@ -6,7 +6,7 @@ image: thinking_hurts.jpeg
 image-alt: "Mediation makes my head hurt"
 description: "Our first Reluctantly Rapid Response (RRR) post addresses a confusing mediation issue."
 citation:
-  url: https://reluctantcriminologists.com/blog-posts/[4]/causation-no-corr.html
+  url: https://reluctantcriminologists.com/blog-posts/[12]/rrr_mediation.html
 categories: [general, rstats, causality, mediation]
 # https://community.rstudio.com/t/quarto-how-to-cross-reference-unnumbered-book-chapter/136279/2
 format:
