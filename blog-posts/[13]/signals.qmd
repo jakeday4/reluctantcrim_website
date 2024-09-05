@@ -1,7 +1,7 @@
 ---
 title: "Mixed Signals: Use Ratios and Percentile Scores Carefully (and Sparingly)"
 author: "Jon Brauer"
-date: "2024-08-15"
+date: "2024-09-5"
 image: thinking_hurts.jpeg
 image-alt: "Mixed signals in life and measurement"
 description: "Thoughts from my review of a recently published study about arrest rate signals."
