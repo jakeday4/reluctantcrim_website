@@ -1,8 +1,8 @@
 ---
 title: "Mixed Signals: Use Ratios and Percentile Scores Carefully (and Sparingly)"
 author: "Jon Brauer"
-date: "2024-09-5"
-image: thinking_hurts.jpeg
+date: "2024-09-09"
+image: mixed-signals.png
 image-alt: "Mixed signals in life and measurement"
 description: "Thoughts from my review of a recently published study about arrest rate signals."
 citation:
@@ -14,7 +14,7 @@ format:
     code-summary: "Show code"
 execute: 
   warning: false
-draft: true
+draft: false
 ---
 
 ![Mixed signals in life and measurement](mixed-signals.png)
@@ -60,11 +60,11 @@ As in the published version, the authors were investigating possible nonlinear r
 >
 >"Measured in this way, higher values (closer to 1 on the original raw proportion metric) indicate a high reported probability of arrest given offending. Such scores mean youth experience arrest as a near-certain outcome of offending, thereby presumably increasing perceived costs and reducing perceived rewards of crime. In contrast, lower values (closer to 0) indicate a low reported probability of arrest given offending, meaning youth experience arrest as a highly unlikely outcome of offending, thereby presumably reducing perceived costs and increasing perceived rewards of crime. 
 
-Now, you should know that the authors did not invent the concept of an arrest rate signal nor its measurement as a ratio of experienced punishments (arrests) to punishable behaviors (self-reported offenses). Rather, their paper is the most recent in a line of studies investigating cognitive "Bayesian updating" of risk and reward perceptions (e.g., [Matsueda et al. 2006](https://journals.sagepub.com/doi/abs/10.1177/000312240607100105); [Anwar & Loughran 2011](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.2011.00233.x)). Incidentally, I find this happens somewhat frequently when reviewing. That is, I will point out a perceived issue in the paper that I think might be a widespread issue in the underlying literature, which then puts the authors and editors in a tough (but clear) spot: They set out to contribute incrementally to a specific literature, and then I tell them to do something that I claim is better but is not common practice in that literature. As I usually do in such situations, I tried to point this out in my review: 
+Now, you should know that the authors did not invent the concept of an arrest rate signal nor its measurement as a ratio of experienced punishments (arrests) to punishable behaviors (self-reported offenses). Rather, their paper is the most recent in a line of studies investigating cognitive "Bayesian updating" of risk and reward perceptions (e.g., [Matsueda et al. 2006](https://journals.sagepub.com/doi/abs/10.1177/000312240607100105); [Anwar & Loughran 2011](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.2011.00233.x)). I pointed this out in my review: 
 
 >"To be clear, the theoretical concept and operational measure seem reasonable on their face. Also, I am aware that several studies that have used the same or similar measures, and the authors are merely extending upon past work using a somewhat commonly used measure. (For what it is worth, I also really [like] this literature; the early "Bayesian updating" paper is one of my favorites.) Thus, my feedback here is less about limits of this specific study and more about concerns with the general measurement and analytic approached adopted in this literature. I understand and regret that such feedback may be perceived as quite unfair to these specific authors; I hope my feedback might be somewhat helpful in improving research on this important topic anyway."
 
-In this light, I give even more credit to these specific authors, as the path of least resistance in such situations might simply be to move along and hope for a different reviewer at another journal. In any case, here is a summary of three core issues I raised:
+Incidentally, I find this happens somewhat frequently when reviewing. That is, I will point out a perceived issue in the paper that I think might be a widespread issue in the underlying literature, which then puts the authors and editors in a tough (but clear) spot: They set out to contribute incrementally to a specific literature, and then I tell them to do something that I claim is better but is not common practice in that literature. In this light, I give even more credit to these specific authors, as the path of least resistance in such situations might simply be to move along and hope for a different reviewer at another journal. In any case, here is a summary of three core issues I raised:
 
 >"Succinctly, my primary concerns are summarized as: (1) Selection into sample and analysis may limit generalizability and cause selection-distortion artifacts; (2) Inability to address confounding by component parts of the ARS inhibits meaningful interpretation of results; and (3) Arbitrary transformation of ARS from a proportion into a percentile score artificially introduces nonlinearities into the focal relationships of interest. Each of these issues poses risks of generating (nonlinear) data artifacts that threaten the validity of the results and their current interpretations as estimates of potential functional form of the relationship between “experienced certainty” or the “arrest rate signal” (ARS) and perceptions of costs and rewards, which is the primary goal of the current study."
 

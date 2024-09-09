@@ -2,6 +2,7 @@
   {
     "listing": "/blog-posts.html",
     "items": [
+      "/blog-posts/[13]/signals.html",
       "/blog-posts/[12]/RRR_mediation.html",
       "/blog-posts/[11]/modmadness-pt3.html",
       "/blog-posts/[7]/modmadness-pt2.html",
@@ -17,6 +18,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/blog-posts/[13]/signals.html",
       "/blog-posts/[12]/RRR_mediation.html",
       "/blog-posts/[11]/modmadness-pt3.html",
       "/blog-posts/[7]/modmadness-pt2.html",
