@@ -12,7 +12,7 @@
 <generator>quarto-1.4.555</generator>
 <lastBuildDate>Mon, 09 Sep 2024 04:00:00 GMT</lastBuildDate>
 <item>
-  <title>Mixed Signals: Use Ratios and Percentile Scores Carefully (and Sparingly)</title>
+  <title>Mixed signals: Use ratios and percentile scores carefully (and sparingly)</title>
   <dc:creator>Jon Brauer</dc:creator>
   <link>https://www.reluctantcriminologists.com/blog-posts/[13]/signals.html</link>
   <description><![CDATA[ 
@@ -4807,8 +4807,8 @@ Narrative review describing key issues
 </ol>
 </section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
   author = {Brauer, Jon},
-  title = {Mixed {Signals:} {Use} {Ratios} and {Percentile} {Scores}
-    {Carefully} (and {Sparingly)}},
+  title = {Mixed Signals: {Use} Ratios and Percentile Scores Carefully
+    (and Sparingly)},
   date = {2024-09-09},
   url = {https://reluctantcriminologists.com/blog-posts/[13]/signals.html},
   langid = {en}
@@ -4826,7 +4826,7 @@ Scores Carefully (and Sparingly).”</span> September 9, 2024. <a href="https://
   <media:content url="https://www.reluctantcriminologists.com/blog-posts/[13]/mixed-signals.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
-  <title>RRR: Mediation Makes My Head Hurt!</title>
+  <title>RRR: Mediation makes my head hurt!</title>
   <dc:creator>Jon Brauer</dc:creator>
   <link>https://www.reluctantcriminologists.com/blog-posts/[12]/RRR_mediation.html</link>
   <description><![CDATA[ 
@@ -5904,7 +5904,7 @@ $mval[[1]]
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2024,
   author = {Brauer, Jon},
-  title = {RRR: {Mediation} {Makes} {My} {Head} {Hurt!}},
+  title = {RRR: {Mediation} Makes My Head Hurt!},
   date = {2024-05-13},
   url = {https://reluctantcriminologists.com/blog-posts/[12]/rrr_mediation.html},
   langid = {en}

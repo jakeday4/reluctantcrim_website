@@ -1,5 +1,5 @@
 ---
-title: "RRR: Mediation Makes My Head Hurt!"
+title: "RRR: Mediation makes my head hurt!"
 author: "Jon Brauer"
 date: "2024-05-13"
 image: thinking_hurts.jpeg

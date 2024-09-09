@@ -1,5 +1,5 @@
 ---
-title: "Mixed Signals: Use Ratios and Percentile Scores Carefully (and Sparingly)"
+title: "Mixed signals: Use ratios and percentile scores carefully (and sparingly)"
 author: "Jon Brauer"
 date: "2024-09-09"
 image: mixed-signals.png
