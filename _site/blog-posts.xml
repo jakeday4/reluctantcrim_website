@@ -9,7 +9,7 @@
 <link>https://www.reluctantcriminologists.com/blog-posts.html</link>
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
-<generator>quarto-1.4.555</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Mon, 09 Sep 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Mixed signals: Use ratios and percentile scores carefully (and sparingly)</title>
@@ -164,6 +164,7 @@ font-style: inherit;"># https://stackoverflow.com/questions/65420136/how-do-you-
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tidy_dag, proportion){</span>
 <span id="cb2-4"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -537,6 +538,7 @@ font-style: inherit;"># https://www.rdatagen.net/post/2024-05-21-simstudy-custom
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(n, min, max, mu, s) {</span>
 <span id="cb4-12"></span>
 <span id="cb4-13">  F.a <span class="ot" style="color: #003B4F;
@@ -6104,6 +6106,7 @@ font-style: inherit;"># https://stackoverflow.com/questions/65420136/how-do-you-
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tidy_dag, proportion){</span>
 <span id="cb3-4"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -7052,6 +7055,7 @@ font-style: inherit;"># function for custom p-values</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x) {</span>
 <span id="cb5-12">    <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7097,6 +7101,7 @@ font-style: inherit;"># function for reg output w/custom p-values</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(mymod) {</span>
 <span id="cb5-21">  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -16709,6 +16714,7 @@ font-style: inherit;"># https://stackoverflow.com/questions/65420136/how-do-you-
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tidy_dag, proportion){</span>
 <span id="cb2-15"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -17356,6 +17362,7 @@ font-style: inherit;">geom_dag_text</span>(<span class="at" style="color: #65742
 background-color: null;
 font-style: inherit;">data =</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x) <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">filter</span>(x, name <span class="sc" style="color: #5E5E5E;
@@ -17858,7 +17865,7 @@ font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 </details>
-<div id="tbl-anonymous-6243379" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
+<div id="tbl-anonymous-4193304" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
@@ -18302,7 +18309,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=1 {#tbl-anonymous-6243379-1}</caption>
+<caption>X=1 {#tbl-anonymous-4193304-1}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -18812,7 +18819,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=0 {#tbl-anonymous-6243379-2}</caption>
+<caption>X=0 {#tbl-anonymous-4193304-2}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -19118,7 +19125,7 @@ Brauer, Jon. 2024. <span>“Moderator Madness, Part 2.”</span> February
 <h2 class="anchored" data-anchor-id="trust-issues">Trust Issues</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
-<div id="fig-duplicates" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-duplicates" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-duplicates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><a href="dup-series/duplicates.html"><img src="https://www.reluctantcriminologists.com/blog-posts/[8]/multiplicity.jpg" class="img-fluid figure-img"></a></p>
@@ -19142,7 +19149,7 @@ Post&nbsp;1: Near duplicates in survey data: Like “Multiplicity” but without
 <h2 class="anchored" data-anchor-id="stumbling-in-the-dark">Stumbling in the Dark</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
-<div id="fig-pctmatchR" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-pctmatchR" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pctmatchR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><a href="dup-series/pctmatchR.html"><img src="https://www.reluctantcriminologists.com/blog-posts/[8]/coding-dall-e.jpg" class="img-fluid figure-img"></a></p>
@@ -19166,7 +19173,7 @@ Post&nbsp;2: For this non-programmer, iterating on a percentmatch function in R 
 <h2 class="anchored" data-anchor-id="trust-issues-part-2">Trust Issues, Part 2</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
-<div id="fig-duplicates-pt2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-duplicates-pt2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-duplicates-pt2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><a href="dup-series/duplicates-pt2.html"><img src="https://www.reluctantcriminologists.com/blog-posts/[8]/matrix-sequel.jpg" class="img-fluid figure-img"></a></p>
@@ -19352,6 +19359,7 @@ font-style: inherit;"># https://stackoverflow.com/questions/65420136/how-do-you-
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tidy_dag, proportion){</span>
 <span id="cb1-43"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -19866,6 +19874,7 @@ font-style: inherit;">geom_dag_text</span>(<span class="at" style="color: #65742
 background-color: null;
 font-style: inherit;">data =</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x) <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">filter</span>(x, name <span class="sc" style="color: #5E5E5E;
@@ -20521,6 +20530,7 @@ font-style: inherit;"># function for custom p-values</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x) {</span>
 <span id="cb4-14">    <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -20566,6 +20576,7 @@ font-style: inherit;"># function for reg output w/custom p-values</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(mymod) {</span>
 <span id="cb4-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -29421,6 +29432,7 @@ font-style: inherit;"># https://stackoverflow.com/questions/65420136/how-do-you-
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tidy_dag, proportion){</span>
 <span id="cb4-19"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -31348,6 +31360,7 @@ font-style: inherit;"># function for custom p-values</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x) {</span>
 <span id="cb8-12">    <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -31393,6 +31406,7 @@ font-style: inherit;"># function for reg output w/custom p-values</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(mymod) {</span>
 <span id="cb8-21">  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -38311,14 +38325,14 @@ font-style: inherit;">"all"</span>)</span>
 <li id="fn6"><p>“Avoid being clever” is another McElreath motto. You’re probably picking up on a pattern with all of our McElreath references. Seriously, do yourself a favor and read his book and watch his lectures.↩︎</p></li>
 <li id="fn7"><p>Strong moral beliefs is measured as a standardized item response theory (IRT) score scale. It is similar to measures found in existing criminological literature and, like our simulated moral beliefs variable above, is assumed to capture an underlying latent continuous dimension theoretically ranging from endorsement of strong pro-crime moral beliefs (<em>min</em>=-3.84) to strong anti-crime moral beliefs (<em>max</em>=1.18). We also specify weakly informative priors for the <em>beta</em> coefficient; we hope to write more about specification of prior distributions in such models in a later post.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer and jake day2023,
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer_and_jake_day2023,
   author = {Brauer and Jake Day, Jon},
   title = {Are You Afraid of Colliders?},
   date = {2023-06-06},
   url = {https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer and jake day2023" class="csl-entry quarto-appendix-citeas">
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer_and_jake_day2023" class="csl-entry quarto-appendix-citeas">
 Brauer and Jake Day, Jon. 2023. <span>“Are You Afraid of
 Colliders?”</span> June 6, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html">https://www.reluctantcriminologists.com/blog-posts/[5]/colliders.html</a>.
 </div></div></section></div> ]]></description>
@@ -39366,6 +39380,7 @@ font-style: inherit;">#equation for delinquency regression line  </span></span>
 background-color: null;
 font-style: inherit;">=</span><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x){</span>
 <span id="cb9-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -39539,6 +39554,7 @@ font-style: inherit;">#equation for delinquency regression line in model with bo
 background-color: null;
 font-style: inherit;">=</span><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x){</span>
 <span id="cb12-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -39738,6 +39754,7 @@ font-style: inherit;">#equation for delinquency regression line in model with on
 background-color: null;
 font-style: inherit;">=</span><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x){</span>
 <span id="cb15-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -40234,14 +40251,14 @@ Advocate for Theoretical Science in Criminology (Jon Brauer)
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer, with katya botchkovar and carter hay2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer,_with_katya_botchkovar_and_carter_hay2023,
   author = {Brauer, with Katya Botchkovar and Carter Hay, Jon},
   title = {Dr. {Charles} {R.} {Tittle’s} Intellectual Contributions},
   date = {2023-03-12},
   url = {https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer, with katya botchkovar and carter hay2023" class="csl-entry quarto-appendix-citeas">
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer,_with_katya_botchkovar_and_carter_hay2023" class="csl-entry quarto-appendix-citeas">
 Brauer, with Katya Botchkovar and Carter Hay, Jon. 2023. <span>“Dr.
 Charles R. Tittle’s Intellectual Contributions.”</span> March 12, 2023.
 <a href="https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html">https://reluctantcriminologists.com/blog-posts/[3]/charles-memorial.html</a>.
@@ -40309,14 +40326,14 @@ Charles R. Tittle’s Intellectual Contributions.”</span> March 12, 2023.
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer and jake day2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer_and_jake_day2023,
   author = {Brauer and Jake Day, Jon},
   title = {Check Out Some of Our Favorite Sites},
   date = {2023-03-11},
   url = {https://www.reluctantcriminologists.com/blog-posts/[2]/favorite_links.html},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer and jake day2023" class="csl-entry quarto-appendix-citeas">
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer_and_jake_day2023" class="csl-entry quarto-appendix-citeas">
 Brauer and Jake Day, Jon. 2023. <span>“Check Out Some of Our Favorite
 Sites.”</span> March 11, 2023. <a href="https://www.reluctantcriminologists.com/blog-posts/[2]/favorite_links.html">https://www.reluctantcriminologists.com/blog-posts/[2]/favorite_links.html</a>.
 </div></div></section></div> ]]></description>
@@ -40386,14 +40403,14 @@ Sites.”</span> March 11, 2023. <a href="https://www.reluctantcriminologists.co
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer and jake day2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer_and_jake_day2023,
   author = {Brauer and Jake Day, Jon},
   title = {Welcome to the Reluctant Criminologists},
   date = {2023-03-10},
   url = {https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer and jake day2023" class="csl-entry quarto-appendix-citeas">
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer_and_jake_day2023" class="csl-entry quarto-appendix-citeas">
 Brauer and Jake Day, Jon. 2023. <span>“Welcome to the Reluctant
 Criminologists.”</span> March 10, 2023. <a href="https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html">https://reluctantcriminologists.com/blog-posts/[1]/welcome-blog.html</a>.
 </div></div></section></div> ]]></description>
