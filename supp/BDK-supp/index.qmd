@@ -11,5 +11,5 @@ draft: true
 
 ## Manuscript Draft 
 
-### [Coming soon]()
+### [Preprint (AOM under review)](os/BDK_stress_2024.08.20_CRIM_anon_web.pdf)
 

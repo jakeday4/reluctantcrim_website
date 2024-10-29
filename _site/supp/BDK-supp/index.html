@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>reluctant criminologists - Supplementary materials for Brauer, Day, &amp; Kotlaja (Forth.)</title>
+<title>Supplementary materials for Brauer, Day, &amp; Kotlaja (Forth.) – reluctant criminologists</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,6 +75,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </script>
+<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -83,7 +84,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -95,7 +96,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -139,7 +140,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -160,7 +161,7 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#manuscript-draft" id="toc-manuscript-draft" class="nav-link" data-scroll-target="#manuscript-draft">Manuscript Draft</a>
   <ul class="collapse">
-  <li><a href="#coming-soon" id="toc-coming-soon" class="nav-link" data-scroll-target="#coming-soon">Coming soon</a></li>
+  <li><a href="#preprint-aom-under-review" id="toc-preprint-aom-under-review" class="nav-link" data-scroll-target="#preprint-aom-under-review">Preprint (AOM under review)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,8 +199,8 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </section>
 <section id="manuscript-draft" class="level2">
 <h2 class="anchored" data-anchor-id="manuscript-draft">Manuscript Draft</h2>
-<section id="coming-soon" class="level3">
-<h3 class="anchored" data-anchor-id="coming-soon"><a href="">Coming soon</a></h3>
+<section id="preprint-aom-under-review" class="level3">
+<h3 class="anchored" data-anchor-id="preprint-aom-under-review"><a href="os/BDK_stress_2024.08.20_CRIM_anon_web.pdf">Preprint (AOM under review)</a></h3>
 
 
 </section>
@@ -209,12 +210,12 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
   author = {},
   title = {Supplementary Materials for {Brauer,} {Day,} \&amp; {Kotlaja}
     {(Forth.)}},
-  url = {https://www.reluctantcriminologists.com/supp/BDK-supp},
+  url = {https://www.reluctantcriminologists.com/supp/BDK-supp/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-untitled" class="csl-entry quarto-appendix-citeas" role="listitem">
 <span>“Supplementary Materials for Brauer, Day, &amp; Kotlaja
-(Forth.).”</span> n.d. <a href="https://www.reluctantcriminologists.com/supp/BDK-supp">https://www.reluctantcriminologists.com/supp/BDK-supp</a>.
+(Forth.).”</span> n.d. <a href="https://www.reluctantcriminologists.com/supp/BDK-supp/">https://www.reluctantcriminologists.com/supp/BDK-supp/</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
 
@@ -285,18 +286,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -328,7 +318,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
@@ -336,7 +348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
