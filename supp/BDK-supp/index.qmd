@@ -3,13 +3,11 @@ title: "Supplementary materials for Brauer, Day, & Kotlaja (Forth.)"
 draft: true
 ---
 
-## Online Supplements 
+## Online Supplement 
 
 ### [My "lab notebook" w/all code & results](os/BDK_Stress.html)
 
-### [Supplemental review of mechanisms](os/BDK_stress_2024.08.20_supplement_2.4_web.pdf)
-
 ## Manuscript Draft 
 
-### [Preprint (AOM under review)](os/BDK_stress_2024.08.20_CRIM_anon_web.pdf)
+### [Preprint (AOM under review)](os/BDK_stress_2025.02.01_SocSci_anon.pdf)
 
