@@ -4,7 +4,9 @@ title: "Supplementary materials for Bègue & Brauer (Forth.)"
 
 ## Online Supplement 
 
-### [My "lab notebook" w/all code & results (coming soon)]()
+### [My "lab notebook" w/all code & results (coming soon)](os/SRPA-France.html)
+
+### [Replication data](os/Gratif_LBS_JB.sav)
 
 ## OSF Preregistration
 

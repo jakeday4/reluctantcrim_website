@@ -13,7 +13,7 @@ format:
     embed-resources: true
 execute: 
   warning: false
-draft: true
+draft: false
 ---
 
 ## Preamble
@@ -2419,10 +2419,8 @@ Now, let's pull the maximum predicted probability contrasts from our three prima
 mod3mocon2 <- avg_comparisons(mod3mo, variables = list("SRPAf" = c("2","14"))) %>%
   data.frame() %>% mutate(model = "M1: Unadj.")
 
-mod4mocon2 <- mod4mocon %>% mutate(model = "M2: Controls") %>% 
-  dplyr::select(!rowid)
-mod5mocon2 <- mod5mocon %>% mutate(model = "M3: NLP") %>% 
-  dplyr::select(!rowid)
+mod4mocon2 <- mod4mocon %>% mutate(model = "M2: Controls") 
+mod5mocon2 <- mod5mocon %>% mutate(model = "M3: NLP") 
 
 allmodcon <- rbind(mod3mocon2, mod4mocon2, mod5mocon2) %>%
   mutate(
@@ -2713,7 +2711,7 @@ scaleFUN <- function(dec) sprintf("%.2f", dec)
 
 # drop proportion estimates
 est2dat %>%
-  filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
+  dplyr::filter(!CMA_est %in% c("pm", "pe", "ERpnie(prop)", "ERintref(prop)",
                          "ERintmed(prop)","ERcde(prop)", "int", 
                          "ERpnie", "ERintmed", "ERintref", "ERcde")) %>%
   mutate(CMA_est = factor(CMA_est, levels=c("Rte", "Rtnie", "Rpnie", "Rtnde", "Rpnde", "Rcde"))) %>%
@@ -2838,7 +2836,15 @@ est3 <- cmest(data = datv3trim, model = "rb",
 ```{r}
 #| output: FALSE
 
+# datv3trim %>% dplyr::select(
+#   anyvic, SRPAavgz, eversex, SRintelz, SRpopularz, agez, worked, gender
+#   ) %>%
+#   datasummary_skim()
+
 datv3trim <- datv3 %>% 
+  dplyr::select(
+    sexvicsum, SRPAavgz, eversex, SRintelz, SRpopularz, agez, worked, gender
+    ) %>%
   mutate(anyvic = if_else(sexvicsum > 0, 1, sexvicsum), 
          eversex = as.numeric(eversex)) %>% 
   drop_na(eversex) 
