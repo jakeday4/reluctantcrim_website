@@ -4,7 +4,7 @@ title: "Supplementary materials"
 
 ### [Duplicates series](dup-supp/index.html)
 
-### [Bègue & Brauer (Forth.)](LB-JRB-supp/index.html)
+### [Anonymous (Forth.)](LB-JRB-supp/index.html)
 
 ### [Brauer, Day, & Kotlaja (coming soon)]()
 

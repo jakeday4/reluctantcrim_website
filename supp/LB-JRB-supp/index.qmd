@@ -1,10 +1,10 @@
 ---
-title: "Supplementary materials for Bègue & Brauer (Forth.)"
+title: "Supplementary materials for ANONYMOUS (Forth.)"
 ---
 
 ## Online Supplement 
 
-### [My "lab notebook" w/all code & results (coming soon)](os/SRPA-France.html)
+### ["Lab notebook" w/all code & results](os/SRPA-France-anon.html)
 
 ### [Replication data](os/Gratif_LBS_JB.sav)
 

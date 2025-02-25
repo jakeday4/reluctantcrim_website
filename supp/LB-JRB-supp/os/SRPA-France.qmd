@@ -13,7 +13,7 @@ format:
     embed-resources: true
 execute: 
   warning: false
-draft: false
+draft: true
 ---
 
 ## Preamble
