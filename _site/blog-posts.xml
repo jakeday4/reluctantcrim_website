@@ -10,7 +10,53 @@
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Mon, 09 Sep 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 06 Mar 2025 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Assuming in public</title>
+  <dc:creator>Jon Brauer</dc:creator>
+  <link>https://www.reluctantcriminologists.com/blog-posts/[14]/assume-in-public.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Curious about directed acyclic graphs, or DAGs, and how they can help your research? Confused about collider bias and how to avoid it? Watch Jon use the “parrot” method (you know, where he parrots people smarter than him) to stumble and sometimes curse his way through an unscripted but mostly accurate<sup>1</sup> talk on these topics. It’s about an hour long and free - so you get what you pay for!</p>
+<iframe title="Assuming in Public: Use DAGs to improve transparency and causal estimation" src="https://purl.dlib.indiana.edu/iudl/media/504r56vc88?urlappend=%2Fembed" width="600" height="337" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+</iframe>
+<p><a href="https://events.iu.edu/ssrc/event/1784330">This talk</a> was delivered to Indiana University Bloomington’s <a href="https://ssrc.indiana.edu/">Social Science Research Commons</a> as part of their <a href="https://ssrc.indiana.edu/seminars/wim/index.html">Workshop in Methods Series</a>.</p>
+<p><strong>Presentation Summary:</strong></p>
+<p>“Scientists routinely make causal inferences – whether implicit or explicit – about correlations generated from statistical analyses of experimental and observational data. However, while theorized causes are usually directionally specific, correlations are inherently symmetric or directionally ambiguous. Moreover, multiple causal structures can produce equivalent correlational results, posing significant threats to the validity of statistical inferences.</p>
+<p>Fortunately, advances from the “causal revolution” in science and statistics have provided us with powerful tools, such as potential outcomes and directed acyclic graphs (DAGs), to better understand causes and effects. This talk will focus on how DAGs can help us “assume in public” more effectively. By introducing DAGs early in the research workflow and adhering to simple rules for their use, we can formalize the causal assumptions underlying our theories and statistical models, thereby enhancing transparency and reducing avoidable biases in causal estimation.</p>
+<p>The presentation will cover the four foundational structures in causal systems, as represented in DAGs: complete independence, pipes, forks, and colliders. Real-world and simulated examples – drawn from the speaker’s blog posts – will illustrate key concepts, such as d-separation, good and bad controls, and adjustment sets. Finally, the talk will introduce tools and resources to help researchers more confidently and effectively navigate the assumptions and challenges of causal inference.”</p>
+<p><a href="https://hdl.handle.net/2022/33469">Slides available on IU ScholarWorks</a></p>
+<p><a href="https://purl.dlib.indiana.edu/iudl/media/q27z60mg10">Video available on IU Digital Media Collection</a></p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>For example, in rushing through a discussion of deterministic variables on slide 48, I incorrectly referenced collider bias instead of confounding bias. That is, in the depicted DAG, two component variables created forking backdoor paths between the deterministic ratio variable and the outcome; see our post on <a href="https://reluctantcriminologists.com/blog-posts/%5B13%5D/signals">mixed signals</a> for a detailed explanation.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2025,
+  author = {Brauer, Jon},
+  title = {Assuming in Public},
+  date = {2025-03-06},
+  url = {https://reluctantcriminologists.com/blog-posts/[14]/assume-in-public.html},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2025" class="csl-entry quarto-appendix-citeas">
+Brauer, Jon. 2025. <span>“Assuming in Public.”</span> March 6, 2025. <a href="https://reluctantcriminologists.com/blog-posts/[14]/assume-in-public.html">https://reluctantcriminologists.com/blog-posts/[14]/assume-in-public.html</a>.
+</div></div></section></div> ]]></description>
+  <category>general</category>
+  <category>rstats</category>
+  <category>causality</category>
+  <category>mediation</category>
+  <guid>https://www.reluctantcriminologists.com/blog-posts/[14]/assume-in-public.html</guid>
+  <pubDate>Thu, 06 Mar 2025 05:00:00 GMT</pubDate>
+  <media:content url="https://www.reluctantcriminologists.com/blog-posts/[14]/assume-talk.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Mixed signals: Use ratios and percentile scores carefully (and sparingly)</title>
   <dc:creator>Jon Brauer</dc:creator>
@@ -17865,7 +17911,7 @@ font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 </details>
-<div id="tbl-anonymous-1896228" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
+<div id="tbl-anonymous-2277636" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
@@ -18309,7 +18355,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=1 {#tbl-anonymous-1896228-1}</caption>
+<caption>X=1 {#tbl-anonymous-2277636-1}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -18819,7 +18865,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=0 {#tbl-anonymous-1896228-2}</caption>
+<caption>X=0 {#tbl-anonymous-2277636-2}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
