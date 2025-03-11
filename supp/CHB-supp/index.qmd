@@ -1,0 +1,13 @@
+---
+title: "Supplementary materials for Cooper, Hans, & Brauer (Forth.)"
+draft: false
+---
+
+## Online Supplement 
+
+### [My "lab notebook" w/all code & results](os/CHB_SOTL.html)
+
+## Manuscript Draft (coming soon) 
+
+### [Preprint (AOM under review)]()
+

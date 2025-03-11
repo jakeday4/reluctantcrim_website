@@ -2,9 +2,14 @@
 title: "Supplementary materials"
 ---
 
+## Blog 
+
 ### [Duplicates series](dup-supp/index.html)
+
+## Papers
 
 ### [Anonymous (Forth.)](LB-JRB-supp/index.html)
 
 ### [Brauer, Day, & Kotlaja (coming soon)]()
 
+### [Cooper, Hans, & Brauer (Forth.)](CHB-supp/index.html)

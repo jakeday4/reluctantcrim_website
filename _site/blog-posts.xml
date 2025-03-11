@@ -17911,7 +17911,7 @@ font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 </details>
-<div id="tbl-anonymous-2277636" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
+<div id="tbl-anonymous-4959071" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
@@ -18355,7 +18355,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=1 {#tbl-anonymous-2277636-1}</caption>
+<caption>X=1 {#tbl-anonymous-4959071-1}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -18865,7 +18865,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=0 {#tbl-anonymous-2277636-2}</caption>
+<caption>X=0 {#tbl-anonymous-4959071-2}</caption>
 <thead>
 <tr class="header gt_col_headings">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
