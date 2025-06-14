@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jake Day and Jon Brauer">
+<meta name="description" content="Assignments for replication and reproducibility course for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a ‘reproducibility project’ (#8-#14) where students reproduce or conceptually replicate results from a published article using NYS data.">
+
+<title>Criminology in crisis? Replication &amp; reproducibility in criminology (Undergraduate-level) – reluctant criminologists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7ff6b914e803282d7de346f6aba41ba3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F0XQR72SS3"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">reluctant criminologists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-posts.html"> 
+<span class="menu-text">blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../course-materials.html"> 
+<span class="menu-text">courses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../supp/index.html"> 
+<span class="menu-text">supplementary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#r-assignments" id="toc-r-assignments" class="nav-link active" data-scroll-target="#r-assignments">R Assignments</a></li>
+  <li><a href="#reproducibility-project" id="toc-reproducibility-project" class="nav-link" data-scroll-target="#reproducibility-project">Reproducibility Project</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Criminology in crisis? Replication &amp; reproducibility in criminology (Undergraduate-level)</h1>
+</div>
+
+<div>
+  <div class="description">
+    Assignments for <em>replication and reproducibility</em> course for undergraduate seniors. Includes a crash course for conducting reproducible research using R (#1-#7) and a ‘reproducibility project’ (#8-#14) where students reproduce or conceptually replicate results from a published article using NYS data.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jake Day and Jon Brauer </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="debugging_horst.png" class="img-fluid figure-img"></p>
+<figcaption>The struggle is real. We get it. We really do. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+</figure>
+</div>
+<p>In the Spring of 2022, the semester after teaching our graduate-level “Replication and Reproducibility” course, Jake was asked to teach a Senior Seminar (UNCW’s capstone course for criminology majors). He decided it would be a good opportunity to see if he could revise the course for senior-level criminology majors. Take a look at the <a href="CRM495_Spring2022_Syllabus_2022-1-13.pdf">syllabus</a> to see how he changed the reading schedule for undergraduates. In terms of the assignments, there are two primary changes. First, he split the assignments into seven smaller chunks, including a specific assignment on creating a reproducible file structure (for which he borrowed heavily from Danielle Navarro’s “<a href="https://www.youtube.com/watch?v=u6MiDFvAs9w&amp;list=PLRPB0ZzEYegPiBteC2dRn95TX9YefYFyy">Project Structure</a>” videos). Second, for “Replication and Reproducibility” project, he required everyone to reproduce or conceptually replicate an article using the at least one of the first seven waves of the <a href="https://www.icpsr.umich.edu/web/ICPSR/series/88">National Youth Survey (NYS)</a> data available on <a href="https://www.icpsr.umich.edu/web/pages/">ICPSR</a>.</p>
+<p>We have included these assignments as they were assigned in Jake’s class with light editing, where necessary, for student privacy reasons. In a forthcoming blog post we will discuss what we learned from designing this course and note what we would change going forward. Jake is scheduled to teach the course again in the Fall 2023 semester, so he will have the opportunity to implement these changes.</p>
+<section id="r-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="r-assignments">R Assignments</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/horst_rlearn.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-1-getting-started-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-1-getting-started-in-r"><a href="r-assignments/CRM495_R_Assign1_RRStudio_Plain.html">R Assignment 1: Getting Started in R</a></h3>
+<p>The purpose of this first assignment is to demonstrate that you have downloaded the “R” statistical program and the “RStudio” Integrated Development Environment (IDE).</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/horst_rmdband.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-2-introduction-to-r-markdown" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-2-introduction-to-r-markdown"><a href="r-assignments/CRM495_R_Assign2_RMarkdown.html">R Assignment 2: Introduction to R Markdown</a></h3>
+<p>The purpose of this second assignment is to introduce you to working in RMarkdown. This will be the primary file format in which you will save and present your work for this class.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/horst_ggplot2.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-3-data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-3-data-visualization"><a href="r-assignments/CRM495_R_Assign3_DataViz.html">R Assignment 3: Data Visualization</a></h3>
+<p>The purpose of this assignment is to introduce you to the powerful data visualization functionality in R and specifically the data visualization capabilities of the package “ggplot2”.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/horst_fileprob.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-4-reproducible-file-structure" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-4-reproducible-file-structure"><a href="r-assignments/CRM495_R_Assign4_FileStructure.html">R Assignment 4: Reproducible File Structure</a></h3>
+<p>Creating a reproducible file structure is important for efficiently working with and sharing your research and data. When you have a reproducible file structure, it will be easier for you to come back to a project after weeks or months of not working on it and pick up where you left off. Also, it will be easier for others to work directly with you, reproduce your work, and/or expand upon your work.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/horst_rename.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-5-downloading-describing-data" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-5-downloading-describing-data"><a href="r-assignments/CRM495_R_Assign5_Download-and-Describe.html">R Assignment 5: Downloading &amp; Describing Data</a></h3>
+<p>The purpose of this assignment is to learn how to download and provide basic descriptions of data and specific variables analyzed in a published study.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img src="images/horst_tidyfriends.jpg" class="img-fluid" alt="Illustrations from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst”"> “Illustrations from the <a href="https://www.openscapes.org/">Openscapes</a> blog <a href="https://www.openscapes.org/blog/2020/10/12/tidy-data/">Tidy Data for reproducibility, efficiency, and collaboration</a> by Julia Lowndes and Allison Horst”</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-6-data-wrangling" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-6-data-wrangling"><a href="r-assignments/CRM495_R_Assign6_Data-Wrangling.html">R Assignment 6: Data Wrangling</a></h3>
+<p>The purpose of this assignment is to learn how to wrangle data in order to reproduce results from a published study (specifically figures 2-4 in Warr, 1993).</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img src="images/gtlogo.png" class="img-fluid"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="r-assignment-7-building-publishable-tables-data" class="level3">
+<h3 class="anchored" data-anchor-id="r-assignment-7-building-publishable-tables-data"><a href="r-assignments/CRM495_R_Assign7_Publishable-Tables-Public.html">R Assignment 7: Building Publishable Tables Data</a></h3>
+<p>The main purpose of this assignment is to teach you how to create publishable-ready tables entirely within the R ecosystem.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="reproducibility-project" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-project">Reproducibility Project</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Teenagers-Survey.png" class="img-fluid figure-img"></p>
+<figcaption>A painting of teenagers taking a survey, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-1-review-nys-data-and-develop-research-topicsquestions" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-1-review-nys-data-and-develop-research-topicsquestions"><a href="rep-project/Project_Phase1_NYS-Intro_Day.html">Project Phase 1: Review NYS Data and Develop Research Topics/Questions</a></h3>
+<p>The primary purpose of this first project assignment is to familiarize yourself with the National Youth Survey (NYS) and begin to develop some ideas for research topics or questions that you will eventually examine with a replication study.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Crim-data-share.png" class="img-fluid figure-img"></p>
+<figcaption>A surrealist painting of a criminologist sharing their data, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-2-identify-published-research-on-topicquestion" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-2-identify-published-research-on-topicquestion"><a href="rep-project/Project_Phase2_Published_Research_Day.html">Project Phase 2: Identify Published Research on Topic/Question</a></h3>
+<p>The primary purpose of Phase 2 of the Replication and Reproducibility Project are to expose you to the academic literature surrounding your research topic and/or question. A secondary purpose of this assignment is for you to develop a sense of how (un)common it is to find research articles in the top journals in the field of Criminology for which the authors have openly shared their data and code for reproducibility purposes.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Crim-describe-data.png" class="img-fluid figure-img"></p>
+<figcaption>A painting of a criminologist describing their data, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-3-describe-justify-reproduction-or-conceptual-replication" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-3-describe-justify-reproduction-or-conceptual-replication"><a href="rep-project/Project_Phase3_Describe-and-Justify_Day.html">Project Phase 3: Describe &amp; Justify Reproduction or Conceptual Replication</a></h3>
+<p>Unlike your previous assignments, this assignment will not be as explicitly directed or organized as previous assignments. While I will provide you with basic guidelines and things to include, this is your chance to demonstrate your own creativity and show what you have learned by crafting your own RMD file as you see fit. The final knitted file should contain the following parts: 1) Describe Article and Specific Findigs; 2) Insert Image and Description of Key Table(s) and/or Figure(s); and 3) Write Conclusion and Submit Knitted File and File Structure.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Crim-file-structure.png" class="img-fluid figure-img"></p>
+<figcaption>A painting of a criminologist sharing their file structure, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-4-identify-describe-key-variables" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-4-identify-describe-key-variables"><a href="rep-project/Project_Phase4_Identify-and-Describe-Key-Variables_Day.html">Project Phase 4: Identify &amp; Describe Key Variables</a></h3>
+<p>For this assignment, you will begin the actual reproduction or replication by identifying and providing descriptive statistics for the key variables that will make up your analysis.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Crim-rep-study.png" class="img-fluid figure-img"></p>
+<figcaption>A painting of a criminologist replicating a study, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-5-first-draft-of-replication-reproducibility-project" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-5-first-draft-of-replication-reproducibility-project"><a href="rep-project/Project_Phase5_First-Draft-of-Project.html">Project Phase 5: First Draft of Replication &amp; Reproducibility Project</a></h3>
+<p>In this phase, you will complete a rough draft of your replication and reproducibility project.You have already drafted some of the following parts of this assignment in previous Project Assignments (e.g.&nbsp;Project Assignments #3 and #4). However, you should add and expand on those parts where appropriate (e.g., description of article, data source, and findings, and justification of replication or reproduction).</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Crim-peer-review3.png" class="img-fluid figure-img"></p>
+<figcaption>A painting of a criminologist doing peer review, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-6-peer-review" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-6-peer-review"><a href="rep-project/Project_Phase6_Peer-Review.html">Project Phase 6: Peer Review</a></h3>
+<p>Peer reviewers are responsible for providing detailed and constructive feedback (i.e., not just “good job!” – there are always ways we can improve our work) using a helpful and professional tone. In conducting your peer review, think about the steps you have taken so far and assess the things you have learned.</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DALE_Crim-rep-study2.png" class="img-fluid figure-img"></p>
+<figcaption>A painting of a criminologist replicating a study, by DALL-E</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:60%;">
+<section id="project-phase-7-final-replication-reproducibility-project" class="level3">
+<h3 class="anchored" data-anchor-id="project-phase-7-final-replication-reproducibility-project"><a href="rep-project/Project_Phase7_Final-Project.html">Project Phase 7: Final Replication &amp; Reproducibility Project</a></h3>
+<p>Based on feedback from your peer reviewer and instructor, submit a revised version of your replication and reproducibility project. This final version should be as polished as possible (e.g., free of grammatical, spelling, and coding errors). The computational goal is for your work to be completely reproducible (e.g., “one-click reproducibility”) while the substantive goal should be to write a well-organized, thorough, and thoughtful “article” or detailed “blog entry” replicating or reproducing an existing study.</p>
+</section>
+</div>
+</div>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{day_and_jon_brauer,
+  author = {Day and Jon Brauer, Jake},
+  title = {Criminology in Crisis? {Replication} \&amp; Reproducibility in
+    Criminology {(Undergraduate-level)}},
+  url = {https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-day_and_jon_brauer" class="csl-entry quarto-appendix-citeas" role="listitem">
+Day and Jon Brauer, Jake. n.d. <span>“Criminology in Crisis? Replication
+&amp; Reproducibility in Criminology (Undergraduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/">https://www.reluctantcriminologists.com/course-materials/3_ugrad_RnR/</a>.
+</div></div></section></div></main> <!-- /main -->
+<div>
+
+<hr>
+
+
+
+<p> questions? feedback? want to connect? </p>
+
+
+
+
+<table class="caption-top table" data-quarto-postprocess="true" width="100%" data-cellspacing="0" data-cellpadding="0">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table class="caption-top table" data-quarto-postprocess="true" data-cellspacing="0" data-cellpadding="0">
+<tbody>
+<tr class="odd">
+<td style="border-radius: 2px" data-bgcolor="#93c54b"><a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #000000;text-decoration: none;font-weight:bold;display: inline-block;">send us an email</a></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<hr>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="jakeday4/reluctantcrim_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://reluctantcriminologists.com/">
+      <i class="bi bi-house-fill" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com">
+      <i class="bi bi-envelope-fill" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
