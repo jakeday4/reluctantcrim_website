@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/blog-posts/[15]/build-science.html",
       "/blog-posts/[14]/assume-in-public.html",
       "/blog-posts/[13]/signals.html",
       "/blog-posts/[12]/RRR_mediation.html",
@@ -19,6 +20,7 @@
   {
     "listing": "/blog-posts.html",
     "items": [
+      "/blog-posts/[15]/build-science.html",
       "/blog-posts/[14]/assume-in-public.html",
       "/blog-posts/[13]/signals.html",
       "/blog-posts/[12]/RRR_mediation.html",
