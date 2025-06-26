@@ -9,7 +9,7 @@
 <link>https://www.reluctantcriminologists.com/blog-posts.html</link>
 <atom:link href="https://www.reluctantcriminologists.com/blog-posts.xml" rel="self" type="application/rss+xml"/>
 <description>Jon Brauer and Jake Day&#39;s blog and course materials.</description>
-<generator>quarto-1.5.57</generator>
+<generator>quarto-1.6.42</generator>
 <lastBuildDate>Sat, 14 Jun 2025 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Should More Criminologists “Build Stuff?”</title>
@@ -8035,10 +8035,10 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear regression predicting delinquency values</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -8076,10 +8076,10 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 <td class="gt_row gt_center" headers="p.value">9.07e-43</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -9166,10 +9166,10 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Poisson regression predicting delinquency event rates</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -9207,10 +9207,10 @@ font-style: inherit;">(Poisson regression, n=3k simulated observations)"</span>)
 <td class="gt_row gt_center" headers="p.value">0.963</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -10502,14 +10502,14 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 <col style="width: 20%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row header">
 <th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
 (linear)</span></th>
 <th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
 <th colspan="2" id="CMAverse<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
 (linear)</span></th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
 <th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
@@ -11428,14 +11428,14 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <col style="width: 16%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row header">
 <th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
 (linear)</span></th>
 <th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
 <th colspan="3" id="CMAverse<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
 (linear)</span></th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
 <th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
@@ -12850,7 +12850,7 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 <col style="width: 11%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row header">
 <th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
 (linear)</span></th>
 <th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
@@ -12860,7 +12860,7 @@ font-style: inherit;">"No_EMint&lt;br&gt;estimate"</span>)</span>
 <th colspan="2" id="CMAverse<br>(nonlinear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
 (nonlinear)</span></th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
 <th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
@@ -13988,7 +13988,7 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <col style="width: 10%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row header">
 <th colspan="2" id="Traditional<br>(linear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Traditional<br>
 (linear)</span></th>
 <th rowspan="2" id="   " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">   </th>
@@ -13998,7 +13998,7 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <th colspan="3" id="CMAverse<br>(nonlinear)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
 (nonlinear)</span></th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
 <th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">estimate</th>
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
@@ -15221,10 +15221,10 @@ font-style: inherit;"># Sim.2 nonlinear model (alt DV)</span></span>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Poisson regression predicting delinquency2 event rates</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -15262,10 +15262,10 @@ font-style: inherit;"># Sim.2 nonlinear model (alt DV)</span></span>
 <td class="gt_row gt_center" headers="p.value">1.81e-54</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -16141,11 +16141,11 @@ font-style: inherit;">"EMint&lt;br&gt;estimate"</span>)</span>
 <col style="width: 50%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row header">
 <th colspan="2" id="CMAverse<br>(nonlinear, alt DV)" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">CMAverse<br>
 (nonlinear, alt DV)</span></th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">effect</th>
 <th id="EMint<br>estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EMint<br>
 estimate</th>
@@ -18045,7 +18045,7 @@ font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 </details>
-<div id="tbl-anonymous-9274373" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
+<div id="tbl-anonymous-5544288" class="cell quarto-layout-panel anchored" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
@@ -18489,9 +18489,9 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=1 {#tbl-anonymous-9274373-1}</caption>
+<caption>X=1 {#tbl-anonymous-5544288-1}</caption>
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
 <th id="AmpleLight" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">AmpleLight</th>
 <th id="StubToe" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">StubToe</th>
@@ -18999,9 +18999,9 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>X=0 {#tbl-anonymous-9274373-2}</caption>
+<caption>X=0 {#tbl-anonymous-5544288-2}</caption>
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
 <th id="AmpleLight" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">AmpleLight</th>
 <th id="StubToe" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">StubToe</th>
@@ -21292,10 +21292,10 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear model, Simulation 1</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -21333,10 +21333,10 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <td class="gt_row gt_center" headers="p.value">1.30e-04</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -21797,10 +21797,10 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Nonlinear Poisson model, Simulation 1</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -21838,10 +21838,10 @@ font-style: inherit;">"Nonlinear Poisson model, Simulation 1"</span>) </span></c
 <td class="gt_row gt_center" headers="p.value">0.372</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -22994,10 +22994,10 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear model, Sim.1b</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -23035,10 +23035,10 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <td class="gt_row gt_center" headers="p.value">5.56e-07</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -23499,10 +23499,10 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Nonlinear model, Sim.1b</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -23540,10 +23540,10 @@ font-style: inherit;">"Nonlinear model, Sim.1b"</span>)  </span></code></pre></d
 <td class="gt_row gt_center" headers="p.value">0.004</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -24394,10 +24394,10 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="text-align: left;">Nonlinear model, Sim.1c</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -24896,10 +24896,10 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="text-align: left;">Nonlinear Poisson model, Simulation 1</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -24937,10 +24937,10 @@ font-style: inherit;">"Nonlinear model, Sim.1c"</span>)  </span></code></pre></d
 <td class="gt_row gt_center" style="text-align: left;" headers="p.value">0.372</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote" style="text-align: left;"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote" style="text-align: left;"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -27307,10 +27307,10 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Linear model, Sim.2</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>Beta</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -27348,10 +27348,10 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <td class="gt_row gt_center" headers="p.value">3.09e-15</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -27812,10 +27812,10 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Nonlinear model, Sim.2</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -27853,10 +27853,10 @@ font-style: inherit;">"Nonlinear model, Sim.2"</span>)</span></code></pre></div>
 <td class="gt_row gt_center" headers="p.value">0.980</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -32084,10 +32084,10 @@ font-style: inherit;">"Example 1: Poisson model 1a, General sample"</span>)</spa
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 1: Poisson model 1a, General sample</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -32610,10 +32610,10 @@ font-style: inherit;">"Example 1: Poisson model 1b, Felony sample"</span>)</span
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 1: Poisson model 1b, Felony sample</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -33933,10 +33933,10 @@ font-style: inherit;">"Example 2: Model 2a, General sample, Collider"</span>)</s
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2a, General sample, Collider</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -33974,10 +33974,10 @@ font-style: inherit;">"Example 2: Model 2a, General sample, Collider"</span>)</s
 <td class="gt_row gt_center" headers="p.value">1.02e-171</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -34559,10 +34559,10 @@ font-style: inherit;">"Example 2: Model 2b, General sample, No collider"</span>)
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2b, General sample, No collider</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -35177,10 +35177,10 @@ font-style: inherit;">"Example 2: Model 2c, Felony sample, with Collider"</span>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2c, Felony sample, with Collider</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -35218,10 +35218,10 @@ font-style: inherit;">"Example 2: Model 2c, Felony sample, with Collider"</span>
 <td class="gt_row gt_center" headers="p.value">4.42e-37</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -35773,10 +35773,10 @@ font-style: inherit;">"Example 2: Model 2d, Felony sample, no Collider"</span>)<
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2d, Felony sample, no Collider</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -36496,10 +36496,10 @@ font-style: inherit;">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2e, General sample, Adj.Set #25</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
@@ -36551,10 +36551,10 @@ font-style: inherit;">"Example 2: Model 2e, General sample, Adj.Set #25"</span>)
 <td class="gt_row gt_center" headers="p.value">1.04e-95</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
-<tr class="even">
+<tr class="odd">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> IRR = Incidence Rate Ratio, SE = Standard Error, CI = Confidence Interval</td>
 </tr>
 </tfoot>
@@ -37029,10 +37029,10 @@ font-style: inherit;">"Example 2: Model 2f, General sample, Adj.Set #26"</span>)
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Example 2: Model 2f, General sample, Adj.Set #26</th>
 </tr>
-<tr class="odd gt_col_headings">
+<tr class="gt_col_headings even">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="<strong>log(IRR)</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1,2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>log(IRR)</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1,2</sup></span></th>
 <th id="<strong>SE</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>SE</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>

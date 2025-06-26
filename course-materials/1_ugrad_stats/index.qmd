@@ -165,7 +165,7 @@ BPW's chapter 6 provided an introduction to probability, including foundational 
 
 ::: {.column width="60%"}
 ### [Assignment 7: Sampling Variability & Confidence Intervals](ugrad-stats_Rassign/Assignment_7_JRB.html)
-In this assignment, we dig deeper into the process of making statistical inferences about population parameters from sample statistics. For instance, you will learn to think about sample descriptive statistics (e.g., a sample mean or correlation coefficient) as point estimates of population parameters. Relatedly, following BPW's chapter 7, you will learn how to calculate confidence intervals around a point estimate in R and to interpret them appropriately. Additionally, you will learn how to simulate data from a probability distribution, which should help you better understand sampling variability and the need for interval estimates.
+In this assignment, we dig deeper into the process of making statistical inferences about population parameters from sample statistics. For instance, you will learn to think about sample descriptive statistics (e.g., a sample mean or correlation coefficient) as point estimates of population parameters. Relatedly, following BPW's chapter 7, you will learn how to calculate confidence intervals around a point estimate in R and to interpret them appropriately. Additionally, you will learn how to simulate data from a probability distribution, which should help you better understand sampling variability and the need for interval estimates. 
 :::
 ::::
 
