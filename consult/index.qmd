@@ -1,0 +1,12 @@
+---
+title: "Consulting materials"
+---
+
+We offer consultation and/or collaboration services to help with various stages of the research process, from consulting on design and implementation decisions in survey data collection projects to analyzing and visualizing data in R. 
+
+You can find an example of our consulting work below (posted here with the P.I.'s permission, of course). 
+
+## KC Community Survey
+
+### [Final Report](KCCS_consult/_book/index.html)
+

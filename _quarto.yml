@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - "consult/KCCS_consult/_book/**" 
 
 website:
   title: "reluctant criminologists"
@@ -17,6 +19,8 @@ website:
         href: course-materials.qmd
       - text: "supplementary"
         href: supp/index.qmd
+      - text: "consulting"
+        href: consult/index.qmd
       - text: "links"
         href: blog-posts/[2]/favorite_links.qmd
     right:
