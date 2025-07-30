@@ -1,0 +1,18 @@
+---
+title: "Supplementary materials for Brauer & Day (Forth.)"
+draft: false
+---
+
+## Online Supplements 
+
+### [Main online supplement with R code & results](os/BD-ordinal-R-supplement.html)
+
+### [Appendix A. R Tutorial for Ordinal Modeling](os/Appendix-A-Tutorial.html)
+
+
+## Manuscript & OSF page 
+
+### [OSF project page](https://osf.io/n52kc/)
+
+### [Preprint (AOM)](https://osf.io/fet4d_v3)
+

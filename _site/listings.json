@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog-posts.html",
     "items": [
       "/blog-posts/[15]/build-science.html",
       "/blog-posts/[14]/assume-in-public.html",
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "listing": "/blog-posts.html",
+    "listing": "/index.html",
     "items": [
       "/blog-posts/[15]/build-science.html",
       "/blog-posts/[14]/assume-in-public.html",

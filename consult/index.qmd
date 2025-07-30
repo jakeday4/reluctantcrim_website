@@ -1,8 +1,11 @@
 ---
 title: "Consulting materials"
+description: "Need help with your research? We offer consultation and/or collaboration services to help with various stages of the research process, from consulting on design and implementation decisions in survey data collection projects to analyzing and visualizing data in R."
+image: hill-horst-steps.png
+image-alt: Illustration by Alison Hill and Allison Horst, for RStudio
 ---
 
-We offer consultation and/or collaboration services to help with various stages of the research process, from consulting on design and implementation decisions in survey data collection projects to analyzing and visualizing data in R. 
+![Are you getting the most from your data? [Artwork by Allison Horst](https://allisonhorst.com/allison-horst)](horst-summary-stats.png)
 
 You can find an example of our consulting work below (posted here with the P.I.'s permission, of course). 
 

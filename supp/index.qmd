@@ -1,15 +1,25 @@
 ---
 title: "Supplementary materials"
+description: "Repository of supplementary materials for manuscripts and blog posts."
+image: hill-horst-steps.png
+image-alt: Illustration by Alison Hill and Allison Horst, for RStudio
 ---
 
-## Blog 
+![Sure, they're messy, but you can't beat the price. [Illustration by Alison Hill and Allison Horst, for RStudio](https://allisonhorst.com/allison-horst)](hill-horst-steps.png)
 
-### [Duplicates series](dup-supp/index.html)
 
 ## Papers
+
+### [Brauer & Day (Forth.) - Ordinal modeling](BD-supp/index.html)
+
+### [Cooper, Hans, & Brauer (Forth.) - Experiential learning in forensics](CHB-supp/index.html)
 
 ### [Anonymous (Forth.)](LB-JRB-supp/index.html)
 
 ### [Brauer, Day, & Kotlaja (coming soon)]()
 
-### [Cooper, Hans, & Brauer (Forth.)](CHB-supp/index.html)
+
+
+## Blog 
+
+### [Duplicates series](dup-supp/index.html)
