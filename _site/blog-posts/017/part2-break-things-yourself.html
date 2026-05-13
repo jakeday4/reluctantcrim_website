@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jon Brauer">
+<meta name="author" content="Jake Day">
+<meta name="dcterms.date" content="2026-05-13">
+<meta name="description" content="An interactive tool for generating your own ordinal two-condition comparison and watching the linear and cumulative probit models duel.">
+
+<title>Ordinal Outcomes, Part 2: Break Things Yourself – reluctant criminologists</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7adefbea5effa697fc47a87f5c4ac001.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F0XQR72SS3"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo light-content">
+    <img src="../../images/RC_banner.jpg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">reluctant criminologists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-posts.html"> 
+<span class="menu-text">blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../course-materials.html"> 
+<span class="menu-text">courses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../supp/index.html"> 
+<span class="menu-text">supplementary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../consult/index.html"> 
+<span class="menu-text">consulting</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-posts/[2]/favorite_links.html"> 
+<span class="menu-text">links</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com"> <i class="bi bi-envelope-fill" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preamble" id="toc-preamble" class="nav-link active" data-scroll-target="#preamble">Preamble</a></li>
+  <li><a href="#sec-app" id="toc-sec-app" class="nav-link" data-scroll-target="#sec-app">The app</a></li>
+  <li><a href="#sec-tours" id="toc-sec-tours" class="nav-link" data-scroll-target="#sec-tours">Five guided tours</a>
+  <ul class="collapse">
+  <li><a href="#sec-tour1" id="toc-sec-tour1" class="nav-link" data-scroll-target="#sec-tour1">Tour 1: When linear is roughly fine</a></li>
+  <li><a href="#sec-tour2" id="toc-sec-tour2" class="nav-link" data-scroll-target="#sec-tour2">Tour 2: Subgroup polarization (the Part 1 analog)</a></li>
+  <li><a href="#sec-tour3" id="toc-sec-tour3" class="nav-link" data-scroll-target="#sec-tour3">Tour 3: Skewed-tail compression</a></li>
+  <li><a href="#sec-tour4" id="toc-sec-tour4" class="nav-link" data-scroll-target="#sec-tour4">Tour 4: Variance-only shift</a></li>
+  <li><a href="#sec-tour5" id="toc-sec-tour5" class="nav-link" data-scroll-target="#sec-tour5">Tour 5: Counterfactual extrapolation under a bimodal baseline</a></li>
+  <li><a href="#bonus-break-things-further" id="toc-bonus-break-things-further" class="nav-link" data-scroll-target="#bonus-break-things-further">Bonus: break things further</a></li>
+  </ul></li>
+  <li><a href="#sec-byod" id="toc-sec-byod" class="nav-link" data-scroll-target="#sec-byod">Bring your own data</a></li>
+  <li><a href="#sec-wrap" id="toc-sec-wrap" class="nav-link" data-scroll-target="#sec-wrap">Series wrap-up</a>
+  <ul class="collapse">
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ordinal Outcomes, Part 2: Break Things Yourself</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">general</div>
+    <div class="quarto-category">rstats</div>
+    <div class="quarto-category">ordinal</div>
+    <div class="quarto-category">shiny</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    An interactive tool for generating your own ordinal two-condition comparison and watching the linear and cumulative probit models duel.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jon Brauer </p>
+             <p>Jake Day </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 13, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="toggle-sm.jpg" class="img-fluid figure-img"></p>
+<figcaption>A scientist watching her linear model fail on ordinal data (with help from Gemini)</figcaption>
+</figure>
+</div>
+<section id="preamble" class="level2">
+<h2 class="anchored" data-anchor-id="preamble">Preamble</h2>
+<p>In <a href="https://reluctantcriminologists.com/blog-posts/016/part1-mean-meaningless">Part 1</a>, we argued that running linear regression on an ordinal outcome quietly commits you to an estimand — the conditional mean — that often fails to summarize what you actually care about. We walked through a pre–post comparison of two AI coding assistants (Model A and Model B), where Model B polarized users in opposite directions along an observable prompt-length covariate. Ignoring prompt length, Model A and Model B had identical average satisfaction. Conditioning on prompt length, three models produced different stories about the direction and magnitude of the change: OLS compressed the decision-relevant distributional shifts by roughly half and even got the <em>sign</em> wrong in the off-diagonal cells; the proportional-odds cumulative probit (PO probit or PO CP) recovered the distributional shape better but still came in 8 to 10 percentage points shy at the tails; the category-specific cumulative probit (CS probit or CS CP) matched the observed cell distributions exactly, producing accurate probability contrasts with uncertainty-communicating 95% CIs, <em>p</em>-values, and plots ready to hand to a non-technical collaborator. Part 1 also added formal model-fit comparisons that ranked the three models in the same order as the contrast table (OLS &lt; PO probit &lt; CS probit).</p>
+<p>In this post, we give you control of the data and modeling features. Below is an interactive tool<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for generating your own ordinal two-condition (aka two treatment arms) comparisons. You can dial the sample size, pick a shape for the baseline response distribution, set the effect size, turn a proportional-odds violation on and off, and optionally fit a category-specific cumulative probit alongside OLS and the PO probit. The app simulates the data, fits the models, and overlays their predicted category probabilities on the observed distribution, with 95% CIs on the per-category contrasts and AIC / BIC on a common categorical scale.</p>
+<p>Our goal is not to walk you through the math again — Part 1 did that. Rather, it is to let you develop a feel for how the choice of model matters under various conditions. The five guided tours below point to canned settings that illustrate various failure modes mentioned in Part 1, plus a bimodal-baseline counterfactual tour that goes beyond Part 1 by showing how OLS in-sample failures are exacerbated when predicting out-of-sample (here, under counterfactual extrapolation). We render each tour’s expected output as a static figure so you can read the post end-to-end without waiting on the live app to load. But you are not limited to the canned settings; the dashboard lets you take control and examine your own modeling choices and distributional assumptions.</p>
+<p>The app’s covariate support is limited to a single binary subgroup toggle (the <em>Include subgroup covariate</em> checkbox, used in <a href="#sec-tour2">Tour 2</a> below to recreate Part 1’s polarization-by-prompt-length pattern in microcosm). It does not let you simulate continuous, multiple, or differently-named covariates of your own design — adding those dimensions would explode the UI surface, and for those cases the code patterns in the <a href="#sec-byod">Bring your own data</a> section below should help you translate directly to your own data frame.</p>
+<p>A brief methodological note before we start. The app uses frequentist models (<code>lm</code> for linear, <code>MASS::polr</code> for the PO probit, <code>ordinal::clm</code> for the category-specific probit, and <code>ordinal::clm</code> with a <code>scale = ~ treatment</code> term for the heteroscedastic PO probit) rather than Bayesian ones, and pulls 95% CIs for the category-level contrasts from <a href="https://marginaleffects.com"><code>marginaleffects</code></a>. I (Jon) wanted the app to be fast and to use a minimal set of R packages so it could be hosted on a free public-Shiny tier. For production applied work, we would still reach for a Bayesian multilevel cumulative probit (see our <a href="https://doi.org/10.1007/s10940-025-09627-5">JQC paper</a> and <a href="https://reluctantcriminologists.com/supp/bd-supp/">online supplement</a>), but for building intuition <code>polr</code>, <code>clm</code>, and <code>marginaleffects</code> are plenty.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="sec-app" class="level2">
+<h2 class="anchored" data-anchor-id="sec-app">The app</h2>
+<iframe src="https://YOUR-USERNAME.connect.posit.cloud/content/REPLACE-ME/" width="100%" height="960" style="border: 1px solid #ddd; border-radius: 4px;" loading="lazy">
+</iframe>
+<p>If the embed above is slow to wake up, <a href="https://YOUR-USERNAME.connect.posit.cloud/content/REPLACE-ME/">open the app in its own tab</a> instead.</p>
+</section>
+<section id="sec-tours" class="level2">
+<h2 class="anchored" data-anchor-id="sec-tours">Five guided tours</h2>
+<p>The app gives you six baseline shapes, a treatment-effect slider, a three-way effect-type selector (constant shift, asymmetric PO violation, mean-preserving polarization), a latent-SD-ratio slider for variance shifts, an optional subgroup covariate for heterogeneous treatments, a category-specific-probit toggle, a heteroscedastic-PO-probit toggle (visible only when neither the covariate nor the CS toggle is on), a counterfactual-multiplier slider for out-of-sample extrapolation, and two sample-size / category dials. Briefly:</p>
+<ul>
+<li><strong>Baseline shape</strong> sets the response distribution in the control condition (<em>Model A</em>). Pick <em>Symmetric / Normal-like</em> for the easy case, <em>Bimodal (polarized)</em> for the Yoda-satisfaction case from Part 1, <em>Skewed toward Satisfied / Dissatisfied</em> for one-sided distributions, <em>Uniform</em> for a flat reference, or <em>Zero-inflated / J-shape</em> for rare-event ordinal outcomes.</li>
+<li><strong>Effect type + β (latent-SD shift)</strong> specify how <em>Model B</em> differs from <em>Model A</em>. Constant shift is the standard PO setup; asymmetric is a PO violation concentrated at one end of the scale; polarization preserves the mean while widening both tails.</li>
+<li><strong>Latent SD ratio</strong> controls heteroscedasticity — set above 1 to make the treated condition’s latent distribution wider than the control’s; this drives the Tour 4 failure mode that neither OLS nor the standard PO probit can recover.</li>
+<li><strong>Subgroup covariate + interaction magnitude</strong> turn on a binary subgroup (think <em>prompt length</em> in Part 1) whose treatment effect differs between levels; with β = 0 and a positive interaction magnitude, the marginal effect is null while the subgroup effects are large and opposing.</li>
+<li><strong>Category-specific probit toggle</strong> adds the saturated <code>clm(..., nominal = ~ treatment)</code> fit alongside OLS and the PO probit.</li>
+<li><strong>Heteroscedastic PO probit toggle</strong> adds the <code>clm(..., scale = ~ treatment)</code> fit, which fits a per-condition latent variance — the right tool when the treated condition is more (or less) dispersed than the control condition. Available only when the subgroup covariate is off and the CS-probit toggle is off (its UI checkbox hides otherwise). Demonstrated in <a href="#sec-tour4">Tour 4</a>.</li>
+<li><strong>Counterfactual multiplier</strong> scales the fitted treatment effect for out-of-sample prediction in the <em>Counterfactual</em> tab.</li>
+</ul>
+<p>That is a lot of combinations. Some of them are uninteresting. A few represent the whole point of this series. Below are five canned settings — one that demonstrates where OLS will generally “work” and four that demonstrate distinct modes by which OLS goes wrong (and how cumulative probit, with its category-specific extension, does or does not fix it). The presets in the app’s sidebar load these scenarios in one click.</p>
+<section id="sec-tour1" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tour1">Tour 1: When linear is roughly fine</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>The easy case.</strong> Under Tour 1’s settings, OLS and the PO probit produce nearly identical contrasts and AIC values within a few points of each other on the <em>Coefficients &amp; Fit</em> tab. This is what “OLS basically works” looks like — and worth keeping in mind as a reference point for the four tours that follow.</p>
+</div>
+</div>
+<p><strong>Settings.</strong> Symmetric / Normal-like baseline. β = 0.4. Effect type = constant. SD ratio = 1.0. No covariate. CS probit off. N = 500. Seed = 1138.</p>
+<p>This is about as close as you get to a scenario where a linear model is roughly defensible on ordinal data. The baseline distribution is tent-shaped, the latent shift is uniform across thresholds (proportional odds holds), the variance is the same in both conditions, and there is no unobserved heterogeneity. Nothing about the data-generating process badly violates OLS’s assumptions. (Caveat: Remember that we have to “hack” the OLS model to generate predicted category probabilities because it is designed to model the conditional mean; the PO probit model generates them naturally.)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tour1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tour1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="part2-break-things-yourself_files/figure-html/fig-tour1-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tour1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Tour 1 — Symmetric baseline, moderate constant shift. OLS-implied triangles and PO-probit dots both track the observed bars.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What to notice.</strong> Red OLS-implied triangles and purple PO-probit dots both sit close to the observed bars. In the app’s <em>Coefficients &amp; CIs</em> tab, the OLS and probit coefficients agree directionally; they disagree on magnitude only because they are on different units (OLS in scale points, probit in latent SDs, related by roughly the response-scale standard deviation). The per-category contrasts from the two models are similar. If all your real ordinal data looked like this, you could plausibly get away with OLS for most decisions. The remaining tours show what “plausibly” is doing in that sentence.</p>
+</section>
+<section id="sec-tour2" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tour2">Tour 2: Subgroup polarization (the Part 1 analog)</h3>
+<p><strong>Settings.</strong> Symmetric / Normal-like baseline. β = 0. Effect type = constant shift. Latent SD ratio = <strong>1.6</strong>. Subgroup covariate <strong>on</strong>, interaction magnitude = <strong>1.6</strong>. CS probit on. N = 1000. Seed = 1138.</p>
+<p>This is the two-condition, two-subgroup analog of Part 1’s worked example, dialed up for visual punch. Both subgroups start with the same symmetric baseline distribution. The treatment shifts the <em>low</em> subgroup’s latent distribution upward by +0.8 SDs and the <em>high</em> subgroup’s downward by −0.8 SDs, and on top of that the treated condition has 1.6x the latent variance of the control condition — a real-applied-data combination where one observable factor (think prompt length, ideology, baseline severity) drives opposing treatment effects across subgroups <em>and</em> the treatment increases overall variability. Marginalized over subgroups, the average treatment effect is approximately zero. Conditional on subgroup, the treatment’s effects are large, opposing, and would be obvious to any analyst who bothered to look within subgroup.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tour2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tour2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="part2-break-things-yourself_files/figure-html/fig-tour2-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tour2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Tour 2 — Symmetric baseline, opposing latent treatment effects across subgroups, plus a treated-condition variance shift. Within each subgroup the treatment moves the distribution dramatically toward one tail; marginalized across subgroups, the mean is preserved while the distribution becomes broader and more polarized.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-tour2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tour2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Tour 2 — Subgroup-conditional per-category treatment contrasts. The treatment moves the low subgroup up and the high subgroup down; the marginal mean reported by OLS without an interaction term is essentially zero. ⚠ flags categories where OLS-implied Δ has the opposite sign from the probit point estimate.
+</figcaption>
+<div aria-describedby="tbl-tour2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Subgroup</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Observed Δ</th>
+<th style="text-align: left;">OLS-implied Δ</th>
+<th style="text-align: left;">Probit Δ [95% CI]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">high</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">31%</td>
+<td style="text-align: left;">16%</td>
+<td style="text-align: left;">31% [26%, 36%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">high</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">-1%</td>
+<td style="text-align: left;">8% ⚠</td>
+<td style="text-align: left;">-1% [-6%, 4%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">high</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">-17%</td>
+<td style="text-align: left;">-5%</td>
+<td style="text-align: left;">-17% [-22%, -12%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">high</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">-15%</td>
+<td style="text-align: left;">-11%</td>
+<td style="text-align: left;">-15% [-20%, -10%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">high</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1%</td>
+<td style="text-align: left;">-8% ⚠</td>
+<td style="text-align: left;">1% [-2%, 5%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">low</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">-1%</td>
+<td style="text-align: left;">-9%</td>
+<td style="text-align: left;">-1% [-5%, 3%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">low</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">-16%</td>
+<td style="text-align: left;">-12%</td>
+<td style="text-align: left;">-16% [-21%, -11%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">low</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">-13%</td>
+<td style="text-align: left;">-4%</td>
+<td style="text-align: left;">-13% [-19%, -8%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">low</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">-3%</td>
+<td style="text-align: left;">9% ⚠</td>
+<td style="text-align: left;">-3% [-8%, 2%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">low</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">33%</td>
+<td style="text-align: left;">17%</td>
+<td style="text-align: left;">33% [28%, 38%]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><strong>What to notice.</strong> The four panels show that the treatment has a real, meaningful, and <em>opposing</em> effect in each subgroup: the low subgroup is pushed strongly toward <em>Very Satisfied</em>, the high subgroup strongly toward <em>Very Dissatisfied</em>. An analyst who fits <code>lm(Y ~ treatment)</code> and reads the marginal coefficient will conclude the treatment does nothing, because the subgroups cancel out on the response-scale mean. An analyst who fits <code>lm(Y ~ treatment * subgroup)</code> and reads the <em>Interaction tests</em> box in the app’s <em>Coefficients &amp; CIs</em> tab will see both OLS and probit reporting a meaningful interaction — directionally agreeing, but on different scales. Either way, the per-subgroup, per-category contrasts (visible in the contrast table) tell the most actionable story: who is helped, who is hurt, and by how much in each cell of the response.</p>
+<p>This is the failure mode that motivates Part 1’s prompt-length covariate, and it generalizes to most applied settings where heterogeneous treatment effects are real (e.g., fear of crime by political ideology, satisfaction by baseline severity, intervention response by demographic). Whenever an unmodeled covariate drives heterogeneity in opposite directions across subpopulations, the marginal mean misleads. The cumulative-probit framework does not save you from this if you do not model the interaction — but it gives you, via per-cell category contrasts with CIs, a much more direct way to communicate the heterogeneity to a non-technical audience than a scale-point interaction coefficient does. The <em>Coefficients &amp; Fit</em> tab’s AIC numbers reinforce the story: with the interaction in the model, the PO probit and CS probit beat OLS substantially on within-sample fit.</p>
+<p><strong>Note:</strong> The <em>Counterfactual</em> tab also activates a little differently in this mode than others. With a covariate in the model, it renders a 2×2 bar grid (one row per subgroup, one column per model), with the counterfactual multiplier scaling each subgroup’s treatment effect separately. Sliding the multiplier above 1× shows how the heterogeneous treatment effect would extrapolate if amplified — typically toward saturated category masses under PO probit and toward impossible out-of-bounds predicted mass under OLS, with the sign flip from the off-diagonal cells preserved and amplified.</p>
+</section>
+<section id="sec-tour3" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tour3">Tour 3: Skewed-tail compression</h3>
+<p><strong>Settings.</strong> Skewed-toward-Satisfied baseline. β = 0.6. Effect type = constant. CS probit off. N = 1000. Seed = 1138.</p>
+<p>A fairly realistic satisfaction-survey shape: most users already like the product, a long tail does not. The treatment is genuinely effective and uniform on the latent scale, and because the baseline is skewed, most of the action happens at the <em>Very Satisfied</em> end.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tour3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tour3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="part2-break-things-yourself_files/figure-html/fig-tour3-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tour3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Tour 3 — Skewed-toward-Satisfied baseline, constant latent shift. The OLS triangle at category 5 (<em>Very Satisfied</em>) sits noticeably below the bar; the probit dot tracks it.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What to notice.</strong> The OLS coefficient will tell you the mean rises by something like 0.3 to 0.4 scale points; the probit coefficient will say the latent distribution shifts by about 0.6 SDs. Both models agree the treatment works. Yet look at the <em>Very Satisfied</em> column: the observed jump is on the order of 20 percentage points, the probit-predicted jump tracks it closely, and the OLS-implied jump is noticeably smaller. OLS is forced to spread its predicted mass symmetrically around the predicted mean, but the actual distribution piles up against the ceiling at category 5. If you care about the <em>Very Satisfied</em> category specifically — perhaps because those users are the most likely to recommend the product — the linear model is understating the size of the effect by a meaningful fraction. The probit model is not. The <em>Coefficients &amp; Fit</em> tab’s AIC reflects this directly: the PO probit comes in well below OLS on a common categorical scale, which is the within-sample analog of the visual tail-compression failure (aka, ceiling effects).</p>
+</section>
+<section id="sec-tour4" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tour4">Tour 4: Variance-only shift</h3>
+<p><strong>Settings.</strong> Symmetric / Normal-like baseline. β = 0.0. Effect type = constant. Latent SD ratio = <strong>1.6</strong>. No covariate. Heteroscedastic PO probit on (CS probit off). N = 1000. Seed = 1138.</p>
+<p>This is the failure mode that few people discuss. The treatment does not shift the latent mean — it shifts the latent <em>variance</em>. The treated condition has a wider latent distribution than the control condition: the same average opinion, but more variability around it. This produces more mass at categories 1 and 5, less in the middle. It is a real and perhaps even common pattern (treatments that increase polarization, surveys with novel items that produce wider response distributions, interventions with heterogeneous effects of unknown source) and neither OLS nor the standard PO probit will recover it.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tour4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tour4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="part2-break-things-yourself_files/figure-html/fig-tour4-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tour4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Tour 4 — Symmetric baseline, latent SD ratio of 1.6. Treated condition is more spread out; mean is unchanged. OLS and PO probit miss it. The heteroscedastic PO probit (orange squares; <code>clm(... scale = ~ treatment)</code>) recovers the marginal shape correctly by explicitly fitting a per-condition latent variance.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What to notice.</strong> OLS pools the residual SD across conditions and so its bin probabilities for both conditions use the same predictive width, which understates the treated condition’s spread and overstates the control condition’s. The standard PO probit does not have a scale parameter at all (its assumption is that the latent SD is the same in both groups), so its predicted probabilities are also wrong on both conditions. The <em>correct</em> model here is the <strong>heteroscedastic PO probit</strong> — <code>clm(... scale = ~ treatment)</code>, available via the <em>Also fit heteroscedastic PO probit</em> toggle in the app sidebar — which explicitly fits a per-condition latent variance and recovers the observed proportions correctly. The category-specific probit (toggled off here, but available as an alternative) also recovers the marginal cell probabilities exactly, but by spending parameters on the per-threshold differences rather than by recognizing this as a scale shift; in the app’s <em>Coefficients &amp; Fit</em> tab the heteroscedastic probit’s AIC sits well below the PO probit’s (and slightly lower BIC than CS probit), reflecting that the variance-shift specification is the right structural choice when this pattern is what you suspect.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+<section id="sec-tour5" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tour5">Tour 5: Counterfactual extrapolation under a bimodal baseline</h3>
+<p><strong>Settings.</strong> Bimodal (polarized) baseline. β = <strong>0.5</strong>. Effect type = constant. Latent SD ratio = 1. No covariate. CS probit off. N = 1000. Seed = 1138. Counterfactual multiplier = <strong>3×</strong>.</p>
+<p>This is the bimodal <a href="https://reluctantcriminologists.com/blog-posts/016/part1-mean-meaningless#sec-twocondition">“Yoda-satisfaction” pattern</a> from Part 1’s <a href="https://reluctantcriminologists.com/blog-posts/016/part1-mean-meaningless#sec-five">panel C</a>, fit with a moderate latent shift. The data-generating mechanism is otherwise innocent: proportional odds holds, no variance shift, no covariate, no hidden tricks. The challenge is purely that the observed response distribution piles up at the two ends of the scale, with very little mass in the middle, and OLS’s normal assumption cannot accommodate that shape.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tour5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tour5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="part2-break-things-yourself_files/figure-html/fig-tour5-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tour5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Tour 5 — Counterfactual extrapolation under a bimodal baseline. Top-left: OLS-implied predictive PDF at 3× the observed treatment effect; the orange-filled bell curve is shifted to its predicted-mean location (vertical purple line) and the grey wings on either side are OLS’s predicted mass past the response-scale boundaries at 0.5 and K+0.5. Top-right: predicted cumulative distributions at 3× on the response scale — OLS’s continuous CDF (red) drifts past the upper boundary into impossible response values; PO probit’s step CDF (purple) reaches 1 exactly at the top category. Bottom-left and bottom-right: per-category predicted proportions for OLS and PO CP at 1× (faint), at 3× (bold), and observed at 1× (orange) for reference; out-of-bounds ‘&lt;1’ and ‘&gt;5’ columns are flagged with grey backgrounds and bolded axis labels.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What to notice at the observed effect (1×).</strong> Before any counterfactual extrapolation, OLS is already in trouble. Because the observed distribution is bimodal — heavy mass at <em>Very Dissatisfied</em> and <em>Very Satisfied</em>, very little in the middle — the pooled OLS residual SD comes in around <strong>1.8</strong>, large enough that the fitted normal leaks mass off both ends of the scale. At the <em>Model A</em> baseline (Model B’s pre-treatment counterpart), OLS predicts roughly <strong>8%</strong> of responses below 1 and <strong>8.5%</strong> above 5: about one-sixth of its predicted mass sits on response values the scale cannot produce, with the treatment off and the multiplier at 1.</p>
+<p>The treated cell (<em>Model B</em> at 1×) sharpens the picture at the top of the scale. The observed share of users in the <em>Very Satisfied</em> category is <strong>66%</strong>, and PO probit recovers this essentially exactly. OLS, by contrast, predicts only <strong>18%</strong> strictly inside the <em>Very Satisfied</em> bin, plus another <strong>18%</strong> leaking past the scale ceiling. Even when an analyst applies the natural workaround — collapse the impossible-value mass back into the top category, on the reasoning that “the model meant to predict more <em>Very Satisfied</em> users” — the collapsed estimate is <strong>36%</strong>, still <strong>30 percentage points below truth</strong>. The workaround does not save OLS on the data the analyst actually has.</p>
+<p><strong>What to notice at the counterfactual (3×).</strong> Crank the multiplier and the visual failure becomes vivid. OLS’s predicted mean for the treated cell at 3× is <strong>5.54</strong> — past the upper boundary of the response scale itself. Half of OLS’s predicted mass (about <strong>51%</strong>) now sits in the “above 5” out-of-bounds column. The model is, in its own self-report, predicting that the average user response will be above the highest available category. PO probit cannot do this; its predictions live in the latent space and project back through the fitted thresholds into a distribution over the K valid response categories at every multiplier. At 3×, it predicts P(<em>Very Satisfied</em>) ≈ <strong>94%</strong> — a saturated, in-scale extrapolation. The CDF (cumulative distribution function) panel in the top-right makes this contrast directly visible: PO probit’s step CDF reaches 1 exactly at category K, while OLS’s continuous CDF is still climbing well past the response-scale ceiling.</p>
+<p><strong>A counterintuitive but important wrinkle.</strong> Compare the OLS-versus-PO-probit gap at 1× and at 3×. At 1×, collapsed-OLS (i.e., capping implied probabilities &gt;5 at =5) predicts 36% <em>Very Satisfied</em> against PO probit’s 66% — a <strong>30-point gap</strong>. At 3×, collapsed-OLS predicts 72% against PO probit’s 94% — only a <strong>22-point gap</strong>. The gap is <em>smaller</em> at 3× than at 1×. The mechanism is reversal-by-pile-up: as the multiplier grows, OLS leaks more mass past the ceiling, and the collapse-to-top-category workaround scoops that impossible mass back into the visible scale, partially absorbing the failure. Extrapolation does not make the analyst’s <em>interpretation</em> uniformly worse — it makes the failure mode more visible (the predicted mean past the scale ceiling is hard to miss) while, in this case, the substantive interpretive error is actually largest on the data the analyst actually has.</p>
+<p>This is the same lesson Part 1’s <a href="https://reluctantcriminologists.com/blog-posts/016/part1-mean-meaningless#sec-fit">fit-and-out-of-sample section</a> makes in the bias-variance / measurement-theory framing. Predictive adequacy at one layer of the model does not protect against interpretive failure at another. OLS can predict the categorical distribution adequately in some scenarios (Tour 1) and badly in others (this tour), but the conditional-mean estimand OLS natively reports remains a number without a defensible referent for ordinal outcomes regardless of how the predictive distribution looks. Tour 5 is the version of that argument you can hold in your hand — and, if you have an applied audience, the version they will remember.</p>
+</section>
+<section id="bonus-break-things-further" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-break-things-further">Bonus: break things further</h3>
+<p>Once you have run the five tours, try these:</p>
+<ul>
+<li><strong>Unobservable mixture polarization.</strong> Load Tour 1 preset, then set effect type to <em>Mean-preserving polarization</em> with no covariate, β around 1.0–1.5, on a symmetric baseline. The marginal post-treatment distribution becomes broader and bimodal-shaped, exactly the way a Tour 2 marginal would look if you collapsed it over the (unobserved) subgroup. This is the harder case for an applied analyst; heterogeneity exists, no covariate is available to break it apart, and the mixture mode lets you simulate “what your data would look like if there were a hidden subgroup driving opposite effects you cannot measure.” OLS and PO probit both report null effect; the CS probit recovers the marginal shape but cannot tell you <em>why</em> it is bimodal.</li>
+<li><strong>Asymmetric (PO violation) mode.</strong> Set effect type to <em>Asymmetric (PO violation)</em> with a non-zero β. The latent shift is concentrated at the bottom of the scale and fades out at the top — users get pushed up out of the dissatisfied range but barely move toward <em>Very Satisfied</em>. The PO probit’s single treatment coefficient cannot summarize this; the CS probit’s per-threshold shifts can. This is the <em>floor-effect</em> variant of a PO violation, and the same pattern with reverse-orientation thresholds produces the <em>ceiling-effect</em> variant; both are pervasive in applied work (interventions with diminishing returns, fear measures with most respondents already near the floor, satisfaction measures with most respondents already near the ceiling). A reviewer of <a href="https://doi.org/10.1007/s10940-025-09627-5">our JQC paper</a> requested that we be more explicit about these patterns, and this tour is the version of the demonstration we wish we had been able to point them at.</li>
+<li><strong>Zero-inflated baseline with a small β.</strong> Rare-event ordinal outcomes (self-reported serious crime, high-severity service complaints) follow this shape. OLS is almost always misleading here because most observations sit at category 1 and the residual SD is nearly meaningless. This scenario is closely related to Supplementary Simulation 1b from our <a href="https://reluctantcriminologists.com/supp/bd-supp/">JQC supplement</a>.</li>
+<li><strong>Very small sample sizes</strong> (N = 100 per condition) with any shape. Probit coefficients get noisy quickly in small samples, where OLS is somewhat more robust. This is one of the few practical advantages of OLS on ordinal outcomes, and it tends to disappear at moderate N.</li>
+<li><strong>Compound failures.</strong> Stack modes — for example, an asymmetric PO violation on a skewed baseline, or a subgroup interaction at small N. The app does not stop you, and the patterns you see can be quite striking. Real applied data routinely has more than one of these going on at once.</li>
+</ul>
+</section>
+</section>
+<section id="sec-byod" class="level2">
+<h2 class="anchored" data-anchor-id="sec-byod">Bring your own data</h2>
+<p>If you have an ordinal outcome and a treatment indicator in a data frame called <code>dat</code>, the minimum-viable version of what the app is doing — extended to include the category-specific probit and cell-level contrasts with CIs, as in Part 1’s worked example — is:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ordinal)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(marginaleffects)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>y_ord <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>y, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># OLS — the default workflow</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>m_ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> treatment, <span class="at">data =</span> dat)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_ols)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Proportional-odds cumulative probit</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>m_ord <span class="ot">&lt;-</span> <span class="fu">polr</span>(y_ord <span class="sc">~</span> treatment, <span class="at">data =</span> dat, <span class="at">method =</span> <span class="st">"probit"</span>, <span class="at">Hess =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_ord)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Category-specific cumulative probit (drops PO)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>m_ord_cs <span class="ot">&lt;-</span> <span class="fu">clm</span>(y_ord <span class="sc">~</span> <span class="dv">1</span>, <span class="at">nominal =</span> <span class="sc">~</span> treatment, <span class="at">data =</span> dat, <span class="at">link =</span> <span class="st">"probit"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m_ord_cs)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted category probabilities by treatment (from PO probit)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(m_ord,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">treatment =</span> <span class="fu">levels</span>(dat<span class="sc">$</span>treatment)),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">type    =</span> <span class="st">"probs"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Per-category treatment contrasts with 95% CIs (from CS probit).</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the "applied deliverable" table from Part 1.</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">avg_comparisons</span>(</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  m_ord_cs,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">variables =</span> <span class="st">"treatment"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">type      =</span> <span class="st">"prob"</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>If you also have a covariate that plausibly drives heterogeneity — prompt length, ideology, job role, device type, whatever it is in your data — include it as an interaction, and use <code>by =</code> to break the contrasts out by covariate level:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m_cs_cov <span class="ot">&lt;-</span> <span class="fu">clm</span>(y_ord <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">nominal =</span> <span class="sc">~</span> treatment <span class="sc">*</span> covariate,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data    =</span> dat, <span class="at">link =</span> <span class="st">"probit"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">avg_comparisons</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  m_cs_cov,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">variables =</span> <span class="st">"treatment"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">by        =</span> <span class="st">"covariate"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">type      =</span> <span class="st">"prob"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Two additional things we would do before trusting the output on real data:</p>
+<ol type="1">
+<li><strong>Plot the raw response distribution</strong> by treatment condition (and, if available, by covariate level) before fitting anything. If it looks tent-shaped and roughly symmetric, carry on with a PO cumulative probit and expect it to track OLS closely on the contrasts. If it looks bimodal, heavily skewed, or zero-inflated, the cumulative probit family is almost certainly giving you better answers than OLS — and the category-specific extension (<code>clm</code> with <code>nominal = ~ treatment</code>) will track the cell distributions much more faithfully than the PO version.</li>
+<li><strong>Check whether proportional odds looks defensible.</strong> The app’s PO-violation toggle should give you some intuition for what a violation looks like in the predicted-probability output. For formal tests on real data, <code>brant::brant()</code> on a <code>polr</code> fit is a reasonable starting point; for model comparison with proper uncertainty, fit both the PO and category-specific versions in <code>brms</code> (or compare <code>clm</code> fits via AIC / BIC) and pick the one the data prefer.</li>
+</ol>
+</section>
+<section id="sec-wrap" class="level2">
+<h2 class="anchored" data-anchor-id="sec-wrap">Series wrap-up</h2>
+<p>Over these two posts, we have tried to make three arguments, in roughly the order a skeptical reader’s objections come up:</p>
+<ol type="1">
+<li><strong>There is a real problem.</strong> Linear regression on ordinal outcomes commits you to an estimand (the conditional mean) that frequently does not summarize what you care about. This is not a small-sample issue or a rounding issue; it is a choice about what question you are answering.</li>
+<li><strong>There is a workable alternative.</strong> The cumulative probit family has a clean generative story, fits in a single line of R via <code>MASS::polr</code> (the proportional-odds version, suitable as a default) or <code>ordinal::clm</code> with <code>nominal = ~ treatment</code> (the category-specific extension that drops the PO assumption when it doesn’t hold), and produces predicted category probabilities — and, with <code>marginaleffects</code>, per-cell tail-probability contrasts with uncertainty-communicating CIs — that you can hand to a non-technical collaborator without a translation step.</li>
+<li><strong>The difference matters in cases you actually encounter.</strong> Bimodal distributions, skewed distributions, tail-concentrated effects, and PO violations are common in applied research across both academic and industry settings. In those cases, the linear model does not merely give you a slightly noisier answer; it gives you a systematically wrong one, sometimes including a sign flip on specific tail probabilities, and it gives you the wrong answer most confidently about the part of the distribution that matters most.</li>
+</ol>
+<p>A note worth surfacing for anyone who has been clicking through the app’s tours. In well-behaved cases — symmetric baseline, moderate latent shift, no PO violation, no scale or boundary pathology, no unmodeled heterogeneity — OLS and the bare PO cumulative probit produce numerically similar per-category contrasts <em>and</em> similar AIC values on the <em>Coefficients &amp; Fit</em> tab. That is not a flaw in either model; it is OLS happening to be approximately right because the data were not pathological enough to break it, while the PO probit collapses to nearly the same answer because both are single-shift models. The argument for defaulting to the cumulative probit family is therefore not that it always wins on contrast magnitudes or fit metrics — much of the time it ties. The argument is that probit fits the per-condition category proportions correctly even when contrasts agree, gives you category-level estimands and predicted probabilities with CIs as the native output rather than as a postprocessing step, extrapolates safely outside the observed range (Tour 5 above), and when the OLS-friendly assumptions break — Tour 2’s polarization, Tour 3’s tail compression, Tour 4’s variance shift, Tour 5’s bimodal baseline — the AIC table reflects the gap, the category-specific extension is one toggle away, and Part 1’s <a href="https://reluctantcriminologists.com/blog-posts/016/part1-mean-meaningless#sec-fit">formal AIC + held-out RPS pipeline</a> ports directly to your data. The choice is between defaulting to a model that fits the data structurally and taking on the risk that OLS happens to be approximately right; we think the bargain favors the former.</p>
+<p>If any of this felt obvious, we are glad. If any of it was new, then try running the Tour 2 settings in the app, look at the per-cell predicted probabilities and 95% CIs in the contrast table, and ask whether the OLS coefficients in your field’s published papers have ever delivered that level of detail or accuracy. For instance, do analysts tend to answer what fraction of users/participants/units land in each category under each condition, and with what uncertainty? The cumulative probit, paired with <code>marginaleffects::avg_comparisons</code>, hands you that estimand in three lines of R. A slight modification — switching from <code>MASS::polr</code> to <code>ordinal::clm</code> with <code>nominal = ~ treatment</code> — drops the proportional-odds assumption and gives you category-specific contrasts that recover the observed cell distributions exactly, which is what you want precisely when PO is violated and the standard probit’s single coefficient is no longer enough. OLS does not, and cannot, give you either.</p>
+<p>Finally, it is worth being precise about what the upgrade is. The familiar OLS <em>p</em>-value is not what is missing — <code>summary(lm(...))</code> will print one happily, and the app’s coefficients tab includes one too. Yet, it qualifies a coefficient (a scale-point shift in the mean of an ordinal variable) that is commonly what applied decisions ride on but, as we have argued throughout the series, rarely what they <em>should</em> ride on. The cumulative probit’s category-specific predicted probabilities, paired with <code>marginaleffects</code> CIs, replace one number-with-a-<em>p</em> with K paired estimates and K confidence intervals, all on a scale (the proportion of users in each response category) that decision-makers can reason about directly. Significance was never the problem here; the coefficient it qualified was. Consider how many applied decisions, and how many published findings, get adjudicated on a single mean-difference coefficient and its <em>p</em>-value when the more interesting and meaningful underlying questions were about specific category probabilities and how confident we should be about them.</p>
+<p>Thanks for reading. If you build something interesting on top of this, or catch an error in the app, or find a real dataset where the probit story flips the conclusion from a published linear analysis, we would love to hear about it!</p>
+<p>These were the estimands you were looking for.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="believe-sm.jpg" class="img-fluid figure-img"></p>
+<figcaption>Much to learn, you still have. But off to a strong start, you are.</figcaption>
+</figure>
+</div>
+<hr>
+<section id="further-reading" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
+<ul>
+<li><a href="https://doi.org/10.1016/j.jesp.2018.08.009">Liddell &amp; Kruschke (2018)</a> — the paper that sparked all of this for us.</li>
+<li><a href="https://doi.org/10.1177/2515245918823199">Bürkner &amp; Vuorre (2019)</a> — friendly Bayesian ordinal tutorial.</li>
+<li><a href="https://www.fharrell.com/post/po/">Harrell, “Violation of Proportional Odds is Not Fatal”</a> — a measured defense of cumulative models even when PO is mildly violated.</li>
+<li><a href="https://xcelab.net/rm/statistical-rethinking/">McElreath’s <em>Statistical Rethinking</em></a> — provides generative intuition for ordered categorical models.</li>
+<li><a href="https://doi.org/10.1007/s10940-025-09627-5">Brauer &amp; Day (2025)</a> and <a href="https://reluctantcriminologists.com/supp/bd-supp/">supplement</a> — the full Bayesian multilevel version of the approach sketched here.</li>
+<li><a href="https://marginaleffects.com"><code>marginaleffects</code></a> — the R package we use for per-category treatment contrasts with confidence intervals.</li>
+<li><a href="https://connect.posit.cloud/">Posit Connect Cloud</a> — free public-Shiny hosting; that is where the embedded app above lives.</li>
+</ul>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The interactive tool is a Shiny app hosted on <a href="https://connect.posit.cloud/">Posit Connect Cloud</a> and embedded in the post via <code>&lt;iframe&gt;</code>. See the hosting-note footnote on the next paragraph for cold-start behavior and how to clone the source.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The app is a standard server-side Shiny app, hosted free on Posit Connect Cloud. If the iframe is slow to come up, that is a cold start — the host puts the app to sleep when idle and spins it back up on demand. Refreshing usually fixes it. The full source is in <code>shiny/app.R</code> alongside the post; you can also clone and run it locally with <code>shiny::runApp("shiny/app.R")</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><code>clm</code> from the <code>ordinal</code> package supports <code>scale = ~ treatment</code> to fit a latent-SD shift directly. This is uncommon in applied work but pedagogically important: ordinal data can carry signal in the variance as well as in the mean, and a model that only fits a mean shift will miss it. The toggle in the app sidebar is gated to the no-covariate, CS-probit-off case; the call is <code>clm(y_ord ~ treatment, scale = ~ treatment, data = dat, link = "probit")</code>. The Bayesian analog (a <code>brms::brm</code> cumulative probit with group-varying discrimination) is the version we would actually use in research; see <a href="https://doi.org/10.1177/2515245918823199">Bürkner and Vuorre’s (2019)</a> ordinal regression primer for how to specify an unequal variance (<em>disc</em>) Bayesian version in R. For the full frequentist specification see the <code>ordinal</code> vignette (<a href="https://cran.r-project.org/web/packages/ordinal/vignettes/clm_article.pdf">Christensen, 2019</a>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2026,
+  author = {Brauer, Jon and Day, Jake},
+  title = {Ordinal {Outcomes,} {Part} 2: {Break} {Things} {Yourself}},
+  date = {2026-05-13},
+  url = {https://reluctantcriminologists.com/blog-posts/017/part2-break-things-yourself.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brauer, Jon, and Jake Day. 2026. <span>“Ordinal Outcomes, Part 2: Break
+Things Yourself.”</span> May 13. <a href="https://reluctantcriminologists.com/blog-posts/017/part2-break-things-yourself.html">https://reluctantcriminologists.com/blog-posts/017/part2-break-things-yourself.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<div>
+
+<hr>
+
+
+
+<p> questions? feedback? want to connect? </p>
+
+
+
+
+<table class="caption-top table" width="100%" data-cellspacing="0" data-cellpadding="0">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table class="caption-top table" data-cellspacing="0" data-cellpadding="0">
+<tbody>
+<tr class="odd">
+<td style="border-radius: 2px" data-bgcolor="#93c54b"><a href="mailto:reluctantcrim@gmail.com" target="_blank" style="padding: 8px 12px; border: 1px solid #93c54b;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #000000;text-decoration: none;font-weight:bold;display: inline-block;">send us an email</a></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<hr>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.reluctantcriminologists\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="jakeday4/reluctantcrim_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://reluctantcriminologists.com/">
+      <i class="bi bi-house-fill" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:reluctantcrim@gmail.com">
+      <i class="bi bi-envelope-fill" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jakeday4/reluctantcrim_website">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/reluctantcrim">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
