@@ -53,7 +53,7 @@ library(patchwork)
 
 # URL of the deployed Shiny app on Posit Connect Cloud.
 # Replace after first deploy; rendered into the <iframe> below.
-app_url <- "https://YOUR-USERNAME.connect.posit.cloud/content/REPLACE-ME/"
+app_url <- "https://019e1eb8-83c9-5bb6-a3d1-30881ce7a8d2.share.connect.posit.cloud/"
 
 # ---- Helpers (kept in sync with shiny/app.R) --------------------------
 
@@ -638,7 +638,7 @@ cat(sprintf(
 ))
 ```
 
-If the embed above is slow to wake up, [open the app in its own tab](`r app_url`) instead.
+If the embed above is slow to wake up, [open the app in its own tab](`r https://019e1eb8-83c9-5bb6-a3d1-30881ce7a8d2.share.connect.posit.cloud/`) instead.
 
 ## Five guided tours {#sec-tours}
 
