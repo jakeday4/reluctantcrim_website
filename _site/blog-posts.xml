@@ -37,9 +37,9 @@
 </section>
 <section id="sec-app" class="level2">
 <h2 class="anchored" data-anchor-id="sec-app">The app</h2>
-<iframe src="https://YOUR-USERNAME.connect.posit.cloud/content/REPLACE-ME/" width="100%" height="960" style="border: 1px solid #ddd; border-radius: 4px;" loading="lazy">
+<iframe src="https://019e1eb8-83c9-5bb6-a3d1-30881ce7a8d2.share.connect.posit.cloud/" width="100%" height="960" style="border: 1px solid #ddd; border-radius: 4px;" loading="lazy">
 </iframe>
-<p>If the embed above is slow to wake up, <a href="https://YOUR-USERNAME.connect.posit.cloud/content/REPLACE-ME/">open the app in its own tab</a> instead.</p>
+<p>If the embed above is slow to wake up, <a href="https://019e1eb8-83c9-5bb6-a3d1-30881ce7a8d2.share.connect.posit.cloud/">open the app in its own tab</a> instead.</p>
 </section>
 <section id="sec-tours" class="level2">
 <h2 class="anchored" data-anchor-id="sec-tours">Five guided tours</h2>
@@ -24926,7 +24926,7 @@ font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div></div>
 </details>
-<div id="tbl-anonymous-6399858" class="cell quarto-layout-panel anchored" data-layout-ncol="2" data-tbl-cap="Toy toe-stubbing data" data-tbl-subcap="[&quot;X=1&quot;,&quot;X=0&quot;]">
+<div id="tbl-anonymous-7587723" class="cell quarto-layout-panel anchored" data-layout-ncol="2" data-tbl-subcap="[&quot;X=1&quot;,&quot;X=0&quot;]" data-tbl-cap="Toy toe-stubbing data">
 <div class="quarto-layout-row">
 <div id="upmcaersso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#upmcaersso table {
@@ -25370,7 +25370,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<caption>X=1 {#tbl-anonymous-6399858-1}</caption>
+<caption>X=1 {#tbl-anonymous-7587723-1}</caption>
 <thead>
 <tr class="gt_col_headings header">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
@@ -25880,7 +25880,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div></div>
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<caption>X=0 {#tbl-anonymous-6399858-2}</caption>
+<caption>X=0 {#tbl-anonymous-7587723-2}</caption>
 <thead>
 <tr class="gt_col_headings header">
 <th id="CurtainClosed" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">CurtainClosed</th>
