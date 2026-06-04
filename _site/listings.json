@@ -2,6 +2,7 @@
   {
     "listing": "/blog-posts.html",
     "items": [
+      "/blog-posts/018/ffhedge-intro.html",
       "/blog-posts/017/part2-break-things-yourself.html",
       "/blog-posts/016/part1-mean-meaningless.html",
       "/blog-posts/[15]/build-science.html",
@@ -22,6 +23,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/blog-posts/018/ffhedge-intro.html",
       "/blog-posts/017/part2-break-things-yourself.html",
       "/blog-posts/016/part1-mean-meaningless.html",
       "/blog-posts/[15]/build-science.html",

@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jon Brauer and Jake Day">
-<meta name="description" content="Assignments for graduate level replication and reproducibility course. Includes a crash course for conducting minimally reproducible research using R (#1-#4) and a ‘reproducibility project’ (#5-#8) where students reproduce or conceptually replicate results from a published article of their choice.">
+<meta name="author" content="Jon Brauer">
+<meta name="dcterms.date" content="2026-06-03">
+<meta name="description" content="Most fantasy projections sell confidence. I built one that is honest about uncertainty, and about its own limits, and this is the Bayesian thinking behind it.">
 
-<title>Replication &amp; reproducibility in social science (Graduate-level) – reluctant criminologists</title>
+<title>A Fantasy Forecaster That Admits When It’s Guessing – reluctant criminologists</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -164,8 +165,10 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-assignments" id="toc-r-assignments" class="nav-link active" data-scroll-target="#r-assignments">R Assignments</a></li>
-  <li><a href="#reproducibility-project" id="toc-reproducibility-project" class="nav-link" data-scroll-target="#reproducibility-project">Reproducibility Project</a></li>
+  <li><a href="#what-it-offers-that-most-projections-dont" id="toc-what-it-offers-that-most-projections-dont" class="nav-link active" data-scroll-target="#what-it-offers-that-most-projections-dont">What it offers that most projections don’t</a></li>
+  <li><a href="#the-three-ideas-it-runs-on" id="toc-the-three-ideas-it-runs-on" class="nav-link" data-scroll-target="#the-three-ideas-it-runs-on">The three ideas it runs on</a></li>
+  <li><a href="#how-good-is-it-really" id="toc-how-good-is-it-really" class="nav-link" data-scroll-target="#how-good-is-it-really">How good is it, really?</a></li>
+  <li><a href="#before-sunday" id="toc-before-sunday" class="nav-link" data-scroll-target="#before-sunday">Before Sunday</a></li>
   </ul>
 </nav>
     </div>
@@ -174,12 +177,18 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Replication &amp; reproducibility in social science (Graduate-level)</h1>
-</div>
+<h1 class="title">A Fantasy Forecaster That Admits When It’s Guessing</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">general</div>
+    <div class="quarto-category">bayesian</div>
+    <div class="quarto-category">prediction</div>
+    <div class="quarto-category">fantasy football</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Assignments for graduate level <em>replication and reproducibility</em> course. Includes a crash course for conducting minimally reproducible research using R (#1-#4) and a ‘reproducibility project’ (#5-#8) where students reproduce or conceptually replicate results from a published article of their choice.
+    Most fantasy projections sell confidence. I built one that is honest about uncertainty, and about its own limits, and this is the Bayesian thinking behind it.
   </div>
 </div>
 
@@ -189,10 +198,16 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Jon Brauer and Jake Day </p>
+             <p>Jon Brauer </p>
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 3, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -202,170 +217,111 @@ gtag('config', 'G-F0XQR72SS3', { 'anonymize_ip': true});
 </header>
 
 
+<!-- HERO IMAGE — a single player's projection on FFHedge: the "shape of the week"
+     distribution with the floor/target/ceiling bars, so the first thing a reader
+     sees is a distribution rather than "14.2." Source: ffhedge.com player explorer. -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="problems_horst.png" class="img-fluid figure-img"></p>
-<figcaption>Workflow, not just code, often hinders reproducibility. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+<p><img src="images/ffhedge-hero2-border.png" class="img-fluid figure-img"></p>
+<figcaption>FFHedge does not just hand you “14.2 points.” It gives you the shape of the week, and then it keeps score.</figcaption>
 </figure>
 </div>
-<p>In the fall of 2021, Jon was on the schedule to teach a new course titled “Replication &amp; Reproducibility in Social Science” as a substitute for IU Criminal Justice Department’s typical graduate “Methods” degree requirement. The same semester, Jake was scheduled to teach the “Social Research Methods” course to first-year MA students in UNCW’s Department of Sociology and Criminology. He decided to join Jon in revising the class to focus on replication and reproducibility. The result was a jointly designed course focusing on replication and reproducibility issues broadly across the social sciences, but with specific examples from sociology and criminology. You can take a look at both <a href="CJUS-P680_Fall-21-22.pdf">Jon’s syllabus</a> and <a href="CRM-SOC-500_Fall-2021.pdf">Jake’s syllabus</a> for the course. They are basically identical, but Jon’s syllabus includes a complete reference list for the assigned and recommended readings. Also, because of a weird scheduling quirk, Jake had to combine two weeks into one (Hype and Perverse Incentives).</p>
-<p>In addition to teaching our students about replication and reproducibility issues more generally, we also wanted to help them learn some practical skills to help them produce more reliable and transparent research. To do this, we had students complete two sets of assignments: 1) R Assignments intended to provide a basic introduction to conducting reproducible research using the <a href="https://www.r-project.org/">R Statistical Computing Environment</a> and <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and 2) a Reproducibility Project where they had the reproduce the (descriptive) results of a published article on a topic of interest to them. The “R Assignments” ended up being a basic introduction to data wrangling, data visualization and reporting, and reproducible workflow with a primary emphasis on the <a href="https://www.tidyverse.org/">Tidyverse</a> suite of packages. The “Reproducibility Project” was an opportunity for students to apply these new skills to a topic that interested them, get their hands dirty with real-world data, and develop an appreciation for the challenges involved in computationally reproducing published work when you do not have access to the code used to clean, wrangle and analyze the data.</p>
-<p>We have included these assignments as they were assigned in Jon’s class with light editing, where necessary, for student privacy reasons. In a forthcoming blog post we will discuss what we learned from designing this course and note what we would change going forward (and what Jake did change when <a href="https://reluctantcriminologists.com/course-materials/3_ugrad_rnr/">revising the course</a> for senior-level undergraduate criminology majors).</p>
-<section id="r-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="r-assignments">R Assignments</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
+<p>I have been playing fantasy football since we drafted by email and checked the newspaper for box scores, and after all these years I still run the same small calculation every Sunday morning.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I start with where the experts have a player ranked, because a consensus of dozens of analysts is hard to beat and I have learned, repeatedly and sometimes painfully, not to bet against it lightly. Then I nudge it with what the numbers say; his snaps have been climbing, the matchup is brutal, his quarterback is hurt. Somewhere in that informal weighing of the consensus against the data I land on a start-or-sit decision I can live with.</p>
+<p>Over the past few weeks, I finally built the thing that does that weighing for me, out in the open, and put it online: <a href="https://ffhedge.com">FFHedge</a>. It projects weekly fantasy points for wide receivers and running backs, and it does the one thing I wished the other projection tools would do. It tells me how <em>uncertain</em> it is, and it tells you when your guess is as good as the prediction.</p>
+<section id="what-it-offers-that-most-projections-dont" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-offers-that-most-projections-dont">What it offers that most projections don’t</h2>
+<p>There is no shortage of fantasy projections. Every major site will hand you a ranking (RB9), and some will even give you a number or two representing projected points (e.g., mean = 14.2 points, SD = 4.6). Experts place a <a href="https://www.fantasypros.com/about/faq/football-inseason-accuracy-methodology/">premium on maximizing the accuracy</a> of these predictions, and they <a href="https://fantasyfootballanalytics.net/2016/04/accuracy-of-rankings-vs-projections.html">tend to be reasonably accurate</a> <a href="https://blog.devgenius.io/ml-model-evaluation-measuring-the-accuracy-of-espn-fantasy-football-projections-in-python-9c81780b1625">in the aggregate</a>. Now, I know how to read these numbers, and how not to. After all, I <a href="https://reluctantcriminologists.com/course-materials/1_ugrad_stats/">teach</a> and <a href="https://reluctantcriminologists.com/blog-posts/016/part1-mean-meaningless">write about</a> statistics in my day job, and I’ve even <a href="https://www.linkedin.com/posts/jrbrauer_an-influential-research-program-finds-a-correlation-activity-7447293791969087488-8Py3?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAABXvTXYBHnh4akFwbxuIL8Bw8xtqhHR2CSc">warned people</a> not to place too much faith in aggregate statistical success metrics because they often hide a lot of individual-level predictive failures (I call this a <a href="https://osf.io/preprints/socarxiv/n4xuf_v4">correlation paradox</a>). Case-in-point? I have two decades of watching “safe” starts lay eggs while unheralded players have boom weeks on my bench. And yet, even I visit my favorite ranking sites each week and treat their confidently published predictions like an oracle as I set my lineup.</p>
+<p>Don’t mistake me here. I love those sites, and I couldn’t have created my site <a href="https://www.fantasypros.com/">without them</a>. But I don’t think we need another list of confident numbers. I built this site because I really wanted a list of painfully honest ones.</p>
+<p>So FFHedge gives you four things the confident-number tools mostly don’t:</p>
+<ul>
+<li>It gives you a <em>distribution</em> instead of a point, the whole shape of a player’s week, the chance he busts, the chance he is useful, the chance he goes off, because a single number hides exactly the risk you are trying to weigh.</li>
+<li>It keeps the <em>experts and the data side by side</em>, as an “Expert” view and a “Data” view, with a transparent blend of the two (and the option to change the blend yourself), rather than dissolving them into one opaque figure.</li>
+<li>It reports its projections as <em>probabilities you can act on</em>, the chance a player clears a score (floor, target or ceiling) that actually helps you, rather than a rank.</li>
+<li>And, perhaps most unusually, it <em>scores itself in public:</em> one page does nothing but track how well its own probabilities have held up, and another will tell you, to your face, when a decision is really just a coin flip.</li>
+</ul>
+<p>That last part is the whole point. Understandably, most projection tools sell confidence; I wanted mine to give calibrated humility, which is less satisfying but (hopefully) considerably more useful when you are the one setting the lineup.</p>
+</section>
+<section id="the-three-ideas-it-runs-on" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-ideas-it-runs-on">The three ideas it runs on</h2>
+<p>Under the hood are three ideas borrowed from Bayesian statistics. None of them takes any math to use, and each buys you something concrete.</p>
+<p><strong>Think in probabilities, not point guesses.</strong> <a href="https://www.natesilver.net/t/interactive">Nate Silver’s</a> standing advice to any forecaster, in <a href="https://www.penguinrandomhouse.com/books/305826/the-signal-and-the-noise-by-nate-silver/"><em>The Signal and the Noise</em></a>, is to stop issuing single confident numbers and start thinking in distributions, and weekly fantasy scoring is a perfect place to take it. A receiver who projects for “ten points” might be a steady floor play who lands between eight and twelve most weeks, or a boom-or-bust dart that goes for two or for twenty-six. Those are completely different players to start, and their identical averages hide it. <a href="https://ffhedge.com">FFHedge</a> shows you the shape, a floor, a ceiling, and the chance of clearing each, so the risk sits on the table instead of buried in a single number (mean or ranking).</p>
+<!-- IMAGE BREAK — a player's full distribution / "shape of the week" panel, or a
+     boom-bust vs steady comparison, to make "two players, same average, different
+     shapes" concrete. Source: ffhedge.com player explorer (a volatile WR is ideal). -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/needmin_horst.png" class="img-fluid figure-img"></p>
-<figcaption>Learning a new language like R can be frustrating. We all need breaks to breathe and vent. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+<p><img src="images/ffhedge-boom-bust-sm.png" class="img-fluid figure-img"></p>
+<figcaption>Two players can share an average and be nothing alike: a steady floor play and a boom-or-bust dart hide behind the same “ten points.” The distribution is where the difference lives.</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="assignment-1-getting-started-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-1-getting-started-in-r"><a href="r-assignments/R_Assign1_RRStudio_Brauer_Public.html">Assignment 1: Getting Started in R</a></h3>
-<p>The purpose of this first assignment is to demonstrate that you have downloaded the “base R” and “RStudio” statistical programs and can open a SPSS datafile in RStudio.</p>
-</section>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
+<p><strong>Hedge two models instead of picking one.</strong> I did not want to settle the old argument between trusting the experts and trusting the numbers, so I didn’t. I built two separate models, one that sees only the expert consensus and one that sees only a player’s usage and game environment, let each make its case as a full forecast, and combined them by a method called stacking, which weights each model by how well it has <em>actually predicted</em> in the past rather than by how good its story sounds.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> What that buys you is the freedom not to guess, in advance, whether the experts or the data will land closer this week; the blend hedges between them, and because it keeps both halves visible, you can see exactly where the two signals disagree and decide for yourself whether that disagreement is worth acting on. It is the reason the site is called FFHedge.</p>
+<!-- IMAGE BREAK — the Expert / Data / Blend head-to-head for a real start/sit
+     (e.g., the Meyers-vs-Hunter Week 2 "Blend" panel), so the reader sees the two
+     signals and the hedge between them. Source: existing screenshot at
+     ffbayes-autonomous/dashboard/images/wk2-meyers-hunter-blend.jpg -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/planonit_horst.jpg" class="img-fluid figure-img"></p>
-<figcaption>Computers crash. Files get corrupted or deleted. Plan on it in your workflow with cloud-based backups. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+<p><img src="images/ffhedge-disagree-sm.png" class="img-fluid figure-img"></p>
+<figcaption>What the experts say, what the usage data says, and the hedge between them, side by side. When they disagree, you get to see it and decide rather than have one number decide for you.</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="assignment-2-introduction-to-r-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-2-introduction-to-r-markdown"><a href="r-assignments/R_Assign2_RMarkdown_Brauer.html">Assignment 2: Introduction to R Markdown</a></h3>
-<p>The purpose of this second assignment is to help you begin to explore your data in R and to do so within an RMarkdown document. The specific activities were inspired by the SPSS Exercises from the end of Chapter 1 in Bachman and Paternoster’s <a href="https://edge.sagepub.com/bachmansccj4e">Statistics for Criminology &amp; Criminal Justice, 4th Ed</a>.</p>
-</section>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
+<p><strong>Check yourself on data you haven’t seen.</strong> A projection is only worth what it is worth on a game that has not happened yet, so the rigorous test requires predicting a season you have walled off and never looked at. I locked away the entire 2025 season while building the model, predicted it cold, and then scored the result, and the site keeps that <a href="https://ffhedge.com/methodology#holdout-discipline-pre-registration-and-evaluating-predictions">scorekeeping public</a>. When the model says a player has a 40% chance to clear a line, players in that bucket clear it about 40% of the time; across the board the stated probabilities are off by only a couple of percentage points. That is what lets you trust the numbers. They have been checked, in the open, against outcomes the model never got to see, which is a far higher bar than merely sounding right. I also plan to carry the process live into the 2026 season, so we can witness the hits and misses together.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ggplot2b_horst.png" class="img-fluid figure-img"></p>
-<figcaption>Start with a blank canvas and build a masterpiece using <code>ggplot2()</code>. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+<p><img src="images/ffhedge-calibrate-sm.png" class="img-fluid figure-img"></p>
+<figcaption>The tool holds its own on accuracy and calibration metrics; it shines on the types of information it gives <em>beyond</em> the point predictions.</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="assignment-3-direct-reproduction" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-3-direct-reproduction"><a href="r-assignments/R_Assign3_ICPSR_ReprodFig_Brauer.html">Assignment 3: Direct Reproduction</a></h3>
-<p>The purpose of this assignment is to reproduce findings from a published study in R, particularly one where the data are housed on ICPSR. In order to accomplish this we will need to do and learn the following: - Identify the data being used in the now classic study by Mark Warr published in Criminology titled: “Age, Peers, and Delinquency” (Warr, 1993) - Download it from ICPSR - Identify and wrangle the specific variables/items used in the study using the dplyr package that is a part of the Tidyverse. - Combine multiple data sets into one. - Reproduce the first part of Figure 1 from Warr’s (1993) study (as displayed on pg. 22 in his article) by introducing you to the powerful data visualization package ggplot2, which is also a part of the Tidyverse.</p>
 </section>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
+<section id="how-good-is-it-really" class="level2">
+<h2 class="anchored" data-anchor-id="how-good-is-it-really">How good is it, really?</h2>
+<p>Here is the part many projection tools will never fully show you: how good they actually are. <a href="https://fantasyfootballanalytics.net/2017/03/best-fantasy-football-projections-2017.html">Some do</a>, but the metrics can often be hard to understand if you are not a data analyst yourself. <a href="https://ffhedge.com">FFHedge</a> shows you, and it aims for a valid answer. For example, like most ranking tools, its predictions are good at the easy calls and no better than a coin flip on the hard ones.</p>
+<p>Moreover, the standard is to score accuracy using aggregate predictive metrics (e.g., <a href="https://ffhedge.com/calibration#does-the-hedge-lower-error-over-the-long-run">MAE</a>); few systematically track and publish their <a href="https://ffhedge.com/reality-check">hits and misses at the individual level</a>. Start a clearly startable player over someone you would grab off waivers, and the model picks the higher scorer three times out of four or better. This is genuinely useful on the most common decision you face but, if you have read this far, you probably don’t need a tool for those; the tool earns its keep on the uncertainty, not the easy pick. Ask it to separate two players the consensus already rates as roughly equals - you know, the agonizing Sunday-morning toss-up - and it falls to a coin flip. Then again, so does every other model, and so do the raw expert rankings (I checked). And if you want to know who is going to <em>erupt</em> for thirty this week? Well, join the club - no one can tell you, because that one is a coin flip for everybody.</p>
+<!-- IMAGE BREAK — the Reality-check tier grid (start/sit scorecard): green corners
+     (stud over replacement) and a coin-flip diagonal (within-tier toss-ups).
+     Source: ffhedge.com Reality-check page. -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/knownothing_horst.png" class="img-fluid figure-img"></p>
-<figcaption>You’ve learned so much! This is just the beginning of a challenging but worthwhile journey. <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
+<p><img src="images/ffhedge-scorecard-sm.png" class="img-fluid figure-img"></p>
+<figcaption>The start/sit scorecard, on the 2025 season: reliable on the easy calls (a starter over a waiver-wire replacement) and a coin flip on the within-tier toss-ups. Does your favorite prediction site do this?</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="assignment-4-conceptual-replication" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-4-conceptual-replication"><a href="r-assignments/R_Assign4_ConceptRep_Brauer_Public.html">Assignment 4: Conceptual Replication</a></h3>
-<p>The purpose of this assignment is to perform a conceptual replication of some observations in <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.1987.tb00801.x">Orcutt’s (1987)</a> paper in <em>Criminology</em> titled: “Differential Association and Marijuana Use: A Closer Look at Sutherland (with a Little Help from Becker).” Since Orcutt’s (1987) original data are unavailable, we will assess whether some of his findings can be repeated with and generalize to a similar sample in the NYS data.</p>
+<p>I find that honesty clarifying rather than discouraging, and not only as a fantasy player. In my day job studying prediction in criminology, the same pattern turns up everywhere. As I mentioned earlier, a model can look impressive in the aggregate and still be close to useless on the individual case that actually matters, and telling those two apart takes the kind of strict, one-decision-at-a-time individual-level test the grid above is running.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> I even managed to fool myself at one point with a textbook selection error, flagging a follow-up exploratory result using an outcome I should not have peeked at, the very mistake I have <a href="https://reluctantcriminologists.com/blog-posts/%5B5%5D/colliders">written about</a> in other people’s work, before catching it and reporting a much humbler conclusion. A fantasy tool that will admit, on its own front page, where it is no better than a coin is doing something I wish more prediction did.</p>
 </section>
-</div>
-</div>
-</section>
-<section id="reproducibility-project" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility-project">Reproducibility Project</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
+<section id="before-sunday" class="level2">
+<h2 class="anchored" data-anchor-id="before-sunday">Before Sunday</h2>
+<p>So that is <a href="https://ffhedge.com">FFHedge</a>: weekly projections that aim for valid probabilities, a transparent hedge between the experts and the data, and a scorecard that owns its own limits. Check it out, send feedback, tell me if you think the proof-of-concept is useful and worth expanding.</p>
+<p>If there is a thesis buried in all of this, it is that honest prediction is rarer, and more useful, than confident prediction, in fantasy football and well beyond it. I would rather a forecast look me in the eye and say “coin flip” than sell me a certainty it has not earned.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Most weeks, and for many real-world decisions, that honesty is the most useful thing a projection can give you.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/tidydata_horst_wickham.jpg" class="img-fluid figure-img"></p>
-<figcaption>Finding open crime data is challenging. Working with it can be even more challenging. <a href="https://allisonhorst.com/other-r-fun">Artwork from the Openscapes blog “Tidy Data for reproducibility, efficiency, and collaboration” by Julia Lowndes and Allison Horst”</a></figcaption>
+<p><img src="images/flintstones-coinflip.gif" class="img-fluid figure-img"></p>
+<figcaption>Sometimes it is rational to just flip a coin, but where’s the fun in that? When it’s a toss up, I’ll tell you. Then you can read all the expert tea leaves and rationally go with your gut instead!</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="project-assignment-1-find-article-with-data-to-replicate" class="level3">
-<h3 class="anchored" data-anchor-id="project-assignment-1-find-article-with-data-to-replicate"><a href="rep-project/Project_Assign_1_Find_Article_Brauer_Public.html">Project Assignment 1: Find Article with Data to Replicate</a></h3>
-<p>The primary purpose of this first project assignment is to find an article on a topic of interest to you that has data available online via ICSPR (or another repository); eventually, you will be required to use these data in an attempt to reproduce a basic descriptive finding reported in a table or figure from the article. A secondary purpose of this assignment is to develop a sense of how (un)common it is to find research articles in the top journals of your field for which the authors have openly shared their data and code for reproducibility purposes.</p>
-</section>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/behold_horst.png" class="img-fluid figure-img"></p>
-<figcaption>Yes, there is always more to learn, which means we can continue to grow and improve! <a href="https://allisonhorst.com/allison-horst">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></a></figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="project-assignment-2-describe-reproduction-share-image-summarize-data" class="level3">
-<h3 class="anchored" data-anchor-id="project-assignment-2-describe-reproduction-share-image-summarize-data"><a href="rep-project/Project_Assign_2_Describe_Summarize_Brauer_Public.html">Project Assignment 2: Describe Reproduction, Share Image, Summarize Data</a></h3>
-<p>Unlike previous assignments, this assignment was not organized into various numbered “parts” for students to follow and complete. Rather, it showed students some basics about publishing with R Markdown (e.g., inserting an image, editing the YAML header, etc.) and asked students to summarize the raw versions of the variables needed for their reproduction.</p>
-</section>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/draw-owl-draft.jpg" class="img-fluid figure-img"></p>
-<figcaption>First draft: You’ve learned the basics. Draw two ovals to start drawing the owl. Credit: Richard McElreath’s clever application of <a href="https://twitter.com/rlmcelreath/status/1092368239869546496?s=20">the “draw the owl” analogy to learning coding and statistics.</a></figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="project-assignment-3-first-draft-of-reproduction" class="level3">
-<h3 class="anchored" data-anchor-id="project-assignment-3-first-draft-of-reproduction"><a href="rep-project/Project_Assign_3_First-Draft-of-Reproduction.html">Project Assignment 3: First Draft of Reproduction</a></h3>
-<p>Students are asked to create a first draft of their reproduction project which was ultimately peer-reviewed by one of their classmates. The directions are similar to <a href="rep-project/Project_Assign_2_Describe_Summarize_Brauer_Public.html">Project Assignment 2</a> except students were expected to recode all variables and produce relatively clean and publication-ready versions of their tables and figures.</p>
-</section>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/draw-owl-final.jpg" class="img-fluid figure-img"></p>
-<figcaption>Final draft: Now, use what you’ve learned - and learn what you need - to draw the rest of the owl! Credit: Richard McElreath’s clever application of <a href="https://twitter.com/rlmcelreath/status/1092368239869546496?s=20">the “draw the owl” analogy to learning coding and statistics.</a></figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:60%;">
-<section id="project-assignment-4-final-draft-of-reproduction" class="level3">
-<h3 class="anchored" data-anchor-id="project-assignment-4-final-draft-of-reproduction"><a href="rep-project/Project_Assign_4_Final-Draft-of-Reproduction.html">Project Assignment 4: Final Draft of Reproduction</a></h3>
-<p>Students are asked to finalize their reproduction project and provide a reproducible file structure. Essentially, they were asked to apply the skills they had learned throughout the course to produce an article or blog reproducing some (descriptive) results of a published study.</p>
-</section>
-</div>
-</div>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer_and_jake_day,
-  author = {Brauer and Jake Day, Jon},
-  title = {Replication \&amp; Reproducibility in Social Science
-    {(Graduate-level)}},
-  url = {https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/},
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In my earliest leagues we emailed in our draft picks and waited for the newspaper to find out who won the week. I have the trophies and the grudges to prove I have been at this a while, which is the only credential I am claiming here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The combination method is stacking (<a href="https://doi.org/10.1214/17-BA1091">Yao, Vehtari, Simpson &amp; Gelman, 2018</a>), and the models are fit in <a href="https://paulbuerkner.com/brms/">brms</a>. The full machinery — the two distributional families, the priors, the scoring rules, and a pre-registered test of the whole thing on the held-out 2025 season — is on the site’s <a href="https://ffhedge.com/methodology.html">methodology page</a> for anyone who wants it.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The academic version: a paper <a href="https://doi.org/10.1007/s11186-025-09645-z">Jake Day and I wrote</a> argues that social science leans too hard on aggregate statistics that can hide individual-level prediction failures, something we call a “precision crisis.” Fantasy football turned out to be a weirdly ideal sandbox for those ideas, with none of the stakes.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The name is intended to be a bit playfully ironic: You might not get much of an <strong>edge</strong> with FFH<strong>edge</strong>, but you’ll have more information. And who knows - maybe you’ll beat yourself up a bit less on some tough decisions, or take it out on a coin instead.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brauer2026,
+  author = {Brauer, Jon},
+  title = {A {Fantasy} {Forecaster} {That} {Admits} {When} {It’s}
+    {Guessing}},
+  date = {2026-06-03},
+  url = {https://reluctantcriminologists.com/blog-posts/019/honest-fantasy-projections.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer_and_jake_day" class="csl-entry quarto-appendix-citeas" role="listitem">
-Brauer and Jake Day, Jon. n.d. <span>“Replication &amp; Reproducibility
-in Social Science (Graduate-Level).”</span> <a href="https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/">https://www.reluctantcriminologists.com/course-materials/2_grad_RnR/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brauer2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brauer, Jon. 2026. <span>“A Fantasy Forecaster That Admits When It’s
+Guessing.”</span> June 3. <a href="https://reluctantcriminologists.com/blog-posts/019/honest-fantasy-projections.html">https://reluctantcriminologists.com/blog-posts/019/honest-fantasy-projections.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <div>
 
